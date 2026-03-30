@@ -1,0 +1,34 @@
+tab 	locations
+age	age_high	age_low	age_unit	citations	description	dir_tilt_correction	geologic_classes	lat_n	lat_s	lithologies	location	location_type	lon_e	lon_w	method_codes	pole_alpha95	pole_k	pole_lat	pole_lon	pole_n_sites	result_name	result_quality	result_type	sites
+780.0	782.0	778.0	Ma	10.1029/2025JB031762:10.3133/pp1580:10.1130/g19944.1:10.3133/pp1580:10.1130/g19944.1	Mean pole from 14 Gunbarrel LIP intrusions (Ding et al. 2025)	100	Igneous	65.667	43.818	Diabase	Gunbarrel LIP	Region	250.612	241.537	DE-BFL:DE-FM:LP-DIR-T:DE-VGP	8.0	25.8	3.2	151.5	14	Gunbarrel LIP ca. 780 Ma pole	g	a	BT50:BT51:BT54:BT5658:BT64:BT68:BT69:BT72:J20B24:BT-8:MM1:Gun:Mar:Cal_mean
+>>>>>>>>>>
+tab 	sites
+age	age_high	age_low	age_sigma	age_unit	citations	description	dir_alpha95	dir_dec	dir_inc	dir_k	dir_n_samples	dir_tilt_correction	geologic_classes	geologic_types	lat	lithologies	location	lon	method_codes	result_quality	site	vgp_dm	vgp_dp	vgp_lat	vgp_lon
+	780.0	775.0		Ma	10.1029/2025JB031762		9.9	265.2	-11.4	38.1	8	0	Igneous	Volcanic Dike	45.028	Diabase	Gunbarrel LIP	250.116	LP-DIR-T:DE-BFL:DE-FM	g	BT50				
+	780.0	775.0		Ma	10.1029/2025JB031762		9.9	267.4	-15.1	38.1	8	100	Igneous	Volcanic Dike	45.028	Diabase	Gunbarrel LIP	250.116	LP-DIR-T:DE-BFL:DE-FM	g	BT50	10.2	5.2	-7.3	156.5
+	780.0	775.0		Ma	10.1029/2025JB031762		8.2	268.7	5.1	47.0	8	0	Igneous	Volcanic Dike	45.027	Diabase	Gunbarrel LIP	250.117	LP-DIR-T:DE-BFL:DE-FM	g	BT51				
+	780.0	775.0		Ma	10.1029/2025JB031762		8.2	268.1	1.7	47.0	8	100	Igneous	Volcanic Dike	45.027	Diabase	Gunbarrel LIP	250.117	LP-DIR-T:DE-BFL:DE-FM	g	BT51	8.2	4.1	-0.7	162.1
+	780.0	775.0		Ma	10.1029/2025JB031762		14.0	267.2	-18.5	19.5	7	0	Igneous	Volcanic Dike	45.102	Diabase	Gunbarrel LIP	250.089	LP-DIR-T:DE-BFL:DE-FM	g	BT54				
+	780.0	775.0		Ma	10.1029/2025JB031762		14.0	270.7	-21.8	19.5	7	100	Igneous	Volcanic Dike	45.102	Diabase	Gunbarrel LIP	250.089	LP-DIR-T:DE-BFL:DE-FM	g	BT54	14.8	7.8	-7.5	151.6
+	780.0	775.0		Ma	10.1029/2025JB031762		10.2	275.5	7.8	44.1	6	0	Igneous	Volcanic Dike	45.102	Diabase	Gunbarrel LIP	250.091	LP-DIR-T:DE-BFL:DE-FM	g	BT5658				
+	780.0	775.0		Ma	10.1029/2025JB031762		10.2	274.4	5.5	44.1	6	100	Igneous	Volcanic Dike	45.102	Diabase	Gunbarrel LIP	250.091	LP-DIR-T:DE-BFL:DE-FM	g	BT5658	10.2	5.1	5.1	158.9
+	780.0	775.0		Ma	10.1029/2025JB031762		11.9	264.2	14.4	61.1	4	0	Igneous	Volcanic Dike	45.095	Diabase	Gunbarrel LIP	250.091	LP-DIR-T:DE-BFL:DE-FM	g	BT64				
+	780.0	775.0		Ma	10.1029/2025JB031762		11.9	262.2	10.2	61.1	4	100	Igneous	Volcanic Dike	45.095	Diabase	Gunbarrel LIP	250.091	LP-DIR-T:DE-BFL:DE-FM	g	BT64	12.0	6.1	-1.8	169.2
+	780.0	775.0		Ma	10.1029/2025JB031762		9.5	256.5	5.5	35.2	8	0	Igneous	Volcanic Dike	45.034	Diabase	Gunbarrel LIP	250.338	LP-DIR-T:DE-BFL:DE-FM	g	BT68				
+	780.0	775.0		Ma	10.1029/2025JB031762		9.5	256.1	0.2	35.2	8	100	Igneous	Volcanic Dike	45.034	Diabase	Gunbarrel LIP	250.338	LP-DIR-T:DE-BFL:DE-FM	g	BT68	9.5	4.8	-9.7	170.3
+	780.0	775.0		Ma	10.1029/2025JB031762		5.7	289.0	-35.3	137.3	6	0	Igneous	Volcanic Dike	45.004	Diabase	Gunbarrel LIP	250.369	LP-DIR-T:DE-BFL:DE-FM	g	BT69				
+	780.0	775.0		Ma	10.1029/2025JB031762		5.7	296.0	-34.5	137.3	6	100	Igneous	Volcanic Dike	45.004	Diabase	Gunbarrel LIP	250.369	LP-DIR-T:DE-BFL:DE-FM	g	BT69	6.5	3.8	3.6	128.8
+	780.0	775.0		Ma	10.1029/2025JB031762		10.3	263.7	5.9	30.1	8	0	Igneous	Volcanic Dike	45.034	Diabase	Gunbarrel LIP	250.339	LP-DIR-T:DE-BFL:DE-FM	g	BT72				
+	780.0	775.0		Ma	10.1029/2025JB031762		10.3	263.1	1.7	30.1	8	100	Igneous	Volcanic Dike	45.034	Diabase	Gunbarrel LIP	250.339	LP-DIR-T:DE-BFL:DE-FM	g	BT72	10.3	5.1	-4.3	165.8
+	780.0	775.0		Ma	10.1029/2025JB031762		4.7	289.6	-29.6	169.2	7	0	Igneous	Volcanic Dike	44.96	Diabase	Gunbarrel LIP	250.612	LP-DIR-T:DE-BFL:DE-FM	g	J20B24				
+	780.0	775.0		Ma	10.1029/2025JB031762		4.7	295.2	-28.8	169.2	7	100	Igneous	Volcanic Dike	44.96	Diabase	Gunbarrel LIP	250.612	LP-DIR-T:DE-BFL:DE-FM	g	J20B24	5.1	2.8	5.9	131.9
+779.5			1.5	Ma	10.3133/pp1580:10.1130/g19944.1	Paleomagnetic and geochronological results from Harlan et al. (1997 10.3133/pp1580); Geochronological results from Harlan et al. (2003 10.1130/g19944.1)	7.9	288.3	-21.8	44.0	9	0	Igneous	Volcanic Dike	44.971	Diabase	Gunbarrel LIP	250.555	DE-FM	g	BT-8				
+779.5			1.5	Ma	10.3133/pp1580:10.1130/g19944.1	Paleomagnetic and geochronological results from Harlan et al. (1997 10.3133/pp1580); Geochronological results from Harlan et al. (2003 10.1130/g19944.1)	7.9	292.3	-21.4	44.0	9	100	Igneous	Volcanic Dike	44.971	Diabase	Gunbarrel LIP	250.555	DE-FM	g	BT-8	8.3	4.4	7.4	137.0
+775.0			5.0	Ma	10.3133/pp1580	Paleomagnetic and geochronological results from Harlan et al. (1997)	10.2	285.6	11.5	36.0	7	0	Igneous	Volcanic Dike	43.818	Diabase	Gunbarrel LIP	249.258	DE-FM	g	MM1				
+775.0			5.0	Ma	10.3133/pp1580	Paleomagnetic and geochronological results from Harlan et al. (1997)	10.2	285.5	1.5	36.0	7	100	Igneous	Volcanic Dike	43.818	Diabase	Gunbarrel LIP	249.258	DE-FM	g	MM1	10.4	5.3	15.2	152.6
+779.6			0.7	Ma	10.1130/g19944.1	Paleomagnetic results from J. K. Park Buchan and Gandhi (1995 no doi); Geochronological results from Harlan et al. (2003 10.1130/g19944.1).	6.0	281.0	3.0	95.0	7	0	Igneous	Sill	65.667	Diabase	Gunbarrel LIP	241.857	DE-FM	g	Gun				
+779.6			0.7	Ma	10.1130/g19944.1	Paleomagnetic results from J. K. Park Buchan and Gandhi (1995 no doi); Geochronological results from Harlan et al. (2003 10.1130/g19944.1).	6.0	281.0	3.0	95.0	7	100	Igneous	Sill	65.667	Diabase	Gunbarrel LIP	241.857	DE-FM	g	Gun	6.0	3.0	5.9	142.4
+	780.0	775.0		Ma	10.1029/2025JB031762	Paleomagnetic results from J. K. Park Buchan and Gandhi (1995 no doi)	20.0	280.4	16.1		4	0	Igneous	Sill	64.401	Diabase	Gunbarrel LIP	242.868	DE-FM	g	Mar				
+	780.0	775.0		Ma	10.1029/2025JB031762	Paleomagnetic results from J. K. Park Buchan and Gandhi (1995 no doi)	20.0	280.4	16.1		4	100	Igneous	Sill	64.401	Diabase	Gunbarrel LIP	242.868	DE-FM	g	Mar			11.9	147.0
+779.5			0.9	Ma	10.1130/g19944.1	Geochronological results from Harlan et al. (2003).	15.3	283.5	30.6		3	0	Igneous	Sill	65.011	Diabase	Gunbarrel LIP	241.537	LP-DIR-T:DE-BFL:DE-FM	g	Cal_mean				
+779.5			0.9	Ma	10.1130/g19944.1	Geochronological results from Harlan et al. (2003).	15.3	283.5	30.6		3	100	Igneous	Sill	65.011	Diabase	Gunbarrel LIP	241.537	LP-DIR-T:DE-BFL:DE-FM	g	Cal_mean			20.6	146.4

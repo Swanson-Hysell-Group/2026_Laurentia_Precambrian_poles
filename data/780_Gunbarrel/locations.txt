@@ -1,0 +1,3 @@
+tab delimited	locations
+location	location_type	result_name	result_type	result_quality	method_codes	citations	geologic_classes	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_low	age_high	age_unit	dir_tilt_correction	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	sites	description
+Gunbarrel LIP	Region	Gunbarrel LIP ca. 780 Ma pole	a	g	DE-BFL:DE-FM:LP-DIR-T:DE-VGP	10.1029/2025JB031762:10.3133/pp1580:10.1130/g19944.1:10.3133/pp1580:10.1130/g19944.1	Igneous	Diabase	43.818	65.667	241.537	250.612	780.0	778.0	782.0	Ma	100	3.2	151.5	8.0	25.8	14	BT50:BT51:BT54:BT5658:BT64:BT68:BT69:BT72:J20B24:BT-8:MM1:Gun:Mar:Cal_mean	Mean pole from 14 Gunbarrel LIP intrusions (Ding et al. 2025)
