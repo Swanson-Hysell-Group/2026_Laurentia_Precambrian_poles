@@ -1,0 +1,17 @@
+name: laurentia-poles
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - matplotlib
+  - cartopy
+  - openpyxl
+  - pip
+  - pip:
+    - pmagpy
+    - jupyter-book>=2.0
+    - mystmd
+    - griffe

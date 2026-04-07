@@ -1,0 +1,49 @@
+version: 1
+
+project:
+  title: Precambrian Paleomagnetic Poles for Laurentia
+  description: >
+    Compilation and assessment of Precambrian paleomagnetic poles
+    for Laurentia
+  keywords:
+    - paleomagnetism
+    - Laurentia
+    - Precambrian
+    - apparent polar wander
+    - paleomagnetic poles
+  license:
+    content: CC-BY-4.0
+  authors:
+    - name: Nicholas Swanson-Hysell
+      affiliation: Institute for Rock Magnetism, University of Minnesota
+  github: Swanson-Hysell/2026_Laurentia_Precambrian_poles
+
+  abbreviations:
+    APWP: Apparent Polar Wander Path
+    VGP: Virtual Geomagnetic Pole
+    PSV: Paleosecular Variation
+    NRM: Natural Remanent Magnetization
+    AF: Alternating Field
+    PCA: Principal Component Analysis
+    LIP: Large Igneous Province
+    GAD: Geocentric Axial Dipole
+
+  toc:
+    - file: index.md
+    - title: Pole Assessments
+      children:
+        - file: pole_notebooks/780_Gunbarrel.ipynb
+    - title: Resources
+      children:
+        - file: resources/Meert2020_R_criteria.md
+        - file: resources/pole_tools_api.md
+
+site:
+  template: book-theme
+  options:
+    lang: en
+    logo: _static/logo_placeholder.png
+    hide_toc: false
+    numbered_references: false
+    number_source_lines: false
+    number_headings: true

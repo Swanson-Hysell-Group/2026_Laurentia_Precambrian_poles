@@ -44,7 +44,7 @@ Any of the following statistically robust field tests:
 **(a) Baked contact / inverse baked contact test:**
 - Positive (C+): intrusion and baked host have same direction; unbaked host has different direction; no hybrid zone.
 - Also positive (C+): baked host matches intrusion, unbaked host is unstable.
-- Inconclusive (Co): baked host matches intrusion direction but unbaked host also shows same direction or unstable behavior.
+- Inconclusive (Co): baked host matches intrusion direction but unbaked host exhibits unstable behavior (no stable hybrid or stable host directions recovered).
 - Negative (C-): all directions are similar, suggesting remagnetization.
 - Inverse baked contact tests also qualify.
 
@@ -52,7 +52,7 @@ Any of the following statistically robust field tests:
 - Should pass rigorous statistical analyses (McFadden, 1990; McFadden and Jones, 1981; Watson and Enkin, 1983; Tauxe and Watson, 1994; Enkin, 2003).
 - Age of folding should be close to the age of the rocks.
 - Should be applied stepwise with optimal grouping within 90-110% unfolding.
-- Syn-folding magnetizations do not meet R4 unless demonstrably syn-folding remagnetizations.
+- Syn-folding magnetizations do not meet R4 unless they are demonstrably syn-sedimentary slump folds or in growth strata.
 
 **(c) Conglomerate test:**
 - Positive if clasts show statistically random directions (Watson, 1956; Shipunov et al., 1998; Heslop and Roberts, 2018a).
@@ -75,7 +75,7 @@ Any of the following statistically robust field tests:
 ### R6: Presence of magnetic reversals
 
 - Statistically significant antipodal normal and reverse directions.
-- Graded using McFadden and McElhinny (1990) reversal test: R_A (gamma_o < 5 deg), R_B (gamma_c < 10 deg), R_C (gamma_c < 20 deg and "Indeterminate"), or R_0 (gamma_c >= 20 deg).
+- Graded using McFadden and McElhinny (1990) reversal test: R_A (gamma_c < 5 deg), R_B (gamma_c < 10 deg), R_C (gamma_c < 20 deg), or Indeterminate (gamma_c >= 20 deg).
 - Also acceptable: support for a common mean via Heslop and Roberts (2018b) test.
 - A negative reversal test (gamma_o > gamma_c) does not qualify.
 - The test is based on isolated observations from one polarity grouping; R_AI, R_BI, R_CI designations are used.
@@ -100,30 +100,3 @@ Any of the following statistically robust field tests:
 | 5 | Structural control and tectonic coherence | Data from thrust sheets or intrusives must be younger than last tectonic deformation; detrital sedimentary rocks that do not require inclination corrections will meet this |
 | 6 | Presence of magnetic reversals | Statistically significant antipodal directions: R_A, R_B, or R_C rated (M&M 1990) or support for common mean (H&R 2018b) |
 | 7 | No resemblance to younger poles (> period) based on overlapping A95 | Field tests that constrain magnetization to be older than resembled pole(s) |
-
-## Key Equations
-
-**Deenen et al. (2011) A95 envelope for PSV:**
-```
-A95_min = 12 * N^(-0.40)
-A95_max = 82 * N^(-0.63)
-```
-
-**S_T (total angular dispersion of VGPs; Cox, 1970):**
-```
-S_T = sqrt( (1/(n-1)) * sum(delta_i^2) )    for i = 1...n
-```
-where delta_i = angle between i-th VGP and the mean VGP, n = number of sites (> 5).
-
-**95% deviation angle (approximation for alarm band):**
-```
-psi_95 = 140 / sqrt(k)
-```
-
-## Notes for Implementation
-
-- R2c (Deenen test) is already implemented in `pole_assessment.py` as `Deenen_test()`.
-- R2c statistical thresholds (N, K, B) are implemented as `R2_test()`.
-- R4 and R6 require case-by-case evaluation from the source publication.
-- R5 requires knowledge of the tectonic setting relative to the craton.
-- R7 requires comparison against the Laurentia APWP compilation.
