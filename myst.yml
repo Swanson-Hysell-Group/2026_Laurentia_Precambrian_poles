@@ -17,6 +17,8 @@ project:
     - name: Nicholas Swanson-Hysell
       affiliation: Institute for Rock Magnetism, University of Minnesota
   github: Swanson-Hysell/2026_Laurentia_Precambrian_poles
+  execute:
+    enabled: false
 
   abbreviations:
     APWP: Apparent Polar Wander Path

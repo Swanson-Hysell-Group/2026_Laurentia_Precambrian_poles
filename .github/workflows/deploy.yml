@@ -47,7 +47,7 @@ jobs:
         env:
           BASE_URL: /${{ github.event.repository.name }}
         run: |
-          jupyter book build --html --execute
+          jupyter book build --html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
