@@ -37,6 +37,7 @@ project:
         - file: pole_notebooks/780_Gunbarrel.ipynb
     - title: Resources
       children:
+        - file: resources/magic_data_entry_guide.md
         - file: resources/Meert2020_R_criteria.md
         - file: resources/pole_tools_api.md
 
