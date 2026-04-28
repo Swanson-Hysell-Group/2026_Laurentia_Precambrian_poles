@@ -338,39 +338,130 @@ def load_magic_sites(sites_path):
     sites_tc = sites[sites['dir_tilt_correction'] == 100].reset_index(drop=True)
     return sites_geo, sites_tc
 
-def compute_mean_pole(sites_tc):
-    """Computes Fisher mean direction and mean VGP pole from site data.
+def compute_mean_pole(sites_tc, unify_polarity=False, flip=False):
+    """Computes the Fisher mean VGP pole from site-level VGPs.
 
-    Calculates a Fisher mean of site-level directions and a separate Fisher
-    mean of site-level VGPs. NaN VGP entries are dropped before averaging.
+    Sites with NaN in either ``vgp_lon`` or ``vgp_lat`` are dropped before
+    averaging. The remaining VGPs are unified to a single polarity with
+    ``pmag.flip(..., combine=True)``; if ``flip`` is True, that unified set is
+    then flipped 180° via ``ipmag.do_flip`` before computing the Fisher mean.
 
     Args:
         sites_tc (pd.DataFrame): Tilt-corrected site data with columns
-            dir_dec, dir_inc, vgp_lon, and vgp_lat.
+            ``vgp_lon`` and ``vgp_lat``.
+        unify_polarity (bool): If True, unifies VGPs to a single polarity
+        flip (bool): If True, applies a 180° flip to the polarity-unified VGPs
+            prior to averaging (e.g. to report the mean in the opposite
+            polarity).
 
     Returns:
-        tuple[dict, dict]: (dir_mean, pole_mean) dictionaries from
-        ``ipmag.fisher_mean``, each containing keys dec, inc, n, r, k,
-        alpha95, and csd.
+        tuple[list, dict]: ``(vgp_block_unified, pole_mean)`` where
+        ``vgp_block`` is the list of site VGPs (optionally unified and/or flipped) 
+        as ``[lon, lat]`` pairs, and ``pole_mean`` is the
+        Fisher mean from ``ipmag.fisher_mean`` with keys ``dec``, ``inc``,
+        ``n``, ``r``, ``k``, ``alpha95``, and ``csd``, where ``dec``/``inc``
+        correspond to the mean pole longitude/latitude.
     """
-    dir_mean = ipmag.fisher_mean(dec=sites_tc['dir_dec'].tolist(),
-                                  inc=sites_tc['dir_inc'].tolist())
-    vgp_lons = sites_tc['vgp_lon'].dropna().tolist()
-    vgp_lats = sites_tc['vgp_lat'].dropna().tolist()
-    pole_mean = ipmag.fisher_mean(dec=vgp_lons, inc=vgp_lats)
-    return dir_mean, pole_mean
+    vgp_sites = sites_tc.dropna(subset=['vgp_lon', 'vgp_lat'])
+    vgp_lons = vgp_sites['vgp_lon'].tolist()
+    vgp_lats = vgp_sites['vgp_lat'].tolist()
+    vgp_block = ipmag.make_di_block(vgp_lons, vgp_lats)
+    if unify_polarity:
+        vgp_block = pmag.flip(vgp_block, combine=True)
+    if flip:
+        vgp_block = ipmag.do_flip(di_block=vgp_block)
+    pole_mean = ipmag.fisher_mean(di_block=vgp_block)
+    return vgp_block, pole_mean
 
-def plot_vgps_and_pole(sites_tc, pole_mean, central_longitude=150,
-                       central_latitude=0, figsize=(8, 8),
-                       show_vgp_uncertainty=False):
+def compute_mean_direction(sites_tc, unify_polarity=False, flip=False):
+    """Computes the Fisher mean direction from site-level declinations and inclinations.
+
+    Sites with NaN in either ``dir_dec`` or ``dir_inc`` are dropped before
+    averaging. The remaining directions are unified to a single polarity with
+    ``pmag.flip(..., combine=True)``; if ``flip`` is True, that unified set is
+    then flipped 180° via ``ipmag.do_flip`` before computing the Fisher mean.
+
+    Args:
+        sites_tc (pd.DataFrame): Tilt-corrected site data with columns
+            ``dir_dec`` and ``dir_inc``.
+        unify_polarity (bool): If True, unifies directions to a single polarity
+        flip (bool): If True, applies a 180° flip to the polarity-unified
+            directions prior to averaging (e.g. to report the mean in the
+            opposite polarity).
+
+    Returns:
+        tuple[list, dict]: ``(dir_block_unified, dir_mean)`` where
+        ``dir_block_unified`` is the list of polarity-unified (and optionally
+        flipped) site directions as ``[dec, inc]`` pairs, and ``dir_mean`` is
+        the Fisher mean from ``ipmag.fisher_mean`` with keys ``dec``, ``inc``,
+        ``n``, ``r``, ``k``, ``alpha95``, and ``csd``.
+    """
+    dir_sites = sites_tc.dropna(subset=['dir_dec', 'dir_inc'])
+    dir_decs = dir_sites['dir_dec'].tolist()
+    dir_incs = dir_sites['dir_inc'].tolist()
+    dir_block = ipmag.make_di_block(dir_decs, dir_incs)
+    if unify_polarity:
+        dir_block = pmag.flip(dir_block, combine=True)
+    if flip:
+        dir_block = ipmag.do_flip(di_block=dir_block)
+    dir_mean = ipmag.fisher_mean(di_block=dir_block)
+    return dir_block, dir_mean
+
+def compute_mean_direction_from_vgps(sites_tc, study_lon, study_lat, 
+                                     unify_polarity=False, flip=False):
+    """Computes the Fisher mean direction from site VGPs converted to 
+    directions at a common study location.
+
+    Each site VGP (``vgp_lon``, ``vgp_lat``) is converted to a direction
+    (declination, inclination) at the supplied ``study_lon``/``study_lat`` via
+    ``pmag.vgp_di``. This is appropriate when sites span a small region and a
+    single representative location is used to express the mean as a direction.
+    Sites with NaN in either VGP column are dropped before conversion. The
+    resulting directions are unified to a single polarity with
+    ``pmag.flip(..., combine=True)``; if ``flip`` is True, that unified set is
+    then flipped 180° via ``ipmag.do_flip`` before computing the Fisher mean.
+
+    Args:
+        sites_tc (pd.DataFrame): Tilt-corrected site data with columns
+            ``vgp_lon`` and ``vgp_lat``.
+        study_lon (float): Longitude in degrees of the common study site at
+            which directions are computed from the VGPs.
+        study_lat (float): Latitude in degrees of the common study site.
+        unify_polarity (bool): If True, unifies directions to a single polarity.
+        flip (bool): If True, applies a 180° flip to the polarity-unified
+            directions prior to averaging.
+
+    Returns:
+        tuple[list, dict]: ``(dir_block_unified, dir_mean)`` where
+        ``dir_block_unified`` is the list of polarity-unified (and optionally
+        flipped) directions at the study site as ``[dec, inc]`` pairs, and
+        ``dir_mean`` is the Fisher mean from ``ipmag.fisher_mean`` with keys
+        ``dec``, ``inc``, ``n``, ``r``, ``k``, ``alpha95``, and ``csd``.
+    """
+    vgp_sites = sites_tc.dropna(subset=['vgp_lon', 'vgp_lat'])
+    decs = []
+    incs = []
+    for vgp_lon, vgp_lat in zip(vgp_sites['vgp_lon'], vgp_sites['vgp_lat']):
+        dec, inc = pmag.vgp_di(vgp_lat, vgp_lon, study_lat, study_lon)
+        decs.append(dec)
+        incs.append(inc)
+    dir_block = ipmag.make_di_block(decs, incs)
+    if unify_polarity:
+        dir_block = pmag.flip(dir_block, combine=True)
+    if flip:
+        dir_block = ipmag.do_flip(di_block=dir_block)
+    dir_mean = ipmag.fisher_mean(di_block=dir_block)
+    return dir_block, dir_mean
+
+def plot_vgps_and_pole(vgp_block, pole_mean, central_longitude=150,
+                       central_latitude=0, figsize=(8, 8)):
     """Plots individual site VGPs and the mean pole on an orthographic map.
 
     Each VGP is labeled with its site name. The mean pole is shown in red
     with its A95 confidence circle.
 
     Args:
-        sites_tc (pd.DataFrame): Tilt-corrected site data with columns
-            vgp_lat, vgp_lon, vgp_dp, and site.
+        vgp_block (list): List of VGPs as [lon, lat] pairs.
         pole_mean (dict): Mean pole dictionary from ``ipmag.fisher_mean``
             with keys dec, inc, n, alpha95.
         central_longitude (float): Center longitude for the orthographic
@@ -378,8 +469,6 @@ def plot_vgps_and_pole(sites_tc, pole_mean, central_longitude=150,
         central_latitude (float): Center latitude for the orthographic
             projection.
         figsize (tuple): Figure size as (width, height) in inches.
-        show_vgp_uncertainty (bool): If True, plot dp uncertainty circles
-            on individual VGPs.
 
     Returns:
         matplotlib.axes.Axes: The orthographic map axis.
@@ -387,18 +476,7 @@ def plot_vgps_and_pole(sites_tc, pole_mean, central_longitude=150,
     ax = ipmag.make_orthographic_map(central_longitude=central_longitude,
                                      central_latitude=central_latitude,
                                      figsize=figsize)
-    for _, row in sites_tc.iterrows():
-        if pd.notna(row['vgp_lat']) and pd.notna(row['vgp_lon']):
-            if show_vgp_uncertainty:
-                dp = row.get('vgp_dp', 0)
-                dp = dp if pd.notna(dp) else 0
-            else:
-                dp = 0
-            ipmag.plot_pole(ax, row['vgp_lon'], row['vgp_lat'], dp,
-                            color='steelblue', markersize=30, filled_pole=False)
-            ax.text(row['vgp_lon'] + 2, row['vgp_lat'] + 2, row['site'],
-                    transform=ccrs.PlateCarree(), fontsize=7)
-
+    ipmag.plot_vgp(ax, di_block=vgp_block, color='blue', markersize=30, alpha=0.5)
     ipmag.plot_pole(ax, pole_mean['dec'], pole_mean['inc'], pole_mean['alpha95'],
                     color='red', markersize=60, filled_pole=True,
                     fill_color='red', fill_alpha=0.3)
@@ -406,3 +484,54 @@ def plot_vgps_and_pole(sites_tc, pole_mean, central_longitude=150,
                  f'{pole_mean["dec"]:.1f}°E, A95={pole_mean["alpha95"]:.1f}°, '
                  f'N={pole_mean["n"]}')
     return ax
+
+def plot_site_map(sites, zoom_start=4, tiles='OpenStreetMap',
+                  color='firebrick', radius=5):
+    """Builds an interactive folium map of paleomagnetic site locations.
+
+    Longitudes in MagIC sites tables are stored in 0–360° convention; this
+    function shifts them to the −180/180° convention expected by folium.
+    Duplicate site rows (e.g., geographic and tilt-corrected entries for
+    the same site) are collapsed by site name.
+
+    Args:
+        sites (pd.DataFrame): Site data with columns ``site``, ``lat``,
+            and ``lon`` (longitude in 0–360°).
+        zoom_start (int): Initial zoom level for the folium map.
+        tiles (str): Folium tile layer name (e.g., 'OpenStreetMap',
+            'CartoDB positron').
+        color (str): Outline color of the site markers.
+        radius (float): Marker radius in pixels.
+
+    Returns:
+        folium.Map: Interactive map with a CircleMarker per site, labeled
+        with the site name on hover and a popup showing coordinates.
+    """
+    import folium
+
+    site_locs = sites[['site', 'lat', 'lon']].drop_duplicates(
+        subset='site').copy()
+    site_locs['lon'] = ((site_locs['lon'] + 180) % 360) - 180
+
+    m = folium.Map(
+        location=[site_locs['lat'].mean(), site_locs['lon'].mean()],
+        zoom_start=zoom_start,
+        tiles=tiles,
+    )
+
+    for _, row in site_locs.iterrows():
+        folium.CircleMarker(
+            location=[row['lat'], row['lon']],
+            radius=radius,
+            color=color,
+            fill=True,
+            fill_opacity=0.85,
+            popup=folium.Popup(
+                f"<b>{row['site']}</b><br>"
+                f"{row['lat']:.3f}°N, {row['lon']:.3f}°E",
+                max_width=200,
+            ),
+            tooltip=row['site'],
+        ).add_to(m)
+
+    return m
