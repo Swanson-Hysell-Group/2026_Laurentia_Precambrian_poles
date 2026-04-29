@@ -10,6 +10,8 @@ import pmagpy.ipmag as ipmag
 import pmagpy.pmag as pmag
 import cartopy.crs as ccrs
 import pandas as pd
+import numpy as np
+import warnings
 
 Torsvik2012_poles = pd.read_excel('../data/Torsvik2012.xlsx')
 Torsvik2012_Laurentia = Torsvik2012_poles[4:187]
@@ -535,3 +537,104 @@ def plot_site_map(sites, zoom_start=4, tiles='OpenStreetMap',
         ).add_to(m)
 
     return m
+
+
+def make_nordic_summary(terrane, 
+                        rockname, 
+                        sites,
+                        dir_mean,
+                        pole_mean,
+                        study_lon,
+                        study_lat,
+                        component_comment='',
+                        tests='',
+                        f_factor=1,
+                        pole_mean_unflattened=None,
+                        R1=None,
+                        R2=None,
+                        R3=None,
+                        R4=None,
+                        R5=None,
+                        R6=None,
+                        R7=None,
+                        Grade=None,
+                        nominal_age=None,
+                        lomagage=None,
+                        himagage=None,
+                        REF_method=None,
+                        POLE_AUTHORS=None,
+                        YEAR=None,
+                        JOURNAL=None,
+                        VOLUME=None,
+                        VPAGES='',
+                        TITLE=None,
+                        COMMENT=''
+                        ):
+    nordic_dict = {}
+    nordic_dict['terrane'] = terrane
+    nordic_dict['rockname'] = rockname
+    nordic_dict['component_comment'] = component_comment
+    nordic_dict['tests'] = tests
+    if sites['dir_tilt_correction'].nunique() != 1:
+        warnings.warn(
+            "Multiple tilt correction values found in sites data; "
+            "cannot determine single tilt correction for summary, choosing first value."
+        )    
+    nordic_dict['tilt'] = sites['dir_tilt_correction'][0]
+    nordic_dict['study_lat'] = study_lat
+    nordic_dict['study_lon'] = study_lon
+    nordic_dict['site_n'] = pole_mean['n']
+    nordic_dict['sample_n'] = sites['dir_n_samples'].sum()
+    nordic_dict['dir_dec_mean'] = dir_mean['dec']
+    nordic_dict['dir_inc_mean'] = dir_mean['inc']
+    nordic_dict['dir_inc_mean_abs'] = np.abs(dir_mean['inc'])
+    nordic_dict['dir_k'] = dir_mean['k']
+    nordic_dict['dir_alpha_95'] = dir_mean['alpha95']
+    nordic_dict['pole_lat'] = pole_mean['dec']
+    nordic_dict['pole_lon'] = pole_mean['inc']
+    nordic_dict['pole_dp'] = ''
+    nordic_dict['pole_dm'] = ''
+    nordic_dict['pole_A95'] = pole_mean['alpha95']
+    nordic_dict['f_factor'] = f_factor
+    nordic_dict['inc_f'] = ipmag.unsquish([dir_mean['inc']], f_factor)[0]
+
+    if pole_mean_unflattened is not None:
+        nordic_dict['pole_lat_unflattened'] = pole_mean_unflattened['dec']
+        nordic_dict['pole_lon_unflattened'] = pole_mean_unflattened['inc']
+        nordic_dict['pole_dp_unflattened'] = ''
+        nordic_dict['pole_dm_unflattened'] = ''
+        nordic_dict['pole_A95_unflattened'] = pole_mean_unflattened['alpha95']
+    else:
+        nordic_dict['pole_lat_unflattened'] = pole_mean['dec']
+        nordic_dict['pole_lon_unflattened'] = pole_mean['inc']
+        nordic_dict['pole_dp_unflattened'] = ''
+        nordic_dict['pole_dm_unflattened'] = ''
+        nordic_dict['pole_A95_unflattened'] = pole_mean['alpha95']
+    
+    # check any other optional parameter if None then throw error
+    optional_params = {
+        'R1': R1,
+        'R2': R2,
+        'R3': R3,
+        'R4': R4,
+        'R5': R5,
+        'R6': R6,
+        'R7': R7,
+        'Grade': Grade,
+        'nominal_age': nominal_age,
+        'lomagage': lomagage,
+        'himagage': himagage,
+        'REF_method': REF_method,
+        'POLE_AUTHORS': POLE_AUTHORS,
+        'YEAR': YEAR,
+        'JOURNAL': JOURNAL,
+        'VOLUME': VOLUME,
+        'VPAGES': VPAGES,
+        'TITLE': TITLE,
+        'COMMENT': COMMENT
+    }
+    for param_name, param_value in optional_params.items():
+        if param_value is None:
+            raise ValueError(f"Optional parameter '{param_name}' is required but was not provided.")
+        nordic_dict[param_name] = param_value
+    return nordic_dict
