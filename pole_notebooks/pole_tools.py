@@ -580,7 +580,7 @@ def make_nordic_summary(terrane,
             "Multiple tilt correction values found in sites data; "
             "cannot determine single tilt correction for summary, choosing first value."
         )    
-    nordic_dict['tilt'] = sites['dir_tilt_correction'][0]
+    nordic_dict['tilt'] = sites['dir_tilt_correction'].iloc[0]
     nordic_dict['study_lat'] = study_lat
     nordic_dict['study_lon'] = study_lon
     nordic_dict['site_n'] = pole_mean['n']
