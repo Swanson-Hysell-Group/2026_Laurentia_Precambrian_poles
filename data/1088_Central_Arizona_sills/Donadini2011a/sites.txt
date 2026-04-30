@@ -1,0 +1,25 @@
+tab 	sites																				
+site	location	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	dir_n_specimens	dir_n_total_specimens	dir_tilt_correction	lat	lon	geologic_classes	geologic_types	lithologies	method_codes	result_quality	result_type	age	age_unit	citations	description
+AD	Gila County	272.9	47.3	71.9	3.6	23	23	23	0	33.8	-110.47	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+DB	Gila County	282.5	24.8	215.6	3.3	10	10	10	0	33.8	-110.49	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+DC	Gila County	281.2	33.8	91.9	5.4	9	9	9	0	33.65	-110.57	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+DF	Gila County	332.6	69.4	145.1	3.5	13	13	13	0	33.65	-110.48	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+DG	Sierra Ancha	266.2	34.4	58.7	8	7	7	7	0	33.89	-110.97	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+DJ	Sierra Ancha	281.9	52.8	325.5	2.9	9	9	9	0	33.87	-110.98	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+ED	Gila County	288.6	51.6	71.5	5.4	11	11	11	0	33.79	-110.5	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+FD	Gila County	279.2	49.3	48.5	8	8	8	8	0	33.79	-110.5	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+GD	Gila County	278.8	29	102.8	6	7	7	7	0	33.65	-110.57	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+KD	Sierra Ancha	293.8	13.4	142.3	3.3	14	14	14	0	33.81	-110.98	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+LD	Sierra Ancha	283.4	18.8	45.4	13.8	4	4	4	0	33.8	-110.98	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+MD	Sierra Ancha	277.2	50.7	110.4	4.2	12	12	12	0	33.75	-110.96	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+ND	Gila County	341.2	40.4	80.9	10.3	4	4	4	0	33.46	-110.85	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+OD	Gila County	276.8	50.1	64.5	5.2	13	13	13	0	33.55	-110.69	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+ZD	Gila County	270.5	42.9	52.1	6.1	12	12	12	0	33.81	-110.47	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+BD	Gila County	137.6	-74	66.1	8.2	7	7	7	0	33.8	-110.5	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+CD	Gila County	138.8	-75.2	33.4	8.1	11	11	11	0	33.8	-110.5	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+DE	Gila County	292.1	-74.8	359.9	4.8	4	4	4	0	33.62	-110.6	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+ID	Gila County	226.7	-65	52.2	7.2	9	9	9	0	33.61	-110.62	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+SD	Gila County	95.8	-35.9	60.7	7.8	7	7	7	0	33.66	-111.18	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+VD	Gila County	355.9	-31.5	180.5	5.7	5	5	5	0	33.66	-111.17	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+WD	Gila County	199.2	-71	92.1	3.1	24	24	24	0	33.61	-110.61	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
+XD3	Gila County	173.2	-55	3034.8	3.2	4	4	4	0	33.81	-110.48	Intrusive:Igneous	Sill	Diabase	LP-DIR-AF:LP-DIR-T:DE-BFL;LP-DC4	g	i	1100	Ma	Donadini2011a	
