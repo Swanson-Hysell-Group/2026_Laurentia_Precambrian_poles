@@ -1,0 +1,16 @@
+/* Notebook image outputs: matplotlib's retina inline backend saves PNGs at 2x
+   the intended display size for crispness on retina displays, but the myst
+   book-theme renderer ignores the metadata width and emits a plain <img>, so
+   the PNG renders at its full 2x pixel width and gets clamped to the column.
+   `zoom: 0.5` halves the layout size while preserving the high-res pixel data,
+   matching what JupyterLab does with metadata-width on retina images. */
+[data-name="safe-output-image"] {
+    text-align: center;
+}
+[data-name="safe-output-image"] img {
+    zoom: 0.5;
+    max-width: 100%;
+    height: auto;
+    display: inline-block;
+    margin: 0 auto;
+}
