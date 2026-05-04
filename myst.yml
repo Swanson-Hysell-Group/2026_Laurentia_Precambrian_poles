@@ -32,6 +32,7 @@ project:
     - title: Pole Assessments
       children:
         - file: pole_notebooks/780_Gunbarrel.ipynb
+        - file: pole_notebooks/887_Adirondack.ipynb
     - title: Resources
       children:
         - file: resources/magic_data_entry_guide.md
