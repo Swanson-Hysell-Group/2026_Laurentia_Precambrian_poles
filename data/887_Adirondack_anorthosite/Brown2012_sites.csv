@@ -1,0 +1,37 @@
+﻿lithology,site,N,dir_inc,dir_dec,k,a95,vgp_lat,vgp_lon,lat,lon,dir_comp_name
+microcline gneiss,AD1,6,-62.3,232.1,100,6.7,-53.1,175.8,44.2,-74,AR
+microcline gneiss,AD2,4,-62.9,257.8,97,9.4,-36.4,164.3,44.2,-74,AR
+microcline gneiss,AD5,10,-51.5,292.2,22,10.6,-8,157.4,44.2,-74,AR
+microcline gneiss,AD6,10,-67.8,271.2,260,3,-31.9,152.1,44.2,-74,AR
+microcline gneiss,AD11,7,44.8,98.1,120,5.5,12.6,349.3,44.2,-74,AN
+microcline gneiss,AD15,3,68.9,138.7,351,6.6,12.7,308.5,44.2,-74,AN
+microcline gneiss,AD18,5,55.3,111.6,165,6,11,334.2,44.2,-74,AN
+microcline gneiss,AD21,7,-64.1,318.4,655,2.4,-7.1,131.8,44.2,-74,AR
+microcline gneiss,AD22,5,-63.3,282.3,113,7.2,-22.4,152.6,44.2,-74,AR
+microcline gneiss,AD26,5,76.9,162.9,760,2.8,19.9,291.6,44.2,-74,AN
+microcline gneiss,AD34,7,-61.1,262.7,62,7.7,-32.3,164.4,44.2,-74,AR
+microcline gneiss,AD35,3,-58.6,309.9,238,8,-4.8,140.6,44.2,-74,AR
+microcline gneiss,AD36,5,-51.2,316.9,55,10.4,4.6,139.6,44.2,-74,AR
+microcline gneiss,AD40,3,-55.6,294.2,130,10.9,-9.8,152.4,44.2,-74,AR
+metamorphic anorthosites,AD12,5,-61.5,304.4,44,11.7,-10,142,44.23,-73.88,AR
+metamorphic anorthosites,AD28,5,51.2,101.6,67,9.4,14.1,343.1,44.25,-74.25,AN
+metamorphic anorthosites,AD32,3,-87.5,182.2,926,4.1,-49.1,104.3,44.29,-73.53,AR
+metamorphic anorthosites,AD33,5,-65.6,290.4,153,6.2,-20.3,146.2,44.3,-73.4,AR
+metamorphic anorthosites,ADH9,5,-75.6,312.8,210,4.3,-23.5,128,44.3,-73.48,AR
+metamorphic anorthosites,ADH10,4,-76,279.5,177,5.3,-19.5,105.6,44.27,-73.62,AR
+metamorphic anorthosites,ADH12,5,-73.3,240.7,798,2.2,-41.6,130.1,44,-74,AR
+metamorphic anorthosites,ADH32,6,43.9,100.3,107,5.5,10.7,350.7,44.12,-73.75,AN
+metamorphic anorthosites,ADH33,6,46.6,82.5,16,14.3,24,359.7,43.61,-73.87,AN
+metamorphic anorthosites,ADH34,6,-73.3,240.7,46,8.2,-51,151.4,44.02,-74.05,AR
+metamorphic anorthosites,ADH35,6,53.9,108,25,11.5,11.9,339.1,43.67,-74.05,AN
+associated metamorphic rocks,ADH8,4,-75.6,283.1,117,5.3,-3.4,138,44.2,-74,AR
+associated metamorphic rocks,ADH18,4,72.8,146.3,33,12.2,16.5,301.9,44.2,-74,AN
+associated metamorphic rocks,ADH19,4,-68.9,264.9,72,8.2,-36.5,154.7,44.2,-74,AR
+post-metamorphic fayalite granites,AD9,7,-75.6,271.8,289,3.6,-37.4,139.1,44.2,-74,AR
+post-metamorphic fayalite granites,AD10,4,-78.3,269.7,2409,1.9,-40,133.9,44.2,-74,AR
+post-metamorphic fayalite granites,AD20,4,-76.4,317.3,2157,2,-23.3,122.7,44.2,-74,AR
+post-metamorphic fayalite granites,AD37,5,-74.5,291,99,7.7,-28.9,135.1,44.2,-74,AR
+post-metamorphic fayalite granites,AD38,7,-69.9,320.7,244,3.9,-13.4,126.6,44.2,-74,AR
+post-metamorphic fayalite granites,ADH4,4,-75.7,286.3,847,2.4,-31.9,136,44.2,-74,AR
+post-metamorphic fayalite granites,ADH5,4,-78.7,309.8,1406,1.9,-28.4,124.1,44.2,-74,AR
+post-metamorphic fayalite granites,ADH20,5,71.7,118.7,177,13.7,23.2,318.1,44.2,-74,AN

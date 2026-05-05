@@ -13,9 +13,6 @@ project:
     - paleomagnetic poles
   license:
     content: CC-BY-4.0
-  authors:
-    - name: Nicholas Swanson-Hysell
-      affiliation: Institute for Rock Magnetism, University of Minnesota
   github: Swanson-Hysell/2026_Laurentia_Precambrian_poles
   execute:
     enabled: false
@@ -35,6 +32,7 @@ project:
     - title: Pole Assessments
       children:
         - file: pole_notebooks/780_Gunbarrel.ipynb
+        - file: pole_notebooks/887_Adirondack.ipynb
     - title: Resources
       children:
         - file: resources/magic_data_entry_guide.md
@@ -46,6 +44,7 @@ site:
   options:
     lang: en
     logo: _static/logo_placeholder.png
+    style: _static/custom.css
     hide_toc: false
     numbered_references: false
     number_source_lines: false
