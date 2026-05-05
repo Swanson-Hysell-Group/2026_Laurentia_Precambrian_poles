@@ -167,13 +167,17 @@ def plot_pole_overlap(ROCKNAME, Precambrian_poles, Phanerozoic_poles,
 
 def plot_apwp_context(Laurentia_poles, pole_plat, pole_plon, pole_A95,
                       age_min=540, age_max=1780, central_longitude=160,
+                      central_latitude=0, projection='mollweide',
+                      excluded_terranes=('Laurentia-Scotland',
+                                         'Laurentia-Svalbard'),
                       figsize=(12, 12)):
     """Plots a pole in the context of the Laurentia Precambrian APWP.
 
     Shows the Laurentia apparent polar wander path color-coded by age with
-    the target pole highlighted in green. Only includes Laurentia and
-    Greenland (rotated) poles; excludes Svalbard and Scotland. Uses rotated
-    coordinates throughout.
+    the target pole highlighted in green. By default, only includes
+    Laurentia and Greenland (rotated) poles; Svalbard and Scotland poles
+    are excluded via ``excluded_terranes``. Uses rotated coordinates
+    throughout.
 
     Args:
         Laurentia_poles (pd.DataFrame): Output of ``get_Laurentia_poles``
@@ -184,19 +188,35 @@ def plot_apwp_context(Laurentia_poles, pole_plat, pole_plon, pole_A95,
         pole_A95 (float): A95 of the pole to highlight in degrees.
         age_min (float): Minimum age for filtering in Ma.
         age_max (float): Maximum age for filtering in Ma.
-        central_longitude (float): Center longitude for the Mollweide
-            projection.
+        central_longitude (float): Center longitude for the projection.
+        central_latitude (float): Center latitude for the orthographic
+            projection. Ignored when ``projection='mollweide'``.
+        projection (str): Map projection to use. Either ``'mollweide'``
+            (default) or ``'orthographic'``.
+        excluded_terranes (tuple[str, ...] or None): Terrane labels to
+            exclude from the plotted APWP. Defaults to Scotland and
+            Svalbard. Pass ``None`` or an empty tuple to include all
+            rotated terranes.
         figsize (tuple): Figure size as (width, height) in inches.
 
     Returns:
-        matplotlib.axes.Axes: The Mollweide map axis.
+        matplotlib.axes.Axes: The map axis.
     """
-    ax = ipmag.make_mollweide_map(central_longitude=central_longitude,
-                                   figsize=figsize)
+    if projection == 'mollweide':
+        ax = ipmag.make_mollweide_map(central_longitude=central_longitude,
+                                       figsize=figsize)
+    elif projection == 'orthographic':
+        ax = ipmag.make_orthographic_map(central_longitude=central_longitude,
+                                          central_latitude=central_latitude,
+                                          figsize=figsize)
+    else:
+        raise ValueError(
+            f"projection must be 'mollweide' or 'orthographic', got {projection!r}"
+        )
 
-    # Exclude Svalbard and Scotland; keep Laurentia, Greenland (rotated),
-    # and Trans-Hudson
-    excluded_terranes = ('Laurentia-Scotland', 'Laurentia-Svalbard')
+    if excluded_terranes is None:
+        excluded_terranes = ()
+
     path_poles = Laurentia_poles[
         (Laurentia_poles['nominal age'] >= age_min) &
         (Laurentia_poles['nominal age'] <= age_max) &
