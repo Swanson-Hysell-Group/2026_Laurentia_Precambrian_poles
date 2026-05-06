@@ -88,24 +88,85 @@ A95 envelope. Prints a pass/fail message for each sub-criterion.
 
 ---
 
-## `compute_mean_pole`
+## `compute_mean_direction`
 
 ```python
-compute_mean_pole(sites_tc)
+compute_mean_direction(sites_tc, unify_polarity=False, flip=False)
 ```
 
-Computes Fisher mean direction and mean VGP pole from site data.
+Computes the Fisher mean direction from site-level declinations and inclinations.
 
-Calculates a Fisher mean of site-level directions and a separate Fisher
-mean of site-level VGPs. NaN VGP entries are dropped before averaging.
+Sites with NaN in either ``dir_dec`` or ``dir_inc`` are dropped before
+averaging. The remaining directions are unified to a single polarity with
+``pmag.flip(..., combine=True)``; if ``flip`` is True, that unified set is
+then flipped 180° via ``ipmag.do_flip`` before computing the Fisher mean.
 
 **Parameters**
 
-- **sites_tc** (`pd.DataFrame`) — Tilt-corrected site data with columns dir_dec, dir_inc, vgp_lon, and vgp_lat.
+- **sites_tc** (`pd.DataFrame`) — Tilt-corrected site data with columns ``dir_dec`` and ``dir_inc``.
+- **unify_polarity** (`bool`) — If True, unifies directions to a single polarity
+- **flip** (`bool`) — If True, applies a 180° flip to the polarity-unified directions prior to averaging (e.g. to report the mean in the opposite polarity).
 
 **Returns**
 
-- tuple[dict, dict]: (dir_mean, pole_mean) dictionaries from ``ipmag.fisher_mean``, each containing keys dec, inc, n, r, k, alpha95, and csd.
+- tuple[list, dict]: ``(dir_block_unified, dir_mean)`` where ``dir_block_unified`` is the list of polarity-unified (and optionally flipped) site directions as ``[dec, inc]`` pairs, and ``dir_mean`` is the Fisher mean from ``ipmag.fisher_mean`` with keys ``dec``, ``inc``, ``n``, ``r``, ``k``, ``alpha95``, and ``csd``.
+
+---
+
+## `compute_mean_direction_from_vgps`
+
+```python
+compute_mean_direction_from_vgps(sites_tc, study_lon, study_lat, unify_polarity=False, flip=False)
+```
+
+Computes the Fisher mean direction from site VGPs converted to 
+directions at a common study location.
+
+Each site VGP (``vgp_lon``, ``vgp_lat``) is converted to a direction
+(declination, inclination) at the supplied ``study_lon``/``study_lat`` via
+``pmag.vgp_di``. This is appropriate when sites span a small region and a
+single representative location is used to express the mean as a direction.
+Sites with NaN in either VGP column are dropped before conversion. The
+resulting directions are unified to a single polarity with
+``pmag.flip(..., combine=True)``; if ``flip`` is True, that unified set is
+then flipped 180° via ``ipmag.do_flip`` before computing the Fisher mean.
+
+**Parameters**
+
+- **sites_tc** (`pd.DataFrame`) — Tilt-corrected site data with columns ``vgp_lon`` and ``vgp_lat``.
+- **study_lon** (`float`) — Longitude in degrees of the common study site at which directions are computed from the VGPs.
+- **study_lat** (`float`) — Latitude in degrees of the common study site.
+- **unify_polarity** (`bool`) — If True, unifies directions to a single polarity.
+- **flip** (`bool`) — If True, applies a 180° flip to the polarity-unified directions prior to averaging.
+
+**Returns**
+
+- tuple[list, dict]: ``(dir_block_unified, dir_mean)`` where ``dir_block_unified`` is the list of polarity-unified (and optionally flipped) directions at the study site as ``[dec, inc]`` pairs, and ``dir_mean`` is the Fisher mean from ``ipmag.fisher_mean`` with keys ``dec``, ``inc``, ``n``, ``r``, ``k``, ``alpha95``, and ``csd``.
+
+---
+
+## `compute_mean_pole`
+
+```python
+compute_mean_pole(sites_tc, unify_polarity=False, flip=False)
+```
+
+Computes the Fisher mean VGP pole from site-level VGPs.
+
+Sites with NaN in either ``vgp_lon`` or ``vgp_lat`` are dropped before
+averaging. The remaining VGPs are unified to a single polarity with
+``pmag.flip(..., combine=True)``; if ``flip`` is True, that unified set is
+then flipped 180° via ``ipmag.do_flip`` before computing the Fisher mean.
+
+**Parameters**
+
+- **sites_tc** (`pd.DataFrame`) — Tilt-corrected site data with columns ``vgp_lon`` and ``vgp_lat``.
+- **unify_polarity** (`bool`) — If True, unifies VGPs to a single polarity
+- **flip** (`bool`) — If True, applies a 180° flip to the polarity-unified VGPs prior to averaging (e.g. to report the mean in the opposite polarity).
+
+**Returns**
+
+- tuple[list, dict]: ``(vgp_block_unified, pole_mean)`` where ``vgp_block`` is the list of site VGPs (optionally unified and/or flipped)  as ``[lon, lat]`` pairs, and ``pole_mean`` is the Fisher mean from ``ipmag.fisher_mean`` with keys ``dec``, ``inc``, ``n``, ``r``, ``k``, ``alpha95``, and ``csd``, where ``dec``/``inc`` correspond to the mean pole longitude/latitude.
 
 ---
 
@@ -178,18 +239,27 @@ and tilt-corrected (dir_tilt_correction == 100) coordinates.
 
 ---
 
+## `make_nordic_summary`
+
+```python
+make_nordic_summary(terrane, rockname, sites, dir_mean, pole_mean, study_lon, study_lat, component_comment='', tests='', f_factor=1, pole_mean_unflattened=None, R1=None, R2=None, R3=None, R4=None, R5=None, R6=None, R7=None, Grade=None, nominal_age=None, lomagage=None, himagage=None, REF_method=None, POLE_AUTHORS=None, YEAR=None, JOURNAL=None, VOLUME=None, VPAGES='', TITLE=None, COMMENT='')
+```
+
+---
+
 ## `plot_apwp_context`
 
 ```python
-plot_apwp_context(Laurentia_poles, pole_plat, pole_plon, pole_A95, age_min=540, age_max=1780, central_longitude=160, figsize=(12, 12))
+plot_apwp_context(Laurentia_poles, pole_plat, pole_plon, pole_A95, age_min=540, age_max=1780, central_longitude=160, central_latitude=0, projection='mollweide', excluded_terranes=('Laurentia-Scotland', 'Laurentia-Svalbard'), figsize=(12, 12))
 ```
 
 Plots a pole in the context of the Laurentia Precambrian APWP.
 
 Shows the Laurentia apparent polar wander path color-coded by age with
-the target pole highlighted in green. Only includes Laurentia and
-Greenland (rotated) poles; excludes Svalbard and Scotland. Uses rotated
-coordinates throughout.
+the target pole highlighted in green. By default, only includes
+Laurentia and Greenland (rotated) poles; Svalbard and Scotland poles
+are excluded via ``excluded_terranes``. Uses rotated coordinates
+throughout.
 
 **Parameters**
 
@@ -199,12 +269,15 @@ coordinates throughout.
 - **pole_A95** (`float`) — A95 of the pole to highlight in degrees.
 - **age_min** (`float`) — Minimum age for filtering in Ma.
 - **age_max** (`float`) — Maximum age for filtering in Ma.
-- **central_longitude** (`float`) — Center longitude for the Mollweide projection.
+- **central_longitude** (`float`) — Center longitude for the projection.
+- **central_latitude** (`float`) — Center latitude for the orthographic projection. Ignored when ``projection='mollweide'``.
+- **projection** (`str`) — Map projection to use. Either ``'mollweide'`` (default) or ``'orthographic'``.
+- **excluded_terranes** (`tuple[str, ...] or None`) — Terrane labels to exclude from the plotted APWP. Defaults to Scotland and Svalbard. Pass ``None`` or an empty tuple to include all rotated terranes.
 - **figsize** (`tuple`) — Figure size as (width, height) in inches.
 
 **Returns**
 
-- matplotlib.axes.Axes: The Mollweide map axis.
+- matplotlib.axes.Axes: The map axis.
 
 ---
 
@@ -238,10 +311,37 @@ been recalculated from MagIC site data).
 
 ---
 
+## `plot_site_map`
+
+```python
+plot_site_map(sites, zoom_start=4, tiles='OpenStreetMap', color='firebrick', radius=5)
+```
+
+Builds an interactive folium map of paleomagnetic site locations.
+
+Longitudes in MagIC sites tables are stored in 0–360° convention; this
+function shifts them to the −180/180° convention expected by folium.
+Duplicate site rows (e.g., geographic and tilt-corrected entries for
+the same site) are collapsed by site name.
+
+**Parameters**
+
+- **sites** (`pd.DataFrame`) — Site data with columns ``site``, ``lat``, and ``lon`` (longitude in 0–360°).
+- **zoom_start** (`int`) — Initial zoom level for the folium map.
+- **tiles** (`str`) — Folium tile layer name (e.g., 'OpenStreetMap', 'CartoDB positron').
+- **color** (`str`) — Outline color of the site markers.
+- **radius** (`float`) — Marker radius in pixels.
+
+**Returns**
+
+- folium.Map: Interactive map with a CircleMarker per site, labeled with the site name on hover and a popup showing coordinates.
+
+---
+
 ## `plot_vgps_and_pole`
 
 ```python
-plot_vgps_and_pole(sites_tc, pole_mean, central_longitude=150, central_latitude=0, figsize=(8, 8), show_vgp_uncertainty=False)
+plot_vgps_and_pole(vgp_block, pole_mean, central_longitude=150, central_latitude=0, figsize=(8, 8))
 ```
 
 Plots individual site VGPs and the mean pole on an orthographic map.
@@ -251,12 +351,11 @@ with its A95 confidence circle.
 
 **Parameters**
 
-- **sites_tc** (`pd.DataFrame`) — Tilt-corrected site data with columns vgp_lat, vgp_lon, vgp_dp, and site.
+- **vgp_block** (`list`) — List of VGPs as [lon, lat] pairs.
 - **pole_mean** (`dict`) — Mean pole dictionary from ``ipmag.fisher_mean`` with keys dec, inc, n, alpha95.
 - **central_longitude** (`float`) — Center longitude for the orthographic projection.
 - **central_latitude** (`float`) — Center latitude for the orthographic projection.
 - **figsize** (`tuple`) — Figure size as (width, height) in inches.
-- **show_vgp_uncertainty** (`bool`) — If True, plot dp uncertainty circles on individual VGPs.
 
 **Returns**
 
