@@ -9,6 +9,7 @@ the context of the Laurentia APWP.
 import pmagpy.ipmag as ipmag
 import pmagpy.pmag as pmag
 import cartopy.crs as ccrs
+import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import warnings
@@ -320,6 +321,48 @@ def R2_test(pole_name,pole_df):
         print('K = ' + str(round(KD)) + ' (10 ≥ K; low K, too dispersed);')
         
     Deenen_test(B,A95)
+
+def plot_Deenen_test(mean_pole, figsize=(7, 4), ax=None):
+    """Plots the Deenen et al. (2011) A95 envelope with the observed pole.
+
+    Shades the acceptable A95 range as a function of N between A95_min and
+    A95_max curves and overlays the observed pole. The N axis extends to 80
+    by default but expands automatically if ``mean_pole['n']`` exceeds 80.
+
+    Args:
+        mean_pole (dict): Mean pole dictionary (e.g. from
+            ``ipmag.fisher_mean``) with keys ``n`` and ``alpha95``.
+        figsize (tuple): Figure size when a new figure is created.
+        ax (matplotlib.axes.Axes or None): Axis to plot on. If None, a new
+            figure and axis are created.
+
+    Returns:
+        matplotlib.axes.Axes: The axis containing the plot.
+    """
+    n_obs = mean_pole['n']
+    n_max = max(80, int(np.ceil(n_obs)) + 5)
+    N_range = np.arange(5, n_max + 1)
+    A95_min_curve = Deenen_A_95min(N_range)
+    A95_max_curve = Deenen_A_95max(N_range)
+
+    if ax is None:
+        _, ax = plt.subplots(figsize=figsize)
+
+    ax.fill_between(N_range, A95_min_curve, A95_max_curve, alpha=0.2,
+                    color='green', label='Acceptable range')
+    ax.plot(N_range, A95_min_curve, 'g--', linewidth=1, label=r'$A_{95,min}$')
+    ax.plot(N_range, A95_max_curve, 'g--', linewidth=1, label=r'$A_{95,max}$')
+    ax.plot(n_obs, mean_pole['alpha95'], 'r*', markersize=15, zorder=5,
+            label='Our pole')
+    ax.set_xlabel('Number of sites (N)', fontsize=12)
+    ax.set_ylabel(r'$A_{95}$ (°)', fontsize=12)
+    ax.set_title('Deenen et al. (2011) test', fontsize=13)
+    ax.legend(fontsize=10)
+    ax.set_xlim(5, n_max)
+    ax.set_ylim(0, 25)
+    ax.grid(alpha=0.3)
+    plt.tight_layout()
+    return ax
 
 def load_magic_sites(sites_path):
     """Loads a MagIC sites.txt file and splits by tilt correction.
