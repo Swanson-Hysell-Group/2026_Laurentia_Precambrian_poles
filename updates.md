@@ -156,3 +156,4 @@
 
 - Cardenas basalts (new geochronology from Mohr et al., 2024; new paleomagnetism from Zhang et al. 2024); remove Cardenas basalts and intrusions pole because different ages (and many of the Weil et al. 2003 intrusions have unknown ages)
 - SWLLIP Arizona sills pole (normal Arizona + two Grand Canyon sills); downgrade to B because we know that there are different ages of volcanic activity in the region and while the bulk of large sills are with a ca. 1098 Ma pulse it is difficult to consider all sites as part of that pulse.
+- Michikamau anorthosite pole; update the age to ca. 1469 ± 1 Ma based on U–Pb baddeleyite from Kerr & McNicoll (2010, *Current Research, Geological Survey of Newfoundland and Labrador*, Report 10-1, sample KC-Z-08-01). The Nordic compilation currently uses the older K–Ar–era age range (1400–1460 Ma) carried over from Emslie 1976 and Murthy 1968.
