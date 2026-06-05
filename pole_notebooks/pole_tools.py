@@ -13,6 +13,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
 import warnings
+import os
 
 Torsvik2012_poles = pd.read_excel('../data/Torsvik2012.xlsx')
 Torsvik2012_Laurentia = Torsvik2012_poles[4:187]
@@ -701,3 +702,27 @@ def make_nordic_summary(terrane,
             raise ValueError(f"Optional parameter '{param_name}' is required but was not provided.")
         nordic_dict[param_name] = param_value
     return nordic_dict
+
+
+def save_nordic_summary(summary, filename, output_dir='../data/nordic_summaries'):
+    """Save a Nordic summary dictionary to a CSV file.
+
+    The summary is written as a single-row CSV with the dictionary keys as
+    column headers, into ``output_dir`` (created if it does not yet exist).
+
+    Args:
+        summary (dict): Nordic summary dictionary from make_nordic_summary.
+        filename (str): Output CSV filename, typically the notebook name
+            (e.g. '780_Gunbarrel' or '780_Gunbarrel.csv').
+        output_dir (str): Directory in which to write the CSV. Defaults to
+            the data/nordic_summaries folder relative to a pole notebook.
+
+    Returns:
+        str: The full path to the written CSV file.
+    """
+    os.makedirs(output_dir, exist_ok=True)
+    if not filename.endswith('.csv'):
+        filename += '.csv'
+    output_path = os.path.join(output_dir, filename)
+    pd.DataFrame([summary]).to_csv(output_path, index=False)
+    return output_path

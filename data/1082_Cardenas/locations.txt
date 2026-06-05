@@ -1,0 +1,4 @@
+tab 	locations
+age	age_high	age_low	age_unit	citations	dir_alpha95	dir_dec	dir_inc	dir_k	dir_n_samples	dir_r	dir_tilt_correction	geologic_classes	lat_n	lat_s	lithologies	location	location_type	lon_e	lon_w	pole_alpha95	pole_lat	pole_lon
+1098.1	1098.5	1097.7	Ma	This study	9.5	302.8	58.0	34.8	8	7.8	100	Intrusive:Igneous	36.0	36.0	Diabase	Death Valley	Region	243.1	243.1	0.0	0.0	0.0
+1082.18	1083.43	1080.93	Ma	This study	7.9	268.5	46.4	20.2	18	17.2	100	Extrusive:Igneous:Sedimentary	36.34833	36.02472	Basalt:Sandstone	Grand Canyon	Region	248.17308	247.5475	7.4	15.9	183.9

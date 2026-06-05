@@ -1,0 +1,3 @@
+tab 	locations
+age	age_high	age_low	age_unit	citations	description	dir_tilt_correction	geologic_classes	lat_n	lat_s	lithologies	location	location_type	lon_e	lon_w	method_codes	pole_alpha95	pole_k	pole_lat	pole_lon	pole_n_sites	result_name	result_quality	result_type	sites
+1088	1099	1077	Ma	10.1139/e93-122	Mean pole from Zhang et al., 2024 combining data from Harlan 1993 and Donadini et al., 2011	0	Igneous	33.7	33.7	Diabase	Gila County	Region	249.5	249.5	DE-BFL:DE-FM:LP-DIR-T:DE-VGP	8.9	14.37	30.6	177.4	2	Central Arizona diabases -N	g	a	GD01:GD02:GD03:GD04:GD05:GD06:GD07:GD08:GD09:GD10:GD11:GD12:GD13:GD17:GD18:GD20:GD22:GD23:GD24:GD25:GD26:GD29:GD30:GD15:GD27
