@@ -837,8 +837,53 @@ def plot_site_map(sites, zoom_start=4, tiles='OpenStreetMap',
     return m
 
 
-def make_nordic_summary(terrane, 
-                        rockname, 
+# Exact column names and order of the Nordic Workshop compilation spreadsheet
+# (matches the published per-craton CSVs, e.g. the Congo+Kalahari compilation).
+# Note the intentional duplicate labels (a second f / INCf / PLATf / ... block
+# and a repeated ROCKNAME) — these are preserved so a summary CSV can be pasted
+# directly into the Nordic format.
+NORDIC_COLUMNS = [
+    'Terrane', 'ROCKNAME', 'RESULT#', 'COMPONENT', 'TESTS', 'TILT',
+    'SLAT', 'SLONG', 'B', 'N', 'DEC', 'INC', 'abs(I)', 'KD', 'ED95',
+    'PLAT', 'PLONG', 'DP', 'DM', 'A95',
+    'f', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
+    'f', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
+    '%REV', 'DEMAGCODE', '40', '24', '10', '16',
+    'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q(7)',
+    'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R', 'Grade',
+    'nominal age', 'lomagage', 'himagage', 'REF/method', 'ROCKNAME',
+    'POLE AUTHORS', 'YEAR', 'JOURNAL', 'VOLUME', 'VPAGES', 'TITLE', 'Comment',
+]
+
+
+def _round_or_blank(x, ndigits=1):
+    """Round a numeric value to ``ndigits`` decimals; blank for missing values."""
+    if x is None or x == '':
+        return ''
+    try:
+        xf = float(x)
+    except (TypeError, ValueError):
+        return x
+    if np.isnan(xf):
+        return ''
+    return round(xf, ndigits)
+
+
+def _int_or_blank(x):
+    """Coerce to an integer; blank for missing values."""
+    if x is None or x == '':
+        return ''
+    try:
+        xf = float(x)
+    except (TypeError, ValueError):
+        return x
+    if np.isnan(xf):
+        return ''
+    return int(round(xf))
+
+
+def make_nordic_summary(terrane,
+                        rockname,
                         sites,
                         dir_mean,
                         pole_mean,
@@ -846,6 +891,10 @@ def make_nordic_summary(terrane,
                         study_lat,
                         component_comment='',
                         tests='',
+                        gpmdb_number='',
+                        magic_id='',
+                        percent_reversed='',
+                        demag_code='',
                         f_factor=1,
                         pole_mean_unflattened=None,
                         R1=None,
@@ -866,90 +915,89 @@ def make_nordic_summary(terrane,
                         VOLUME=None,
                         VPAGES='',
                         TITLE=None,
-                        COMMENT=''
-                        ):
-    nordic_dict = {}
-    nordic_dict['terrane'] = terrane
-    nordic_dict['rockname'] = rockname
-    nordic_dict['component_comment'] = component_comment
-    nordic_dict['tests'] = tests
+                        COMMENT=''):
+    """Build a one-row Nordic-compilation summary for a pole.
+
+    Returns a single-row ``pandas.DataFrame`` whose columns are exactly
+    ``NORDIC_COLUMNS`` in order, so it can be saved and pasted directly into the
+    Nordic Workshop compilation spreadsheet. Pole position is written as
+    PLAT = pole latitude (``pole_mean['inc']``) and PLONG = pole longitude
+    (``pole_mean['dec']``). Numeric values are rounded to the tenth, except the
+    locality coordinates (SLAT/SLONG) which are kept to the hundredth. Columns
+    this project does not populate (the old Van der Voo Q-criteria, the second
+    flattening block, DP/DM) are left blank.
+
+    Args mirror the compilation fields. RESULT# is built from ``gpmdb_number``
+    (the Global Paleomagnetic Database number) and ``magic_id`` (the MagIC
+    contribution ID) as ``"GPMDB:<n> MagIC:<id>"``, including whichever are
+    provided. ``percent_reversed`` is %REV and ``demag_code`` is DEMAGCODE.
+    R1–R7, Grade, ages, and reference fields are required.
+    """
     if sites['dir_tilt_correction'].nunique() != 1:
         warnings.warn(
             "Multiple tilt correction values found in sites data; "
             "cannot determine single tilt correction for summary, choosing first value."
-        )    
-    nordic_dict['tilt'] = sites['dir_tilt_correction'].iloc[0]
-    nordic_dict['study_lat'] = study_lat
-    nordic_dict['study_lon'] = study_lon
-    nordic_dict['site_n'] = pole_mean['n']
-    nordic_dict['sample_n'] = sites['dir_n_samples'].sum()
-    nordic_dict['dir_dec_mean'] = dir_mean['dec']
-    nordic_dict['dir_inc_mean'] = dir_mean['inc']
-    nordic_dict['dir_inc_mean_abs'] = np.abs(dir_mean['inc'])
-    nordic_dict['dir_k'] = dir_mean['k']
-    nordic_dict['dir_alpha_95'] = dir_mean['alpha95']
-    nordic_dict['pole_lat'] = pole_mean['dec']
-    nordic_dict['pole_lon'] = pole_mean['inc']
-    nordic_dict['pole_dp'] = ''
-    nordic_dict['pole_dm'] = ''
-    nordic_dict['pole_A95'] = pole_mean['alpha95']
-    nordic_dict['f_factor'] = f_factor
-    nordic_dict['inc_f'] = ipmag.unsquish([dir_mean['inc']], f_factor)[0]
+        )
+    tilt = sites['dir_tilt_correction'].iloc[0]
+    site_n = pole_mean['n']
+    sample_n = sites['dir_n_samples'].sum()
+    inc_f = ipmag.unsquish([dir_mean['inc']], f_factor)[0]
+    pole_unflat = pole_mean_unflattened if pole_mean_unflattened is not None else pole_mean
 
-    if pole_mean_unflattened is not None:
-        nordic_dict['pole_lat_unflattened'] = pole_mean_unflattened['dec']
-        nordic_dict['pole_lon_unflattened'] = pole_mean_unflattened['inc']
-        nordic_dict['pole_dp_unflattened'] = ''
-        nordic_dict['pole_dm_unflattened'] = ''
-        nordic_dict['pole_A95_unflattened'] = pole_mean_unflattened['alpha95']
-    else:
-        nordic_dict['pole_lat_unflattened'] = pole_mean['dec']
-        nordic_dict['pole_lon_unflattened'] = pole_mean['inc']
-        nordic_dict['pole_dp_unflattened'] = ''
-        nordic_dict['pole_dm_unflattened'] = ''
-        nordic_dict['pole_A95_unflattened'] = pole_mean['alpha95']
-    
-    # check any other optional parameter if None then throw error
-    optional_params = {
-        'R1': R1,
-        'R2': R2,
-        'R3': R3,
-        'R4': R4,
-        'R5': R5,
-        'R6': R6,
-        'R7': R7,
-        'Grade': Grade,
-        'nominal_age': nominal_age,
-        'lomagage': lomagage,
-        'himagage': himagage,
-        'REF_method': REF_method,
-        'POLE_AUTHORS': POLE_AUTHORS,
-        'YEAR': YEAR,
-        'JOURNAL': JOURNAL,
-        'VOLUME': VOLUME,
-        'VPAGES': VPAGES,
-        'TITLE': TITLE,
-        'COMMENT': COMMENT
-    }
-    for param_name, param_value in optional_params.items():
-        if param_value is None:
-            raise ValueError(f"Optional parameter '{param_name}' is required but was not provided.")
-        nordic_dict[param_name] = param_value
-    return nordic_dict
+    required = {'R1': R1, 'R2': R2, 'R3': R3, 'R4': R4, 'R5': R5, 'R6': R6,
+                'R7': R7, 'Grade': Grade, 'nominal_age': nominal_age,
+                'lomagage': lomagage, 'himagage': himagage,
+                'REF_method': REF_method, 'POLE_AUTHORS': POLE_AUTHORS,
+                'YEAR': YEAR, 'JOURNAL': JOURNAL, 'VOLUME': VOLUME,
+                'TITLE': TITLE}
+    for name, val in required.items():
+        if val is None:
+            raise ValueError(f"Required parameter '{name}' was not provided.")
+
+    R_total = sum(int(r) for r in (R1, R2, R3, R4, R5, R6, R7))
+
+    result_parts = []
+    if gpmdb_number not in ('', None):
+        result_parts.append(f'GPMDB:{gpmdb_number}')
+    if magic_id not in ('', None):
+        result_parts.append(f'MagIC:{magic_id}')
+    result_hash = ' '.join(result_parts)
+
+    r = _round_or_blank
+    values = [
+        terrane, rockname, result_hash, component_comment, tests,
+        _int_or_blank(tilt), r(study_lat, 2), r(study_lon, 2),
+        _int_or_blank(site_n), _int_or_blank(sample_n),
+        r(dir_mean['dec']), r(dir_mean['inc']), r(abs(dir_mean['inc'])),
+        r(dir_mean['k']), r(dir_mean['alpha95']),
+        r(pole_mean['inc']), r(pole_mean['dec']), '', '', r(pole_mean['alpha95']),
+        r(f_factor), r(inc_f), r(pole_unflat['inc']), r(pole_unflat['dec']),
+        '', '', r(pole_unflat['alpha95']),
+        '', '', '', '', '', '', '',                       # second f block (unused)
+        _int_or_blank(percent_reversed), demag_code,
+        '', '', '', '',                                   # 40, 24, 10, 16 (unused)
+        '', '', '', '', '', '', '',                       # Q2..Q(7) (unused)
+        _int_or_blank(R1), _int_or_blank(R2), _int_or_blank(R3),
+        _int_or_blank(R4), _int_or_blank(R5), _int_or_blank(R6),
+        _int_or_blank(R7), R_total, Grade,
+        r(nominal_age), r(lomagage), r(himagage), REF_method, rockname,
+        POLE_AUTHORS, _int_or_blank(YEAR), JOURNAL, VOLUME, VPAGES, TITLE, COMMENT,
+    ]
+    return pd.DataFrame([values], columns=NORDIC_COLUMNS)
 
 
 def save_nordic_summary(summary, filename, output_dir='../data/nordic_summaries'):
-    """Save a Nordic summary dictionary to a CSV file.
+    """Save a Nordic summary (single-row DataFrame) to a CSV file.
 
-    The summary is written as a single-row CSV with the dictionary keys as
-    column headers, into ``output_dir`` (created if it does not yet exist).
+    Writes ``summary`` as a one-row CSV with the exact ``NORDIC_COLUMNS`` header
+    (including the intentional duplicate labels) into ``output_dir`` (created if
+    needed).
 
     Args:
-        summary (dict): Nordic summary dictionary from make_nordic_summary.
+        summary (pd.DataFrame): One-row summary from ``make_nordic_summary``.
         filename (str): Output CSV filename, typically the notebook name
             (e.g. '780_Gunbarrel' or '780_Gunbarrel.csv').
-        output_dir (str): Directory in which to write the CSV. Defaults to
-            the data/nordic_summaries folder relative to a pole notebook.
+        output_dir (str): Directory in which to write the CSV.
 
     Returns:
         str: The full path to the written CSV file.
@@ -958,5 +1006,7 @@ def save_nordic_summary(summary, filename, output_dir='../data/nordic_summaries'
     if not filename.endswith('.csv'):
         filename += '.csv'
     output_path = os.path.join(output_dir, filename)
-    pd.DataFrame([summary]).to_csv(output_path, index=False)
+    if not isinstance(summary, pd.DataFrame):
+        summary = pd.DataFrame([summary])
+    summary.to_csv(output_path, index=False)
     return output_path
