@@ -8,6 +8,7 @@ the context of the Laurentia APWP.
 
 import pmagpy.ipmag as ipmag
 import pmagpy.pmag as pmag
+import pmagpy.svei as svei
 import cartopy.crs as ccrs
 import matplotlib.pyplot as plt
 import pandas as pd
@@ -343,6 +344,98 @@ def R2_test(pole_name,pole_df):
         
     Deenen_test(B,A95)
 
+def assess_R2(sites_tc, pole_mean, verbose=True):
+    """Evaluate the Meert et al. (2020) R2 criteria from recreated site data.
+
+    Reports the three R2 sub-criteria of Meert et al. (2020) (see
+    ``resources/Meert2020_R_criteria.md``) for the site-level data:
+
+    - **(a) Demagnetization** (advisory): at least two stepwise methods
+      (AF and thermal), inferred from the MagIC ``method_codes`` (``LP-DIR-AF``
+      and ``LP-DIR-T``).
+    - **(b) Component analysis** (advisory): PCA best-fit lines (``DE-BFL``) or
+      great circles (``DE-BFP``), inferred from ``method_codes``.
+    - **(c) Adequate PSV sampling:** the Deenen et al. (2011) A95 envelope on
+      the VGP distribution (``12*N^-0.40 <= A95 <= 82*N^-0.63``) together with
+      the statistical thresholds N >= 25 samples, 10 <= K <= 70, B >= 8 sites
+      with at least 3 samples per site.
+
+    Sub-criteria (a) and (b) are reported for information only and are *not*
+    used to set the R2 score: MagIC ``method_codes`` are inconsistently applied
+    across studies, and the two-demag-method requirement is not universally
+    expected (for example AF is inappropriate for hematite-bearing rocks).
+    These sub-criteria should be evaluated against the source publication. The
+    returned R2 score reflects the quantitative PSV-sampling sub-criterion (c),
+    which is the substantive, reproducible part of R2.
+
+    Args:
+        sites_tc (pd.DataFrame): Tilt-corrected site data with at least
+            ``dir_n_samples`` and (optionally) ``method_codes``.
+        pole_mean (dict): Fisher VGP mean from ``compute_mean_pole`` with keys
+            ``n`` (number of site VGPs = B), ``k`` (K), and ``alpha95`` (the
+            VGP-distribution A95).
+        verbose (bool): If True, print a per-item report.
+
+    Returns:
+        dict: ``{'a': bool|None, 'b': bool|None, 'c': bool, 'R2': int,
+        'B': int, 'N_samples': int, 'K': float, 'A95': float,
+        'min_samples_per_site': int, 'deenen_pass': bool}``. ``R2`` equals the
+        score of sub-criterion (c); ``a``/``b`` are advisory (None if
+        ``method_codes`` is absent).
+    """
+    B = int(pole_mean['n'])
+    K = pole_mean['k']
+    A95 = pole_mean['alpha95']
+    N_samples = int(sites_tc['dir_n_samples'].dropna().sum())
+    min_per_site = int(sites_tc['dir_n_samples'].dropna().min())
+
+    deenen_min = Deenen_A_95min(B)
+    deenen_max = Deenen_A_95max(B)
+    deenen_pass = deenen_min <= A95 <= deenen_max
+
+    c_n = N_samples >= 25
+    c_k = 10 <= K <= 70
+    c_b = B >= 8
+    c_minsamp = min_per_site >= 3
+    c = bool(deenen_pass and c_n and c_k and c_b and c_minsamp)
+
+    a = b = None
+    if 'method_codes' in sites_tc.columns:
+        codes = ':'.join(sites_tc['method_codes'].dropna().astype(str)).upper()
+        a = ('LP-DIR-AF' in codes) and ('LP-DIR-T' in codes)
+        b = ('DE-BFL' in codes) or ('DE-BFP' in codes)
+
+    # R2 score is driven by the quantitative PSV-sampling sub-criterion (c);
+    # (a) and (b) are advisory only (see docstring).
+    R2 = int(c)
+
+    if verbose:
+        def mark(x):
+            return '?' if x is None else ('yes' if x else 'no')
+        print('R2 assessment (Meert et al., 2020):')
+        print('  (a) two demag methods (AF + thermal)  [advisory, from '
+              f'method_codes]: {mark(a)}')
+        print('  (b) PCA / great-circle component analysis  [advisory, from '
+              f'method_codes]: {mark(b)}')
+        print('      note: method codes are inconsistently applied; confirm '
+              '(a)/(b) against the source publication.')
+        print('  (c) adequate PSV sampling [scored]:')
+        print(f'        N = {N_samples} samples (>= 25): '
+              f'{"PASS" if c_n else "FAIL"}')
+        print(f'        K = {K:.1f} (10-70): {"PASS" if c_k else "FAIL"}')
+        print(f'        B = {B} sites (>= 8): {"PASS" if c_b else "FAIL"}')
+        print(f'        min {min_per_site} samples/site (>= 3): '
+              f'{"PASS" if c_minsamp else "FAIL"}')
+        print(f'        A95 = {A95:.1f} in Deenen envelope '
+              f'[{deenen_min:.1f}, {deenen_max:.1f}]: '
+              f'{"PASS" if deenen_pass else "FAIL"}')
+        print(f'  => R2 (from sub-criterion c) = {R2}')
+
+    return {'a': a, 'b': b, 'c': c, 'R2': R2, 'B': B, 'N_samples': N_samples,
+            'K': K, 'A95': A95, 'min_samples_per_site': min_per_site,
+            'deenen_pass': deenen_pass}
+
+
 def plot_Deenen_test(mean_pole, figsize=(7, 4), ax=None):
     """Plots the Deenen et al. (2011) A95 envelope with the observed pole.
 
@@ -385,21 +478,162 @@ def plot_Deenen_test(mean_pole, figsize=(7, 4), ax=None):
     plt.tight_layout()
     return ax
 
-def load_magic_sites(sites_path):
+def fishqq_vgps(sites_tc, unify_polarity=True):
+    """Fisher Q-Q test on site VGPs to assess the shape of the VGP distribution.
+
+    Uses ``ipmag.fishqq`` to test whether the set of site virtual geomagnetic
+    poles (VGPs) is consistent with a Fisher distribution. The test compares
+    the longitude (declination) component against a uniform distribution and
+    the latitude (inclination) component against an exponential distribution
+    (Fisher et al., 1987), returning the Mu (uniform) and Me (exponential)
+    statistics with their critical values and a pass/fail message. A VGP
+    distribution that adequately samples paleosecular variation is commonly
+    elongate and may be reported as non-Fisherian, so this test is interpreted
+    alongside the SVEI test (``svei_test_vgps``) rather than as a strict
+    reliability cutoff.
+
+    Sites with NaN in either ``vgp_lon`` or ``vgp_lat`` are dropped. The VGPs
+    are brought to a common polarity with ``pmag.flip(..., combine=True)`` when
+    ``unify_polarity`` is True so that a dual-polarity unit is treated as one
+    mode.
+
+    Args:
+        sites_tc (pd.DataFrame): Tilt-corrected site data with columns
+            ``vgp_lon`` and ``vgp_lat``.
+        unify_polarity (bool): If True, bring VGPs to a common polarity before
+            the test.
+
+    Returns:
+        dict or tuple[dict, dict]: The dictionary (or, for a two-mode dataset,
+        pair of dictionaries) returned by ``ipmag.fishqq``, with keys including
+        ``N``, ``Mu``, ``Mu_critical``, ``Me``, ``Me_critical``, and
+        ``Test_result``.
+    """
+    vgp_sites = sites_tc.dropna(subset=['vgp_lon', 'vgp_lat'])
+    vgp_block = ipmag.make_di_block(vgp_sites['vgp_lon'].tolist(),
+                                    vgp_sites['vgp_lat'].tolist())
+    if unify_polarity:
+        vgp_block = pmag.flip(vgp_block, combine=True)
+    return ipmag.fishqq(di_block=vgp_block, data_type='poles')
+
+
+def svei_test_vgps(sites_tc, study_lon, study_lat, model='TK03_GAD',
+                   kappa=-1, num_sims=1000, plot=True):
+    """SVEI test of the VGP scatter shape against a statistical PSV field model.
+
+    Each site VGP is converted to a direction at a common locality
+    (``study_lon``, ``study_lat``) and the resulting directional distribution
+    is evaluated with the SVEI test implemented in ``pmagpy.svei``. The test
+    compares the elongation (E = tau2/tau3) and the azimuth of the minor
+    eigenvector (V2dec) of the distribution against Monte Carlo realizations of
+    a giant-Gaussian-process paleosecular-variation field model (default
+    TK03.GAD; Tauxe & Kent, 2004) at the paleolatitude implied by the data. It
+    reports whether the observed scatter shape is consistent with
+    adequately-sampled PSV; for an undeformed unit at a given paleolatitude the
+    field model predicts a N-S elongation whose magnitude depends on latitude.
+
+    Args:
+        sites_tc (pd.DataFrame): Tilt-corrected site data with columns
+            ``vgp_lon`` and ``vgp_lat``.
+        study_lon (float): Longitude of the common locality used to convert
+            VGPs to directions, in degrees.
+        study_lat (float): Latitude of the common locality, in degrees.
+        model (str): Name of the GGP field model passed to ``svei`` (e.g.
+            ``'TK03_GAD'``, ``'BCE19_GAD'``).
+        kappa (float): Within-site Fisher precision used in the simulations;
+            -1 specifies infinite kappa (no within-site uncertainty).
+        num_sims (int): Number of Monte Carlo simulations for the E and V2dec
+            confidence bounds.
+        plot (bool): Whether ``svei`` makes its diagnostic plots.
+
+    Returns:
+        dict: The ``svei.svei_test`` result dictionary, with keys including
+        ``lat``, ``E``, ``Esim_min``, ``Esim_max``, ``E_result``, ``V2dec``,
+        ``V2sim_min``, ``V2sim_max``, ``V2_result``, ``A2I``, ``A2D``, and
+        ``H`` (0 if the field-model null cannot be rejected, 1 if rejected).
+    """
+    dir_block, _ = compute_mean_direction_from_vgps(
+        sites_tc, study_lon, study_lat, unify_polarity=False)
+    return svei.svei_test(np.array(dir_block), model_name=model, kappa=kappa,
+                          num_sims=num_sims, plot=plot)
+
+
+def fetch_magic_contribution(contribution_id, dir_path, verbose=True):
+    """Fetch a published MagIC contribution by ID, with a local fallback.
+
+    Tries to download contribution ``contribution_id`` from earthref.org/MagIC
+    with ``ipmag.download_magic_from_id`` and unpack it with
+    ``ipmag.download_magic`` into per-table files (``sites.txt``,
+    ``locations.txt``, ...) in ``dir_path``. The combined contribution file is
+    saved as ``magic_contribution_<id>.txt`` and thereby cached locally, so
+    after the first successful run the data remain available offline: if a later
+    run cannot reach MagIC, the cached combined file is unpacked instead, and if
+    even that is absent any pre-existing local table files are left in place.
+
+    Args:
+        contribution_id (str or int): MagIC contribution ID (e.g. ``20696``).
+        dir_path (str): Directory to download into and read the cache from.
+        verbose (bool): If True, print a status message.
+
+    Returns:
+        str: ``'magic'`` if freshly downloaded from MagIC, ``'cache'`` if the
+        locally cached contribution file was unpacked, or ``'local'`` if it fell
+        back to pre-existing local table files.
+    """
+    combined = f'magic_contribution_{contribution_id}.txt'
+    combined_path = os.path.join(dir_path, combined)
+
+    def _unpack():
+        ipmag.download_magic(infile=combined, dir_path=dir_path,
+                             input_dir_path=dir_path, print_progress=False)
+
+    try:
+        ok, msg = ipmag.download_magic_from_id(contribution_id, directory=dir_path)
+        if not ok:
+            raise RuntimeError(msg)
+        _unpack()
+        if verbose:
+            print(f'-I- Using MagIC contribution {contribution_id} '
+                  f'downloaded from earthref.org')
+        return 'magic'
+    except Exception as ex:
+        if os.path.exists(combined_path):
+            if verbose:
+                print(f'-W- Could not fetch from MagIC ({ex}); '
+                      f'unpacking local cache {combined}')
+            _unpack()
+            return 'cache'
+        if verbose:
+            print(f'-W- Could not fetch from MagIC ({ex}) and no local cache; '
+                  f'using existing local table files in {dir_path}')
+        return 'local'
+
+
+def load_magic_sites(sites_path, drop_bad=True):
     """Loads a MagIC sites.txt file and splits by tilt correction.
 
     Reads a tab-delimited MagIC sites table (skipping the header row) and
     returns separate DataFrames for geographic (dir_tilt_correction == 0)
     and tilt-corrected (dir_tilt_correction == 100) coordinates.
 
+    Sites flagged ``result_quality == 'b'`` (e.g. a duplicate re-measurement of
+    a flow that is retained in the contribution for completeness but excluded
+    from the pole) are dropped by default so that pole, direction, and count
+    calculations use only the accepted sites. Pass ``drop_bad=False`` to keep
+    them (e.g. to inspect the full contribution).
+
     Args:
         sites_path (str): Path to a MagIC-format sites.txt file.
+        drop_bad (bool): If True (default), exclude rows with
+            ``result_quality == 'b'``.
 
     Returns:
         tuple[pd.DataFrame, pd.DataFrame]: (sites_geo, sites_tc) DataFrames
         for geographic and tilt-corrected coordinates respectively.
     """
     sites = pd.read_csv(sites_path, sep='\t', skiprows=1)
+    if drop_bad and 'result_quality' in sites.columns:
+        sites = sites[sites['result_quality'] != 'b'].reset_index(drop=True)
     sites_geo = sites[sites['dir_tilt_correction'] == 0].reset_index(drop=True)
     sites_tc = sites[sites['dir_tilt_correction'] == 100].reset_index(drop=True)
     return sites_geo, sites_tc
