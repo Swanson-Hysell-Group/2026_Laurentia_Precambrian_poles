@@ -33,6 +33,7 @@ project:
       children:
         - file: pole_notebooks/780_Gunbarrel.ipynb
         - file: pole_notebooks/887_Adirondack.ipynb
+        - file: pole_notebooks/1779_East_Central_Minnesota_Batholith.ipynb
     - title: Resources
       children:
         - file: resources/magic_data_entry_guide.md
