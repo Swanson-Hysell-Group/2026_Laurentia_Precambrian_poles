@@ -1,0 +1,11 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+8	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	279.4	-0.1	94	7	6					Site-mean directions from Piper and Stearn (1977).
+16	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	283.7	17.3	42	10.4	6					Site-mean directions from Piper and Stearn (1977).
+19	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	284.8	1.7	147	5.6	6					Site-mean directions from Piper and Stearn (1977).
+23	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	286.8	-23.1	203	4.7	6					Site-mean directions from Piper and Stearn (1977).
+25	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	288.8	-24.5	107	2.3	5					Site-mean directions from Piper and Stearn (1977).
+26	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	287	-21.4	895	2.2	6					Site-mean directions from Piper and Stearn (1977).
+29	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	288.9	-7.2	40	10.7	6					Site-mean directions from Piper and Stearn (1977).
+31	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	286.7	-22.7	103	6.7	6					Site-mean directions from Piper and Stearn (1977).
+41	West Gardar Lamprophyre Dykes	i	g	DE-FM	Piper1977Lamprophyre	Igneous	Volcanic Dike	Lamprophyre							Ma	0	278.3	3.2	90	9.4	4					Site-mean directions from Piper and Stearn (1977).

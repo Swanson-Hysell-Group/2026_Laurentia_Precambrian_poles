@@ -1,0 +1,26 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+4	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	336	70	404	3.13						Site-mean directions from Pullaiah et al. (1975).
+5	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	334	71	434	3.13						Site-mean directions from Pullaiah et al. (1975).
+6	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	347	69	156	4.43						Site-mean directions from Pullaiah et al. (1975).
+10	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	273	59	8	15.16						Site-mean directions from Pullaiah et al. (1975).
+11	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	124	65	5	21.98						Site-mean directions from Pullaiah et al. (1975).
+12	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	320	69	66	7.67						Site-mean directions from Pullaiah et al. (1975).
+13	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	323	73	440	3.13						Site-mean directions from Pullaiah et al. (1975).
+14	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	205	-30	39	11.43						Site-mean directions from Pullaiah et al. (1975).
+15	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	331	71	15	16.27						Site-mean directions from Pullaiah et al. (1975).
+16	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	317	77	1074	3.13						Site-mean directions from Pullaiah et al. (1975).
+17	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	343	76	13	17.43						Site-mean directions from Pullaiah et al. (1975).
+18	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	304	80	120	5.42						Site-mean directions from Pullaiah et al. (1975).
+19N	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	341	78	176	4.43						Site-mean directions from Pullaiah et al. (1975).
+19S	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	197	-38	44	8.08						Site-mean directions from Pullaiah et al. (1975).
+20N	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	293	78	24	12.91						Site-mean directions from Pullaiah et al. (1975).
+20S	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	212	-23	34	10.84						Site-mean directions from Pullaiah et al. (1975).
+21	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	291	-64	48	8.85						Site-mean directions from Pullaiah et al. (1975).
+23	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	158	-60	197	5.72						Site-mean directions from Pullaiah et al. (1975).
+24	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	339	72	2142	3.13						Site-mean directions from Pullaiah et al. (1975).
+25	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	322	75	285	4.04						Site-mean directions from Pullaiah et al. (1975).
+26	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	151	-66		9.9						Site-mean directions from Pullaiah et al. (1975).
+27	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	332	66	214	4.43						Site-mean directions from Pullaiah et al. (1975).
+28R	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	141	-63	28	11.71						Site-mean directions from Pullaiah et al. (1975).
+28N	Otto Stock dike swarm	i	g	DE-FM	Pullaiah1975	Igneous	Volcanic Dike	Diabase			2676		2672	2680	Ma	0	331	64		9.9						Site-mean directions from Pullaiah et al. (1975).

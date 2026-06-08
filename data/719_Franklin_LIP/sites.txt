@@ -1,0 +1,80 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+1  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-3	161.000			Coronation+Bathurst sheets and dikes
+2  100 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						1	170.000			Coronation+Bathurst sheets and dikes
+3  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						13	166.000			Coronation+Bathurst sheets and dikes
+4  150 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						21	177.000			Coronation+Bathurst sheets and dikes
+6  250 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						10	167.000			Coronation+Bathurst sheets and dikes
+7  250 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						24	168.000			Coronation+Bathurst sheets and dikes
+8  250 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						10	165.000			Coronation+Bathurst sheets and dikes
+10  300 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-1	191.000			Baffin dikes
+13  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-1	155.000			Baffin dikes
+18  300 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-5	164.000			Baffin dikes
+19  500 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-4	162.000			Baffin dikes
+20  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						6	161.000			Baffin dikes
+21  400 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-1	165.000			Baffin dikes
+23  400 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						4	181.000			Baffin dikes
+25  300 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						29	162.000			Baffin dikes
+26  250 Oe (Boothia)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						15	157.000			Boothia and other dikes
+27  250 Oe (Boothia)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						13	157.000			Boothia and other dikes
+28  250 Oe (Ungava)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						19	171.000			Boothia and other dikes
+29  250 Oe (??Hardisty Lake, south of Great Bear??)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						13	153.000			Boothia and other dikes
+1  250 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						11.9374712	168.001			Legacy VGP compilation assembled for the Franklin grand mean.
+5  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						12.91437939	164.971			Legacy VGP compilation assembled for the Franklin grand mean.
+8  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						3.686444605	169.001			Legacy VGP compilation assembled for the Franklin grand mean.
+39  300 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						6.685445513	181.788			Legacy VGP compilation assembled for the Franklin grand mean.
+40  250 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-3.525494042	170.162			Legacy VGP compilation assembled for the Franklin grand mean.
+3  250 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						2.100377588	170.803			Legacy VGP compilation assembled for the Franklin grand mean.
+4  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						11.99280787	161.151			Legacy VGP compilation assembled for the Franklin grand mean.
+38  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						5.014793883	169.798			Legacy VGP compilation assembled for the Franklin grand mean.
+31 Melville Pen	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						7.638257967	160.525			Legacy VGP compilation assembled for the Franklin grand mean.
+33 Melville Pen	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						1.077573401	157.572			Legacy VGP compilation assembled for the Franklin grand mean.
+16D	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						1.6	165.500			Legacy VGP compilation assembled for the Franklin grand mean.
+17D	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-4	159.000			Legacy VGP compilation assembled for the Franklin grand mean.
+19D	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-2.8	166.100			Legacy VGP compilation assembled for the Franklin grand mean.
+6   mixed	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						14	164.000			Legacy VGP compilation assembled for the Franklin grand mean.
+10  R only	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-18	168.000			Legacy VGP compilation assembled for the Franklin grand mean.
+14  mixed	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-5	156.000			Legacy VGP compilation assembled for the Franklin grand mean.
+50  450 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						13.77444021	144.497			Legacy VGP compilation assembled for the Franklin grand mean.
+56  350 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						2.364666236	150.750			Legacy VGP compilation assembled for the Franklin grand mean.
+59  400 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						9.241727215	154.529			Legacy VGP compilation assembled for the Franklin grand mean.
+61  500 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						17.47020093	148.262			Legacy VGP compilation assembled for the Franklin grand mean.
+03/7922/7923/7924	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						8.663254733	159.116			Legacy VGP compilation assembled for the Franklin grand mean.
+46  200 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						7.656693463	161.081			Legacy VGP compilation assembled for the Franklin grand mean.
+48  500 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						7.501697995	144.126			Legacy VGP compilation assembled for the Franklin grand mean.
+67  300 Oe	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						5.047047669	153.117			Legacy VGP compilation assembled for the Franklin grand mean.
+7917/7920	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						11.28110334	148.675			Legacy VGP compilation assembled for the Franklin grand mean.
+19 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						2.960331569	150.148			Legacy VGP compilation assembled for the Franklin grand mean.
+18 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-1.080405345	162.508			Legacy VGP compilation assembled for the Franklin grand mean.
+17 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						1.783879126	163.443			Legacy VGP compilation assembled for the Franklin grand mean.
+16 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						7.833034399	163.338			Legacy VGP compilation assembled for the Franklin grand mean.
+14 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						0.016537438	160.762			Legacy VGP compilation assembled for the Franklin grand mean.
+20 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						11.47674486	148.715			Legacy VGP compilation assembled for the Franklin grand mean.
+21 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-12.18627263	159.877			Legacy VGP compilation assembled for the Franklin grand mean.
+22 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						7.013971285	164.114			Legacy VGP compilation assembled for the Franklin grand mean.
+9  anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						11.56345617	157.227			Legacy VGP compilation assembled for the Franklin grand mean.
+8  anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						12.53847316	159.673			Legacy VGP compilation assembled for the Franklin grand mean.
+29 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						23.02610084	156.086			Legacy VGP compilation assembled for the Franklin grand mean.
+36 anchor	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						13.32159365	161.149			Legacy VGP compilation assembled for the Franklin grand mean.
+BB	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						4.050476856	135.940			Legacy VGP compilation assembled for the Franklin grand mean.
+GR (Ellsem)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						22.83598288	152.874			Legacy VGP compilation assembled for the Franklin grand mean.
+BG:ca726	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						29.24105689	159.423			Legacy VGP compilation assembled for the Franklin grand mean.
+BP	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						8.488201224	145.232			Legacy VGP compilation assembled for the Franklin grand mean.
+BR	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						9.109341675	141.638			Legacy VGP compilation assembled for the Franklin grand mean.
+EG	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						25.10108079	146.609			Legacy VGP compilation assembled for the Franklin grand mean.
+LG (Ellesm)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						11.68121386	189.044			Legacy VGP compilation assembled for the Franklin grand mean.
+CG:721±2 (Ellesm)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						7.768154659	177.520			Legacy VGP compilation assembled for the Franklin grand mean.
+CM*	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						13.90924092	143.599			Legacy VGP compilation assembled for the Franklin grand mean.
+EA*	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						27.75501135	154.588			Legacy VGP compilation assembled for the Franklin grand mean.
+HM*	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						1.451748452	180.668			Legacy VGP compilation assembled for the Franklin grand mean.
+SG2*(-)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						26.0903733	143.634			Legacy VGP compilation assembled for the Franklin grand mean.
+KL	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						12.49067379	175.319			Legacy VGP compilation assembled for the Franklin grand mean.
+TB	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						24.5293652	166.005			Legacy VGP compilation assembled for the Franklin grand mean.
+NU2	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						17.09381923	169.182			Legacy VGP compilation assembled for the Franklin grand mean.
+PK	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-0.491445557	164.746			Legacy VGP compilation assembled for the Franklin grand mean.
+KC	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						16.9967611	168.976			Legacy VGP compilation assembled for the Franklin grand mean.
+PW	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						17.96806844	165.561			Legacy VGP compilation assembled for the Franklin grand mean.
+QA:721±4	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						24.49461505	163.538			Legacy VGP compilation assembled for the Franklin grand mean.
+CA(sill)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						15.32389177	160.547			Legacy VGP compilation assembled for the Franklin grand mean.
+GF(sill:712±2)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						19.25204188	164.720			Legacy VGP compilation assembled for the Franklin grand mean.
+NU1(-)	Franklin LIP	i	g	DE-FM	Denyszyn2009	Igneous	Volcanic Dike:Sill:Flow	Diabase:Basalt			719		718	720	Ma	100						-11.60393978	162.398			Legacy VGP compilation assembled for the Franklin grand mean.

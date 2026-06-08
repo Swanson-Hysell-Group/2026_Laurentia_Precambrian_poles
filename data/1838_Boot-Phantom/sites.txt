@@ -1,0 +1,25 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+1	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	130.7	57.4	148.5	4.6						Amv
+2	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	157.1	55.2	104.6	4.7						Kgd
+3	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	155.9	55.3	188.3	3.2						Kgd
+4	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	184.8	73	47.8	7.1						Amv
+5	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	58.6	77.7	148.1	3.4						Bgb
+6	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	42.7	67.2	60.3	5.4						Bdi
+7	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	36.3	82.9	283.6	2.7						Pgr
+8	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	357.1	78.2	86.5	5.2						Pgr
+9	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	345.4	81.7	167.3	4						Pgr
+10	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	42.9	85	38.1	7.5						Ppg
+11	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	53.8	78.5	188.5	3.5						Ppg
+12	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	62	75.7	109.2	4.9						Ppg
+13	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	5.3	86.6	81.6	5.1						Ppgb
+14	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	42.7	77.1	223.7	2						Bdd
+16	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	34.4	85	143.2	4.1						Bdd
+17	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	133.7	82.5	87.2	4.9						Bdi
+18	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	96.4	75	71	6.2						Bdi
+19	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	75.8	83.8	246.3	3.9						Bdd
+20	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	131.2	83.8	377.8	2.5						Bgb
+21	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	60	-81.3	263.7	3.4						Bdi
+22	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	229.3	82.2	312.6	3.4						Bdi
+23	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	16	70.6	50.8	10.8						Bdi
+24	Boot-Phantom plutons	i	g	DE-FM	Symons1999	Igneous	Pluton	Granitoid			1838		1835	1841	Ma	0	26.8	57.9	376.8	3.5						Bgb

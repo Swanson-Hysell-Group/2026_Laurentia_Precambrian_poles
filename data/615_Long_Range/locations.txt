@@ -1,0 +1,3 @@
+tab delimited	locations
+location	location_type	result_name	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_sigma	age_low	age_high	age_unit	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	description
+Long Range Dykes	i	Long Range Dykes site means	i	g	DE-FM	Murthy1992	Igneous	Volcanic Dike	Diabase	53.700	53.700	-56.700	-56.700	615		613	617	Ma	-27.663	331.665	180.000	1.507	5	Site-mean directions from Murthy et al. (1992).

@@ -1,0 +1,200 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description	filtered_out_by_direction	strike	dip	section
+SC 2a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	104.5	36		11.5	5/11					Sheep Creek Canyon	yes	325	81	Sheep Creek Canyon
+SC 2a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	97.9	-25.3		11.5	5/11					Sheep Creek Canyon	yes	325	81	Sheep Creek Canyon
+SC 5a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	102.6	58.7		12.7	4/12					Sheep Creek Canyon	yes	324	80	Sheep Creek Canyon
+SC 5a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	77.4	-11		12.7	4/12					Sheep Creek Canyon	yes	324	80	Sheep Creek Canyon
+SC 6a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	114	31.3		12.6	7/12					Sheep Creek Canyon	yes	325	78	Sheep Creek Canyon
+SC 6a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	105.7	-18.8		12.6	7/12					Sheep Creek Canyon	yes	325	78	Sheep Creek Canyon
+SC 9b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	97.5	-8.2		17.1	3/20					Sheep Creek Canyon		293	43	Sheep Creek Canyon
+SC 9b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	107.2	-16.5		17.1	3/20					Sheep Creek Canyon		293	43	Sheep Creek Canyon
+SC 10a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	81.2	33.3		11.9	3/3					Sheep Creek Canyon	yes	301	55	Sheep Creek Canyon
+SC 10a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	71.3	-7.1		11.9	3/3					Sheep Creek Canyon	yes	301	55	Sheep Creek Canyon
+SC 11	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	98.1	-12.5		4.1	12/12					Sheep Creek Canyon		296	39	Sheep Creek Canyon
+SC 11	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	110	-20.9		4.1	12/12					Sheep Creek Canyon		296	39	Sheep Creek Canyon
+SC 12	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	95.3	6.5		5.3	12/14					Sheep Creek Canyon		297	36	Sheep Creek Canyon
+SC 12	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	95.5	-7.1		5.3	12/14					Sheep Creek Canyon		297	36	Sheep Creek Canyon
+SC 13	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	88.7	15.6		6.5	2/7					Sheep Creek Canyon		286	38	Sheep Creek Canyon
+SC 13	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	83	2		6.5	2/7					Sheep Creek Canyon		286	38	Sheep Creek Canyon
+SC 13a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	82.3	32.9		12.5	3/7					Sheep Creek Canyon	yes	286	38	Sheep Creek Canyon
+SC 13a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	68	12.7		12.5	3/7					Sheep Creek Canyon	yes	286	38	Sheep Creek Canyon
+SC 14	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	105.3	6.4		3.4	4/15					Sheep Creek Canyon		301	39	Sheep Creek Canyon
+SC 14	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	104.7	-4.7		3.4	4/15					Sheep Creek Canyon		301	39	Sheep Creek Canyon
+SC 15	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	108	6.4		11.6	4/4					Sheep Creek Canyon		298	30	Sheep Creek Canyon
+SC 15	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	106.2	0.6		11.6	4/4					Sheep Creek Canyon		298	30	Sheep Creek Canyon
+SC 16	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	105.9	6		9.5	5/5					Sheep Creek Canyon		315	41	Sheep Creek Canyon
+SC 16	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	108.5	-13.8		9.5	5/5					Sheep Creek Canyon		315	41	Sheep Creek Canyon
+SC 17	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	90.5	10.2		7.5	9/9					Sheep Creek Canyon		308	41	Sheep Creek Canyon
+SC 17	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	91.9	-15		7.5	9/9					Sheep Creek Canyon		308	41	Sheep Creek Canyon
+SC 19	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	96.2	11.7		9.6	5/14					Sheep Creek Canyon		303	40	Sheep Creek Canyon
+SC 19	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	94.8	-7.4		9.6	5/14					Sheep Creek Canyon		303	40	Sheep Creek Canyon
+SC 20	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	97.4	6		5.7	11/11					Sheep Creek Canyon		304	35	Sheep Creek Canyon
+SC 20	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	98.5	-9.8		5.7	11/11					Sheep Creek Canyon		304	35	Sheep Creek Canyon
+SC 21b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	273.1	62.9		20.7	3/13					Sheep Creek Canyon		305	52	Sheep Creek Canyon
+SC 21b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	0	47.5		20.7	3/13					Sheep Creek Canyon		305	52	Sheep Creek Canyon
+SC 22	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	90.8	22.3		6.4	14/17					Sheep Creek Canyon		287	30	Sheep Creek Canyon
+SC 22	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	82.1	11.5		6.4	14/17					Sheep Creek Canyon		287	30	Sheep Creek Canyon
+SC 23	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	98.3	0.5		7.5	8/12					Sheep Creek Canyon		287	30	Sheep Creek Canyon
+SC 23	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	99.2	-3.9		7.5	8/12					Sheep Creek Canyon		287	30	Sheep Creek Canyon
+SC 24	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	95.1	-1.2		3.6	4/5					Sheep Creek Canyon		267	20	Sheep Creek Canyon
+SC 24	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	95	1.6		3.6	4/5					Sheep Creek Canyon		267	20	Sheep Creek Canyon
+SC 26	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	89.8	-0.4		5.9	8/8					Sheep Creek Canyon		257	22	Sheep Creek Canyon
+SC 26	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	89	4.4		5.9	8/8					Sheep Creek Canyon		257	22	Sheep Creek Canyon
+SC 71	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	99.5	-1.8		11.3	5/8					Sheep Creek Canyon		294	33	Sheep Creek Canyon
+SC 71	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	102.7	-9.4		11.3	5/8					Sheep Creek Canyon		294	33	Sheep Creek Canyon
+SC 72b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	96.4	18.4		15.9	5/8					Sheep Creek Canyon		318	25	Sheep Creek Canyon
+SC 72b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	93.2	1.1		15.9	5/8					Sheep Creek Canyon		318	25	Sheep Creek Canyon
+SC 75	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	89.6	0.1		13.2	7/11					Sheep Creek Canyon		294	39	Sheep Creek Canyon
+SC 75	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	94.5	-15		13.2	7/11					Sheep Creek Canyon		294	39	Sheep Creek Canyon
+SC 77	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	90.6	11.1		7.5	8/8					Sheep Creek Canyon		284	32	Sheep Creek Canyon
+SC 77	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	86.8	2.5		7.5	8/8					Sheep Creek Canyon		284	32	Sheep Creek Canyon
+SC 80	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	86.6	20.7		10.2	7/7					Sheep Creek Canyon		296	27	Sheep Creek Canyon
+SC 80	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	81	6.1		10.2	7/7					Sheep Creek Canyon		296	27	Sheep Creek Canyon
+SC 83	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	103.3	-11.1		2.5	8/8					Sheep Creek Canyon		284	30	Sheep Creek Canyon
+SC 83	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	109	-9.9		2.5	8/8					Sheep Creek Canyon		284	30	Sheep Creek Canyon
+SC 84	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	90.9	-0.9		7.3	7/7					Sheep Creek Canyon		278	95	Sheep Creek Canyon
+SC 84	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	99.5	-7		7.3	7/7					Sheep Creek Canyon		278	95	Sheep Creek Canyon
+SC 85a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	77.2	17.9		8.2	8/8					Sheep Creek Canyon		280	30	Sheep Creek Canyon
+SC 85a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	71.7	4.7		8.2	8/8					Sheep Creek Canyon		280	30	Sheep Creek Canyon
+SC 86	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	88.5	9.9		8.3	7/7					Sheep Creek Canyon		267	23	Sheep Creek Canyon
+SC 86	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	84.5	9.7		8.3	7/7					Sheep Creek Canyon		267	23	Sheep Creek Canyon
+SC 87	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	89.6	-11.8		7.3	7/7					Sheep Creek Canyon		279	35	Sheep Creek Canyon
+SC 87	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	98.2	-15		7.3	7/7					Sheep Creek Canyon		279	35	Sheep Creek Canyon
+SC 88a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	74.3	10.7		11.6	5/6					Sheep Creek Canyon	yes	292	27	Sheep Creek Canyon
+SC 88a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	73.4	-6.2		11.6	5/6					Sheep Creek Canyon	yes	292	27	Sheep Creek Canyon
+SC 89	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	99.3	-19.5		11	9/12					Sheep Creek Canyon		247	15	Sheep Creek Canyon
+SC 89	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	102.7	-11.1		11	9/12					Sheep Creek Canyon		247	15	Sheep Creek Canyon
+SC 90	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	91.1	-21.8		9.6	6/6					Sheep Creek Canyon		247	15	Sheep Creek Canyon
+SC 90	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	95.6	-15.1		9.6	6/6					Sheep Creek Canyon		247	15	Sheep Creek Canyon
+BL 55a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	41.7	57.9		6.4	5/5					Browne Lake	yes	278	5	Browne Lake
+BL 55a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	37.8	53.7		6.4	5/5					Browne Lake	yes	278	5	Browne Lake
+BL 56	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	82.9	-5.8		13.1	5/10					Browne Lake		277	11	Browne Lake
+BL 56	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	84.3	-8.3		13.1	5/10					Browne Lake		277	11	Browne Lake
+CC 57	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	263.2	-13.4		5.8	8/11					Carter Creek		285	12	Carter Creek
+CC 57	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	261	-8.7		5.8	8/11					Carter Creek		285	12	Carter Creek
+CC 58	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	266.4	-6.7		4.4	10/12					Carter Creek		232	10	Carter Creek
+CC 58	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	265	-12.3		4.4	10/12					Carter Creek		232	10	Carter Creek
+CC 59	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	270.4	-11.8		12.9	5/8					Carter Creek		277	9	Carter Creek
+CC 59	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	268.6	-10.6		12.9	5/8					Carter Creek		277	9	Carter Creek
+CC 60	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	272	-5		3.4	4/8					Carter Creek		300	5	Carter Creek
+CC 60	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	271.7	-2.6		3.4	4/8					Carter Creek		300	5	Carter Creek
+CC 61	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	263.9	-5.9		11.7	9/11					Carter Creek		281	1	Carter Creek
+CC 61	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	263.8	-5.6		11.7	9/11					Carter Creek		281	1	Carter Creek
+DS 29b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	98.7	-20.1		30.7	7/10					Dowd Springs non-fold test rocks		0	0	Dowd Springs non-fold test rocks
+DS 29b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	98.7	-20.1		30.7	7/10					Dowd Springs non-fold test rocks		0	0	Dowd Springs non-fold test rocks
+DS 29a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	281.1	-42.2		14.3	5/10					Dowd Springs non-fold test rocks	yes	0	0	Dowd Springs non-fold test rocks
+DS 29a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	281.1	-42.2		14.3	5/10					Dowd Springs non-fold test rocks	yes	0	0	Dowd Springs non-fold test rocks
+DS 30a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	290.9	-72.2		8.1	6/10					Dowd Springs non-fold test rocks	yes	107	4	Dowd Springs non-fold test rocks
+DS 30a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	302.9	-71.5		8.1	6/10					Dowd Springs non-fold test rocks	yes	107	4	Dowd Springs non-fold test rocks
+DS 31b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	107.1	3.3		20.6	8/11					Dowd Springs non-fold test rocks		217	3	Dowd Springs non-fold test rocks
+DS 31b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	107	6.1		20.6	8/11					Dowd Springs non-fold test rocks		217	3	Dowd Springs non-fold test rocks
+DS 32b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	282	-36.1		24	5/10					Dowd Springs non-fold test rocks		0	0	Dowd Springs non-fold test rocks
+DS 32b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	282	-36.1		24	5/10					Dowd Springs non-fold test rocks		0	0	Dowd Springs non-fold test rocks
+DS 33b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	97	-14.7		19.9	3/10					Dowd Springs non-fold test rocks		132	7	Dowd Springs non-fold test rocks
+DS 33b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	95.7	-10.6		19.9	3/10					Dowd Springs non-fold test rocks		132	7	Dowd Springs non-fold test rocks
+DS 34	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	101.9	-5		10.8	9/10					Dowd Springs non-fold test rocks		132	7	Dowd Springs non-fold test rocks
+DS 34	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	101.6	-1.5		10.8	9/10					Dowd Springs non-fold test rocks		132	7	Dowd Springs non-fold test rocks
+DS 35	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	103.8	-7.2		8.8	10/11					Dowd Springs non-fold test rocks		99	4	Dowd Springs non-fold test rocks
+DS 35	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	103.3	-7.5		8.8	10/11					Dowd Springs non-fold test rocks		99	4	Dowd Springs non-fold test rocks
+DS 36	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	108.7	-23		9.3	9/11					Dowd Springs non-fold test rocks		102	6	Dowd Springs non-fold test rocks
+DS 36	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	106.1	-23.6		9.3	9/11					Dowd Springs non-fold test rocks		102	6	Dowd Springs non-fold test rocks
+DS 37	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	107.6	6.6		12.4	9/10					Dowd Springs non-fold test rocks		120	10	Dowd Springs non-fold test rocks
+DS 37	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	108.9	8.6		12.4	9/10					Dowd Springs non-fold test rocks		120	10	Dowd Springs non-fold test rocks
+DS 38	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	91.7	-12.7		10.7	15/15					Dowd Springs non-fold test rocks		102	12	Dowd Springs non-fold test rocks
+DS 38	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	89.3	-10.3		10.7	15/15					Dowd Springs non-fold test rocks		102	12	Dowd Springs non-fold test rocks
+DS 39	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	261.7	-0.2		11.5	4/5					Dowd Springs fold test rocks		63	19	Dowd Springs fold test rocks
+DS 39	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	260.8	11.5		11.5	4/5					Dowd Springs fold test rocks		63	19	Dowd Springs fold test rocks
+DS 40	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	257.8	-38.7		12.7	4/5					Dowd Springs fold test rocks		63	19	Dowd Springs fold test rocks
+DS 40	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	270.5	12.7		12.7	4/5					Dowd Springs fold test rocks		63	19	Dowd Springs fold test rocks
+DS 41	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	261.2	-19.4		8.5	3/5					Dowd Springs fold test rocks		63	19	Dowd Springs fold test rocks
+DS 41	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	266.3	8.5		8.5	3/5					Dowd Springs fold test rocks		63	19	Dowd Springs fold test rocks
+DS 42	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	271.2	-0.6		14.8	3/4					Dowd Springs fold test rocks		221	14	Dowd Springs fold test rocks
+DS 42	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	270.3	14.8		14.8	3/4					Dowd Springs fold test rocks		221	14	Dowd Springs fold test rocks
+DS 43	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	276.4	8.2		12.2	3/5					Dowd Springs fold test rocks		221	14	Dowd Springs fold test rocks
+DS 43	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	276.7	12.2		12.2	3/5					Dowd Springs fold test rocks		221	14	Dowd Springs fold test rocks
+DS 44	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	271.4	-6.8		7.9	5/5					Dowd Springs fold test rocks		221	14	Dowd Springs fold test rocks
+DS 44	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	269.4	7.9		7.9	5/5					Dowd Springs fold test rocks		221	14	Dowd Springs fold test rocks
+FG-AW-01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	270.8	-9.3		16.5	5/6					Flaming Gorge Section		236	18	Flaming Gorge Section
+FG-AW-01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	267	-19		16.5	5/6					Flaming Gorge Section		236	18	Flaming Gorge Section
+FG-AW-02	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	264.4	-10.5		9.4	6/6					Flaming Gorge Section		236	18	Flaming Gorge Section
+FG-AW-02	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	260	-18		9.4	6/6					Flaming Gorge Section		236	18	Flaming Gorge Section
+FG-AW-03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	274	-7.6		11.8	4/5					Flaming Gorge Section		236	18	Flaming Gorge Section
+FG-AW-03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	271	-19		11.8	4/5					Flaming Gorge Section		236	18	Flaming Gorge Section
+FG-AW-04	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	255.6	4.6		11.4	6/6					Flaming Gorge Section		236	18	Flaming Gorge Section
+FG-AW-04	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	257	-1		11.4	6/6					Flaming Gorge Section		236	18	Flaming Gorge Section
+FG-GA-01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	264.9	-5.3		6.6	5/5					Flaming Gorge Section		232	15	Flaming Gorge Section
+FG-GA-01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	261	-18		6.6	5/5					Flaming Gorge Section		232	15	Flaming Gorge Section
+FG-GA-02	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	268.4	-1		20.1	6/6					Flaming Gorge Section		220	20	Flaming Gorge Section
+FG-GA-02	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	266	-16		20.1	6/6					Flaming Gorge Section		220	20	Flaming Gorge Section
+FG-GA-03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	266.5	-3.4		13.3	5/6					Flaming Gorge Section		229	17	Flaming Gorge Section
+FG-GA-03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	265	-13		13.3	5/6					Flaming Gorge Section		229	17	Flaming Gorge Section
+FG-GA-04	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	262.2	7.8		10.4	5/6					Flaming Gorge Section		205	17	Flaming Gorge Section
+FG-GA-04	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	262	-6		10.4	5/6					Flaming Gorge Section		205	17	Flaming Gorge Section
+FG-GA-06	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	275.1	0.9		9.1	5/6					Flaming Gorge Section		238	18	Flaming Gorge Section
+FG-GA-06	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	274	-10		9.1	5/6					Flaming Gorge Section		238	18	Flaming Gorge Section
+FG-GA-07	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	271.1	-3.1		8.3	6/6					Flaming Gorge Section		237	18	Flaming Gorge Section
+FG-GA-07	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	269	-13		8.3	6/6					Flaming Gorge Section		237	18	Flaming Gorge Section
+FG-GA-08	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	259.1	-3		6.7	6/6					Flaming Gorge Section		237	18	Flaming Gorge Section
+FG-GA-08	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	257	-10		6.7	6/6					Flaming Gorge Section		237	18	Flaming Gorge Section
+FG 48	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	275.2	-8.2		4.4	4/11					Flaming Gorge Section		250	18	Flaming Gorge Section
+FG 48	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	271.7	-15.4		4.4	4/11					Flaming Gorge Section		250	18	Flaming Gorge Section
+FG 49	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	267.7	-5.7		8.1	6/10					Flaming Gorge Section		273	18	Flaming Gorge Section
+FG 49	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	266.2	-3.8		8.1	6/10					Flaming Gorge Section		273	18	Flaming Gorge Section
+FG 50a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	295.3	-10.3		8.9	7/11					Flaming Gorge Section	yes	254	20	Flaming Gorge Section
+FG 50a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	290.6	-23		8.9	7/11					Flaming Gorge Section	yes	254	20	Flaming Gorge Section
+FG 51	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	275.1	-3.1		3.2	5/7					Flaming Gorge Section		268	16	Flaming Gorge Section
+FG 51	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	274	-4.9		3.2	5/7					Flaming Gorge Section		268	16	Flaming Gorge Section
+FG 52	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	279.2	-12.1		8.3	5/13					Flaming Gorge Section		268	18	Flaming Gorge Section
+FG 52	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	274.9	-15		8.3	5/13					Flaming Gorge Section		268	18	Flaming Gorge Section
+FG 53	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	275.5	2.5		7.5	4/5					Flaming Gorge Section		296	15	Flaming Gorge Section
+FG 53	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	276.8	7.6		7.5	4/5					Flaming Gorge Section		296	15	Flaming Gorge Section
+BC 01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	270.6	5.9		6	8/8					Bull Canyon		29	13	Bull Canyon
+BC 01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	267.9	8.8		6	8/8					Bull Canyon		29	13	Bull Canyon
+BC 02b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	280.2	6.2		16.6	8/8					Bull Canyon		55	16	Bull Canyon
+BC 02b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	277.2	7.3		16.6	8/8					Bull Canyon		55	16	Bull Canyon
+BC 03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	267.3	-5.9		14.4	6/10					Bull Canyon		16	19	Bull Canyon
+BC 03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	267	12.1		14.4	6/10					Bull Canyon		16	19	Bull Canyon
+BC 04b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	276.4	-2.2		20.5	9/9					Bull Canyon		51	20	Bull Canyon
+BC 04b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	271.8	1.2		20.5	9/9					Bull Canyon		51	20	Bull Canyon
+BC 05	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	274.2	10		14.2	7/9					Bull Canyon		51	20	Bull Canyon
+BC 05	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	272.3	8.7		14.2	7/9					Bull Canyon		51	20	Bull Canyon
+BC 06	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	269	5.1		5.8	10/10					Bull Canyon		51	20	Bull Canyon
+BC 06	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	264.9	12.1		5.8	10/10					Bull Canyon		51	20	Bull Canyon
+BC 07	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	279.4	2.5		8.4	9/9					Bull Canyon		49	12	Bull Canyon
+BC 07	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	277.9	5.8		8.4	9/9					Bull Canyon		49	12	Bull Canyon
+BC 08	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	282.9	2.3		9.2	9/14					Bull Canyon		89	17	Bull Canyon
+BC 08	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	281.8	6.2		9.2	9/14					Bull Canyon		89	17	Bull Canyon
+BC 09a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	2.1	56.7		4.4	10/10					Bull Canyon	yes	19	12	Bull Canyon
+BC 09a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	20.1	58.2		4.4	10/10					Bull Canyon	yes	19	12	Bull Canyon
+BC 10b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	267.1	8.2		17.9	7/13					Bull Canyon		99	2	Bull Canyon
+BC 10b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	269	10.5		17.9	7/13					Bull Canyon		99	2	Bull Canyon
+UMG-GA-01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	289.5	21.2		15.9	7/8					Home Montain Canyon		112	82	Home Montain Canyon
+UMG-GA-01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	271	0		15.9	7/8					Home Montain Canyon		112	82	Home Montain Canyon
+UMG-GA-02	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	284.3	34.7		14.1	7/8					Home Montain Canyon		116	52	Home Montain Canyon
+UMG-GA-02	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	261	12		14.1	7/8					Home Montain Canyon		116	52	Home Montain Canyon
+UMG-GA-03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	287.9	31.7		18.4	5/6					Home Montain Canyon		113	66	Home Montain Canyon
+UMG-GA-03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	262	8		18.4	5/6					Home Montain Canyon		113	66	Home Montain Canyon
+SP 01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	105.2	22.1		6.5	9/9					Sparks–Talamantes Creek		306	58	Sparks–Talamantes Creek
+SP 01	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	96.3	-4.6		6.5	9/9					Sparks–Talamantes Creek		306	58	Sparks–Talamantes Creek
+SP 02a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	67.8	59.2		14.3	5/7					Sparks–Talamantes Creek	yes	295	62	Sparks–Talamantes Creek
+SP 02a	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	45.4	4.1		14.3	5/7					Sparks–Talamantes Creek	yes	295	62	Sparks–Talamantes Creek
+SP 03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	92.1	30.5		11.9	5/6					Sparks–Talamantes Creek		313	70	Sparks–Talamantes Creek
+SP 03	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	87.2	-20.9		11.9	5/6					Sparks–Talamantes Creek		313	70	Sparks–Talamantes Creek
+SP 04	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	95.9	35.6		9.2	7/7					Sparks–Talamantes Creek		299	61	Sparks–Talamantes Creek
+SP 04	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	77.4	0.2		9.2	7/7					Sparks–Talamantes Creek		299	61	Sparks–Talamantes Creek
+SP 05	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	88.8	34.6		11.6	8/8					Sparks–Talamantes Creek		315	63	Sparks–Talamantes Creek
+SP 05	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	81.3	-15.8		11.6	8/8					Sparks–Talamantes Creek		315	63	Sparks–Talamantes Creek
+SP 06	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	99.9	26		8.6	7/7					Sparks–Talamantes Creek		324	66	Sparks–Talamantes Creek
+SP 06	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	98.6	-23.1		8.6	7/7					Sparks–Talamantes Creek		324	66	Sparks–Talamantes Creek
+SP 07	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	104.2	31.6		14	4/8					Sparks–Talamantes Creek		299	61	Sparks–Talamantes Creek
+SP 07	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	84.6	3.7		14	4/8					Sparks–Talamantes Creek		299	61	Sparks–Talamantes Creek
+SP 08	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	95.7	20		9.2	7/8					Sparks–Talamantes Creek		312	65	Sparks–Talamantes Creek
+SP 08	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	96.3	-21.1		9.2	7/8					Sparks–Talamantes Creek		312	65	Sparks–Talamantes Creek
+SP 09b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	94.9	28.4		28.42	3/7					Sparks–Talamantes Creek		314	71	Sparks–Talamantes Creek
+SP 09b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	91.3	-21.7		28.42	3/7					Sparks–Talamantes Creek		314	71	Sparks–Talamantes Creek
+SP 10	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	103.1	36.3		10.2	6/8					Sparks–Talamantes Creek		313	56	Sparks–Talamantes Creek
+SP 10	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	87.3	-0.1		10.2	6/8					Sparks–Talamantes Creek		313	56	Sparks–Talamantes Creek
+SP 11b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	101.7	21.3		15.1	6/8					Sparks–Talamantes Creek		301	59	Sparks–Talamantes Creek
+SP 11b	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	92.9	-4.4		15.1	6/8					Sparks–Talamantes Creek		301	59	Sparks–Talamantes Creek
+SP 12	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	0	95.6	35.9		7	8/8					Sparks–Talamantes Creek		313	59	Sparks–Talamantes Creek
+SP 12	Uinta Mountain Group	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone			750		717	771	Ma	100	83.4	-6.9		7	8/8					Sparks–Talamantes Creek		313	59	Sparks–Talamantes Creek

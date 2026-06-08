@@ -1,0 +1,14 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+2	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	306	-34	100							Site-mean directions from McGlynn et al. (1974).
+3	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	138	50	276							Site-mean directions from McGlynn et al. (1974).
+3'	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	19	85	11							Site-mean directions from McGlynn et al. (1974).
+4	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	130	49	632							Site-mean directions from McGlynn et al. (1974).
+4'	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	333	-47	2018							Site-mean directions from McGlynn et al. (1974).
+5	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	348	83	20							Site-mean directions from McGlynn et al. (1974).
+11	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	121	56	467							Site-mean directions from McGlynn et al. (1974).
+87	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	136	50	275							Site-mean directions from McGlynn et al. (1974).
+253	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	129	59	1197							Site-mean directions from McGlynn et al. (1974).
+294	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	152	54	527							Site-mean directions from McGlynn et al. (1974).
+98A	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	121	50	195							Site-mean directions from McGlynn et al. (1974).
+98B	Sparrow Dykes	i	g	DE-FM	McGlynn1974	Igneous	Volcanic Dike	Diabase			1827		1823	1831	Ma	0	103	56	37							Site-mean directions from McGlynn et al. (1974).
