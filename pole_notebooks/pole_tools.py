@@ -19,7 +19,7 @@ import os
 Torsvik2012_poles = pd.read_excel('../data/Torsvik2012.xlsx')
 Torsvik2012_Laurentia = Torsvik2012_poles[4:187]
 
-def get_Laurentia_poles(file_name='../data/Kringdalen_w_Laurentia.xlsx', sheet_name='Laurentia'):
+def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia'):
     """Loads Laurentia poles and rotates them into a common reference frame.
 
     Poles from Scotland, Greenland, and Svalbard terranes are rotated into the
@@ -27,18 +27,43 @@ def get_Laurentia_poles(file_name='../data/Kringdalen_w_Laurentia.xlsx', sheet_n
     and Trans-Hudson orogen are kept in their original coordinates. Unrecognized
     terranes receive NaN for rotated coordinates.
 
+    The default source is ``data/Laurentia_poles.csv`` (exported from the
+    ``Laurentia`` sheet of ``Kringdalen_w_Laurentia.xlsx``). A ``.csv`` path is
+    read with ``read_csv``; any other extension is read with ``read_excel``
+    using ``sheet_name``.
+
+    The compilation mixes two conventions: some poles report ``A95`` and
+    ``nominal age`` directly, while others (Kringdalen-native) report ``DP``/
+    ``DM`` and ``lomagage``/``himagage`` instead. So that the whole path is
+    available downstream regardless of convention, the ``A95`` and
+    ``nominal age`` columns are filled, **in memory only**, from the midpoints
+    of ``DP``/``DM`` and ``lomagage``/``himagage`` wherever they are not given
+    explicitly; the source columns are left unchanged.
+
     Args:
-        file_name (str): Path to the Excel file containing pole data.
-            Expected columns include PLAT, PLONG, Terrane, ROCKNAME,
-            nominal age, and A95.
-        sheet_name (str): Name of the sheet to read from the Excel file.
+        file_name (str): Path to the pole-data file (CSV by default; an Excel
+            workbook is also accepted). Expected columns include PLAT, PLONG,
+            Terrane, ROCKNAME, and either nominal age / A95 or
+            lomagage / himagage / DP / DM.
+        sheet_name (str): Sheet to read when ``file_name`` is an Excel workbook.
 
     Returns:
-        pd.DataFrame: Original pole data with added PLAT_rotated and
-        PLONG_rotated columns containing poles in the Laurentia reference
-        frame.
+        pd.DataFrame: Pole data with ``A95`` / ``nominal age`` filled from the
+        DP/DM and lomagage/himagage midpoints where absent, plus added
+        PLAT_rotated and PLONG_rotated columns in the Laurentia reference frame.
     """
-    Laurentia_poles = pd.read_excel(file_name, sheet_name=sheet_name)
+    if str(file_name).lower().endswith('.csv'):
+        Laurentia_poles = pd.read_csv(file_name)
+    else:
+        Laurentia_poles = pd.read_excel(file_name, sheet_name=sheet_name)
+
+    cols = set(Laurentia_poles.columns)
+    if 'nominal age' in cols and {'lomagage', 'himagage'} <= cols:
+        Laurentia_poles['nominal age'] = Laurentia_poles['nominal age'].fillna(
+            (Laurentia_poles['lomagage'] + Laurentia_poles['himagage']) / 2)
+    if 'A95' in cols and {'DP', 'DM'} <= cols:
+        Laurentia_poles['A95'] = Laurentia_poles['A95'].fillna(
+            (Laurentia_poles['DP'] + Laurentia_poles['DM']) / 2)
 
     Euler_poles = {
         'Laurentia-Greenland':      [67.5, -118.5, -13.8],  # [lat, lon, CCW angle]
@@ -68,7 +93,7 @@ def get_Laurentia_poles(file_name='../data/Kringdalen_w_Laurentia.xlsx', sheet_n
 
     return Laurentia_poles
 
-def get_Laurentia_stricto_poles(file_name='../data/Kringdalen_w_Laurentia.xlsx', sheet_name='Laurentia'):
+def get_Laurentia_stricto_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia'):
     """Returns only poles from the Laurentia terrane (sensu stricto).
 
     Filters the full rotated pole dataset to include only entries where
@@ -467,7 +492,7 @@ def plot_Deenen_test(mean_pole, figsize=(7, 4), ax=None):
     ax.plot(N_range, A95_min_curve, 'g--', linewidth=1, label=r'$A_{95,min}$')
     ax.plot(N_range, A95_max_curve, 'g--', linewidth=1, label=r'$A_{95,max}$')
     ax.plot(n_obs, mean_pole['alpha95'], 'r*', markersize=15, zorder=5,
-            label='Our pole')
+            label='pole')
     ax.set_xlabel('Number of sites (N)', fontsize=12)
     ax.set_ylabel(r'$A_{95}$ (°)', fontsize=12)
     ax.set_title('Deenen et al. (2011) test', fontsize=13)
@@ -477,6 +502,27 @@ def plot_Deenen_test(mean_pole, figsize=(7, 4), ax=None):
     ax.grid(alpha=0.3)
     plt.tight_layout()
     return ax
+
+def kent_a95_approx(zeta95, eta95):
+    """Approximate a circular A95 from Kent-ellipse 95% semi-axes.
+
+    Inclination-shallowing-corrected sedimentary poles are reported with a Kent
+    confidence ellipse (semi-axes ``zeta95`` and ``eta95``) that propagates the
+    flattening-factor uncertainty (e.g. via the Monte Carlo approach of Pierce et
+    al., 2022). The Nordic Workshop compilation format stores a single circular
+    A95, so this returns the radius of the circle with the same area as the
+    ellipse — the geometric mean of the two semi-axes, ``sqrt(zeta95 * eta95)`` —
+    as the A95 to record there. The full Kent ellipse should still be reported in
+    the notebook.
+
+    Args:
+        zeta95 (float): Major-axis semi-angle of the 95% Kent ellipse (degrees).
+        eta95 (float): Minor-axis semi-angle of the 95% Kent ellipse (degrees).
+
+    Returns:
+        float: Equal-area circular A95 approximation in degrees.
+    """
+    return float(np.sqrt(zeta95 * eta95))
 
 def fishqq_vgps(sites_tc, unify_polarity=True):
     """Fisher Q-Q test on site VGPs to assess the shape of the VGP distribution.
@@ -792,11 +838,20 @@ def plot_site_map(sites, zoom_start=4, tiles='OpenStreetMap',
     Longitudes in MagIC sites tables are stored in 0–360° convention; this
     function shifts them to the −180/180° convention expected by folium.
     Duplicate site rows (e.g., geographic and tilt-corrected entries for
-    the same site) are collapsed by site name.
+    the same site) are collapsed by site name; where both coordinate frames
+    are present the tilt-corrected row (``dir_tilt_correction == 100``) is
+    kept so the displayed direction is the tilt-corrected one.
+
+    When the site table carries them, the site-mean direction in
+    tilt-corrected coordinates (declination, inclination, and α95) is shown
+    both in each marker's hover tooltip and in its click popup (the popup
+    also reports the site coordinates).
 
     Args:
         sites (pd.DataFrame): Site data with columns ``site``, ``lat``,
-            and ``lon`` (longitude in 0–360°).
+            and ``lon`` (longitude in 0–360°). If present, ``dir_dec``,
+            ``dir_inc``, and ``dir_alpha95`` are shown in each popup, and
+            ``dir_tilt_correction`` is used to prefer tilt-corrected rows.
         zoom_start (int): Initial zoom level for the folium map.
         tiles (str): Folium tile layer name (e.g., 'OpenStreetMap',
             'CartoDB positron').
@@ -805,12 +860,23 @@ def plot_site_map(sites, zoom_start=4, tiles='OpenStreetMap',
 
     Returns:
         folium.Map: Interactive map with a CircleMarker per site, labeled
-        with the site name on hover and a popup showing coordinates.
+        with the site name on hover and a popup showing the coordinates and
+        (where available) the tilt-corrected mean direction.
     """
     import folium
 
-    site_locs = sites[['site', 'lat', 'lon']].drop_duplicates(
-        subset='site').copy()
+    dir_cols = [c for c in ('dir_dec', 'dir_inc', 'dir_alpha95')
+                if c in sites.columns]
+    keep = ['site', 'lat', 'lon'] + dir_cols
+
+    if 'dir_tilt_correction' in sites.columns:
+        # Sort so tilt-corrected (100) rows come last, then keep one row per
+        # site preferring the tilt-corrected entry.
+        ordered = sites.sort_values('dir_tilt_correction')
+        site_locs = ordered[keep].drop_duplicates(
+            subset='site', keep='last').copy()
+    else:
+        site_locs = sites[keep].drop_duplicates(subset='site').copy()
     site_locs['lon'] = ((site_locs['lon'] + 180) % 360) - 180
 
     m = folium.Map(
@@ -819,19 +885,32 @@ def plot_site_map(sites, zoom_start=4, tiles='OpenStreetMap',
         tiles=tiles,
     )
 
+    def _fmt(value):
+        """Format a numeric direction value, or '–' if missing."""
+        try:
+            x = float(value)
+        except (TypeError, ValueError):
+            return '–'
+        return '–' if np.isnan(x) else f'{x:.1f}'
+
     for _, row in site_locs.iterrows():
+        popup_html = (f"<b>{row['site']}</b><br>"
+                      f"{row['lat']:.3f}°N, {row['lon']:.3f}°E")
+        tooltip_html = f"<b>{row['site']}</b>"
+        if {'dir_dec', 'dir_inc', 'dir_alpha95'} <= set(dir_cols):
+            dir_html = (f"Dec {_fmt(row['dir_dec'])}°, "
+                        f"Inc {_fmt(row['dir_inc'])}°, "
+                        f"α95 {_fmt(row['dir_alpha95'])}°")
+            popup_html += f"<br>{dir_html}"
+            tooltip_html += f"<br>{dir_html}"
         folium.CircleMarker(
             location=[row['lat'], row['lon']],
             radius=radius,
             color=color,
             fill=True,
             fill_opacity=0.85,
-            popup=folium.Popup(
-                f"<b>{row['site']}</b><br>"
-                f"{row['lat']:.3f}°N, {row['lon']:.3f}°E",
-                max_width=200,
-            ),
-            tooltip=row['site'],
+            popup=folium.Popup(popup_html, max_width=220),
+            tooltip=tooltip_html,
         ).add_to(m)
 
     return m
@@ -923,7 +1002,8 @@ def make_nordic_summary(terrane,
     Nordic Workshop compilation spreadsheet. Pole position is written as
     PLAT = pole latitude (``pole_mean['inc']``) and PLONG = pole longitude
     (``pole_mean['dec']``). Numeric values are rounded to the tenth, except the
-    locality coordinates (SLAT/SLONG) which are kept to the hundredth. Columns
+    locality coordinates (SLAT/SLONG) and the flattening factor (f) which are
+    kept to the hundredth. Columns
     this project does not populate (the old Van der Voo Q-criteria, the second
     flattening block, DP/DM) are left blank.
 
@@ -971,7 +1051,7 @@ def make_nordic_summary(terrane,
         r(dir_mean['dec']), r(dir_mean['inc']), r(abs(dir_mean['inc'])),
         r(dir_mean['k']), r(dir_mean['alpha95']),
         r(pole_mean['inc']), r(pole_mean['dec']), '', '', r(pole_mean['alpha95']),
-        r(f_factor), r(inc_f), r(pole_unflat['inc']), r(pole_unflat['dec']),
+        r(f_factor, 2), r(inc_f), r(pole_unflat['inc']), r(pole_unflat['dec']),
         '', '', r(pole_unflat['alpha95']),
         '', '', '', '', '', '', '',                       # second f block (unused)
         _int_or_blank(percent_reversed), demag_code,
