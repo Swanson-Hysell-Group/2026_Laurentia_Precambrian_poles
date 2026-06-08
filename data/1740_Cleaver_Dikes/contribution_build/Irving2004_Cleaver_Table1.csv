@@ -1,0 +1,48 @@
+# Site-level directions of the Cleaver Dykes and associated rocks,
+# transcribed from Table 1 of Irving, Baker, Hamilton & Wynne (2004),
+# Precambrian Research 129, 251-270, doi:10.1016/j.precamres.2003.10.002.
+#
+# Columns:
+#   site        site/dyke number (Table 1)
+#   lat         site latitude (degrees N)
+#   lon_W       site longitude (degrees W, as published)
+#   n_cores     number of cores (Table 1 column "s") = MagIC dir_n_samples
+#   n_spec      number of specimens (Table 1 column "n") = MagIC dir_n_specimens
+#   dec, inc    site-mean declination/inclination (present horizontal; no tilt correction)
+#   k, a95      Fisher precision and 95% cone of confidence
+#   location    pole/test grouping (Cleaver Dykes / Labine Group / Hottah Gabbro)
+#   role        pole | excluded | baked_contact | baked_distal | conglomerate | younger_intrusion
+#   quality     MagIC result_quality (g = good/used; b = retained but excluded from the pole)
+#   note        provenance / Table-1 footnote
+#
+# Pole sites are the 17 Cleaver dykes used by Irving et al. (2004) for the
+# paleopole (their B=17): 5,6,8,9,10,15,18,19,21,22,23,26,27,30,31,34,37.
+# Site 172 is a Cleaver dyke at Echo Bay (~50 km N; resampling of site 144 of
+# Irving et al. 1972a) excluded from the published mean -> quality b.
+# Sites 24,32,33,35,36 are Labine Group baked-contact/conglomerate controls.
+# Site 45 is the ca. 780 Ma Hottah (Gunbarrel) Gabbro sheet (younger intrusion).
+site,lat,lon_W,n_cores,n_spec,dec,inc,k,a95,location,role,quality,note
+5,65.72,118.13,6,12,132.1,64.6,53,6.0,Cleaver Dykes,pole,g,Cleaver dyke
+6,65.72,118.08,5,10,168.0,65.3,39,7.9,Cleaver Dykes,pole,g,Cleaver dyke
+8,65.70,118.13,6,11,147.2,51.3,117,4.2,Cleaver Dykes,pole,g,Cleaver dyke
+9,65.68,118.15,6,12,143.5,49.7,107,4.2,Cleaver Dykes,pole,g,Cleaver dyke
+10,65.63,117.88,6,12,143.4,68.4,67,5.4,Cleaver Dykes,pole,g,Cleaver dyke
+15,65.62,118.02,6,12,126.2,56.8,177,3.3,Cleaver Dykes,pole,g,Cleaver dyke
+18,65.79,118.08,6,10,141.5,53.0,118,4.5,Cleaver Dykes,pole,g,Cleaver dyke
+19,65.79,118.07,6,8,116.9,52.6,33,9.7,Cleaver Dykes,pole,g,Cleaver dyke
+21,65.70,118.07,6,12,162.0,52.9,143,3.6,Cleaver Dykes,pole,g,Cleaver dyke
+22,65.70,118.07,6,12,136.1,59.8,90,4.6,Cleaver Dykes,pole,g,Cleaver dyke (baked-contact test against Labine tuff sites 32/33)
+23,65.70,118.07,6,12,124.9,53.9,155,3.5,Cleaver Dykes,pole,g,Cleaver dyke
+26,65.63,118.12,6,12,151.2,57.2,151,3.5,Cleaver Dykes,pole,g,Cleaver dyke
+27,65.68,118.15,6,12,170.5,76.4,20,10.0,Cleaver Dykes,pole,g,Cleaver dyke
+30,65.63,118.13,6,11,146.6,53.3,51,6.5,Cleaver Dykes,pole,g,Cleaver dyke
+31,65.58,117.98,3,6,118.0,50.6,145,5.6,Cleaver Dykes,pole,g,Cleaver dyke
+34,65.70,118.05,7,13,130.7,59.6,266,2.5,Cleaver Dykes,pole,g,Cleaver dyke (baked-contact test against Labine andesite sites 35/36)
+37,65.67,118.13,6,11,114.3,51.0,202,3.2,Cleaver Dykes,pole,g,Cleaver dyke
+172,66.05,117.83,8,15,129.1,60.5,69,4.6,Cleaver Dykes,excluded,b,Cleaver dyke at Echo Bay ~50 km N (resampling of site 144 of Irving et al. 1972a); excluded from the published 17-site mean
+24,65.65,118.08,9,11,117.5,26.1,2,56.9,Labine Group,conglomerate,b,Andesite boulders in a Labine Group volcanic breccia; dispersed directions (conglomerate test)
+32,65.07,118.07,6,10,148.8,19.6,269,2.9,Labine Group,baked_contact,g,Baked tuff at contact of dyke 22 (Table 1 footnote)
+33,65.07,118.07,7,9,131.5,59.6,104,5.1,Labine Group,baked_distal,g,Tuff 25 m from dyke 22 (Table 1 footnote)
+35,65.07,118.05,7,12,121.0,60.6,87,4.7,Labine Group,baked_contact,g,Baked andesite at contact of dyke 34; agrees with the dyke direction
+36,65.07,118.05,5,9,355.1,9.5,555,2.2,Labine Group,baked_distal,b,Andesite 50 m from dyke 34; distinct pre-Cleaver direction
+45,65.67,118.05,7,14,280.4,4.4,123,3.6,Hottah Gabbro,younger_intrusion,g,Hottah (Gunbarrel) Gabbro sheet ca. 780 Ma; direction differs from the Cleaver dykes

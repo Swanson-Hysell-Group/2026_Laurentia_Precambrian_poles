@@ -1,0 +1,6 @@
+tab	locations
+location	location_type	age	age_high	age_low	age_unit	citations	geologic_classes	lithologies	lat_n	lat_s	lon_e	lon_w	dir_tilt_correction	result_type	result_quality	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	result_name
+Mamainse lower R1	Outcrop	1109.0	1112.0	1106.0	Ma	10.1130/G35271.1	Extrusive:Igneous	Basalt	47.0988	47.0909	275.2877	275.2811	100	a	g	49.5	227.0	5.3	31.7	24	Mamainse lower R1 pole
+Mamainse lower R2	Outcrop	1105.0	1109.0	1100.4	Ma	10.1130/G35271.1	Extrusive:Igneous	Basalt	47.0854	47.0835	275.2746	275.2698	100	a	g	37.5	205.2	4.5	78.6	14	Mamainse lower R2 pole
+Mamainse Flour Bay	Outcrop	1100.36	1100.61	1100.11	Ma	10.1130/G35271.1	Extrusive:Igneous	Basalt	47.0837	47.0684	275.2691	275.2548	100	a	g	36.1	189.7	4.9	37.3	24	Mamainse Flour Bay pole
+Mamainse upper N	Outcrop	1094.0	1100.0	1090.0	Ma	10.1130/G35271.1	Extrusive:Igneous	Basalt	47.0647	47.0428	275.2473	275.2178	100	a	g	31.2	183.2	2.5	94.4	34	Mamainse upper N pole
