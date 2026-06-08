@@ -1104,16 +1104,16 @@ def corrected_pole_note(method, plat, plon, *, f=None, f_range=None,
     if f is not None:
         fbits.append(f"f = {f:.2f}")
     if f_range is not None:
-        fbits.append(f"95% range {f_range[0]:.2f}–{f_range[1]:.2f}")
+        fbits.append(f"95% range {f_range[0]:.2f}-{f_range[1]:.2f}")
     fstr = (', ' + ', '.join(fbits)) if fbits else ''
     if zeta95 is not None and eta95 is not None:
-        unc = f"Kent ellipse ζ95 = {zeta95:.1f}° / η95 = {eta95:.1f}°"
+        unc = f"Kent ellipse zeta95 = {zeta95:.1f}° / eta95 = {eta95:.1f}°"
     elif a95 is not None:
         unc = f"A95 = {a95:.1f}°"
     else:
         unc = ''
     mc = f", uncertainty propagated via {monte_carlo}" if monte_carlo else ''
-    note = f"Study inclination-corrected pole — {method}{fstr}: {pos}"
+    note = f"Study inclination-corrected pole - {method}{fstr}: {pos}"
     if unc:
         note += f", {unc}{mc}"
     note += '.'
@@ -1292,5 +1292,7 @@ def save_nordic_summary(summary, filename, output_dir='../data/nordic_summaries'
     output_path = os.path.join(output_dir, filename)
     if not isinstance(summary, pd.DataFrame):
         summary = pd.DataFrame([summary])
-    summary.to_csv(output_path, index=False)
+    # utf-8-sig writes a BOM so Excel reads the UTF-8 special characters
+    # (°, ±, en/em-dashes, etc.) correctly instead of as mojibake.
+    summary.to_csv(output_path, index=False, encoding='utf-8-sig')
     return output_path
