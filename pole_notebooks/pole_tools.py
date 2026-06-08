@@ -89,7 +89,7 @@ def get_Laurentia_stricto_poles(file_name='../data/Kringdalen_w_Laurentia.xlsx',
 
 def plot_pole_overlap(ROCKNAME, Precambrian_poles, Phanerozoic_poles,
                       pole_plat=None, pole_plon=None, pole_A95=None,
-                      pole_age=None):
+                      pole_age=None, show=True):
     """Plots all poles younger than the specified pole in both polarities.
 
     Creates a Mollweide projection map showing Precambrian and Phanerozoic
@@ -114,6 +114,11 @@ def plot_pole_overlap(ROCKNAME, Precambrian_poles, Phanerozoic_poles,
         pole_plon (float or None): Override pole longitude in degrees.
         pole_A95 (float or None): Override pole A95 in degrees.
         pole_age (float or None): Override pole age in Ma for filtering.
+        show (bool): If True (default), call ``plt.show()`` so the figure is
+            rendered reliably in notebooks.
+
+    Returns:
+        matplotlib.axes.Axes: The map axis.
     """
 
     pole_index = Precambrian_poles.loc[Precambrian_poles['ROCKNAME'] == ROCKNAME].index
@@ -167,6 +172,10 @@ def plot_pole_overlap(ROCKNAME, Precambrian_poles, Phanerozoic_poles,
                     pole_A95,filled_pole=True,fill_color='green',fill_alpha=0.5)
     ipmag.plot_pole(ax,180+pole_plon,-pole_plat,
                     pole_A95,filled_pole=True,fill_color='green',fill_alpha=0.5)
+
+    if show:
+        plt.show()
+    return ax
 
 def plot_apwp_context(Laurentia_poles, pole_plat, pole_plon, pole_A95,
                       age_min=540, age_max=1780, central_longitude=160,
