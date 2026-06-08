@@ -1,0 +1,30 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+I	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	106	74	18	13						L
+2	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	89	69	24	12						FI
+3*	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	65	55	10	25						C
+4	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	6	85	21	10						SF
+5	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	332	-78	54	8						L
+6	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	335	-82	17	13						SM
+7	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	68	75	32	14						T
+8	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	119	83	21	12						L
+9	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	5	81	30	10						L
+IO	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	28	-88	29	9						L
+11	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	36	83	29	13						L
+12	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	137	87	18	14						L
+13	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	84	74	46	8						L
+14	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	125	78	117	6						L
+15	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	73	79	86	6						L
+16	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	58	85	136	4						L
+17	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	95	80	31	10						L
+18	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	89	83	44	8						L
+19	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	350	83	86	5						L
+20	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	116	65	36	7						L
+21	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	39	88	20	12						L
+23	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	49	76	119	7						SM
+24	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	77	83	79	9						T
+25	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	112	87	20	15						FM
+26	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	58	82	44	10						FO
+27	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	65	77	34	12						FO
+28	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	350	77	25	14						FO
+29	Callander Alkaline Complex	i	g	DE-FM	10.1139/e91-033	Igneous	Pluton	Alkaline Rock			575		570	580	Ma	0	159	72	10	31						A

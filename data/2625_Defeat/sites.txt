@@ -1,0 +1,7 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+R09YW19	Defeat Suite	i	g	DE-FM	Mitchell2014	Igneous	Pluton	Granitoid	62.4567	245.463	2625		2620	2630	Ma	0	2	-55	31	9	8	8	244.000			Site-mean directions from Mitchell et al. (2014).
+R08WG	Defeat Suite	i	g	DE-FM	Mitchell2014	Igneous	Pluton	Granitoid	62.4578	245.443	2625		2620	2630	Ma	0	8	-47.9	215	3	11	2	238.690			Site-mean directions from Mitchell et al. (2014).
+R08DS1	Defeat Suite	i	g	DE-FM	Mitchell2014	Igneous	Pluton	Granitoid	62.4722	245.612	2625		2620	2630	Ma	0	344	-37	65	8	6	-6	261.000			Site-mean directions from Mitchell et al. (2014).
+R08WGP	Defeat Suite	i	g	DE-FM	Mitchell2014	Igneous	Pluton	Granitoid	62.4861	245.237	2625		2620	2630	Ma	0	177	60	17	7	25	13	248.000			Site-mean directions from Mitchell et al. (2014).
+R08WBD2	Defeat Suite	i	g	DE-FM	Mitchell2014	Igneous	Pluton	Granitoid	62.3201	245.769	2625		2620	2630	Ma	0	18	-33	82	6	8	-8	229.000			Site-mean directions from Mitchell et al. (2014).

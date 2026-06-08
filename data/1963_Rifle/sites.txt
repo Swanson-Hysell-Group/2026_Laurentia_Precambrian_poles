@@ -1,0 +1,25 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+WAB	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	58	21								Site-mean directions from Evans and Hoye (1981).
+WAC	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	128	17								Site-mean directions from Evans and Hoye (1981).
+WAD	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	79	15								Site-mean directions from Evans and Hoye (1981).
+WAE	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	90	40								Site-mean directions from Evans and Hoye (1981).
+WAF	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	257	-16								Site-mean directions from Evans and Hoye (1981).
+WAG	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	111	27								Site-mean directions from Evans and Hoye (1981).
+WAH	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	94	18								Site-mean directions from Evans and Hoye (1981).
+WAI	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	109	37								Site-mean directions from Evans and Hoye (1981).
+WAJ	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	72	18								Site-mean directions from Evans and Hoye (1981).
+WBA	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	280	-5								Site-mean directions from Evans and Hoye (1981).
+WBB	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	266	-25								Site-mean directions from Evans and Hoye (1981).
+WBC	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	300	-7								Site-mean directions from Evans and Hoye (1981).
+WBD	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	274	-28								Site-mean directions from Evans and Hoye (1981).
+WBE	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	64	35								Site-mean directions from Evans and Hoye (1981).
+WBG	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	76	24								Site-mean directions from Evans and Hoye (1981).
+WBH	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	86	17								Site-mean directions from Evans and Hoye (1981).
+WBI	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	82	23								Site-mean directions from Evans and Hoye (1981).
+WBJ	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	126	22								Site-mean directions from Evans and Hoye (1981).
+WCA	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	96	42								Site-mean directions from Evans and Hoye (1981).
+WCB	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	65	39								Site-mean directions from Evans and Hoye (1981).
+WCC	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	50	37								Site-mean directions from Evans and Hoye (1981).
+WCD	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	89	8								Site-mean directions from Evans and Hoye (1981).
+WCE	Rifle Formation	i	g	DE-FM	Evans1981	Sedimentary	Formation	Sandstone			1963		1957	1969	Ma	0	40	30								Site-mean directions from Evans and Hoye (1981).

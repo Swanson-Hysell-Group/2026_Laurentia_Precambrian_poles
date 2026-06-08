@@ -1,0 +1,26 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+1	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	274.8	32.3	38	11	6					Site-mean directions from Piper and Stearn (1977).
+3	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	303	-7.4	44	10.2	6					Site-mean directions from Piper and Stearn (1977).
+4	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	288.9	-33.2	78	7.6	6					Site-mean directions from Piper and Stearn (1977).
+6	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	292.5	-39.2	64	8.5	6					Site-mean directions from Piper and Stearn (1977).
+7	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	300.8	21.6	43	10.4	6					Site-mean directions from Piper and Stearn (1977).
+9	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	316.4	-21.1	105	6.6	6					Site-mean directions from Piper and Stearn (1977).
+10	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	290	41.2	55	9.1	6					Site-mean directions from Piper and Stearn (1977).
+11	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	299.2	11.7	247	4.9	5					Site-mean directions from Piper and Stearn (1977).
+18	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	281.5	11.9	241	4.3	6					Site-mean directions from Piper and Stearn (1977).
+22	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	292.7	11.8	146	6.4	5					Site-mean directions from Piper and Stearn (1977).
+24	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	287.3	-26.1	892	2.2	6					Site-mean directions from Piper and Stearn (1977).
+27	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	290.7	-19.4	184	5.7	5					Site-mean directions from Piper and Stearn (1977).
+28	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	288.2	-28.4	588	2.8	6					Site-mean directions from Piper and Stearn (1977).
+30	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	296.8	-16.6	530	2.9	6					Site-mean directions from Piper and Stearn (1977).
+32	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	300.4	-28.7	175	5.1	6					Site-mean directions from Piper and Stearn (1977).
+37	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	305.3	1.1	21	12.5	8					Site-mean directions from Piper and Stearn (1977).
+38	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	296.1	-1.6	44	11.7	5					Site-mean directions from Piper and Stearn (1977).
+39	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	285.6	21.1	2,144	1.5	6					Site-mean directions from Piper and Stearn (1977).
+40	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	281.6	14.2	561	3.2	5					Site-mean directions from Piper and Stearn (1977).
+42	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	288.4	-7.3	46	10	6					Site-mean directions from Piper and Stearn (1977).
+43	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	296.1	28	380	3.4	6					Site-mean directions from Piper and Stearn (1977).
+45	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	275.8	-13.6	1,029	2.4	5					Site-mean directions from Piper and Stearn (1977).
+46	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	283.9	-30.5	359	4	5					Site-mean directions from Piper and Stearn (1977).
+48	West Gardar Dolerite Dykes	i	g	DE-FM	Piper1977Dolerite	Igneous	Volcanic Dike	Diabase							Ma	0	278.2	4.5	32	13.8	5					Site-mean directions from Piper and Stearn (1977).
