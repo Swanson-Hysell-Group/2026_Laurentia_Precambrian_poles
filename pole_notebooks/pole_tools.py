@@ -936,7 +936,7 @@ NORDIC_COLUMNS = [
     'PLAT', 'PLONG', 'DP', 'DM', 'A95',
     'f', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
     'f', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
-    '%REV', 'DEMAGCODE', '40', '24', '10', '16',
+    '%REV', 'DEMAGCODE', 'Q1', '24', '10', '16',
     'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q(7)',
     'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R', 'Grade',
     'nominal age', 'lomagage', 'himagage', 'REF/method', 'ROCKNAME',
@@ -970,6 +970,55 @@ def _int_or_blank(x):
     return int(round(xf))
 
 
+def corrected_pole_note(method, plat, plon, *, f=None, f_range=None,
+                        zeta95=None, eta95=None, a95=None, monte_carlo='', extra=''):
+    """Format a note describing a study's inclination-corrected pole for ``Comment``.
+
+    The Nordic f-columns carry a standardized blanket flattening factor (0.6 for
+    sediments, 1 for crystalline rocks), so a study's own inclination-shallowing
+    result — which may not reduce to a single f and may carry a fully propagated
+    (Kent-ellipse) uncertainty — is recorded in the ``Comment`` field instead.
+    Build the string higher in the notebook and include it (with any other
+    context) in the ``COMMENT`` passed to ``make_nordic_summary``.
+
+    Args:
+        method (str): correction method, e.g. ``'E/I (Tauxe & Kent, 2004)'``.
+        plat, plon (float): corrected pole latitude and longitude in degrees.
+        f (float or None): single flattening factor, if applicable.
+        f_range (tuple or None): ``(low, high)`` 95% flattening range.
+        zeta95, eta95 (float or None): Kent-ellipse semi-axes in degrees.
+        a95 (float or None): circular A95 in degrees (if not an ellipse).
+        monte_carlo (str): uncertainty-propagation note, e.g.
+            ``'Pierce et al. (2022) Monte Carlo'``.
+        extra (str): any trailing text.
+
+    Returns:
+        str: a one-sentence note.
+    """
+    hemi = 'N' if plat >= 0 else 'S'
+    pos = f"{abs(plat):.1f}°{hemi}, {plon:.1f}°E"
+    fbits = []
+    if f is not None:
+        fbits.append(f"f = {f:.2f}")
+    if f_range is not None:
+        fbits.append(f"95% range {f_range[0]:.2f}–{f_range[1]:.2f}")
+    fstr = (', ' + ', '.join(fbits)) if fbits else ''
+    if zeta95 is not None and eta95 is not None:
+        unc = f"Kent ellipse ζ95 = {zeta95:.1f}° / η95 = {eta95:.1f}°"
+    elif a95 is not None:
+        unc = f"A95 = {a95:.1f}°"
+    else:
+        unc = ''
+    mc = f", uncertainty propagated via {monte_carlo}" if monte_carlo else ''
+    note = f"Study inclination-corrected pole — {method}{fstr}: {pos}"
+    if unc:
+        note += f", {unc}{mc}"
+    note += '.'
+    if extra:
+        note += ' ' + extra
+    return note
+
+
 def make_nordic_summary(terrane,
                         rockname,
                         sites,
@@ -977,18 +1026,17 @@ def make_nordic_summary(terrane,
                         pole_mean,
                         study_lon,
                         study_lat,
+                        lithology='crystalline',
                         component_comment='',
                         tests='',
                         gpmdb_number='',
                         magic_id='',
                         percent_reversed='',
                         demag_code='',
-                        f_factor=1,
-                        pole_mean_unflattened=None,
                         R1=None,
                         R2=None,
                         R3=None,
-                        R4=None,
+                        R4='',
                         R5=None,
                         R6=None,
                         R7=None,
@@ -1007,21 +1055,37 @@ def make_nordic_summary(terrane,
     """Build a one-row Nordic-compilation summary for a pole.
 
     Returns a single-row ``pandas.DataFrame`` whose columns are exactly
-    ``NORDIC_COLUMNS`` in order, so it can be saved and pasted directly into the
-    Nordic Workshop compilation spreadsheet. Pole position is written as
-    PLAT = pole latitude (``pole_mean['inc']``) and PLONG = pole longitude
-    (``pole_mean['dec']``). Numeric values are rounded to the tenth, except the
-    locality coordinates (SLAT/SLONG) and the flattening factor (f) which are
-    kept to the hundredth. Columns
-    this project does not populate (the old Van der Voo Q-criteria, the second
-    flattening block, DP/DM) are left blank.
+    ``NORDIC_COLUMNS`` in order, so it can be pasted straight into the Nordic
+    Workshop spreadsheet. Pole position is PLAT = pole latitude
+    (``pole_mean['inc']``), PLONG = pole longitude (``pole_mean['dec']``); for
+    these VGP-Fisher-mean poles the confidence is circular, so DP = DM = A95.
 
-    Args mirror the compilation fields. RESULT# is built from ``gpmdb_number``
-    (the Global Paleomagnetic Database number) and ``magic_id`` (the MagIC
-    contribution ID) as ``"GPMDB:<n> MagIC:<id>"``, including whichever are
-    provided. ``percent_reversed`` is %REV and ``demag_code`` is DEMAGCODE.
-    R1–R7, Grade, ages, and reference fields are required.
+    Flattening (``f`` columns): a standardized blanket flattening factor is used —
+    **f = 0.6 for ``lithology='sedimentary'``, f = 1 for ``lithology='crystalline'``**
+    (igneous/metamorphic). The corrected inclination ``INCf = unsquish(INC, f)``
+    is written to both INCf columns, and the flattening-corrected pole
+    (PLATf/PLONf with its DPf/DMf ellipse and A95f = sqrt(DPf*DMf)) is computed
+    from the corrected mean direction at the study locality and written to both
+    f-blocks (identical). For crystalline rocks (f = 1) the f-block equals the
+    main block. A study's own inclination-shallowing determination (which may not
+    be a single f and may have a propagated ellipse, e.g. E/I in Jacobsville) is
+    recorded in ``COMMENT`` — build it with ``corrected_pole_note``.
+
+    ``R4`` holds the field-test letter code(s) from ``resources/field_test_codes.md``
+    (e.g. ``'C'`` baked contact, ``'c'`` inverse baked contact, ``'g'``/``'G'``
+    conglomerate, ``'f'``/``'F'`` fold, ``'U'`` unconformity), not a number. A
+    populated R4 (a positive field test) contributes 1 to the ``R`` total; an
+    empty R4 (or ``'0'``) contributes 0. R1–R3 and R5–R7 are 0/1 integers.
+
+    The Van der Voo Q-criteria columns (Q1, 24, 10, 16, Q2–Q7, Q(7)) are left
+    blank (this project scores the modern Meert et al. (2020) R-criteria instead).
+    Numbers round to the tenth, except SLAT/SLONG and f (hundredth) and the ages
+    (nominal age / lomagage / himagage, rounded to the nearest integer). RESULT# is
+    built from ``gpmdb_number`` and ``magic_id`` as ``"GPMDB:<n> MagIC:<id>"``.
+    ROCKNAME appears twice (a deliberate duplicate in the Nordic format).
     """
+    if str(lithology).lower() not in ('crystalline', 'sedimentary'):
+        raise ValueError("lithology must be 'crystalline' or 'sedimentary'")
     if sites['dir_tilt_correction'].nunique() != 1:
         warnings.warn(
             "Multiple tilt correction values found in sites data; "
@@ -1030,20 +1094,36 @@ def make_nordic_summary(terrane,
     tilt = sites['dir_tilt_correction'].iloc[0]
     site_n = pole_mean['n']
     sample_n = sites['dir_n_samples'].sum()
-    inc_f = ipmag.unsquish([dir_mean['inc']], f_factor)[0]
-    pole_unflat = pole_mean_unflattened if pole_mean_unflattened is not None else pole_mean
 
-    required = {'R1': R1, 'R2': R2, 'R3': R3, 'R4': R4, 'R5': R5, 'R6': R6,
-                'R7': R7, 'Grade': Grade, 'nominal_age': nominal_age,
-                'lomagage': lomagage, 'himagage': himagage,
-                'REF_method': REF_method, 'POLE_AUTHORS': POLE_AUTHORS,
-                'YEAR': YEAR, 'JOURNAL': JOURNAL, 'VOLUME': VOLUME,
-                'TITLE': TITLE}
+    # blanket flattening factor: 0.6 for sediments, 1 for crystalline rocks
+    f = 0.6 if str(lithology).lower() == 'sedimentary' else 1.0
+
+    DEC, INC, DAL = dir_mean['dec'], dir_mean['inc'], dir_mean['alpha95']
+    PLAT, PLON, A95 = pole_mean['inc'], pole_mean['dec'], pole_mean['alpha95']
+    DP = DM = A95   # circular VGP-Fisher-mean pole
+
+    inc_f = ipmag.unsquish([INC], f)[0]
+    if f == 1.0:
+        platf, plonf, dpf, dmf, a95f = PLAT, PLON, DP, DM, A95
+    else:
+        # flattening-corrected pole from the corrected mean direction at the locality
+        plonf, platf, dpf, dmf = pmag.dia_vgp(DEC, inc_f, DAL, study_lat, study_lon)
+        a95f = (dpf * dmf) ** 0.5
+
+    required = {'R1': R1, 'R2': R2, 'R3': R3, 'R5': R5, 'R6': R6, 'R7': R7,
+                'Grade': Grade, 'nominal_age': nominal_age, 'lomagage': lomagage,
+                'himagage': himagage, 'REF_method': REF_method,
+                'POLE_AUTHORS': POLE_AUTHORS, 'YEAR': YEAR, 'JOURNAL': JOURNAL,
+                'VOLUME': VOLUME, 'TITLE': TITLE}
     for name, val in required.items():
         if val is None:
             raise ValueError(f"Required parameter '{name}' was not provided.")
 
-    R_total = sum(int(r) for r in (R1, R2, R3, R4, R5, R6, R7))
+    # R4 = field-test letter code(s); a populated R4 contributes 1 to the R total
+    r4_str = '' if R4 in (None, '', '0', 0) else str(R4)
+    r4_score = 1 if r4_str else 0
+    R_total = (int(R1) + int(R2) + int(R3) + r4_score
+               + int(R5) + int(R6) + int(R7))
 
     result_parts = []
     if gpmdb_number not in ('', None):
@@ -1053,23 +1133,23 @@ def make_nordic_summary(terrane,
     result_hash = ' '.join(result_parts)
 
     r = _round_or_blank
+    fblock = [r(f, 2), r(inc_f), r(platf), r(plonf), r(dpf), r(dmf), r(a95f)]
     values = [
         terrane, rockname, result_hash, component_comment, tests,
         _int_or_blank(tilt), r(study_lat, 2), r(study_lon, 2),
         _int_or_blank(site_n), _int_or_blank(sample_n),
-        r(dir_mean['dec']), r(dir_mean['inc']), r(abs(dir_mean['inc'])),
-        r(dir_mean['k']), r(dir_mean['alpha95']),
-        r(pole_mean['inc']), r(pole_mean['dec']), '', '', r(pole_mean['alpha95']),
-        r(f_factor, 2), r(inc_f), r(pole_unflat['inc']), r(pole_unflat['dec']),
-        '', '', r(pole_unflat['alpha95']),
-        '', '', '', '', '', '', '',                       # second f block (unused)
+        r(DEC), r(INC), r(abs(INC)), r(dir_mean['k']), r(DAL),
+        r(PLAT), r(PLON), r(DP), r(DM), r(A95),
+        *fblock,                                          # first flattening block
+        *fblock,                                          # second block (identical)
         _int_or_blank(percent_reversed), demag_code,
-        '', '', '', '',                                   # 40, 24, 10, 16 (unused)
-        '', '', '', '', '', '', '',                       # Q2..Q(7) (unused)
+        '', '', '', '',                                   # Q1, 24, 10, 16 (blank)
+        '', '', '', '', '', '', '',                       # Q2..Q(7) (blank)
         _int_or_blank(R1), _int_or_blank(R2), _int_or_blank(R3),
-        _int_or_blank(R4), _int_or_blank(R5), _int_or_blank(R6),
+        r4_str, _int_or_blank(R5), _int_or_blank(R6),
         _int_or_blank(R7), R_total, Grade,
-        r(nominal_age), r(lomagage), r(himagage), REF_method, rockname,
+        _int_or_blank(nominal_age), _int_or_blank(lomagage),
+        _int_or_blank(himagage), REF_method, rockname,
         POLE_AUTHORS, _int_or_blank(YEAR), JOURNAL, VOLUME, VPAGES, TITLE, COMMENT,
     ]
     return pd.DataFrame([values], columns=NORDIC_COLUMNS)
