@@ -146,22 +146,107 @@ def plot_pole_overlap(ROCKNAME, Precambrian_poles, Phanerozoic_poles,
         matplotlib.axes.Axes: The map axis.
     """
 
-    pole_index = Precambrian_poles.loc[Precambrian_poles['ROCKNAME'] == ROCKNAME].index
+    pole_index = Precambrian_poles.loc[
+        Precambrian_poles['ROCKNAME'] == ROCKNAME
+    ].index
+    has_match = len(pole_index) > 0
+
+    this_row = None
+    if has_match:
+        this_row = Precambrian_poles.loc[pole_index].iloc[0]
+
+    def _normalized_terrane(value):
+        if pd.isna(value):
+            return None
+        return str(value).strip()
+
+    def _is_laurentian_subblock(terrane):
+        terrane = _normalized_terrane(terrane)
+        if terrane is None:
+            return False
+        return terrane.startswith('Laurentia-') and terrane not in (
+            'Laurentia-Scotland',
+            'Laurentia-Svalbard',
+            'Laurentia-Greenland',
+        )
+
+    def _row_value_with_fallback(primary, fallback=None):
+        if this_row is None:
+            return None
+        value = this_row.get(primary)
+        if pd.notna(value):
+            return value
+        if fallback is not None:
+            return this_row.get(fallback)
+        return value
+
     if pole_age is None:
-        pole_age = Precambrian_poles['nominal age'].values[pole_index][0]
+        if has_match:
+            pole_age = this_row.get('nominal age')
+            if pd.isna(pole_age) and {'lomagage', 'himagage'} <= set(Precambrian_poles.columns):
+                lo = this_row.get('lomagage')
+                hi = this_row.get('himagage')
+                if pd.notna(lo) and pd.notna(hi):
+                    pole_age = 0.5 * (float(lo) + float(hi))
+        else:
+            raise ValueError(
+                f"ROCKNAME {ROCKNAME!r} not found in Precambrian_poles; "
+                "provide pole_age when plotting a custom pole."
+            )
     if pole_plon is None:
-        pole_plon = Precambrian_poles['PLONG_rotated'].values[pole_index][0]
+        if has_match:
+            pole_plon = _row_value_with_fallback('PLONG_rotated', 'PLONG')
+        else:
+            raise ValueError(
+                f"ROCKNAME {ROCKNAME!r} not found in Precambrian_poles; "
+                "provide pole_plon when plotting a custom pole."
+            )
     if pole_plat is None:
-        pole_plat = Precambrian_poles['PLAT_rotated'].values[pole_index][0]
+        if has_match:
+            pole_plat = _row_value_with_fallback('PLAT_rotated', 'PLAT')
+        else:
+            raise ValueError(
+                f"ROCKNAME {ROCKNAME!r} not found in Precambrian_poles; "
+                "provide pole_plat when plotting a custom pole."
+            )
     if pole_A95 is None:
-        pole_A95 = Precambrian_poles['A95'].values[pole_index][0]
+        if has_match:
+            pole_A95 = this_row.get('A95')
+            if pd.isna(pole_A95) and {'DP', 'DM'} <= set(Precambrian_poles.columns):
+                dp = this_row.get('DP')
+                dm = this_row.get('DM')
+                if pd.notna(dp) and pd.notna(dm):
+                    pole_A95 = np.sqrt(float(dp) * float(dm))
+        else:
+            raise ValueError(
+                f"ROCKNAME {ROCKNAME!r} not found in Precambrian_poles; "
+                "provide pole_A95 when plotting a custom pole."
+            )
+
+    pole_plon = pd.to_numeric(pole_plon, errors='coerce')
+    pole_plat = pd.to_numeric(pole_plat, errors='coerce')
+    pole_A95 = pd.to_numeric(pole_A95, errors='coerce')
 
     ax = ipmag.make_mollweide_map(add_land=False, central_longitude=140, figsize=(20,20))
 
     age_min = 0
     age_max = pole_age
 
-    Precambrian_poles_filtered = Precambrian_poles[Precambrian_poles['nominal age']<=age_max]
+    pole_terrane = _normalized_terrane(this_row.get('Terrane')) if this_row is not None else None
+    Precambrian_poles_filtered = Precambrian_poles[
+        Precambrian_poles['nominal age'] <= age_max
+    ].copy()
+
+    # For pre-amalgamation Laurentian blocks, compare only within the same block
+    # until Laurentia is treated as amalgamated in the terrane field.
+    if _is_laurentian_subblock(pole_terrane):
+        filtered_terranes = Precambrian_poles_filtered['Terrane'].apply(_normalized_terrane)
+        keep_mask = (
+            filtered_terranes.eq(pole_terrane)
+            | filtered_terranes.eq('Laurentia')
+            | filtered_terranes.eq('Laurentia-Trans-Hudson orogen')
+        )
+        Precambrian_poles_filtered = Precambrian_poles_filtered[keep_mask].copy()
 
     ipmag.plot_poles_colorbar(ax, Phanerozoic_poles['Lon'].tolist(), Phanerozoic_poles['Lat'].tolist(), Phanerozoic_poles['a95'].tolist(), 
                               Phanerozoic_poles['Age'].tolist(),age_min,age_max,colormap='coolwarm',colorbar=False)
@@ -193,10 +278,24 @@ def plot_pole_overlap(ROCKNAME, Precambrian_poles, Phanerozoic_poles,
         ax.text(Precambrian_poles_filtered_Lon_reversed[n],Precambrian_poles_filtered_Lat_reversed[n],
                 age_label,transform=ccrs.PlateCarree(),fontsize=6)
 
-    ipmag.plot_pole(ax,pole_plon,pole_plat,
-                    pole_A95,filled_pole=True,fill_color='green',fill_alpha=0.5)
-    ipmag.plot_pole(ax,180+pole_plon,-pole_plat,
-                    pole_A95,filled_pole=True,fill_color='green',fill_alpha=0.5)
+    # Draw the A95 confidence circle (best-effort; may fail near geographic poles).
+    if np.isfinite(pole_A95):
+        try:
+            ipmag.plot_pole(ax, pole_plon, pole_plat,
+                            pole_A95, filled_pole=True, fill_color='green',
+                            fill_alpha=0.5, zorder=998)
+            ipmag.plot_pole(ax, 180 + pole_plon, -pole_plat,
+                            pole_A95, filled_pole=True, fill_color='green',
+                            fill_alpha=0.5, zorder=998)
+        except Exception:
+            pass  # circle rendering failed; the star below still guarantees visibility
+
+    # Always draw a bright star marker on top of everything — zorder=1000 ensures
+    # it is above all other map artists regardless of how many poles are plotted.
+    for _plon, _plat in [(pole_plon, pole_plat), (180 + pole_plon, -pole_plat)]:
+        ax.plot(_plon, _plat, marker='*', color='lime', markersize=22,
+                markeredgecolor='darkgreen', markeredgewidth=1.5,
+                transform=ccrs.PlateCarree(), zorder=1000)
 
     if show:
         plt.show()
@@ -354,10 +453,10 @@ def R2_test(pole_name,pole_df):
     this_pole = pole_df[pole_df['ROCKNAME'] == pole_name]
     this_pole.reset_index(inplace=True)
     
-    A95 = this_pole['A95'][0]
-    N = this_pole['N'][0]
-    B = this_pole['B'][0]
-    KD = this_pole['KD'][0]
+    A95 = pd.to_numeric(this_pole['A95'][0], errors='coerce')
+    N   = pd.to_numeric(this_pole['N'][0],   errors='coerce')
+    B   = pd.to_numeric(this_pole['B'][0],   errors='coerce')
+    KD  = pd.to_numeric(this_pole['KD'][0],  errors='coerce')
     
     if N >= 25:
         print('N = ' + str(round(N)) + ' (N ≥ 25; sufficient sample number);')
@@ -569,7 +668,11 @@ def fishqq_vgps(sites_tc, unify_polarity=True):
                                     vgp_sites['vgp_lat'].tolist())
     if unify_polarity:
         vgp_block = pmag.flip(vgp_block, combine=True)
-    return ipmag.fishqq(di_block=vgp_block, data_type='poles')
+    try:
+        return ipmag.fishqq(di_block=vgp_block, data_type='poles')
+    except TypeError:
+        # Backward compatible with pmagpy versions that do not accept data_type.
+        return ipmag.fishqq(di_block=vgp_block)
 
 
 def svei_test_vgps(sites_tc, study_lon, study_lat, model='TK03_GAD',
@@ -936,7 +1039,7 @@ NORDIC_COLUMNS = [
     'PLAT', 'PLONG', 'DP', 'DM', 'A95',
     'f', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
     'f', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
-    '%REV', 'DEMAGCODE', 'Q1', '24', '10', '16',
+    '%REV', 'DEMAGCODE', '40', '24', '10', '16',
     'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q(7)',
     'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R', 'Grade',
     'nominal age', 'lomagage', 'himagage', 'REF/method', 'ROCKNAME',
@@ -1027,6 +1130,8 @@ def make_nordic_summary(terrane,
                         study_lon,
                         study_lat,
                         lithology='crystalline',
+                        f_factor=None,
+                        pole_mean_unflattened=None,
                         component_comment='',
                         tests='',
                         gpmdb_number='',
@@ -1077,7 +1182,7 @@ def make_nordic_summary(terrane,
     populated R4 (a positive field test) contributes 1 to the ``R`` total; an
     empty R4 (or ``'0'``) contributes 0. R1–R3 and R5–R7 are 0/1 integers.
 
-    The Van der Voo Q-criteria columns (Q1, 24, 10, 16, Q2–Q7, Q(7)) are left
+    The Van der Voo Q-criteria columns (40, 24, 10, 16, Q2–Q7, Q(7)) are left
     blank (this project scores the modern Meert et al. (2020) R-criteria instead).
     Numbers round to the tenth, except SLAT/SLONG and f (hundredth) and the ages
     (nominal age / lomagage / himagage, rounded to the nearest integer). RESULT# is
@@ -1095,15 +1200,25 @@ def make_nordic_summary(terrane,
     site_n = pole_mean['n']
     sample_n = sites['dir_n_samples'].sum()
 
-    # blanket flattening factor: 0.6 for sediments, 1 for crystalline rocks
-    f = 0.6 if str(lithology).lower() == 'sedimentary' else 1.0
+    # Backward compatibility: existing notebooks may still pass f_factor and
+    # pole_mean_unflattened. If f_factor is provided, it overrides lithology.
+    if f_factor is None:
+        # blanket flattening factor: 0.6 for sediments, 1 for crystalline rocks
+        f = 0.6 if str(lithology).lower() == 'sedimentary' else 1.0
+    else:
+        f = float(f_factor)
 
     DEC, INC, DAL = dir_mean['dec'], dir_mean['inc'], dir_mean['alpha95']
     PLAT, PLON, A95 = pole_mean['inc'], pole_mean['dec'], pole_mean['alpha95']
     DP = DM = A95   # circular VGP-Fisher-mean pole
 
     inc_f = ipmag.unsquish([INC], f)[0]
-    if f == 1.0:
+    if pole_mean_unflattened is not None:
+        platf = pole_mean_unflattened.get('inc', PLAT)
+        plonf = pole_mean_unflattened.get('dec', PLON)
+        a95f = pole_mean_unflattened.get('alpha95', A95)
+        dpf = dmf = a95f
+    elif f == 1.0:
         platf, plonf, dpf, dmf, a95f = PLAT, PLON, DP, DM, A95
     else:
         # flattening-corrected pole from the corrected mean direction at the locality
@@ -1143,7 +1258,7 @@ def make_nordic_summary(terrane,
         *fblock,                                          # first flattening block
         *fblock,                                          # second block (identical)
         _int_or_blank(percent_reversed), demag_code,
-        '', '', '', '',                                   # Q1, 24, 10, 16 (blank)
+        '', '', '', '',                                   # 40, 24, 10, 16 (blank)
         '', '', '', '', '', '', '',                       # Q2..Q(7) (blank)
         _int_or_blank(R1), _int_or_blank(R2), _int_or_blank(R3),
         r4_str, _int_or_blank(R5), _int_or_blank(R6),
