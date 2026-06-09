@@ -14,6 +14,8 @@ The following poles were added at the 2022 Kringlerdalen Workshop:
 
 ## Changes
 
+For the Baie des Moutons poles, the N (specimens) reported was the total demagnetized rather than the total used. This has been corrected.
+
 For the [ca. 1141 Ma Abitibi Dykes pole](pole_notebooks/1141_Abitibi.ipynb), the additional Abitibi site of Halls et al. (2015) was added to the mean calculation that brings the pole from N=7 to N=8. That was the same study that showed that the originally included A1 dike of Ernst and Buchan (1993) is actually part of the ca. 2167 Ma Biscotasing dike swarm.
 
 In Elston et al. (2002), there was a decision for the Purcell lavas to calculate the pole only for lavas where the remanence was dominanted by hematite. In doing so, remanences held by magnetite are discarded. It seems preferable to include all of the sites rather than only including the hematite ones that while potentially early are demonstrably secondary. We modify the Purcell Lavas pole to be calculated from all sites. This changes the position and increases the uncertainty due to increased disperson among the VGPs. Note that Elston et al. (2002) did not report a fold test for all sites. Such a test passes. He choose single polarity, if you use both polarities it does not pass a reversal test. It was also determined that the pole should be downgraded from an B to an A pole. More work should be done on the Purcell lavas to improve this pole and ideally isolate a magnetite-held thermal remanent magnetization.
@@ -23,3 +25,7 @@ Given the evidence presented in Ding et al. (2026), that the Tobacco Root Mounta
 Previously the Haliburton Highlands pole of the Grenville Province was included as a representative pole for the Grenville orogen with the thought that its cooling history was well-constrained. However, evidence presented in Zhang et al. (2026) reveal that there was both protracted high-grade metamorphism in portions of the orogen interior and that magnetite remanence in the Marcy Massif was acquired much later ca. 887 ± 23 Ma. Given that it is unlikely that Haliburton cooled below magnetic blocking temperatures by ca. 1015 Ma this pole is no longer included within the compilation.
 
 The Euler rotation of Svalbard to Laurentia is uncertain to do multiple tectonic episodes including Caledonian translation and North Atlantic opening. As a result, at the 2026 Iloranta Workshop, these were moved to a separate off-craton block category being compiled by Prof. D.A.D. Evans.
+
+## Thoughts
+
+The discrepancy between the upper Belt and the ca. 1382 ± 2 Ma Zig-Zag Dal igneous province persists. The geochronology is sparse for the province with the only date being two multi-grain baddeleyite fractions. It would be worthwhile to develop more geochronology to see if this age is too young or too old.
