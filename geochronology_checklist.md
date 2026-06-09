@@ -109,7 +109,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 ## Laurentia-Superior(East)
 
 - [x] Otto Stock Dykes and Aureole (RESULT# 2629; nominal age updated from 2676 Ma to 2680 Ma)
-- [ ] PTARMIGAN MEAN (RESULT# new; nominal age 2505 Ma)
+- [x] PTARMIGAN MEAN (RESULT# new; nominal age 2505 Ma)
 - [ ] MATACHEWAN R (RESULT# new; nominal age 2466 Ma)
 - [ ] MATACHEWAN N (RESULT# new; nominal age 2446 Ma)
 - [ ] SENNETERRE (RESULT# B+93; nominal age 2218 Ma)
