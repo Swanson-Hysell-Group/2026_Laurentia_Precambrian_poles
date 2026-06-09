@@ -50,7 +50,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [ ] Snowslip Formation (RESULT# 9038; nominal age 1450 Ma)
 - [ ] Spokane Formation (RESULT# 9039; nominal age 1458 Ma)
 - [ ] Michikamau Intrusion Combined (RESULT# 2274; nominal age 1460 Ma)
-- [x] St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1476 Ma)
+- [x] St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1466 Ma)
 - [ ] Western Channel Diabase (RESULT# 2669; nominal age 1590 Ma)
 - [ ] Cleaver Dykes (RESULT# 9139; nominal age 1741 Ma)
 - [ ] NE trending ECMB Diabase Dykes (RESULT# 9970; nominal age 1780 Ma)
