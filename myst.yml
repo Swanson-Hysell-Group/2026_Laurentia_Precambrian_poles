@@ -13,7 +13,7 @@ project:
     - paleomagnetic poles
   license:
     content: CC-BY-4.0
-  github: Swanson-Hysell/2026_Laurentia_Precambrian_poles
+  github: Swanson-Hysell-Group/2026_Laurentia_Precambrian_poles
   execute:
     enabled: false
 
@@ -28,7 +28,8 @@ project:
     GAD: Geocentric Axial Dipole
 
   toc:
-    - file: index.ipynb
+    - file: index.md
+    - file: pole_map.ipynb
     - file: changes.md
     - title: Pole Assessments
       children:
@@ -36,6 +37,8 @@ project:
         - file: pole_notebooks/572_Catoctin_Basalts.ipynb
         - file: pole_notebooks/575_Callander.ipynb
         - file: pole_notebooks/719_Franklin_LIP.ipynb
+        - file: pole_notebooks/751_Kwagunt.ipynb
+        - file: pole_notebooks/754_Uinta.ipynb
         - file: pole_notebooks/780_Gunbarrel.ipynb
         - file: pole_notebooks/887_Adirondack.ipynb
         - file: pole_notebooks/990_Jacobsville.ipynb
@@ -50,6 +53,18 @@ project:
         - file: pole_notebooks/1095_North_Shore_Volcanic_Group.ipynb
         - file: pole_notebooks/1108_Osler_Volcanic_Group.ipynb
         - file: pole_notebooks/1109_Mamainse_Point_Volcanics.ipynb
+        - file: pole_notebooks/1141_Abitibi.ipynb
+        - file: pole_notebooks/1144_Lamprophyre.ipynb
+        - file: pole_notebooks/1237_Sudbury.ipynb
+        - file: pole_notebooks/1267_Mackenzie.ipynb
+        - file: pole_notebooks/1305_Nain.ipynb
+        - file: pole_notebooks/1382_Midsommersoe.ipynb
+        - file: pole_notebooks/1382_Victoria.ipynb
+        - file: pole_notebooks/1382_Zigzag.ipynb
+        - file: pole_notebooks/1430_Rocky.ipynb
+        - file: pole_notebooks/1460_Michikamau.ipynb
+        - file: pole_notebooks/1476_Francois.ipynb
+        - file: pole_notebooks/1633_Melville.ipynb
         - file: pole_notebooks/1740_Cleaver_Dikes.ipynb
         - file: pole_notebooks/1779_East_Central_Minnesota_Batholith.ipynb
     - title: Resources
