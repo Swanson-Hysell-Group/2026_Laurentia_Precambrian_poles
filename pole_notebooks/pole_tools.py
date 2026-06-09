@@ -911,6 +911,92 @@ def compute_mean_direction_from_vgps(sites_tc, study_lon, study_lat,
     dir_mean = ipmag.fisher_mean(di_block=dir_block)
     return dir_block, dir_mean
 
+def plot_site_directions(sites, color='blue', marker='o', markersize=20,
+                         title=None, ax=None, show=True):
+    """Plots site mean directions on an equal-area net without unifying polarity.
+
+    Builds a direction block from the ``dir_dec``/``dir_inc`` columns (dropping
+    rows with NaN in either) and plots it with ``ipmag.plot_di``. No polarity
+    unification or flipping is applied, so mixed-polarity data plot in their
+    measured directions — downward (positive inclination) directions as filled
+    symbols and upward (negative inclination) directions as open symbols. This is
+    useful for inspecting the data before ``compute_mean_direction`` or
+    ``compute_mean_pole`` unify polarity to compute the Fisher mean.
+
+    Args:
+        sites (pd.DataFrame): Site data with columns ``dir_dec`` and ``dir_inc``.
+        color (str): Symbol color passed to ``ipmag.plot_di``.
+        marker (str): Symbol marker passed to ``ipmag.plot_di``.
+        markersize (int): Symbol size passed to ``ipmag.plot_di``.
+        title (str, optional): Title for the plot. If None, no title is set.
+        ax (matplotlib.axes.Axes, optional): Existing equal-area axis to draw on.
+            If None, a new net is created with ``ipmag.plot_net``.
+        show (bool): If True, calls ``plt.show()`` after plotting.
+
+    Returns:
+        list: The direction block as a list of ``[dec, inc]`` pairs (the
+        non-unified data that were plotted).
+    """
+    dir_sites = sites.dropna(subset=['dir_dec', 'dir_inc'])
+    dir_block = ipmag.make_di_block(dir_sites['dir_dec'].tolist(),
+                                    dir_sites['dir_inc'].tolist())
+    if ax is None:
+        ipmag.plot_net()
+    ipmag.plot_di(di_block=dir_block, color=color, marker=marker,
+                  markersize=markersize)
+    if title is not None:
+        plt.title(title)
+    if show:
+        plt.show()
+    return dir_block
+
+def reversal_test(sites, plot=True, random_seed=None):
+    """Runs the McFadden & McElhinny (1990) and bootstrap reversal tests.
+
+    Builds a direction block from the ``dir_dec``/``dir_inc`` columns (dropping
+    rows with NaN in either) and passes the full mixed-polarity set to both
+    PmagPy reversal tests, which internally separate the normal and reversed
+    modes. The McFadden & McElhinny (1990) test reports a Watson V common-mean
+    statistic with an A/B/C classification (or a negative/indeterminate result);
+    the bootstrap test compares the two modes' Cartesian components and passes
+    only if their bootstrapped confidence bounds overlap in x, y, and z.
+
+    Args:
+        sites (pd.DataFrame): Site data with columns ``dir_dec`` and ``dir_inc``.
+        plot (bool): If True, draws the stereonet (MM1990) and the bootstrap
+            cumulative-distribution plots.
+        random_seed (int, optional): Seed for the Monte Carlo / bootstrap
+            resampling; pass a fixed value for reproducible notebook output.
+
+    Returns:
+        tuple: The McFadden & McElhinny (1990) result from
+        ``ipmag.reversal_test_MM1990``, ``(classification, angle,
+        critical_angle, label)``.
+    """
+    dir_sites = sites.dropna(subset=['dir_dec', 'dir_inc'])
+    decs = dir_sites['dir_dec'].tolist()
+    incs = dir_sites['dir_inc'].tolist()
+    dir_block = ipmag.make_di_block(decs, incs)
+    # split into two modes the same way the tests do: by the principal
+    # eigenvector (pmag.flip -> doprinc), not by inclination sign
+    pol1, pol2 = pmag.flip(dir_block)
+    print(f'{len(dir_block)} directions (polarity 1: {len(pol1)}, polarity 2: {len(pol2)})\n')
+
+    print('McFadden & McElhinny (1990) reversal test')
+    print('-' * 42)
+    mm = ipmag.reversal_test_MM1990(dec=decs, inc=incs, plot_stereo=plot,
+                                    random_seed=random_seed)
+    if plot:
+        plt.show()
+
+    print('\nBootstrap reversal test')
+    print('-' * 42)
+    ipmag.reversal_test_bootstrap(dec=decs, inc=incs, plot_stereo=plot,
+                                  random_seed=random_seed)
+    if plot:
+        plt.show()
+    return mm
+
 def plot_vgps_and_pole(vgp_block, pole_mean, central_longitude=150,
                        central_latitude=0, figsize=(8, 8)):
     """Plots individual site VGPs and the mean pole on an orthographic map.
