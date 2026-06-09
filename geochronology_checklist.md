@@ -120,8 +120,8 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 ## Laurentia-Superior(West)
 
-- [ ] MARATHON N (RESULT# H+08; nominal age 2124 Ma)
-- [ ] MARATHON R (RESULT# H+08; nominal age 2104 Ma)
+- [x] MARATHON N (RESULT# H+08; nominal age 2124 Ma)
+- [x] MARATHON R (RESULT# H+08; nominal age 2104 Ma)
 - [ ] CAUCHON LAKE (RESULT# 8548; nominal age 2091 Ma)
 - [ ] FORT FRANCES (RESULT# 1739; nominal age 2077 Ma)
 - [ ] MOLSON B+C2 (RESULT# new; nominal age 1879 Ma)
