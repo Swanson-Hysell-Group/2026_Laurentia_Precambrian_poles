@@ -96,7 +96,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Defeat Suite (RESULT# 9407; nominal age 2625 Ma)
 - [x] Malley dykes (RESULT# 9405; nominal age 2231 Ma)
 - [x] Dogrib dykes (RESULT# 9406; nominal age 2193 Ma)
-- [ ] Indin dykes (RESULT# 9484; nominal age 2126 Ma)
+- [x] Indin dykes (RESULT# 9484; nominal age 2126 Ma)
 - [ ] Lac de Gras dykes (RESULT# 9404; nominal age 2026 Ma)
 - [ ] Ghost Dike Swarm (RESULT# 9485; nominal age 1887 Ma)
 - [ ] MEAN Seton/Akaitcho/Mara (RESULT# new; nominal age 1889 Ma)
