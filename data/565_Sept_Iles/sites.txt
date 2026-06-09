@@ -1,0 +1,28 @@
+tab	sites
+site	location	dir_comp_name	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	age	age_low	age_high	age_unit
+SI1	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	320	-34	61.0	5.0	13	12.7	152.1	565	561	569	Ma
+SI3	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	336	-40	61.0	7.0	9	14.0	136.2	565	561	569	Ma
+SI4a	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	331	-41	16.0	31.0	3	12.0	140.5	565	561	569	Ma
+SI8a	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	334	-21	21.0	17.0	5	24.8	141.8	565	561	569	Ma
+SI10a	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	342	-24	57.0	16.0	3	25.3	133.0	565	561	569	Ma
+SI11a	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	326	-39	100.0	8.0	6	11.7	145.5	565	561	569	Ma
+SI13a	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	323	-30	28.0	18.0	4	16.1	150.5	565	561	569	Ma
+SI14	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	330	-10	173.0	6.0	5	29.0	148.2	565	561	569	Ma
+SI15a	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	344	-38			2	17.1	129.1	565	561	569	Ma
+SI17a	Sept-Iles intrusion	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	343	-10			1	32.8	133.8	565	561	569	Ma
+SI4b	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	256	-79	22.0	20.0	4	-50.6	147.1	565	561	569	Ma
+SI5	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	174	-88			2	-54.2	112.8	565	561	569	Ma
+SI7	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	347	65	126.0	6.0	6	80.8	188.0	565	561	569	Ma
+SI8b	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	31	83			2	61.3	308.3	565	561	569	Ma
+SI9	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	38	71	10.0	22.0	6	66.8	355.7	565	561	569	Ma
+SI10b	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	254	-78	30.0	17.0	4	-50.9	150.1	565	561	569	Ma
+SI11b	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	254	-88			2	-51.1	119.6	565	561	569	Ma
+SI13b	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	263	-88			2	-50.5	119.7	565	561	569	Ma
+SI15b	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	25	85	23.0	14.0	6	59.0	301.6	565	561	569	Ma
+SI16	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	349	76	94.0	10.0	4	75.5	273.7	565	561	569	Ma
+SI17b	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	21	79	27.0	18.0	4	68.8	314.6	565	561	569	Ma
+SI19	Sept-Iles intrusion	B-host	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Layered Intrusion	Gabbro	50.2	293.5	0	73	-73	80.0	10.0	4	-33.9	76.6	565	561	569	Ma
+SI2	Sept-Iles intrusion	B-dyke	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Volcanic Dike	Diabase	50.2	293.5	0	8	80	32.0	10.0	8	69.3	301.0	565	561	569	Ma
+SI6	Sept-Iles intrusion	B-dyke	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Volcanic Dike	Diabase	50.2	293.5	0	262	89	18.0	13.0	8	49.9	290.4	565	561	569	Ma
+SI12	Sept-Iles intrusion	B-dyke	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Volcanic Dike	Diabase	50.2	293.5	0	28	-83	32.0	10.0	8	-37.7	105.4	565	561	569	Ma
+SI18	Sept-Iles intrusion	B-dyke	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1139/e87-135	Intrusive	Volcanic Dike	Diabase	50.2	293.5	0	19	77	25.0	14.0	6	72.0	319.8	565	561	569	Ma
