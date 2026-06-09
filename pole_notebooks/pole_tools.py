@@ -1162,19 +1162,22 @@ def make_nordic_summary(terrane,
     Returns a single-row ``pandas.DataFrame`` whose columns are exactly
     ``NORDIC_COLUMNS`` in order, so it can be pasted straight into the Nordic
     Workshop spreadsheet. Pole position is PLAT = pole latitude
-    (``pole_mean['inc']``), PLONG = pole longitude (``pole_mean['dec']``); for
-    these VGP-Fisher-mean poles the confidence is circular, so DP = DM = A95.
+    (``pole_mean['inc']``), PLONG = pole longitude (``pole_mean['dec']``); these
+    are VGP-Fisher-mean poles with a circular confidence (a single A95), so the
+    oval semi-axes **DP and DM are left blank** rather than set equal to A95.
 
     Flattening (``f`` columns): a standardized blanket flattening factor is used —
     **f = 0.6 for ``lithology='sedimentary'``, f = 1 for ``lithology='crystalline'``**
     (igneous/metamorphic). The corrected inclination ``INCf = unsquish(INC, f)``
     is written to both INCf columns, and the flattening-corrected pole
-    (PLATf/PLONf with its DPf/DMf ellipse and A95f = sqrt(DPf*DMf)) is computed
-    from the corrected mean direction at the study locality and written to both
-    f-blocks (identical). For crystalline rocks (f = 1) the f-block equals the
-    main block. A study's own inclination-shallowing determination (which may not
-    be a single f and may have a propagated ellipse, e.g. E/I in Jacobsville) is
-    recorded in ``COMMENT`` — build it with ``corrected_pole_note``.
+    (PLATf/PLONf, A95f) is computed from the corrected mean direction at the
+    study locality and written to both f-blocks (identical). For crystalline
+    rocks (f = 1) the f-block equals the (circular) main block, so DPf/DMf are
+    likewise blank; a sedimentary flattening correction yields a genuine
+    confidence oval, so DPf/DMf are reported and A95f = sqrt(DPf*DMf). A study's
+    own inclination-shallowing determination (which may not be a single f and may
+    have a propagated ellipse, e.g. E/I in Jacobsville) is recorded in
+    ``COMMENT`` — build it with ``corrected_pole_note``.
 
     ``R4`` holds the field-test letter code(s) from ``resources/field_test_codes.md``
     (e.g. ``'C'`` baked contact, ``'c'`` inverse baked contact, ``'g'``/``'G'``
@@ -1210,18 +1213,22 @@ def make_nordic_summary(terrane,
 
     DEC, INC, DAL = dir_mean['dec'], dir_mean['inc'], dir_mean['alpha95']
     PLAT, PLON, A95 = pole_mean['inc'], pole_mean['dec'], pole_mean['alpha95']
-    DP = DM = A95   # circular VGP-Fisher-mean pole
+    # These are circular VGP-Fisher-mean poles: the confidence is a single A95,
+    # so the oval semi-axes DP/DM are left blank rather than set equal to A95.
 
     inc_f = ipmag.unsquish([INC], f)[0]
     if pole_mean_unflattened is not None:
         platf = pole_mean_unflattened.get('inc', PLAT)
         plonf = pole_mean_unflattened.get('dec', PLON)
         a95f = pole_mean_unflattened.get('alpha95', A95)
-        dpf = dmf = a95f
+        dpf = dmf = ''            # circular corrected pole; DPf/DMf left blank
     elif f == 1.0:
-        platf, plonf, dpf, dmf, a95f = PLAT, PLON, DP, DM, A95
+        platf, plonf, a95f = PLAT, PLON, A95
+        dpf = dmf = ''            # f-block equals the (circular) main pole
     else:
-        # flattening-corrected pole from the corrected mean direction at the locality
+        # A sedimentary flattening correction yields a genuine confidence oval:
+        # the corrected pole and its DPf/DMf come from the corrected mean
+        # direction at the locality, so DPf/DMf are reported in that case.
         plonf, platf, dpf, dmf = pmag.dia_vgp(DEC, inc_f, DAL, study_lat, study_lon)
         a95f = (dpf * dmf) ** 0.5
 
@@ -1254,7 +1261,7 @@ def make_nordic_summary(terrane,
         _int_or_blank(tilt), r(study_lat, 2), r(study_lon, 2),
         _int_or_blank(site_n), _int_or_blank(sample_n),
         r(DEC), r(INC), r(abs(INC)), r(dir_mean['k']), r(DAL),
-        r(PLAT), r(PLON), r(DP), r(DM), r(A95),
+        r(PLAT), r(PLON), '', '', r(A95),                 # DP/DM blank (circular A95)
         *fblock,                                          # first flattening block
         *fblock,                                          # second block (identical)
         _int_or_blank(percent_reversed), demag_code,
