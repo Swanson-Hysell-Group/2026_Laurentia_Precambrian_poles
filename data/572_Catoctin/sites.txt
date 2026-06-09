@@ -1,0 +1,51 @@
+tab	sites
+site	location	dir_comp_name	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	age	age_unit
+2A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	191	-81	504.0	6.0	3	-56	118	568	Ma
+2A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	256	-74	504.0	6.0	3	-39	151	568	Ma
+3A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	289	52	154.0	6.0	6	-33	40	568	Ma
+3A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	281	80	154.0	6.0	6	-40	87	568	Ma
+6A	Catoctin volcanic province	A	i	b	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	41	-79			1	-21	97	568	Ma
+6A	Catoctin volcanic province	A	i	b	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	133	-80			1	-50	90	568	Ma
+8A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	164	89	43.0	8.0	6	-36	113	568	Ma
+8A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	164	89	43.0	8.0	6	-36	113	568	Ma
+9A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	55	80	334.0	5.0	5	-48	137	568	Ma
+9A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	86	76	334.0	5.0	5	-36	145	568	Ma
+15A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	194	-76	97.0	9.0	4	-63	125	568	Ma
+15A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	203	-86	97.0	9.0	4	-45	116	568	Ma
+16A	Catoctin volcanic province	A	i	b	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	297	82			1	-44	91	568	Ma
+16A	Catoctin volcanic province	A	i	b	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	159	82			1	-24	117	568	Ma
+28A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	189	-75	730.0	4.0	4	-66	123	568	Ma
+28A	Catoctin volcanic province	A	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	248	-75	730.0	4.0	4	-44	147	568	Ma
+1B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	100	43	87.0	8.0	5	-8	176	505	Ma
+1B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	102	28	87.0	8.0	5	0	183	505	Ma
+4B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	103	29	13.0	19.0	6	-1	182	505	Ma
+4B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	94	31	13.0	19.0	6	-7	186	505	Ma
+12B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	70	29	65.0	12.0	5	-26	202	505	Ma
+12B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	79	18	65.0	12.0	5	-15	202	505	Ma
+17B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	107	-4	20.0	25.0	4	-14	13	505	Ma
+17B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	106	-16	20.0	25.0	4	-17	18	505	Ma
+18B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	251	-8	100.0	8.0	6	-18	211	505	Ma
+18B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	252	-6	100.0	8.0	6	-16	211	505	Ma
+20B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	102	-3	20.0	22.0	4	-11	15	505	Ma
+20B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	101	16	20.0	22.0	4	-3	9	505	Ma
+25B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	51	49	27.0	10.0	7	-48	198	505	Ma
+25B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	77	20	27.0	10.0	7	-17	202	505	Ma
+26B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	117	-64	26.0	15.0	5	-12	152	505	Ma
+26B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	104	-35	26.0	15.0	5	-2	178	505	Ma
+30B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	281	-30	21.0	12.0	8	-1	183	505	Ma
+30B	Catoctin volcanic province	B	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	100	279	-5	21.0	12.0	8	-4	14	505	Ma
+1C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	150	72	55.0	13.0	3	9	308	450	Ma
+4C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	152	34	24.0	25.0	3	27	140	450	Ma
+6C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	111	55	33.0	17.0	4	8	342	450	Ma
+10C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	150	31	70.0	10.0	3	28	144	450	Ma
+11C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	164	28	51.0	7.0	8	35	131	450	Ma
+13C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	131	59	53.0	24.0	4	0	147	450	Ma
+16C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	137	55	36.0	21.0	3	6	146	450	Ma
+19C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	157	29	154.0	9.0	4	32	138	450	Ma
+21C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	146	30	21.0	26.0	3	27	148	450	Ma
+22C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	143	58	27.0	7.0	17	21	168	450	Ma
+23C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	155	44	50.0	7.0	8	21	136	450	Ma
+24C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	159	45	30.0	14.0	6	22	132	450	Ma
+29C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	129	21	58.0	7.0	6	21	168	450	Ma
+30C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	144	53	17.0	16.0	6	10	142	450	Ma
+31C	Catoctin volcanic province	C	i	g	LP-DIR-T:LP-DIR-AF:DE-BFL:DE-FM:DE-VGP	10.1029/93JB01723	Extrusive:Igneous	Lava Flow	Basalt	38.5	281.8	0	157	37	24.0	14.0	6	27	136	450	Ma

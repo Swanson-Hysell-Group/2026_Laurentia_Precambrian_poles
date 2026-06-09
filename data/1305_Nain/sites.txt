@@ -1,0 +1,23 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+1	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	95.6	-17.1			6					Site-mean directions from Murthy (1978).
+2	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	94.2	-14.8			4					Site-mean directions from Murthy (1978).
+3	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	277.5	13.7			6					Site-mean directions from Murthy (1978).
+4	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	282.2	17.6			5					Site-mean directions from Murthy (1978).
+5	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	273.7	21.3			6					Site-mean directions from Murthy (1978).
+6	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	276	18.6			5					Site-mean directions from Murthy (1978).
+7	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	275.2	18.6			5					Site-mean directions from Murthy (1978).
+8	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	286.2	19.6			4					Site-mean directions from Murthy (1978).
+9	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	277.8	18.6			6					Site-mean directions from Murthy (1978).
+10	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	283.2	16.2			7					Site-mean directions from Murthy (1978).
+11	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	282	10.4			6					Site-mean directions from Murthy (1978).
+12	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	280.9	10.6			5					Site-mean directions from Murthy (1978).
+13	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	276.6	17.4			5					Site-mean directions from Murthy (1978).
+14	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	287.1	13.3			4					Site-mean directions from Murthy (1978).
+15	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	265	13.2			4					Site-mean directions from Murthy (1978).
+16	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	100.5	-9.1			4					Site-mean directions from Murthy (1978).
+17	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	99.5	-19.8			4					Site-mean directions from Murthy (1978).
+18	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	94.4	-14.1			5					Site-mean directions from Murthy (1978).
+19	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	285.7	28.4			4					Site-mean directions from Murthy (1978).
+20	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	267.3	26.4			3					Site-mean directions from Murthy (1978).
+21	Nain Anorthosite	i	g	DE-FM	Murthy1978	Igneous	Pluton	Anorthosite			1305		1283	1327	Ma	0	273.1	26.1			3					Site-mean directions from Murthy (1978).

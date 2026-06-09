@@ -1,0 +1,840 @@
+RefNo,ResultNo,RockName,Year,Authors,Journal,Volume,Pages,Continent,RockType,LowAge,HighAge,LoMagAge,HiMagAge,SLat,SLon,PLat,PLon,DP,DM,QSUM,RSUM,K,A95,B,N
+4142,9970,NE trending ECMB Diabase Dykes,2021,"Swanson‐Hysell, N.L., Avery, M.S., Zhang, Y., Hodgin, E.B., Sherwood, R.J., Apen, F.E., Boerboom, T.J.,  Keller, C.B., Cottle, J.M.",Tectonics,40,e2021TC006751,North America,"intrusives, diabases",1776,1783,1776,1783,45.53,-94.25,20.4,265.8,4.5,4.5,6,6,,,23,148
+4161,9997,"Johnnie Formation, Rainstorm Member",2021,"Kodama, K.P.",Frontiers in Earth Science,9,764714,North America,sediments,564,579,564,579,36.9,-115,11.7,348.5,8.6,8.6,5,4,,12,60,
+4169,10013,Beaver River Diabase,2021,"Zhang, Y., Swanson-Hysell, N.L., Schmitz, M.D., Miller, J.D., Avery, M.S.",Geochem.Geophys.Geosyst.,22,e2021GC009909,North America,intrusives,1090,1092,1090,1092,47.4,-91,32.5,189.5,6.3,6.3,5,4,51.6,5,15,130
+4169,10014,Beaver River Anorthosite,2021,"Zhang, Y., Swanson-Hysell, N.L., Schmitz, M.D., Miller, J.D., Avery, M.S.",Geochem.Geophys.Geosyst.,22,e2021GC009909,North America,intrusives,1090,1092,1090,1092,47.4,-91,30.9,190.8,5.2,5.2,5,4,55,4.9,17,141
+4181,10030,Crown Hill Formation,2020,"Wen, B., Evans, D.A.D., Anderson, R.P., McCausland, P.J.A.",Earth Planet.Sci.Letters,552,116591,North America,"sediments, redbeds",550,557,550,557,48.58,-53.4,48.1,189.9,2.5,4.2,7,6,31.1,3.6,51,
+4152,9981,Kwagunt Formation,2020,"Eyster, A., Weiss, B.P., Karlstrom, K., Macdonald, F.A.",Geol.Soc.Amer.Bull.,132,710-738,North America,sediments,743,759,743,759,36.26,-111.89,13.5,162.8,3.3,3.3,7,7,43.4,4.6,23,71
+4181,10029,"Bull Arm Formation, Bonavista",2020,"Wen, B., Evans, D.A.D., Anderson, R.P., McCausland, P.J.A.",Earth Planet.Sci.Letters,552,116591,North America,"extrusives, basalts",589,594,589,594,48.3,-53.55,15.5,98.2,9.1,15.5,7,7,14.5,13.1,10,41
+4210,10075,Nuuk Dyke,2020,"Miki, M., Seki, H., Yamamoto, Y., Gouzu, C., Hyodo, H., Uno, K., Otofuji, Y.",J.Geodynamics,139,101752,North America,"intrusives, dolerites",1800,1830,1800,1830,64.36,-51.33,33.5,263.6,4.8,5.9,4,4,83.4,3.9,1,17
+4083,9886,NW Ontario Lamprophyre Dykes,2018,"Piispa, E.L., Smirnov, A.V., Pesonen, L.J., Mitchell, R.H.",J.Geophys.Res.,123,doi:10.1029/2018JB015992,North America,"intrusives, lamprophyres",1140,1150,1140,1150,48.8,-86.71,58,223.3,9.2,9.2,7,7,37.8,5.5,19,121
+4083,9887,NW Ontario Lamprophyre Dykes and Abitibi Dykes,2018,"Piispa, E.L., Smirnov, A.V., Pesonen, L.J., Mitchell, R.H.",J.Geophys.Res.,123,doi:10.1029/2018JB015992,North America,"intrusives, lamprophyres, diabases",1139,1150,1139,1150,48.4,-86.4,55.8,220,7.3,7.3,7,7,38.4,4.5,27,332
+4104,9916,Michipicoten Island Formation,2017,"Fairchild, L.M., Swanson-Hysell, N.L., Ramezani, J., Sprain, C.J., Bowring, S.A.",Lithosphere,9,117-133,North America,"extrusives, basalts, tuffs",1083,1085,1083,1085,47.7,-85.7,17,174.7,4.4,4.4,4,4,30,5.6,23,193
+4104,9915,Schroeder-Lutsen Basalts,2017,"Fairchild, L.M., Swanson-Hysell, N.L., Ramezani, J., Sprain, C.J., Bowring, S.A.",Lithosphere,9,117-133,North America,"extrusives, basalts",1083,1092,1083,1092,47.5,-90.9,27.1,187.8,3,3,5,5,39.6,3.2,50,378
+3826,9485,Ghost Dykes,2016,"Buchan, K.L., Mitchell, R.N., Bleeker, W., Michael A. Hamilton, M.A., LeCheminant, A.N.",Precambrian Res.,275,151-175,North America,"intrusives, diabases",1882,1892,1882,1892,62.5,-115,2,254,6,6,7,6,32,5,23,150
+3871,9539,Sourdough Dykes,2016,"Kilian, T.M., Chamberlain, K.R., Evans, D.A.D., Bleeker, W., Cousens, B.L.",Geology,44,863-866,North America,"intrusives, dolerites",1894,1904,1894,1904,44.7,-108.3,49.2,292,8.1,8.1,6,4,21.8,4.7,16,109
+3826,9484,Indin Dykes,2016,"Buchan, K.L., Mitchell, R.N., Bleeker, W., Michael A. Hamilton, M.A., LeCheminant, A.N.",Precambrian Res.,275,151-175,North America,"intrusives, diabases",2108,2129,2108,2129,62.5,-114.3,36,284,7,7,7,6,62,4,18,95
+3837,9496,"Rabbi Creek, Powder River and South Path Dykes",2016,"Kilian, T.M., Bleeker, W., Chamberlain, K., Evans, D.A.D., Cousens, B.",Geol.Soc.London Spec.Publ.,424,15-45,North America,"intrusives, diabases",2152,2171,2152,2171,43.9,-107.2,65.5,339.2,7.6,7.6,7,6,,5.8,13,81
+3771,9407,Defeat Suite Plutons,2014,"Mitchell, R.N., Bleeker, W., van Breemen, O., LeCheminant, A.N., Peng, P., Nilsson, M.K.M., Evans, D.A.D.",Amer.J.Sci.,314,878-894,North America,"intrusives, granites",2620,2630,2620,2630,62.5,-115,-1.8,64.1,14.2,14.2,5,4,30,14,5,58
+3852,9514,Upper Osler Group,2014,"Swanson-Hysell, N.L., Vaughan, A.A., Mustain, M.R., Asp, K.E.",Geochem.Geophys.Geosyst.,15,2039-2047,North America,"extrusives, basalts",1103,1105,1103,1105,48.7,-87.6,42.5,201.6,3.7,3.7,5,5,,,59,346
+3850,9513,"Mamainse Point Volcanics, upper N zone",2014,"Swanson-Hysell, N.L., Burgess, S.D., Maloof, A.C., Bowring, S.A.",Geology,42,475-478,North America,"extrusives, basalts",1095,1100,1095,1100,47.1,-84.7,33.7,183.1,2,2,6,5,152.7,2.3,27,150
+3850,9512,"Mamainse Point Volcanics, lower N, upper R zones",2014,"Swanson-Hysell, N.L., Burgess, S.D., Maloof, A.C., Bowring, S.A.",Geology,42,475-478,North America,"extrusives, basalts",1099,1101,1099,1101,47.1,-84.7,36.1,189.7,2,2,7,7,46.4,4.4,24,115
+3850,9511,"Mamainse Point Volcanics, lower R2 zone",2014,"Swanson-Hysell, N.L., Burgess, S.D., Maloof, A.C., Bowring, S.A.",Geology,42,475-478,North America,"extrusives, basalts",1103,1107,1103,1107,47.1,-84.7,37.5,205.2,4.5,4.5,6,5,107.7,3.9,14,57
+3850,9510,"Mamainse Point Volcanics, lowermost R1 zone",2014,"Swanson-Hysell, N.L., Burgess, S.D., Maloof, A.C., Bowring, S.A.",Geology,42,475-478,North America,"extrusives, basalts",1108,1110,1108,1110,47.1,-84.7,49.5,227,5.3,5.3,6,5,88.3,3.2,24,117
+3771,9406,Dogrib Dykes,2014,"Mitchell, R.N., Bleeker, W., van Breemen, O., LeCheminant, A.N., Peng, P., Nilsson, M.K.M., Evans, D.A.D.",Amer.J.Sci.,314,878-894,North America,"intrusives, diabases",2191,2195,2191,2195,62.5,-115,31,135,7,7,6,5,34,7,14,129
+3852,9515,Lower Osler Group,2014,"Swanson-Hysell, N.L., Vaughan, A.A., Mustain, M.R., Asp, K.E.",Geochem.Geophys.Geosyst.,15,2039-2047,North America,"extrusives, basalts",1105,1110,1105,1110,48.7,-87.6,40.9,218.6,4.8,4.8,5,5,,,30,
+4044,9838,Coldwell Complex,2014,"Kulakov, E.V., Smirnov, A.V., Diehl, J.F.",J.Geophys.Res.,119,8633-8654,North America,intrusives,1105,1109,1105,1109,48.8,-86.4,47.2,206.7,4.8,4.8,6,6,,,40,238
+3852,10017,Middle Osler Group,2014,"Swanson-Hysell, N.L., Vaughan, A.A., Mustain, M.R., Asp, K.E.",Geochem.Geophys.Geosyst.,15,2039-2047,North America,"extrusives, basalts",1103,1110,1103,1110,48.8,-87.6,42.7,211.3,8.2,8.2,5,5,,,20,
+3845,9506,Lake Shore Traps,2013,"Kulakov, E.V., Smirnov, A.V., Diehl, J.F.",Canad. J. Earth Sci.,50,1085-1096,North America,"extrusives, basalts",1085,1089,1086,1089,47.5,-86,23.1,186.4,4,47,6,5,28.3,4.9,31,354
+3742,9368,"Bull Arm Formation, Bonavista",2012,"Pisarevsky, S.A., McCausland, P.J.A., Hodych, J., O'Brien, S., Tait, J.A., Murphy, J.B.",Canad. J. Earth Sci.,49,308-327,North America,"extrusives, basalts",567,575,567,575,48.45,-58.58,15.1,98.4,13.7,13.7,5,5,10.4,16.8,9,44
+3770,9405,Malley Dykes,2012,"Buchan, K.L., LeCheminant, A.N., van Breemen, O.",Canad. J. Earth Sci.,49,435-454,North America,"intrusives, diabases",2229,2233,2229,2233,64.2,-110.2,50.8,130,5.6,8.1,5,4,81,5.8,9,40
+3759,9395,Wanakena Granite,2012,"Brown, L.L., McEnroe, S.A.",Precambrian Res.,212-213,57-74,North America,"intrusives, granites",1037,1057,980,1000,44.2,-74.5,-28.4,132.7,6.7,7.2,5,1,199,3.9,8,40
+3759,9394,Adirondack Microcline Metamorphics,2012,"Brown, L.L., McEnroe, S.A.",Precambrian Res.,212-213,57-74,North America,"metamorphics, anorthosites",1020,1060,960,980,44.2,-74.5,-25.1,149,10.6,12.7,4,4,28,7.7,14,68
+3759,9393,Adirondack Microcline Gneiss,2012,"Brown, L.L., McEnroe, S.A.",Precambrian Res.,212-213,57-74,North America,"metamorphics, gneiss",1020,1060,950,970,44.1,-74.4,-18.4,151.1,9.3,11.8,4,3,29,7.6,14,80
+3742,9370,"Crown Hill Formation, Bonavista",2012,"Pisarevsky, S.A., McCausland, P.J.A., Hodych, J., O'Brien, S., Tait, J.A., Murphy, J.B.",Canad. J. Earth Sci.,49,308-327,North America,"sediments, redbeds",542,557,542,557,48.59,-53.35,55.8,183.8,17.7,17.7,6,5,24.6,15.7,5,27
+3742,9369,"Bull Arm Formation, Argentia",2012,"Pisarevsky, S.A., McCausland, P.J.A., Hodych, J., O'Brien, S., Tait, J.A., Murphy, J.B.",Canad. J. Earth Sci.,49,308-327,North America,"extrusives, basalts",575,600,575,610,47.27,-53.93,1.7,76.5,10.9,10.9,5,4,30.1,11.2,7,41
+4171,10016,Central Arizona diabases -N,2011,"Donadini, F., Pesonen, L.J., Korhonen, K., Deutsch, A., Harlan, S.S.",Geophysica,47(1-2),3-30,North America,intrusives,1077,1099,1077,1099,33.7,-110.8,15.7,175.3,7.3,7.3,5,5,30.4,7.6,13,139
+3739,9364,Mutton Bay Syenite,2011,"McCausland, P.J.A., Hankard, F., Van der Voo, R., Hall, C.M.",Precambrian Res.,187,58-78,North America,intrusives,581,586,581,586,50.84,-58.96,42.6,332.7,11.7,12.4,5,5,71.7,6.6,8,84
+3739,9365,Mutton Bay Late Intrusions,2011,"McCausland, P.J.A., Hankard, F., Van der Voo, R., Hall, C.M.",Precambrian Res.,187,58-78,North America,intrusives,581,586,581,586,50.84,-58.96,-34.2,321.5,10.9,21.8,4,4,10.5,21.7,6,44
+3844,9505,"Clarence Head Dykes, Overprint",2009,"Denyszyn, S.W., Davis, D.W., Halls, H.C.",Canad. J. Earth Sci.,46,155-167,North America,"intrusives, diabases",712,717,400,420,76.7,-78,0.3,123.6,19,35.7,2,2,14.5,33.6,3,14
+3843,9502,"Franklin Dykes, Devon and Ellsemere",2009,"Denyszyn, S.W., Halls, H.C., Davis, D.W., Evans, D.A.D.",Canad. J. Earth Sci.,46,689-705,North America,"intrusives, diabases",719,723,719,723,76.1,-81,5.8,189.7,10.7,10.7,5,5,11.8,11.8,12,89
+3844,9504,Clarence Head Dykes,2009,"Denyszyn, S.W., Davis, D.W., Halls, H.C.",Canad. J. Earth Sci.,46,155-167,North America,"intrusives, diabases",712,717,712,717,76.6,-78.8,15.3,209.8,24.8,43.1,3,3,4.9,37.5,3,10
+3769,9404,Lac de Gras Dykes,2009,"Buchan, K.L., LeCheminant, A.N., van Breemen, O.",Canad. J. Earth Sci.,46,361-379,North America,"intrusives, diabases",2021,2031,2021,2031,64.5,-110.05,11.8,267.9,6,8.4,6,5,68,5.9,10,42
+3695,9291,Tobacco Root Mountains Dykes A and C,2008,"Harlan, S.S., Geissman, J.W., Snee, L.W.",Precambrian Res.,163,239-264,North America,"intrusives,mafic dykes",1399,1497,1399,1497,45.5,-112,8.7,216.1,10.3,10.3,3,2,27.9,7.7,14,21
+4105,9917,Stillwater Complex,2008,"Selkin, P.A., Gee, J.S., Meurer, W.P., Hemming, S.R.",Geochem.Geophys.Geosyst.,9,"Q12023, doi:10.1029/2008GC001950",North America,intrusives,2701,2709,2701,2709,42.5,-110.8,-83.6,335.8,3.5839589,4.5592723,4,4,32,2.9,,32
+3695,9293,Tobacco Root Mountains Dykes B,2008,"Harlan, S.S., Geissman, J.W., Snee, L.W.",Precambrian Res.,163,239-264,North America,"intrusives,mafic dykes",772,788,50,100,45.5,-112,74.6,164.2,11.8,11.8,4,3,65.7,8.3,6,60
+3695,9292,Tobacco Root Mountains Dykes B,2008,"Harlan, S.S., Geissman, J.W., Snee, L.W.",Precambrian Res.,163,239-264,North America,"intrusives,mafic dykes",772,788,772,788,45.5,-112,14.6,127,3.2,3.2,5,3,117,4,12,21
+3833,9489,Lac Espirit Dykes,2007,"Buchan, K.L., Goutier, J., Hamilton, M.A.,Ernst, R.E., Matthews, W.",Canad. J. Earth Sci.,44,643-664,North America,"intrusives, diabases",2068,2070,2068,2070,53.4,-77,61.2,166.2,3.5,5,3,2,91.5,3.5,8,19
+3687,9272,Lynn-Mattapan Volcanic Complex,2007,"Thompson, M.D., Grunow, A.M., Ramezani, J.",Geol.Soc.Amer.Bull.,119,681-696,North America,"extrusives, basalts, andesites,rhyolites",594,599,594,599,42.2,-70.4,60,206,8.4,8.4,6,5,39.8,7.4,9,59
+3847,9507,Portage Lake Volkanics,2006,"Hnat, J.S., van der Pluijm, B.A., Van der Voo, R.",Tectonophysics,425,71-82,North America,"extrusives, basalts",1092,1098,1092,1098,47,-89,26.7,177.5,3.3,5.8,6,4,25.9,5.2,28,195
+3694,9290,"Uinta Mountain Supergroup, Combined",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.7,-109.1,0.8,161.3,4.6,4.6,5,4,59.2,6.7,9,78
+3694,9289,"Uinta Mountain Supergroup, Locality 9",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.9,-108.8,1.7,166.3,4.2,8.3,4,3,40.7,8.2,9,61
+3694,9288,"Uinta Mountain Supergroup, Locality 8",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,41,-109.2,0.5,164.8,6.3,12.6,3,2,97.7,12.5,3,19
+3694,9287,"Uinta Mountain Supergroup, Locality 7",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.9,-108.8,4.5,163.3,3,6,4,2,99.8,5.9,10,49
+3694,9286,"Uinta Mountain Supergroup, Locality 6",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.6,-109.3,-5.4,158.9,2.3,4.5,4,3,66.8,4.5,16,83
+3694,9285,"Uinta Mountain Supergroup, Locality 5",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.5,-109.4,-4.7,156.7,5.9,11.7,4,2,34.9,11.5,6,22
+3694,9284,"Uinta Mountain Supergroup, Locality 4",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.5,-109.4,11.2,155.6,6.1,12.2,4,2,40.9,12.1,5,52
+3694,9283,"Uinta Mountain Supergroup, Locality 3",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.5,-109.4,-5.7,160.1,2.7,5.4,4,2,225.6,5.4,5,38
+3694,9282,"Uinta Mountain Supergroup, Locality 2",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.5,-109.5,-1.6,167.4,6.7,13.2,3,2,35.1,13.1,1,5
+3694,9281,"Uinta Mountain Supergroup, Locality 1",2006,"Weil, A.B., Geissman, J.W., Ashby, J.M.",Precambrian Res.,147,234-259,North America,sediments,750,800,750,800,40.9,-109.7,6.5,158.4,2.4,4.7,4,3,42.9,4.7,23,169
+3776,9412,Wintering Lake Pluton,2006,"Harris, M.J., Symons, D.T.A., Blackburn, W.H., Turek, A., Peck, D.C.",Canad. J. Earth Sci.,43,1071-1083,North America,"intrusives, granites",1819,1825,1819,1825,55.4,-97.7,46.8,257.8,11,11,6,5,37,5.5,20,136
+3609,9139,Cleaver Dykes,2004,"Irving, E., Baker, J., M. Hamilton, M., Wynne, P.J.",Precambrian Res.,129,251-270,North America,"intrusives, diabases",1736,1745,1736,1745,67.5,-118.03,19.4,276.7,6.1,6.1,6,5,64,4.5,17,102
+3608,9137,Kwagunt Formation,2004,"Weil, A.B., Geissman, J.W., Van der Voo, R.",Precambrian Res.,129,71-92,North America,sediments,736,748,736,748,36.25,-111.7,18.2,166,5.2,9.4,6,6,38.6,8.4,9,61
+3604,9131,Sokoman Formation,2004,"Williams, G.E., Schmidt, P.W.",Precambrian Res.,128,167-188,North America,"sediments, metamorphics, iron ore",1877,1882,1830,1840,54.84,-66.76,40.6,77,5.9,11.4,6,5,31.4,10.9,7,66
+3604,9132,Sokoman Formation,2004,"Williams, G.E., Schmidt, P.W.",Precambrian Res.,128,167-188,North America,"sediments, metamorphics, iron ore",1877,1882,1830,1840,54.84,-66.76,29.6,70.9,4.5,9.1,6,5,29.2,9.1,10,79
+3608,9138,Galeros Formation,2004,"Weil, A.B., Geissman, J.W., Van der Voo, R.",Precambrian Res.,129,71-92,North America,sediments,780,820,780,820,36.25,-111.7,-2.1,163,4.3,8.5,5,5,19.8,8.5,16,110
+3604,9133,Sokoman Formation,2004,"Williams, G.E., Schmidt, P.W.",Precambrian Res.,128,167-188,North America,"sediments, metamorphics, iron ore",1877,1882,1830,1840,54.84,-66.76,26.8,67,9.3,18.6,4,4,11.5,18.6,7,40
+3644,9213,Biscotasing West Dykes,2004,"Halls, H.C., Davis, D.W.",Canad. J. Earth Sci.,41,255-269,North America,"intrusives, quartz tholeiites",2167,2173,2167,2173,48.9,-85,17.3,224.6,9.8,13.3,5,3,56,9,6,72
+3579,9083,Sibley Conglomerate,2003,"Schmidt, P.W., Williams, G.E.",Tectonophysics,377,7-32,North America,sediments,1000,1600,1250,1500,48.5,-89,17.7,217,8.7,12,3,3,25.6,8.4,1,13
+3545,8994,Wind River Range Quartz Diorite,2003,"Harlan, S.S., Geissman, J.W., Premo, W.R.",Tectonophysics,362,105-122,North America,"intrusives, diorites",2162,2178,2162,2178,42.45,-108.51,84,215,6,7,4,2,145,4.6,8,79
+3545,8995,Wind River Range Diabase Dikes Group B,2003,"Harlan, S.S., Geissman, J.W., Premo, W.R.",Tectonophysics,362,105-122,North America,"intrusives, diabases",1300,1500,1300,1500,42.44,-108.53,22,209,8,10,4,2,117,6.4,2,28
+3549,9005,Kapuskasing Structural Zone,2003,"Borradaile, G.J., Werner, T., Lagroix, F.",Tectonophysics,363,103-125,North America,metamorphics,2500,2600,2500,2600,48,-83,59.1,9.2,17.4,23.6,3,2,4.3,16,,22
+3549,9006,Kapuskasing Structural Zone,2003,"Borradaile, G.J., Werner, T., Lagroix, F.",Tectonophysics,363,103-125,North America,metamorphics,2500,2600,2500,2600,48,-83,72.8,320.6,16.9,18.9,3,2,3.2,10.6,,61
+3549,9007,Kapuskasing Structural Zone,2003,"Borradaile, G.J., Werner, T., Lagroix, F.",Tectonophysics,363,103-125,North America,metamorphics,2500,2600,1100,1800,48,-83,22,210.6,21,31,3,2,3.5,23,,11
+3549,9008,Kapuskasing Structural Zone,2003,"Borradaile, G.J., Werner, T., Lagroix, F.",Tectonophysics,363,103-125,North America,metamorphics,2500,2600,1100,1800,48,-83,24.3,227.2,19.8,25.2,3,2,3,16,,18
+3576,9073,Cardenas Basalts and Intrusions,2003,"Weil, A.B., Geissman, J.W., Heizler, M., Van der Voo, R.",Tectonophysics,375,199-220,North America,"intrusives, extrusives, basalts",1086,1096,1086,1096,36.08,-111.87,32,185,6.8,9.3,5,4,33.9,6.4,16,114
+3576,9074,Nankoweap Formation,2003,"Weil, A.B., Geissman, J.W., Heizler, M., Van der Voo, R.",Tectonophysics,375,199-220,North America,"sediments, red beds",850,900,850,900,36.11,-111.86,-10,163,3.5,7,4,4,72.5,7.1,7,48
+3579,9078,Gunflint Formation,2003,"Schmidt, P.W., Williams, G.E.",Tectonophysics,377,7-32,North America,sediments,1877,1879,1000,1100,48.5,-89,27.7,175,4.4,8,3,3,20.3,7.2,1,21
+3579,9079,Gunflint Formation,2003,"Schmidt, P.W., Williams, G.E.",Tectonophysics,377,7-32,North America,sediments,1877,1879,1100,1250,48.5,-89,23.5,208.2,5.7,8.1,4,4,21.9,5.8,1,29
+3579,9080,Gunflint Formation,2003,"Schmidt, P.W., Williams, G.E.",Tectonophysics,377,7-32,North America,sediments,1877,1879,1250,1500,48.5,-89,-6.6,208.6,3.4,6.3,3,3,58.6,6,1,11
+3579,9081,Gunflint Formation,2003,"Schmidt, P.W., Williams, G.E.",Tectonophysics,377,7-32,North America,sediments,1877,1879,1250,1600,48.5,-89,11.9,215,2.8,4.2,5,5,25.2,3.2,1,79
+3579,9082,Sibley Conglomerate,2003,"Schmidt, P.W., Williams, G.E.",Tectonophysics,377,7-32,North America,sediments,1000,1600,1000,1100,48.5,-89,21.8,184.3,4.9,8.6,3,3,19.5,7.6,1,20
+3579,9084,Sibley Conglomerate,2003,"Schmidt, P.W., Williams, G.E.",Tectonophysics,377,7-32,North America,sediments,1000,1600,1250,1600,48.5,-89,39,194.6,8.5,11.8,3,3,31.3,8.3,1,11
+3579,9085,Gunflint Chert Carbonate,2003,"Schmidt, P.W., Williams, G.E.",Tectonophysics,377,7-32,North America,sediments,1877,1879,1100,1250,48.5,-89,46.7,237,11.1,11.8,4,4,31.6,6.3,1,18
+3625,9171,Shebandowan Breccia and Dykes,2003,"Borradaile,G.J., Lemmetty,T.J., Werner,T.",J.Geophys.Res.,108,"2402, doi:10.1029/2002JB002379",North America,"intrusives, extrusives, lamprophyres",2646,2746,2646,2746,48.5,-90.1,-15.4,272.7,8.8,13.9,2,1,21,11,1,10
+3625,9172,Shebandowan Breccia and Dykes,2003,"Borradaile,G.J., Lemmetty,T.J., Werner,T.",J.Geophys.Res.,108,"2402, doi:10.1029/2002JB002379",North America,"intrusives, extrusives, lamprophyres",2646,2746,1000,1200,48.5,-90.1,-74.5,343.3,16.1,19.6,3,2,4,8.9,1,21
+3556,9031,McNamara Formation,2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1395,1407,1395,1407,46.9,-113.6,-13.5,208.3,6.7,6.7,7,7,42.8,7.5,10,195
+3556,9033,"Mt.Shields Formation, Upper Member",2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1395,1437,1395,1437,48.1,-114.2,-15.6,202.3,4.4,4.4,7,5,74.1,5.3,11,742
+3556,9034,"Mt.Shields Formation, Middle Member",2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1395,1437,1395,1437,47.6,-113.7,-18.2,203.9,5.8,5.8,6,5,60.6,7.2,8,88
+3556,9035,"Mt.Shields Formation, Lower Member",2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1395,1437,1395,1437,47.4,-113.8,-26.1,215,6.5,6.5,6,4,116.9,8.5,4,141
+3497,8905,Sherman Granite,2002,"Geissman, J.W., Harlan, S.S.",Earth Planet.Sci.Letters,203,905-924,North America,"intrusives, granites",1350,1450,245,256,41,-105,50.4,115.7,5.1,10,4,3,91,9.7,5,24
+3497,8906,Morrison Gneiss,2002,"Geissman, J.W., Harlan, S.S.",Earth Planet.Sci.Letters,203,905-924,North America,"metamorphics, gneiss",900,1450,256,290,39.5,-105.5,37.2,119.9,2.4,4.7,3,3,41,4.7,1,24
+3497,8907,Pikes Peak Granite,2002,"Geissman, J.W., Harlan, S.S.",Earth Planet.Sci.Letters,203,905-924,North America,"intrusives, granites",1080,1090,235,256,39.3,-105.3,56.6,109.9,3.8,7.3,4,3,121,7,5,49
+3497,8908,Tijeras Greenstone,2002,"Geissman, J.W., Harlan, S.S.",Earth Planet.Sci.Letters,203,905-924,North America,"metamorphics, greenstones",900,1450,65,245,35.1,-106.4,64.1,86.6,3.6,6.9,3,2,49,6.6,1,11
+3515,8932,St.Francois Mountains Acidic Rocks,2002,"Meert, J.G., Stuckey, W.",Tectonics,21(2),"1007, doi:10.1029/2000TC001265",North America,"extrusives,intrusives,rhyolites,granites",1460,1492,1460,1492,37.5,-90.5,-13.2,219,4.7,8,6,6,27,6.8,18,103
+3556,9040,Belt Supergroup Combined,2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"extrusives, sediments, redbeds, basalts",1362,1469,1362,1469,47.7,-113.9,-20.1,210.4,4.2,4.2,6,5,96.8,4.9,10,2239
+3556,9032,Bonner Quartzite,2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1395,1437,1395,1437,48.1,-114.3,-11.3,206.7,4.3,4.3,6,4,85.8,4.7,12,187
+3497,8904,Laramine Range Gneiss,2002,"Geissman, J.W., Harlan, S.S.",Earth Planet.Sci.Letters,203,905-924,North America,"metamorphics, gneiss",2500,3500,245,256,42.5,-105.5,46.3,130,2.3,4.3,3,2,221,4.1,1,7
+3556,9039,Spokane Formation,2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1454,1469,1454,1469,48.2,-113.2,-24.8,215.5,4.7,4.7,6,5,86.4,6,8,231
+3556,9038,Snowslip Formation,2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1450,1463,1450,1463,47.9,-114.1,-24.9,210.2,3.5,3.5,6,5,128.8,4.6,9,295
+3556,9037,Purcell Lava,2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"extrusives, basalts",1436,1450,1436,1450,49.4,-114.9,-23.6,215.6,4.8,4.8,6,5,64,6.1,10,166
+3556,9036,Shepard Formation,2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1395,1437,1395,1437,47.6,-113.7,-23.2,212.5,5.5,5.5,6,4,121.9,7,5,118
+3556,9030,"Pilcher, Garnet Range and Libby Formations",2002,"Elston, D.P., Enkin, R.J., Baker, J., Kisilevsky, D.K.",Geol.Soc.Amer.Bull.,114,619-638,North America,"sediments, redbeds",1362,1407,1362,1407,46.7,-113.6,-19.2,215.3,7.7,7.7,6,4,102.2,9.1,4,76
+3414,8683,Marystown Group,2001,"McNamara, A.K., MacNiocaill, C., van der Pluijm, B.A., Van der Voo, R.",Geol.Soc.Amer.Bull.,113,1161-1170,North America,"extrusives, basalts, pyroclasts",601,628,601,618,47,-55.7,22.6,239.9,7.7,11.1,6,4,30,8,13,103
+3342,8548,Molson Dykes C1,2000,"Halls, H.C., Heaman, L.M.",Canad. J. Earth Sci.,37,957-966,North America,intrusives,2089,2093,2089,2093,55,-97.5,53,180,7.6,9.7,5,4,,6.2,,8
+3479,8854,Wapisu Gneiss Dome,2000,"Symons, D.T.A., Harris, M.J.",Canad. J. Earth Sci.,37,913-922,North America,"metamorphics, gneiss",1800,1820,1800,1820,55.8,-99.3,75.8,240.5,9.5,10,5,5,46,5.3,17,120
+3488,8889,Deschambault Pegmatites,2000,"Symons, D.T.A., Symons, T.B., Lewchuk, M.T.",Phys.Chem.Earth(A),25,479-487,North America,"intrusives, pegmatites",1761,1771,1761,1771,54.9,-103.3,67.5,276,7.6,7.8,5,4,77.5,4,18,168
+3342,8549,Molson Dykes C2 (Molson B Dykes Reverse),2000,"Halls, H.C., Heaman, L.M.",Canad. J. Earth Sci.,37,957-966,North America,intrusives,1873,1886,1873,1886,55,-97.5,28.7,216,7.3,9.1,6,5,,5.6,11,63
+3623,9165,Haliburton Intrusions,2000,"Warnock, A.C., Kodama, K.P., Zeitler, P.K.",J.Geophys.Res.,105,19435-19453,North America,"intrusives, gabbro, diorite",1000,1030,1000,1030,45,-78.6,-32.6,141.9,5.9,6.7,4,3,23,3.8,17,59
+3623,9166,Haliburton Intrusions,2000,"Warnock, A.C., Kodama, K.P., Zeitler, P.K.",J.Geophys.Res.,105,19435-19453,North America,"intrusives, gabbro, diorite",1000,1030,580,620,45,-78.6,29.9,169.9,6.4,12.6,3,3,7.6,12.3,10,17
+3671,9250,Society Cliffs Dolostone,2000,"Symons, D.T.A., Symons, T.B., Sangster, D.F.",Mineralium Deposita,35,672-682,North America,"sediments, dolomites",1174,1222,1085,1105,73,-84.5,42.8,168.2,4.9,6.8,5,3,104.1,4.8,10,97
+3236,8359,Boot-Phantom Pluton,1999,"Symons, D.T.A., Mackay, C.D.",Basement Tectonics,13,313-331,North America,"intrusives, gabbro, diorite, tonalite",1837,1839,1837,1839,54.7,-101.9,62.4,279.4,7.9,8,6,5,72,4.1,18,90
+3236,8360,Kaminis Lake Pluton and Amisk Metavolcanics,1999,"Symons, D.T.A., Mackay, C.D.",Basement Tectonics,13,313-331,North America,"intrusives,extrusives,granodiorite",1846,1866,1846,1866,54.7,-101.9,9.7,277.6,17.5,22.8,4,3,40,14.8,2,4
+3235,8358,Deschambault Post and Tower Island Plutons,1999,"Symons, D.T.A., Symons, T.B., Lewchuk, M.T.","Saskatchewan Geol.Surv.Misc.Rpt., 99-4.1",,140-147,North America,"intrusives, granite, granodiorite",1780,1810,1780,1810,54.9,-103.4,76.7,257.6,5.9,6.2,3,2,103.7,3.3,19,114
+3278,8429,Clearwater Anorthosite,1999,"Halls, H.C., Hanes, J.A.",Tectonophysics,312,235-248,North America,"intrusives, anorthosite",1910,1924,1910,1924,57.1,-108.4,6.5,311.8,2.2,3.7,5,3,315.8,3.1,8,115
+3306,8480,Lorrain Formation,1999,"Schmidt, P.W., Williams, G.E.",Earth Planet.Sci.Letters,172,273-285,North America,"sediments, hematitic breccia",2300,2400,2300,2400,47.4,-79.5,-21.1,213.1,3.3,6.7,4,3,10.7,6.7,3,47
+3306,8481,Lorrain Formation,1999,"Schmidt, P.W., Williams, G.E.",Earth Planet.Sci.Letters,172,273-285,North America,"sediments, hematitic breccia",2300,2400,1800,1900,47.4,-79.5,57.1,338.3,4.1,4.8,4,2,34.1,2.8,3,61
+3193,8286,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-14,149,25,33,3,2,14,22,5,40
+3193,8287,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-36,141,24,27,4,2,27,15,5,40
+3193,8288,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-15,145,27,34,3,2,33,22,3,24
+3193,8289,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-20,137,22,26,4,2,38,15,4,32
+3193,8290,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-12,154,15,21,4,2,21,15,6,48
+3193,8291,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-13,158,17,25,3,2,19,18,5,40
+3193,8292,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-5,135,19,25,4,3,13,16,8,64
+3227,8342,Electra Lake Gabbro,1998,"Harlan, S.S., Geissman, J.W.",J.Geophys.Res.,103,15497-15507,North America,"intrusives, gabbro",1433,1437,1433,1437,37.9,-107.8,-21.1,221.1,3.4,3.4,5,4,94,3.3,21,173
+3193,8294,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-33,147,11,13,4,3,49,8,9,72
+3204,8308,Ptarmigan Dyke Swarm,1998,"Buchan, K.L., Mortensen, J.K., Card, K.D., Percival, J.A.",Canad. J. Earth Sci.,35,1054-1069,North America,intrusives,2504,2507,2504,2507,58,-74,-41.6,219.5,8.7,14.3,4,3,112,11.7,3,15
+3204,8309,Maguire Dyke Swarm,1998,"Buchan, K.L., Mortensen, J.K., Card, K.D., Percival, J.A.",Canad. J. Earth Sci.,35,1054-1069,North America,intrusives,2209,2264,2209,2264,58,-74,-8.5,266.6,5.8,9.8,6,4,46,8.3,8,39
+3204,8310,Minto Dyke Swarm,1998,"Buchan, K.L., Mortensen, J.K., Card, K.D., Percival, J.A.",Canad. J. Earth Sci.,35,1054-1069,North America,intrusives,1997,2000,1997,2000,58,-74,38.2,173.8,7.7,13.1,5,4,23,11,9,48
+3207,8314,Sahli Granite,1998,"Gala, M.G., Symons, D.T.A., Palmer, H.C.",Precambrian Res.,90,85-101,North America,"intrusives, granite",2394,2454,1800,1840,53.1,-102.8,49.2,276,8.8,9.1,4,2,54.8,4.6,19,95
+3214,8321,Skinner Cove Volcanics,1998,"McCausland, P.J.A., Hodych, J.P.",Earth Planet.Sci.Letters,163,15-29,North America,"extrusives,basalts,trachytes,intrusives",548,554,548,554,49.52,-58,15,157,9,9,5,4,21.1,10.8,10,57
+3193,8293,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-22,130,,,3,2,,,1,8
+3241,8368,Big island Gneiss Dome,1998,"Symons, D.T.A., Harris, M.J.","Manitoba Energy and Mines, Geol.Services, Rpt. of Activities",,25-31,North America,"metamorphics, gneiss",1800,1815,1800,1815,55.2,-101.2,24,313,25,33,2,2,52,22,11,55
+3246,8374,Kicking Horse Ore Deposits,1998,"Symons, D.T.A., Lewchuk, M.T., Sangster, D.F.",Econ.Geol.,93,68-83,North America,"sediments, limestones, dolostones",444,542,65,100,51.4,-116.4,64,207.2,5.4,5.8,4,3,121.6,3.1,19,180
+3193,8283,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-49,155,29,34,3,2,10,20,7,56
+3193,8284,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-29,134,20,22,4,3,19,12,9,72
+3193,8285,"Central Gneiss Belt, Grenville Province",1998,"Costanzo-Alvarez,V., Dunlop,D.J.",Earth Planet.Sci.Letters,157,89-103,North America,"metamorphics, gneiss",1350,1900,920,980,46,-80,-29,147,14,17,4,3,25,10,10,80
+3838,9497,Stillwater Complex,1997,"Xu, W., Geissman, J.W., Van der Voo, R., Peacor, D.R.",J.Geophys.Res.,102,"B6, 12139-12157",North America,intrusives,2701,2709,2701,2709,45.5,-110,-66.5,292.4,16.4,16.4,4,4,18.8,15.9,6,40
+3174,8249,"Coleman Member, Gowganda Formation",1997,"Williams, G.E., Schmidt, P.W.",Earth Planet.Sci.Letters,153,157-169,North America,"sediments, sandstone, diamictite",2300,2400,2100,2200,47,-81,36.5,229.5,12.4,14.5,5,3,13,8.5,7,28
+3174,8248,"Coleman Member, Gowganda Formation",1997,"Williams, G.E., Schmidt, P.W.",Earth Planet.Sci.Letters,153,157-169,North America,"sediments, sandstone, diamictite",2300,2400,2300,2400,47,-81,-31.3,233.7,3.4,6.7,4,2,16.3,6.7,5,30
+3174,8247,"Firstbrook Member, Gowganda Formation",1997,"Williams, G.E., Schmidt, P.W.",Earth Planet.Sci.Letters,153,157-169,North America,"sediments, red siltstones",2300,2400,1000,1800,47.3,-79.8,-20.5,159.1,6.1,8.5,2,1,36.6,6,3,17
+3174,8246,"Firstbrook Member, Gowganda Formation",1997,"Williams, G.E., Schmidt, P.W.",Earth Planet.Sci.Letters,153,157-169,North America,"sediments, red siltstones",2300,2400,1000,1800,47.3,-79.8,71.8,190.7,5.4,6.9,3,2,47.8,4.4,8,50
+3174,8245,Lorrain Formation,1997,"Williams, G.E., Schmidt, P.W.",Earth Planet.Sci.Letters,153,157-169,North America,"sediments, purple siltstones, sandstones",2300,2400,1850,2300,46.3,-83.9,75.3,23.4,6.9,9.1,2,1,37.3,6.1,5,16
+3174,8244,Lorrain Formation,1997,"Williams, G.E., Schmidt, P.W.",Earth Planet.Sci.Letters,153,157-169,North America,"sediments, purple siltstones, sandstones",2300,2400,2300,2400,46.3,-83.9,-46.1,268.3,3,5.9,2,1,8.7,5.9,17,75
+3123,8148,"Sayunei Formation, Rapitan Group",1997,"Park, J.K.",Canad. J. Earth Sci.,34,34-49,North America,sediments,700,750,675,725,63,-127,-16,7,6,12,5,3,84,12,6,22
+3123,8147,"Sayunei Formation, Rapitan Group",1997,"Park, J.K.",Canad. J. Earth Sci.,34,34-49,North America,sediments,700,750,700,750,63,-127,-1,334,4,9,6,4,34,8,10,25
+3129,8163,Chengwatana Volcanics,1997,"Kean, W.F., Williams, I., Chan, L., Feeney, J.",Geophys.Res.Lett.,24,1523-1526,North America,"extrusives, basalts",1093,1097,1093,1097,45.4,-92.7,30.9,186.1,5.4,9.3,5,3,48.5,8,6,60
+3364,8587,Mount Moran Dyke,1997,"Harlan, S.S., Geismann, J.W., Snee, L.W.",U.S.Geol.Surv.Prof.Paper 1580,,16pp,North America,intrusives,765,785,765,785,43.8,-110.8,11.6,148.9,5.1,10.2,4,3,36,10.2,1,7
+3364,8588,Christmas Lake Dyke,1997,"Harlan, S.S., Geismann, J.W., Snee, L.W.",U.S.Geol.Surv.Prof.Paper 1580,,16pp,North America,intrusives,770,778,770,778,45,-109.5,7.4,137,4.4,8.3,4,3,44,7.9,1,9
+3061,8033,Marathon Normal Polarity Dykes,1996,"Buchan, K.L., Halls, H.C., Mortensen, J.K.",Canad. J. Earth Sci.,33,1583-1595,North America,"intrusives, diabase",2114,2135,2114,2135,49,-86,42.7,195.8,6.7,9.2,5,3,35,6.3,16,129
+3242,8369,Davin Lake Granodiorite,1996,"Symons, D.T.A., Radigan, S.P., Lewchuk, M.T.","Saskatchewan Geol.Surv.Misc.Rpt., 96-4",,111-118,North America,"intrusives, granites, migmatite",1840,1860,1840,1860,56.9,-103.6,54,266.8,9.3,9.3,3,3,47.2,4.7,21,90
+3059,8030,Pre-Grenvillian Mafic Intrusions,1996,"Park, J.K., Gower, C.F.",Canad. J. Earth Sci.,33,746-756,North America,"intrusives, gabbro, norite, mafic rocks",1420,1650,920,970,54.5,-58.5,11,168,2,4,4,2,40,4,36,156
+3059,8029,Pre-Grenvillian Mafic Intrusions,1996,"Park, J.K., Gower, C.F.",Canad. J. Earth Sci.,33,746-756,North America,"intrusives, gabbro, norite, mafic rocks",1420,1650,750,800,54.5,-58.5,-13,168,6,8,4,2,54,6,13,49
+3059,8028,Pre-Grenvillian Mafic Intrusions,1996,"Park, J.K., Gower, C.F.",Canad. J. Earth Sci.,33,746-756,North America,"intrusives, gabbro, norite, mafic rocks",1420,1650,550,650,54.5,-58.5,2,146,8,11,4,2,37,9,9,31
+3247,8375,Knox Megagroup,1996,"Lewchuk, M.T., Symons, D.T.A.","Soc.Econ.Geologists, Spec.Publ.",4,555-566,North America,"sediments, limestones",444,542,271,299,36.2,-87.1,46.1,126.9,1.5,3,4,3,99,3,24,287
+3243,8370,Baldock Batholith,1996,"Symons, D.T.A., Lewchuk, M.T., Harris, M.J.","Manitoba Energy and Mines, Minerals Div., Rpt. of Activities",,14-20,North America,"intrusives, granite",1870,1876,1870,1876,56.9,-98.8,65.2,275.3,12.1,12.2,3,3,50.5,6.2,12,60
+3061,8034,Marathon (Fort Frances) Reverse Polarity Dykes,1996,"Buchan, K.L., Halls, H.C., Mortensen, J.K.",Canad. J. Earth Sci.,33,1583-1595,North America,"intrusives, diabase",2072,2081,2072,2081,49,-86,51.2,174.7,6.2,9.2,6,4,42,6.8,12,86
+3237,8361,Reynard Lake Pluton,1995,"Symons, D.T.A.","Saskatchewan Geol.Surv.Misc.Rpt., 95-4",,137-144,North America,intrusives,1848,1854,1848,1854,54.7,-102,39.7,253.2,9.2,9.4,5,4,52,4.8,18,90
+3237,8363,Wekach Lake Gabbro,1995,"Symons, D.T.A.","Saskatchewan Geol.Surv.Misc.Rpt., 95-4",,137-144,North America,"intrusives, gabbro",1846,1852,430,460,54.7,-102,25,137,11,21,2,1,20,21,4,20
+3237,8362,Wekach Lake Gabbro,1995,"Symons, D.T.A.","Saskatchewan Geol.Surv.Misc.Rpt., 95-4",,137-144,North America,"intrusives, gabbro",1846,1852,1846,1852,54.7,-102,0.8,255,8.1,11.4,5,3,93,8,5,25
+3244,8371,Jan Lake Granite,1995,"Gala, M.G., Symons, D.T.A., Palmer, H.C.","Saskatchewan Geol.Surv.Misc.Rpt., 95-4",,145-152,North America,"intrusives, granite",1766,1768,1766,1768,54.9,-102.8,48.1,269.6,15.1,15.3,5,5,20,7.7,19,95
+2995,7773,Blueflower Formation,1995,"Park, J.K.",Canad. J. Earth Sci.,32,718-729,North America,sediments,550,630,500,550,63.4,-128.5,-64,110,13,14,5,2,14.3,8,6,28
+2995,7772,Risky Formation,1995,"Park, J.K.",Canad. J. Earth Sci.,32,718-729,North America,"sediments, dolomites",550,580,500,550,64.6,-132.9,-44,142,15,21,3,2,21,15,6,23
+2995,7771,Risky Formation,1995,"Park, J.K.",Canad. J. Earth Sci.,32,718-729,North America,"sediments, dolomites",550,580,550,580,64.6,-132.9,-29,7,14,18,4,2,18,11,4,11
+3240,8367,Macoun Lake Granodiorite,1994,"Symons, D.T.A., Lohnes, C.A., Lewchuk, M.T.","Saskatchewan Geol.Surv.Misc.Rpt., 94-4",,123-131,North America,"intrusives, granite, granodiorite",1844,1864,1844,1864,56.5,-103.6,43.9,287.7,14.3,15.2,4,4,20,8.1,17,85
+2776,7198,Lake Shore Traps,1994,"Diehl,J.F., Haig,T.D.",Canad. J. Earth Sci.,31,369-380,North America,"extrusives, basalts",1085,1089,1085,1089,47.6,-88.1,22.2,180.8,4.5,4.5,5,,20.9,5.9,30,233
+3258,8391,Molson C Dykes,1994,"Zhai, Y., Halls, H.C., Bates,M.P.",J.Geophys.Res.,99,21717-21732,North America,"intrusives, mafic to ultramafic",2120,2170,2120,2170,55,-97.5,40.7,203.7,9.7,9.7,6,4,31,6.1,19,108
+3258,8392,Pikwitonei Granulite,1994,"Zhai, Y., Halls, H.C., Bates,M.P.",J.Geophys.Res.,99,21717-21732,North America,"metamorphics, granulites",2640,2690,2640,2690,55,-97.5,20.9,226.4,7.6,7.6,6,4,13,6.5,,30
+2868,7474,Catoctin Basalts,1994,"Meert, J.G., Van der Voo, R., Payne, T.W.",J.Geophys.Res.,99,4625-4641,North America,"extrusives, basalts",579,615,579,615,38.5,-78.2,-42,116.7,17.4,17.7,7,,59,9,6,28
+2868,7475,Catoctin Basalts,1994,"Meert, J.G., Van der Voo, R., Payne, T.W.",J.Geophys.Res.,99,4625-4641,North America,"extrusives, basalts",579,615,505,515,38.5,-78.2,-3.8,183.7,6.9,13.4,5,,16,13,9,50
+2868,7476,Catoctin Basalts,1994,"Meert, J.G., Van der Voo, R., Payne, T.W.",J.Geophys.Res.,99,4625-4641,North America,"extrusives, basalts",579,615,440,460,38.5,-78.2,18.7,133.6,7.1,11.3,4,,21,9,15,84
+2875,7493,Laramie Anorthosite Complex,1994,"Harlan, S.S., Snee, L.W., Geissman, J.W., Brearley, A.J.",J.Geophys.Res.,99,17997-18020,North America,"intrusives, anorthosite, syenite",1435,1440,1435,1440,41.7,-105.4,-7.4,216.8,3.6,3.6,5,,77.4,3.1,29,194
+2875,7494,Sherman Granite,1994,"Harlan, S.S., Snee, L.W., Geissman, J.W., Brearley, A.J.",J.Geophys.Res.,99,17997-18020,North America,"intrusives, granite, diorite",1425,1437,1425,1437,41.2,-105.4,-4.3,210.5,9.4,9.4,5,,46.5,7.6,8,67
+2894,7524,Peter Lake Domain,1994,"Symons, D.T.A.",Precambrian Res.,69,11-24,North America,"metamorphics, metagabbros, monzonites",1840,1900,1750,1810,57.2,-103.9,54.2,280,14.6,14.9,4,,19.4,7.6,20,81
+2894,7523,Peter Lake Domain,1994,"Symons, D.T.A.",Precambrian Res.,69,11-24,North America,"metamorphics, metagabbros, monzonites",1840,1900,1840,1900,57.2,-103.9,3.3,307.7,7.1,11.8,4,4,16.2,9.8,15,72
+2875,7495,Sherman Granite,1994,"Harlan, S.S., Snee, L.W., Geissman, J.W., Brearley, A.J.",J.Geophys.Res.,99,17997-18020,North America,"intrusives, granite, diorite",1425,1437,245,323,41.2,-105.4,50.1,115.5,9.9,9.9,3,,90.6,9.7,4,20
+3258,8389,Molson A Dykes (Cuthbert Dyke Swarm),1994,"Zhai, Y., Halls, H.C., Bates,M.P.",J.Geophys.Res.,99,21717-21732,North America,"intrusives, mafic to ultramafic",1700,1800,1700,1800,55,-97.5,15.4,263.5,4.1,4.1,5,3,186,2.7,16,94
+3258,8390,Molson B Dykes,1994,"Zhai, Y., Halls, H.C., Bates,M.P.",J.Geophys.Res.,99,21717-21732,North America,"intrusives, mafic to ultramafic",1873,1886,1873,1886,55,-97.5,27.1,219.2,3.8,3.8,6,4,100,2.6,30,170
+3238,8364,Missi Formation Conglomerate Clasts,1994,"Symons, D.T.A., Lewchuk, M.T.","Saskatchewan Geol.Surv.Misc.Rpt., 94-4",,111-115,North America,"sediments, conglomerate",1840,1860,1836,1840,54.7,-102,70.8,287.6,17.2,18.1,2,1,8.7,9.5,1,30
+3238,8365,Missi Formation Conglomerate Clasts,1994,"Symons, D.T.A., Lewchuk, M.T.","Saskatchewan Geol.Surv.Misc.Rpt., 94-4",,111-115,North America,"sediments, conglomerate",1840,1860,1853,1857,54.7,-102,29.6,290.6,4.8,5.5,4,2,76.5,3.1,1,28
+3239,8366,Hanson Lake Pluton,1994,"Gala, M.G., Symons, D.T.A., Palmer, H.C.","Saskatchewan Geol.Surv.Misc.Rpt., 94-4",,116-122,North America,"intrusives, diorite, granodiorite",1842,1846,1842,1846,54.7,-102.8,36.2,265.5,9.7,10.2,4,4,49,5.3,16,80
+2820,7302,Shenango Alkaline Complex,1993,"Costanzo-Alvarez,V., Dunlop,D.J., Pesonen,L.J.",J.Geophys.Res.,98,4063-4079,North America,"intrusives, diorite",1030,1080,1030,1080,48.4,-82.8,39.1,189.4,7.8,11.8,6,,17.6,9,16,40
+2751,7145,Red Lake Greenstone Belt Batholiths,1993,"Costanzo-Alvarez, V., Dunlop, D.J.",Earth Planet.Sci.Letters,119,599-615,North America,"intrusives, granites",2700,2730,2700,2730,51.1,-93.9,75,222,26,29,4,4,20,16,14,39
+2751,7146,Deformation zone rocks,1993,"Costanzo-Alvarez, V., Dunlop, D.J.",Earth Planet.Sci.Letters,119,599-615,North America,"metamorphics,altered diorite,lamprophyre",2570,2635,2570,2635,51.1,-93.9,77,86,3,4,2,2,23,3,6,20
+2773,7193,Abitibi Dykes,1993,"Ernst,R.E., Buchan,K.L.",Canad. J. Earth Sci.,30,1886-1897,North America,"intrusives, olivine diabase",1137,1143,1137,1143,48,-81,44.4,211.4,12.1,15.4,6,,33,9.8,8,190
+2772,7192,Gila County Diabase Sills,1993,"Harlan, S.S.",Canad. J. Earth Sci.,30,1415-1426,North America,"intrusives, diabase",1070,1110,1070,1110,33.5,-110.7,38.6,247.3,39.7,39.8,4,,22.2,19.9,4,39
+2771,7189,Biscotasing Dykes,1993,"Buchan, K.L., Mortensen, J.K., Card, K.D.",Canad. J. Earth Sci.,30,1286-1296,North America,"intrusives, quartz tholeiite",2165,2168,2165,2168,48,-79,27.8,223.3,9.4,12.3,6,5,70,4.5,6,87
+2820,7325,Shawmere Anorthosite,1993,"Costanzo-Alvarez,V., Dunlop,D.J., Pesonen,L.J.",J.Geophys.Res.,98,4063-4079,North America,"intrusives, anorthosite",2715,2815,1050,1150,48.2,-82.7,39,224,13.4,15.9,4,,12,9.5,18,58
+2820,7324,Lackner and Borden Carbonatites,1993,"Costanzo-Alvarez,V., Dunlop,D.J., Pesonen,L.J.",J.Geophys.Res.,98,4063-4079,North America,"intrusives, nepheline syenite",1095,1115,1095,1115,47.8,-83.1,38.8,184.5,11.1,17.6,4,,31,14,5,11
+2820,7303,Nemegonsenda Alkaline Complex,1993,"Costanzo-Alvarez,V., Dunlop,D.J., Pesonen,L.J.",J.Geophys.Res.,98,4063-4079,North America,"intrusives, alkaline syenite",1097,1117,1097,1117,48,-83.1,51.3,188,11.6,16.3,4,,16.9,11.4,11,22
+2771,7190,Senneterre Dykes,1993,"Buchan, K.L., Mortensen, J.K., Card, K.D.",Canad. J. Earth Sci.,30,1286-1296,North America,"intrusives, quartz tholeiite",2212,2224,2202,2227,48,-79,-15.3,284.3,4.4,7,7,5,147,5.5,6,68
+2772,7191,Gila County Diabase Sills,1993,"Harlan, S.S.",Canad. J. Earth Sci.,30,1415-1426,North America,"intrusives, diabase",1070,1110,1070,1110,33.5,-110.7,24.9,24.8,7,11,5,,17.7,8.7,17,180
+2572,6644,Mount Harper Volcanics,1992,"Park, J.K., Roots, C.F., Brunet, N.",Geol.Surv.Canada Paper 92-1E,,1-10,North America,"extrusives, basalts",733,777,700,750,64.8,-140,-24,168,24,24,2,,11,38,3,7
+2658,6941,Manitou Falls Formation,1992,"Kotzer, T.G., Kyser, T.K., Irving, E.",Canad. J. Earth Sci.,29,1474-1491,North America,"sediments, hematitic sandstones",1650,1750,900,1000,57.5,-104.5,77,284,5,5,4,,95,3,6,31
+2658,6940,Manitou Falls Formation,1992,"Kotzer, T.G., Kyser, T.K., Irving, E.",Canad. J. Earth Sci.,29,1474-1491,North America,"sediments, hematitic sandstones",1650,1750,1450,1650,57.5,-104.5,-12,246,3,5,3,,76,7,1,6
+2658,6939,Manitou Falls Formation,1992,"Kotzer, T.G., Kyser, T.K., Irving, E.",Canad. J. Earth Sci.,29,1474-1491,North America,"sediments, hematitic sandstones",1650,1750,1650,1750,57.5,-104.5,12,271,6,7,4,,48,5,2,21
+2657,6938,Double Mer Formation,1992,"Murthy, G.S., Gower, C., Tubett, M., Patzold, R.",Canad. J. Earth Sci.,29,1224-1234,North America,"sediments, redbeds",542,600,542,600,54,-59.5,13.7,356.2,10.5,15.7,5,,24.6,11.7,5,25
+2657,6937,Long Range Dykes,1992,"Murthy, G.S., Gower, C., Tubett, M., Patzold, R.",Canad. J. Earth Sci.,29,1224-1234,North America,"intrusives, mafic dykes",613,617,613,617,53.7,-56.6,-17.4,35.2,4.4,8,4,,31,7.3,1,5
+2657,6936,Long Range Dykes,1992,"Murthy, G.S., Gower, C., Tubett, M., Patzold, R.",Canad. J. Earth Sci.,29,1224-1234,North America,"intrusives, mafic dykes",613,617,613,617,53.7,-56.7,35.5,29.4,14.4,21.7,4,,43,16.4,1,6
+2657,6935,Long Range Dykes,1992,"Murthy, G.S., Gower, C., Tubett, M., Patzold, R.",Canad. J. Earth Sci.,29,1224-1234,North America,"intrusives, mafic dykes",613,617,613,617,53.6,-57.5,69.6,352.2,25.6,27.9,5,,67,15.2,3,17
+2657,6934,Long Range Dykes,1992,"Murthy, G.S., Gower, C., Tubett, M., Patzold, R.",Canad. J. Earth Sci.,29,1224-1234,North America,"intrusives, mafic dykes",613,617,613,617,53.7,-56.7,11.6,346,18.3,25.7,6,,48,18,12,69
+2640,6908,Aldridge (Prichard) Formation and Moyie Sills,1992,"Symons, D.T.A., Timmons, E.A.","Basement Tectonics 8 (ed.M.J.Bartholemew, Kluwer Acad.Publ.)",,373-384,North America,"sediments,argillites,intrusives,gabbros",1423,1443,1300,1400,49.1,-115.9,-33.5,208.6,3,6,4,,32,6,19,82
+2640,6907,Aldridge (Prichard) Formation and Moyie Sills,1992,"Symons, D.T.A., Timmons, E.A.","Basement Tectonics 8 (ed.M.J.Bartholemew, Kluwer Acad.Publ.)",,373-384,North America,"sediments,argillites,intrusives,gabbros",1423,1443,800,900,49.1,-115.9,52.4,151.8,7.3,10.2,4,,23.9,7.2,18,49
+2640,6906,Aldridge (Prichard) Formation and Moyie Sills,1992,"Symons, D.T.A., Timmons, E.A.","Basement Tectonics 8 (ed.M.J.Bartholemew, Kluwer Acad.Publ.)",,373-384,North America,"sediments,argillites,intrusives,gabbros",1423,1443,150,200,49.1,-115.9,70.1,10,6.5,9.2,4,,26.2,6.5,20,86
+2590,6679,Shaler Group Units P1-P3,1992,"Park, J.K.",Geol.Surv.Canada Paper 92-1C,,43-52,North America,"sediments, shales, dolomite, quartzite",780,880,65,146,68.5,-121.7,61,180,14,14,3,,32,8,5,12
+2590,6678,Shaler Group Units P1-P3,1992,"Park, J.K.",Geol.Surv.Canada Paper 92-1C,,43-52,North America,"sediments, shales, dolomite, quartzite",780,880,720,726,68.5,-121.7,-9,164,9,17,3,,13,17,4,7
+2590,6677,Shaler Group Units P1-P3,1992,"Park, J.K.",Geol.Surv.Canada Paper 92-1C,,43-52,North America,"sediments, shales, dolomite, quartzite",780,880,780,880,68.5,-121.7,9,168,5,10,3,,29,9,4,10
+2589,6676,Sekwi Formation,1992,"Park, J.K.",Geol.Surv.Canada Paper 92-1E,,11-22,North America,"sediments, limestones",513,542,30,80,64.5,-129.6,64.6,239.7,12,12,2,,496,6,3,10
+2589,6675,Backbone Ranges and Ingta Formations,1992,"Park, J.K.",Geol.Surv.Canada Paper 92-1E,,11-22,North America,"sediments, clastics",530,542,530,542,64.3,-131.8,-59,91,10,11,5,,116,6,4,7
+2587,6672,Matachewan Dykes,1992,"Symons, D.T.A.",Canad. J. Earth Sci.,29,1215-1223,North America,"intrusives, diabase",2450,2455,2450,2455,47,-83.3,39.2,37.4,21,39.8,3,3,11.6,37.8,3,8
+2587,6671,Seabrook Lake Carbonatite Complex,1992,"Symons, D.T.A.",Canad. J. Earth Sci.,29,1215-1223,North America,"intrusives, ijolite, carbonatite, sovite",1077,1149,1077,1149,47,-83.3,46.3,180.2,10.8,16.7,6,,11.2,12.9,13,49
+2587,6670,Chipman Lake Diorite Stock,1992,"Symons, D.T.A.",Canad. J. Earth Sci.,29,1215-1223,North America,"intrusives, diorite",2400,2500,2400,2500,49.9,-86.3,11,272.6,28,33.4,3,,,19.9,2,11
+2587,6669,Chipman Lake Diorite Stock,1992,"Symons, D.T.A.",Canad. J. Earth Sci.,29,1215-1223,North America,"intrusives, diorite",2400,2500,2400,2500,49.9,-86.3,51.2,48.6,7.6,13.4,3,2,27.2,11.8,7,36
+2587,6668,Chipman Lake Carbonatite Complex,1992,"Symons, D.T.A.",Canad. J. Earth Sci.,29,1215-1223,North America,"intrusives,diabase,lamprophyre,fenite",1050,1150,1050,1150,49.9,-86.3,38.4,186.1,7.1,10.8,5,,24.5,8.2,14,76
+2572,6643,Mount Harper Volcanics,1992,"Park, J.K., Roots, C.F., Brunet, N.",Geol.Surv.Canada Paper 92-1E,,1-10,North America,"extrusives, basalts",733,777,733,777,64.8,-140,-29,220,12,12,3,,15,18,6,26
+2572,6642,Mount Harper Volcanics,1992,"Park, J.K., Roots, C.F., Brunet, N.",Geol.Surv.Canada Paper 92-1E,,1-10,North America,"extrusives, basalts",733,777,50,150,64.8,-140,74,194,22,22,4,,15,15,8,26
+2561,6592,Rusty Shale Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones, shales",780,850,550,650,63.4,-127,71,134,25,25,2,,31,17,4,41
+2561,6593,Rusty Shale Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones, shales",780,850,550,650,63.4,-127,49,328,34,34,2,,28,24,3,33
+2561,6594,Thundercloud Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones",730,780,730,780,63,-126.8,1,150,21,21,5,,10,22,6,31
+2561,6595,Thundercloud Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones",730,780,700,780,63,-126.8,27,158,9,9,5,,63,9,6,50
+2561,6596,Thundercloud Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones",730,780,550,650,63,-126.8,72,345,35,41,2,,109,24,2,20
+2561,6597,Redstone River Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones",730,780,730,780,63.2,-127,22,151,9,9,5,,38,11,6,76
+2561,6598,Redstone River Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones",730,780,700,780,63.2,-127,32,154,10,10,4,,92,10,4,49
+2561,6599,Redstone River Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones",730,780,700,750,63.2,-127,39,127,13,13,3,,67,15,3,12
+2561,6600,Redstone River Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones",730,780,700,750,63.2,-127,41,102,10,10,3,,86,13,3,19
+2683,6992,Fourchu Gabbro,1991,"Seguin,M.K., Rao,K.V., Deutsch,E.R.",J.Geomag.Geoelect.,43,207-228,North America,"intrusives, gabbro",600,630,398,423,45.9,-60,19,135,3.4,5.6,3,,176.1,4.6,7,33
+2464,6355,Nipissing Diabase,1991,"Buchan, K.L.",Earth Planet.Sci.Letters,105,492-499,North America,"intrusives, diabase",2215,2219,2215,2219,47.7,-80.7,10.2,81.8,15.3,23,5,4,208.5,17.4,2,10
+2462,6353,Matachewan Dykes,1991,"Halls, H.C.",Earth Planet.Sci.Letters,105,279-292,North America,"intrusives, diabases",2450,2455,2450,2455,48,-83.5,43.5,51.5,3.7,7.2,7,5,27.9,6.9,17,68
+2504,6448,Wathaman Batholith,1991,"Symons, D.T.A.",Canad. J. Earth Sci.,28,1931-1938,North America,"intrusives, granite, mafic dykes",1843,1865,1843,1865,57,-103.8,9.3,292.6,3.4,4.9,6,5,93.6,3.5,19,156
+2504,6449,Wathaman Batholith,1991,"Symons, D.T.A.",Canad. J. Earth Sci.,28,1931-1938,North America,"intrusives, granite, mafic dykes",1843,1865,1800,1850,57,-103.8,-8.3,291.7,15.1,26.4,4,4,29.6,23.1,3,12
+2505,6450,Groundhog River (Matachewan) Dykes,1991,"Bates,M.P., Halls,H.C.",Canad. J. Earth Sci.,28,1424-1428,North America,"intrusives, quartz diabase",2452,2456,2452,2456,49.3,-82,53.6,80.5,16.1,29.7,4,3,21,27.4,3,11
+2505,6451,Groundhog River (Matachewan) Dykes,1991,"Bates,M.P., Halls,H.C.",Canad. J. Earth Sci.,28,1424-1428,North America,"intrusives, quartz diabase",2452,2456,1850,2050,49.3,-82,53.3,255.5,23.4,24,4,,12,12.3,9,43
+2506,6452,Ogoki Lake (Matachewan) Dykes,1991,"Bates,M.P., Halls,H.C.",Canad. J. Earth Sci.,28,1780-1796,North America,"intrusives, diabase",2452,2456,2452,2456,50.9,-87.3,50.9,84.3,5,9.5,4,3,110,8.9,4,23
+2506,6453,Hornepayne (Matachewan) Dykes,1991,"Bates,M.P., Halls,H.C.",Canad. J. Earth Sci.,28,1780-1796,North America,"intrusives, diabase",2452,2456,2452,2456,49,-85,53.1,76.8,2.1,4,6,4,117.1,3.7,14,95
+2506,6454,Manitowik Lake (Matachewan) Dykes,1991,"Bates,M.P., Halls,H.C.",Canad. J. Earth Sci.,28,1780-1796,North America,"intrusives, diabase",2452,2456,2452,2456,48,-84.5,43.1,36.2,3.1,5.6,6,4,28.5,5.1,29,205
+2506,6455,Hearst (Matachewan) Dykes,1991,"Bates,M.P., Halls,H.C.",Canad. J. Earth Sci.,28,1780-1796,North America,"intrusives, diabase",2452,2456,2452,2456,49.5,-84,49.9,69.6,3,5.6,5,3,48.7,5.3,16,81
+2506,6456,Timmins (Matachewan) Dykes,1991,"Bates,M.P., Halls,H.C.",Canad. J. Earth Sci.,28,1780-1796,North America,"intrusives, diabase",2452,2456,2452,2456,48.2,-81.5,45.3,59.3,2.3,4.4,5,3,59,4.2,21,107
+2508,6458,Callander Alkaline Complex,1991,"Symons, D.T.A., Chiasson, A.D.",Canad. J. Earth Sci.,28,355-363,North America,"intrusives,lamprophyre,syenite,fenite",570,580,570,580,46.2,-79.4,-46.3,121.4,5.9,6.1,6,,83,3.1,26,205
+2561,6603,Little Dal Basalt,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"extrusives, basalts",776,780,776,780,62.9,-126.6,63,284,23,24.5,3,,64,13,1,4
+2561,6602,Coppercap Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, redbeds, limestones",700,780,700,750,62.7,-126.6,24,151,5.3,8.6,3,,283,7,1,3
+2683,6993,Fourchu Gabbro,1991,"Seguin,M.K., Rao,K.V., Deutsch,E.R.",J.Geomag.Geoelect.,43,207-228,North America,"intrusives, gabbro",600,630,472,501,45.9,-60,63,196,6.3,8.9,3,,91.2,6.4,7,25
+2561,6601,Coppercap Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, redbeds, limestones",700,780,700,780,62.7,-126.6,35,135,8.2,12.8,3,,90,10,1,11
+2561,6591,Rusty Shale Formation,1991,"Park, J.K., Jefferson, C.W.",Precambrian Res.,52,1-35,North America,"sediments, sandstones, shales",780,850,780,850,63.4,-127,-8,133,17,17,3,,51,17,3,31
+2500,6441,Matachewan Dykes,1990,"Buchan, K.L., Neilson, D.J., Hale, C.J.",Canad. J. Earth Sci.,27,915-922,North America,"intrusives, diabase",2450,2455,2450,2455,48.1,-80.2,42.3,58.4,3.2,6.2,6,5,39,6,16,72
+2487,6401,Matachewan Dykes,1990,"Bates,M.P., Halls,H.C.",Canad. J. Earth Sci.,27,200-211,North America,"intrusives, diabase",2450,2455,2450,2455,47,-83,40.9,58,2.4,4.8,5,4,36,4.8,26,136
+2501,6442,Matachewan Dykes,1990,"Halls, H.C., Palmer, H.C.",Canad. J. Earth Sci.,27,87-103,North America,"intrusives, diabase",2452,2456,2452,2456,47,-84,37.9,33.4,3.3,6.1,5,5,37,5.8,18,108
+2501,6443,Matachewan Dykes,1990,"Halls, H.C., Palmer, H.C.",Canad. J. Earth Sci.,27,87-103,North America,"intrusives, diabase",2452,2456,2452,2456,47,-84,46.5,50.5,1.6,3.1,5,,66,2.9,37,222
+2501,6444,Kapuskasing Dykes,1990,"Halls, H.C., Palmer, H.C.",Canad. J. Earth Sci.,27,87-103,North America,"intrusives, diabase",2029,2057,2029,2057,47,-84,61.3,253,21.8,22.8,6,5,11,11.9,16,96
+2518,6475,Clay-Howells Carbonatite Complex,1990,"Lewchuk, M.T., Symons, D.T.A.",Tectonophysics,172,67-75,North America,"intrusives, syenites",1060,1090,1060,1090,49.8,-82.1,26.5,178.8,4.1,7.6,5,,25.4,7,18,145
+2529,6493,Coldwell Complex,1990,"Lewchuk, M.T., Symons, D.T.A.",Tectonophysics,184,73-86,North America,"intrusives,gabbro,syenite,granite",1070,1130,1070,1130,48.8,-86.6,54.2,217,5,5.7,5,,,3.3,19,173
+2529,6494,Coldwell Complex,1990,"Lewchuk, M.T., Symons, D.T.A.",Tectonophysics,184,73-86,North America,"intrusives,gabbro,syenite,granite",1070,1130,1070,1130,48.8,-86.6,49.1,195.1,7.5,10,5,,,5.8,11,59
+2529,6495,Coldwell Complex,1990,"Lewchuk, M.T., Symons, D.T.A.",Tectonophysics,184,73-86,North America,"intrusives,gabbro,syenite,granite",1070,1130,1070,1130,48.8,-86.6,43.3,189.6,5,7.1,6,,,5.9,9,50
+2586,6667,Lynn Lake Gabbros,1990,"Dunsmore,D.J., Symons,D.T.A.",Geol.Assoc.Canada Spec.Paper 37,,215-228,North America,"intrusives, gabbro",1876,1910,1876,1910,57,-101,9,275.6,5.5,7.4,4,3,31,5,29,258
+2314,6023,Archean Gneiss and Anorthosites,1990,"Symons, D.T.A., Vandall, T.A.",J.Geophys.Res.,95,19199-19211,North America,"metamorphics, gneiss, tonalite",2600,2700,2450,2650,48,-83,65.5,43.3,9.6,14.3,4,2,52,10.7,5,46
+2314,6024,Archean Gneiss and Anorthosites,1990,"Symons, D.T.A., Vandall, T.A.",J.Geophys.Res.,95,19199-19211,North America,"metamorphics, gneiss, tonalite",2600,2700,1870,2040,48,-83,-27,54.8,7,8.4,5,,50,5,18,173
+2314,6025,Archean Gneiss and Anorthosites,1990,"Symons, D.T.A., Vandall, T.A.",J.Geophys.Res.,95,19199-19211,North America,"metamorphics, gneiss, tonalite",2600,2700,1000,1200,48,-83,-0.3,118.3,18.1,24.4,3,,56,16.6,3,24
+2483,6392,Matachewan (Gamitagama) Dykes,1990,"Vandall, T.A., Symons, D.T.A.",Canad. J. Earth Sci.,27,1031-1039,North America,"intrusives, diabase",2450,2455,2450,2455,48,-85,41,57,7,14,5,4,25,13.7,6,30
+2483,6393,Northern External and Baldhead River Granites,1990,"Vandall, T.A., Symons, D.T.A.",Canad. J. Earth Sci.,27,1031-1039,North America,"intrusives, granite, quartz monzonite",2657,2670,2657,2670,48,-85,-27,15,8,13,5,5,26,10.3,9,41
+2483,6394,"Hawk Lake, Southern and Eastern External Granites",1990,"Vandall, T.A., Symons, D.T.A.",Canad. J. Earth Sci.,27,1031-1039,North America,"intrusives, granite, trondhjemite",2687,2890,2687,2701,48,-85,-41,350,8,13,5,4,20,11.2,10,37
+2244,5878,Nipissing Diabase,1989,"Buchan, K.L., Card, C.D., Chandler, F.W.",Canad. J. Earth Sci.,26,427-445,North America,"intrusives, diabase",2215,2223,2215,2223,47.7,-79.7,29.5,341.2,6.6,8.9,6,6,42,6,15,72
+2252,5922,Tsezotene Sills Combined,1989,"Park, J.K., Norris, D.K., Larochelle, A.",Canad. J. Earth Sci.,26,2194-2203,North America,"intrusives, diabase",776,780,776,780,63.5,-125,1.6,137.8,5,5,6,,,,17,134
+2252,5923,Tsezotene Sills Combined,1989,"Park, J.K., Norris, D.K., Larochelle, A.",Canad. J. Earth Sci.,26,2194-2203,North America,"intrusives, diabase",776,780,50,150,63.5,-125,66.4,220.2,16,16,3,,,,5,
+2254,1753,Brigus Red Shale,1989,"Seguin,M.K., Rao,K.V.",Phys.Earth Planet.Interiors,56,242-253,North America,"sediments, red shales",518,545,518,545,47.5,-53.2,27,231,6,9,4,,77,6.9,7,32
+3250,8380,Firesand River Carbonatite Complex,1989,"Symons, D.T.A.",Canad. J. Earth Sci.,26,2401-2405,North America,"intrusives, carbonatite",1080,1100,1080,1100,48,-84.7,26.6,182.8,7.6,13.5,4,4,19.7,11.9,9,43
+3251,8381,Lackner Lake Complex,1989,"Symons, D.T.A.",Canad. J. Earth Sci.,26,1778-1783,North America,"intrusives, nepheleine syenite",1071,1113,1071,1113,47.8,-83.1,53.7,203.5,6.7,8.3,4,4,51,5,16,137
+3977,9729,Oaxacan Metamorphics,1989,"Ballard, M.M., Van der Voo, R., Urritia-Fucugauchi, J.",Precambrian Res.,42,343-352,North America,metamorphics,934,966,934,966,17.1,-96.92,47,267,22.3,24.7,4,3,20,13.7,7,43
+2244,5879,Northeast Diabase Dyke,1989,"Buchan, K.L., Card, C.D., Chandler, F.W.",Canad. J. Earth Sci.,26,427-445,North America,"intrusives, diabase",2000,2200,2000,2200,47.8,-79.7,36.9,214.2,6.8,8.9,5,5,48,5.8,14,63
+1373,504,PCP Travers Drill Core,1988,"Ozdemir,O., Dunlop,D.J., Reid,B., Hyodo,H.",Geophysical Journal,95,69-78,North America,"intrusives, granodiorite",1700,1900,1700,1900,50.1,-112.7,-4,267,3,4,3,,118,3,1,20
+2243,5877,Matachewan Dykes,1988,"Halls, H.C., Shaw, E.G.",Canad. J. Earth Sci.,25,732-743,North America,"intrusives, diabase",2450,2455,2450,2455,47,-83.6,44,61.6,2.8,5.4,5,3,52,5.4,17,54
+1317,393,Shawmere Anorthosite,1988,"Costanzo-Alvarez,V., Dunlop,D.J.",J.Geophys.Res.,93,9126-9136,North America,"intrusives, anorthosite",2550,2750,2550,2750,48.3,-82.8,78,102,5,7,2,1,138,5,5,23
+1317,394,Racine Lake Tonalite,1988,"Costanzo-Alvarez,V., Dunlop,D.J.",J.Geophys.Res.,93,9126-9136,North America,"metamorphics, tonalite",2500,2700,2500,2700,48,-83.3,70,81,7,10,3,2,49,7,8,56
+1317,395,Racine Lake Tonalite,1988,"Costanzo-Alvarez,V., Dunlop,D.J.",J.Geophys.Res.,93,9126-9136,North America,"metamorphics, tonalite",2500,2700,1100,1150,48.1,-83,49,216,24,28,3,,17,17,4,14
+1317,396,Racine Lake Tonalite,1988,"Costanzo-Alvarez,V., Dunlop,D.J.",J.Geophys.Res.,93,9126-9136,North America,"metamorphics, tonalite",2500,2700,1200,1300,48.1,-83,-18,206,7,13,3,,18,13,6,10
+2243,5876,Matachewan Dykes,1988,"Halls, H.C., Shaw, E.G.",Canad. J. Earth Sci.,25,732-743,North America,"intrusives, diabase",2450,2455,2450,2455,47.2,-84.6,45.8,57.2,6.8,13.2,4,3,49,17.9,3,11
+1556,946,Michipicoten Island Intrusive,1987,"Palmer, H.C., Davis, D.W.",Precambrian Res.,37,157-171,North America,intrusives,1070,1088,1070,1088,47.7,-85.7,24,166,22,22,4,,16.8,31.1,3,13
+1571,1011,"Cid Formation, Albemarle Group",1987,"Vick, H.K., Channell, J.E.T., Opdyke, N.D.",Tectonics,6,573-583,North America,"sediments, mudstones",490,540,450,460,35,-80.2,29.6,122.1,3.6,6.1,5,,118.5,5.1,8,
+1556,945,Michipicoten Island Formation,1987,"Palmer, H.C., Davis, D.W.",Precambrian Res.,37,157-171,North America,"extrusives, basalts, andesites",1070,1088,1070,1088,47.7,-85.7,26,175,7,7,5,,24.8,8.5,13,58
+1925,1754,Sept-Iles Dykes and Baked Contacts,1987,"Tanczyk, E.I., Lapointe, P., Morris, W.A., Schmidt, P.W.",Canad. J. Earth Sci.,24,1431-1438,North America,intrusives,535,586,535,586,50.2,-66.5,-44,134.5,9.7,9.9,6,,53.2,5.1,16,76
+1091,2126,Harbour Main Group,1987,"Seguin,M.K., Giasson,M.",Tectonophysics,138,197-209,North America,sediments,610,770,610,770,47.5,-53,20,172,3.6,6.7,1,,92,6.3,7,22
+2247,5902,Portage Lake Volcanics,1987,"Browning,T.D., Beske-Diehl,S.",Canad. J. Earth Sci.,24,2396-2404,North America,extrusives,1094,1098,1094,1098,47.1,-88.3,29.3,181.1,4.7,8.1,5,,180,6.9,4,28
+1925,1752,Sept-Iles Layered Intrusion,1987,"Tanczyk, E.I., Lapointe, P., Morris, W.A., Schmidt, P.W.",Canad. J. Earth Sci.,24,1431-1438,North America,"intrusives, gabbro, anorthosite",561,569,561,569,50.2,-66.5,20,141,5,9,6,,34,8,10,51
+2247,5901,Portage Lake Volcanics,1987,"Browning,T.D., Beske-Diehl,S.",Canad. J. Earth Sci.,24,2396-2404,North America,extrusives,1094,1098,1094,1098,47.1,-88.3,24.4,175.5,7.6,14.2,5,,50,13.2,4,27
+1556,944,Mamainse Point Formation,1987,"Palmer, H.C., Davis, D.W.",Precambrian Res.,37,157-171,North America,"extrusives, basalts",1084,1100,1084,1100,47.7,-85.7,38,186,11,11,5,,28.4,10.9,8,43
+1091,5833,Harbour Main Group,1987,"Seguin,M.K., Giasson,M.",Tectonophysics,138,197-209,North America,sediments,610,770,610,770,47.5,-53,56,109,7.3,13.2,0,,26,12,7,16
+1091,5832,Harbour Main Group,1987,"Seguin,M.K., Giasson,M.",Tectonophysics,138,197-209,North America,sediments,610,770,610,770,47.5,-53,24,132,6.8,11.4,1,,39,9.8,7,20
+1296,350,Powder Mill Volcanics,1986,"Palmer, H.C., Halls, H.C.",J.Geophys.Res.,91,11571-11580,North America,"extrusives, mafic lavas",1100,1300,1100,1300,46.5,-90,14,188,4.9,8.5,4,,142.9,7.7,4,26
+1698,1243,Roxbury Formation,1986,"Fang, W., Van der Voo, R., Johnson, R.J.E.",Geophys.Res.Lett.,13,1450-1453,North America,"extrusives, sediments, redbeds",570,593,271,299,42.3,-71.2,40.6,105,4.2,8.2,4,,41.9,8,9,28
+1698,1242,Roxbury Formation,1986,"Fang, W., Van der Voo, R., Johnson, R.J.E.",Geophys.Res.Lett.,13,1450-1453,North America,"extrusives, sediments, redbeds",570,593,570,593,42.3,-71.2,12.8,267.3,7.9,9,4,,311.2,5.2,4,13
+1537,870,Harbour Main Intrusives,1986,"Seguin,M.K., Lortie,J.",Phys.Earth Planet.Interiors,43,148-159,North America,"intrusives, porphyrites, rhyolites",700,750,65,271,47.5,-53.2,34,33,12,19,3,,27.5,15,5,10
+1537,869,Harbour Main Intrusives,1986,"Seguin,M.K., Lortie,J.",Phys.Earth Planet.Interiors,43,148-159,North America,"intrusives, porphyrites, rhyolites",700,750,271,318,47.5,-53.2,61,101,9.6,16.4,3,,22,14,6,11
+1537,868,Harbour Main Intrusives,1986,"Seguin,M.K., Lortie,J.",Phys.Earth Planet.Interiors,43,148-159,North America,"intrusives, porphyrites, rhyolites",700,750,700,750,47.5,-53.2,48,211,9.8,14.7,4,,21,11,10,39
+1296,349,Powder Mill Volcanics,1986,"Palmer, H.C., Halls, H.C.",J.Geophys.Res.,91,11571-11580,North America,"extrusives, mafic lavas",1100,1300,1100,1300,46.5,-90,39,218,5.2,6.4,4,,42.2,3.9,33,198
+1291,343,Tsezotene Formation,1986,"Park, J.K., Aitken, J.D.",J.Geophys.Res.,91,4955-4970,North America,"sediments, redbeds",780,880,15,60,64.5,-128.5,68.9,219.3,5.6,5.6,4,,90.9,2.8,29,164
+1291,342,Tsezotene Formation,1986,"Park, J.K., Aitken, J.D.",J.Geophys.Res.,91,4955-4970,North America,"sediments, redbeds",780,880,700,780,64.5,-128,23.3,161.8,3.5,5.4,4,,72.9,4.1,18,112
+1291,341,Tsezotene Formation,1986,"Park, J.K., Aitken, J.D.",J.Geophys.Res.,91,4955-4970,North America,"sediments, redbeds",780,880,780,880,64.5,-128,12,146,5,9,5,,14.9,8,6,25
+2229,5842,Korok Sheets and Dykes,1986,"Fahrig, W.F.",Geol.Surv.Canada Paper 86-1B,,65-71,North America,"intrusives, diabase",1350,1400,1350,1400,58.6,-66,-9.7,227.6,4,8,3,,24,8,3,14
+2229,5843,Mackenzie Dykes,1986,"Fahrig, W.F.",Geol.Surv.Canada Paper 86-1B,,65-71,North America,intrusives,1265,1269,1265,1269,58.4,-64.8,2.8,193.7,3,6,4,,125,6,1,6
+2239,5870,Nipissing Diabase,1986,"Hyodo,H., Dunlop,D.J., McWilliams,M.O.",Geol.Assoc.Canada Special Paper,31,119-126,North America,"intrusives, diabase",2215,2223,950,1000,46.9,-79.6,-27,141,11,14,4,,12,8,5,28
+2239,5869,Temagami Granodiorite,1986,"Hyodo,H., Dunlop,D.J., McWilliams,M.O.",Geol.Assoc.Canada Special Paper,31,119-126,North America,"intrusives, granodiorites",1600,2500,950,1000,46.9,-79.6,-37,150,12,14,3,,18,8,4,18
+2239,5868,Archean Greenstone,1986,"Hyodo,H., Dunlop,D.J., McWilliams,M.O.",Geol.Assoc.Canada Special Paper,31,119-126,North America,metamorphics,2500,3000,950,1000,46.9,-79.6,-5,152,9,14,3,,22,11,2,8
+1923,1749,Fourchu Group,1986,"Johnson, R.J.E., Van der Voo, R.",Canad. J. Earth Sci.,23,1673-1685,North America,"sediments, tuffaceous",600,630,290,323,45.9,-60,34,139,3.8,7.4,4,,25.7,7.2,17,71
+1923,1748,Fourchu Group,1986,"Johnson, R.J.E., Van der Voo, R.",Canad. J. Earth Sci.,23,1673-1685,North America,"sediments, tuffaceous",600,630,513,542,45.9,-60,56,225,6.2,7.9,4,,70.5,5,13,43
+1922,1747,Morisson River and MacCodrum Formations,1986,"Rao,K.V., Seguin,M.K., Deutsch,E.R.",Canad. J. Earth Sci.,23,1233-1242,North America,"sediments, redbeds",513,542,513,542,46,-60.1,20,214,3.3,5.9,4,,97,5.2,9,41
+1920,1745,Katherine Group,1986,"Park, J.K., Aitken, J.D.",Canad. J. Earth Sci.,23,308-323,North America,"sediments, redbeds",780,880,15,60,64.6,-127.9,77,238,11.6,11.8,4,,77,6,9,58
+1920,1744,Katherine Group,1986,"Park, J.K., Aitken, J.D.",Canad. J. Earth Sci.,23,308-323,North America,"sediments, redbeds",780,880,700,780,64.6,-127.9,17,164,4,6,5,,326,5,4,36
+1920,1743,Katherine Group,1986,"Park, J.K., Aitken, J.D.",Canad. J. Earth Sci.,23,308-323,North America,"sediments, redbeds",780,880,780,880,64.6,-127.9,9,150,4,8,3,,33.5,7,5,13
+1919,1742,Mistassini dyke swarm,1986,"Fahrig, W.F., Christie, K.W., Chown, E.H., Janes, D., Machado, N.",Canad. J. Earth Sci.,23,238-253,North America,intrusives,2000,2200,1400,1500,51.5,-73.5,-12.9,229.1,5.2,10,5,,20,9.6,13,46
+1919,1741,Mistassini dyke swarm,1986,"Fahrig, W.F., Christie, K.W., Chown, E.H., Janes, D., Machado, N.",Canad. J. Earth Sci.,23,238-253,North America,intrusives,2000,2200,2000,2200,51.5,-73.5,50,280,11,11,4,,29,5.5,11,25
+1918,1740,Fort Frances Dykes,1986,"Halls, H.C.",Canad. J. Earth Sci.,23,142-157,North America,intrusives,2072,2081,2072,2081,49,-94,51,239.4,8.9,9.3,4,,47,4.8,20,42
+1918,1739,Fort Frances Dykes,1986,"Halls, H.C.",Canad. J. Earth Sci.,23,142-157,North America,intrusives,2072,2081,2072,2081,49,-94,-42.7,4.2,5.2,7.3,4,2,68,5.1,13,183
+1917,1736,"Intrusives, Labrador Trough",1985,"Seguin,M.K., Clark,T.",Canad. J. Earth Sci.,22,1561-1570,North America,"intrusives, metamorphics",1700,1900,1700,1900,57,-69,38,19,9.5,14,3,,22.6,10.3,10,22
+1910,1722,Poohbah Lake alkaline complex,1985,"Dunlop,D.J.",Canad. J. Earth Sci.,22,27-38,North America,"intrusives, syenite, malignite",2675,2725,2675,2725,48.4,-91.7,50.5,60,3,5.5,5,4,62,5.3,13,34
+1328,411,Garnish Red Sandstone,1985,"Irving,E., Strong,D.F.",J.Geophys.Res.,90,1949-1962,North America,"sediments, redbeds",603,615,603,615,47.1,-55.5,5.2,148.4,7,10,4,,85,7,1,11
+1913,1728,Ottawa Island Komatiites,1985,"Buchan, K.L., Baragar, W.R.A.",Canad. J. Earth Sci.,22,553-566,North America,"extrusives, komatiites",1900,2000,1700,1900,59.8,-80.1,15.4,259.4,4.5,5.8,4,,168,3.7,10,46
+1328,410,Famine Back Cove Basalt,1985,"Irving,E., Strong,D.F.",J.Geophys.Res.,90,1949-1962,North America,"extrusives, basalts",603,615,603,615,47.1,-55.6,1,342,5,7,5,,63,5,1,28
+1910,1723,Poohbah Lake alkaline complex,1985,"Dunlop,D.J.",Canad. J. Earth Sci.,22,27-38,North America,"intrusives, syenite, malignite",2675,2725,2500,2600,48.4,-91.7,77.5,90,8.5,12,3,3,28,8.3,13,29
+1198,130,Cordova Gabbro,1985,"Dunlop,D.J., Stirling,J.M.",Geophys.J.Roy.Astron.Soc.,81,521-550,North America,"intrusives, gabbro",1150,1200,850,950,44.5,-77.8,-10.5,151,6,8,4,4,42,5.5,18,48
+1395,539,"Diabase sill, Rock Canyon Monocline",1985,"Sandberg, S.A., Butler, R.F.",Earth Planet.Sci.Letters,73,140-146,North America,"intrusives, sill",1100,1180,1100,1180,33.5,-110.4,-10,73.2,31.4,33.6,5,,8.3,17.9,10,64
+1328,409,Calmer Mudstone,1985,"Irving,E., Strong,D.F.",J.Geophys.Res.,90,1949-1962,North America,"sediments, mudstones",603,615,603,615,46.9,-55.9,32,230,6,8,5,,38,6,1,28
+1917,1735,"Intrusives, Labrador Trough",1985,"Seguin,M.K., Clark,T.",Canad. J. Earth Sci.,22,1561-1570,North America,"intrusives, metamorphics",1700,1900,1700,1900,57,-69,-9,327,9.3,16.3,3,,15.4,14.4,8,27
+1198,131,Cordova Gabbro,1985,"Dunlop,D.J., Stirling,J.M.",Geophys.J.Roy.Astron.Soc.,81,521-550,North America,"intrusives, gabbro",1150,1200,800,850,44.5,-77.8,24,165.5,5,9.5,4,4,24,9.5,11,33
+1198,132,Cordova Gabbro,1985,"Dunlop,D.J., Stirling,J.M.",Geophys.J.Roy.Astron.Soc.,81,521-550,North America,"intrusives, gabbro",1150,1200,420,480,44.5,-77.8,31,102,6.5,12,3,3,18,10.5,12,23
+1917,1738,"Intrusives, Labrador Trough",1985,"Seguin,M.K., Clark,T.",Canad. J. Earth Sci.,22,1561-1570,North America,"intrusives, metamorphics",1700,1900,1300,1400,57,-69,-23,270,7,13.6,2,,16.2,13.2,9,17
+1202,142,Tudor gabbro,1985,"Dunlop,D.J., Hyobo,H., Knight,T., Steele,A.G.",Geophys.J.Roy.Astron.Soc.,83,699-720,North America,"intrusives, gabbro",1090,1130,1090,1130,44.7,-77.7,12,133,4,6,5,3,132,4.8,8,42
+1917,1737,"Intrusives, Labrador Trough",1985,"Seguin,M.K., Clark,T.",Canad. J. Earth Sci.,22,1561-1570,North America,"intrusives, metamorphics",1700,1900,1700,1900,57,-69,11,199,4.1,7.9,4,,27.8,7.7,14,47
+1552,913,Cheneaux metagabbro,1984,"Seguin,M.K., Brun,J.",Precambrian Res.,26,307-331,North America,intrusives,1000,1300,850,1050,45.6,-76.6,16,148,5.2,9.3,4,,38.9,8.4,9,109
+1907,1719,Burchell Lake granite,1984,"Dunlop,D.J.",Canad. J. Earth Sci.,21,1098-1104,North America,"intrusives, granite",2550,2610,1100,1300,48.7,-90.6,-1.7,189.9,8.4,16.7,3,,7.7,16.7,,12
+1552,914,Cheneaux metagabbro,1984,"Seguin,M.K., Brun,J.",Precambrian Res.,26,307-331,North America,intrusives,1000,1300,650,850,45.6,-76.6,53,37,13,21.5,3,,12.7,17.7,7,16
+1903,1712,"Mudcracked Formation, Little Dal Group",1984,"Park, J.K.",Canad. J. Earth Sci.,21,371-375,North America,"sediments, redbeds",780,850,780,850,64.7,-127,-9,143,6,12,4,,30,11,3,7
+1552,912,Cheneaux metagabbro,1984,"Seguin,M.K., Brun,J.",Precambrian Res.,26,307-331,North America,intrusives,1000,1300,975,1175,45.6,-76.6,21,8,12,21,3,,25,18.7,4,11
+1552,911,Cheneaux metagabbro,1984,"Seguin,M.K., Brun,J.",Precambrian Res.,26,307-331,North America,intrusives,1000,1300,1000,1300,45.6,-76.6,6,224,15.4,24.4,3,,17.9,19.3,5,15
+1905,1717,Shelley Lake granite,1984,"Dunlop,D.J.",Canad. J. Earth Sci.,21,869-878,North America,"intrusives, granite",2560,2600,1100,1300,48.4,-91.3,-1.3,202.9,6.1,10.4,3,,20.1,9.4,1,13
+1651,1175,Easter Island Dyke,1984,"Irving,E., Davidson,A., McGlynn,J.C.",Geophys.Surv.,7,1-25,North America,"intrusives, gabbro",2200,2500,2200,2500,61.7,-112.8,-32,338,3,6,4,,74,5,15,146
+1904,1715,Kazan Dykes,1984,"Fahrig, W.F., Christie, K.W., Eade, K.E., Tella, S.",Canad. J. Earth Sci.,21,544-553,North America,"intrusives, metamorphosed",2200,2500,1800,2000,62.5,-99,30.7,265.8,31,35,3,,13,19,6,29
+1189,117,Granites,1984,"Kodama,K.P.",Geophys.J.Roy.Astron.Soc.,76,273-287,North America,"intrusives, granite",1327,1351,1327,1351,39.2,-95.8,-4.5,29.9,9.9,14.9,4,4,51.4,11.3,1,7
+1189,118,Granites,1984,"Kodama,K.P.",Geophys.J.Roy.Astron.Soc.,76,273-287,North America,"intrusives, granite",1356,1367,1355,1367,38.5,-95,20.2,39.3,6,10.7,4,4,24.3,9.5,1,9
+1904,1714,Tulemalu Dykes,1984,"Fahrig, W.F., Christie, K.W., Eade, K.E., Tella, S.",Canad. J. Earth Sci.,21,544-553,North America,"intrusives, diabase",2180,2200,2180,2200,62.5,-99,0.9,301.9,6,10.4,4,2,16,9,18,98
+1903,1713,"Mudcracked Formation, Little Dal Group",1984,"Park, J.K.",Canad. J. Earth Sci.,21,371-375,North America,"sediments, redbeds",780,850,700,780,64.7,-127,24,184,12,18,3,,76,14,1,3
+1907,1718,Burchell Lake granite,1984,"Dunlop,D.J.",Canad. J. Earth Sci.,21,1098-1104,North America,"intrusives, granite",2550,2610,2550,2610,48.7,-90.6,71.1,83.2,10.3,14.2,4,3,23.9,10,10,36
+1909,1721,Hearst (Matachewan) Dykes,1984,"Ernst,R.E., Halls,H.C.",Canad. J. Earth Sci.,21,1499-1506,North America,intrusives,2452,2456,2452,2456,48.5,-81.3,48.6,69,3.6,6.9,6,5,40,6.6,12,61
+1487,742,McClure Mountain Complex,1984,"Lynnes,C.S., Van der Voo,R.",Earth Planet.Sci.Letters,71,163-172,North America,"intrusives, syenites",530,540,530,540,38.1,-105.4,18,142,,,5,,,,30,166
+1905,1716,Shelley Lake granite,1984,"Dunlop,D.J.",Canad. J. Earth Sci.,21,869-878,North America,"intrusives, granite",2560,2600,2560,2600,48.4,-91.3,77.6,65.8,4.7,6.4,5,3,95.4,4.4,12,43
+1651,1174,Caribou Lake Gabbro,1984,"Irving,E., Davidson,A., McGlynn,J.C.",Geophys.Surv.,7,1-25,North America,"intrusives, gabbro",2176,2196,2176,2196,62.1,-112.8,14,296,4.5,6.7,5,,92,5,12,81
+1894,1689,La Grande Riviere Dykes,1983,"Seguin,M.K., Sharma,K.N.M., Woussen,G., Seymour,K.St., Symons,D.T.A.",Canad. J. Earth Sci.,20,339-343,North America,intrusives,1550,1650,1550,1650,53.7,-73,74,276,20,21,1,,,11,6,19
+1888,1677,Dollyberry Lake Basalts,1983,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,20,49-56,North America,"extrusives, basalts",2030,2400,2175,2250,46.1,-82.7,59,200,8.6,11,3,,16,7,31,181
+1888,1678,Dollyberry Lake Basalts,1983,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,20,49-56,North America,"extrusives, basalts",2030,2400,1800,2000,46.1,-82.7,-20.6,299.3,7.6,12.9,3,,53,11,5,31
+2238,5864,Griffith Mine Iron Formation,1983,"Symons, D.T.A.",Ontario Geol.Surv.Open File Report 5447,,1-18,North America,"sediments, banded iron formation",2733,2743,2733,2743,50.8,-93.4,28.3,300.8,9.3,10.7,6,5,,6.1,,64
+1889,1679,Chequamegon Sandstone,1983,"McCabe,C., Van der Voo,R.",Canad. J. Earth Sci.,20,105-112,North America,sediments,990,1050,990,1050,46.8,-90.7,-12.3,177.7,4.6,4.6,4,,81.7,5.4,10,71
+1889,5904,Chequamegon Sandstone,1983,"McCabe,C., Van der Voo,R.",Canad. J. Earth Sci.,20,105-112,North America,sediments,990,1050,0,20,46.8,-90.7,83.6,275.5,3.4,3.4,4,,,,10,112
+1892,1684,Lac St.Jean Anorthosite,1983,"Buchan, K.L., Fahrig, W.F., Freda, G.N., Frith, R.A.",Canad. J. Earth Sci.,20,246-258,North America,"intrusives, anorthosite, norite",1288,1614,900,950,48.7,-72,-8,167,4.6,7.3,4,,32,5.7,21,123
+1892,1685,Lac St.Jean Anorthosite,1983,"Buchan, K.L., Fahrig, W.F., Freda, G.N., Frith, R.A.",Canad. J. Earth Sci.,20,246-258,North America,"intrusives, anorthosite, norite",1288,1614,900,950,48.7,-72,-19,147,8.5,10.5,4,,46.2,6.5,12,64
+1893,1686,Borden dykes,1983,"Christie, K.W., Fahrig, W.F.",Canad. J. Earth Sci.,20,275-289,North America,intrusives,900,1000,900,1000,72.5,-83,-26.7,153.3,6.1,8.6,5,,44,6,14,96
+1893,1687,Franklin dykes,1983,"Christie, K.W., Fahrig, W.F.",Canad. J. Earth Sci.,20,275-289,North America,intrusives,720,726,720,726,72.5,-83,9.2,153.4,2.6,5.3,7,,63,5,13,82
+1893,1688,Tremblay Sound dyke,1983,"Christie, K.W., Fahrig, W.F.",Canad. J. Earth Sci.,20,275-289,North America,intrusives,650,750,650,750,72.5,-81.5,26.1,165.8,4.2,7.3,3,,207,6,4,19
+1894,1690,La Grande Riviere Dykes,1983,"Seguin,M.K., Sharma,K.N.M., Woussen,G., Seymour,K.St., Symons,D.T.A.",Canad. J. Earth Sci.,20,339-343,North America,intrusives,1550,1650,950,1000,53.7,-73,-4,327,11,18,1,,,15,5,9
+1894,1691,La Grande Riviere Metavolcanics,1983,"Seguin,M.K., Sharma,K.N.M., Woussen,G., Seymour,K.St., Symons,D.T.A.",Canad. J. Earth Sci.,20,339-343,North America,extrusives,2800,3000,2800,3000,53.7,-75,-49,332,13,22,1,1,,19,6,18
+1894,1692,La Grande Riviere Metavolcanics,1983,"Seguin,M.K., Sharma,K.N.M., Woussen,G., Seymour,K.St., Symons,D.T.A.",Canad. J. Earth Sci.,20,339-343,North America,extrusives,2800,3000,2550,2650,53.7,-75,37,54,11,21,2,2,,20,6,13
+1896,1693,Mount Nelson Formation,1983,"Morris, W.A., McMechan, M.E.",Canad. J. Earth Sci.,20,561-567,North America,sediments,900,1200,800,900,50.5,-116,10,156,5.4,10.4,4,,18,10,14,92
+1896,1694,Mount Nelson Formation,1983,"Morris, W.A., McMechan, M.E.",Canad. J. Earth Sci.,20,561-567,North America,sediments,900,1200,900,1200,50.5,-116,59,119,3.3,5.2,3,,75,4,14,20
+1898,1696,Natkusiak Formation,1983,"Palmer, H.C., Barager, W.R.A., Fortier, M., Foster, J.H.",Canad. J. Earth Sci.,20,1456-1469,North America,"extrusives, basalt",721,727,721,727,72,-112,6,159,4,8,6,,27.1,7.8,14,83
+1898,1697,Natkusiak Formation,1983,"Palmer, H.C., Barager, W.R.A., Fortier, M., Foster, J.H.",Canad. J. Earth Sci.,20,1456-1469,North America,"extrusives, basalt",721,727,35,56,72,-112,85,217,31,31,3,,60,16,3,18
+1898,1699,Minto Arch Sills,1983,"Palmer, H.C., Barager, W.R.A., Fortier, M., Foster, J.H.",Canad. J. Earth Sci.,20,1456-1469,North America,"intrusives, diabase",721,727,35,56,72,-112,80,309,3.8,3.9,4,,,2,24,129
+1898,1700,Reynolds Point Formation,1983,"Palmer, H.C., Barager, W.R.A., Fortier, M., Foster, J.H.",Canad. J. Earth Sci.,20,1456-1469,North America,"sediments, shales",780,850,780,850,72.8,-110.1,-6,147,4,7,5,,48,7,10,60
+1899,1701,Sakami Formation,1983,"Schwarz,E.J., Freda,G.N.",Canad. J. Earth Sci.,20,1725-1737,North America,"sediments, redbeds",1600,2500,1600,2500,53.9,-73.5,2,249,5,8,5,4,37,6,17,85
+2233,5850,Kinojevis Group Tholeiites,1983,"Geissman, J.W., Strangway, D.W., Tasillo-Hirt, A.M., Jensen, L.S.",Canad. J. Earth Sci.,20,436-461,North America,"extrusives, basalts",2703,2765,2703,2765,48.4,-79.5,47,78.8,4.1,8.2,3,1,8,7.9,,38
+1901,1710,Mealy dykes,1983,"Park, J.K., Emslie, R.F.",Canad. J. Earth Sci.,20,1818-1833,North America,intrusives,1326,1434,900,1100,53.4,-58.8,-34.2,147.9,17.6,19.2,4,,12,10.5,18,74
+1901,1709,Mealy dykes,1983,"Park, J.K., Emslie, R.F.",Canad. J. Earth Sci.,20,1818-1833,North America,intrusives,1326,1434,1326,1434,53.4,-58.8,-22.9,186.6,4.6,6.7,5,,46,4.9,20,94
+1900,1708,Wabigoon dyke,1983,"Dunlop,D.J.",Canad. J. Earth Sci.,20,1805-1817,North America,intrusives,2000,2300,2000,2300,49.7,-92.9,45,238.5,3.8,3.9,3,2,999.9,2,2,4
+1900,1707,Dyment Greenstone,1983,"Dunlop,D.J.",Canad. J. Earth Sci.,20,1805-1817,North America,"metamorphics, greenstones",2500,3000,2500,2700,49.6,-92.4,46.5,69,2.9,5.8,2,,183,5.6,1,5
+1900,1706,Wabigoon gabbro,1983,"Dunlop,D.J.",Canad. J. Earth Sci.,20,1805-1817,North America,"intrusives, gabbro",2500,3000,2500,3000,49.7,-92.6,-10.7,200.2,5.3,10.6,4,4,19.5,10.5,11,29
+1899,1705,Chakonipau Formation,1983,"Schwarz,E.J., Freda,G.N.",Canad. J. Earth Sci.,20,1725-1737,North America,"sediments, redbeds",1600,2500,1600,2500,56.3,-68.5,-7.6,261.9,7.3,12.3,5,,29.4,10.4,8,27
+2238,5860,Griffith Mine Host Rocks,1983,"Symons, D.T.A.",Ontario Geol.Surv.Open File Report 5447,,1-18,North America,"metamorphics, metavolcanics",2733,2743,2733,2743,50.8,-93.4,19,37,1.8,3.6,4,4,,3.5,1,20
+2238,5861,Griffith Mine Host Rocks,1983,"Symons, D.T.A.",Ontario Geol.Surv.Open File Report 5447,,1-18,North America,"metamorphics, metavolcanics",2733,2743,2733,2743,50.8,-93.4,29.8,10.2,2.1,3.9,5,4,,3.5,,30
+2238,5862,Griffith Mine Host Rocks,1983,"Symons, D.T.A.",Ontario Geol.Surv.Open File Report 5447,,1-18,North America,"metamorphics, metavolcanics",2733,2743,2500,2600,50.8,-93.4,60.6,59.7,2.8,4.6,3,3,,3.8,,32
+2238,5865,Griffith Mine Iron Formation,1983,"Symons, D.T.A.",Ontario Geol.Surv.Open File Report 5447,,1-18,North America,"sediments, banded iron formation",2733,2743,2500,2700,50.8,-93.4,49.8,51.7,4.3,7.9,4,2,,7.2,,72
+2238,5863,Griffith Mine Iron Formation,1983,"Symons, D.T.A.",Ontario Geol.Surv.Open File Report 5447,,1-18,North America,"sediments, banded iron formation",2733,2743,2733,2743,50.8,-93.4,14.5,60,2.6,4.5,6,5,,3.9,,100
+1899,1704,Lac Imbault Redbeds,1983,"Schwarz,E.J., Freda,G.N.",Canad. J. Earth Sci.,20,1725-1737,North America,"sediments, redbeds",1600,2500,1600,2500,57.9,-70,-16,288,8,15,4,2,32,14,5,25
+1899,1703,Sakami Formation,1983,"Schwarz,E.J., Freda,G.N.",Canad. J. Earth Sci.,20,1725-1737,North America,"sediments, redbeds",1600,2500,1600,2500,56,-70.8,5,218,11,20,3,2,8,19,3,19
+1899,1702,Sakami Formation,1983,"Schwarz,E.J., Freda,G.N.",Canad. J. Earth Sci.,20,1725-1737,North America,"sediments, redbeds",1600,2500,1600,2500,56.5,-71.5,3,358,11,20,3,2,6,16,3,18
+1882,1672,"Diabase sill, Sutton lake Inlier",1982,"Schwarz,E.J., Clark,K.R., Fujiwara,Y.",Canad. J. Earth Sci.,19,1330-1332,North America,intrusives,1500,1700,1500,1700,54.4,-84.7,-3,67,11,11,2,,39,11,6,24
+1880,1670,French River Anorthosite,1982,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,19,819-828,North America,"intrusives, anorthosite",1600,1800,1200,1300,46.2,-80.8,6,359,4,7.5,2,,,7,,6
+1879,2229,Sudbury Dykes,1982,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,19,698-708,North America,"intrusives, diabase",1232,1242,1232,1242,46.9,-80.2,3,196,7,14,4,,85,13,3,14
+1468,702,"Unicoi Basalts, Blue Ridge Province",1982,"Brown, P.M., Van der Voo, R.",Earth Planet.Sci.Letters,60,407-414,North America,"extrusives, basalts",530,600,530,600,36.6,-81.6,-0.4,178.6,7.3,14.2,2,,24.4,13.8,6,23
+1468,703,"Unicoi Basalts, Blue Ridge Province",1982,"Brown, P.M., Van der Voo, R.",Earth Planet.Sci.Letters,60,407-414,North America,"extrusives, basalts",530,600,428,458,36.6,-81.6,13.7,142.5,6.9,11.2,3,,29.4,9.1,10,42
+1885,1676,Ghost Range Intrusion,1982,"Geissman,J.W., Strangway,D.W., Tasillo-Hirt,A.M., Jensen,L.S.",Canad. J. Earth Sci.,19,2085-2099,North America,"intrusives, gabbro",2701,2712,2701,2712,48.6,-79.8,-7,13,5.9,11.8,4,3,5.5,11.8,,33
+1884,5921,Little Dal Lavas,1982,"Morris, W.A., Aitken, J.D.",Canad. J. Earth Sci.,19,2020-2027,North America,"extrusives, basalts",776,780,50,150,63.8,-128.5,47,175,6,6.5,4,,159,4,8,62
+1884,1675,Little Dal Lavas,1982,"Morris, W.A., Aitken, J.D.",Canad. J. Earth Sci.,19,2020-2027,North America,"extrusives, basalts",776,780,776,780,63.8,-128.5,24,159,9.4,14.4,5,,49,11,5,34
+1879,1664,Gowganda Formation,1982,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,19,698-708,North America,sediments,2200,2380,2150,2300,46.8,-80.3,63,251,18,19,5,,32,10,8,35
+1879,1665,Gowganda Formation,1982,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,19,698-708,North America,sediments,2200,2380,950,1050,46.7,-80.3,51,315,19,21,4,,26,11,8,36
+1879,1666,Nipissing Diabase,1982,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,19,698-708,North America,"intrusives, diabase",2215,2223,2215,2223,46.9,-80.2,-17,275,6,10,6,5,17,8,22,94
+1880,1667,French River Anorthosite,1982,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,19,819-828,North America,"intrusives, anorthosite",1600,1800,925,1025,46.2,-80.8,26,315,9,10,4,,,6,6,31
+1262,277,Copper Harbor Conglomerate,1982,"Elmore,R.D., Van der Voo,R.",J.Geophys.Res.,87,10918-10928,North America,"sediments, sandstones",1000,1100,1000,1100,46.8,-88.9,11.2,168.3,4,8,4,,58,8,7,45
+1263,278,Cambro-Ordovician sediments,1982,"Gillett, S.L., Van Alstine, D.R.",J.Geophys.Res.,87,10929-10953,North America,sediments,472,542,251,271,36.8,-115.3,40.5,131.9,6.4,12.3,5,,19.7,11.9,9,359
+1263,279,Cambro-Ordovician sediments,1982,"Gillett, S.L., Van Alstine, D.R.",J.Geophys.Res.,87,10929-10953,North America,sediments,472,542,85,95,36.8,-115.3,83.7,206.2,9.2,12,5,,43.3,7.9,9,
+1880,1668,French River Anorthosite,1982,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,19,819-828,North America,"intrusives, anorthosite",1600,1800,1600,1800,46.2,-80.8,-13,334,1,2,3,,,2,14,90
+1880,1669,French River Anorthosite,1982,"Stupavsky,M., Symons,D.T.A.",Canad. J. Earth Sci.,19,819-828,North America,"intrusives, anorthosite",1600,1800,1600,1800,46.2,-80.8,-27,303,4,7.5,2,,,7,,16
+1884,1674,Little Dal Lavas,1982,"Morris, W.A., Aitken, J.D.",Canad. J. Earth Sci.,19,2020-2027,North America,"extrusives, basalts",776,780,776,780,63.8,-128.5,24,115,3.8,7.2,5,,159,6.9,4,36
+1869,1640,Fond du Lac Formation,1981,"Watts, D.R.",Canad. J. Earth Sci.,18,829-841,North America,sediments,950,1050,950,1050,46.9,-92.3,16,160,5,5,4,,23,4,11,57
+1672,1213,Glen Mountains Layered Complex,1981,"Roggenthen,W.M., Fischer,J.F., Napoleone,G., Fischer,A.G.",Geophys.Res.Lett.,8,133-136,North America,"intrusives, gabbro",680,780,680,780,34.7,-98.8,-19.7,200.4,4,7.7,3,,12.6,7.3,8,33
+1869,1642,Amnicon and Orienta Formations,1981,"Watts, D.R.",Canad. J. Earth Sci.,18,829-841,North America,sediments,950,1050,950,1050,46.9,-91.8,25,148,4.5,9,3,,16,9,,19
+1869,1643,Amnicon and Orienta Formations,1981,"Watts, D.R.",Canad. J. Earth Sci.,18,829-841,North America,sediments,950,1050,900,1000,46.9,-91.8,-24,162,5,8,4,,46,6,,19
+1869,1644,Eileen Formation,1981,"Watts, D.R.",Canad. J. Earth Sci.,18,829-841,North America,sediments,950,1050,950,1050,46.9,-91,20,156,5,10,3,,10,10,,16
+1870,1645,Buckingham Volcanics,1981,"Dankers,P., Lapointe,P.",Canad. J. Earth Sci.,18,1174-1186,North America,"extrusives, latites",541,605,541,605,45.6,-75.4,-9.5,160.8,6.5,9.7,5,,39.6,7.3,11,76
+1458,684,"Hades Pass Quartzite, Uinta Mountain Group",1981,"Bressler,S.",Earth Planet.Sci.Letters,55,53-64,North America,"sediments, quartzite",900,1000,900,1000,40.6,-110.5,4.6,140.1,8.9,16.8,3,,13,15.9,1,8
+1458,683,Uinta Mountain Group,1981,"Bressler,S.",Earth Planet.Sci.Letters,55,53-64,North America,sediments,900,1000,900,1000,40.8,-110,0.6,157.2,5.4,5.4,4,,109.1,7.4,5,114
+1871,1649,Cape Breton Island Granites,1981,"Rao,K.V., Seguin,M.K., Deutsch,E.R.",Canad. J. Earth Sci.,18,1187-1210,North America,"intrusives, granite",519,587,519,587,46.5,-60.8,37,176,2,3,3,,298,2.8,10,41
+1874,1655,Copper Harbor Lavas,1981,"Halls, H.C., Palmer, H.C.",Canad. J. Earth Sci.,18,1395-1408,North America,extrusives,1100,1150,1100,1150,47.4,-88.3,34.9,175.6,2.7,4.6,6,,239.2,3.9,7,34
+1874,1656,Copper Harbor Lavas,1981,"Halls, H.C., Palmer, H.C.",Canad. J. Earth Sci.,18,1395-1408,North America,extrusives,1100,1150,1050,1150,47.4,-88.3,19.1,175.7,3.5,6.7,3,,210,6.4,5,21
+1874,1657,Copper Harbor Lavas,1981,"Halls, H.C., Palmer, H.C.",Canad. J. Earth Sci.,18,1395-1408,North America,extrusives,1100,1150,1050,1150,47.4,-88.3,13.4,174,1.3,2.6,3,,999.9,2.6,3,9
+3939,9664,Strathcona Sound Formations,1981,"Fahrig, W.F., Christie, K.W., Jones, D.L.","Geol. Survey of Canada, Paper 81-10",,303-312,North America,sediments,1000,1100,1000,1100,73.5,-83,8,204.5,2,4,5,3,70.4,3.7,12,22
+1241,246,Basinal Little Dal Group,1981,"Park, J.K.",J.Geophys.Res.,86,5134-5146,North America,"sediments, red limestones",780,850,50,650,64.7,-127,60.2,170.1,8.4,9.3,4,,73,5.1,12,33
+1241,245,Basinal Little Dal Group,1981,"Park, J.K.",J.Geophys.Res.,86,5134-5146,North America,"sediments, red limestones",780,850,750,780,64.7,-127,-3.4,138.2,5.3,10.6,5,,17,10.5,13,64
+1241,244,Basinal Little Dal Group,1981,"Park, J.K.",J.Geophys.Res.,86,5134-5146,North America,"sediments, red limestones",780,850,780,850,64.7,-127,-15.7,141.3,2.7,4.9,5,,79,4.5,14,87
+3939,9663,Nauyat and Adams Sound Formations,1981,"Fahrig, W.F., Christie, K.W., Jones, D.L.","Geol. Survey of Canada, Paper 81-10",,303-312,North America,"extrusives, sediments",1100,1270,1100,1270,73,-83,1.5,193.5,3,6,4,3,,,12,
+2232,5846,Nastapok Group,1981,"Schwarz, E.J., Fujiwara, Y.",Geol.Surv.Canada Paper 81-10,,255-267,North America,"extrusives, basalts",1700,1750,1700,1750,56.3,-76.3,39,171,4,6,3,,32,5,5,24
+2232,5847,Persillon Volcanics,1981,"Schwarz, E.J., Fujiwara, Y.",Geol.Surv.Canada Paper 81-10,,255-267,North America,"extrusives, basalts",1700,1750,1700,1750,56.5,-76.3,49,134,2,4,4,,35,3,11,46
+2232,5848,Persillon Volcanics,1981,"Schwarz, E.J., Fujiwara, Y.",Geol.Surv.Canada Paper 81-10,,255-267,North America,"extrusives, basalts",1700,1750,1700,1750,56.2,-76.3,46,192,9,12,4,2,13,8,4,25
+2232,5849,Qingaaluk Formation,1981,"Schwarz, E.J., Fujiwara, Y.",Geol.Surv.Canada Paper 81-10,,255-267,North America,"sediments, pink sandstone",1700,1750,1700,1750,56.5,-76.3,40,167,6,11,3,,14,10,3,12
+2237,5857,Adams Mine Iron Ores,1981,"Symons, D.T.A., Quick, A.W., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,98,293-307,North America,"sediments, iron ores, metamorphics",2640,2710,2640,2710,48,-79.9,-2.6,198.5,3.3,6.5,3,1,,6.5,151,171
+2237,5858,Adams Mine Iron Ores,1981,"Symons, D.T.A., Quick, A.W., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,98,293-307,North America,"sediments, iron ores, metamorphics",2640,2710,2400,2600,48,-79.9,56.3,248,7.6,8,4,1,,4.2,45,46
+2237,5859,Adams Mine Iron Ores,1981,"Symons, D.T.A., Quick, A.W., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,98,293-307,North America,"sediments, iron ores, metamorphics",2640,2710,2000,2200,48,-79.9,7.1,271.9,3.7,5.3,3,1,,3.7,30,45
+1875,1658,Tsezotene Sills,1981,"Park, J.K.",Canad. J. Earth Sci.,18,1572-1580,North America,"intrusives, diabase",776,780,776,780,64,-130,1,139,3,6,6,,16.5,6,6,38
+1875,1659,Tsezotene Sills,1981,"Park, J.K.",Canad. J. Earth Sci.,18,1572-1580,North America,"intrusives, diabase",776,780,776,780,64,-130,-1,141,4.5,9,5,,17.3,9,6,18
+1876,1660,Brock Inlier Sills,1981,"Park, J.K.",Canad. J. Earth Sci.,18,1637-1641,North America,"intrusives, gabbro, diabase",720,726,720,726,68.3,-121.5,-2,165,8,16,5,,14.8,16,5,28
+1878,1663,Sakami Formation,1981,"Seguin,M.K., Sharma,K.N.M., Woussen,G.",Canad. J. Earth Sci.,18,1893-1899,North America,sediments,1750,1950,1750,1950,53.9,-74,-18,257,4,7.6,4,3,73,7.1,7,13
+2249,5915,Western River Formation,1981,"Evans, M.E., Hoye, G.S.",Geol.Surv.Canada Paper 81-10,,191-202,North America,"sediments, redbeds",1957,1969,1957,1969,65.9,-107.1,14,341,6,10,5,5,12,9,22,65
+2249,5914,Mara Formation,1981,"Evans, M.E., Hoye, G.S.",Geol.Surv.Canada Paper 81-10,,191-202,North America,"sediments, redbeds",1250,1800,1250,1800,67.1,-107.8,-7,253,5,9,5,4,12,8,28,104
+2249,5913,Peacock Hill Formation,1981,"Evans, M.E., Hoye, G.S.",Geol.Surv.Canada Paper 81-10,,191-202,North America,"sediments, redbeds",1250,1800,1250,1800,67.1,-107.8,-15,270,6.2,12.2,3,2,10.5,12.4,15,24
+2249,5912,Kilohigok Basin Sill,1981,"Evans, M.E., Hoye, G.S.",Geol.Surv.Canada Paper 81-10,,191-202,North America,"intrusives, gabbro",1250,1800,1250,1800,65.8,-107.1,26.8,88.2,9.6,19,4,3,44,18.9,3,9
+1867,1637,Kahochella Group,1981,"Reid, A.B., McMurry, E.W., Evans, M.E.",Canad. J. Earth Sci.,18,574-583,North America,"sediments, redbeds",1770,1830,1770,1830,62,-111.9,-7,298,6,11,4,3,12,10,18,69
+1867,1638,Kahochella Group,1981,"Reid, A.B., McMurry, E.W., Evans, M.E.",Canad. J. Earth Sci.,18,574-583,North America,"sediments, redbeds",1770,1830,1650,1750,62,-111.9,14,270,5.6,7.5,4,,48,5,20,80
+1868,1639,Nipissing Diabase,1981,"Morris, W.A.",Canad. J. Earth Sci.,18,591-598,North America,"intrusives, diabase",2215,2223,2135,2195,46.5,-81.1,23.9,82.7,7.1,12.5,6,4,30.9,11,7,63
+1715,1274,Superior Province dykes and baked contacts,1981,"Schutts,D.L., Dunlop,D.J.",Nature,291,642-645,North America,intrusives,2125,2175,2125,2175,49,-80.5,41,230,11.8,13.8,4,2,52,8,8,
+1715,1273,Matachewan dykes,1981,"Schutts,D.L., Dunlop,D.J.",Nature,291,642-645,North America,intrusives,2450,2455,2450,2455,48.4,-80.5,45,70,3.1,6.1,5,4,44,6,14,
+1715,1272,Kinojevis Group,1981,"Schutts,D.L., Dunlop,D.J.",Nature,291,642-645,North America,"extrusives,komatiites,intrusives,gabbro",2703,2710,1700,1900,48.4,-80.5,-4,291,8.3,11.5,3,,14,8,,28
+1715,1271,Kinojevis Group,1981,"Schutts,D.L., Dunlop,D.J.",Nature,291,642-645,North America,"extrusives,komatiites,intrusives,gabbro",2703,2710,2125,2175,48.4,-80.5,54,241,15.6,16.8,3,,30,9,11,
+1715,1270,Kinojevis Group,1981,"Schutts,D.L., Dunlop,D.J.",Nature,291,642-645,North America,"extrusives,komatiites,intrusives,gabbro",2703,2710,2540,2726,48.4,-80.5,48,57,6.4,11.8,3,2,19,11,10,
+1715,1269,Kinojevis Group,1981,"Schutts,D.L., Dunlop,D.J.",Nature,291,642-645,North America,"extrusives,komatiites,intrusives,gabbro",2703,2710,2703,2710,48.4,-80.5,-29,4,7,12.4,4,3,15,11,13,
+1869,1641,Fond du Lac Formation,1981,"Watts, D.R.",Canad. J. Earth Sci.,18,829-841,North America,sediments,950,1050,900,1000,46.9,-92.3,-9,145,6,6,4,,23,4,11,52
+1220,174,Striped Peak Formation Unit 1,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,48.1,-116.2,-19.1,196.2,3.3,6.2,4,,22.9,5.9,,27
+1220,175,Upper Wallace Formation,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,48.1,-116.1,-24.2,200,3.4,6.6,3,,65.1,6.4,,9
+1864,1633,Akaitcho River Formation,1980,"Evans, M.E., Hoye, G.S., Bingham, D.K.",Canad. J. Earth Sci.,17,1389-1395,North America,"sediments, redbeds",1880,1890,1880,1890,62.3,-110.4,-4,268,5,8,6,5,13,7,35,120
+1862,1630,Haig Intrusives,1980,"Schmidt, P.W.",Canad. J. Earth Sci.,17,807-822,North America,intrusives,1869,1871,1869,1871,56.4,-79,1,247,6,6,7,6,23,6,10,41
+1862,1629,Flaherty Volcanics,1980,"Schmidt, P.W.",Canad. J. Earth Sci.,17,807-822,North America,"extrusives, basalts",1869,1871,1869,1871,56.5,-79,,244,7,7,6,5,46,7,11,35
+1862,1628,Eskimo Volcanics,1980,"Schmidt, P.W.",Canad. J. Earth Sci.,17,807-822,North America,"extrusives, basalts",1688,1738,1500,1700,56.4,-79,19,243,15,15,3,,27,12,7,23
+1862,1627,Eskimo Volcanics,1980,"Schmidt, P.W.",Canad. J. Earth Sci.,17,807-822,North America,"extrusives, basalts",1688,1738,1688,1738,56.4,-79,-40,2,12,12,5,3,36,10,7,29
+1220,170,Upper Pilcher Quartzite,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,"sediments, quartzite",760,1740,760,1740,47.1,-114.4,5.1,178.6,9.4,16.2,3,,16.4,14.1,,8
+1220,169,McNamara Formation,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,47.6,-113.7,-12.2,203.2,3.2,5.4,4,,26.4,4.7,,36
+1220,168,Basal Pilcher Quartzite,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,"sediments, quartzite",760,1740,760,1740,46.9,-113.8,-17.7,214,4,6.9,3,,58.7,6,,11
+1220,176,Shepard Formation,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,47.2,-113.3,-24.7,212.8,1.6,3,5,,31.1,2.8,3,83
+1220,177,Snowslip Formation,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,47,-114.1,-25.1,204.4,2.1,4.1,4,,16.5,3.9,,84
+1220,179,Spokane Formation,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,47.3,-112.5,-27.2,212.9,2.8,5.4,4,,18.8,5.2,,42
+1220,178,Empire Formation,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,47.2,-112.6,-19.1,205.6,4,7.4,4,,15.7,6.9,2,30
+1233,215,Waynesboro Formation,1980,"Watts, D.R., Van der Voo, R., French, R.B.",J.Geophys.Res.,85,5331-5343,North America,sediments,501,542,501,542,39.6,-77.7,28,165,7,14,4,,19,14,4,20
+1233,216,Rome Formation,1980,"Watts, D.R., Van der Voo, R., French, R.B.",J.Geophys.Res.,85,5331-5343,North America,sediments,501,542,501,542,36.1,-84,42,142,3,5,4,,12,5,8,76
+1220,5924,Belt Supergroup Combined,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,47.5,-114.1,-17.3,203.4,7.1,7.1,4,,,,12,459
+1220,172,Striped Peak Formation Unit 4,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,49.1,-116.1,-8.5,195.9,2.3,4,4,,67.9,3.5,,26
+1220,171,Bonner Quartzite,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,"sediments, quartzite",760,1740,760,1740,47.6,-113.3,-9,204.7,2.7,4.5,4,,58.7,3.8,,28
+2236,5856,Moose Mountain Iron Ores,1980,"Symons, D.T.A., Walley, D.A., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,93,198-214,North America,"sediments, iron ores, metavolcanics",2650,2710,2100,2300,46.9,-81,45.1,244.9,29.4,31.3,3,2,,16.7,,27
+2236,5855,Moose Mountain Iron Ores,1980,"Symons, D.T.A., Walley, D.A., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,93,198-214,North America,"sediments, iron ores, metavolcanics",2650,2710,2650,2710,46.9,-81,8.4,13.7,3.1,6.2,4,3,,6.2,,59
+2236,5854,Moose Mountain Iron Ores,1980,"Symons, D.T.A., Walley, D.A., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,93,198-214,North America,"sediments, iron ores, metavolcanics",2650,2710,2650,2710,46.9,-81,45.6,94,4.2,8.4,4,3,,8.4,,49
+2235,5853,Sherman Mine Iron Ores,1980,"Symons, D.T.A., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,93,215-229,North America,"sediments,iron ores,metamorphics",2600,2800,2600,2800,47.1,-79.8,-6.7,8.2,4.5,9,4,3,,9,,19
+2235,5852,Sherman Mine Iron Ores,1980,"Symons, D.T.A., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,93,215-229,North America,"sediments,iron ores,metamorphics",2600,2800,2400,2600,47.1,-79.8,42,114,2.5,5,4,3,,5,,110
+2235,5851,Sherman Mine Iron Ores,1980,"Symons, D.T.A., Stupavsky, M.",Ontario Geol.Surv.Misc.Paper,93,215-229,North America,"sediments,iron ores,metamorphics",2600,2800,2600,2800,47.1,-79.8,37,115,9.7,19.2,3,2,,19,10,92
+1220,173,Mt.Shields Formation,1980,"Elston,D.P., Bressler,S.L.",J.Geophys.Res.,85,339-355,North America,sediments,760,1740,760,1740,47.4,-113.1,-22.8,211.6,1.4,2.6,6,,45.6,2.5,4,74
+1147,14,"Seton Formation, Kahochella Group",1979,"Irving,E., McGlynn,J.C.",Geophys.J.Roy.Astron.Soc.,58,309-336,North America,"sediments,redbeds,extrusives,andesites",1880,1890,1880,1890,62,-112.1,2,267,6,6,3,2,24,7,19,154
+1147,15,"Seton Formation, Kahochella Group",1979,"Irving,E., McGlynn,J.C.",Geophys.J.Roy.Astron.Soc.,58,309-336,North America,"sediments,redbeds,extrusives,andesites",1880,1890,1500,1700,62,-112.1,25,263,10,10,3,2,36,7,14,99
+1147,16,"Douglas Peninsula Formation, Pethei Group",1979,"Irving,E., McGlynn,J.C.",Geophys.J.Roy.Astron.Soc.,58,309-336,North America,"sediments, redbeds",1866,1886,1866,1886,62.8,-110.3,-18,258,10.2,19.7,4,3,14,19,6,43
+1147,17,"Douglas Peninsula Formation, Pethei Group",1979,"Irving,E., McGlynn,J.C.",Geophys.J.Roy.Astron.Soc.,58,309-336,North America,"sediments, redbeds",1866,1886,1200,1300,62.8,-110.3,6,202,3,4.9,4,3,125,4,10,54
+1147,18,Takiyuak Formation,1979,"Irving,E., McGlynn,J.C.",Geophys.J.Roy.Astron.Soc.,58,309-336,North America,"sediments, redbeds",1866,1886,1866,1886,66.1,-113.1,-13,249,8,8,5,4,15,10,17,111
+1147,19,Peninsular Sill,1979,"Irving,E., McGlynn,J.C.",Geophys.J.Roy.Astron.Soc.,58,309-336,North America,"intrusives, gabbro",1865,1875,1865,1875,66.2,-113,-22,263,7,7,5,4,63,8,7,32
+1215,163,Wood Canyon Formation,1979,"Gillett, S.L., Van Alstine, D.R.",J.Geophys.Res.,84,4475-4489,North America,"sediments, some red, minor carbonates",513,542,513,542,36.8,-115.3,27.6,133.9,1,2,4,,,2,1,56
+1216,164,"Johnnie Formation, Rainstorm Member",1979,"Van Alstine, D.R., Gillett, S.L.",J.Geophys.Res.,84,4490-4500,North America,"sediments, siltstones, limestones",542,670,542,670,36.8,-115.3,-10,162,5,10,4,,48.1,10,1,41
+1597,1073,Thetford Mines Ophiolite,1979,"Seguin,M.K.",J.Geomag.Geoelect.,31,103-113,North America,"extrusives,pillow lavas,intrusives,dykes",520,580,520,580,46.1,-71.4,-14.6,209.7,9,18,4,,,17,48,71
+1730,1310,Thunder Bay Dykes,1979,"Pesonen,L.J.",Bull.Geol.Soc.Finland,51,27-44,North America,intrusives,1085,1185,1085,1185,48.3,-89,36.1,175,4.1,6.9,5,,34,5.8,19,72
+1730,1311,Thunder Bay Dykes,1979,"Pesonen,L.J.",Bull.Geol.Soc.Finland,51,27-44,North America,intrusives,1085,1185,1085,1185,48.4,-88.8,48,212.2,7,8.3,5,,53,4.9,17,83
+1848,1598,Umfraville gabbro,1979,"Palmer, H.C., Hayatsu, A., Waboso, C.E., Pullan, S.",Canad. J. Earth Sci.,16,459-471,North America,"intrusives, gabbro",1160,1200,1160,1200,44.9,-77.8,-6,161,7,10,4,,15,8.1,23,63
+1849,1599,Nipissing Diabase,1979,"Morris, W.A.",Canad. J. Earth Sci.,16,607-611,North America,"intrusives, diabase",2215,2223,2215,2223,46.5,-82.6,-2.8,238.3,5.9,9,6,4,333,6.8,3,
+1851,1604,Seal Lake Group igneous rocks,1979,"Park, J.K., Roy, J.L.",Canad. J. Earth Sci.,16,895-912,North America,"extrusives, intrusives",1231,1411,1231,1411,54.5,-61.6,17,195,4,7,4,,41.7,7,11,61
+1851,1605,Seal Lake Group igneous rocks,1979,"Park, J.K., Roy, J.L.",Canad. J. Earth Sci.,16,895-912,North America,"extrusives, intrusives",1231,1411,950,1200,54.5,-61.6,-17,158,7,9,4,,43,6,14,73
+1855,1613,St.Urbain Anorthosite,1979,"Robertson, P.B., Roy, J.L.",Canad. J. Earth Sci.,16,1842-1856,North America,"intrusives, anorthosite",900,1000,900,1000,47.6,-70.4,-3,153,7,10,4,,34,7,14,74
+1856,1614,Archean Rocks,1979,"Dunlop, D.J.",Canad. J. Earth Sci.,16,1906-1919,North America,"intrusives, granite, gneiss",2600,3000,2580,2610,48.6,-91.1,68.1,80.2,9.7,9.7,5,3,87.9,7.2,7,125
+1856,1615,Archean Rocks,1979,"Dunlop, D.J.",Canad. J. Earth Sci.,16,1906-1919,North America,"intrusives, granite, gneiss",2600,3000,1200,1300,49,-91.3,5.5,18.3,13.6,13.6,3,,18.7,15.9,6,51
+1858,1616,Marquette dykes,1979,"Pesonen, L.J., Halls, H.C.",Canad. J. Earth Sci.,16,2136-2149,North America,intrusives,1100,1200,1100,1200,46.6,-87.5,48.4,213.5,5.2,6.2,5,,115,3.7,14,76
+1858,1617,Baraga County Dykes,1979,"Pesonen, L.J., Halls, H.C.",Canad. J. Earth Sci.,16,2136-2149,North America,intrusives,1100,1200,1100,1200,46.6,-88.5,48.9,238.2,9.6,10.2,4,,281,5.4,4,20
+2242,5874,Slate Island Lavas,1979,"Halls, H.C.",Geophys.J.Roy.Astron.Soc.,59,553-591,North America,extrusives,1090,1110,500,1000,48.7,-86.9,-27.3,167.1,3.9,5.8,4,,307,4.4,5,29
+2242,5875,Slate Island Lavas,1979,"Halls, H.C.",Geophys.J.Roy.Astron.Soc.,59,553-591,North America,extrusives,1090,1110,1090,1110,48.7,-86.9,53.3,197.4,19,24.2,5,,37,15.4,4,67
+2228,5841,St. Urbain Anorthosite,1979,"Robertson, P.B., Roy, J.L.",Canad. J. Earth Sci.,16,1842-1856,North America,"intrusives, anorthosite",900,1100,900,1100,47.6,-70.4,3,153,7,10,4,,34,7,14,98
+1086,2083,Pearson Formation,1978,"McGlynn, J.C., Irving, E.",Canad. J. Earth Sci.,15,642-658,North America,"extrusives, basalts",1750,1850,1700,1800,62.6,-110.5,-5,326,16,32,3,,64,32,2,8
+1032,2182,Thanet gabbro,1978,"Buchan, K.L.",Canad. J. Earth Sci.,15,1407-1421,North America,"intrusives, gabbro",1192,1212,900,1100,44.9,-77.8,-32.3,172,5.8,9.2,3,,151,6.2,5,19
+1032,2181,Thanet gabbro,1978,"Buchan, K.L.",Canad. J. Earth Sci.,15,1407-1421,North America,"intrusives, gabbro",1192,1212,1000,1050,44.9,-77.8,-28,158.4,3.7,4.8,4,,593,3.1,5,26
+1086,2082,Pearson Formation,1978,"McGlynn, J.C., Irving, E.",Canad. J. Earth Sci.,15,642-658,North America,"extrusives, basalts",1750,1850,1750,1850,62.6,-110.5,-19,283,5,10,4,4,21,10,12,52
+1031,2180,Nain Anorthosite,1978,"Murthy,G.S.",Canad. J. Earth Sci.,15,516-515,North America,"intrusives, anorthosites",1290,1320,1290,1320,56.5,-61.8,11.7,206.7,1.6,3.1,6,,116,3,21,101
+1086,2085,Pearson Formation,1978,"McGlynn, J.C., Irving, E.",Canad. J. Earth Sci.,15,642-658,North America,"extrusives, basalts",1750,1850,1000,1200,62.6,-110.5,27,177,10,10,4,,26,10,10,43
+1067,2081,Savage Point Sills,1978,"Jones, D.L., Fahrig, W.F.",Canad. J. Earth Sci.,15,1605-1612,North America,intrusives,1190,1290,1190,1290,72.6,-97,-3,182.6,7,14,4,,23.8,14,6,43
+1067,2080,Aston Bay Dykes,1978,"Jones, D.L., Fahrig, W.F.",Canad. J. Earth Sci.,15,1605-1612,North America,intrusives,720,726,720,726,73.6,-95.9,-18,164.4,13.5,23.2,4,,39.3,19.9,3,20
+1129,2079,Umfraville gabbro,1978,"Symons, D.T.A.",Canad. J. Earth Sci.,15,956-962,North America,"intrusives, gabbro",1160,1200,1160,1200,44.9,-77.8,-11,166,7,10,4,,35.9,8.2,10,45
+1128,2078,Thessalon Volcanics,1978,"Symons, D.T.A., O'Leary, R.T.",Canad. J. Earth Sci.,15,1141-1150,North America,extrusives,2300,2450,2300,2450,46.3,-83.5,46.8,191.3,6.5,9.2,4,3,,6.6,18,73
+1211,154,"Igneous rocks, Michigan Basin borehole",1978,"Van der Voo, R., Watts, D.R.",J.Geophys.Res.,83,5844-5848,North America,"intrusives, mafic igneous rocks",1000,1100,500,700,43.2,-84.6,-8.8,158.5,3.9,6.2,3,2,69,5,1,13
+1032,2183,Thanet gabbro,1978,"Buchan, K.L.",Canad. J. Earth Sci.,15,1407-1421,North America,"intrusives, gabbro",1192,1212,700,900,44.9,-77.8,20.3,159.3,8,11.3,3,,9.6,11.7,8,18
+1111,2024,Jacobsville Formation,1978,"Roy, J.L., Robertson, W.A.",J.Geophys.Res.,83,1289-1304,North America,"sediments, redbeds, sandstones",990,1050,700,800,46.6,-86.5,72,307,13,16,3,,23,9,13,110
+1111,2023,Jacobsville Formation,1978,"Roy, J.L., Robertson, W.A.",J.Geophys.Res.,83,1289-1304,North America,"sediments, redbeds, sandstones",990,1050,990,1050,46.5,-87.5,-3,182,8,16,4,,23,16,5,27
+1111,2022,Jacobsville Formation,1978,"Roy, J.L., Robertson, W.A.",J.Geophys.Res.,83,1289-1304,North America,"sediments, redbeds, sandstones",990,1050,990,1050,47.2,-88.5,-10,184,3,6,4,,31,6,19,61
+1111,2021,Jacobsville Formation,1978,"Roy, J.L., Robertson, W.A.",J.Geophys.Res.,83,1289-1304,North America,"sediments, redbeds, sandstones",990,1050,990,1050,47,-88.4,-16,190,5,9,4,,42,9,8,41
+1111,2020,Jacobsville Formation,1978,"Roy, J.L., Robertson, W.A.",J.Geophys.Res.,83,1289-1304,North America,"sediments, redbeds, sandstones",990,1050,990,1050,46.6,-85.3,12,175,6.5,13,4,,26,13,6,30
+1211,155,"Redbeds, Michigan Basin borehole",1978,"Van der Voo, R., Watts, D.R.",J.Geophys.Res.,83,5844-5848,North America,"sediments, redbeds",1000,1100,1000,1100,43.2,-84.6,7.1,173.8,,,3,2,,,1,3
+1086,2084,Pearson Formation,1978,"McGlynn, J.C., Irving, E.",Canad. J. Earth Sci.,15,642-658,North America,"extrusives, basalts",1750,1850,1600,1700,62.6,-110.5,6,283,7.4,10.8,3,,59,8,7,23
+1099,2064,Seward Formation,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"sediments, red arkose",1700,1900,1700,1900,56.3,-68.5,-23,266,,,3,,,,2,8
+1065,2056,Harp Dykes,1977,"Irving, E., Emslie, R.F., Park, J.K.",Canad. J. Earth Sci.,14,1187-1201,North America,intrusives,1272,1274,1272,1274,55,-62,18.6,228.1,5.6,9,4,,300,7.1,3,14
+1065,2055,Harp Lake Complex,1977,"Irving, E., Emslie, R.F., Park, J.K.",Canad. J. Earth Sci.,14,1187-1201,North America,"intrusives, anorthosite, gabbro",1430,1470,1430,1470,55,-62.3,1.6,206.3,3,6.1,5,,25,6.1,24,110
+1064,2151,Dundonald Sill,1977,"Irving, E., Naldrett, A.J.",J.Geol.,85,157-176,North America,intrusives,2600,3000,2600,3000,48.6,-80.9,-13,21,12.1,20.3,2,1,19,18,5,16
+1060,2053,Nonesuch Shale,1977,"Henry,S.G., Mauk,F.J., Van der Voo,R.",Canad. J. Earth Sci.,14,1128-1138,North America,"sediments, shales",1020,1080,1020,1080,47,-88.5,7.6,178.1,3.9,7.8,4,,35,7.8,11,27
+1060,2052,Freda Sandstone,1977,"Henry,S.G., Mauk,F.J., Van der Voo,R.",Canad. J. Earth Sci.,14,1128-1138,North America,"sediments, sandstone",1020,1080,600,1000,47,-88.5,3.7,169.2,1.4,2.8,4,,81,2.7,,34
+1060,2051,Freda Sandstone,1977,"Henry,S.G., Mauk,F.J., Van der Voo,R.",Canad. J. Earth Sci.,14,1128-1138,North America,"sediments, sandstone",1020,1080,1020,1080,47,-88.5,2.2,179,3,5.9,4,,32,5.9,20,85
+1099,2062,Retty Peridotite,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"intrusives, peridotite",1700,1900,1700,1900,56.5,-69,-29.5,284,,,3,,,,2,7
+1099,2063,Retty Peridotite,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"intrusives, peridotite",1700,1900,1500,1700,56.5,-69,5,278,,,3,,,,1,5
+1099,2065,Seward Formation,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"sediments, red arkose",1700,1900,1500,1700,56.3,-68.5,5,251,16,16,3,,23,17,5,22
+1099,2066,Seward Formation,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"sediments, red arkose",1700,1900,1000,1200,56.3,-68.5,53,248,9,9,4,,175,5,6,30
+1099,2067,Wakuach Gabbro-Willbob Basalt,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"intrusives, gabbro, extrusives, basalts",1500,1700,1000,1200,56.5,-68.4,61,220,24,24,3,,11,16,5,18
+1138,2076,Spokane Formation,1977,"Vitorello, I., Van der Voo, R.",Canad. J. Earth Sci.,14,67-73,North America,"sediments, argillites",1440,1590,1440,1590,48.2,-113.8,-15.5,225.5,3.7,6.2,5,,61,5.1,14,88
+1138,2077,Spokane Formation,1977,"Vitorello, I., Van der Voo, R.",Canad. J. Earth Sci.,14,67-73,North America,"sediments, argillites",1440,1590,600,750,48.2,-113.8,5,163.5,5.1,9.9,5,,23.2,9.6,11,28
+1049,2101,Intrusive Rocks,1977,"French, R.B., Alexander, D.H., Van der Voo, R.",Geol.Soc.Amer.Bull.,88,1785-1792,North America,intrusives,485,704,485,704,38.5,-105.5,48,107,8,16,3,,15,16,7,10
+1049,2102,Intrusive Rocks,1977,"French, R.B., Alexander, D.H., Van der Voo, R.",Geol.Soc.Amer.Bull.,88,1785-1792,North America,intrusives,485,704,485,704,38.5,-105.5,15,142,5.2,10.2,4,,22,10,12,38
+1049,2103,Intrusive Rocks,1977,"French, R.B., Alexander, D.H., Van der Voo, R.",Geol.Soc.Amer.Bull.,88,1785-1792,North America,intrusives,485,704,485,704,38.5,-105.2,5,174,4.4,8.4,4,,39,8,9,11
+1090,2143,Rapitan Group,1977,"Morris, W.A.",Geology,5,85-88,North America,sediments,650,750,650,750,63.5,-127,-7,194,2.9,5.4,3,,54,5,19,
+1090,2144,Rapitan Group,1977,"Morris, W.A.",Geology,5,85-88,North America,sediments,650,750,50,650,63.5,-127,66,197,11.3,11.7,3,,17,6,34,
+1090,2145,Rapitan Group,1977,"Morris, W.A.",Geology,5,85-88,North America,sediments,650,750,600,750,63.5,-127,5,149,2.1,4.1,3,,76,4,17,
+1089,2146,Gowganda and Chibougamau Formations,1977,"Morris, W.A.",Geology,5,137-140,North America,"sediments, argillites",2201,2375,2201,2375,48,-79,64,31,5,5,3,3,,,11,63
+1089,2147,Gowganda and Chibougamau Formations,1977,"Morris, W.A.",Geology,5,137-140,North America,"sediments, argillites",2201,2375,2150,2250,48,-79,74,209,6,6,2,,,,23,174
+1064,2149,"Superior Province Dykes Combined, West Directions",1977,"Irving, E., Naldrett, A.J.",J.Geol.,85,157-176,North America,intrusives,2125,2175,2125,2175,48,-80,30,225,5.1,6.4,6,5,117,4,12,115
+1064,2150,Archean Gabbro,1977,"Irving, E., Naldrett, A.J.",J.Geol.,85,157-176,North America,"intrusives, gabbro",2500,3000,2500,3000,48.2,-80.5,52.7,85.1,9.6,18.1,3,3,5.1,17,1,4
+1064,2152,Kamiskotia Complex,1977,"Irving, E., Naldrett, A.J.",J.Geol.,85,157-176,North America,"intrusives, gabbro",2600,3000,2600,3000,48.5,-81.6,-21,2,2.9,5.4,5,4,144,5,7,26
+1064,2153,Matachewan Dykes,1977,"Irving, E., Naldrett, A.J.",J.Geol.,85,157-176,North America,intrusives,2450,2455,2450,2455,48.2,-80.5,44,60,5,5,6,5,54,7,10,57
+1064,2154,Munro Formation,1977,"Irving, E., Naldrett, A.J.",J.Geol.,85,157-176,North America,"extrusives, ultrabasics",2600,3000,2600,3000,48.6,-80.2,47,103,5,5,3,3,24,6,1,22
+1099,2061,Menihek Formation,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"sediments, red argillite",1743,1880,1100,1200,56.8,-69.3,59,229,26,26,3,,32,16,4,20
+1099,2060,Menihek Formation,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"sediments, red argillite",1743,1880,1500,1700,56.8,-69.3,6,279,21,21,3,,23,16,5,25
+1099,2059,Menihek Formation,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"sediments, red argillite",1743,1880,1743,1880,56.5,-69,-19,318,,,3,,,,1,5
+1099,2058,Castignon Complex,1977,"Park, J.K.",Canad. J. Earth Sci.,14,159-174,North America,"intrusives, carbonatite",1825,1925,1825,1925,56.5,-68.7,22,268,14,14,3,,69,9,5,24
+1097,2173,Sudbury Dykes,1977,"Palmer, H.C., Merz, B.A., Hayatsu, A.",Canad. J. Earth Sci.,14,1867-1887,North America,intrusives,1232,1242,900,1100,46.1,-81.5,3.7,163.4,6.3,6.3,4,,20.3,,23,92
+1097,2174,Sudbury Dykes,1977,"Palmer, H.C., Merz, B.A., Hayatsu, A.",Canad. J. Earth Sci.,14,1867-1887,North America,intrusives,1232,1242,1232,1242,46.3,-81.4,-2.9,193.9,3.3,3.3,6,,27.5,,38,152
+1097,2175,Sudbury Dykes Combined,1977,"Palmer, H.C., Merz, B.A., Hayatsu, A.",Canad. J. Earth Sci.,14,1867-1887,North America,intrusives,1232,1242,1232,1242,46.3,-81.4,-2.5,192.8,2.5,2.5,6,,,,52,205
+1044,2193,Tapeats Sandstone,1977,"Elston,D.P., Bressler,S.L.",Earth Planet.Sci.Letters,36,423-433,North America,"sediments, sandstones",501,542,501,542,36,-112,4.9,157.7,1.7,3.3,3,,14.9,3.3,6,129
+1065,2057,Harp Lake Complex Thermal Aureole,1977,"Irving, E., Emslie, R.F., Park, J.K.",Canad. J. Earth Sci.,14,1187-1201,North America,metamorphics,1300,1450,1300,1450,54.8,-61.4,14.1,215.8,5.9,10.7,3,,49,9.7,6,22
+1043,2231,Cloud Mountain Basalt,1977,"Deutsch,E.R., Rao,K.V.",Nature,266,314-318,North America,"extrusives, basalts",595,615,595,615,50.5,-56.2,5,172,2,4,3,,999.9,3.5,3,
+772,2256,"Bradore Formation, Canada Bay",1976,"Rao,K.V., Deutsch,E.R.",Tectonophysics,33,337-357,North America,"sediments, redbeds",513,542,513,542,50.8,-56.2,29,167,3,5,4,,109,5,9,54
+727,5907,Tochatwi Formation,1976,"Evans, M.E., Bingham, D.K.",Canad. J. Earth Sci.,13,555-562,North America,"sediments, redbeds",1600,1800,1000,1600,62.4,-110.7,31.5,273.5,13.5,15.4,3,,24,9,13,36
+727,2270,Tochatwi Formation,1976,"Evans, M.E., Bingham, D.K.",Canad. J. Earth Sci.,13,555-562,North America,"sediments, redbeds",1600,1800,1600,1800,62.4,-110.7,-18,216,7.7,15.2,3,3,14,15,8,28
+775,2269,Nipissing Diabase,1976,"Roy,J.L., Lapointe,P.L.",Canad. J. Earth Sci.,13,749-773,North America,"intrusives, diabase",2215,2223,1700,1800,47.4,-79.7,-9,180,8.4,15.6,3,,14,14.4,9,45
+775,2268,Nipissing Diabase,1976,"Roy,J.L., Lapointe,P.L.",Canad. J. Earth Sci.,13,749-773,North America,"intrusives, diabase",2215,2223,1800,2000,47.4,-79.7,-15,264,4.3,6.9,3,,503,5.5,3,18
+775,2267,Nipissing Diabase,1976,"Roy,J.L., Lapointe,P.L.",Canad. J. Earth Sci.,13,749-773,North America,"intrusives, diabase",2215,2223,2215,2223,47.4,-79.7,42,258,11,11,6,,42,5.4,18,110
+775,2266,"Firstbrook Member, Gowganda Formation",1976,"Roy,J.L., Lapointe,P.L.",Canad. J. Earth Sci.,13,749-773,North America,"sediments, redbeds",2201,2375,2201,2375,47.4,-79.7,67,158,7.8,11.2,3,,49,7.9,8,56
+772,2257,"Bradore Formation, St. John Bay",1976,"Rao,K.V., Deutsch,E.R.",Tectonophysics,33,337-357,North America,"sediments, redbeds",513,542,513,545,50.8,-57.2,17,157,,,3,,,,2,13
+716,2242,Haliburton Intrusions,1976,"Buchan, K.L., Dunlop, D.J.",J.Geophys.Res.,81,2951-2967,North America,"intrusives, gabbro, diorite",930,1030,930,1030,45,-78.6,-35.6,142.5,10,11.1,4,,37.6,6.3,15,42
+716,2243,Haliburton Intrusions,1976,"Buchan, K.L., Dunlop, D.J.",J.Geophys.Res.,81,2951-2967,North America,"intrusives, gabbro, diorite",930,1030,770,870,45,-78.5,24.5,172.3,8,15.9,3,,9.4,15.7,8,11
+739,2403,Big Spruce Complex,1976,"Irving,E., McGlynn,J.C.",Canad. J. Earth Sci.,13,476-489,North America,"intrusives, alkaline rocks",2026,2106,1700,1850,63.6,-115.9,-10,316,13,26,3,2,14,26,4,16
+2227,5837,Noranda Area Acid Intrusives,1976,"Londry, J.W., Symons, D.T.A.",Canad.Assoc.Phys.Bull.,32,36,North America,"intrusives, acid rocks",2300,2700,2300,2700,48.5,-79,69.6,265.8,7.7,8.1,3,2,4,4.4,5,23
+2227,5838,Noranda Archean Rocks,1976,"Londry, J.W., Symons, D.T.A.",Canad.Assoc.Phys.Bull.,32,36,North America,"extrusives, intrusives, sediments",2300,2700,2300,2700,48.5,-79,73.2,89.6,9.5,10.2,4,2,,5.5,29,122
+739,2402,Big Spruce Complex,1976,"Irving,E., McGlynn,J.C.",Canad. J. Earth Sci.,13,476-489,North America,"intrusives, alkaline rocks",2026,2106,1900,2100,63.6,-115.9,7,282,7.7,11.5,4,,67,9,5,25
+739,2401,Big Spruce Complex,1976,"Irving,E., McGlynn,J.C.",Canad. J. Earth Sci.,13,476-489,North America,"intrusives, alkaline rocks",2026,2106,1400,1600,63.6,-115.9,-9,215,,,3,,,,2,9
+797,2415,Chibougamau Greenstone Belt,1976,"Ueno,H., Irving,E.",Precambrian Res.,3,303-315,North America,"metamorphics, greenstones",2500,2700,2500,2700,49.9,-74.4,61,93,8,13,2,1,70,10,4,13
+739,2400,Big Spruce Complex,1976,"Irving,E., McGlynn,J.C.",Canad. J. Earth Sci.,13,476-489,North America,"intrusives, alkaline rocks",2026,2106,2026,2106,63.6,-115.9,67,247,16,16,4,3,17,8,19,85
+797,2416,Chibougamau Greenstone Belt,1976,"Ueno,H., Irving,E.",Precambrian Res.,3,303-315,North America,"metamorphics, greenstones",2500,2700,900,1100,49.9,-74.4,-7,155,19,28,3,,15,,5,23
+2230,5844,Meta-Igneous Rocks,1976,"Seguin, M.K.",Canad. J. Earth Sci.,13,838-846,North America,"metamorphics, metabasalts, metagabbros",1800,1950,1800,1950,56.8,-69.1,-20,179,15.3,30.6,2,,,30,40,110
+2231,5845,Schefferville Dyke,1976,"Fahrig, W.F.",Geol.Surv.Canada Paper 76-1B,,153-155,North America,"intrusives, olivine diabase",1150,1300,1150,1300,54.8,-66.8,11,223.5,2.2,2.2,2,,731,3,4,15
+797,2417,Chibougamau Greenstone Belt,1976,"Ueno,H., Irving,E.",Precambrian Res.,3,303-315,North America,"metamorphics, greenstones",2500,2700,1400,1600,49.9,-74.4,8,46,18,34,3,,64,30,2,10
+811,2421,Sokoman Iron Formation,1976,"Seguin,M.K.",Ann.Geophys.,32,327-334,North America,"sediments, iron ores",2100,2200,2100,2200,55.1,-67,32.5,75.3,,,4,3,,,,32
+811,2422,Sokoman Iron Formation,1976,"Seguin,M.K.",Ann.Geophys.,32,327-334,North America,"sediments, iron ores",2100,2200,1800,1900,55.1,-67,13,257,16.7,22.4,4,,53.2,15,,42
+784,2258,Ophiolite Complex,1976,"Seguin,M.K.",Tectonophysics,34,231-243,North America,"extrusives, intrusives, sediments",488,542,488,542,46.1,-71.3,14.2,17.2,21.9,41.5,1,,4.7,39.3,5,11
+811,2423,Diabase dykes intruding Sokoman Iron Formation,1976,"Seguin,M.K.",Ann.Geophys.,32,327-334,North America,"intrusives, diabase dykes",1800,1900,1800,1900,55.1,-67,25.4,289.2,29.3,32.5,3,,26.5,18,,19
+785,2428,Murdoch metavolcanics and intrusives,1976,"Seguin,M.K.",J.Geomag.Geoelect.,28,413-425,North America,"metamorphics, metaigneous rocks",1780,1930,1780,1930,56,-67,4.9,187.9,10.1,20.2,2,,3.1,20.1,24,73
+775,2265,"Coleman Member, Gowganda Formation",1976,"Roy,J.L., Lapointe,P.L.",Canad. J. Earth Sci.,13,749-773,North America,sediments,2300,2500,2300,2500,47.4,-79.7,60,80,,,2,1,19,,1,7
+725,2274,Michikamau Intrusion Combined,1976,"Emslie,R.F., Irving,E., Park,J.K.",Canad. J. Earth Sci.,13,1052-1057,North America,"intrusives, anorthosite",1455,1465,1455,1465,54.5,-64,-1.5,217.5,3.3,6.6,6,,43,6.5,12,54
+775,2264,"Nipissing Diabase, Abitibi Dykes combined",1976,"Roy,J.L., Lapointe,P.L.",Canad. J. Earth Sci.,13,749-773,North America,intrusives,2215,2223,2215,2223,48,-80,17,92,,,4,3,,,40,
+775,2263,"Nipissing Diabase, Abitibi Dykes combined",1976,"Roy,J.L., Lapointe,P.L.",Canad. J. Earth Sci.,13,749-773,North America,intrusives,2215,2223,2215,2223,48,-80,40,240,,,5,,,,81,
+725,2273,Michikamau Intrusion,1976,"Emslie,R.F., Irving,E., Park,J.K.",Canad. J. Earth Sci.,13,1052-1057,North America,"intrusives, anorthosite",1455,1465,1455,1465,54.5,-64,-2.5,220.5,5,9.5,6,,53,9.5,6,25
+726,2272,Stark Formation,1976,"Bingham,D.K., Evans,M.E.",Canad. J. Earth Sci.,13,563-578,North America,"sediments, redbeds",1650,1850,1650,1850,62.4,-110.7,-15.3,214.7,3.5,6.9,4,3,12.6,6.7,39,120
+730,2271,Mistastin Pluton,1976,"Fahrig, W.F., Jones, D.L.",Canad. J. Earth Sci.,13,832-837,North America,"intrusives, adamellite",1400,1440,1400,1440,55.6,-63.7,-1,201.5,7.6,7.6,3,,48.5,8.8,7,35
+756,2261,Steel Mountain Anorthosite,1976,"Murthy,G.S., Rao,K.V.",Canad. J. Earth Sci.,13,75-83,North America,"intrusives, anorthosites",900,1100,900,1100,48.5,-58.5,22.5,139,8,14,3,,22,13,7,28
+756,2260,Indian Head Anorthosite,1976,"Murthy,G.S., Rao,K.V.",Canad. J. Earth Sci.,13,75-83,North America,"intrusives, anorthosites",864,899,864,899,48.5,-58.5,8,337.5,15,20,3,,30,14,5,21
+716,2244,Haliburton Intrusions,1976,"Buchan, K.L., Dunlop, D.J.",J.Geophys.Res.,81,2951-2967,North America,"intrusives, gabbro, diorite",930,1030,850,950,45,-78.5,-3,167.4,4.6,7.6,3,,53.5,6.6,6,10
+727,5908,Tochatwi Formation,1976,"Evans, M.E., Bingham, D.K.",Canad. J. Earth Sci.,13,555-562,North America,"sediments, redbeds",1600,1800,1600,1800,62.4,-110.7,4.4,184.8,8.5,14.6,1,,35,13,5,12
+245,2616,Whitestone Anorthosite and Diorite,1975,"Ueno, H., Irving, E., McNutt, R.H.",Canad. J. Earth Sci.,12,209-226,North America,"intrusives, anorthosite, diorite",1300,1400,1025,1100,45.6,-79.9,-22,140,8,10,3,,223,6,4,15
+1039,2167,Kaminak Metamorphosed Dykes,1975,"Christie, K.W., Davidson, A., Fahrig, W.F.",Canad. J. Earth Sci.,12,2048-2064,North America,metamorphics,1615,1892,1615,1892,62.2,-95,20.4,267.9,5.3,6.5,4,,55,4,22,94
+1039,2168,Kaminak Unmetamorphosed Dykes,1975,"Christie, K.W., Davidson, A., Fahrig, W.F.",Canad. J. Earth Sci.,12,2048-2064,North America,"intrusives, diabase",2496,2500,2496,2500,62.2,-95,-23.8,237.7,12,24,3,2,12,24,3,15
+1039,2169,Kaminak Lamprophyre Dykes,1975,"Christie, K.W., Davidson, A., Fahrig, W.F.",Canad. J. Earth Sci.,12,2048-2064,North America,"intrusives, lamprophyre dykes",1700,1800,1700,1800,62.2,-95,40.9,267.2,18.8,19,4,,33,10,6,31
+2241,5871,Magnetawan Metasediments,1975,"McWilliams,M.O., Dunlop,D.J.",Science,190,269-272,North America,"metamorphics, metasediments",900,1100,900,1100,45.8,-79.7,-24,130,6.4,7.2,4,,51,4,23,83
+1116,2220,Montagnais Dykes,1975,"Seguin,M.K.",Pure Appl.Geophys.,113,435-445,North America,"intrusives, diabase",1150,1400,1150,1400,54.7,-66.7,-10,223,7.7,15.2,4,,11,7.6,11,77
+242,3204,Gowganda Formation,1975,"Symons, D.T.A.",Geology,3,303-306,North America,"sediments, arkose, siltstone",2200,2380,2150,2300,46.5,-82.8,65.4,237.8,10,11,3,,,6,16,58
+622,1895,Cape Smith Basalts,1975,"Fujiwara, Y., Schwarz, E.J.",Canad. J. Earth Sci.,12,1785-1793,North America,"extrusives, basalts",1450,1800,1450,1800,60.8,-78.2,16,253,4,5,4,,47,4,30,300
+240,2904,Pensive Lake Sheet,1975,"McGlynn,J.C., Irving,E.",Tectonophysics,26,23-28,North America,"intrusives, diabase",1800,2500,1800,2500,62.7,-113.4,72,77,4.6,6,1,1,400,4,1,5
+240,2903,Duck Lake Sill,1975,"McGlynn,J.C., Irving,E.",Tectonophysics,26,23-28,North America,intrusives,2000,2100,2000,2100,62.5,-114.3,-6,313,8.7,17,2,2,44,17,1,5
+240,2902,Thistlewaite Dyke,1975,"McGlynn,J.C., Irving,E.",Tectonophysics,26,23-28,North America,intrusives,1800,2500,1800,2500,63.2,-113.6,53,185,4.5,5.2,2,,400,3,1,5
+240,2901,Dogrib Dykes,1975,"McGlynn,J.C., Irving,E.",Tectonophysics,26,23-28,North America,intrusives,2184,2192,1700,1800,63.3,-113.8,7,282,8,12,2,,21,9,8,13
+240,2900,Dogrib Dykes,1975,"McGlynn,J.C., Irving,E.",Tectonophysics,26,23-28,North America,intrusives,2184,2192,2184,2192,62.7,-113.9,35,130,2.7,4.7,4,3,70,4,16,83
+240,2899,'X' Dykes,1975,"McGlynn,J.C., Irving,E.",Tectonophysics,26,23-28,North America,intrusives,2600,2800,2600,2800,63.3,-113.8,-20,209,6,12,2,2,100,12,3,11
+240,2898,Indin Dykes,1975,"McGlynn,J.C., Irving,E.",Tectonophysics,26,23-28,North America,"intrusives, diabase",2108,2129,2108,2126,63.3,-113.6,19,284,9,12,5,,29,8,13,72
+231,2639,Combined Upper Belt-Purcell Supergroup,1975,"Evans, M.E., Bingham, D.K., McMurry, E.W.",Canad. J. Earth Sci.,12,52-61,North America,"sediments, extrusives",1100,1400,1100,1400,49.4,-114.5,-17.1,217.8,4.1,7.1,3,,39.4,6.2,15,44
+231,2638,Purcell Lava,1975,"Evans, M.E., Bingham, D.K., McMurry, E.W.",Canad. J. Earth Sci.,12,52-61,North America,extrusives,1100,1400,1100,1400,49.4,-114.5,-24,214.7,4,7.4,2,,314,7,3,8
+231,2637,Shepard Formation,1975,"Evans, M.E., Bingham, D.K., McMurry, E.W.",Canad. J. Earth Sci.,12,52-61,North America,sediments,1100,1400,1100,1400,49.4,-114.5,-18.3,219.7,7.2,11.9,2,,29.4,10.4,8,24
+231,2636,Kintla Formation,1975,"Evans, M.E., Bingham, D.K., McMurry, E.W.",Canad. J. Earth Sci.,12,52-61,North America,sediments,1100,1400,1100,1400,49.4,-114.5,-13.8,215.2,5.8,9.6,3,,69.5,8.1,6,12
+229,2635,Flin Flon-Snow Lake Greenstone,1975,"Park, J.K.",Canad. J. Earth Sci.,12,1272-1290,North America,"metamorphics, greenstones",1770,1900,1600,1700,54.8,-101.9,27,265,8,8.9,4,,17,5,43,183
+229,2634,Flin Flon-Snow Lake Greenstone,1975,"Park, J.K.",Canad. J. Earth Sci.,12,1272-1290,North America,"metamorphics, greenstones",1770,1900,1770,1900,54.8,-101.9,-21,310,9,18,3,,12,18,7,31
+233,2630,Otto Stock Dykes and Aureole,1975,"Pullaiah,G., Irving,E.",Canad. J. Earth Sci.,12,1609-1618,North America,"intrusives, lamprophyres, baked rocks",2679,2681,1500,2000,48,-80.1,-52,239,9,17,3,3,68,15,3,16
+233,2629,Otto Stock Dykes and Aureole,1975,"Pullaiah,G., Irving,E.",Canad. J. Earth Sci.,12,1609-1618,North America,"intrusives, lamprophyres, baked rocks",2679,2681,2679,2681,48,-80.1,69,227,4.5,5.2,6,5,139,3,18,84
+228,2628,Natkusiak Formation,1975,"Palmer, H.C., Hayatsu, A.",Canad. J. Earth Sci.,12,1439-1447,North America,"extrusives, lavas, intrusives, diabase",721,727,721,727,71,-116,-7,163,4,4,4,,48,5.4,16,53
+217,5906,Molson Dykes,1975,"Ermanovics,I., Fahrig,W.F.",Canad. J. Earth Sci.,12,1564-1575,North America,"intrusives, dykes",1800,2000,1600,1700,54,-97.5,-5,294,,,2,,39,,1,6
+217,2624,Molson Dykes,1975,"Ermanovics,I., Fahrig,W.F.",Canad. J. Earth Sci.,12,1564-1575,North America,"intrusives, dykes",1800,2000,1800,2000,54,-97.5,28,246,12,12,3,,48,7,10,50
+227,2622,Nipissing Diabase Combined,1975,"Symons, D.T.A., Londry, J.M.",Canad. J. Earth Sci.,12,940-948,North America,"intrusives, diabase",2215,2223,2215,2223,48,-81,-14.1,265.9,5.7,8.8,5,4,,,37,
+227,2621,Nipissing Diabase,1975,"Symons, D.T.A., Londry, J.M.",Canad. J. Earth Sci.,12,940-948,North America,"intrusives, diabase",2215,2223,0,1,47.5,-80.7,73.4,237.8,10.2,11.4,3,,66,6.4,9,39
+227,2620,Nipissing Diabase,1975,"Symons, D.T.A., Londry, J.M.",Canad. J. Earth Sci.,12,940-948,North America,"intrusives, diabase",2215,2223,2215,2223,47.5,-80.7,-13.8,253.8,8.6,13.8,4,3,19.1,11.3,10,47
+245,2619,Whitestone Anorthosite and Diorite,1975,"Ueno, H., Irving, E., McNutt, R.H.",Canad. J. Earth Sci.,12,209-226,North America,"intrusives, anorthosite, diorite",1300,1400,1000,1025,45.6,-79.9,-5,168,6,10,4,,45,8,8,39
+245,2618,Whitestone Anorthosite and Diorite,1975,"Ueno, H., Irving, E., McNutt, R.H.",Canad. J. Earth Sci.,12,209-226,North America,"intrusives, anorthosite, diorite",1300,1400,900,1000,45.6,-79.9,1,149,21,33,3,,3,26,2,13
+245,2617,Whitestone Anorthosite and Diorite,1975,"Ueno, H., Irving, E., McNutt, R.H.",Canad. J. Earth Sci.,12,209-226,North America,"intrusives, anorthosite, diorite",1300,1400,1025,1100,45.6,-79.9,-16,154,8,11,4,,96,8,5,29
+249,2804,Nipissing Diabase,1974,"Patel, J.P., Palmer, H.C.",Canad. J. Earth Sci.,11,353-361,North America,"intrusives, diabase",2215,2223,2215,2223,46.4,-83,-15.7,290.2,4.8,7.6,3,4,166,6,5,21
+247,2612,Osler Volcanics,1974,"Halls, H.C.",Canad. J. Earth Sci.,11,1200-1207,North America,extrusives,1090,1110,1090,1110,48.7,-88.1,43.1,194.5,5,6.8,5,,40.2,4.6,25,106
+247,2613,Osler Volcanics,1974,"Halls, H.C.",Canad. J. Earth Sci.,11,1200-1207,North America,extrusives,1090,1110,1090,1110,48.7,-88.1,33.9,177.9,6.1,10.2,4,,82.3,8.5,5,25
+234,2642,Sparrow Dykes,1974,"McGlynn,J.C., Hanson,G.N., Irving,E., Park,J.K.",Canad. J. Earth Sci.,11,30-42,North America,intrusives,1823,1831,1823,1831,61.6,-109.8,12,291,6.6,9.4,5,4,50,7,10,54
+234,2643,Nonacho Group,1974,"McGlynn,J.C., Hanson,G.N., Irving,E., Park,J.K.",Canad. J. Earth Sci.,11,30-42,North America,"sediments, maroon sandstones",1700,2500,1400,1700,61.6,-109.8,13,275,19,19,4,,11,14,12,40
+235,2644,Nemogosenda Carbonatite Complex,1974,"Symons, D.T.A., Garber, J.",Canad. J. Earth Sci.,11,341-345,North America,"intrusives, nepheline-syenite",1000,1080,1000,1080,48,-83.1,43,182,15,24,4,,,18,11,41
+235,2645,Archean gneiss,1974,"Symons, D.T.A., Garber, J.",Canad. J. Earth Sci.,11,341-345,North America,"metamorphics, gneiss",2500,3000,2500,3000,48,-83.1,75,219,27,31,1,1,,18,3,9
+246,2646,Spanish River Complex,1974,"Robertson, W.A., Watkinson, D.H.",Canad. J. Earth Sci.,11,795-800,North America,"intrusives, ijolite, carbonatite",1750,1956,1750,1956,46.5,-81.6,37,264,24,25,2,,7,13,8,21
+248,2648,Keewatin Franklin Dykes,1974,"Park, J.K.",Canad. J. Earth Sci.,11,1012-1017,North America,"intrusives, diabase",720,726,720,726,66,-90,3,161.3,9.2,9.2,3,,33.5,21.7,3,32
+246,2647,Spanish River Dykes,1974,"Robertson, W.A., Watkinson, D.H.",Canad. J. Earth Sci.,11,795-800,North America,"intrusives, dykes, metamorphics, fenite",1375,1475,1375,1475,46.5,-81.6,-10,224,11,21,2,,5,19,4,14
+241,2475,Morin Anorthosite Complex,1974,"Irving, E., Park, J.K., Emslie, R.F.",J.Geophys.Res.,79,5482-5490,North America,metamorphics,1152,1158,1097,1151,46.1,-74.4,-42.2,140.6,9.2,9.9,4,,32,5.3,24,117
+244,2607,Mealy Mountain Anorthosite Suite,1974,"Fahrig, W.F., Christie, K.W., Schwarz, E.J.",Canad. J. Earth Sci.,11,18-29,North America,"intrusives, anorthosites",1644,1648,1000,1500,53,-60,8.4,180.7,12,12,3,,7,18.6,11,56
+244,2608,Mealy Mountain Anorthosite Suite,1974,"Fahrig, W.F., Christie, K.W., Schwarz, E.J.",Canad. J. Earth Sci.,11,18-29,North America,"intrusives, anorthosites",1644,1648,1644,1648,53,-60,-37.9,178.3,9.1,9.1,5,,35,7.2,14,66
+244,2609,Shabogamo gabbro,1974,"Fahrig, W.F., Christie, K.W., Schwarz, E.J.",Canad. J. Earth Sci.,11,18-29,North America,"intrusives, gabbro",1500,1600,1500,1600,54.2,-64.3,-11.9,213.7,15.7,31.4,2,,17,31.4,3,12
+244,5836,Shabogamo gabbro,1974,"Fahrig, W.F., Christie, K.W., Schwarz, E.J.",Canad. J. Earth Sci.,11,18-29,North America,"intrusives, gabbro",1500,1600,900,1100,53.6,-65,-7.5,181.9,9.3,16.5,3,,10,15.2,10,85
+232,2610,St. Urbain Anorthosite,1974,"Hargraves,R.B., Roy,D.W.",Canad. J. Earth Sci.,11,854-859,North America,"intrusives, anorthosite",1057,1101,300,400,47.5,-70.4,-7,148,12,16,2,,48.8,11.1,5,21
+248,2649,Keewatin Mackenzie Dykes,1974,"Park, J.K.",Canad. J. Earth Sci.,11,1012-1017,North America,"intrusives, diabase",1200,1300,1200,1300,66,-90,2.5,190.2,7.4,7.4,3,,28.7,8.2,12,94
+241,2476,Morin Anorthosite Complex,1974,"Irving, E., Park, J.K., Emslie, R.F.",J.Geophys.Res.,79,5482-5490,North America,metamorphics,1152,1158,900,1100,46.1,-74.4,,164,9,12,4,,17,10,13,45
+2251,3484,Muskox Intrusion,1973,"Baragar,W.R.A., Robertson,W.A.",Canad. J. Earth Sci.,10,1519-1532,North America,"intrusives, gabbro",1266,1274,1266,1274,66,-113,6,191,4,7,4,,13,6,40,80
+267,2591,Cardenas Lavas and Sandstone,1973,"Elston,D.P., Scott,G.R.",Earth Planet.Sci.Letters,18,253-265,North America,"extrusives, lavas, sediments, redbeds",1020,1160,1020,1160,36.1,-111.8,0.4,185.4,4.9,8.2,4,,49.8,6.9,10,28
+222,2601,Baffin Island Dykes,1973,"Fahrig, W.F., Schwarz, E.J.",Canad. J. Earth Sci.,10,576-581,North America,"intrusives, diabase",720,726,720,726,70,-74,6.3,168.2,4.8,4.8,5,,,,10,49
+222,2602,Franklin diabases Combined,1973,"Fahrig, W.F., Schwarz, E.J.",Canad. J. Earth Sci.,10,576-581,North America,"intrusives, diabase",720,726,720,726,70,-74,5.8,165.8,3.8,3.8,5,,,,46,245
+225,2603,Wilberforce Pyroxenite,1973,"Palmer, H.C., Carmichael, C.M.",Canad. J. Earth Sci..,10,1175-1190,North America,"intrusives, pyroxenite",700,1100,700,1100,45.1,-78.3,-14.4,148,5.3,7,3,,390,4.7,4,27
+225,2604,Tudor Gabbro,1973,"Palmer, H.C., Carmichael, C.M.",Canad. J. Earth Sci..,10,1175-1190,North America,"intrusives, gabbro",1090,1130,1090,1130,44.7,-77.7,17.1,137.9,5.2,9,4,,40.1,7.7,10,42
+225,2605,River Valley Anorthosite and Fall Lake Complex,1973,"Palmer, H.C., Carmichael, C.M.",Canad. J. Earth Sci..,10,1175-1190,North America,"intrusives, anorthosite",900,1100,900,1100,46.6,-80,8.2,161.3,3.7,6.8,2,,211,6.3,4,16
+236,2606,Otish gabbro,1973,"Fahrig, W.F., Chown, E.H.",Canad. J. Earth Sci.,10,1556-1564,North America,"intrusives, gabbro",2000,2200,2000,2200,52.3,-71,34.8,253.4,9,9,3,,64,,10,75
+98,2815,"Beartooth Mountains dykes 7,8",1973,"Larson, E.E., Reynolds, R., Hoblitt, R.",Geol.Soc.Amer.Bull.,84,3231-3248,North America,"intrusives, dykes",1400,1600,1400,1600,45,-110,-2.5,264.4,11.1,14.7,2,,65.8,9.7,2,12
+98,2814,"Beartooth Mountains dykes 3,4,5",1973,"Larson, E.E., Reynolds, R., Hoblitt, R.",Geol.Soc.Amer.Bull.,84,3231-3248,North America,"intrusives, dykes",2400,2700,2400,2700,45,-110,-11.5,310.7,12.7,23.9,2,2,31,22.6,3,19
+98,2813,Beartooth Mountains Dyke 6,1973,"Larson, E.E., Reynolds, R., Hoblitt, R.",Geol.Soc.Amer.Bull.,84,3231-3248,North America,"intrusives, dyke",2400,2700,2400,2700,45,-110,-40,326,7,12,2,2,40,11,1,6
+98,2812,Beartooth Mountains Dyke 2,1973,"Larson, E.E., Reynolds, R., Hoblitt, R.",Geol.Soc.Amer.Bull.,84,3231-3248,North America,"intrusives, dyke",680,780,680,780,45,-110,12.5,146.5,15.5,31,2,,67,31,2,11
+98,2811,Rama diabase,1973,"Larson, E.E., Reynolds, R., Hoblitt, R.",Geol.Soc.Amer.Bull.,84,3231-3248,North America,"intrusives, diabase",850,1200,850,1200,36.5,-112,1.4,177.1,9,9,3,,47,11.3,5,38
+98,2810,Laramie Range Anorthosite,1973,"Larson, E.E., Reynolds, R., Hoblitt, R.",Geol.Soc.Amer.Bull.,84,3231-3248,North America,"intrusives, anorthosite",1400,1600,1400,1600,41.8,-105.5,-14,206,3,6,2,,110,5,1,8
+98,2809,Owl Creek Mountains dykes,1973,"Larson, E.E., Reynolds, R., Hoblitt, R.",Geol.Soc.Amer.Bull.,84,3231-3248,North America,"intrusives, dykes",1910,2090,1910,2090,43.6,-108.8,-27.1,248,8.7,15.2,2,2,87,13.2,3,17
+243,2737,Dubawnt Group,1973,"Park, J.K., Irving, E., Donaldson, J.A.",Geol.Soc.Amer.Bull.,84,859-870,North America,"sediments,redbeds,extrusives,intrusives",1781,1789,1781,1789,64.1,-94.4,7,277,8,8,7,4,17,7,30,130
+237,2661,Gargantua and Mamainse Point Lavas,1973,"Robertson, W.A.",Canad. J. Earth Sci.,10,1541-1555,North America,"extrusives, basalts, rhyolites",1089,1139,1089,1139,47.2,-84.8,45.8,232,14,16,5,,26.4,8.8,12,67
+237,2660,Gargantua and Mamainse Point Lavas,1973,"Robertson, W.A.",Canad. J. Earth Sci.,10,1541-1555,North America,"extrusives, basalts, rhyolites",1089,1139,1089,1139,47.2,-84.8,29.5,182.7,4.4,7.6,5,,35.3,6.1,15,76
+230,2659,Martin Formation,1973,"Evans, M.E., Bingham, D.K.",Canad. J. Earth Sci.,10,1485-1493,North America,"extrusives, sediments, redbeds",1814,1822,1814,1822,59.6,-108.6,-9,288,6.3,11.5,4,3,15,10.4,15,56
+224,2658,Seal Lake Group Redbeds,1973,"Roy,R.L., Fahrig,W.F.",Canad. J. Earth Sci.,10,1279-1301,North America,"sediments, redbeds",1231,1411,1231,1411,54.5,-62,5,205,3,6,4,,57,5.6,10,45
+224,2656,Croteau Group Volcanics,1973,"Roy,R.L., Fahrig,W.F.",Canad. J. Earth Sci.,10,1279-1301,North America,"extrusives, intrusives",1487,1573,900,1100,54.5,-62,30,138,26,28,4,,26,15,5,28
+223,2655,Melville-Daly Bay Metamorphic Rocks,1973,"Park, J.K.",Canad. J. Earth Sci.,10,1079-1088,North America,"metamorphics, gneiss",1592,1652,0,1,66.5,-85,67,351,18.7,18.7,4,,18,13.3,8,32
+223,2654,Melville-Daly Bay Metamorphic Rocks,1973,"Park, J.K.",Canad. J. Earth Sci.,10,1079-1088,North America,"metamorphics, gneiss",1592,1652,1592,1652,64.1,-89,11,259,6,8,4,,38,6,16,63
+221,2653,Sibley Group,1973,"Robertson, W.A.",Canad. J. Earth Sci.,10,180-193,North America,"sediments, redbeds",1320,1420,1071,1111,48.8,-88.5,71,206,28,33,4,,17,19,5,17
+221,2652,Sibley Group,1973,"Robertson, W.A.",Canad. J. Earth Sci.,10,180-193,North America,"sediments, redbeds",1320,1420,1320,1420,48.8,-88.5,-21,216,7,13,6,,22,13,7,25
+98,5925,Bighorn Mountains Dykes,1973,"Larson, E.E., Reynolds, R., Hoblitt, R.",Geol.Soc.Amer.Bull.,84,3231-3248,North America,intrusives,1400,2100,1400,2100,44.5,-107,-66,254,20,34,1,,6,29,6,34
+224,5835,Seal Lake Group Diabase,1973,"Roy,R.L., Fahrig,W.F.",Canad. J. Earth Sci.,10,1279-1301,North America,"intrusives, diabase",1231,1411,1231,1411,54.5,-62,8,153,7,12,4,,29,,9,51
+2251,3485,Coppermine Group Lavas,1973,"Baragar,W.R.A., Robertson,W.A.",Canad. J. Earth Sci.,10,1519-1532,North America,extrusives,1050,1250,1050,1250,67,-116,1,183,3,6,3,,35,5,21,42
+2251,5917,Coppermine Group Lavas,1973,"Baragar,W.R.A., Robertson,W.A.",Canad. J. Earth Sci.,10,1519-1532,North America,extrusives,1050,1250,1050,1250,67.6,-116.2,-8,210,5.5,10.5,3,,23,10,11,63
+2251,5920,Coppermine Group Combined,1973,"Baragar,W.R.A., Robertson,W.A.",Canad. J. Earth Sci.,10,1519-1532,North America,"extrusives, sediments, redbeds",1050,1250,1050,1250,67.3,-116,1,183,3,6,3,,21,6,30,90
+2251,5919,Coppermine Group Redbeds,1973,"Baragar,W.R.A., Robertson,W.A.",Canad. J. Earth Sci.,10,1519-1532,North America,"sediments, redbeds",1050,1250,1050,1250,67.5,-116,2,193,17,30,2,,9,28,5,13
+2251,5918,Coppermine Group Lavas,1973,"Baragar,W.R.A., Robertson,W.A.",Canad. J. Earth Sci.,10,1519-1532,North America,extrusives,1050,1250,1050,1250,67.5,-116,-2,168,7,14,2,,42,14,4,20
+224,5834,Seal Lake Group Basalts,1973,"Roy,R.L., Fahrig,W.F.",Canad. J. Earth Sci.,10,1279-1301,North America,"extrusives, basalts",1231,1411,900,1100,54.5,-62,6,149,6,10,3,,107,8,5,22
+224,2657,Seal Lake Group Basalts,1973,"Roy,R.L., Fahrig,W.F.",Canad. J. Earth Sci.,10,1279-1301,North America,"extrusives, basalts",1231,1411,1231,1411,54.5,-62,18,194,10.8,21.2,3,,36,20.8,3,6
+267,2589,Nankoweap Formation,1973,"Elston,D.P., Scott,G.R.",Earth Planet.Sci.Letters,18,253-265,North America,"sediments, redbeds",900,1100,900,1100,36.1,-111.8,12.5,174.4,4.5,7.7,3,,105,6.6,,6
+267,2590,"Cardenas Lavas, Weathered Zone",1973,"Elston,D.P., Scott,G.R.",Earth Planet.Sci.Letters,18,253-265,North America,extrusives,1020,1160,1020,1160,36.1,-111.8,49.4,192.2,11.4,14.1,4,,79.4,8.6,5,
+2246,5892,Gogebic Porphyry,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,"intrusives, quartz porphyry",1000,1100,1000,1100,46.6,-89.6,33.9,174,16.8,29,2,,25,25,3,13
+238,2668,Dykes of the Frontenac Axis,1972,"Park, J.K., Irving, E.",Canad. J. Earth Sci.,9,763-765,North America,"intrusives, dykes",444,542,444,542,44.3,-76.3,-5,140,24.4,32.7,2,,32,22,3,22
+238,2667,"Kingston Dykes, Frontenac Swarm",1972,"Park, J.K., Irving, E.",Canad. J. Earth Sci.,9,763-765,North America,"intrusives, dykes",800,900,800,900,44.3,-76.3,-12,163,7,7,3,,112,6,6,37
+238,2666,Kingston Dyke 12,1972,"Park, J.K., Irving, E.",Canad. J. Earth Sci.,9,763-765,North America,"intrusives, dykes",443,545,443,545,44.3,-75.9,20,197,7,12.1,2,,30,11,1,7
+238,2665,Kingston Dyke 4,1972,"Park, J.K., Irving, E.",Canad. J. Earth Sci.,9,763-765,North America,"intrusives, dykes",700,750,700,750,44.3,-76.4,24,154,2.6,5.2,2,,134,5,1,9
+226,2664,Et-Then Group,1972,"Irving,E., Park,J.K., McGlynn,J.C.",Canad. J. Earth Sci.,9,744-755,North America,"sediments, redbeds",1250,1845,1250,1845,62.3,-111.6,-1,312,8,8,5,4,17,10,14,37
+226,2663,Mackenzie Diabase Combined,1972,"Irving,E., Park,J.K., McGlynn,J.C.",Canad. J. Earth Sci.,9,744-755,North America,"intrusives, diabase",1265,1269,1265,1269,64,-90,1,189,3,3,5,,,,35,150
+226,2662,Mackenzie Diabase,1972,"Irving,E., Park,J.K., McGlynn,J.C.",Canad. J. Earth Sci.,9,744-755,North America,"intrusives, diabase",1265,1269,1265,1269,64,-110,-1,185,6,6,6,,55.5,6.5,8,64
+683,2979,Labrador Dyke,1972,"Murthy,G.S., Deutsch,E.R.",Canad. J. Earth Sci.,9,207-212,North America,"intrusives, meta-lamprophyre dyke",948,986,948,986,54.4,-57.1,18.2,236,8,12,2,,111,9,1,4
+265,2867,Town Mountain Granite,1972,"Spall, H.",Texas Jour.Sci.,23,479-496,North America,"intrusives, granite",1000,1050,1000,1050,31.8,-98.6,-17,197,20,38,2,,12,37,3,17
+2248,5909,Lower Gibralter Formation,1972,"Reid,A.B.","Ph.D Thesis, University of Alberta, Edmonton, Canada",,pp,North America,"sediments, redbeds",1770,1830,1770,1830,62.1,-111.9,40.3,280,23,25,4,,25,13.7,6,24
+239,2669,Western Channel Diabase,1972,"Irving, E., Donaldson, J.A., Park, J.K.",Canad. J. Earth Sci.,9,960-971,North America,"intrusives, diabase",1586,1595,1586,1595,66.4,-117.8,9,245,5.1,8.6,3,,35,6,35,130
+220,2599,Michael Gabbro,1972,"Fahrig, W.F., Larochelle, A.",Canad. J. Earth Sci.,9,1287-1296,North America,"intrusives, gabbro",1350,1560,1350,1560,54.5,-59,10.2,162.5,2,2,3,,161,2.8,21,104
+220,2600,Aillik Dykes,1972,"Fahrig, W.F., Larochelle, A.",Canad. J. Earth Sci.,9,1287-1296,North America,"intrusives, dykes",950,1100,950,1100,55.2,-59.2,27,224,7.1,7.1,3,,60,8.6,6,32
+2246,5897,Rove Slate,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,sediments,1100,1400,1100,1400,48,-89.7,12.6,226.4,22.6,30.6,2,,15,20.6,1,5
+2246,5899,Isle Royale Lavas,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,extrusives,1000,1200,1000,1200,47.9,-89.2,25.6,204.3,9.7,13.8,2,,61,9.9,5,24
+2246,5898,Isle Royale Lavas,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,extrusives,1000,1200,1000,1200,47.9,-89.2,20.6,176.3,5.1,9.5,2,,107,8.9,4,20
+239,2672,Cameron Bay Group,1972,"Irving, E., Donaldson, J.A., Park, J.K.",Canad. J. Earth Sci.,9,960-971,North America,extrusives,1740,1800,1740,1800,66.5,-117.8,1,256,,,2,2,25,,1,3
+239,2671,Hornby Bay Group,1972,"Irving, E., Donaldson, J.A., Park, J.K.",Canad. J. Earth Sci.,9,960-971,North America,"sediments, redbeds",1400,1750,1400,1750,66.5,-117.9,22,265,,,2,,,,1,2
+239,2670,Port Radium Sill,1972,"Irving, E., Donaldson, J.A., Park, J.K.",Canad. J. Earth Sci.,9,960-971,North America,"intrusives, sill",1325,1785,1325,1785,66.4,-117.7,21,276,,,2,,200,,1,3
+2248,5911,McLean Formation,1972,"Reid,A.B.","Ph.D Thesis, University of Alberta, Edmonton, Canada",,pp,North America,"sediments, redbeds",1730,1790,1730,1790,62.1,-111.9,14.6,265.9,30,39.6,4,,13,26.3,4,16
+2248,5910,Seton Formation,1972,"Reid,A.B.","Ph.D Thesis, University of Alberta, Edmonton, Canada",,pp,North America,"sediments, redbeds",1820,1840,1400,1800,62.1,-111.9,34,264.3,26,33,3,,30,14.2,5,20
+2246,5903,Keweenawan Rhyolite,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,"intrusives, rhyolite",950,1050,950,1050,47.2,-88.5,19,178.7,,,2,,37,,2,14
+2246,5900,North Shore Volcanics,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,extrusives,1100,1130,1100,1130,47.7,-90.4,32.6,183.1,2.8,4.4,4,,46,3.6,36,155
+2246,5896,Marquette Range Supergroup,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,sediments,1100,1400,1100,1400,46.5,-90,13.3,204.8,7.9,12.4,2,,88,9.8,1,4
+2246,5894,Portage Lake Volcanics,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,extrusives,1094,1098,1094,1098,47,-88.5,26.5,182.5,1.5,2.7,4,,48.9,2.3,78,360
+2246,5893,Gogebic Rhyolites,1972,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 760,,1-42,North America,"extrusives, rhyolites",1050,1150,1050,1150,46.7,-89.6,22.5,178.5,5.8,10.6,2,,164,9.7,3,13
+683,2977,Indian Harbour Dykes,1972,"Murthy,G.S., Deutsch,E.R.",Canad. J. Earth Sci.,9,207-212,North America,"intrusives, dykes",2032,2116,2032,2116,54.4,-57.1,-6,243,6,12,2,2,15,12,12,12
+677,2976,Gatineau Hills Metamorphic Rocks,1972,"Irving,E., Park,J.K., Roy,J.L.",Nature,236,344-346,North America,"metamorphics, metadiorites",900,1200,900,1200,45.6,-76.7,32,335,8,8,4,,61,5,13,57
+691,2966,Mean Franklin Pole,1972,"Robertson, W.A., Baragar, W.R.A.",Canad. J. Earth Sci.,9,123-140,North America,intrusives,720,726,720,726,65,-115,4.8,165.3,4.7,4.7,5,,,,37,192
+691,2965,Coronation Sills,1972,"Robertson, W.A., Baragar, W.R.A.",Canad. J. Earth Sci.,9,123-140,North America,"intrusives, diabase",720,726,720,726,67.8,-116,-1,163,9,9,5,,11.3,13,13,78
+676,2940,Gila County Diabase,1972,"Helsley,C.E., Spall,H.",J.Geophys.Res.,77,2115-2128,North America,"intrusives, diabase",1120,1180,1120,1180,36.6,-110.6,27,179,6,9,5,,56,7,8,98
+683,2978,Mugford Series Basalts,1972,"Murthy,G.S., Deutsch,E.R.",Canad. J. Earth Sci.,9,207-212,North America,"extrusives, basalts",1350,1500,1350,1500,57.8,-62,49,217,9,11,2,2,41,6,16,16
+218,2483,Nipissing Diabase Dykes,1971,"Symons, D.T.A.",Geol.Surv.Canada Paper 70-63,,19-26,North America,"intrusives, diabase dykes",2215,2223,1900,2100,46,-83,35.5,228.7,20.3,23.9,3,2,16.7,14,6,34
+696,2983,Wind River Dykes,1971,"Spall, H.",Geol.Soc.Amer.Bull.,82,2457-2472,North America,"intrusives, mafic dykes",1880,2060,1880,2060,42.6,-108.8,43,239,23,23,3,,65,11,4,23
+682,2989,Grenville Diabases,1971,"Murthy,G.S.",Canad. J. Earth Sci.,8,802-812,North America,"intrusives, diabases",700,1000,700,1000,46,-78,-3,151,9.5,14.5,3,,14,11.3,11,55
+670,2991,Franklin Diabases,1971,"Fahrig, W.F., Irving, E., Jackson, G.D.",Canad. J. Earth Sci.,8,455-467,North America,"intrusives, diabase",720,726,720,726,63,-94,8,167,5,5,5,,,6,24,115
+264,2919,Johnny Lyon Granodiorite,1971,"Spall, H.",J.Geol.,79,118-122,North America,"intrusives, granodiorite",1615,1695,65,146,32,-110.1,69,172,6,9,2,,30,7,,17
+682,2990,Grenville Diabases,1971,"Murthy,G.S.",Canad. J. Earth Sci.,8,802-812,North America,"intrusives, diabases",700,1000,700,1000,46,-78,60,240,14,14,2,,21,9,12,60
+695,3001,Franklin Mountains Igneous Rocks,1971,"Spall, H.",Phys.Earth Planet.Interiors,4,329-346,North America,"intrusives, extrusives",1085,1155,1085,1155,31.9,-106.4,28,200,5,6,5,,557,4,12,101
+218,2482,Nipissing Diabase Sills,1971,"Symons, D.T.A.",Geol.Surv.Canada Paper 70-63,,19-26,North America,"intrusives, diabase",2215,2223,2215,2223,46,-83,10.2,264.3,31.8,37.4,3,,5.1,22,8,30
+692,2980,Logan Dykes,1971,"Robertson, W.A., Fahrig, W.F.",Canad. J. Earth Sci.,8,1355-1372,North America,"intrusives, dykes",979,1079,979,1079,48.3,-89.1,35,181,4,7,3,,54,5,15,69
+692,2981,Logan Dykes,1971,"Robertson, W.A., Fahrig, W.F.",Canad. J. Earth Sci.,8,1355-1372,North America,"intrusives, dykes",979,1079,979,1079,48.3,-89.1,60,233,41,44,2,,17,23,4,23
+692,2982,Logan Sills,1971,"Robertson, W.A., Fahrig, W.F.",Canad. J. Earth Sci.,8,1355-1372,North America,"intrusives, sills",1106,1112,1106,1112,48.8,-88.9,47,220,12,14,4,,34,8,12,51
+680,2968,"Intrusives, Colorado",1971,"Larson,E.E., Mutschler,F.E.",Geol.Soc.Amer.Bull.,82,1657-1666,North America,intrusives,488,542,299,318,38,-106,40.9,111.7,5.5,11,2,,,5.5,9,18
+642,3062,Michipicoten Island Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1050,1150,1050,1150,47.7,-85.8,28.7,179,5.2,8.7,3,,13.4,7.7,28,40
+649,3071,Nipissing Diabase,1970,"Symons, D.T.A.",Canad. J. Earth Sci.,7,86-90,North America,"intrusives, diabase",2215,2223,2140,2215,47.4,-79.7,-19,272.1,4,6,4,3,60.2,5.4,11,40
+642,3065,Alona Bay Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1050,1150,1050,1150,47.6,-84.7,47.4,232.7,17.1,18.5,2,,21,10.2,3,11
+642,3064,Mamainse Point Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1089,1139,1089,1139,47,-84.7,54.4,212.4,10.6,12.8,3,,19.8,7.5,20,20
+642,3063,Mamainse Point Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1089,1139,1089,1139,47,-84.7,36.8,180.4,3.5,5.3,4,,21.2,4.4,52,52
+642,3059,North Shore Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1100,1130,1100,1130,47.8,-89.9,47,200.2,9.3,11.7,3,,30.5,7.3,14,14
+642,3058,North Shore Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1100,1130,1100,1130,47.5,-91,32.1,187.5,3.6,5.3,4,,23.4,4.1,54,54
+642,3057,Osler Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1050,1150,1050,1150,48.6,-88.1,48.9,203.3,11.7,14.4,2,,24,9,12,24
+642,3056,Logan Sills,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,"intrusives, diabase",1106,1112,1106,1112,49,-89.8,48.4,218.3,5.6,6.4,4,,53.1,3.6,30,48
+600,3046,Stillwater Complex,1970,"Bergh, H.W.","Palaeogeophysics (ed.S.K.Runcorn, Academic Press, London)",,143-158,North America,"intrusives, gabbro, norite",2701,2709,2701,2709,45.4,-110,62,112,8,13,5,3,23.2,10.9,9,96
+648,3041,Pikes Peak Granite,1970,"Spall, H.",Geophys.J.Roy.Astron.Soc.,21,427-440,North America,"intrusives, granite",1030,1050,1030,1050,38.9,-105.3,6,181,4,8,3,,144,7,4,10
+599,3023,Logan Diabase,1970,"Beck, M.E.",J.Geophys.Res.,75,4985-4996,North America,"intrusives, diabase",1077,1105,1077,1105,48,-91.4,25.5,194,7.5,11.5,4,,37.3,9,8,25
+599,3024,Duluth Gabbro,1970,"Beck, M.E.",J.Geophys.Res.,75,4985-4996,North America,"intrusives, gabbro",1077,1105,1077,1105,48,-91.4,33.9,214.4,7,9.5,4,,44.2,6,13,40
+599,3022,Duluth Gabbro,1970,"Beck, M.E.",J.Geophys.Res.,75,4985-4996,North America,"intrusives, gabbro",1077,1105,1077,1105,48,-91.4,32.5,199,10.5,14.5,4,,25.2,10,10,30
+599,3021,Lester River Sill,1970,"Beck, M.E.",J.Geophys.Res.,75,4985-4996,North America,intrusives,1054,1084,1054,1084,46.9,-92,35,199,4,5,4,,78.9,3.5,20,60
+599,3020,Endion Sill,1970,"Beck, M.E.",J.Geophys.Res.,75,4985-4996,North America,intrusives,1054,1084,1054,1084,46.9,-92,31.5,189,5,7.5,4,,53.3,5.5,14,45
+599,3019,Keweenawan Intrusives,1970,"Beck, M.E.",J.Geophys.Res.,75,4985-4996,North America,"intrusives, anorthositic gabbro",1077,1105,1077,1105,46.9,-92,36.5,190,2.5,4,4,,116.2,3,24,80
+599,3018,Keweenawan Intrusives,1970,"Beck, M.E.",J.Geophys.Res.,75,4985-4996,North America,"intrusives, anorthositic gabbro",1077,1105,1077,1105,46.9,-92,42,191,7.5,10,4,,39.8,7,12,40
+642,3061,Gargantua Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1050,1150,1050,1150,47.6,-85,72.1,223.3,8.4,9.5,3,,89.8,5.5,9,11
+642,3060,Gargantua Volcanics,1970,"Palmer, H.C.",Canad. J. Earth Sci.,7,1410-1436,North America,extrusives,1050,1150,1050,1150,47.6,-85,33.9,179.7,5.5,8.6,2,,58.3,7.3,8,14
+2245,5885,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.7,-79.8,38.4,9.3,,,2,2,,,19,55
+2245,5886,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.7,-79.8,57.2,312.4,,,2,2,,,16,42
+2245,5887,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.6,-79.9,-21.4,271.9,,,2,2,,,3,7
+2245,5888,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.5,-81,2.6,285.3,,,2,2,,,25,74
+2245,5889,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.4,-81.2,2.5,281.2,,,2,,,,10,24
+2245,2230,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.5,-81.5,22,227.3,,,2,2,,,5,10
+579,3186,Croker Island Complex,1969,"Palmer, H.C.",Canad. J. Earth Sci.,6,213-218,North America,"intrusives, gabbro, granite",1425,1525,1425,1525,46.1,-82.2,5.4,217.2,6.7,10.5,0,,13.7,8.5,19,23
+568,3187,Mackenzie Dykes,1969,"Fahrig, W.F., Jones, D.L.",Canad. J. Earth Sci.,6,679-688,North America,intrusives,1265,1269,1265,1269,60,-100,3.5,193.1,4,4,4,,,3,14,63
+2253,5926,Iron Mountain Ore Deposit,1969,"Ehrlick,M., Sun,S., Scharon,L., Soffel,H.C.",Trans.Inst.Min.Metal.B,78,114-122,North America,"sediments, hematite ore",1000,2500,1000,2500,37.7,-90.6,-30.7,222.7,4.4,8.5,3,,,8.2,,25
+2245,5880,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.6,-81.4,46.3,214.1,,,2,2,,,24,86
+2245,5881,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.6,-81.4,50.5,203.5,,,2,2,,,16,54
+2250,5916,Mackenzie Dykes,1969,"Robertson, W.A.",Geol.Surv.Canada Bull.,167,1-51,North America,"intrusives, diabase",1267,1269,1265,1269,67,-116,4,202,9.8,16.6,3,,4,15,26,54
+548,3153,Beaver Bay Complex,1969,"Beck, M.E., Lindsley, N.C.",J.Geophys.Res.,74,2002-2013,North America,"intrusives, gabbro",1077,1105,1077,1105,47,-91.5,27.5,189.5,3.5,5.5,4,,36,4.5,29,80
+548,3154,Duluth Gabbro,1969,"Beck, M.E., Lindsley, N.C.",J.Geophys.Res.,74,2002-2013,North America,"intrusives, gabbro",1077,1105,1077,1105,48,-90.5,48,183,8,11,4,,47,7.5,7,39
+2245,5882,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.6,-81.3,54.8,223.1,,,2,2,,,5,11
+2245,5883,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.6,-81.3,53.9,245.6,,,2,2,,,5,10
+2245,5884,Sudbury Eruptive,1969,"Larochelle,A.",Geol.Surv.Canada Paper 69-19,,1-23,North America,"intrusives, norite, pegmatite",1200,1800,1200,1800,46.7,-81,54,284.1,,,2,2,,,3,6
+537,3279,Nonesuch Shale and Freda Sandstone,1968,"Vincenz, S.A., Yaskawa, K.",J.Geophys.Res.,73,2753-2767,North America,"sediments, shale, sandstone",1000,1092,1000,1092,47,-88.5,7,176,7,14,4,,30.8,14,5,
+604,5895,South Trap Range Lavas,1968,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 600-D,,D248-D254,North America,extrusives,1050,1150,1050,1150,45,-90,9.8,199.6,7.8,13.4,3,,29,11.4,7,36
+604,3092,North Shore Volcanics,1968,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 600-D,,D248-D254,North America,extrusives,1100,1130,1100,1130,45,-90,44.5,197,5,6,4,,129.4,4,11,52
+417,3274,Sherman granite,1968,"Eggler,D.H., Larson,E.E.",Geophys.J.Roy.Astron.Soc.,14,497-504,North America,"intrusives, granite, andesite dyke",1380,1440,1380,1440,41,-105.4,-8,209,3.6,5.5,2,,86.4,4.3,5,14
+536,3277,Portage Lake Volcanics,1968,"Vincenz, S.A.",J.Geophys.Res.,73,2729-2752,North America,extrusives,1094,1098,1094,1098,47,-88.5,24,183,6,10,4,,22.1,9,14,18
+537,3278,Copper Harbor Lavas,1968,"Vincenz, S.A., Yaskawa, K.",J.Geophys.Res.,73,2753-2767,North America,extrusives,1046,1200,1046,1200,47,-88.5,13,176,6,12,4,,29.7,12,6,
+523,3317,Wichita Granites,1968,"Spall, H.",Oklahoma Geol.Surv.Notes,28,65-80,North America,"intrusives, granites",500,550,500,550,34.8,-99,2,147,6,9,4,,,8.5,18,120
+523,3318,Arbuckle Granite,1968,"Spall, H.",Oklahoma Geol.Surv.Notes,28,65-80,North America,"intrusives, granite, diorite",1320,1400,1320,1400,34.3,-96.7,17,210,7,11,2,,,7.5,,15
+505,3338,Michikamau Intrusion,1968,"Murthy,G.S., Fahrig,W.F., Jones,D.L.",Canad. J. Earth Sci.,5,1139-1144,North America,"intrusives, anorthosite",1455,1465,1455,1465,54.5,-64,-0.6,215.3,4.9,9.8,4,,34.9,9.7,6,29
+604,3090,Portage Lake Volcanics,1968,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 600-D,,D248-D254,North America,extrusives,1094,1098,1094,1098,45,-90,27,181,2,4,4,,105.8,2.6,29,145
+604,3091,South Trap Range Lavas,1968,"Books,K.G.",U.S.Geol.Surv.Prof.Paper 600-D,,D248-D254,North America,extrusives,1050,1150,1050,1150,45,-90,29,232.5,6.8,7.9,3,,71.1,4.8,14,61
+449,3417,Nipissing Diabase,1967,"Symons, D.T.A.",Canad. J. Earth Sci.,4,1161-1169,North America,"intrusives, diabase sill",2217,2223,2215,2223,47,-79,-11.9,254.4,5.7,9,4,4,37.6,7.2,1,12
+449,3418,Cobalt Group Sediments,1967,"Symons, D.T.A.",Canad. J. Earth Sci.,4,1161-1169,North America,sediments,2150,2650,2150,2650,47,-79,21.5,262.5,23.8,26.4,3,3,15.4,14.6,4,8
+528,3655,Negaunee Iron Ores,1967,"Symons, D.T.A.",Econ.Geol.,62,118-137,North America,"sediments, iron ores",1600,2500,1600,2500,46.5,-87.6,-8,216,10,19,2,2,10,17,,8
+408,3369,"Basement rocks, Wichita Mountains",1967,"Ku,C-C., Sun,S., Soffel,H., Scharon,L.",J.Geophys.Res.,72,731-737,North America,"intrusives, granite, gabbro, extrusives",520,560,290,363,34.8,-99.9,33.4,133.9,12.5,12.5,3,,11.3,14.7,8,28
+448,5867,Steep Rock Iron Ores,1967,"Symons, D.T.A.",Canad. J. Earth Sci.,4,1-20,North America,"sediments, iron ores",2500,2900,2500,2900,48.8,-91.6,-12,204,4.7,9.2,2,2,,9,9,9
+448,5866,Steep Rock Iron Ores,1967,"Symons, D.T.A.",Canad. J. Earth Sci.,4,1-20,North America,"sediments, iron ores",2500,2900,2500,2900,48.8,-91.6,19,208,9.6,13.8,2,2,,10,15,15
+528,3308,Cambrian Sandstone,1967,"Symons, D.T.A.",Econ.Geol.,62,118-137,North America,"sediments, red sandstones",488,542,488,542,46,-88,15,141,24,45,2,,6,40,,3
+527,5905,Soudan Formation,1967,"Symons, D.T.A.",Canad. J. Earth Sci.,4,449-460,North America,"sediments, iron ores, metamorphics",1600,2500,1600,2500,47.9,-92.1,39,239,8,16,2,2,13,16,1,5
+527,3306,Soudan Formation,1967,"Symons, D.T.A.",Canad. J. Earth Sci.,4,449-460,North America,"sediments, iron ores, metamorphics",1600,2500,1600,2500,47.9,-92.1,37.8,234.2,11.4,11.4,2,,25,51.9,2,9
+527,3305,Soudan Formation,1967,"Symons, D.T.A.",Canad. J. Earth Sci.,4,449-460,North America,"sediments, iron ores, metamorphics",1600,2500,1600,2500,47.9,-92.1,51,240.7,36.4,37.8,2,2,16,19.6,5,31
+528,3654,Negaunee Iron Ores,1967,"Symons, D.T.A.",Econ.Geol.,62,118-137,North America,"sediments, iron ores",1600,2500,1600,2500,46.5,-87.6,-33,285,19,36,2,2,4,35,,6
+528,3309,Keweenawan diorite,1967,"Symons, D.T.A.",Econ.Geol.,62,118-137,North America,"intrusives, diorite",1100,1300,1100,1300,45.5,-87.9,28,238,44,49,2,,8,28,1,4
+528,3656,Keweenawan diorite,1967,"Symons, D.T.A.",Econ.Geol.,62,118-137,North America,"intrusives, diorite",1100,1300,1100,1300,46.5,-87.8,,247,,,2,,4,40,1,4
+425,3406,Lac Allard Anorthosite,1967,"Hargraves,R.B., Burt,D.M.",Canad. J. Earth Sci.,4,357-369,North America,"intrusives, anorthosite, norite",900,1100,900,1100,51,-63,-38.6,140.4,18,18,4,,88.3,9.8,4,112
+433,3407,Sudbury Dykes,1967,"Larochelle,A.",Canad. J. Earth Sci.,4,323-332,North America,"intrusives, diabase",1232,1242,1232,1242,46.4,-81.5,-2,189,1.5,3,3,,52,3,11,53
+526,3299,Gunflint Iron Formation,1966,"Symons, D.T.A.",Econ.Geol.,61,1336-1361,North America,"sediments, iron formation",1700,2300,1700,2300,48.5,-89.2,28,266,16,17,2,3,14,9,20,20
+281,3435,St.Francois Mountains Volcanics,1966,"Hsu,I.C., Anderson,R.E., Scharon,L.",J.Geophys.Res.,71,2645-2650,North America,"extrusives, pyroclastics, tuffs",1300,1400,1300,1400,37.6,-90.7,-1.3,217.6,3.7,5.6,4,,110,4.4,11,49
+301,3439,St. Francois Mountains Volcanics,1966,"Hays,W.W., Scharon,L.",J.Geophys.Res.,71,553-560,North America,"intrusives,diabase,extrusives,rhyolites",1300,1400,1300,1400,37.5,-90.5,-1.3,216.7,7.8,12.2,3,,65,9.6,5,95
+312,3464,"Superior Province Dykes, West Directions",1966,"Larochelle,A.",Canad. J. Earth Sci.,3,671-683,North America,"intrusives, dykes",2125,2175,2125,2175,48.5,-78.5,27,226,5.7,7.4,5,3,102,4.8,10,83
+312,3465,"Superior Province Dykes, N directions",1966,"Larochelle,A.",Canad. J. Earth Sci.,3,671-683,North America,"intrusives, diabases",1600,2500,1600,2500,48.5,-78.5,24,107,,,3,3,39,,2,13
+312,3466,"Superior Province Dykes, SW directions",1966,"Larochelle,A.",Canad. J. Earth Sci.,3,671-683,North America,"intrusives, diabases",1600,2500,1600,2500,48.5,-78.5,-22,238,6.8,13.3,3,3,53,12.9,4,14
+557,3166,Mellon Gabbro,1966,"Books,K.W., White,W.S., Beck,M.E.",U.S.Geol.Surv.Prof.Paper 550-D,,D117-D124,North America,"intrusives, gabbro",1077,1105,1077,1105,46.5,-91,36,184.5,9.5,14.6,3,,13.5,11.2,14,67
+290,3491,"Superior Province Dykes, West directions",1965,"Fahrig, W.F., Gaucher, E.H., Larochelle, A.",Canad. J. Earth Sci.,2,278-298,North America,"intrusives, diabases",2125,2175,2125,2175,48,-78.5,32.3,228.2,8.9,11,4,3,35,6.8,14,55
+290,3492,Matachewan Dykes,1965,"Fahrig, W.F., Gaucher, E.H., Larochelle, A.",Canad. J. Earth Sci.,2,278-298,North America,"intrusives, diabases",2450,2455,2450,2455,48,-81,37.2,59.2,6.3,12.5,3,3,4,12.4,,39
+487,3551,Beaver Bay Complex,1965,"Jahrein,C.E.",Geophysics,30,858-874,North America,"extrusives, basalts",1077,1105,1077,1105,47,-91,30,180,20,33,3,,12,28,4,19
+290,3497,Mackenzie Dykes,1965,"Fahrig, W.F., Gaucher, E.H., Larochelle, A.",Canad. J. Earth Sci.,2,278-298,North America,"intrusives, diabases",1265,1269,1265,1269,65,-112,3.8,182.7,5.9,11,3,,7,10.2,23,34
+290,3496,Sudbury Dykes,1965,"Fahrig, W.F., Gaucher, E.H., Larochelle, A.",Canad. J. Earth Sci.,2,278-298,North America,"intrusives, diabases",1232,1242,1232,1242,47,-82,-3.8,193.5,6.6,13.2,3,,4,13.2,22,37
+487,3550,Duluth Diabase,1965,"Jahrein,C.E.",Geophysics,30,858-874,North America,"intrusives, diabase",1077,1105,1077,1105,47,-92,34,185,14,22,3,,30,17,4,21
+487,3549,Duluth Gabbro,1965,"Jahrein,C.E.",Geophysics,30,858-874,North America,"intrusives, gabbro",1077,1105,1077,1105,47,-92,31,182,5,7,3,,120,6,7,23
+290,3493,Matachewan Dykes,1965,"Fahrig, W.F., Gaucher, E.H., Larochelle, A.",Canad. J. Earth Sci.,2,278-298,North America,"intrusives, diabases",2450,2455,2450,2455,48,-81,62.9,61.2,13.3,21.6,3,3,6,17.5,,15
+290,3494,Marathon Dykes,1965,"Fahrig, W.F., Gaucher, E.H., Larochelle, A.",Canad. J. Earth Sci.,2,278-298,North America,"intrusives, diabases",2107,2131,2107,2131,49,-86,29,213.2,12.2,16,3,3,25,10.5,5,9
+290,3495,Molson Dykes,1965,"Fahrig, W.F., Gaucher, E.H., Larochelle, A.",Canad. J. Earth Sci.,2,278-298,North America,"intrusives, diabases",1345,1545,1345,1545,55,-96,37.2,252,27.2,28.4,2,,27.5,14.8,4,5
+342,5840,Grenville Dykes,1964,"Strangway,D.W.",J.Geol.,72,648-663,North America,intrusives,900,1200,900,1200,49,-79,33,91,11.1,21.5,2,2,14,21,5,73
+342,3488,Superior Province Dykes,1964,"Strangway,D.W.",J.Geol.,72,648-663,North America,"intrusives, diabases",2125,2175,2125,2175,48,-79,17,228,14,14,4,2,40,12,5,35
+342,3489,Matachewan Dykes,1964,"Strangway,D.W.",J.Geol.,72,648-663,North America,"intrusives, diabases",2450,2455,2450,2455,48,-79,54,71,3,6,4,3,24,5,,31
+342,3490,Matachewan Dykes,1964,"Strangway,D.W.",J.Geol.,72,648-663,North America,"intrusives, diabases",2450,2455,2450,2455,48,-79,45,81,22,22,3,3,12,23,5,43
+337,3498,"Belt Supergroup, Missoula Group",1964,"Runcorn,S.K.",Geol.Soc.Amer.Bull.,75,687-704,North America,sediments,760,1740,760,1740,48,-114,-19,207,3,6,2,,19.2,6,1,39
+337,3499,"Belt Supergroup, Grinnell Formation",1964,"Runcorn,S.K.",Geol.Soc.Amer.Bull.,75,687-704,North America,sediments,760,1740,760,1740,48,-114,-17,181,8,16,2,,11.8,16,1,9
+337,3500,Hakatai Shales,1964,"Runcorn,S.K.",Geol.Soc.Amer.Bull.,75,687-704,North America,"sediments, shales",900,1600,900,1600,36,-112,12,227,7,7,2,,152,4,1,9
+337,3501,"Sedimentary Rocks, Utah and Arizona",1964,"Runcorn,S.K.",Geol.Soc.Amer.Bull.,75,687-704,North America,"sediments, shales, limestones",900,1600,900,1600,36.5,-111,-20,205.5,14.4,24.6,3,,11.1,21.1,6,72
+337,3502,Barron and Sioux Quartzite,1964,"Runcorn,S.K.",Geol.Soc.Amer.Bull.,75,687-704,North America,"sediments, redbeds",900,1600,900,1600,44.5,-93,22.9,246.8,38.9,38.9,2,,17.3,22.7,4,33
+276,3527,Bradore Formation,1964,"Black,R.F.",Nature,202,945-948,North America,sediments,513,542,513,542,50.8,-57.1,9,148.8,7.4,11.8,2,,27.4,9.4,,10
+276,3528,Ratcliffe-Brook Formation,1964,"Black,R.F.",Nature,202,945-948,North America,sediments,513,542,513,545,45,-67,10,124,14.3,20.6,2,,9.5,14.9,,12
+342,5839,Grenville Dykes,1964,"Strangway,D.W.",J.Geol.,72,648-663,North America,intrusives,900,1200,900,1200,49,-79,-35.8,175,12.6,17.6,3,,40,12.3,5,35
+986,3557,Belt Supergroup,1963,"Black,R.F.",Geol.Surv.Canada Bull.,83,1-31,North America,"sediments,redbeds,intrusives,extrusives",1100,1400,1100,1400,49,-114,-18,213,9,16,3,,21,14,19,73
+1013,3577,Sudbury Eruptive,1963,"Sopher,S.R.",Geol.Surv.Canada Bull.,90,34pp,North America,"intrusives, norite, gabbro",1200,1800,1200,1800,46.5,-81.1,58,230,8,9,3,2,,5,30,68
+1013,3578,Sudbury Eruptive,1963,"Sopher,S.R.",Geol.Surv.Canada Bull.,90,34pp,North America,"intrusives, norite, gabbro",1200,1800,1200,1800,46.5,-81.1,3,284,5,6,3,2,,4,26,39
+1013,3579,Sudbury Dyke,1963,"Sopher,S.R.",Geol.Surv.Canada Bull.,90,34pp,North America,"intrusives, diabase",1232,1242,1232,1242,46.5,-81,-8,197,4,7,4,,35,7,2,13
+991,3564,Sault Ste.Marie Sandstone,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,sediments,1000,1100,1000,1100,47,-84.5,31,164.5,8.5,17.5,2,,24.8,17,2,4
+991,3565,Duluth Gabbro,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,"intrusives, gabbro",1077,1105,1077,1105,47,-92,23.5,179.5,6,9.5,3,,17,8.5,9,18
+991,3566,Mamainse Point Lavas,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,extrusives,1089,1139,1089,1139,47,-84.5,31.5,187.5,9,12,3,,19.2,10,,12
+991,3567,Alona Bay Lavas,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,extrusives,1050,1150,1050,1150,47,-84.5,39,265,25,25,2,,11.6,13.5,,12
+991,3568,Logan Diabase,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,"intrusives, diabases",1077,1105,1077,1105,48.5,-89,53.5,230,8,8,4,,13.2,4.5,18,80
+991,3569,Logan Diabase,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,"intrusives, diabases",1077,1105,1077,1105,48,-89.5,33,188.5,5.5,8.5,4,,21.1,6.5,15,25
+991,3570,Sibley Group,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,sediments,1320,1420,1320,1420,48.5,-89,16,211,7.5,9.5,2,,23.1,7.5,4,18
+991,5872,Copper Harbor Lavas,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,extrusives,1050,1200,1050,1200,47,-88.5,29,176,4,7,3,,20,7,4,25
+991,3561,Orienta Sandstone,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,"sediments, sandstones",900,1600,900,1600,47,-91,,176,11,22,2,,6.5,22,3,8
+991,3562,Eileen Sandstone,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,"sediments, sandstones",1000,1200,1000,1200,47,-91,13,150.5,3.5,7,3,,18,6.5,5,28
+991,3563,Jacobsville Formation,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,"sediments, sandstones",1000,1100,1000,1100,47,-84.5,5,164,7,15,2,,10.5,14,2,14
+991,5873,Portage Lake Volcanics,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,extrusives,1000,1100,1000,1100,47,-88.5,26,191,3,5,3,,47,4,6,31
+991,3571,Keweenawan Sandstone Dykes,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,sediments,1000,1100,1000,1100,47,-84.5,19,237,33.6,41.4,2,,13.7,25.5,2,4
+991,3572,Grenville Metamorphics,1962,"Du Bois,P.M.",Geol.Surv.Canada Bull.,71,75pp,North America,"metamorphics, gneiss, pyroxenites",900,1100,900,1100,45,-78.5,-9.6,163.7,9.3,14,2,,12,11.4,3,16
+920,3613,Sudbury Eruptive,1961,"Hood,P.J.",J.Geophys.Res.,66,1235-1241,North America,"intrusives, norite",1200,1800,1200,1800,46.5,-81,8,278,2,3,3,2,49,2,,33
+920,3612,Sudbury Eruptive,1961,"Hood,P.J.",J.Geophys.Res.,66,1235-1241,North America,"intrusives, norite",1200,1800,1200,1800,46.6,-81.4,64,219,8,9,2,2,20,5,,14
+941,3631,Kintla Formation,1961,"Norris,D.K., Black,R.F.",Nature,192,933-935,North America,"sediments, redbeds",1100,1400,1100,1400,49,-114.3,7,28,,,3,,111,,3,59
+897,5927,Bass Limestone and Hakatai Shale,1960,"Cox,A., Doell,R.R.",Geol.Soc.Amer.Bull.,71,645-768,North America,"sediments, limestone, shale",900,1600,900,1600,36,-112,-4,232,27,33,2,,6,21,,10
+861,3688,Belt Supergroup,1960,"Collinson,D.W., Runcorn,S.K.",Geol.Soc.Amer.Bull.,71,915-958,North America,"sediments, redbeds",1100,1400,1100,1400,48,-114,-9,209,8.7,14.1,3,,35,12,6,109
+861,3687,Lodore Formation,1960,"Collinson,D.W., Runcorn,S.K.",Geol.Soc.Amer.Bull.,71,915-958,North America,sediments,488,542,488,542,41,-110,27,2,4,7,2,,,7,,11
+861,3686,Deadwood Formation,1960,"Collinson,D.W., Runcorn,S.K.",Geol.Soc.Amer.Bull.,71,915-958,North America,sediments,488,542,488,542,42,-107,47,117,4,7,2,,16,7,1,7
+861,3690,Bonito Canyon Quartzite,1960,"Collinson,D.W., Runcorn,S.K.",Geol.Soc.Amer.Bull.,71,915-958,North America,"sediments, redbeds",900,1600,900,1600,36,-109,-33,214,2,4,2,,19,4,,16
+861,3689,Grand Canyon Series,1960,"Collinson,D.W., Runcorn,S.K.",Geol.Soc.Amer.Bull.,71,915-958,North America,"sediments, limestone, redbeds, shales",900,1600,900,1600,36,-112,-3,203,26,26,2,,12,23,5,67
+830,3757,Signal Hill and Blackhead Sandstone,1959,"Nairn, A.E.M., Frost, C.V., Light, B.G.",Nature,183,596-597,North America,sediments,650,1600,650,1600,47.55,-52.67,11,238,10,16,1,,8,14,2,19
+921,3624,Tudor Gabbro,1958,"Hood,P.J.","Ph.D Thesis, Univ. of Toronto, Canada",,200pp,North America,"intrusives, gabbro",1090,1130,1090,1130,44.5,-77.5,42,149,5,9,3,,5,9,,11
+921,3623,Boulter Intrusion,1958,"Hood,P.J.","Ph.D Thesis, Univ. of Toronto, Canada",,200pp,North America,intrusives,1000,1100,1000,1100,45,-77.5,42,203,5,7,2,,19,5,,8
+814,3769,Hazel Formation,1958,"Howell,L.G., Martinez,J.D., Statham,E.H.",Geophysics,23,285-298,North America,sediments,650,1600,650,1600,31,-105,53,187,7,9,2,,35,6,5,15
+921,3625,Thanet Gabbro,1958,"Hood,P.J.","Ph.D Thesis, Univ. of Toronto, Canada",,200pp,North America,"intrusives, gabbro",1192,1212,1192,1212,45,-77.5,-28,157,18,22,3,,5,14,,6
+921,3626,Umfraville Gabbro,1958,"Hood,P.J.","Ph.D Thesis, Univ. of Toronto, Canada",,200pp,North America,"intrusives, gabbro",1160,1200,1160,1200,45,-78,-1,158,7,10,3,,8,7,,12
+384,3768,Freda Sandstone and Nonesuch Shale,1957,"Du Bois,P.M.",Adv.in Phys.,6,177-186,North America,"sediments, redbeds",1000,1092,1000,1092,47,-88.5,9,170,1.5,3,3,,26,3,12,68
+384,5891,Jacobsville Sandstone,1957,"Du Bois,P.M.",Adv.in Phys.,6,177-186,North America,"sediments, redbeds",1000,1100,1000,1100,47,-88.5,-17.5,194,6.5,13,2,,11,13,,15
+384,5890,Chequamegon Sandstone,1957,"Du Bois,P.M.",Adv.in Phys.,6,177-186,North America,"sediments, sandstones",1000,1200,1000,1200,47,-88.5,69,313,10,11,2,,47,6,2,15
+392,3767,Baraga County Dykes,1953,"Graham, J.W.",J.Geophys.Res.,58,243-260,North America,intrusives,1100,1200,1100,1200,46.5,-88.5,45,261,2,2,3,,82,1,2,36

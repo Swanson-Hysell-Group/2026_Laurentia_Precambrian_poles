@@ -1,0 +1,23 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+43	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	326	0	6	43	4					Site-mean directions from Irving and McGlynn (1979).
+44	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	335	-4	4	41	5					Site-mean directions from Irving and McGlynn (1979).
+50	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	0	-84	5	29	5					Site-mean directions from Irving and McGlynn (1979).
+51	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	178	29	5	47	3					Site-mean directions from Irving and McGlynn (1979).
+53	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	196	8	16	13	5					Site-mean directions from Irving and McGlynn (1979).
+54	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	8	25	12	28	3					Site-mean directions from Irving and McGlynn (1979).
+1040	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	281	31	20	17	3					Site-mean directions from Irving and McGlynn (1979).
+1041	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	278	39	5	47	2					Site-mean directions from Irving and McGlynn (1979).
+1050	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	173	11	4	40	3					Site-mean directions from Irving and McGlynn (1979).
+1051	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	213	16	9	32	2					Site-mean directions from Irving and McGlynn (1979).
+1052	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	156	33	5	49	3					Site-mean directions from Irving and McGlynn (1979).
+1053	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	185	32	11	40	2					Site-mean directions from Irving and McGlynn (1979).
+1060	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	190	14	3	35	5					Site-mean directions from Irving and McGlynn (1979).
+1061	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	195	29	42	12	3					Site-mean directions from Irving and McGlynn (1979).
+1062	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	184	26	5	36	3					Site-mean directions from Irving and McGlynn (1979).
+1063	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	169	5	4	68	3					Site-mean directions from Irving and McGlynn (1979).
+1064	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	175	27	3	67	3					Site-mean directions from Irving and McGlynn (1979).
+1065	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	170	26	5	33	3					Site-mean directions from Irving and McGlynn (1979).
+1066	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	168	20	7	50	2					Site-mean directions from Irving and McGlynn (1979).
+1070	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	184	11	80	5	5					Site-mean directions from Irving and McGlynn (1979).
+1071	Takiyuak Formation	i	g	DE-FM	Irving1979Takiyuak	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	192	42	11	17	4					Site-mean directions from Irving and McGlynn (1979).

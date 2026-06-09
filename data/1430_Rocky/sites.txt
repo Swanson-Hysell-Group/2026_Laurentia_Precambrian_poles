@@ -1,0 +1,126 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description	strike	dip	n	N
+LI	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.8	254.670	1430		1415	1445	Ma	0	48.3	-55.8	215	5.2	10					An	110	50	5	10
+LI	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.8	254.670	1430		1415	1445	Ma	100	35.6	-8.8	215	5.2	10	-0.3	217.600			An	110	50	5	10
+L2	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.782	254.675	1430		1415	1445	Ma	0	40.4	-39	46	7.2	10					An	0	50	10	10
+L2	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.782	254.675	1430		1415	1445	Ma	100	345	-52.2	46	7.2	10	-16.1	215.900			An	0	50	10	10
+L3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.708	254.483	1430		1415	1445	Ma	0	47.1	-53.6	51	7.4	8					Sy	240	23	7	8
+L3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.708	254.483	1430		1415	1445	Ma	100	78.4	-52.4	51	7.4	8	-2.7	217.200			Sy	240	23	7	8
+Lal	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.701	254.499	1430		1415	1445	Ma	0	46.1	-40.4	93	6.3	8					Sy	0	0	7	8
+Lal	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.701	254.499	1430		1415	1445	Ma	100	46.1	-40.4	93	6.3	8	-12.4	211.900			Sy	0	0	7	8
+La2	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.709	245.511	1430		1415	1445	Ma	0	43.4	-48.9	174	3.5	11					Sy	246	30	11	11
+La2	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.709	245.511	1430		1415	1445	Ma	100	80.6	-51.2	174	3.5	11	-8	217.600			Sy	246	30	11	11
+La3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.709	254.525	1430		1415	1445	Ma	0	44.1	-49.5	229	4	7					Sy	246	30	7	7
+La3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.709	254.525	1430		1415	1445	Ma	100	81.8	-51.2	229	4	7	-7.2	217.400			Sy	246	30	7	7
+La4	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.718	254.538	1430		1415	1445	Ma	0	36.8	-47.5	116	6.3	6					Sy	208	50	6	6
+La4	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.718	254.538	1430		1415	1445	Ma	100	71.4	-23.2	116	6.3	6	-11.9	222.100			Sy	208	50	6	6
+La5	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	51.78	254.650	1430		1415	1445	Ma	0	24.5	-41.5	26	15.3	7					An	280	35	5	7
+La5	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	51.78	254.650	1430		1415	1445	Ma	100	51.2	-73.5	26	15.3	7	-20.6	230.700			An	280	35	5	7
+La6	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.78	254.652	1430		1415	1445	Ma	0	42.6	-39.2	29	11.5	8					An	280	35	7	8
+La6	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.78	254.652	1430		1415	1445	Ma	100	77.6	-63.1	29	11.5	8	-14.9	214.200			An	280	35	7	8
+La7	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.778	254.651	1430		1415	1445	Ma	0	53.1	-50.8	88	6.5	8					An	280	35	7	8
+La7	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.778	254.651	1430		1415	1445	Ma	100	108.7	-64.1	88	6.5	8	-1.9	211.600			An	280	35	7	8
+La8	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.782	254.652	1430		1415	1445	Ma	0	59.7	-50	12	18.1	9					Tr	280	35	7	9
+La8	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.782	254.652	1430		1415	1445	Ma	100	111.4	-39.8	12	18.1	9	1	206.700			Tr	280	35	7	9
+La9	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.777	254.655	1430		1415	1445	Ma	0	47.2	-54.2	40	8.2	9					An	278	25	9	9
+La9	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.777	254.655	1430		1415	1445	Ma	100	87.6	-67.9	40	8.2	9	-2.1	217.500			An	278	25	9	9
+La11	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.735	254.563	1430		1415	1445	Ma	0	54.5	-43.2	55	7	9					Sy	192	50	9	9
+La11	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.735	254.563	1430		1415	1445	Ma	100	69.4	-3.6	55	7	9	-6.3	206.800			Sy	192	50	9	9
+La14	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.709	254.515	1430		1415	1445	Ma	0	30.6	-48.1	202	3.6	9					Sy	203	20	9	9
+La14	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.709	254.515	1430		1415	1445	Ma	100	50	-42	202	3.6	9	-13.7	227.400			Sy	203	20	9	9
+La15	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.713	254.525	1430		1415	1445	Ma	0	71.8	-58.3	51	9.5	7					An xen	45	21	5	7
+La15	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.713	254.525	1430		1415	1445	Ma	100	34.9	-61.5	51	9.5	7	13.8	205.100			An xen	45	21	5	7
+La16	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.716	254.539	1430		1415	1445	Ma	0	37.1	-51.9	120	4.4	10					Sy	28	25	10	10
+La16	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.716	254.539	1430		1415	1445	Ma	100	6.2	-49	120	4.4	10	-8.3	223.700			Sy	28	25	10	10
+La17	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.719	254.542	1430		1415	1445	Ma	0	41.1	-48.4	476	2.5	8					Sy	235	35	8	8
+La17	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.719	254.542	1430		1415	1445	Ma	100	79.8	-44.8	476	2.5	8	-9.4	219.100			Sy	235	35	8	8
+La18	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.732	254.549	1430		1415	1445	Ma	0	29.8	-48.4	46	8.3	8					Sy	206	50	8	8
+La18	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.732	254.549	1430		1415	1445	Ma	100	68.2	-26.5	46	8.3	8	-13.7	228.100			Sy	206	50	8	8
+La19	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.738	254.571	1430		1415	1445	Ma	0	31.1	-51.3	34	14	9					An	195	50	9	9
+La19	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.738	254.571	1430		1415	1445	Ma	100	64.7	-21.6	34	14	9	-10.9	228.100			An	195	50	9	9
+La25	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.77	254.639	1430		1415	1445	Ma	0	70.4	-36.4	147	4.3	10					An	275	45	9	10
+La25	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.77	254.639	1430		1415	1445	Ma	100	109	-41	147	4.3	10	-0.3	192.500			An	275	45	9	10
+La26	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.764	254.626	1430		1415	1445	Ma	0	38.2	-48.9	58	8	8					An	278	45	7	8
+La26	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.764	254.626	1430		1415	1445	Ma	100	119.6	-69.2	58	8	8	-10.2	221.600			An	278	45	7	8
+La27	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.758	254.610	1430		1415	1445	Ma	0	48.3	-53.6	37	10	9					An	235	50	7	9
+La27	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.758	254.610	1430		1415	1445	Ma	100	99.1	-34.8	37	10	9	-2.7	217.200			An	235	50	7	9
+La28	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.751	254.598	1430		1415	1445	Ma	0	50.1	-43.8	48	8	8					An	192	55	8	8
+La28	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.751	254.598	1430		1415	1445	Ma	100	67.4	-36.6	48	8	8	-8.3	210.300			An	192	55	8	8
+La29	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.645	254.515	1430		1415	1445	Ma	0	37	-43.3	194	3.7	9					Sy	250	50	9	9
+La29	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.645	254.515	1430		1415	1445	Ma	100	93.9	-48.1	194	3.7	9	-14.8	220.300			Sy	250	50	9	9
+La30	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.392	254.559	1430		1415	1445	Ma	0	34.3	-52	293	3.2	8					An	0	0	8	8
+La30	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.392	254.559	1430		1415	1445	Ma	100	34.3	-52	293	3.2	8	-9.2	225.900			An	0	0	8	8
+La34	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.775	254.653	1430		1415	1445	Ma	0	40.6	-50.4	68	9.8	5					An	280	35	3	5
+La34	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.775	254.653	1430		1415	1445	Ma	100	98.7	-71.1	68	9.8	5	-8.1	220.400			An	280	35	3	5
+La35	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.773	254.654	1430		1415	1445	Ma	0	60.1	-50.9	94	7.2	6					An	280	35	4	6
+La35	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.773	254.654	1430		1415	1445	Ma	100	113.2	-41.2	94	7.2	6	1.8	207.000			An	280	35	4	6
+La36	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.778	254.590	1430		1415	1445	Ma	0	43.7	-54.3	34	8.9	11					An	278	25	9	11
+La36	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.778	254.590	1430		1415	1445	Ma	100	83.8	-69.4	34	8.9	11	-3.6	220.000			An	278	25	9	11
+La37	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.725	254.541	1430		1415	1445	Ma	0	46.5	-44.3	126	5.4	7					An	240	25	7	7
+La37	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.725	254.541	1430		1415	1445	Ma	100	71.7	-44.7	126	5.4	7	-9.8	213.200			An	240	25	7	7
+La24	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.849	254.658	1430		1415	1445	Ma	0	84.6	-41	30	9.6	9					ShGr	0	0	9	9
+La24	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.849	254.658	1430		1415	1445	Ma	100	84.6	-41	30	9.6	9	11.6	185.800			ShGr	0	0	9	9
+La31	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.255	254.565	1430		1415	1445	Ma	0	41.8	-50.5	77	5.9	9					ShGr	0	0	9	9
+La31	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.255	254.565	1430		1415	1445	Ma	100	41.8	-50.5	77	5.9	9	-7.9	219.500			ShGr	0	0	9	9
+La33	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.254	254.585	1430		1415	1445	Ma	0	43.5	-48.3	25	10.5	10					ShGr	0	0	9	10
+La33	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.254	254.585	1430		1415	1445	Ma	100	43.5	-48.3	25	10.5	10	-8.8	217.200			ShGr	0	0	9	10
+La40	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.235	254.563	1430		1415	1445	Ma	0	61.8	-47.5	30	14.2	8					Sy xen	0	0	5	8
+La40	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.235	254.563	1430		1415	1445	Ma	100	61.8	-47.5	30	14.2	8	0.2	203.900			Sy xen	0	0	5	8
+La41	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.236	254.563	1430		1415	1445	Ma	0	81.8	-45.7	16	23.8	9					ShGr	0	0	4	9
+La41	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.236	254.563	1430		1415	1445	Ma	100	81.8	-45.7	16	23.8	9	11.8	190.400			ShGr	0	0	4	9
+La42	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.232	254.563	1430		1415	1445	Ma	0	52.1	-46.9	17	14	10					ShGr	0	0	9	10
+La42	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.232	254.563	1430		1415	1445	Ma	100	52.1	-46.9	17	14	10	-5.5	210.200			ShGr	0	0	9	10
+La43	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.253	254.585	1430		1415	1445	Ma	0	34.7	-57			9					ShGr	0	0	2	9
+La43	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.253	254.585	1430		1415	1445	Ma	100	34.7	-57			9	-5	227.700			ShGr	0	0	2	9
+La44	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.254	254.565	1430		1415	1445	Ma	0	60.4	-42.6	27	10.9	11					ShGr	0	0	8	11
+La44	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	41.254	254.565	1430		1415	1445	Ma	100	60.4	-42.6	27	10.9	11	-3.6	202.300			ShGr	0	0	8	11
+Sg1	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	40.991	254.590	1430		1415	1445	Ma	0	53.8	-47	8	24	13					ShGr	0	0	5	13
+Sg1	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	40.991	254.590	1430		1415	1445	Ma	100	53.8	-47	8	24	13	-4.8	209.000			ShGr	0	0	5	13
+Sg3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	40.96	254.640	1430		1415	1445	Ma	0	215	44.2	26	18.5	8					ShGr	0	0	4	8
+Sg3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	40.96	254.640	1430		1415	1445	Ma	100	215	44.2	26	18.5	8	-16.5	221.800			ShGr	0	0	4	8
+Sg4	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	40.951	254.655	1430		1415	1445	Ma	0	238	47.3	43	6.2	14					ShGr	0	0	14	14
+Sg4	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	40.951	254.655	1430		1415	1445	Ma	100	238	47.3	43	6.2	14	-2.5	206.200			ShGr	0	0	14	14
+Sg5	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	40.901	254.723	1430		1415	1445	Ma	0	87.3	-51.3			23					ShGr	0	0	1	23
+Sg5	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	40.901	254.723	1430		1415	1445	Ma	100	87.3	-51.3			23	18.5	191.200			ShGr	0	0	1	23
+ELlBlk	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5456	252.194	1430		1415	1445	Ma	0	25.3	-44	69	8.1	6					Pdb			6	6
+ELlBlk	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5456	252.194	1430		1415	1445	Ma	100	28.4	-40.3	69	8.1	6	23.8	223.600			Pdb			6	6
+ELA14	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5447	252.197	1430		1415	1445	Ma	0	33.2	-48	408	4.8	8					Pdb			4	8
+ELA14	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5447	252.197	1430		1415	1445	Ma	100	36.2	-43.9	408	4.8	8	18.2	218.100			Pdb			4	8
+ELA3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5444	252.198	1430		1415	1445	Ma	0	35.3	-38.5	146	7.6	4					Pdb			4	4
+ELA3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5444	252.198	1430		1415	1445	Ma	100	37.3	-34.3	146	7.6	4	23.5	213.400			Pdb			4	4
+ELA4	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5547	252.198	1430		1415	1445	Ma	0	23.2	-52.3	70	5.9	10					Pdb			10	10
+ELA4	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5547	252.198	1430		1415	1445	Ma	100	27.5	-48.7	70	5.9	10	18	227.300			Pdb			10	10
+ELA6	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5619	252.200	1430		1415	1445	Ma	0	41.7	-42.8	12	27.5	8					Pgn/Pdb			4	8
+ELA6	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5619	252.200	1430		1415	1445	Ma	100	43.7	-38.4	12	27.5	8	18	209.700			Pgn/Pdb			4	8
+ELA7	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.565	252.201	1430		1415	1445	Ma	0	34.7	-54.2	15	16.4	8					Pgnmz			7	8
+ELA7	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.565	252.201	1430		1415	1445	Ma	100	38.3	-50	15	16.4	8	12.8	219.200			Pgnmz			7	8
+ELA9	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5661	252.201	1430		1415	1445	Ma	0	25.1	-40.4	31	12.2	10					Pgb			6	10
+ELA9	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5661	252.201	1430		1415	1445	Ma	100	27.8	-36.8	31	12.2	10	26.3	223.000			Pgb			6	10
+ELAI0	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5672	252.202	1430		1415	1445	Ma	0	33.3	-46.5	212	5.3	6					Pgb			5	6
+ELAI0	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5672	252.202	1430		1415	1445	Ma	100	36.1	-42.4	212	5.3	6	19.2	217.600			Pgb			5	6
+ELAll	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5678	252.202	1430		1415	1445	Ma	0	29	-40.8	457	2	12					Pgb			12	12
+ELAll	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5678	252.202	1430		1415	1445	Ma	100	31.6	-37	457	2	12	24.7	219.600			Pgb			12	12
+ELA14	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5475	252.198	1430		1415	1445	Ma	0	31.1	-33	62	5.6	12					Pdb			10	12
+ELA14	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5475	252.198	1430		1415	1445	Ma	100	33	-29.1	62	5.6	12	28.5	215.600			Pdb			10	12
+ELBI	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5644	252.198	1430		1415	1445	Ma	0	357.4	-47.3	34	12.2	10					Pgb			6	10
+ELBI	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5644	252.198	1430		1415	1445	Ma	100	2.4	-45.6	34	12.2	10	25.4	249.900			Pgb			6	10
+ELB2	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5661	252.190	1430		1415	1445	Ma	0	31.9	-44.6	17	12.2	10					Pgb			10	10
+ELB2	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5661	252.190	1430		1415	1445	Ma	100	34.7	-40.6	17	12.2	10	21.1	218.100			Pgb			10	10
+ELB3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5667	252.191	1430		1415	1445	Ma	0	33.6	-48.3	14	13.5	12					Pgb			10	12
+ELB3	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5667	252.191	1430		1415	1445	Ma	100	36.6	-44.2	14	13.5	12	17.8	217.900			Pgb			10	12
+ELB5	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5714	252.189	1430		1415	1445	Ma	0	35.1	-41.1	75	7.1	8					Pgb			7	8
+ELB5	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5714	252.189	1430		1415	1445	Ma	100	37.4	-36.9	75	7.1	8	22	214.400			Pgb			7	8
+ELB6	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5814	252.198	1430		1415	1445	Ma	0	32.9	-42.3	100	4.4	12					Pgb			12	12
+ELB6	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5814	252.198	1430		1415	1445	Ma	100	35.4	-38.2	100	4.4	12	22.2	216.600			Pgb			12	12
+ELB7	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5744	252.198	1430		1415	1445	Ma	0	28.5	-53.8	32	8.5	12					Pgb			11	12
+ELB7	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5744	252.198	1430		1415	1445	Ma	100	32.6	-49.9	32	8.5	12	15.2	223.600			Pgb			11	12
+ELB8	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5739	252.199	1430		1415	1445	Ma	0	28.9	-54.6	13	17.8	10					Pgb			7	10
+ELB8	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5739	252.199	1430		1415	1445	Ma	100	33	-50.7	13	17.8	10	14.4	223.500			Pgb			7	10
+ELB9	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5847	252.200	1430		1415	1445	Ma	0	23.1	-46.6	93	8.4	9					Pgb			9	9
+ELB9	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5847	252.200	1430		1415	1445	Ma	100	26.6	-43.1	93	8.4	9	22.6	226.100			Pgb			9	9
+ELBlO	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5803	252.199	1430		1415	1445	Ma	0	25.9	-38.4	157	4.1	9					Pgb			9	9
+ELBlO	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5803	252.199	1430		1415	1445	Ma	100	28.4	-34.7	157	4.1	9	27.3	221.800			Pgb			9	9
+ELBll	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5733	252.200	1430		1415	1445	Ma	0	35.6	-45.8	76	5	12					Pgb			12	12
+ELBll	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5733	252.200	1430		1415	1445	Ma	100	38.2	-41.6	76	5	12	18.8	215.500			Pgb			12	12
+ELB12	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5683	252.199	1430		1415	1445	Ma	0	21.6	-50.4	69	5.3	13					Pgb			12	13
+ELB12	Rocky Mountain intrusions	i	g	DE-FM	Harlan1994:Harlan1998	Igneous	Pluton	Anorthosite:Syenite	37.5683	252.199	1430		1415	1445	Ma	100	24.7	-46.9	69	5.3	13	20	228.200			Pgb			12	13

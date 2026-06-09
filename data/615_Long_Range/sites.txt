@@ -1,0 +1,7 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+Dyke 2	Long Range Dykes	i	g	DE-FM	Murthy1992	Igneous	Volcanic Dike	Diabase	53.7	303.300	615		613	617	Ma	0	117.3	47.4	52	17.3	3	8.421	355.409	14.572	22.454	Site-mean directions from Murthy et al. (1992).
+Dyke 4	Long Range Dykes	i	g	DE-FM	Murthy1992	Igneous	Volcanic Dike	Diabase	53.7	303.300	615		613	617	Ma	0	133.1	51.2	48	8.8	7	4.709	341.773	8.081	11.926	Site-mean directions from Murthy et al. (1992).
+Dyke 6	Long Range Dykes	i	g	DE-FM	Murthy1992	Igneous	Volcanic Dike	Diabase	53.7	303.300	615		613	617	Ma	0	124.8	55.5	48	18	2	11.590	345.975	18.344	25.698	Site-mean directions from Murthy et al. (1992).
+Dyke 1	Long Range Dykes	i	g	DE-FM	Murthy1992	Igneous	Volcanic Dike	Diabase	53.7	303.300	615		613	617	Ma	0	215.3	-75.5	67	15.2	3	-69.688	173.187	25.588	27.890	Site-mean directions from Murthy et al. (1992).
+Dyke 3	Long Range Dykes	i	g	DE-FM	Murthy1992	Igneous	Volcanic Dike	Diabase	53.7	303.300	615		613	617	Ma	0	249.8	-49.2	43	16.4	1	-35.510	209.360	14.380	21.718	Site-mean directions from Murthy et al. (1992).
