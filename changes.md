@@ -14,6 +14,8 @@ The following poles were added at the 2022 Kringlerdalen Workshop:
 
 ## Changes
 
+For the [ca. 1141 Ma Abitibi Dykes pole](pole_notebooks/1141_Abitibi.ipynb), the additional Abitibi site of Halls et al. (2015) was added to the mean calculation that brings the pole from N=7 to N=8. That was the same study that showed that the originally included A1 dike of Ernst and Buchan (1993) is actually part of the ca. 2167 Ma Biscotasing dike swarm.
+
 In Elston et al. (2002), there was a decision for the Purcell lavas to calculate the pole only for lavas where the remanence was dominanted by hematite. In doing so, remanences held by magnetite are discarded. It seems preferable to include all of the sites rather than only including the hematite ones that while potentially early are demonstrably secondary. We modify the Purcell Lavas pole to be calculated from all sites. This changes the position and increases the uncertainty due to increased disperson among the VGPs. Note that Elston et al. (2002) did not report a fold test for all sites. Such a test passes. He choose single polarity, if you use both polarities it does not pass a reversal test. It was also determined that the pole should be downgraded from an B to an A pole. More work should be done on the Purcell lavas to improve this pole and ideally isolate a magnetite-held thermal remanent magnetization.
 
 Given the evidence presented in Ding et al. (2026), that the Tobacco Root Mountains are rotated relative to stable Laurentia, the previous 1448±49 Ma Tobacco Root Dykes pole is no longer included in the compilation.
