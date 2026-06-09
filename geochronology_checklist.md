@@ -50,7 +50,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [ ] Snowslip Formation (RESULT# 9038; nominal age 1450 Ma)
 - [ ] Spokane Formation (RESULT# 9039; nominal age 1458 Ma)
 - [ ] Michikamau Intrusion Combined (RESULT# 2274; nominal age 1460 Ma)
-- [ ] St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1476 Ma)
+- [x] St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1466 Ma)
 - [ ] Western Channel Diabase (RESULT# 2669; nominal age 1590 Ma)
 - [ ] Cleaver Dykes (RESULT# 9139; nominal age 1741 Ma)
 - [ ] NE trending ECMB Diabase Dykes (RESULT# 9970; nominal age 1780 Ma)
@@ -59,8 +59,8 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 ## Laurentia-Greenland
 
 - [ ] Melville Bugt diabase (RESULT# 9495; nominal age 1633 Ma)
-- [ ] Victoria Fjord Dolerite Dykes (RESULT# 489; nominal age 1382 Ma)
-- [ ] Midsommersoe Dolerite (RESULT# 99; nominal age 1382 Ma)
+- [x] Victoria Fjord Dolerite Dykes (RESULT# 489; nominal age 1382 Ma)
+- [x] Midsommersoe Dolerite (RESULT# 99; nominal age 1382 Ma)
 - [ ] Zig-Zag Dal Basalts (RESULT# 98; nominal age 1382 Ma)
 - [ ] Kungnat Ring Dyke (RESULT# 2107; nominal age 1275 Ma)
 - [ ] North Qoroq Intr. (RESULT# 6607; nominal age 1275 Ma)
@@ -96,7 +96,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Defeat Suite (RESULT# 9407; nominal age 2625 Ma)
 - [x] Malley dykes (RESULT# 9405; nominal age 2231 Ma)
 - [x] Dogrib dykes (RESULT# 9406; nominal age 2193 Ma)
-- [ ] Indin dykes (RESULT# 9484; nominal age 2126 Ma)
+- [x] Indin dykes (RESULT# 9484; nominal age 2126 Ma)
 - [ ] Lac de Gras dykes (RESULT# 9404; nominal age 2026 Ma)
 - [ ] Ghost Dike Swarm (RESULT# 9485; nominal age 1887 Ma)
 - [ ] MEAN Seton/Akaitcho/Mara (RESULT# new; nominal age 1889 Ma)
