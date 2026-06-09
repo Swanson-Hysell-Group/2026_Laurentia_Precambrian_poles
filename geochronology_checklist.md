@@ -112,7 +112,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] PTARMIGAN MEAN (RESULT# new; nominal age 2505 Ma)
 - [x] MATACHEWAN R (RESULT# new; nominal age 2466 Ma)
 - [x] MATACHEWAN N (RESULT# new; nominal age 2446 Ma)
-- [ ] SENNETERRE (RESULT# B+93; nominal age 2218 Ma)
+- [x] SENNETERRE (RESULT# B+93; nominal age **2216** Ma)
 - [ ] NIPISSING N1 (RESULT# B+00; nominal age 2217 Ma)
 - [ ] BISCOTASING (RESULT# 7189; nominal age 2170 Ma)
 - [ ] LAC ESPRIT (RESULT# 9486; nominal age 2069 Ma)
