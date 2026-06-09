@@ -114,7 +114,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] MATACHEWAN N (RESULT# new; nominal age 2446 Ma)
 - [x] SENNETERRE (RESULT# B+93; nominal age **2216** Ma)
 - [x] NIPISSING N1 (RESULT# B+00; nominal age 2217 Ma)
-- [ ] BISCOTASING (RESULT# 7189; nominal age 2170 Ma)
+- [x] BISCOTASING (RESULT# 7189; nominal age 2170 Ma)
 - [ ] LAC ESPRIT (RESULT# 9486; nominal age 2069 Ma)
 - [ ] MINTO (RESULT# 8310; nominal age 1998 Ma)
 
