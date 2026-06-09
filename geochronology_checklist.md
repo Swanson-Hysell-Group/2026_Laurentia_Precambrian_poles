@@ -110,8 +110,8 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 - [x] Otto Stock Dykes and Aureole (RESULT# 2629; nominal age updated from 2676 Ma to 2680 Ma)
 - [x] PTARMIGAN MEAN (RESULT# new; nominal age 2505 Ma)
-- [ ] MATACHEWAN R (RESULT# new; nominal age 2466 Ma)
-- [ ] MATACHEWAN N (RESULT# new; nominal age 2446 Ma)
+- [x] MATACHEWAN R (RESULT# new; nominal age 2466 Ma)
+- [x] MATACHEWAN N (RESULT# new; nominal age 2446 Ma)
 - [ ] SENNETERRE (RESULT# B+93; nominal age 2218 Ma)
 - [ ] NIPISSING N1 (RESULT# B+00; nominal age 2217 Ma)
 - [ ] BISCOTASING (RESULT# 7189; nominal age 2170 Ma)
