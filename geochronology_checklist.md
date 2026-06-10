@@ -135,3 +135,4 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Stillwater Complex - C2 (RESULT# 9917; `nominal age updated from 2705 Ma to 2709 Ma`)
 - [x] Rabbit Creek, Powder River and South Path Dykes (RESULT# 9496; nominal age 2160 Ma)
 - [ ] Sourdough mafic dike swarm (RESULT# 9539; nominal age 1899 Ma)
+- [x] Elbow Creek dikes (nominal age 2480 Ma)
