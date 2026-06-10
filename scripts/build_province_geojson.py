@@ -57,8 +57,8 @@ CATEGORY = {
     "1.2 - 1.1 Ga Midcontinent rift system": "Mesoproterozoic",
     "Basin": "Belt-Purcell Supergroup",
     "2.5 - 2.0 Ga miogeoclinal sediments": "Belt-Purcell Supergroup",
-    "Eastern rift basins": "Neoproterozoic–Cambrian rift",
-    "< 0.78 Ga Windermere Supergroup": "Neoproterozoic–Cambrian rift",
+    "Eastern rift basins": "Neoprot–Cambrian rift",
+    "< 0.78 Ga Windermere Supergroup": "Neoprot–Cambrian rift",
 }
 
 # Order controls draw order (Archean drawn under, younger over) and legend order.
@@ -68,7 +68,7 @@ CATEGORY_COLOR = {
     "Paleoproterozoic": "#f4a6c0",
     "Mesoproterozoic": "#fda07a",
     "Belt-Purcell Supergroup": "#fbf3b0",
-    "Neoproterozoic–Cambrian rift": "#fed8b1",
+    "Neoprot–Cambrian rift": "#fed8b1",
 }
 
 

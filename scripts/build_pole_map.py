@@ -11,8 +11,8 @@ and writes two artifacts:
    committed as a code-cell output (input hidden) so it renders with notebook
    execution disabled. This page is the landing page's prominent "interactive
    pole map" link.
-2. The Markdown pole-compilation table written into the ``index.md`` landing
-   page between the ``<!-- POLE_TABLE_START -->`` / ``<!-- POLE_TABLE_END -->``
+2. The Markdown pole-compilation table written into the ``compilation.md`` page
+   between the ``<!-- POLE_TABLE_START -->`` / ``<!-- POLE_TABLE_END -->``
    sentinels (prose around it is hand-editable). Each unit links to its notebook
    by MyST source path, which resolves to the correct slug + deploy base.
 
@@ -61,7 +61,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 CSV = os.path.join(ROOT, "data", "Laurentia_poles.csv")
 MAP_HTML = os.path.join(ROOT, "_static", "Laurentia_pole_map.html")
-INDEX_MD = os.path.join(ROOT, "index.md")
+COMPILATION_MD = os.path.join(ROOT, "compilation.md")
 POLE_MAP_IPYNB = os.path.join(ROOT, "pole_map.ipynb")
 PROVINCE_GEOJSON = os.path.join(ROOT, "data", "geologic_provinces",
                                 "Whitmeyer2007_provinces.geojson")
@@ -252,12 +252,12 @@ def paleolatitude(site_lat, site_lon, pole_lat, pole_lon):
 def short_reference(authors, year):
     """Compact 'first-author et al. (year)' reference string.
 
-    The source CSV stores a few author fields with a corrupted character
-    (U+FFFD) where 'Luleå' was lost; this is repaired to the known Nordic
-    "Luleå Working Group Mean" attribution.
+    Some source author fields carry a degraded form of the Nordic "Luleå
+    Working Group Mean" attribution (e.g. 'LULE? WORKING GROUP MEAN' where the
+    'å' was lost to a U+FFFD or dropped); these are repaired to the proper name.
     """
     authors = "" if pd.isna(authors) else str(authors).strip()
-    if "LULE�" in authors.upper() or "� WORKING GROUP" in authors:
+    if "LULE" in authors.upper() and "WORKING GROUP" in authors.upper():
         return f"Luleå Working Group Mean ({fmt_year(year)})"
     surname = authors.split(",")[0].strip() if authors else "—"
     etal = " et al." if authors.count(",") > 1 else ""
@@ -340,7 +340,7 @@ def _province_legend_html(provinces):
         '<div style="font-weight:600;margin-bottom:3px;">Basement provinces'
         '</div>' + "".join(rows) + poles +
         '<div style="margin-top:5px;font-size:10px;color:#666;">Provinces after'
-        ' Whitmeyer &amp; Karlstrom (2007)</div></div>')
+        '<br>Whitmeyer &amp; Karlstrom (2007)</div></div>')
 
 
 def _pole_marker(row, color, slug):
@@ -395,10 +395,8 @@ def build_map(df):
     # renderer can fail to paint there even though the data is present).
     m = folium.Map(location=[52, -90], zoom_start=4, tiles=None,
                    world_copy_jump=True, prefer_canvas=True)
-    folium.TileLayer("CartoDB positron", name="Light basemap",
-                     control=True).add_to(m)
-    folium.TileLayer("OpenStreetMap", name="OpenStreetMap",
-                     show=False).add_to(m)
+    # Base map, but control=False keeps it out of the layer toggle.
+    folium.TileLayer("CartoDB positron", control=False).add_to(m)
 
     # Enlarge the layer-control ("map selection") and colorbar text. The layer
     # control class is created by Leaflet at runtime; the colorbar is a branca
@@ -538,18 +536,18 @@ def write_pole_map_notebook(df):
         nbf.write(nb, fh)
 
 
-def write_table_into_index(table_md):
-    """Replace the table block in index.md between the sentinel comments."""
-    with open(INDEX_MD, encoding="utf-8") as fh:
+def write_table_into_compilation(table_md):
+    """Replace the table block in compilation.md between the sentinel comments."""
+    with open(COMPILATION_MD, encoding="utf-8") as fh:
         text = fh.read()
     block = f"{TABLE_START}\n{table_md}\n{TABLE_END}"
     if TABLE_START not in text or TABLE_END not in text:
         raise SystemExit(
-            f"Sentinels {TABLE_START}/{TABLE_END} not found in index.md; "
+            f"Sentinels {TABLE_START}/{TABLE_END} not found in compilation.md; "
             "add them where the table should go.")
     text = re.sub(re.escape(TABLE_START) + r".*?" + re.escape(TABLE_END),
                   block, text, flags=re.DOTALL)
-    with open(INDEX_MD, "w", encoding="utf-8") as fh:
+    with open(COMPILATION_MD, "w", encoding="utf-8") as fh:
         fh.write(text)
 
 
@@ -588,11 +586,11 @@ def main():
     os.makedirs(os.path.dirname(MAP_HTML), exist_ok=True)
     build_map(df).save(MAP_HTML)          # standalone copy for direct preview
     write_pole_map_notebook(df)
-    write_table_into_index(build_table(df))
+    write_table_into_compilation(build_table(df))
 
     print(f"Wrote {os.path.relpath(MAP_HTML, ROOT)} (preview, {len(df)} poles)")
     print(f"Wrote {os.path.relpath(POLE_MAP_IPYNB, ROOT)} (interactive map)")
-    print(f"Updated table block in {os.path.relpath(INDEX_MD, ROOT)} "
+    print(f"Updated table block in {os.path.relpath(COMPILATION_MD, ROOT)} "
           f"({len(df)} rows)")
     print(f"Map notebook links use BASE_URL={BASE_URL!r}")
     report_link_coverage(df)
