@@ -49,7 +49,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [ ] Western Channel Diabase (RESULT# 2669; nominal age 1590 Ma)
 - [ ] Cleaver Dykes (RESULT# 9139; nominal age 1741 Ma)
 - [ ] NE trending ECMB Diabase Dykes (RESULT# 9970; nominal age 1780 Ma)
-- [ ] Dubawnt Group (RESULT# 2737; nominal age 1785 Ma)
+- [x] Dubawnt Group (RESULT# 2737; nominal age 1785 Ma)
 
 ## Laurentia-Greenland
 
