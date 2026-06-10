@@ -30,6 +30,7 @@ project:
   toc:
     - file: index.md
     - file: pole_map.ipynb
+    - file: compilation.md
     - file: changes.md
     - title: Pole Assessments
       children:
