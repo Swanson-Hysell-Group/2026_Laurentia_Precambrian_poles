@@ -1,0 +1,477 @@
+﻿tab delimited	contribution
+version	timestamp	contributor	data_model_version	reference
+2	2018-04-13T23:23:27.989Z	@lfairchild	3.0	10.1139/E77-103
+>>>>>>>>>>
+tab delimited	sites
+site	location	samples	specimens	method_codes	geologic_classes	geologic_types	lithologies	formation	lat	lon	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_alpha95	dir_k	dir_n_samples	dir_comp_name
+2	Big Iron River	NS4:NS5:NS6	NS4:NS5:NS6	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.818	-89.570	1070	1080	Ma	100	279.3	14	7.4	275	3	PRIM
+3	Big Iron River	NS7:NS9	NS7:NS9	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.817	-89.570		1080	Ma	100	279.9	2.8	4.9	2558	2	PRIM
+4	Big Iron River	NS10:NS11:NS12:NS13	NS10:NS11:NS12:NS13	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.817	-89.571		1080	Ma	100	285.5	4.9	2	2065	4	PRIM
+5	Big Iron River	NS14:NS15:NS16:NS17	NS14:NS15:NS16:NS17	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.815	-89.570		1080	Ma	100	285	5.6	12.6	97	3	PRIM
+6	Big Iron River	NS18:NS19:NS20	NS18:NS19:NS20	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.815	-89.569		1080	Ma	100	282	10	13.1	90	3	PRIM
+7	Big Iron River	NS21:NS23:NS24:NS25	NS21:NS23:NS24:NS25	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.820	-89.572	1070	1080	Ma	100	266.6	-7.3			1	PRIM
+8	Big Iron River	NS26:NS27:NS28:NS29	NS26:NS27:NS28:NS29	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.820	-89.572	1070	1080	Ma	100	276	11.7	25.7	10	5	PRIM
+9	Big Iron River	NS30:NS31:NS32:NS33	NS30:NS31:NS32:NS33	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.820	-89.572	1070	1080	Ma	100	288	-3.6	35.3	13	3	PRIM
+10	Big Iron River	NS35	NS35	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.821	-89.573	1070	1080	Ma	100	261.9	21.7			1	PRIM
+11	Big Iron River	NS37:NS38	NS37:NS38	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.821	-89.573	1070	1080	Ma	100	280	-0.6	10.6	136	3	PRIM
+12	Lake Superior Shoreline	F1:F2:F4	F1:F2:F4	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.836	-89.535		1080	Ma	100	269.1	-3.8	7.5	270	3	PRIM
+13	Lake Superior Shoreline	13X:13Y:F16:F17	13X:13Y:F16:F17	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.837	-89.533		1080	Ma	100	263.1	-7.5	5.7	261	4	PRIM
+14	Lake Superior Shoreline	14V:14X:14Y:F10:F5:F6:F7:F8:F9	14V:14X:14Y:F10:F5:F6:F7:F8:F9	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.837	-89.533		1080	Ma	100	267.2	-0.1	3.9	176	9	PRIM
+15	Lake Superior Shoreline	15X:15Y:F18:F19:F20:F21:F22:F23:F24	15X:15Y:F18:F19:F20:F21:F22:F23:F24	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.837	-89.532		1080	Ma	100	261.7	-6.8	4.3	143	9	PRIM
+16	Lake Superior Shoreline	16X:16Z:F11:F12:F13:F14:F15	16X:16Z:F11:F12:F13:F14:F15	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.838	-89.529		1080	Ma	100	281.2	8.8	2.8	569	7	PRIM
+17	Lake Superior Shoreline	F25:F26:F27:F28	F25:F26:F27:F28	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.838	-89.526		1080	Ma	100	286.5	-8.9	5.1	319	4	PRIM
+18	Lake Superior Shoreline	18A:18B:18W:18X:18Y:18Z	18A:18B:18W:18X:18Y:18Z	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.835	-89.541		1080	Ma	100	273.1	-2.3	8.1	90	6	PRIM
+19	Lake Superior Shoreline	19A:19B:19C:19D	19A:19B:19C:19D	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.836	-89.552		1080	Ma	100	288.7	-8.4	3.3	787	4	PRIM
+20	Lake Superior Shoreline	20A:20B:20C:20D	20A:20B:20C:20D	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.837	-89.531		1080	Ma	100	267.2	-2.2	10.3	80	4	PRIM
+21	Lake Superior Shoreline	21A:21B:21C:21D	21A:21B:21C:21D	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.838	-89.530		1080	Ma	100	264.2	-11.9	2.6	1244	4	PRIM
+22	Lake Superior Shoreline	22A:22B	22A:22B	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.838	-89.527		1080	Ma	100	254.8	-5.8	6.9	1322	2	PRIM
+23	Lake Superior Shoreline	23A:23B	23A:23B	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.838	-89.528		1080	Ma	100	272.1	16.5	5	2495	2	PRIM
+24	Lake Superior Shoreline	24A:24B:24C:24D	24A:24B:24C:24D	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.838	-89.529		1080	Ma	100	266.9	13.1	6.5	198	4	PRIM
+30	Presque Isle River	30B	30B	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.666	-89.939	1070	1080	Ma	100	265.2	9			1	PRIM
+31	Presque Isle River	31C	31C	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.666	-89.941	1070	1080	Ma	100	281.6	-2.2			1	PRIM
+32	Presque Isle River	32A:32B:32C:32D	32A:32B:32C:32D	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.667	-89.940	1070	1080	Ma	100	275.6	9.3			4	PRIM
+33	Presque Isle River	33A:33B:33C:33D	33A:33B:33C:33D	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.668	-89.940	1070	1080	Ma	100	289.4	25.6	5.3	301	4	PRIM
+34	Presque Isle River	34A:34B:34C:34D:34X:34Y:34Z	34A:34B:34C:34D:34X:34Y:34Z	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.672	-89.940		1080	Ma	100	250.9	1.6	2.3	877	7	PRIM
+35	Presque Isle River	35A:35B:35C	35A:35B:35C	LP-DIR-T	Sedimentary	Sediment Layer	Sandstone	Freda	46.674	-89.940		1080	Ma	100	263.1	5.5	4.6	721	3	PRIM
+40	Silver City	2a:2b:2c:2d	2a:2b:2c:2d	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.832	-89.572	1070	1080	Ma	100	287.4	19	5.5	278	4	PRIM
+41	Silver City	3a:3b:3c:3d	3a:3b:3c:3d	LP-DIR-T	Sedimentary	Sediment Layer	Shale	Nonesuch	46.830	-89.583	1070	1080	Ma	100	281.5	10.2	7.9	136	4	PRIM
+>>>>>>>>>>
+tab delimited	samples
+sample	site	height
+NS4	2	-17
+NS5	2	-17
+NS6	2	-17
+NS7	3	9
+NS9	3	9
+NS10	4	21
+NS11	4	21
+NS12	4	21
+NS13	4	21
+NS14	5	52
+NS15	5	52
+NS16	5	52
+NS17	5	52
+NS18	6	84
+NS19	6	84
+NS20	6	84
+NS21	7	-47
+NS23	7	-47
+NS24	7	-47
+NS25	7	-47
+NS26	8	-65
+NS27	8	-65
+NS28	8	-65
+NS29	8	-65
+NS30	9	-81
+NS31	9	-81
+NS32	9	-81
+NS33	9	-81
+NS35	10	-122
+NS37	11	-138
+NS38	11	-138
+F1	12	486
+F2	12	486
+F4	12	486
+13X	13	515
+13Y	13	515
+F16	13	515
+F17	13	515
+14V	14	535
+14X	14	535
+14Y	14	535
+F10	14	535
+F5	14	535
+F6	14	535
+F7	14	535
+F8	14	535
+F9	14	535
+15X	15	557
+15Y	15	557
+F18	15	557
+F19	15	557
+F20	15	557
+F21	15	557
+F22	15	557
+F23	15	557
+F24	15	557
+16X	16	612
+16Z	16	612
+F11	16	612
+F12	16	612
+F13	16	612
+F14	16	612
+F15	16	612
+F25	17	667
+F26	17	667
+F27	17	667
+F28	17	667
+18A	18	407
+18B	18	407
+18W	18	407
+18X	18	407
+18Y	18	407
+18Z	18	407
+19A	19	271
+19B	19	271
+19C	19	271
+19D	19	271
+20A	20	579
+20B	20	579
+20C	20	579
+20D	20	579
+21A	21	594
+21B	21	594
+21C	21	594
+21D	21	594
+22A	22	645
+22B	22	645
+23A	23	628
+23B	23	628
+24A	24	615
+24B	24	615
+24C	24	615
+24D	24	615
+30B	30	-183
+31C	31	-167
+32A	32	-137
+32B	32	-137
+32C	32	-137
+32D	32	-137
+33A	33	-100
+33B	33	-100
+33C	33	-100
+33D	33	-100
+34A	34	28
+34B	34	28
+34C	34	28
+34D	34	28
+34X	34	28
+34Y	34	28
+34Z	34	28
+35A	35	73
+35B	35	73
+35C	35	73
+2a	40	15
+2b	40	15
+2c	40	15
+2d	40	15
+3a	41	-200
+3b	41	-200
+3c	41	-200
+3d	41	-200
+>>>>>>>>>>
+tab delimited	specimens
+specimen	sample	result_quality	method_codes	citations	dir_tilt_correction	dir_dec	dir_inc	dir_comp	dir_n_comps	dir_polarity	dir_nrm_origin	int_corr	description
+35a	35a	g	DE-BFL:LP-DIR-T	Henry1977	0	272.1	12.5	PRIM	1	n	p	u	Nonesuch shale
+35a	35a	g	DE-BFL:LP-DIR-T	Henry1977	100	261.9	21.7	PRIM	1	n	p	u	Nonesuch shale
+37a	37a	g	DE-BFL:LP-DIR-T	Henry1977	0	271.7	-16	PRIM	1	n	p	u	Nonesuch shale
+37a	37a	g	DE-BFL:LP-DIR-T	Henry1977	100	273.5	-4.9	PRIM	1	n	p	u	Nonesuch shale
+38a	38a	g	DE-BFL:LP-DIR-T	Henry1977	0	281.7	-16	PRIM	1	n	p	u	Nonesuch shale
+38a	38a	g	DE-BFL:LP-DIR-T	Henry1977	100	282.2	2.7	PRIM	1	n	p	u	Nonesuch shale
+38b	38b	g	DE-BFL:LP-DIR-T	Henry1977	0	283.8	-18.5	PRIM	1	n	p	u	Nonesuch shale
+38b	38b	g	DE-BFL:LP-DIR-T	Henry1977	100	284.4	0.3	PRIM	1	n	p	u	Nonesuch shale
+F1	F1	g	DE-BFL:LP-DIR-T	Henry1977	0	270.7	-19.6	PRIM	1	n	p	u	Freda sandstone
+F1	F1	g	DE-BFL:LP-DIR-T	Henry1977	100	267.7	-7.9	PRIM	1	n	p	u	Freda sandstone
+F2	F2	g	DE-BFL:LP-DIR-T	Henry1977	0	276.4	-16.2	PRIM	2	n	p	u	Freda sandstone
+F2	F2	g	DE-BFL:LP-DIR-T	Henry1977	100	268.1	-4.5	PRIM	2	n	p	u	Freda sandstone
+F2	F2	g	DE-BFL:LP-DIR-T	Henry1977	0	284.6	-14.5	SEC	2	n	p	u	Freda sandstone
+F2	F2	g	DE-BFL:LP-DIR-T	Henry1977	100	281.9	-6	SEC	2	n	p	u	Freda sandstone
+F4	F4	g	DE-BFL:LP-DIR-T	Henry1977	0	272.4	-10.2	PRIM	1	n	p	u	Freda sandstone
+F4	F4	g	DE-BFL:LP-DIR-T	Henry1977	100	271.4	1	PRIM	1	n	p	u	Freda sandstone
+13X	13X	g	DE-BFL:LP-DIR-T	Henry1977	0	259.9	0.2	PRIM	1	n	p	u	Freda sandstone
+13X	13X	g	DE-BFL:LP-DIR-T	Henry1977	100	260.7	-10.7	PRIM	1	n	p	u	Freda sandstone
+13Y	13Y	g	DE-BFL:LP-DIR-T	Henry1977	0	259.9	-0.6	PRIM	1	n	p	u	Freda sandstone
+13Y	13Y	g	DE-BFL:LP-DIR-T	Henry1977	100	260.8	-11.5	PRIM	1	n	p	u	Freda sandstone
+F16	F16	g	DE-BFL:LP-DIR-T	Henry1977	0	266.9	-13.1	PRIM	2	n	p	u	Freda sandstone
+F16	F16	g	DE-BFL:LP-DIR-T	Henry1977	100	265.4	-4.1	PRIM	2	n	p	u	Freda sandstone
+F16	F16	g	DE-BFL:LP-DIR-T	Henry1977	0	284.8	-20.5	SEC	2	n	p	u	Freda sandstone
+F16	F16	g	DE-BFL:LP-DIR-T	Henry1977	100	281.2	-13.9	SEC	2	n	p	u	Freda sandstone
+F17	F17	g	DE-BFL:LP-DIR-T	Henry1977	0	266.9	-13.1	PRIM	2	n	p	u	Freda sandstone
+F17	F17	g	DE-BFL:LP-DIR-T	Henry1977	100	265.5	-3.5	PRIM	2	n	p	u	Freda sandstone
+F17	F17	g	DE-BFL:LP-DIR-T	Henry1977	0	283.1	-20.6	SEC	2	n	p	u	Freda sandstone
+F17	F17	g	DE-BFL:LP-DIR-T	Henry1977	100	279.6	-13.7	SEC	2	n	p	u	Freda sandstone
+14V	14V	g	DE-BFL:LP-DIR-T	Henry1977	0	268.6	-3.4	PRIM	1	n	p	u	Freda sandstone
+14V	14V	g	DE-BFL:LP-DIR-T	Henry1977	100	268.8	6	PRIM	1	n	p	u	Freda sandstone
+14X	14X	g	DE-BFL:LP-DIR-T	Henry1977	0	275.2	-4.6	PRIM	1	n	p	u	Freda sandstone
+14X	14X	g	DE-BFL:LP-DIR-T	Henry1977	100	275.1	3.7	PRIM	1	n	p	u	Freda sandstone
+14Y	14Y	g	DE-BFL:LP-DIR-T	Henry1977	0	271.9	-2.5	PRIM	1	n	p	u	Freda sandstone
+14Y	14Y	g	DE-BFL:LP-DIR-T	Henry1977	100	272.3	6.3	PRIM	1	n	p	u	Freda sandstone
+F10	F10	g	DE-BFL:LP-DIR-T	Henry1977	0	267	-11.4	PRIM	2	n	p	u	Freda sandstone
+F10	F10	g	DE-BFL:LP-DIR-T	Henry1977	100	265.9	-1.8	PRIM	2	n	p	u	Freda sandstone
+F10	F10	g	DE-BFL:LP-DIR-T	Henry1977	0	280.8	-16.5	SEC	2	n	p	u	Freda sandstone
+F10	F10	g	DE-BFL:LP-DIR-T	Henry1977	100	278.3	-9.2	SEC	2	n	p	u	Freda sandstone
+F5	F5	g	DE-BFL:LP-DIR-T	Henry1977	0	262.9	-12.7	PRIM	2	n	p	u	Freda sandstone
+F5	F5	g	DE-BFL:LP-DIR-T	Henry1977	100	261.8	-2.4	PRIM	2	n	p	u	Freda sandstone
+F5	F5	g	DE-BFL:LP-DIR-T	Henry1977	0	284.5	-18.7	SEC	2	n	p	u	Freda sandstone
+F5	F5	g	DE-BFL:LP-DIR-T	Henry1977	100	281.3	-12.1	SEC	2	n	p	u	Freda sandstone
+F6	F6	g	DE-BFL:LP-DIR-T	Henry1977	0	265.4	-12.4	PRIM	2	n	p	u	Freda sandstone
+F6	F6	g	DE-BFL:LP-DIR-T	Henry1977	100	264.2	-2.6	PRIM	2	n	p	u	Freda sandstone
+F6	F6	g	DE-BFL:LP-DIR-T	Henry1977	0	282.3	-16.1	SEC	2	n	p	u	Freda sandstone
+F6	F6	g	DE-BFL:LP-DIR-T	Henry1977	100	279.8	-9.1	SEC	2	n	p	u	Freda sandstone
+F7	F7	g	DE-BFL:LP-DIR-T	Henry1977	0	269.8	-11.4	PRIM	1	n	p	u	Freda sandstone
+F7	F7	g	DE-BFL:LP-DIR-T	Henry1977	100	268.7	-2.3	PRIM	1	n	p	u	Freda sandstone
+F8	F8	g	DE-BFL:LP-DIR-T	Henry1977	0	264.7	-13.8	PRIM	1	n	p	u	Freda sandstone
+F8	F8	g	DE-BFL:LP-DIR-T	Henry1977	100	263.3	-3.8	PRIM	1	n	p	u	Freda sandstone
+F9	F9	g	DE-BFL:LP-DIR-T	Henry1977	0	265.8	-14	PRIM	2	n	p	u	Freda sandstone
+F9	F9	g	DE-BFL:LP-DIR-T	Henry1977	100	264.4	-4.2	PRIM	2	n	p	u	Freda sandstone
+F9	F9	g	DE-BFL:LP-DIR-T	Henry1977	0	288.9	-16.5	SEC	2	n	p	u	Freda sandstone
+F9	F9	g	DE-BFL:LP-DIR-T	Henry1977	100	286.4	-9.2	SEC	2	n	p	u	Freda sandstone
+15X	15X	g	DE-BFL:LP-DIR-T	Henry1977	0	260	-12.5	PRIM	1	n	p	u	Freda sandstone
+15X	15X	g	DE-BFL:LP-DIR-T	Henry1977	100	259	-1.9	PRIM	1	n	p	u	Freda sandstone
+15Y	15Y	g	DE-BFL:LP-DIR-T	Henry1977	0	259.1	-11.2	PRIM	2	n	p	u	Freda sandstone
+15Y	15Y	g	DE-BFL:LP-DIR-T	Henry1977	100	258.3	-0.5	PRIM	2	n	p	u	Freda sandstone
+15Y	15Y	g	DE-BFL:LP-DIR-T	Henry1977	0	285.7	-12.1	SEC	2	n	p	u	Freda sandstone
+15Y	15Y	g	DE-BFL:LP-DIR-T	Henry1977	100	283.8	-5.9	SEC	2	n	p	u	Freda sandstone
+F18	F18	g	DE-BFL:LP-DIR-T	Henry1977	0	264.3	-11.2	PRIM	2	n	p	u	Freda sandstone
+F18	F18	g	DE-BFL:LP-DIR-T	Henry1977	100	263.4	-1.2	PRIM	2	n	p	u	Freda sandstone
+F18	F18	g	DE-BFL:LP-DIR-T	Henry1977	0	277.8	-18.1	SEC	2	n	p	u	Freda sandstone
+F18	F18	g	DE-BFL:LP-DIR-T	Henry1977	100	275.1	-10.2	SEC	2	n	p	u	Freda sandstone
+F19	F19	g	DE-BFL:LP-DIR-T	Henry1977	0	263.9	-11.3	PRIM	2	n	p	u	Freda sandstone
+F19	F19	g	DE-BFL:LP-DIR-T	Henry1977	100	262.9	-1.2	PRIM	2	n	p	u	Freda sandstone
+F19	F19	g	DE-BFL:LP-DIR-T	Henry1977	0	280.6	-22.8	SEC	2	n	p	u	Freda sandstone
+F19	F19	g	DE-BFL:LP-DIR-T	Henry1977	100	276.9	-15.3	SEC	2	n	p	u	Freda sandstone
+F20	F20	g	DE-BFL:LP-DIR-T	Henry1977	0	264.2	-12.3	PRIM	1	n	p	u	Freda sandstone
+F20	F20	g	DE-BFL:LP-DIR-T	Henry1977	100	263.1	-2.2	PRIM	1	n	p	u	Freda sandstone
+F21	F21	g	DE-BFL:LP-DIR-T	Henry1977	0	266.4	-22.2	PRIM	2	n	p	u	Freda sandstone
+F21	F21	g	DE-BFL:LP-DIR-T	Henry1977	100	263.6	-12.4	PRIM	2	n	p	u	Freda sandstone
+F21	F21	g	DE-BFL:LP-DIR-T	Henry1977	0	276.2	-20.6	SEC	2	n	p	u	Freda sandstone
+F21	F21	g	DE-BFL:LP-DIR-T	Henry1977	100	273.1	-12.4	SEC	2	n	p	u	Freda sandstone
+F22	F22	g	DE-BFL:LP-DIR-T	Henry1977	0	265.6	-25.4	PRIM	1	n	p	u	Freda sandstone
+F22	F22	g	DE-BFL:LP-DIR-T	Henry1977	100	262.3	-15.4	PRIM	1	n	p	u	Freda sandstone
+F23	F23	g	DE-BFL:LP-DIR-T	Henry1977	0	264.3	-24.9	PRIM	1	n	p	u	Freda sandstone
+F23	F23	g	DE-BFL:LP-DIR-T	Henry1977	100	261.3	-14.8	PRIM	1	n	p	u	Freda sandstone
+F24	F24	g	DE-BFL:LP-DIR-T	Henry1977	0	263.6	-21.8	PRIM	1	n	p	u	Freda sandstone
+F24	F24	g	DE-BFL:LP-DIR-T	Henry1977	100	261.1	-11.5	PRIM	1	n	p	u	Freda sandstone
+16X	16X	g	DE-BFL:LP-DIR-T	Henry1977	0	275.7	2.8	PRIM	1	n	p	u	Freda sandstone
+16X	16X	g	DE-BFL:LP-DIR-T	Henry1977	100	277.1	11.2	PRIM	1	n	p	u	Freda sandstone
+16Z	16Z	b	DE-BFL:LP-DIR-T	Henry1977	0	293.7	-22.1	SEC	1	n	p	u	Freda sandstone
+16Z	16Z	b	DE-BFL:LP-DIR-T	Henry1977	100	289	-16.9	SEC	1	n	p	u	Freda sandstone
+F11	F11	g	DE-BFL:LP-DIR-T	Henry1977	0	278.6	1.3	PRIM	2	n	p	u	Freda sandstone
+F11	F11	g	DE-BFL:LP-DIR-T	Henry1977	100	279.7	9.1	PRIM	2	n	p	u	Freda sandstone
+F11	F11	g	DE-BFL:LP-DIR-T	Henry1977	0	281.2	-15.3	SEC	2	n	p	u	Freda sandstone
+F11	F11	g	DE-BFL:LP-DIR-T	Henry1977	100	278.8	-7.7	SEC	2	n	p	u	Freda sandstone
+F12	F12	g	DE-BFL:LP-DIR-T	Henry1977	0	282.8	-0.7	PRIM	2	n	p	u	Freda sandstone
+F12	F12	g	DE-BFL:LP-DIR-T	Henry1977	100	283.4	6.3	PRIM	2	n	p	u	Freda sandstone
+F12	F12	g	DE-BFL:LP-DIR-T	Henry1977	0	288	-9.7	SEC	2	n	p	u	Freda sandstone
+F12	F12	g	DE-BFL:LP-DIR-T	Henry1977	100	286.5	-3.6	SEC	2	n	p	u	Freda sandstone
+F13	F13	g	DE-BFL:LP-DIR-T	Henry1977	0	279.9	2.4	PRIM	1	n	p	u	Freda sandstone
+F13	F13	g	DE-BFL:LP-DIR-T	Henry1977	100	281.2	10	PRIM	1	n	p	u	Freda sandstone
+F14	F14	g	DE-BFL:LP-DIR-T	Henry1977	0	280.8	-1.6	PRIM	2	n	p	u	Freda sandstone
+F14	F14	g	DE-BFL:LP-DIR-T	Henry1977	100	281.3	5.9	PRIM	2	n	p	u	Freda sandstone
+F14	F14	g	DE-BFL:LP-DIR-T	Henry1977	0	284.4	-8.6	SEC	2	n	p	u	Freda sandstone
+F14	F14	g	DE-BFL:LP-DIR-T	Henry1977	100	283.3	-1.7	SEC	2	n	p	u	Freda sandstone
+F15	F15	g	DE-BFL:LP-DIR-T	Henry1977	0	282.9	3.6	PRIM	2	n	p	u	Freda sandstone
+F15	F15	g	DE-BFL:LP-DIR-T	Henry1977	100	284.4	10.4	PRIM	2	n	p	u	Freda sandstone
+F15	F15	g	DE-BFL:LP-DIR-T	Henry1977	0	284	-8.9	SEC	2	n	p	u	Freda sandstone
+F15	F15	g	DE-BFL:LP-DIR-T	Henry1977	100	282.9	-1.9	SEC	2	n	p	u	Freda sandstone
+F25	F25	g	DE-BFL:LP-DIR-T	Henry1977	0	289.5	-19.1	PRIM	1	n	p	u	Freda sandstone
+F25	F25	g	DE-BFL:LP-DIR-T	Henry1977	100	286.6	-9.4	PRIM	1	n	p	u	Freda sandstone
+F26	F26	g	DE-BFL:LP-DIR-T	Henry1977	0	290.2	-16.1	PRIM	1	n	p	u	Freda sandstone
+F26	F26	g	DE-BFL:LP-DIR-T	Henry1977	100	287.9	-6.6	PRIM	1	n	p	u	Freda sandstone
+F27	F27	g	DE-BFL:LP-DIR-T	Henry1977	0	281	-21.1	PRIM	1	n	p	u	Freda sandstone
+F27	F27	g	DE-BFL:LP-DIR-T	Henry1977	100	280.6	-9.5	PRIM	1	n	p	u	Freda sandstone
+F28	F28	g	DE-BFL:LP-DIR-T	Henry1977	0	294	-18.9	PRIM	1	n	p	u	Freda sandstone
+F28	F28	g	DE-BFL:LP-DIR-T	Henry1977	100	290.9	-10	PRIM	1	n	p	u	Freda sandstone
+18A	18A	g	DE-BFL:LP-DIR-T	Henry1977	0	277.9	-7.3	PRIM	1	n	p	u	Freda sandstone
+18A	18A	g	DE-BFL:LP-DIR-T	Henry1977	100	277.5	3.3	PRIM	1	n	p	u	Freda sandstone
+18B	18B	g	DE-BFL:LP-DIR-T	Henry1977	0	266.9	-8.8	PRIM	1	n	p	u	Freda sandstone
+18B	18B	g	DE-BFL:LP-DIR-T	Henry1977	100	266.4	4.1	PRIM	1	n	p	u	Freda sandstone
+18W	18W	g	DE-BFL:LP-DIR-T	Henry1977	0	278.4	-11.6	PRIM	1	n	p	u	Freda sandstone
+18W	18W	g	DE-BFL:LP-DIR-T	Henry1977	100	276.9	-1	PRIM	1	n	p	u	Freda sandstone
+18X	18X	g	DE-BFL:LP-DIR-T	Henry1977	0	281	-19	PRIM	2	n	p	u	Freda sandstone
+18X	18X	g	DE-BFL:LP-DIR-T	Henry1977	100	277.6	-8.8	PRIM	2	n	p	u	Freda sandstone
+18X	18X	g	DE-BFL:LP-DIR-T	Henry1977	0	291.4	-25.5	SEC	2	n	p	u	Freda sandstone
+18X	18X	g	DE-BFL:LP-DIR-T	Henry1977	100	285.4	-17.6	SEC	2	n	p	u	Freda sandstone
+18Y	18Y	g	DE-BFL:LP-DIR-T	Henry1977	0	270.5	-21.6	PRIM	1	n	p	u	Freda sandstone
+18Y	18Y	g	DE-BFL:LP-DIR-T	Henry1977	100	267.3	-9.1	PRIM	1	n	p	u	Freda sandstone
+18Z	18Z	b	DE-BFL:LP-DIR-T	Henry1977	0	101.3	-0.8	PRIM	1	n	p	u	Freda sandstone
+18Z	18Z	b	DE-BFL:LP-DIR-T	Henry1977	100	103.9	1.9	PRIM	1	n	p	u	Freda sandstone
+19A	19A	g	DE-BFL:LP-DIR-T	Henry1977	0	291.4	-14.9	PRIM	2	n	p	u	Freda sandstone
+19A	19A	g	DE-BFL:LP-DIR-T	Henry1977	100	288.9	-9.7	PRIM	2	n	p	u	Freda sandstone
+19A	19A	g	DE-BFL:LP-DIR-T	Henry1977	0	294.9	-25.8	SEC	2	n	p	u	Freda sandstone
+19A	19A	g	DE-BFL:LP-DIR-T	Henry1977	100	289.9	-20.9	SEC	2	n	p	u	Freda sandstone
+19B	19B	g	DE-BFL:LP-DIR-T	Henry1977	0	292.1	-13.1	PRIM	2	n	p	u	Freda sandstone
+19B	19B	g	DE-BFL:LP-DIR-T	Henry1977	100	289.9	-8	PRIM	2	n	p	u	Freda sandstone
+19B	19B	g	DE-BFL:LP-DIR-T	Henry1977	0	291.6	-23.1	SEC	2	n	p	u	Freda sandstone
+19B	19B	g	DE-BFL:LP-DIR-T	Henry1977	100	287.4	-17.7	SEC	2	n	p	u	Freda sandstone
+19C	19C	g	DE-BFL:LP-DIR-T	Henry1977	0	291.5	-10.7	PRIM	2	n	p	u	Freda sandstone
+19C	19C	g	DE-BFL:LP-DIR-T	Henry1977	100	289.9	-5.5	PRIM	2	n	p	u	Freda sandstone
+19C	19C	g	DE-BFL:LP-DIR-T	Henry1977	0	297.2	-16.7	SEC	2	n	p	u	Freda sandstone
+19C	19C	g	DE-BFL:LP-DIR-T	Henry1977	100	294.1	-12.5	SEC	2	n	p	u	Freda sandstone
+19D	19D	g	DE-BFL:LP-DIR-T	Henry1977	0	288.7	-16.5	PRIM	1	n	p	u	Freda sandstone
+19D	19D	g	DE-BFL:LP-DIR-T	Henry1977	100	286	-10.6	PRIM	1	n	p	u	Freda sandstone
+NS4	NS4	g	DE-BFL:LP-DIR-T	Henry1977	0	278.5	-4.2	PRIM	1	n	p	u	Nonesuch shale
+NS4	NS4	g	DE-BFL:LP-DIR-T	Henry1977	100	278.1	9.6	PRIM	1	n	p	u	Nonesuch shale
+NS5	NS5	g	DE-BFL:LP-DIR-T	Henry1977	0	283.6	0.1	PRIM	1	n	p	u	Nonesuch shale
+NS5	NS5	g	DE-BFL:LP-DIR-T	Henry1977	100	282.4	14.7	PRIM	1	n	p	u	Nonesuch shale
+NS6	NS6	g	DE-BFL:LP-DIR-T	Henry1977	0	279.4	4	PRIM	1	n	p	u	Nonesuch shale
+NS6	NS6	g	DE-BFL:LP-DIR-T	Henry1977	100	277.8	17.8	PRIM	1	n	p	u	Nonesuch shale
+20A	20A	g	DE-BFL:LP-DIR-T	Henry1977	0	262.5	-11	PRIM	2	n	p	u	Freda sandstone
+20A	20A	g	DE-BFL:LP-DIR-T	Henry1977	100	261.7	0.2	PRIM	2	n	p	u	Freda sandstone
+20A	20A	g	DE-BFL:LP-DIR-T	Henry1977	0	277.5	-21.9	SEC	2	n	p	u	Freda sandstone
+20A	20A	g	DE-BFL:LP-DIR-T	Henry1977	100	274.1	-13	SEC	2	n	p	u	Freda sandstone
+20B	20B	g	DE-BFL:LP-DIR-T	Henry1977	0	259	-10.6	PRIM	1	n	p	u	Freda sandstone
+20B	20B	g	DE-BFL:LP-DIR-T	Henry1977	100	258.3	1.1	PRIM	1	n	p	u	Freda sandstone
+20C	20C	g	DE-BFL:LP-DIR-T	Henry1977	0	275.8	-13.3	PRIM	2	n	p	u	Freda sandstone
+20C	20C	g	DE-BFL:LP-DIR-T	Henry1977	100	274.1	-4.2	PRIM	2	n	p	u	Freda sandstone
+20C	20C	g	DE-BFL:LP-DIR-T	Henry1977	0	267.7	-31.1	SEC	2	n	p	u	Freda sandstone
+20C	20C	g	DE-BFL:LP-DIR-T	Henry1977	100	263.3	-20.4	SEC	2	n	p	u	Freda sandstone
+20D	20D	g	DE-BFL:LP-DIR-T	Henry1977	0	276.6	-14.7	PRIM	1	n	p	u	Freda sandstone
+20D	20D	g	DE-BFL:LP-DIR-T	Henry1977	100	274.7	-5.7	PRIM	1	n	p	u	Freda sandstone
+21A	21A	g	DE-BFL:LP-DIR-T	Henry1977	0	265.6	-19.3	PRIM	1	n	p	u	Freda sandstone
+21A	21A	g	DE-BFL:LP-DIR-T	Henry1977	100	263.2	-10.5	PRIM	1	n	p	u	Freda sandstone
+21B	21B	g	DE-BFL:LP-DIR-T	Henry1977	0	265.8	-19.2	PRIM	1	n	p	u	Freda sandstone
+21B	21B	g	DE-BFL:LP-DIR-T	Henry1977	100	263.4	-10.4	PRIM	1	n	p	u	Freda sandstone
+21C	21C	g	DE-BFL:LP-DIR-T	Henry1977	0	266.6	-21.8	PRIM	1	n	p	u	Freda sandstone
+21C	21C	g	DE-BFL:LP-DIR-T	Henry1977	100	263.7	-13.1	PRIM	1	n	p	u	Freda sandstone
+21D	21D	g	DE-BFL:LP-DIR-T	Henry1977	0	269.6	-21.8	PRIM	1	n	p	u	Freda sandstone
+21D	21D	g	DE-BFL:LP-DIR-T	Henry1977	100	266.6	-13.6	PRIM	1	n	p	u	Freda sandstone
+22A	22A	g	DE-BFL:LP-DIR-T	Henry1977	0	254.7	-19.1	PRIM	1	n	p	u	Freda sandstone
+22A	22A	g	DE-BFL:LP-DIR-T	Henry1977	100	253.5	-6.7	PRIM	1	n	p	u	Freda sandstone
+22B	22B	g	DE-BFL:LP-DIR-T	Henry1977	0	257.2	-17.1	PRIM	1	n	p	u	Freda sandstone
+22B	22B	g	DE-BFL:LP-DIR-T	Henry1977	100	256.1	-4.9	PRIM	1	n	p	u	Freda sandstone
+23A	23A	g	DE-BFL:LP-DIR-T	Henry1977	0	269.1	13.3	PRIM	2	n	p	u	Freda sandstone
+23A	23A	g	DE-BFL:LP-DIR-T	Henry1977	100	271	16	PRIM	2	n	p	u	Freda sandstone
+23A	23A	g	DE-BFL:LP-DIR-T	Henry1977	0	272	-10.3	SEC	2	n	p	u	Freda sandstone
+23A	23A	g	DE-BFL:LP-DIR-T	Henry1977	100	270.8	-7.7	SEC	2	n	p	u	Freda sandstone
+23B	23B	g	DE-BFL:LP-DIR-T	Henry1977	0	271.1	14.4	PRIM	2	n	p	u	Freda sandstone
+23B	23B	g	DE-BFL:LP-DIR-T	Henry1977	100	273.2	16.9	PRIM	2	n	p	u	Freda sandstone
+23B	23B	g	DE-BFL:LP-DIR-T	Henry1977	0	278	-11.4	SEC	2	n	p	u	Freda sandstone
+23B	23B	g	DE-BFL:LP-DIR-T	Henry1977	100	276.6	-9.6	SEC	2	n	p	u	Freda sandstone
+24A	24A	g	DE-BFL:LP-DIR-T	Henry1977	0	266.7	-4.4	PRIM	2	n	p	u	Freda sandstone
+24A	24A	g	DE-BFL:LP-DIR-T	Henry1977	100	267.1	8.9	PRIM	2	n	p	u	Freda sandstone
+24A	24A	g	DE-BFL:LP-DIR-T	Henry1977	0	281.6	-14	SEC	2	n	p	u	Freda sandstone
+24A	24A	g	DE-BFL:LP-DIR-T	Henry1977	100	279.4	-3.7	SEC	2	n	p	u	Freda sandstone
+24B	24B	g	DE-BFL:LP-DIR-T	Henry1977	0	263.4	4.3	PRIM	2	n	p	u	Freda sandstone
+24B	24B	g	DE-BFL:LP-DIR-T	Henry1977	100	265.5	18.1	PRIM	2	n	p	u	Freda sandstone
+24B	24B	g	DE-BFL:LP-DIR-T	Henry1977	0	282.1	-10.9	SEC	2	n	p	u	Freda sandstone
+24B	24B	g	DE-BFL:LP-DIR-T	Henry1977	100	280.6	-0.9	SEC	2	n	p	u	Freda sandstone
+24C	24C	g	DE-BFL:LP-DIR-T	Henry1977	0	264.3	-5.4	PRIM	2	n	p	u	Freda sandstone
+24C	24C	g	DE-BFL:LP-DIR-T	Henry1977	100	264.6	8.4	PRIM	2	n	p	u	Freda sandstone
+24C	24C	g	DE-BFL:LP-DIR-T	Henry1977	0	292.7	-6.4	SEC	2	n	p	u	Freda sandstone
+24C	24C	g	DE-BFL:LP-DIR-T	Henry1977	100	291.9	0.7	SEC	2	n	p	u	Freda sandstone
+24D	24D	g	DE-BFL:LP-DIR-T	Henry1977	0	268.2	4.3	PRIM	2	n	p	u	Freda sandstone
+24D	24D	g	DE-BFL:LP-DIR-T	Henry1977	100	270.5	17.1	PRIM	2	n	p	u	Freda sandstone
+24D	24D	g	DE-BFL:LP-DIR-T	Henry1977	0	276.4	-15.7	SEC	2	n	p	u	Freda sandstone
+24D	24D	g	DE-BFL:LP-DIR-T	Henry1977	100	274	-4.3	SEC	2	n	p	u	Freda sandstone
+NS7	NS7	g	DE-BFL:LP-DIR-T	Henry1977	0	280	-12.1	PRIM	2	n	p	u	Freda sandstone
+NS7	NS7	g	DE-BFL:LP-DIR-T	Henry1977	100	280.7	3.6	PRIM	2	n	p	u	Freda sandstone
+NS7	NS7	g	DE-BFL:LP-DIR-T	Henry1977	0	274	-23.7	SEC	2	n	p	u	Freda sandstone
+NS7	NS7	g	DE-BFL:LP-DIR-T	Henry1977	100	277	-8.8	SEC	2	n	p	u	Freda sandstone
+NS9	NS9	g	DE-BFL:LP-DIR-T	Henry1977	0	278.1	-13.3	PRIM	2	n	p	u	Freda sandstone
+NS9	NS9	g	DE-BFL:LP-DIR-T	Henry1977	100	279	2.1	PRIM	2	n	p	u	Freda sandstone
+NS9	NS9	g	DE-BFL:LP-DIR-T	Henry1977	0	286.7	-25	SEC	2	n	p	u	Freda sandstone
+NS9	NS9	g	DE-BFL:LP-DIR-T	Henry1977	100	288.7	-8.3	SEC	2	n	p	u	Freda sandstone
+30B	30B	g	DE-BFL:LP-DIR-T	Henry1977	0	263.4	2.4	PRIM	1	n	p	u	Nonesuch shale
+30B	30B	g	DE-BFL:LP-DIR-T	Henry1977	100	265.2	9	PRIM	1	n	p	u	Nonesuch shale
+31C	31C	g	DE-BFL:LP-DIR-T	Henry1977	0	281.6	2.3	PRIM	1	n	p	u	Nonesuch shale
+31C	31C	g	DE-BFL:LP-DIR-T	Henry1977	100	281.6	-2.2	PRIM	1	n	p	u	Nonesuch shale
+32A	32A	g	DE-BFL:LP-DIR-T	Henry1977	0	272.1	12.5	PRIM	1	n	p	u	Nonesuch shale
+32A	32A	g	DE-BFL:LP-DIR-T	Henry1977	100	275.6	9.3	PRIM	1	n	p	u	Nonesuch shale
+32B	32B	b	DE-BFL:LP-DIR-T	Henry1977	0	295.5	38	NRM	1	n	p	u	Nonesuch shale
+32C	32C	b	DE-BFL:LP-DIR-T	Henry1977	0	296.5	34.5	NRM	1	n	p	u	Nonesuch shale
+32D	32D	b	DE-BFL:LP-DIR-T	Henry1977	0	110.6	52.8	NRM	1	n	p	u	Nonesuch shale
+33A	33A	g	DE-BFL:LP-DIR-T	Henry1977	0	275.6	29.1	PRIM	1	n	p	u	Nonesuch shale
+33A	33A	g	DE-BFL:LP-DIR-T	Henry1977	100	285.9	24.9	PRIM	1	n	p	u	Nonesuch shale
+33B	33B	g	DE-BFL:LP-DIR-T	Henry1977	0	280.9	33.3	PRIM	1	n	p	u	Nonesuch shale
+33B	33B	g	DE-BFL:LP-DIR-T	Henry1977	100	292.2	27.1	PRIM	1	n	p	u	Nonesuch shale
+33C	33C	g	DE-BFL:LP-DIR-T	Henry1977	0	276.3	34.8	PRIM	1	n	p	u	Nonesuch shale
+33C	33C	g	DE-BFL:LP-DIR-T	Henry1977	100	288.9	30	PRIM	1	n	p	u	Nonesuch shale
+33D	33D	g	DE-BFL:LP-DIR-T	Henry1977	0	281.9	26.5	PRIM	1	n	p	u	Nonesuch shale
+33D	33D	g	DE-BFL:LP-DIR-T	Henry1977	100	290.4	20.5	PRIM	1	n	p	u	Nonesuch shale
+34A	34A	g	DE-BFL:LP-DIR-T	Henry1977	0	253.7	1.2	PRIM	1	n	p	u	Freda sandstone
+34A	34A	g	DE-BFL:LP-DIR-T	Henry1977	100	253.8	0.4	PRIM	1	n	p	u	Freda sandstone
+34B	34B	g	DE-BFL:LP-DIR-T	Henry1977	0	250.8	0.8	PRIM	1	n	p	u	Freda sandstone
+34B	34B	g	DE-BFL:LP-DIR-T	Henry1977	100	250.9	0.5	PRIM	1	n	p	u	Freda sandstone
+34C	34C	g	DE-BFL:LP-DIR-T	Henry1977	0	251	0.9	PRIM	1	n	p	u	Freda sandstone
+34C	34C	g	DE-BFL:LP-DIR-T	Henry1977	100	251.1	0.5	PRIM	1	n	p	u	Freda sandstone
+34D	34D	g	DE-BFL:LP-DIR-T	Henry1977	0	251.6	1.9	PRIM	1	n	p	u	Freda sandstone
+34D	34D	g	DE-BFL:LP-DIR-T	Henry1977	100	251.9	1.5	PRIM	1	n	p	u	Freda sandstone
+34X	34X	g	DE-BFL:LP-DIR-T	Henry1977	0	249.6	2.2	PRIM	1	n	p	u	Freda sandstone
+34X	34X	g	DE-BFL:LP-DIR-T	Henry1977	100	249.9	1.4	PRIM	1	n	p	u	Freda sandstone
+34Y	34Y	b	DE-BFL:LP-DIR-T	Henry1977	0	160.3	4.6	NRM	1	n	p	u	Freda sandstone
+34Y	34Y	b	DE-BFL:LP-DIR-T	Henry1977	100	157.7	5.8	NRM	1	n	p	u	Freda sandstone
+34Z	34Z	g	DE-BFL:LP-DIR-T	Henry1977	0	246.7	5.5	PRIM	1	n	p	u	Freda sandstone
+34Z	34Z	g	DE-BFL:LP-DIR-T	Henry1977	100	247.6	5.1	PRIM	1	n	p	u	Freda sandstone
+35A	35A	g	DE-BFL:LP-DIR-T	Henry1977	0	261.1	9.3	PRIM	2	n	p	u	Freda sandstone
+35A	35A	g	DE-BFL:LP-DIR-T	Henry1977	100	261.9	4.6	PRIM	2	n	p	u	Freda sandstone
+35A	35A	g	DE-BFL:LP-DIR-T	Henry1977	0	270.6	0.4	SEC	2	n	p	u	Freda sandstone
+35A	35A	g	DE-BFL:LP-DIR-T	Henry1977	100	270.4	-5.2	SEC	2	n	p	u	Freda sandstone
+35B	35B	g	DE-BFL:LP-DIR-T	Henry1977	0	265.5	10.7	PRIM	2	n	p	u	Freda sandstone
+35B	35B	g	DE-BFL:LP-DIR-T	Henry1977	100	266.4	5.5	PRIM	2	n	p	u	Freda sandstone
+35B	35B	g	DE-BFL:LP-DIR-T	Henry1977	0	267	4.4	SEC	2	n	p	u	Freda sandstone
+35B	35B	g	DE-BFL:LP-DIR-T	Henry1977	100	267.2	-0.9	SEC	2	n	p	u	Freda sandstone
+35C	35C	g	DE-BFL:LP-DIR-T	Henry1977	0	260	10.9	PRIM	1	n	p	u	Freda sandstone
+35C	35C	g	DE-BFL:LP-DIR-T	Henry1977	100	261	6.4	PRIM	1	n	p	u	Freda sandstone
+NS10	NS10	g	DE-BFL:LP-DIR-T	Henry1977	0	286.6	-8.3	PRIM	2	n	p	u	Freda sandstone
+NS10	NS10	g	DE-BFL:LP-DIR-T	Henry1977	100	286.7	5.8	PRIM	2	n	p	u	Freda sandstone
+NS10	NS10	g	DE-BFL:LP-DIR-T	Henry1977	0	285.7	-26	SEC	2	n	p	u	Freda sandstone
+NS10	NS10	g	DE-BFL:LP-DIR-T	Henry1977	100	287.3	-11.9	SEC	2	n	p	u	Freda sandstone
+NS11	NS11	g	DE-BFL:LP-DIR-T	Henry1977	0	284.5	-7.6	PRIM	2	n	p	u	Freda sandstone
+NS11	NS11	g	DE-BFL:LP-DIR-T	Henry1977	100	284.6	6.3	PRIM	2	n	p	u	Freda sandstone
+NS11	NS11	g	DE-BFL:LP-DIR-T	Henry1977	0	282.9	-24.6	SEC	2	n	p	u	Freda sandstone
+NS11	NS11	g	DE-BFL:LP-DIR-T	Henry1977	100	284.7	-10.8	SEC	2	n	p	u	Freda sandstone
+NS12	NS12	g	DE-BFL:LP-DIR-T	Henry1977	0	285.6	-10.9	PRIM	1	n	p	u	Freda sandstone
+NS12	NS12	g	DE-BFL:LP-DIR-T	Henry1977	100	286	3.1	PRIM	1	n	p	u	Freda sandstone
+NS13	NS13	g	DE-BFL:LP-DIR-T	Henry1977	0	284.4	-9.5	PRIM	1	n	p	u	Freda sandstone
+NS13	NS13	g	DE-BFL:LP-DIR-T	Henry1977	100	284.6	4.4	PRIM	1	n	p	u	Freda sandstone
+2a	2a	g	DE-BFL:LP-DIR-T	Henry1977	0	281.1	16.7	PRIM	1	n	p	u	Freda sandstone
+2a	2a	g	DE-BFL:LP-DIR-T	Henry1977	100	285.2	17.2	PRIM	1	n	p	u	Freda sandstone
+2b	2b	g	DE-BFL:LP-DIR-T	Henry1977	0	281.1	25.7	PRIM	1	n	p	u	Freda sandstone
+2b	2b	g	DE-BFL:LP-DIR-T	Henry1977	100	287.7	25.8	PRIM	1	n	p	u	Freda sandstone
+2c	2c	g	DE-BFL:LP-DIR-T	Henry1977	0	284.1	18	PRIM	1	n	p	u	Freda sandstone
+2c	2c	g	DE-BFL:LP-DIR-T	Henry1977	100	288.5	17.7	PRIM	1	n	p	u	Freda sandstone
+2d	2d	g	DE-BFL:LP-DIR-T	Henry1977	0	284.3	15.6	PRIM	1	n	p	u	Freda sandstone
+2d	2d	g	DE-BFL:LP-DIR-T	Henry1977	100	288.1	15.3	PRIM	1	n	p	u	Freda sandstone
+3a	3a	g	DE-BFL:LP-DIR-T	Henry1977	0	281.3	9.3	PRIM	1	n	p	u	Nonesuch shale
+3a	3a	g	DE-BFL:LP-DIR-T	Henry1977	100	284	10.5	PRIM	1	n	p	u	Nonesuch shale
+3b	3b	g	DE-BFL:LP-DIR-T	Henry1977	0	282.5	8.7	PRIM	1	n	p	u	Nonesuch shale
+3b	3b	g	DE-BFL:LP-DIR-T	Henry1977	100	285	9.6	PRIM	1	n	p	u	Nonesuch shale
+3c	3c	g	DE-BFL:LP-DIR-T	Henry1977	0	268.5	7.7	PRIM	2	n	p	u	Nonesuch shale
+3c	3c	g	DE-BFL:LP-DIR-T	Henry1977	100	271.2	12.3	PRIM	2	n	p	u	Nonesuch shale
+3c	3c	g	DE-BFL:LP-DIR-T	Henry1977	0	291.8	-3.9	SEC	2	n	p	u	Nonesuch shale
+3c	3c	g	DE-BFL:LP-DIR-T	Henry1977	100	290.6	-5	SEC	2	n	p	u	Nonesuch shale
+3d	3d	g	DE-BFL:LP-DIR-T	Henry1977	0	283.5	7.4	PRIM	2	n	p	u	Nonesuch shale
+3d	3d	g	DE-BFL:LP-DIR-T	Henry1977	100	285.6	8.1	PRIM	2	n	p	u	Nonesuch shale
+3d	3d	g	DE-BFL:LP-DIR-T	Henry1977	0	290.4	-16.1	SEC	2	n	p	u	Nonesuch shale
+3d	3d	g	DE-BFL:LP-DIR-T	Henry1977	100	285.8	-16.4	SEC	2	n	p	u	Nonesuch shale
+NS14	NS14	g	DE-BFL:LP-DIR-T	Henry1977	0	279.1	-5.4	PRIM	1	n	p	u	Freda sandstone
+NS14	NS14	g	DE-BFL:LP-DIR-T	Henry1977	100	279	8.2	PRIM	1	n	p	u	Freda sandstone
+NS15	NS15	g	DE-BFL:LP-DIR-T	Henry1977	0	283.8	-5.4	PRIM	1	n	p	u	Freda sandstone
+NS15	NS15	g	DE-BFL:LP-DIR-T	Henry1977	100	283.7	8.5	PRIM	1	n	p	u	Freda sandstone
+NS16	NS16	g	DE-BFL:LP-DIR-T	Henry1977	0	291.8	-14.5	PRIM	1	n	p	u	Freda sandstone
+NS16	NS16	g	DE-BFL:LP-DIR-T	Henry1977	100	292.1	-0.1	PRIM	1	n	p	u	Freda sandstone
+NS17	NS17	b	DE-BFL:LP-DIR-T	Henry1977	0	236.8	-10.1	PRIM	1	n	p	u	Freda sandstone
+NS17	NS17	b	DE-BFL:LP-DIR-T	Henry1977	100	238.3	-3.4	PRIM	1	n	p	u	Freda sandstone
+NS18	NS18	g	DE-BFL:LP-DIR-T	Henry1977	0	285.6	-8.1	PRIM	1	n	p	u	Freda sandstone
+NS18	NS18	g	DE-BFL:LP-DIR-T	Henry1977	100	285.5	9	PRIM	1	n	p	u	Freda sandstone
+NS19	NS19	g	DE-BFL:LP-DIR-T	Henry1977	0	288.6	-5.9	PRIM	1	n	p	u	Freda sandstone
+NS19	NS19	g	DE-BFL:LP-DIR-T	Henry1977	100	288.3	11.6	PRIM	1	n	p	u	Freda sandstone
+NS20	NS20	g	DE-BFL:LP-DIR-T	Henry1977	0	272.6	-6	PRIM	1	n	p	u	Freda sandstone
+NS20	NS20	g	DE-BFL:LP-DIR-T	Henry1977	100	272.3	9.1	PRIM	1	n	p	u	Freda sandstone
+NS21	NS21	b	DE-BFL:LP-DIR-T	Henry1977	0	35.4	13.5	PRIM	1	n	p	u	Nonesuch shale
+NS21	NS21	b	DE-BFL:LP-DIR-T	Henry1977	100	40.5	11.3	PRIM	1	n	p	u	Nonesuch shale
+NS23	NS23	b	DE-BFL:LP-DIR-T	Henry1977	0	214.6	-15.3	PRIM	1	n	p	u	Nonesuch shale
+NS23	NS23	b	DE-BFL:LP-DIR-T	Henry1977	100	219.5	-13.6	PRIM	1	n	p	u	Nonesuch shale
+NS24	NS24	g	DE-BFL:LP-DIR-T	Henry1977	0	263.5	-22.6	PRIM	1	n	p	u	Nonesuch shale
+NS24	NS24	g	DE-BFL:LP-DIR-T	Henry1977	100	266.6	-7.3	PRIM	1	n	p	u	Nonesuch shale
+NS25	NS25	b	DE-BFL:LP-DIR-T	Henry1977	0	98.2	-25.8	PRIM	1	n	p	u	Nonesuch shale
+NS25	NS25	b	DE-BFL:LP-DIR-T	Henry1977	100	92.9	-42.9	PRIM	1	n	p	u	Nonesuch shale
+NS26	NS26	g	DE-BFL:LP-DIR-T	Henry1977	0	282.1	-19.9	PRIM	1	n	p	u	Nonesuch shale
+NS26	NS26	g	DE-BFL:LP-DIR-T	Henry1977	100	282.9	-0.7	PRIM	1	n	p	u	Nonesuch shale
+NS27	NS27	g	DE-BFL:LP-DIR-T	Henry1977	0	280.6	-14.9	PRIM	1	n	p	u	Nonesuch shale
+NS27	NS27	g	DE-BFL:LP-DIR-T	Henry1977	100	281.1	4.2	PRIM	1	n	p	u	Nonesuch shale
+NS28	NS28	g	DE-BFL:LP-DIR-T	Henry1977	0	302.3	-26.1	PRIM	1	n	p	u	Nonesuch shale
+NS28	NS28	g	DE-BFL:LP-DIR-T	Henry1977	100	301.6	-6.5	PRIM	1	n	p	u	Nonesuch shale
+NS29	NS29	g	DE-BFL:LP-DIR-T	Henry1977	0	256.1	11.6	PRIM	1	n	p	u	Nonesuch shale
+NS29	NS29	g	DE-BFL:LP-DIR-T	Henry1977	100	251.6	26.5	PRIM	1	n	p	u	Nonesuch shale
+NS29	NS29	g	DE-BFL:LP-DIR-T	Henry1977	0	262.5	16.1	PRIM	1	n	p	u	Nonesuch shale
+NS29	NS29	g	DE-BFL:LP-DIR-T	Henry1977	100	257.4	32.3	PRIM	1	n	p	u	Nonesuch shale
+NS30	NS30	b	DE-BFL:LP-DIR-T	Henry1977	0	293.9	33.8	PRIM	1	n	p	u	Nonesuch shale
+NS30	NS30	b	DE-BFL:LP-DIR-T	Henry1977	100	287.9	51.4	PRIM	1	n	p	u	Nonesuch shale
+NS31	NS31	g	DE-BFL:LP-DIR-T	Henry1977	0	285.9	0.6	PRIM	1	n	p	u	Nonesuch shale
+NS31	NS31	g	DE-BFL:LP-DIR-T	Henry1977	100	284.6	17.5	PRIM	1	n	p	u	Nonesuch shale
+NS32	NS32	g	DE-BFL:LP-DIR-T	Henry1977	0	283.3	-43.8	PRIM	1	n	p	u	Nonesuch shale
+NS32	NS32	g	DE-BFL:LP-DIR-T	Henry1977	100	288.9	-26.8	PRIM	1	n	p	u	Nonesuch shale
+NS33	NS33	g	DE-BFL:LP-DIR-T	Henry1977	0	289.2	-19	PRIM	1	n	p	u	Nonesuch shale
+NS33	NS33	g	DE-BFL:LP-DIR-T	Henry1977	100	290.4	-1.5	PRIM	1	n	p	u	Nonesuch shale

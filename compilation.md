@@ -61,7 +61,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia | [Snowslip Formation](pole_notebooks/1450_Snowslip_Formation.ipynb) | 1450 | A | 245.9 | 47.9 | 210.2 | -24.9 | 3.5 | 1.4 | Elston et al. (2002) |
 | Laurentia | [Spokane Formation](pole_notebooks/1458_Spokane_Formation.ipynb) | 1458 | A | 246.8 | 48.2 | 215.5 | -24.8 | 4.7 | 4.2 | Elston et al. (2002) |
 | Laurentia | [Michikamau Intrusion Combined](pole_notebooks/1460_Michikamau.ipynb) | 1460 | A | 296.0 | 54.5 | 217.5 | -1.5 | 4.7 | 24.7 | Emslie et al. (1976) |
-| Laurentia | [St.Francois Mountains Acidic Rocks](pole_notebooks/1476_Francois.ipynb) | 1476 | A | 269.5 | 37.5 | 219.0 | -13.2 | 6.1 | 15.8 | Meert et al. (2002) |
+| Laurentia | [St.Francois Mountains Acidic Rocks](pole_notebooks/1466_Francois.ipynb) | 1466 | A | 269.5 | 37.5 | 219.0 | -13.2 | 6.1 | 15.8 | Meert et al. (2002) |
 | Laurentia | [Western Channel Diabase](pole_notebooks/1590_Western_Channel.ipynb) | 1590 | A | 242.2 | 66.4 | 245.0 | 9.0 | 6.6 | 47.5 | Irving et al. (1972) |
 | Laurentia | [Cleaver Dykes](pole_notebooks/1740_Cleaver_Dikes.ipynb) | 1741 | A | 242.0 | 67.5 | 276.7 | 19.4 | 6.1 | 61.7 | Irving et al. (2004) |
 | Laurentia | [NE trending ECMB Diabase Dykes](pole_notebooks/1779_East_Central_Minnesota_Batholith.ipynb) | 1780 | A | 265.7 | 45.5 | 265.8 | 20.4 | 4.5 | 63.6 | Swanson?Hysell (2021) |
