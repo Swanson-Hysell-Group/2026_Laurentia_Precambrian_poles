@@ -74,12 +74,12 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 ## Laurentia-Greenland-Nain
 
-- [ ] Kangamiut Dykes (RESULT# 3222; nominal age 2041 Ma)
+- [x] Kangamiut Dykes (RESULT# 3222; nominal age 2041 Ma)
 
 ## Laurentia-Rae
 
 - [ ] Martin Formation (RESULT# 2659; nominal age 1818 Ma)
-- [ ] Clearwater Anorthosite (RESULT# 8429; nominal age 1917 Ma)
+- [x] Clearwater Anorthosite (RESULT# 8429; nominal age 1917 Ma)
 - [ ] Sparrow Dykes (RESULT# 2642; nominal age 1827 Ma)
 
 ## Laurentia-Scotland
@@ -90,15 +90,15 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 ## Laurentia-Slave
 
 - [ ] Douglas Peninsula Formation, Pethei Group (RESULT# 16; nominal age 1876 Ma)
-- [ ] Rifle (Western River) Formation (RESULT# 5915; nominal age 1963 Ma)
+- [x] Rifle (Western River) Formation (RESULT# 5915; nominal age 1963 Ma)
 - [ ] MEAN Kahochella, Peacock Hills (RESULT# new; nominal age 1878 Ma)
 - [ ] Takiyuak Formation (RESULT# 18; nominal age 1876 Ma)
 - [x] Defeat Suite (RESULT# 9407; nominal age 2625 Ma)
 - [x] Malley dykes (RESULT# 9405; nominal age 2231 Ma)
 - [x] Dogrib dykes (RESULT# 9406; nominal age 2193 Ma)
 - [x] Indin dykes (RESULT# 9484; nominal age 2126 Ma)
-- [ ] Lac de Gras dykes (RESULT# 9404; nominal age 2026 Ma)
-- [ ] Ghost Dike Swarm (RESULT# 9485; nominal age 1887 Ma)
+- [x] Lac de Gras dykes (RESULT# 9404; nominal age 2026 Ma)
+- [x] Ghost Dike Swarm (RESULT# 9485; nominal age 1887 Ma)
 - [ ] MEAN Seton/Akaitcho/Mara (RESULT# new; nominal age 1889 Ma)
 - [ ] MEAN Pearson A/Peninsular sill/Kilohigok basin sill (RESULT# new; nominal age 1870 Ma)
 
@@ -116,7 +116,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] NIPISSING N1 (RESULT# B+00; nominal age 2217 Ma)
 - [x] BISCOTASING (RESULT# 7189; nominal age 2170 Ma)
 - [x] LAC ESPRIT (RESULT# 9486; nominal age 2069 Ma)
-- [ ] MINTO (RESULT# 8310; nominal age 1998 Ma)
+- [x] MINTO (RESULT# 8310; nominal age 1998 Ma)
 
 ## Laurentia-Superior(West)
 
@@ -134,4 +134,5 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 - [x] Stillwater Complex - C2 (RESULT# 9917; `nominal age updated from 2705 Ma to 2709 Ma`)
 - [x] Rabbit Creek, Powder River and South Path Dykes (RESULT# 9496; nominal age 2160 Ma)
-- [ ] Sourdough mafic dike swarm (RESULT# 9539; nominal age 1899 Ma)
+- [x] Sourdough mafic dike swarm (RESULT# 9539; nominal age 1899 Ma)
+- [x] Elbow Creek dikes (nominal age 2480 Ma)

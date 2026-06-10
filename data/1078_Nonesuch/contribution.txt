@@ -1,0 +1,3 @@
+tab 	contribution
+contributor	data_model_version	id	lab_names	reference	timestamp	version
+@polarwander	3.0	20614	Paleomagnetism Laboratory (University of California, Berkeley, USA)	10.1130/B36634.1	2026-04-13T22:36:49.247Z	1

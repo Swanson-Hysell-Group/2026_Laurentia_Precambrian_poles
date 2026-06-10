@@ -1,4 +1,4 @@
-# Revisions and additions to the Nordic Compilation for Laurentia
+# Revisions and additions
 
 ## Additions
 
