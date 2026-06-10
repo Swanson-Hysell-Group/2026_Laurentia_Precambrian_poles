@@ -75,7 +75,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 - [ ] Martin Formation (RESULT# 2659; nominal age 1818 Ma)
 - [x] Clearwater Anorthosite (RESULT# 8429; nominal age 1917 Ma)
-- [ ] Sparrow Dykes (RESULT# 2642; nominal age 1827 Ma)
+- [x] Sparrow Dykes (RESULT# 2642; nominal age 1827 Ma)
 
 ## Laurentia-Scotland
 
