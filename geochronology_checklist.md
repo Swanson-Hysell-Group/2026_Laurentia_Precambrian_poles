@@ -100,7 +100,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Lac de Gras dykes (RESULT# 9404; nominal age 2026 Ma)
 - [x] Ghost Dike Swarm (RESULT# 9485; nominal age 1887 Ma)
 - [x] MEAN Seton/Akaitcho/Mara (RESULT# new; nominal age 1889 Ma)
-- [ ] MEAN Pearson A/Peninsular sill/Kilohigok basin sill (RESULT# new; nominal age 1870 Ma)
+- [x] MEAN Pearson A/Peninsular sill/Kilohigok basin sill (RESULT# new; nominal age 1870 Ma)
 
 ## Laurentia-Superior
 
