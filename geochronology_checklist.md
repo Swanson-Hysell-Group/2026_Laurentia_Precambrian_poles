@@ -128,7 +128,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 ## Laurentia-Trans-Hudson orogen
 
-- [ ] Boot-Phantom Pluton (RESULT# 8359; nominal age 1838 Ma)
+- [x] Boot-Phantom Pluton (RESULT# 8359; nominal age 1838 Ma)
 
 ## Laurentia-Wyoming
 
