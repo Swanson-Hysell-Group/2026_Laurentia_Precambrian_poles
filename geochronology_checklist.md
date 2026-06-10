@@ -92,7 +92,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [ ] Douglas Peninsula Formation, Pethei Group (RESULT# 16; nominal age 1876 Ma)
 - [x] Rifle (Western River) Formation (RESULT# 5915; nominal age 1963 Ma)
 - [x] MEAN Kahochella, Peacock Hills (RESULT# new; nominal age 1878 Ma)
-- [ ] Takiyuak Formation (RESULT# 18; nominal age 1876 Ma)
+- [x] Takiyuak Formation (RESULT# 18; nominal age 1876 Ma)
 - [x] Defeat Suite (RESULT# 9407; nominal age 2625 Ma)
 - [x] Malley dykes (RESULT# 9405; nominal age 2231 Ma)
 - [x] Dogrib dykes (RESULT# 9406; nominal age 2193 Ma)
