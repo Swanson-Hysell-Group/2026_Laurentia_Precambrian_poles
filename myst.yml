@@ -62,6 +62,7 @@ project:
         - file: pole_notebooks/1382_Midsommersoe.ipynb
         - file: pole_notebooks/1382_Victoria.ipynb
         - file: pole_notebooks/1382_Zigzag.ipynb
+        - file: pole_notebooks/1427_Purcell_Lava.ipynb
         - file: pole_notebooks/1430_Rocky.ipynb
         - file: pole_notebooks/1460_Michikamau.ipynb
         - file: pole_notebooks/1476_Francois.ipynb
