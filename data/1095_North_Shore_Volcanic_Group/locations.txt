@@ -1,0 +1,3 @@
+tab	locations
+location	location_type	age	age_high	age_low	age_unit	citations	geologic_classes	lithologies	lat_n	lat_s	lon_e	lon_w	dir_tilt_correction	result_type	result_quality	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	result_name
+North Shore Volcanic Group	Region	1095	1098	1092	Ma	Tauxe and Kodama, 2009:Books, 1972:Swanson-Hysell et al., 2019	Extrusive:Igneous	Basalt	47.822107	46.85188	269.9387137	268.01965	100	a	g	35.1	180.1	1.9	49.6	118	North Shore Volcanic Group combined normal-polarity pole

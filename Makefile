@@ -12,8 +12,9 @@ install: ## Create mamba environment from environment.yml
 	@echo "Environment created. Activate with:"
 	@echo "  mamba activate laurentia-poles"
 
-figures: ## Regenerate the pole map + compilation table from data/Laurentia_poles.csv
+figures: ## Regenerate the pole map, compilation table, and paleolatitude figure from the CSVs
 	python scripts/build_pole_map.py
+	python scripts/build_paleolatitude_figure.py
 
 build: figures ## Build the book (static HTML)
 	jupyter book build --html

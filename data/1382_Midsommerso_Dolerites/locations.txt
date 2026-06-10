@@ -1,0 +1,3 @@
+tab	locations
+age	age_high	age_low	age_unit	citations	description	dir_tilt_correction	geologic_classes	lat_n	lat_s	lithologies	location	location_type	lon_e	lon_w	method_codes	pole_alpha95	pole_k	pole_lat	pole_lon	pole_n_sites	result_name	result_quality	result_type	sites
+1382	1384	1380	Ma	10.1111/j.1365-246x.1983.tb03321.x:10.1007/s00410-004-0634-7	Site directions, site VGPs, and pole calculation from Marcussen & Abrahamsen (1983); 1382 Â± 2 Ma UâPb baddeleyite age from Upton et al. (2005).	100	igneous	81.8	-81.8	Diabase	Midsommerso Dolerites	Region	327.8	32.2	LP-AF:DE-BLANKET:DE-VGP	5.1	88	-6.9	62.0	10	Midsommerso Dolerites ca. 1382 Ma pole	g	a	DL-01:DL-02:DL-03:DL-04:DL-06:DL-08:DL-09:DL-10:DL-11:DL-12
