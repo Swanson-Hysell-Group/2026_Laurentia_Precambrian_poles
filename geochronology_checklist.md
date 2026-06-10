@@ -89,22 +89,22 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 ## Laurentia-Slave
 
-- [ ] Douglas Peninsula Formation, Pethei Group (RESULT# 16; nominal age 1876 Ma)
+- [x] Douglas Peninsula Formation, Pethei Group (RESULT# 16; nominal age 1876 Ma)
 - [x] Rifle (Western River) Formation (RESULT# 5915; nominal age 1963 Ma)
-- [ ] MEAN Kahochella, Peacock Hills (RESULT# new; nominal age 1878 Ma)
-- [ ] Takiyuak Formation (RESULT# 18; nominal age 1876 Ma)
+- [x] MEAN Kahochella, Peacock Hills (RESULT# new; nominal age 1878 Ma)
+- [x] Takiyuak Formation (RESULT# 18; nominal age 1876 Ma)
 - [x] Defeat Suite (RESULT# 9407; nominal age 2625 Ma)
 - [x] Malley dykes (RESULT# 9405; nominal age 2231 Ma)
 - [x] Dogrib dykes (RESULT# 9406; nominal age 2193 Ma)
 - [x] Indin dykes (RESULT# 9484; nominal age 2126 Ma)
 - [x] Lac de Gras dykes (RESULT# 9404; nominal age 2026 Ma)
 - [x] Ghost Dike Swarm (RESULT# 9485; nominal age 1887 Ma)
-- [ ] MEAN Seton/Akaitcho/Mara (RESULT# new; nominal age 1889 Ma)
-- [ ] MEAN Pearson A/Peninsular sill/Kilohigok basin sill (RESULT# new; nominal age 1870 Ma)
+- [x] MEAN Seton/Akaitcho/Mara (RESULT# new; nominal age 1889 Ma)
+- [x] MEAN Pearson A/Peninsular sill/Kilohigok basin sill (RESULT# new; nominal age 1870 Ma)
 
 ## Laurentia-Superior
 
-- [ ] MEAN Haig/Flaherty/Sutton (RESULT# new; nominal age 1870 Ma)
+- [x] MEAN Haig/Flaherty/Sutton (RESULT# new; nominal age 1870 Ma)
 
 ## Laurentia-Superior(East)
 
@@ -124,11 +124,11 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] MARATHON R (RESULT# H+08; nominal age 2104 Ma)
 - [x] CAUCHON LAKE (RESULT# 8548; nominal age 2091 Ma)
 - [x] FORT FRANCES (RESULT# 1739; nominal age 2077 Ma)
-- [ ] MOLSON B+C2 (RESULT# new; nominal age 1879 Ma)
+- [x] MOLSON B+C2 (RESULT# new; nominal age 1879 Ma)
 
 ## Laurentia-Trans-Hudson orogen
 
-- [ ] Boot-Phantom Pluton (RESULT# 8359; nominal age 1838 Ma)
+- [x] Boot-Phantom Pluton (RESULT# 8359; nominal age 1838 Ma)
 
 ## Laurentia-Wyoming
 

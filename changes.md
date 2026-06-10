@@ -26,6 +26,8 @@ Previously the Haliburton Highlands pole of the Grenville Province was included 
 
 The Euler rotation of Svalbard to Laurentia is uncertain to do multiple tectonic episodes including Caledonian translation and North Atlantic opening. As a result, at the 2026 Iloranta Workshop, these were moved to a separate off-craton block category being compiled by Prof. D.A.D. Evans.
 
+For the [ca. 754 Ma Uinta Mountain Group pole](pole_notebooks/754_Uinta.ipynb), the preferred pole is updated to the site mean rather than the mean of sampling-locality means. The site mean is the Fisher mean of the 74 primary characteristic-remanence site virtual geomagnetic poles (1.9°N/160.6°E, A95 2.1°, N=74), recomputed at the site level from each site's tilt-corrected direction and coordinates. The previously reported pole was the mean of the 9 locality means of Weil et al. (2006) (0.8°N/161.3°E, A95 4.6°, N=9). The two agree within ~1.3°, but the site mean weights all sites equally and is better resolved. The depositional age was also refined following Dehler et al. (2023): the older age bound is the CA-ID-TIMS maximum depositional age of 766.3 ± 0.5 Ma, and the younger bound of ~730 Ma comes from correlation of the upper Uinta Mountain Group (Red Pine Formation) with the upper Chuar Group via shared vase-shaped microfossils.
+
 ## Thoughts
 
 The discrepancy between the upper Belt and the ca. 1382 ± 2 Ma Zig-Zag Dal igneous province persists. The geochronology is sparse for the province with the only date being two multi-grain baddeleyite fractions. It would be worthwhile to develop more geochronology to see if this age is too young or too old.
