@@ -116,7 +116,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] NIPISSING N1 (RESULT# B+00; nominal age 2217 Ma)
 - [x] BISCOTASING (RESULT# 7189; nominal age 2170 Ma)
 - [x] LAC ESPRIT (RESULT# 9486; nominal age 2069 Ma)
-- [ ] MINTO (RESULT# 8310; nominal age 1998 Ma)
+- [x] MINTO (RESULT# 8310; nominal age 1998 Ma)
 
 ## Laurentia-Superior(West)
 
