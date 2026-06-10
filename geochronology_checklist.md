@@ -56,7 +56,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [ ] Melville Bugt diabase (RESULT# 9495; nominal age 1633 Ma)
 - [x] Victoria Fjord Dolerite Dykes (RESULT# 489; nominal age 1382 Ma)
 - [x] Midsommersoe Dolerite (RESULT# 99; nominal age 1382 Ma)
-- [ ] Zig-Zag Dal Basalts (RESULT# 98; nominal age 1382 Ma)
+- [x] Zig-Zag Dal Basalts (RESULT# 98; nominal age 1382 Ma)
 - [ ] Kungnat Ring Dyke (RESULT# 2107; nominal age 1275 Ma)
 - [ ] North Qoroq Intr. (RESULT# 6607; nominal age 1275 Ma)
 - [ ] West Gardar Dolerite Dykes (RESULT# 2106; nominal age 1271 Ma)
