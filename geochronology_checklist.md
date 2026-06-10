@@ -124,7 +124,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] MARATHON R (RESULT# H+08; nominal age 2104 Ma)
 - [x] CAUCHON LAKE (RESULT# 8548; nominal age 2091 Ma)
 - [x] FORT FRANCES (RESULT# 1739; nominal age 2077 Ma)
-- [ ] MOLSON B+C2 (RESULT# new; nominal age 1879 Ma)
+- [x] MOLSON B+C2 (RESULT# new; nominal age 1879 Ma)
 
 ## Laurentia-Trans-Hudson orogen
 
