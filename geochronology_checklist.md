@@ -90,7 +90,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 ## Laurentia-Slave
 
 - [ ] Douglas Peninsula Formation, Pethei Group (RESULT# 16; nominal age 1876 Ma)
-- [ ] Rifle (Western River) Formation (RESULT# 5915; nominal age 1963 Ma)
+- [x] Rifle (Western River) Formation (RESULT# 5915; nominal age 1963 Ma)
 - [ ] MEAN Kahochella, Peacock Hills (RESULT# new; nominal age 1878 Ma)
 - [ ] Takiyuak Formation (RESULT# 18; nominal age 1876 Ma)
 - [x] Defeat Suite (RESULT# 9407; nominal age 2625 Ma)
