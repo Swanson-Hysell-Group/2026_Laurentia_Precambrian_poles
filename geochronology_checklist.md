@@ -74,7 +74,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 ## Laurentia-Greenland-Nain
 
-- [ ] Kangamiut Dykes (RESULT# 3222; nominal age 2041 Ma)
+- [x] Kangamiut Dykes (RESULT# 3222; nominal age 2041 Ma)
 
 ## Laurentia-Rae
 
