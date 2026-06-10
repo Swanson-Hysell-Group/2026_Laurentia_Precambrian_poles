@@ -94,7 +94,7 @@ EXISTING_NOTEBOOKS = {
     "Gunbarrel LIP": "780_Gunbarrel",
     "Adirondack metamorphic anorthosite": "887_Adirondack",
     "Jacobsville Formation": "990_Jacobsville",
-    "Freda Sandstone": "1045_Upper_Freda",
+    "Freda Sandstone": "1075_Lower_Freda",  # legacy compilation pole = Henry et al. (1977) lower Freda
     "Nonesuch Shale": "1078_Nonesuch",
     "Cardenas Basalts and Intrusions": "1082_Cardenas",
     "Michipicoten Island Formation": "1084_Michipicoten_Island_Formation",
@@ -126,7 +126,7 @@ EXISTING_NOTEBOOKS = {
     "Zig-Zag Dal Basalts": "1382_Zigzag",
     "MEAN Rocky Mountain intrusions": "1430_Rocky",
     "Michikamau Intrusion Combined": "1460_Michikamau",
-    "St.Francois Mountains Acidic Rocks": "1476_Francois",
+    "St.Francois Mountains Acidic Rocks": "1466_Francois",
     "Melville Bugt diabase dykes": "1633_Melville",
 }
 
