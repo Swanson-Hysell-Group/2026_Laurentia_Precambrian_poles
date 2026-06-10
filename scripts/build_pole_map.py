@@ -340,7 +340,7 @@ def _province_legend_html(provinces):
         '<div style="font-weight:600;margin-bottom:3px;">Basement provinces'
         '</div>' + "".join(rows) + poles +
         '<div style="margin-top:5px;font-size:10px;color:#666;">Provinces after'
-        ' Whitmeyer &amp; Karlstrom (2007)</div></div>')
+        '<br>Whitmeyer &amp; Karlstrom (2007)</div></div>')
 
 
 def _pole_marker(row, color, slug):
@@ -395,10 +395,8 @@ def build_map(df):
     # renderer can fail to paint there even though the data is present).
     m = folium.Map(location=[52, -90], zoom_start=4, tiles=None,
                    world_copy_jump=True, prefer_canvas=True)
-    folium.TileLayer("CartoDB positron", name="Light basemap",
-                     control=True).add_to(m)
-    folium.TileLayer("OpenStreetMap", name="OpenStreetMap",
-                     show=False).add_to(m)
+    # Base map, but control=False keeps it out of the layer toggle.
+    folium.TileLayer("CartoDB positron", control=False).add_to(m)
 
     # Enlarge the layer-control ("map selection") and colorbar text. The layer
     # control class is created by Leaflet at runtime; the colorbar is a branca
