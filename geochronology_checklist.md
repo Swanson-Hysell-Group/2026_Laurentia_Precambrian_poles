@@ -104,7 +104,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 ## Laurentia-Superior
 
-- [ ] MEAN Haig/Flaherty/Sutton (RESULT# new; nominal age 1870 Ma)
+- [x] MEAN Haig/Flaherty/Sutton (RESULT# new; nominal age 1870 Ma)
 
 ## Laurentia-Superior(East)
 
