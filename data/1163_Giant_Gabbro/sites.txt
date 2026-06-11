@@ -1,0 +1,19 @@
+tab 	sites																									
+age	age_high	age_low	age_sigma	age_unit	citations	description	dir_alpha95	dir_dec	dir_inc	dir_k	dir_n_samples	dir_tilt_correction	geologic_classes	geologic_types	lat	lithologies	location	lon	method_codes	result_quality	result_type	site	vgp_dm	vgp_dp	vgp_lat	vgp_lon
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06 		7.4	298.5	61	82	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	9			49	225
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06 		20.5	303.5	67.9	21	4	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	10			58	232
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		44.2	200.9	48.9	3	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	b	i	11			2	296
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		14.8	94.3	36.7	22	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	b	i	12			16	30
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		15.4	274.9	66.2	20	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	13			43	249
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		7.7	276.5	40.7	99	5	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	14			23	230
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		25.6	268.4	45.6	8	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	15			23	239
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		9.3	96.3	13.6	52	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	b	i	16			3	35
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		10.6	80.1	4.5	41	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	b	i	17			7	51
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		14.6	315.8	46	18	7	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	18			45	196
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		6.1	285.2	45.8	120	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	19			31	225
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		11.2	217.7	43.3	48	5	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	20			23	235
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		17.1	302.1	51.1	30	4	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	21			43	213
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		12.4	303.6	54.4	30	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	22			46	214
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		9.3	298.1	63.3	53	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	23			51	229
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		12.5	319.9	58.2	30	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	24			57	201
+1163	1165	1161		Ma	10.37570/bgsd-1976-26-06		9.6	298.3	76.1	49	6	0	Igneous	Intrusion	60.85	Gabbro	Giant Gabbro Dikes	-46.37	DE-FM	g	i	25			42	257
