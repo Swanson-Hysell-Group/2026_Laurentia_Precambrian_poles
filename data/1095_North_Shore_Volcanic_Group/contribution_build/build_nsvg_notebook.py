@@ -2,7 +2,7 @@
 
 The North Shore Volcanic Group (NSVG) notebook carries a single combined
 normal-polarity pole (as in the prior Nordic compilation, GPMDB 9856), with the
-upper SW / upper NE sequences and the lower / reversed flows plotted for context.
+upper SW / upper NE sub-sequences plotted for context.
 Per the user's request the FULL workflow from site-level directions to the pole
 lives in the notebook itself (load source site tables -> select -> VGPs ->
 Fisher-mean pole), rather than in a build script. This script only writes the
@@ -47,8 +47,8 @@ the Devil's Kettle Rhyolite (1097.7 \\(\\pm\\) 2.2 Ma; Davis and Green, 1997).
 Following the prior Nordic compilation (GPMDB 9856), a single combined
 normal-polarity NSVG pole is computed here from all of the normal-polarity lava
 flows of the upper sequences (above the basal unconformity, excluding intrusions
-and the older reversed flows). The upper SW and upper NE sub-sequences, and the
-lower and reversed-polarity flows, are computed and plotted for context. Site
+and the older reversed flows). The upper SW and upper NE sub-sequences are
+also computed and plotted for context. Site
 directions are from Tauxe and Kodama (2009), Books (1972), and the new Gooseberry
 River section data of Swanson-Hysell et al. (2019).""")
 
@@ -106,11 +106,14 @@ nswu = ['ns034','ns035','ns036','ns037','ns038','ns039','ns040','ns042','ns043',
         'ns085','ns087']                                   # upper SW (Tauxe)
 nneu = ['ns002','ns003','ns004','ns005','ns016','ns018','ns019','ns020','ns021',
         'ns022','ns023','ns028','ns030','ns031','ns032']   # upper NE (Tauxe)
-nnel = ['ns024','ns026']                                   # NE lower reversed
-nsl  = ['ns006','ns007','ns008','ns009','ns010','ns011','ns012','ns013','ns014',
-        'ns015']                                           # lower sequence
 books_nneu = ['NS269','NS378','NS227','NS229','NS375','NS226','NS362','NS365',
               'NS367','NS265','NS370','NS371','NS372']     # upper NE (Books)
+
+# The lower (nsl = ns006-ns015) and lower-NE reversed (nnel = ns024, ns026) Tauxe
+# sites are NOT part of the NSVG pole: per Swanson-Hysell et al. (2019) the nsl
+# flows belong to the overlying Schroeder-Lutsen basalts pole (see
+# 1090_Schroeder_Lutsen_Basalts) and nnel to the Grand Portage pole. They are
+# excluded from this notebook entirely.
 
 def tag(df, sites, sequence, polarity):
     out = df[df['site'].isin(sites)].copy()
@@ -118,13 +121,11 @@ def tag(df, sites, sequence, polarity):
     out['dir_polarity'] = polarity
     return out
 
-# upper normal-polarity sequences (the pole) + lower / reversed (context)
+# upper normal-polarity sequences (the pole)
 sw_tauxe = tag(tauxe, nswu, 'upper SW', 'n')
 ne_tauxe = tag(tauxe, nneu, 'upper NE', 'n')
 ne_books = tag(books, books_nneu, 'upper NE', 'n')
 goose['sequence'] = 'upper SW'; goose['dir_polarity'] = 'n'
-lower    = tag(tauxe, nsl, 'lower', 'n')
-reversed_ = tag(tauxe, nnel, 'lower NE reversed', 'r')
 
 # study locality for the combined pole (Gooseberry River reference, 9856 SLAT/SLON)
 study_lat, study_lon = 46.3, 268.7""")
@@ -181,24 +182,6 @@ ipmag.plot_pole(ax, ne_pole['dec'], ne_pole['inc'], ne_pole['alpha95'],
                 color='darkorange', markersize=40, label='upper NE pole')
 ax.legend(loc='lower left')
 plt.title('Combined NSVG normal-polarity pole (black) with SW/NE sub-poles')
-plt.show()""")
-
-md("""### Context: lower and reversed-polarity flows
-
-The lower-sequence and lower-NE reversed-polarity flows are older than the
-normally magnetized upper sequences and are not included in the pole; their site
-VGPs are shown here for context (the reversed VGPs are inverted to the normal
-polarity for plotting).""")
-
-co("""context = pd.concat([harmonize(lower), harmonize(reversed_)], ignore_index=True)
-ctx_block = pmag.flip(ipmag.make_di_block(context['vgp_lon'].tolist(),
-                                          context['vgp_lat'].tolist()), combine=True)
-ax = pt.plot_vgps_and_pole(vgp_block, pole_mean,
-                           central_longitude=pole_mean['dec'],
-                           central_latitude=pole_mean['inc'], figsize=(6, 6))
-for (lon, lat), seq in zip(ctx_block, context['sequence']):
-    ipmag.plot_vgp(ax, lon, lat, color='slategray', markersize=20)
-plt.title('Combined pole + VGPs; gray = lower / reversed context flows')
 plt.show()""")
 
 md("## Mean direction (tilt-corrected)")

@@ -25,6 +25,7 @@ Portage Lake Volcanics	H_PL12	Hnat et al., 2006	47.14	-88.58	316.2	49.8	30.6	14.
 Portage Lake Volcanics	H_PL07	Hnat et al., 2006	47.43	-88.21	306.4	15.5	71.1	8.0	6	100	n	29.91984142	158.695772	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	H_PL22	Hnat et al., 2006	47.41	-87.71	299.2	37.6	111.4	7.3	5	100	n	34.93545726	175.8463829	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	H_PL23	Hnat et al., 2006	47.45	-87.87	290.5	27.4	88.9	5.5	9	100	n	24.46090081	177.0825224	Extrusive:Igneous	Lava Flow	Basalt	a	g
+Portage Lake Volcanics	H_PL05	Hnat et al., 2006	47.32	-88.38	298.2	32.3	19.3	15.7	6	100	n	31.80397111	173.0304616	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	PL1	Books, 1972	47.2860613	-88.41397747	265.6	51.6	48.5	2.5	5	100	n	20.36558789	207.4930682	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	PL150	Books, 1972	47.28798041	-88.40954543	284.0	33.0	48.5	2.5	4	100	n	22.51950636	184.0980891	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	PL153	Books, 1972	47.38982443	-88.03789171	286.2	41.0	48.5	2.5	6	100	n	27.81369748	187.2527448	Extrusive:Igneous	Lava Flow	Basalt	a	g
@@ -75,7 +76,7 @@ Portage Lake Volcanics	PL9	Books, 1972	47.28935121	-88.41639494	297.6	40.8	48.5	
 Portage Lake Volcanics	PL333	Books, 1972	47.29269809	-88.42945971	281.8	28.8	48.5	2.5	5	100	n	19.17795371	183.6865311	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	PL44	Books, 1972	47.28246441	-88.4469834	287.9	29.6	48.5	2.5	3	100	n	23.6605352	179.5591134	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	PL49	Books, 1972	47.20875577	-88.43443316	290.1	27.5	48.5	2.5	5	100	n	24.25361288	176.9768944	Extrusive:Igneous	Lava Flow	Basalt	a	g
-Portage Lake Volcanics	Kearsarge flow	Books, 1972	47.28722005	-88.38308075	290.7995651809536	32.95984740889096	163.0	19.7	9	100	n	27.13628250890478	179.08060359321365	Extrusive:Igneous	Lava Flow	Basalt	a	g
+Portage Lake Volcanics	Kearsarge flow	Books, 1972	47.28722005	-88.38308075	290.7995651809536	32.95984740889095	163.0	19.7	9	100	n	27.13628250890478	179.08060359321365	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	Greenstone flow	Books, 1972:Hnat et al., 2006:Foucher et al., 2018	47.38867863272726	-88.20445691181817	291.27163366391267	34.674952797248	53.9	6.3	35	100	n	28.262088831342677	180.08809565345447	Extrusive:Igneous	Lava Flow	Basalt	a	g
-Portage Lake Volcanics	Scales Creek flow	Books, 1972	47.33175433	-88.22360928500001	289.1167663571421	33.705800236976245	1347.5	6.8	9	100	n	26.309106419757047	180.89689169863422	Extrusive:Igneous	Lava Flow	Basalt	a	g
+Portage Lake Volcanics	Scales Creek flow	Books, 1972	47.33175433	-88.22360928500001	289.1167663571421	33.70580023697623	1347.5	6.8	9	100	n	26.309106419757047	180.89689169863422	Extrusive:Igneous	Lava Flow	Basalt	a	g
 Portage Lake Volcanics	Ashbed flow	Books, 1972	47.38328144833333	-88.24112666833334	288.3475698619826	29.51210774104637	100.6	6.7	25	100	n	24.090310098754625	179.44134231796377	Extrusive:Igneous	Lava Flow	Basalt	a	g
