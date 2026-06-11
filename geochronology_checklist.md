@@ -57,7 +57,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Victoria Fjord Dolerite Dykes (RESULT# 489; nominal age 1382 Ma)
 - [x] Midsommersoe Dolerite (RESULT# 99; nominal age 1382 Ma)
 - [x] Zig-Zag Dal Basalts (RESULT# 98; nominal age 1382 Ma)
-- [ ] Kungnat Ring Dyke (RESULT# 2107; nominal age 1275 Ma)
+- [x] Kungnat Ring Dyke (RESULT# 2107; nominal age 1275 Ma)
 - [x] North Qoroq Intr. (RESULT# 6607; nominal age 1275 Ma)
 - [ ] West Gardar Dolerite Dykes (RESULT# 2106; nominal age 1271 Ma)
 - [ ] West Gardar Lamprophyre Dykes (RESULT# 2108; nominal age 1265 Ma)
