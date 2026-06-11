@@ -33,7 +33,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Coldwell Complex (RESULT# 9838; nominal age 1107 Ma)
 - [ ] MEAN Nipigon sills and lavas (RESULT# new; nominal age 1111 Ma)
 - [x] Abitibi Dykes (RESULT# 7193; nominal age 1141 Ma)
-- [ ] NW Ontario Lamprophyre Dykes and Abitibi Dykes (RESULT# 9887; nominal age 1145 Ma)
+- [x] NW Ontario Lamprophyre Dykes (RESULT# 9887; nominal age 1145 Ma)
 - [x] Sudbury Dykes Combined (RESULT# 2175; nominal age 1235 Ma)
 - [x] Mackenzie dykes grand mean (RESULT# B+00; nominal age 1267 Ma)
 - [x] Nain Anorthosite (RESULT# 2180; nominal age 1305 Ma)
