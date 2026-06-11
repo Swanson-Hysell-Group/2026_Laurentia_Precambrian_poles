@@ -114,8 +114,8 @@ EXISTING_NOTEBOOKS = {
     "NE trending ECMB Diabase Dykes": "1779_East_Central_Minnesota_Batholith",
     # Notebooks added with short custom stems (do not match the <age>_<Name>
     # convention), mapped explicitly so the table/map links resolve.
-    "Kwagunt Formation": "757_Chuar_Group",  # rebuilt as the combined Chuar Group pole
-    "Uinta Mountain Group": "754_Uinta",
+    "Kwagunt Formation": "755_Chuar_Group",  # rebuilt as the combined Chuar Group pole
+    "Uinta Mountain Group": "759_Uinta",
     "Abitibi Dykes": "1141_Abitibi",
     "NW Ontario Lamprophyre Dykes and Abitibi Dykes": "1144_Lamprophyre",
     "Sudbury Dykes Combined": "1237_Sudbury",

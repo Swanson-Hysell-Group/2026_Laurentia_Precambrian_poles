@@ -1,4 +1,4 @@
-"""Build the Chuar Group combined paleomagnetic pole (757_Chuar_Group).
+"""Build the Chuar Group combined paleomagnetic pole (755_Chuar_Group).
 
 A NEW COMBINED pole spanning the Carbon Canyon (Galeros Fm, ca. 761 Ma), Carbon
 Butte and Awatubi (Kwagunt Fm, ca. 750 Ma) members, reproducing Eyster et al.
@@ -195,7 +195,7 @@ print(f"    CB-Awatubi(23): {cb_awatubi['inc']:.1f}/{cb_awatubi['dec']:.1f} A95 
 print(f"    Carbon Canyon : {carbon_canyon['inc']:.1f}/{carbon_canyon['dec']:.1f} A95 {carbon_canyon['alpha95']:.1f} N {int(carbon_canyon['n'])}  (Eyster -2.1/163.7)")
 
 # ============================ notebook ========================================
-NB = os.path.abspath(os.path.join(HERE, '../../../pole_notebooks/757_Chuar_Group.ipynb'))
+NB = os.path.abspath(os.path.join(HERE, '../../../pole_notebooks/755_Chuar_Group.ipynb'))
 cells = []
 md = lambda s: cells.append(new_markdown_cell(s))
 co = lambda s: cells.append(new_code_cell(s))
@@ -417,7 +417,7 @@ chuar_summary = pt.make_nordic_summary(
     TITLE='Paleomagnetism of the Neoproterozoic Chuar Group, Grand Canyon (Weil et al., 2004; Eyster et al., 2020)',
     COMMENT='New combined Chuar Group pole, equal-weight Fisher mean of 37 individual tilt-corrected site/sample VGPs reproducing Eyster et al. (2020) Table 1: Carbon Butte-Awatubi (N=23) + Carbon Canyon (N=14). The 17 Eyster HT Carbon Butte-Awatubi readings are reconstructed from Supplemental Table S2 (GSA DR 2019239): linear shallow-HT fits with MAD<15 deg, one per sample (** double-unblocking averaged); great-circle fits excluded (Eyster uses them only in locality means). This reproduces Eyster N=17 pole 12.5/161.6. Plus 6 Weil (2004) Carbon Butte + 14 Weil Carbon Canyon site VGPs. Reconstruction reproduces Eyster published poles: CB-Awatubi 23 -> 13.2/163.5 (Eyster 13.5/162.8); Carbon Canyon 14 -> -2.1/163.7 (Eyster -2.1/163.7); combined 37 -> 7.5/163.6. Members: A1303/A1305/A1306/A1310=Carbon Butte, A1304/A1307=Awatubi. Sedimentary (lithology=sedimentary); observed pole exported; Eyster E-I f=0.9 (CB-Awatubi) and f=0.5 (Carbon Canyon). Positive Tauxe & Watson (1994) fold test (66-109% unfolding, R4=f); dual polarity, reversal test positive within coeval Kwagunt members (R6=1). Dehler et al. (2023) age model + Re-Os 751 Ma (Rooney et al., 2017, R1=1). R7=0 (within the mid-Neoproterozoic Laurentia cluster). R=6, Grade A. Supersedes the Kwagunt-only pole.'
 )
-pt.save_nordic_summary(chuar_summary, '757_Chuar_Group')
+pt.save_nordic_summary(chuar_summary, '755_Chuar_Group')
 chuar_summary""")
 
 nb = new_notebook(cells=cells, metadata={

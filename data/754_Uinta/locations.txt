@@ -1,3 +1,0 @@
-tab delimited	locations
-location	location_type	result_name	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_sigma	age_low	age_high	age_unit	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	description
-Uinta Mountain Group	i	Uinta Mountain Group site means	i	g	DE-FM	Weil2006	Sedimentary	Formation	Sandstone:Siltstone					750		717	771	Ma						Site-mean in-situ and tilt-corrected directions from Weil et al. (2006).
