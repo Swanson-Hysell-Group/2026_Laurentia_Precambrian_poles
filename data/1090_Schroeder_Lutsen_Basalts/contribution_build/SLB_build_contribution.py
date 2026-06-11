@@ -1,17 +1,30 @@
 """
 Build a MagIC 3.0 sites.txt + locations.txt for the Schroeder-Lutsen basalts
 (SLB) ca. 1090 Ma pole, reproducing the careful pole of Fairchild et al. (2017):
-187.8 degE, 27.1 degN, A95 3.0, N = 50 (validated; this build = 26.9 / 188.0,
-A95 3.0, k 45.4, N 50, matching the published value to rounding).
+187.8 degE, 27.1 degN, A95 3.0, N = 50 (validated; this build = 27.1 / 187.8,
+A95 3.0, k 46.5, N 50, matching the published value).
 
 The pole is the Fisher mean of 50 lava-flow site VGPs:
     - 40 Schroeder-Lutsen basalt sites measured along the Two Island River near
       Schroeder, Minnesota by Fairchild et al. (2017), magnetite ('mag')
-      component, tilt-corrected (SLB01-SLB40). These are taken directly from the
-      published MagIC contribution 19680 (its sites table downloaded with
-      ipmag.download_magic_from_id('19680') and saved here as
-      Fairchild2017_19680_sites.txt; location 'Two Island River',
+      component, tilt-corrected (SLB01-SLB40). The site MEAN DIRECTIONS are the
+      published values from the study analysis file (pmag_results.csv in the
+      Swanson-Hysell-Group/2017_Late_Rift study repo), archived here as
+      Fairchild2017_published_site_means.csv. The site coordinates and method
+      codes are carried from the published MagIC contribution 19680 sites table
+      (Fairchild2017_19680_sites.txt; location 'Two Island River',
       dir_comp_name=='mag', dir_tilt_correction==100). Citation 10.1130/L580.1.
+
+      NOTE: the site means archived in contribution 19680 differ from the
+      published study values for 8 of the 40 sites (SLB08, SLB10, SLB15, SLB23,
+      SLB27, SLB28, SLB31, SLB32): in 19680 each of those site means retains one
+      additional specimen (n+1) that the study rejected as an outlier, which
+      collapses the site precision (e.g. SLB08 k 617 -> 6, SLB32 k 271 -> 8) and
+      shifts the site mean by ~0.6-8 deg. Using the published study means (here)
+      reproduces the published pole exactly; using the 19680-archived means gives
+      26.9/188.0 (a ~0.2 deg offset). The updated MagIC contribution corrects
+      those 8 site rows and flags the rejected specimens (see
+      ../../1084_Michipicoten_Island_Formation/contribution_build/build_updated_19680.py).
     - 10 Schroeder-Lutsen basalt flow sites of Tauxe & Kodama (2009)
       (ns006-ns015, tilt-corrected), the 'nsl' (above-NSVG) sequence in the
       compiled North Shore Volcanic Group data set. AF + thermal demagnetization;
@@ -69,32 +82,39 @@ def main():
     out = d.parent
     rows = []
 
-    # --- Fairchild Two Island River SLB sites (mag component, tilt-corrected) ---
-    fc = pd.read_csv(d / 'Fairchild2017_19680_sites.txt', sep='\t', header=1)
-    fc = fc[(fc['location'] == 'Two Island River')
-            & (fc['dir_comp_name'] == 'mag') & (fc['dir_tilt_correction'] == 100)]
-    fc = fc.sort_values('site')
-    for _, s in fc.iterrows():
-        dec, inc, a95 = float(s['dir_dec']), float(s['dir_inc']), float(s['dir_alpha95'])
-        lat, lon = float(s['lat']), float(s['lon'])
-        # VGP + dp/dm recomputed from the tilt-corrected mean direction
+    # --- Fairchild Two Island River SLB sites (mag, tilt-corrected) ----------
+    # Direction/k/n: published study means (pmag_results.csv -> archived here).
+    # Coordinates + method codes: carried from the 19680 sites table.
+    pub = pd.read_csv(d / 'Fairchild2017_published_site_means.csv')
+    pub = pub[(pub['comp'] == 'mag') & (pub['tilt'] == 100)].sort_values('site')
+    meta = pd.read_csv(d / 'Fairchild2017_19680_sites.txt', sep='\t', header=1)
+    meta = meta[(meta['location'] == 'Two Island River')
+                & (meta['dir_comp_name'] == 'mag') & (meta['dir_tilt_correction'] == 100)]
+    coord = meta.set_index('site')[['lat', 'lon', 'method_codes']].to_dict('index')
+    for _, s in pub.iterrows():
+        site = s['site']
+        dec, inc, a95 = float(s['dec']), float(s['inc']), float(s['alpha95'])
+        lat, lon = float(coord[site]['lat']), float(coord[site]['lon'])
+        vlat, vlon = float(s['vgp_lat']), float(s['vgp_lon'])
+        # dp/dm recomputed from the published mean direction at the site
         _, _, dp, dm = pmag.dia_vgp(dec, inc, a95, lat, lon)
         rows.append({
-            'site': s['site'], 'location': LOCATION, 'result_type': 'i',
+            'site': site, 'location': LOCATION, 'result_type': 'i',
             'result_quality': 'g',
-            'method_codes': str(s.get('method_codes', 'LP-DIR-T:DE-BFL:DE-FM')),
+            'method_codes': str(coord[site]['method_codes']),
             'citations': CIT_FAIRCHILD, 'geologic_classes': 'Igneous',
             'geologic_types': 'Lava Flow', 'lithologies': 'Basalt',
             'lat': f'{lat:.4f}', 'lon': f'{lon:.4f}',
             'age_low': AGE_LOW, 'age_high': AGE_HIGH, 'age_unit': 'Ma',
             'dir_tilt_correction': '100', 'dir_dec': f'{dec:.1f}', 'dir_inc': f'{inc:.1f}',
-            'dir_k': f'{float(s["dir_k"]):.1f}', 'dir_alpha95': f'{a95:.1f}',
-            'dir_n_samples': str(int(float(s['dir_n_samples']))),
-            'vgp_lat': f'{float(s["vgp_lat"]):.1f}', 'vgp_lon': f'{float(s["vgp_lon"]):.1f}',
+            'dir_k': f'{float(s["k"]):.1f}', 'dir_alpha95': f'{a95:.1f}',
+            'dir_n_samples': str(int(s['n'])),
+            'vgp_lat': f'{vlat:.1f}', 'vgp_lon': f'{vlon:.1f}',
             'vgp_dp': f'{dp:.1f}', 'vgp_dm': f'{dm:.1f}',
             'description': ('Schroeder-Lutsen basalt lava flow, Two Island River '
                            'section; magnetite (low-temperature) component, '
-                           'tilt-corrected (Fairchild et al., 2017).'),
+                           'tilt-corrected; published site mean of Fairchild et '
+                           'al. (2017).'),
         })
     n_fc = len(rows)
 
