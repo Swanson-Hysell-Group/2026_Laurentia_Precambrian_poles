@@ -44,7 +44,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Purcell Lava (RESULT# 9037; nominal age 1443 Ma)
 - [x] Snowslip Formation (RESULT# 9038; nominal age 1450 Ma)
 - [x] Spokane Formation (RESULT# 9039; nominal age 1458 Ma)
-- [ ] Michikamau Intrusion Combined (RESULT# 2274; nominal age 1460 Ma)
+- [x] Michikamau Intrusion Combined (RESULT# 2274; nominal age 1460 Ma)
 - [x] St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1466 Ma)
 - [x] Western Channel Diabase (RESULT# 2669; nominal age 1590 Ma)
 - [x] Cleaver Dykes (RESULT# 9139; nominal age 1741 Ma)
