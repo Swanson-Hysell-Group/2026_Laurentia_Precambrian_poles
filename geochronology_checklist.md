@@ -24,8 +24,8 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Central Arizona diabases -N (RESULT# 10016; nominal age 1088 Ma)
 - [x] Schroeder Lutsen Basalts (RESULT# 9915; nominal age 1090 Ma)
 - [x] Cardenas Basalts and Intrusions (RESULT# 9073; nominal age 1090 Ma)
-- [ ] Chengwatana Volcanics (RESULT# 8163; nominal age 1095 Ma)
-- [ ] Portage Lake Volcanics (RESULT# 9507; nominal age 1092 Ma)
+- [x] Chengwatana Volcanics (RESULT# 8163; nominal age 1096 Ma)
+- [x] Portage Lake Volcanics (RESULT# 9507; nominal age 1092 Ma)
 - [x] North Shore lavas -N (RESULT# 9856; nominal age 1095 Ma)
 - [x] Uppermost Mamainse Point volcanics -N (RESULT# 9513; nominal age 1094 Ma)
 - [x] Mamainse Point Volcanics -C (lower N, upper R) (RESULT# 9512; nominal age 1100 Ma)
@@ -61,11 +61,11 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] North Qoroq Intr. (RESULT# 6607; nominal age 1275 Ma)
 - [x] West Gardar Dolerite Dykes (RESULT# 2106; nominal age 1271 Ma)
 - [x] West Gardar Lamprophyre Dykes (RESULT# 2108; nominal age 1271 Ma)
-- [ ] Hviddal Giant Dyke (RESULT# 2132; nominal age 1184 Ma)
-- [ ] Narssaq Gabbro (RESULT# 2133; nominal age 1184 Ma)
-- [ ] South Qoroq Intr. (RESULT# 6610; nominal age 1163 Ma)
-- [ ] Giant Gabbro Dykes (RESULT# 2131; nominal age 1163 Ma)
-- [ ] NE-SW Trending Dyke Swarm (RESULT# 6609; nominal age 1160 Ma)
+- [x] Hviddal Giant Dyke (RESULT# 2132; nominal age 1184 Ma)
+- [x] Narssaq Gabbro (RESULT# 2133; nominal age 1184 Ma)
+- [x] South Qoroq Intr. (RESULT# 6610; nominal age 1163 Ma)
+- [x] Giant Gabbro Dykes (RESULT# 2131; nominal age 1163 Ma)
+- [x] NE-SW Trending Dyke Swarm (RESULT# 6609; nominal age 1160 Ma)
 
 ## Laurentia-Greenland-Nain
 
