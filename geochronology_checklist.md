@@ -37,7 +37,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [ ] Sudbury Dykes Combined (RESULT# 2175; nominal age 1238 Ma)
 - [ ] Mackenzie dykes grand mean (RESULT# B+00; nominal age 1267 Ma)
 - [ ] Nain Anorthosite (RESULT# 2180; nominal age 1305 Ma)
-- [ ] Pilcher, Garnet Range and Libby Formations (RESULT# 9030; nominal age 1385 Ma)
+- [x] Pilcher, Garnet Range and Libby Formations (RESULT# 9030; nominal age 1385 Ma)
 - [x] McNamara Formation (RESULT# 9031; nominal age 1401 Ma)
 - [x] Mistastin Pluton (RESULT# 2271; nominal age 1425 Ma)
 - [x] MEAN Rocky Mountain intrusions (RESULT# new; nominal age 1430 Ma)
