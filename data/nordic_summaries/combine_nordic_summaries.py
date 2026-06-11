@@ -37,6 +37,43 @@ COMPILATION_PATH = os.path.join(SUMMARY_DIR, os.pardir, 'Laurentia_poles.csv')
 # rather than inherit the compilation's oval values.
 NO_BACKFILL_COLUMNS = frozenset({'DP', 'DM', 'DPf', 'DMf'})
 
+# Subtle ROCKNAME changes between the per-notebook summaries and the legacy
+# compilation (Laurentia_poles.csv): spelling, abbreviation, a "MEAN " prefix,
+# Dike/Dyke, or a reordered/expanded label. Each entry maps the summary ROCKNAME
+# to its compilation ROCKNAME so blank cells still back-fill. Every mapping below
+# was confirmed to be the SAME pole (pole position within a few degrees). NOT
+# included (genuinely different / superseding / new poles, even where the name is
+# similar): "Cardenas Basalts" vs "Cardenas Basalts and Intrusions" (lavas-only
+# recompilation, ~16 deg away); "Central Arizona diabases" vs "... -N" (~15 deg
+# away); "NW Ontario Lamprophyre Dykes" vs "... and Abitibi Dykes" (compilation
+# pole also includes the Abitibi dykes); "Chuar Group (combined)" (new combined
+# pole; legacy was "Kwagunt Formation"); "Lower Freda Formation" / "Upper Freda
+# Formation" (new split of the legacy "Freda Sandstone").
+ROCKNAME_ALIASES = {
+    'Giant Gabbro Dikes': 'Giant Gabbro Dykes',
+    'Hviddal': 'Hviddal Giant Dyke',
+    'McNamara': 'McNamara Formation',
+    'Midsommersoe Dolerites': 'Midsommersoe Dolerite',
+    'Mean Rocky Mountain intrusions': 'MEAN Rocky Mountain intrusions',
+    'Mistastin Batholith': 'Mistastin Pluton',
+    'Narsaqq': 'Narssaq Gabbro',
+    'Nipigon sills and lavas': 'MEAN Nipigon sills and lavas',
+    'North Qoroq Intrusion': 'North Qoroq Intr.',
+    'South Qoroq Intrusion': 'South Qoroq Intr.',
+    'Snowslip': 'Snowslip Formation',
+    'Spokane': 'Spokane Formation',          # same formation; recomputed pole ~8 deg off the legacy one
+    'St. Francois Mountains Acidic Rocks': 'St.Francois Mountains Acidic Rocks',
+    'Stoer Group': 'MEAN Stoer Group',
+    'Torridon Group': 'MEAN Torridon Group',
+    'Western Channel diabase': 'Western Channel Diabase',
+    'Pilcher, Garnet Range, Libby': 'Pilcher, Garnet Range and Libby Formations',
+    'North Shore Volcanic Group -N (combined)': 'North Shore lavas -N',
+    'Sudbury Dike Swarm': 'Sudbury Dykes Combined',
+    'Osler Volcanic Group reverse lower': 'Lower Osler volcanics -R',
+    'Osler Volcanic Group reverse middle': 'Middle Osler volcanics -R',
+    'Osler Volcanic Group reverse upper': 'Upper Osler volcanics -R',
+}
+
 
 def _is_empty(value):
     """True for cells that carry no information (blank or a NaN literal)."""
@@ -107,6 +144,8 @@ def backfill_from_compilation(header, rows, compilation_path=COMPILATION_PATH):
     for row in rows:
         rockname = row[rock_idx].strip() if len(row) > rock_idx else ''
         comp_row = comp_by_rock.get(rockname)
+        if comp_row is None and rockname in ROCKNAME_ALIASES:
+            comp_row = comp_by_rock.get(ROCKNAME_ALIASES[rockname])
         if comp_row is None:
             unmatched.append(rockname)
             continue

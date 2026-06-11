@@ -48,6 +48,7 @@ Run with the project environment (carries pandas + folium), e.g.::
     python scripts/build_pole_map.py
 """
 
+import glob
 import json
 import os
 import re
@@ -60,6 +61,12 @@ import pandas as pd
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 CSV = os.path.join(ROOT, "data", "Laurentia_poles.csv")
+# Per-notebook Nordic summaries (the latest recreated poles) and their combined
+# table. The map and compilation table are built from these for the published
+# (<= PUBLISH_AGE_MAX) poles, so they reflect the current notebook values; older
+# poles are carried from the legacy compilation CSV above.
+SUMMARY_DIR = os.path.join(ROOT, "data", "nordic_summaries")
+COMBINED_CSV = os.path.join(SUMMARY_DIR, "nordic_summaries_combined.csv")
 MAP_HTML = os.path.join(ROOT, "_static", "Laurentia_pole_map.html")
 COMPILATION_MD = os.path.join(ROOT, "compilation.md")
 POLE_MAP_IPYNB = os.path.join(ROOT, "pole_map.ipynb")
@@ -75,6 +82,11 @@ TABLE_END = "<!-- POLE_TABLE_END -->"
 # default to that and allow an env override (e.g. BASE_URL='' for a root-served
 # local preview).
 BASE_URL = os.environ.get("BASE_URL", "/2026_Laurentia_Precambrian_poles")
+
+# Only assessment notebooks with a stem prefix at or below this age (Ma) are
+# published in the book. Poles whose notebook stem prefix is larger are still
+# shown on the map and listed in the table, but without a notebook link.
+PUBLISH_AGE_MAX = 1779
 
 # Reference locality for the reported paleolatitude (Duluth, Minnesota).
 DULUTH_LAT = 46.7867
@@ -99,10 +111,16 @@ EXISTING_NOTEBOOKS = {
     "Cardenas Basalts and Intrusions": "1082_Cardenas",
     "Michipicoten Island Formation": "1084_Michipicoten_Island_Formation",
     "Lake Shore Traps": "1086_Lake_Shore_Traps",
-    "Central Arizona diabases -N": "1088_Central_Arizona_intrusions",
+    "Central Arizona diabases -N": "1098_Central_Arizona_intrusions",
     "Schroeder Lutsen Basalts": "1090_Schroeder_Lutsen_Basalts",
     "Portage Lake Volcanics": "1092_Portage_Lake_Volcanics",
     "North Shore lavas -N": "1095_North_Shore_Volcanic_Group",
+    "Chengwatana Volcanics": "1096_Chengwatana",
+    "MEAN Nipigon sills and lavas": "1108_Nipigon",
+    "North Qoroq Intr.": "1275_North_Qoroq",
+    "Kungnat Ring Dyke": "1275_Kungnat",
+    "South Qoroq Intr.": "1163_South_Qoroq",
+    "NE-SW Trending Dyke Swarm": "1160_NE-SW",
     "Upper Osler volcanics -R": "1108_Osler_Volcanic_Group",
     "Middle Osler volcanics -R": "1108_Osler_Volcanic_Group",
     "Lower Osler volcanics -R": "1108_Osler_Volcanic_Group",
@@ -115,10 +133,10 @@ EXISTING_NOTEBOOKS = {
     # Notebooks added with short custom stems (do not match the <age>_<Name>
     # convention), mapped explicitly so the table/map links resolve.
     "Kwagunt Formation": "755_Chuar_Group",  # rebuilt as the combined Chuar Group pole
-    "Uinta Mountain Group": "759_Uinta",
+    "Uinta Mountain Group": "759_Uinta_Mountain_Group",
     "Abitibi Dykes": "1141_Abitibi",
     "NW Ontario Lamprophyre Dykes and Abitibi Dykes": "1144_Lamprophyre",
-    "Sudbury Dykes Combined": "1237_Sudbury",
+    "Sudbury Dykes Combined": "1235_Sudbury",
     "Mackenzie dykes grand mean": "1267_Mackenzie",
     "Nain Anorthosite": "1305_Nain",
     "Midsommersoe Dolerite": "1382_Midsommersoe",
@@ -128,7 +146,53 @@ EXISTING_NOTEBOOKS = {
     "Michikamau Intrusion Combined": "1460_Michikamau",
     "St.Francois Mountains Acidic Rocks": "1466_Francois",
     "Melville Bugt diabase dykes": "1633_Melville",
+    "Elbow Creek dikes": "2480_Elbow_creek",  # not published (>1779), mapped so the stem resolves
 }
+
+# Per-pole summary CSVs whose filename stem is not itself a notebook filename.
+# Several notebooks emit more than one summary (the Mamainse and Osler polarity
+# zones, the two Baie des Moutons complexes), and a few summaries are named
+# slightly differently from their notebook; map each summary stem to the
+# notebook that should be linked.
+SUMMARY_STEM_TO_NOTEBOOK = {
+    "583_Baie_des_Moutons_A": "583_Baie_des_Moutons",
+    "583_Baie_des_Moutons_B": "583_Baie_des_Moutons",
+    "1094_Mamainse_upper_N": "1109_Mamainse_Point_Volcanics",
+    "1100_Mamainse_Flour_Bay": "1109_Mamainse_Point_Volcanics",
+    "1105_Mamainse_lower_R2": "1109_Mamainse_Point_Volcanics",
+    "1109_Mamainse_lower_R1": "1109_Mamainse_Point_Volcanics",
+    "1105_Osler_reverse_upper": "1108_Osler_Volcanic_Group",
+    "1107_Osler_reverse_middle": "1108_Osler_Volcanic_Group",
+    "1108_Osler_reverse_lower": "1108_Osler_Volcanic_Group",
+    "1382_Midsommersoe_Dolerites": "1382_Midsommersoe",
+    "1382_Victoria_Fjord": "1382_Victoria",
+    "1382_ZigZag_Dal_Basalt": "1382_Zigzag",
+    "1430_Rocky_Mountain_intrusions": "1430_Rocky",
+    "1466_St_Francois_Mountains": "1466_Francois",
+    "1590_WesternChannelDiabase": "1590_Western_Channel",
+    "1633_Melville_Bugt": "1633_Melville",
+}
+
+
+def summary_stem_by_rockname():
+    """Map each summary ROCKNAME to the notebook stem that should be linked.
+
+    Reads the per-pole Nordic summary CSVs that compose ``COMBINED_CSV`` (each
+    filename is the summary stem) and resolves it to a notebook stem via
+    :data:`SUMMARY_STEM_TO_NOTEBOOK`, defaulting to the summary stem itself when
+    that is already a notebook filename.
+    """
+    out = {}
+    for path in sorted(glob.glob(os.path.join(SUMMARY_DIR, "*.csv"))):
+        stem = os.path.basename(path)[:-4]
+        if not stem[:1].isdigit() or stem == "nordic_summaries_combined":
+            continue
+        df1 = pd.read_csv(path)
+        if df1.empty or "ROCKNAME" not in df1.columns:
+            continue
+        rockname = str(df1.iloc[0]["ROCKNAME"]).strip()
+        out[rockname] = SUMMARY_STEM_TO_NOTEBOOK.get(stem, stem)
+    return out
 
 
 def convention_stem(rockname, age):
@@ -205,6 +269,18 @@ def build_stem_map(df):
     for rn, age in poles:
         mapping.setdefault(rn, convention_stem(rn, age))
     return mapping
+
+
+def stem_age(stem):
+    """Leading age prefix (Ma) of a notebook stem, or None if it has none."""
+    mo = re.match(r"^(\d+)", str(stem))
+    return int(mo.group(1)) if mo else None
+
+
+def is_published(stem):
+    """True if the notebook stem is in the published set (prefix <= PUBLISH_AGE_MAX)."""
+    age = stem_age(stem)
+    return age is not None and age <= PUBLISH_AGE_MAX
 
 
 def myst_slug(stem):
@@ -351,6 +427,11 @@ def _pole_marker(row, color, slug):
     tooltip = (f'<div style="font-size:17px;line-height:1.4;">'
                f"<b>{row['ROCKNAME']}</b><br>"
                f"~{int(row['nominal age'])} Ma · Grade {grade}</div>")
+    # Only published notebooks (stem prefix <= PUBLISH_AGE_MAX) get a link; older
+    # poles are still shown but without one.
+    notebook_line = (
+        f"<a href='{href}' target='_blank' rel='noopener'>Open notebook &rarr;</a>"
+        if row["_publish"] else "")
     popup_html = (
         f'<div style="font-size:16px;line-height:1.5;">'
         f"<b>{row['ROCKNAME']}</b><br>"
@@ -360,9 +441,9 @@ def _pole_marker(row, color, slug):
         f"Pole: {fmt(row['PLAT'])}&deg;N, {fmt(row['PLONG'])}&deg;E "
         f"(A95 {fmt(row['A95'])}&deg;)<br>"
         f"Duluth paleolat: {fmt(row['_duluth_paleolat'])}&deg;<br>"
-        f"{short_reference(row['POLE AUTHORS'], row['YEAR'])}<br>"
-        f"<a href='{href}' target='_blank' rel='noopener'>"
-        f"Open notebook &rarr;</a></div>")
+        f"{short_reference(row['POLE AUTHORS'], row['YEAR'])}"
+        + (f"<br>{notebook_line}" if notebook_line else "")
+        + "</div>")
     popup = folium.Popup(popup_html, max_width=320)
 
     if grade == "A":
@@ -454,7 +535,10 @@ def build_table(df):
     sep = "|" + "|".join(["---"] * 11) + "|"
     lines = [header, sep]
     for _, row in df.iterrows():
-        link = f"[{row['ROCKNAME']}](pole_notebooks/{row['_stem']}.ipynb)"
+        # Published notebooks (stem prefix <= PUBLISH_AGE_MAX) link; older poles
+        # are still listed as plain text.
+        link = (f"[{row['ROCKNAME']}](pole_notebooks/{row['_stem']}.ipynb)"
+                if row["_publish"] else str(row["ROCKNAME"]))
         lines.append(
             f"| {row['Terrane']} | {link} | {int(row['nominal age'])} "
             f"| {grade_label(row['Grade'])} "
@@ -466,24 +550,56 @@ def build_table(df):
     return "\n".join(lines)
 
 
+USE_COLS = ["Terrane", "ROCKNAME", "SLAT", "SLONG", "PLAT", "PLONG", "A95",
+            "nominal age", "Grade", "POLE AUTHORS", "YEAR"]
+
+
+def _prep(df):
+    """Coerce ``nominal age`` to int and drop rows lacking a plottable position."""
+    df = df.copy()
+    df["nominal age"] = pd.to_numeric(df["nominal age"], errors="coerce")
+    df = df.dropna(subset=["SLAT", "SLONG", "PLAT", "PLONG", "nominal age"])
+    df["nominal age"] = df["nominal age"].astype(int)
+    return df
+
+
 def load_poles():
-    """Load and prepare the compilation table for the map and table.
+    """Assemble the table/map rows: latest recreated poles + older legacy poles.
+
+    The published poles (notebook stem prefix <= ``PUBLISH_AGE_MAX``) are taken
+    from the per-notebook Nordic summaries (``COMBINED_CSV``) so the table and
+    map reflect the current notebook values, each linked to its notebook. The
+    older poles (> ``PUBLISH_AGE_MAX``) are carried from the legacy compilation
+    (``CSV``) so they are still shown and listed, but without a notebook link
+    (their stems are convention-derived). The two age ranges are disjoint at
+    ``PUBLISH_AGE_MAX``, so the union introduces no duplicates.
 
     Returns:
-        pd.DataFrame: ``data/Laurentia_poles.csv`` with usable rows only and the
-        added helper columns ``_stem`` (notebook filename stem) and
-        ``_duluth_paleolat`` (paleolatitude of Duluth implied by the pole).
+        pd.DataFrame: rows with ``_stem`` (notebook stem), ``_publish`` (whether
+        a notebook link is emitted) and ``_duluth_paleolat``.
     """
-    df = pd.read_csv(CSV)
-    df["nominal age"] = pd.to_numeric(df["nominal age"], errors="coerce")
-    df = df.dropna(subset=["SLAT", "SLONG", "PLAT", "PLONG",
-                           "nominal age"]).copy()
-    df["nominal age"] = df["nominal age"].astype(int)
-    df["_stem"] = df["ROCKNAME"].map(build_stem_map(df))
+    # latest recreated poles (<= PUBLISH_AGE_MAX) from the Nordic summaries
+    summ = _prep(pd.read_csv(COMBINED_CSV))
+    stem_by_rock = summary_stem_by_rockname()
+    summ["_stem"] = summ["ROCKNAME"].map(stem_by_rock)
+    unresolved = summ["_stem"].isna()
+    if unresolved.any():
+        summ.loc[unresolved, "_stem"] = [
+            convention_stem(rn, ag) for rn, ag in
+            zip(summ.loc[unresolved, "ROCKNAME"], summ.loc[unresolved, "nominal age"])]
+
+    # older poles (> PUBLISH_AGE_MAX) carried from the legacy compilation
+    legacy = _prep(pd.read_csv(CSV))
+    legacy = legacy[legacy["nominal age"] > PUBLISH_AGE_MAX].copy()
+    legacy["_stem"] = legacy["ROCKNAME"].map(build_stem_map(legacy))
+
+    df = pd.concat([summ[USE_COLS + ["_stem"]], legacy[USE_COLS + ["_stem"]]],
+                   ignore_index=True)
+    df["_publish"] = df["_stem"].map(is_published)
     df["_duluth_paleolat"] = paleolatitude(
         DULUTH_LAT, DULUTH_LON, df["PLAT"].astype(float),
         df["PLONG"].astype(float))
-    return df
+    return df.sort_values("nominal age", kind="stable").reset_index(drop=True)
 
 
 # Markdown for the interactive-map notebook's lead cell.
@@ -560,22 +676,24 @@ def report_link_coverage(df):
     """
     nb_dir = os.path.join(ROOT, "pole_notebooks")
     on_disk = {f[:-6] for f in os.listdir(nb_dir) if f.endswith(".ipynb")}
-    linked = {stem: rn for stem, rn in zip(df["_stem"], df["ROCKNAME"])}
+    # only the published (linked) poles need a resolving notebook
+    published = df[df["_publish"]]
+    linked = {stem: rn for stem, rn in zip(published["_stem"],
+                                           published["ROCKNAME"])}
 
     resolved = sum(stem in on_disk for stem in linked)
-    print(f"{resolved}/{len(linked)} pole links resolve to an existing notebook.")
+    print(f"{resolved}/{len(linked)} published pole links resolve to a notebook.")
 
     missing = [(rn, stem) for stem, rn in linked.items() if stem not in on_disk]
-    explicit_missing = [(rn, st) for rn, st in missing
-                        if rn in EXISTING_NOTEBOOKS]
-    if explicit_missing:
-        print("  WARNING: explicitly-mapped notebooks not found on disk:")
-        for rn, st in explicit_missing:
+    if missing:
+        print("  WARNING: published links with no notebook on disk:")
+        for rn, st in sorted(missing):
             print(f"    {rn!r} -> pole_notebooks/{st}.ipynb")
 
-    orphans = sorted(on_disk - set(linked))
+    # published notebooks (stem prefix <= PUBLISH_AGE_MAX) that no pole links to
+    orphans = sorted(st for st in on_disk - set(linked) if is_published(st))
     if orphans:
-        print("  Notebooks on disk that no pole row links to (check naming):")
+        print("  Published notebooks on disk that no pole links to (check naming):")
         for st in orphans:
             print(f"    pole_notebooks/{st}.ipynb")
 

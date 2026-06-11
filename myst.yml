@@ -41,25 +41,36 @@ project:
         - file: pole_notebooks/583_Baie_des_Moutons.ipynb
         - file: pole_notebooks/719_Franklin_LIP.ipynb
         - file: pole_notebooks/755_Chuar_Group.ipynb
-        - file: pole_notebooks/759_Uinta.ipynb
+        - file: pole_notebooks/759_Uinta_Mountain_Group.ipynb
         - file: pole_notebooks/780_Gunbarrel.ipynb
         - file: pole_notebooks/887_Adirondack.ipynb
+        - file: pole_notebooks/925_Torridon.ipynb
         - file: pole_notebooks/990_Jacobsville.ipynb
         - file: pole_notebooks/1045_Upper_Freda.ipynb
         - file: pole_notebooks/1078_Nonesuch.ipynb
         - file: pole_notebooks/1082_Cardenas.ipynb
         - file: pole_notebooks/1084_Michipicoten_Island_Formation.ipynb
         - file: pole_notebooks/1086_Lake_Shore_Traps.ipynb
-        - file: pole_notebooks/1088_Central_Arizona_intrusions.ipynb
+        - file: pole_notebooks/1098_Central_Arizona_intrusions.ipynb
         - file: pole_notebooks/1090_Schroeder_Lutsen_Basalts.ipynb
         - file: pole_notebooks/1092_Portage_Lake_Volcanics.ipynb
         - file: pole_notebooks/1095_North_Shore_Volcanic_Group.ipynb
+        - file: pole_notebooks/1096_Chengwatana.ipynb
+        - file: pole_notebooks/1107_Coldwell.ipynb
+        - file: pole_notebooks/1108_Nipigon.ipynb
         - file: pole_notebooks/1108_Osler_Volcanic_Group.ipynb
         - file: pole_notebooks/1109_Mamainse_Point_Volcanics.ipynb
         - file: pole_notebooks/1141_Abitibi.ipynb
         - file: pole_notebooks/1144_Lamprophyre.ipynb
-        - file: pole_notebooks/1237_Sudbury.ipynb
+        - file: pole_notebooks/1160_NE-SW.ipynb
+        - file: pole_notebooks/1163_South_Qoroq.ipynb
+        - file: pole_notebooks/1199_Stoer.ipynb
+        - file: pole_notebooks/1235_Sudbury.ipynb
         - file: pole_notebooks/1267_Mackenzie.ipynb
+        - file: pole_notebooks/1271_West_Gardar_dolerite.ipynb
+        - file: pole_notebooks/1271_West_Gardar_lamprophyre.ipynb
+        - file: pole_notebooks/1275_Kungnat.ipynb
+        - file: pole_notebooks/1275_North_Qoroq.ipynb
         - file: pole_notebooks/1305_Nain.ipynb
         - file: pole_notebooks/1382_Midsommersoe.ipynb
         - file: pole_notebooks/1382_Victoria.ipynb

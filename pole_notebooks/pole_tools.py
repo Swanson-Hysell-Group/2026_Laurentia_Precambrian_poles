@@ -19,6 +19,18 @@ import os
 Torsvik2012_poles = pd.read_excel('../data/Torsvik2012.xlsx')
 Torsvik2012_Laurentia = Torsvik2012_poles[4:187]
 
+# Euler poles [pole_lat, pole_lon, CCW rotation angle] (degrees) used to rotate
+# poles from terranes that have separated from Laurentia back into the Laurentia
+# reference frame. Greenland: Cenozoic opening of Baffin Bay and the Labrador Sea
+# (Roest & Srivastava, 1989); Scotland: opening of the Atlantic (Torsvik et al.,
+# 2017); Svalbard: Maloof et al. (2006).
+TERRANE_EULER_POLES = {
+    'Laurentia-Greenland':      [67.5, -118.5, -13.8],
+    'Laurentia-Greenland-Nain': [67.5, -118.5, -13.8],
+    'Laurentia-Scotland':       [78.6, 161.9, -31.0],
+    'Laurentia-Svalbard':       [-81.0, 125.0, 68.0],
+}
+
 def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia'):
     """Loads Laurentia poles and rotates them into a common reference frame.
 
@@ -65,19 +77,12 @@ def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Lau
         Laurentia_poles['A95'] = Laurentia_poles['A95'].fillna(
             (Laurentia_poles['DP'] + Laurentia_poles['DM']) / 2)
 
-    Euler_poles = {
-        'Laurentia-Greenland':      [67.5, -118.5, -13.8],  # [lat, lon, CCW angle]
-        'Laurentia-Greenland-Nain': [67.5, -118.5, -13.8],
-        'Laurentia-Scotland':       [78.6, 161.9, -31.0],
-        'Laurentia-Svalbard':       [-81.0, 125.0, 68.0],
-    }
-
     plat_rot = []
     plon_rot = []
     for _, row in Laurentia_poles.iterrows():
         terrane = row['Terrane']
-        if terrane in Euler_poles:
-            plat, plon = pmag.pt_rot(Euler_poles[terrane],
+        if terrane in TERRANE_EULER_POLES:
+            plat, plon = pmag.pt_rot(TERRANE_EULER_POLES[terrane],
                                      [row['PLAT']], [row['PLONG']])
             plat_rot.append(plat[0])
             plon_rot.append(plon[0])
@@ -463,19 +468,22 @@ def R2_test(pole_name,pole_df):
     else:
         print('N = ' + str(round(N)) + ' (N < 25; insufficient sample number);')  
         
-    if B >= 8:
+    if pd.isna(B):
+        print('B = n/a (published grand mean of unit means; site number not reported);')
+    elif B >= 8:
         print('B = ' + str(round(B)) + ' (B ≥ 8; sufficient site number);')
     else:
-        print('B = ' + str(round(B)) + ' (B < 8; insufficient site number);') 
-        
+        print('B = ' + str(round(B)) + ' (B < 8; insufficient site number);')
+
     if KD >= 70:
         print('K = ' + str(round(KD)) + ' (K ≥ 70; concern about underrepresenting PSV);')
     elif KD >= 10:
-        print('K = ' + str(round(KD)) + ' (70 ≥ K ≥ 10; meets PSV criteria);') 
-    else: 
+        print('K = ' + str(round(KD)) + ' (70 ≥ K ≥ 10; meets PSV criteria);')
+    else:
         print('K = ' + str(round(KD)) + ' (10 ≥ K; low K, too dispersed);')
-        
-    Deenen_test(B,A95)
+
+    if not pd.isna(B):
+        Deenen_test(B,A95)
 
 def assess_R2(sites_tc, pole_mean, verbose=True):
     """Evaluate the Meert et al. (2020) R2 criteria from recreated site data.

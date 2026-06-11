@@ -30,6 +30,7 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
 import pandas as pd  # noqa: E402
+import pmagpy.pmag as pmag  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_pole_map import (  # noqa: E402
@@ -39,12 +40,24 @@ MAX_AGE_UNCERTAINTY = 50  # Myr; poles with a larger +/- age bound are excluded
 EVANS_CSV = os.path.join(ROOT, "data", "Evans_et_al_2021_compilation.csv")
 # Updated compilation = the recreated-from-site-level poles emitted by the
 # notebooks and merged by combine_nordic_summaries.py (grows as notebooks are
-# built).
+# built), including the rebuilt Greenland poles.
 UPDATED_CSV = os.path.join(ROOT, "data", "nordic_summaries",
                            "nordic_summaries_combined.csv")
-# Previous compilation, used for now to supply Greenland poles not yet rebuilt.
-PREV_CSV = os.path.join(ROOT, "data", "Laurentia_poles.csv")
 OUT_BASE = os.path.join(ROOT, "_static", "Laurentia_paleolatitude_comparison")
+
+# Euler poles [pole_lat, pole_lon, rotation angle] used to rotate poles from
+# terranes separated from Laurentia back into the Laurentia reference frame
+# before the Duluth paleolatitude is computed; these mirror
+# pole_tools.TERRANE_EULER_POLES (Greenland: Roest & Srivastava, 1989). Only the
+# Greenland poles are rotated here: in the updated compilation they carry the
+# correct 'Laurentia-Greenland' terrane label. (The rebuilt Scotland poles --
+# Stoer, Torridon -- are exported with a 'Laurentia' terrane label in present-day
+# coordinates, so they are not rotated; rotating them would require relabeling
+# those summaries 'Laurentia-Scotland'. Svalbard is excluded from the figure.)
+TERRANE_EULER_POLES = {
+    "Laurentia-Greenland": [67.5, -118.5, -13.8],
+    "Laurentia-Greenland-Nain": [67.5, -118.5, -13.8],
+}
 
 # (age_min, age_max) for each version produced.
 VERSIONS = [(700, 1800), (700, 1180)]
@@ -100,6 +113,24 @@ def categorize(terrane, grade):
     return CATEGORIES[5]
 
 
+def rotate_to_laurentia(d):
+    """Rotate Greenland-terrane poles into the Laurentia reference frame in
+    place, so the Duluth paleolatitude is computed in Laurentia coordinates.
+    Poles of any terrane without an entry in ``TERRANE_EULER_POLES`` are left
+    unchanged.
+    """
+    for idx in d.index:
+        euler = TERRANE_EULER_POLES.get(str(d.at[idx, "Terrane"]))
+        if euler is None:
+            continue
+        plat, plon = d.at[idx, "PLAT"], d.at[idx, "PLONG"]
+        if pd.isna(plat) or pd.isna(plon):
+            continue
+        rlat, rlon = pmag.pt_rot(euler, [plat], [plon])
+        d.at[idx, "PLAT"], d.at[idx, "PLONG"] = rlat[0], rlon[0]
+    return d
+
+
 def load(path, age_min, age_max):
     """Load a compilation CSV, restricted to Laurentia poles in the interval."""
     d = pd.read_csv(path)
@@ -111,6 +142,9 @@ def load(path, age_min, age_max):
     d = d[~d["Terrane"].astype(str).str.contains("Svalbard")]
     d = d[(d["nominal age"] >= age_min) & (d["nominal age"] <= age_max)].copy()
 
+    # Rotate Greenland/Scotland poles into the Laurentia frame before computing
+    # the Duluth paleolatitude.
+    d = rotate_to_laurentia(d)
     d["Duluth_plat"] = paleolatitude(DULUTH_LAT, DULUTH_LON, d["PLAT"],
                                      d["PLONG"])
     d["age_hi"] = (d["himagage"] - d["nominal age"]).clip(lower=0).fillna(0)
@@ -127,13 +161,10 @@ def load(path, age_min, age_max):
 
 
 def load_updated(age_min, age_max):
-    """Updated-panel poles: the rebuilt summaries, but with Greenland poles
-    taken from the previous compilation for now (not all are rebuilt yet)."""
-    rebuilt = load(UPDATED_CSV, age_min, age_max)
-    rebuilt = rebuilt[~rebuilt["Terrane"].astype(str).str.contains("Greenland")]
-    prev = load(PREV_CSV, age_min, age_max)
-    greenland = prev[prev["Terrane"].astype(str).str.contains("Greenland")]
-    return pd.concat([rebuilt, greenland], ignore_index=True)
+    """Updated-panel poles: the recreated-from-site-level summaries, including
+    the rebuilt Greenland poles (now in the combined summaries), each rotated
+    into the Laurentia reference frame by :func:`load`."""
+    return load(UPDATED_CSV, age_min, age_max)
 
 
 def plot_panel(ax, d, panel_label, age_min, age_max, grenville_xy=(1010, -52)):
