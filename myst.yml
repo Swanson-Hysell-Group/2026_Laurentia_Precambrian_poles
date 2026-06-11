@@ -40,8 +40,8 @@ project:
         - file: pole_notebooks/575_Callander.ipynb
         - file: pole_notebooks/583_Baie_des_Moutons.ipynb
         - file: pole_notebooks/719_Franklin_LIP.ipynb
-        - file: pole_notebooks/754_Uinta.ipynb
-        - file: pole_notebooks/757_Chuar_Group.ipynb
+        - file: pole_notebooks/755_Chuar_Group.ipynb
+        - file: pole_notebooks/759_Uinta.ipynb
         - file: pole_notebooks/780_Gunbarrel.ipynb
         - file: pole_notebooks/887_Adirondack.ipynb
         - file: pole_notebooks/990_Jacobsville.ipynb

@@ -24,8 +24,8 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia | [Baie des Moutons complex B](pole_notebooks/583_Baie_des_Moutons.ipynb) | 583 | B | 301.0 | 50.8 | 321.5 | -34.2 | 15.4 | -4.2 | McCausland et al. (2011) |
 | Laurentia | [Long Range Dykes](pole_notebooks/615_Long_Range.ipynb) | 615 | B | 303.3 | 53.7 | 165.4 | -12.4 | 20.8 | -17.5 | Murthy et al. (1992) |
 | Laurentia | [Franklin event grand mean](pole_notebooks/719_Franklin_LIP.ipynb) | 719 | A | 275.4 | 73.0 | 162.1 | 6.7 | 3.0 | -5.7 | Denyszyn et al. (2009) |
-| Laurentia | [Kwagunt Formation](pole_notebooks/757_Chuar_Group.ipynb) | 751 | A | 248.1 | 36.3 | 163.8 | 14.2 | 3.5 | 1.0 | Eyster et al. (2020) |
-| Laurentia | [Uinta Mountain Group](pole_notebooks/754_Uinta.ipynb) | 750 | B | 250.7 | 40.8 | 161.3 | 0.8 | 4.7 | -10.7 | Weil et al. (2006) |
+| Laurentia | [Kwagunt Formation](pole_notebooks/755_Chuar_Group.ipynb) | 751 | A | 248.1 | 36.3 | 163.8 | 14.2 | 3.5 | 1.0 | Eyster et al. (2020) |
+| Laurentia | [Uinta Mountain Group](pole_notebooks/759_Uinta.ipynb) | 759 | B | 250.7 | 40.8 | 161.3 | 0.8 | 4.7 | -10.7 | Weil et al. (2006) |
 | Laurentia | [Gunbarrel LIP](pole_notebooks/780_Gunbarrel.ipynb) | 780 | A | -109.9 | 45.0 | 151.5 | 3.2 | 8.0 | -15.3 | Ding et al. (2025) |
 | Laurentia | [Adirondack metamorphic anorthosite](pole_notebooks/887_Adirondack.ipynb) | 887 | B | -73.9 | 44.2 | 143.4 | -25.2 | 12.9 | -41.4 | Brown et al. (2012) |
 | Laurentia | [Jacobsville Formation](pole_notebooks/990_Jacobsville.ipynb) | 990 | A | -88.2 | 47.3 | 186.2 | -14.2 | 2.7 | -4.8 | Zhang et al. (2024) |
