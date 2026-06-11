@@ -1,0 +1,6 @@
+tab 	sites
+age	age_high	age_low	age_sigma	age_unit	citations	description	dir_alpha95	dir_dec	dir_inc	dir_k	dir_n_samples	dir_tilt_correction	geologic_classes	geologic_types	lat	lithologies	location	lon	method_codes	result_quality	result_type	site	vgp_dm	vgp_dp	vgp_lat	vgp_lon
+1441	1463	1419		Ma	10.1016/j.epsl.2015.02.011	basement	9.8	257.2	9.3	33	8	0	Igneous	Intrusion	55.9218	Quartz monzonite	Mistastin Pluton	296.6033	LP-DIR-T	g	i	8	9.897408854607459	4.997892960982762	-3.217908054191043	219.84015320422864
+1441	1463	1419		Ma	10.1016/j.epsl.2015.02.011	melt + basement	3.7	187.1	-67.1	168	10	0	Igneous	Intrusion;Impact Melt	55.8322	Quartz monzonite	Mistastin Pluton	296.641	LP-DIR-T;LP-DIR-AF	b	i	13	6.13637417080226	5.088525400552584	-82.61194972047322	258.30119018054154
+1441	1463	1419		Ma	10.1016/j.epsl.2015.02.011	baesment	8.7	181.0	-60.7	78	5	0	Igneous	Intrusion	55.8322	Quartz monzonite	Mistastin Pluton	296.6469	LP-DIR-T;LP-DIR-AF	b	i	15	13.273220393844372	10.125194231239426	-75.8535236114432	293.5906757670164
+1441	1463	1419		Ma	10.1016/j.epsl.2015.02.011	basement	11.7	262.4	6.1	34	6	0	Igneous	Intrusion	55.8915	Quartz monzonite	Mistastin Pluton	296.5953	LP-DIR-T;LP-DIR-AF	g	i	16	11.749860811267352	5.899967054878473	-1.7122008281407302	214.60454415394221
