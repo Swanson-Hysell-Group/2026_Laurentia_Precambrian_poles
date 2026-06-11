@@ -34,7 +34,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [ ] MEAN Nipigon sills and lavas (RESULT# new; nominal age 1111 Ma)
 - [ ] Abitibi Dykes (RESULT# 7193; nominal age 1141 Ma)
 - [ ] NW Ontario Lamprophyre Dykes and Abitibi Dykes (RESULT# 9887; nominal age 1145 Ma)
-- [ ] Sudbury Dykes Combined (RESULT# 2175; nominal age 1238 Ma)
+- [x] Sudbury Dykes Combined (RESULT# 2175; nominal age 1235 Ma)
 - [x] Mackenzie dykes grand mean (RESULT# B+00; nominal age 1267 Ma)
 - [x] Nain Anorthosite (RESULT# 2180; nominal age 1305 Ma)
 - [x] Pilcher, Garnet Range and Libby Formations (RESULT# 9030; nominal age 1385 Ma)
