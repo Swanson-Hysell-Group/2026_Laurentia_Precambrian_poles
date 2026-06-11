@@ -79,7 +79,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 
 ## Laurentia-Scotland
 
-- [ ] MEAN Stoer Group (RESULT# NEW; nominal age 1199 Ma)
+- [x] MEAN Stoer Group (RESULT# NEW; nominal age 1199 Ma)
 - [ ] MEAN Torridon Group (RESULT# NEW; nominal age 885 Ma)
 
 ## Laurentia-Slave
