@@ -39,7 +39,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Nain Anorthosite (RESULT# 2180; nominal age 1305 Ma)
 - [x] Pilcher, Garnet Range and Libby Formations (RESULT# 9030; nominal age 1385 Ma)
 - [x] McNamara Formation (RESULT# 9031; nominal age 1401 Ma)
-- [x] Mistastin Pluton (RESULT# 2271; nominal age 1425 Ma)
+- [x] Mistastin Pluton (RESULT# 2271; nominal age 1441 Ma)
 - [x] MEAN Rocky Mountain intrusions (RESULT# new; nominal age 1430 Ma)
 - [x] Purcell Lava (RESULT# 9037; nominal age 1443 Ma)
 - [x] Snowslip Formation (RESULT# 9038; nominal age 1450 Ma)
