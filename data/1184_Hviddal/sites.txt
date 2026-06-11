@@ -1,0 +1,10 @@
+tab 	sites																									
+age	age_high	age_low	age_sigma	age_unit	citations	description	dir_alpha95	dir_dec	dir_inc	dir_k	dir_n_samples	dir_tilt_correction	geologic_classes	geologic_types	lat	lithologies	location	lon	method_codes	result_quality	result_type	site	vgp_dm	vgp_dp	vgp_lat	vgp_lon
+1184	1189	1179	5	Ma	10.37570/bgsd-1976-26-06 		12.3	295.8	25.5	30	6	0	Igneous	Intrusion	60.88	Syenite	Hviddal	-46.34	DE-FM	g	i	1			24	207
+1184	1189	1179	5	Ma	10.37570/bgsd-1976-26-06 		10.3	281.9	39.7	44	6	0	Igneous	Intrusion	60.88	Syenite	Hviddal	-46.34	DE-FM	g	i	2			25	225
+1184	1189	1179	5	Ma	10.37570/bgsd-1976-26-06 		9.9	293	36.5	47	6	0	Igneous	Intrusion	60.88	Syenite	Hviddal	-46.34	DE-FM	g	i	3			29	214
+1184	1189	1179	5	Ma	10.37570/bgsd-1976-26-06		10.1	301.4	60.6	59	5	0	Igneous	Intrusion	60.88	Syenite	Hviddal	-46.34	DE-FM	g	i	4			50	223
+1184	1189	1179	5	Ma	10.37570/bgsd-1976-26-06		10.8	286	44	73	4	0	Igneous	Intrusion	60.88	Syenite	Hviddal	-46.34	DE-FM	g	i	5			30	223
+1184	1189	1179	5	Ma	10.37570/bgsd-1976-26-06		13.2	313.9	49	27	6	0	Igneous	Intrusion	60.88	Syenite	Hviddal	-46.34	DE-FM	g	i	6			47	200
+1184	1189	1179	5	Ma	10.37570/bgsd-1976-26-06		6.5	155.9	74	141	5	0	Igneous	Intrusion	60.88	Syenite	Hviddal	-46.34	DE-FM	b	i	7			32	238
+1184	1189	1179	5	Ma	10.37570/bgsd-1976-26-06		7.8	293	41.2	98	5	0	Igneous	Intrusion	60.88	Syenite	Hviddal	-46.34	DE-FM	g	i	8			32	216
