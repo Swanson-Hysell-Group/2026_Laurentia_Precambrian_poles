@@ -31,7 +31,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Mamainse Point Volcanics -C (lower N, upper R) (RESULT# 9512; nominal age 1100 Ma)
 - [x] Osler Volcanic Group (RESULT# 10017; nominal age 1107 Ma)
 - [x] Coldwell Complex (RESULT# 9838; nominal age 1107 Ma)
-- [ ] MEAN Nipigon sills and lavas (RESULT# new; nominal age 1111 Ma)
+- [x] MEAN Nipigon sills and lavas (RESULT# new; nominal age 1111 Ma)
 - [x] Abitibi Dykes (RESULT# 7193; nominal age 1141 Ma)
 - [x] NW Ontario Lamprophyre Dykes (RESULT# 9887; nominal age 1145 Ma)
 - [x] Sudbury Dykes Combined (RESULT# 2175; nominal age 1235 Ma)
