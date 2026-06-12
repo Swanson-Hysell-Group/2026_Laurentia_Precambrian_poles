@@ -19,7 +19,7 @@ The "R" (Reliability) criteria are a revision of the Van der Voo (1990) Q-criter
 
 Three sub-criteria (a-c), all of which should ideally be met:
 
-**(a) Demagnetization:** At least two methods of stepwise demagnetization (e.g., AF and thermal) should be attempted on a pilot suite to demonstrate that individual vector components are being separated effectively.
+**(a) Demagnetization:** At least two methods of stepwise demagnetization (e.g., AF and thermal) should be attempted on a pilot suite to demonstrate that individual vector components are being separated effectively. *An exception to the two method requirement communicated to the community by the lead author of the criteria and agreed upon by co-authors is that for lithologies with hematite-dominated remanence (e.g. red beds) that solely applying thermal demagnetization is not disqualifying for R2.*
 
 **(b) Component analysis:** Directional data should be analyzed using PCA (Kirschvink, 1980) or great circle intersections (Halls, 1976, 1978; McFadden and McElhinny, 1988) to separate overlapping unblocking temperature/coercivity components.
 
