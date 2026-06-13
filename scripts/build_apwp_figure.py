@@ -34,12 +34,14 @@ STATIC = os.path.join(ROOT, "_static")
 
 COLORMAP = "viridis_r"
 
-# Euler poles [pole_lat, pole_lon, angle] used to rotate Greenland poles into the
-# Laurentia reference frame, mirroring pole_tools.TERRANE_EULER_POLES
-# (Greenland: Roest & Srivastava, 1989). Svalbard is excluded from the figure.
+# Euler poles [pole_lat, pole_lon, angle] used to rotate separated-terrane poles
+# into the Laurentia reference frame, mirroring pole_tools.TERRANE_EULER_POLES
+# (Greenland: Roest & Srivastava, 1989; Scotland: Torsvik & Cocks, 2017).
+# Svalbard is excluded from the figure.
 TERRANE_EULER_POLES = {
     "Laurentia-Greenland": [67.5, -118.5, -13.8],
     "Laurentia-Greenland-Nain": [67.5, -118.5, -13.8],
+    "Laurentia-Scotland": [78.6, 161.9, -31.0],
 }
 
 
@@ -53,7 +55,7 @@ def load_path(age_min, age_max):
     d = d[~d["Terrane"].astype(str).str.contains("Svalbard")]
     d = d[(d["nominal age"] >= age_min) & (d["nominal age"] <= age_max)].copy()
 
-    # rotate Greenland poles into the Laurentia reference frame
+    # rotate separated-terrane (Greenland, Scotland) poles into the Laurentia frame
     for idx in d.index:
         euler = TERRANE_EULER_POLES.get(str(d.at[idx, "Terrane"]))
         if euler is None:
