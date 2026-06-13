@@ -48,15 +48,15 @@ OUT_BASE = os.path.join(ROOT, "_static", "Laurentia_paleolatitude_comparison")
 # Euler poles [pole_lat, pole_lon, rotation angle] used to rotate poles from
 # terranes separated from Laurentia back into the Laurentia reference frame
 # before the Duluth paleolatitude is computed; these mirror
-# pole_tools.TERRANE_EULER_POLES (Greenland: Roest & Srivastava, 1989). Only the
-# Greenland poles are rotated here: in the updated compilation they carry the
-# correct 'Laurentia-Greenland' terrane label. (The rebuilt Scotland poles --
-# Stoer, Torridon -- are exported with a 'Laurentia' terrane label in present-day
-# coordinates, so they are not rotated; rotating them would require relabeling
-# those summaries 'Laurentia-Scotland'. Svalbard is excluded from the figure.)
+# pole_tools.TERRANE_EULER_POLES (Greenland: Roest & Srivastava, 1989; Scotland:
+# Torsvik & Cocks, 2017). The rebuilt Greenland and Scotland poles carry the
+# correct 'Laurentia-Greenland' / 'Laurentia-Scotland' terrane labels, in
+# present-day coordinates, so they are rotated here. Svalbard is excluded from
+# the figure.
 TERRANE_EULER_POLES = {
     "Laurentia-Greenland": [67.5, -118.5, -13.8],
     "Laurentia-Greenland-Nain": [67.5, -118.5, -13.8],
+    "Laurentia-Scotland": [78.6, 161.9, -31.0],
 }
 
 # (age_min, age_max) for each version produced.
@@ -114,10 +114,10 @@ def categorize(terrane, grade):
 
 
 def rotate_to_laurentia(d):
-    """Rotate Greenland-terrane poles into the Laurentia reference frame in
-    place, so the Duluth paleolatitude is computed in Laurentia coordinates.
-    Poles of any terrane without an entry in ``TERRANE_EULER_POLES`` are left
-    unchanged.
+    """Rotate separated-terrane (Greenland, Scotland) poles into the Laurentia
+    reference frame in place, so the Duluth paleolatitude is computed in
+    Laurentia coordinates. Poles of any terrane without an entry in
+    ``TERRANE_EULER_POLES`` are left unchanged.
     """
     for idx in d.index:
         euler = TERRANE_EULER_POLES.get(str(d.at[idx, "Terrane"]))
