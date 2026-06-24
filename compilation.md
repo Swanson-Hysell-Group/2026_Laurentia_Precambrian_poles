@@ -56,7 +56,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia-Greenland | [Giant Gabbro Dikes](pole_notebooks/1163_Giant_Gabbro.ipynb) | 1163 | B | -46.4 | 60.9 | 227.6 | 42.3 | 9.2 | 61.3 | Piper (1977) |
 | Laurentia-Greenland | [South Qoroq Intrusion](pole_notebooks/1163_South_Qoroq.ipynb) | 1163 | A | 314.6 | 61.2 | 215.9 | 41.8 | 13.1 | 53.1 | Piper (1992) |
 | Laurentia | [Hviddal](pole_notebooks/1184_Hviddal.ipynb) | 1184 | B | -46.3 | 60.9 | 215.6 | 34.1 | 9.6 | 49.1 | Piper (1977) |
-| Laurentia | [Narsaqq](pole_notebooks/1184_Narssaq.ipynb) | 1184 | B | -46.1 | 60.9 | 225.7 | 31.8 | 10.6 | 54.6 | Piper (1977) |
+| Laurentia | [Narssaq](pole_notebooks/1184_Narssaq.ipynb) | 1184 | B | -46.1 | 60.9 | 225.7 | 31.8 | 10.6 | 54.6 | Piper (1977) |
 | Laurentia | [Stoer Group](pole_notebooks/1199_Stoer.ipynb) | 1199 | B | 354.5 | 58.0 | 238.4 | 37.2 | 7.7 | 66.3 | Luleå Working Group Mean (2009) |
 | Laurentia | [Sudbury Dike Swarm](pole_notebooks/1235_Sudbury.ipynb) | 1235 | A | 278.6 | 46.3 | 192.8 | -2.5 | 2.5 | 8.3 | Palmer et al. (1977) |
 | Laurentia | [Mackenzie dykes grand mean](pole_notebooks/1267_Mackenzie.ipynb) | 1267 | A | 249.0 | 62.5 | 190.0 | 4.0 | 5.0 | 11.2 | Buchan et al. (2000) |
