@@ -1,0 +1,9 @@
+tab delimited	sites																									
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+26	Narssaq Gabbro	i	b	DE-FM	Piper1977Narssaq	Igneous	Pluton	Gabbro	60.92	-46.06	1184		1179	1189	Ma	0	50.4	19.7	15	17.9	6	27	75			Site-mean directions from Piper (1977).
+27	Narssaq Gabbro	i	g	DE-FM	Piper1977Narssaq	Igneous	Pluton	Gabbro	60.92	-46.06	1184		1179	1189	Ma	0	280.8	47.4	176	5.1	6	30	230			Site-mean directions from Piper (1977).
+28	Narssaq Gabbro	i	b	DE-FM	Piper1977Narssaq	Igneous	Pluton	Gabbro	60.92	-46.06	1184		1179	1189	Ma	0	61.8	-26.5	22	14.7	6	75	1			Site-mean directions from Piper (1977).
+29	Narssaq Gabbro	i	g	DE-FM	Piper1977Narssaq	Igneous	Pluton	Gabbro	60.92	-46.06	1184		1179	1189	Ma	0	285.1	39.5	186	4.9	6	27	222			Site-mean directions from Piper (1977).
+30	Narssaq Gabbro	i	g	DE-FM	Piper1977Narssaq	Igneous	Pluton	Gabbro	60.92	-46.06	1184		1179	1189	Ma	0	298	46.8	157	6.1	5	38	214			Site-mean directions from Piper (1977).
+31	Narssaq Gabbro	i	g	DE-FM	Piper1977Narssaq	Igneous	Pluton	Gabbro	60.92	-46.06	1184		1179	1189	Ma	0	276.4	52.4	91	8.1	5	31	236			Site-mean directions from Piper (1977).
+32	Narssaq Gabbro	i	b	DE-FM	Piper1977Narssaq	Igneous	Pluton	Gabbro	60.92	-46.06	1184		1179	1189	Ma	0	266.2	-23.5			5	13	220			Site-mean directions from Piper (1977).

@@ -1,0 +1,6 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+33	Kungnat Ring Dyke	i	g	DE-FM	Piper1977Kungnat	Igneous	Volcanic Dike	Diabase			1275		1273	1277	Ma	0	290.4	-13.3	729	2.8	5					Site-mean directions from Piper and Stearn (1977).
+34	Kungnat Ring Dyke	i	g	DE-FM	Piper1977Kungnat	Igneous	Volcanic Dike	Diabase			1275		1273	1277	Ma	0	295.3	-19.7	28	14.8	5					Site-mean directions from Piper and Stearn (1977).
+35	Kungnat Ring Dyke	i	g	DE-FM	Piper1977Kungnat	Igneous	Volcanic Dike	Diabase			1275		1273	1277	Ma	0	292.5	-15.1	65	15.4	3					Site-mean directions from Piper and Stearn (1977).
+36	Kungnat Ring Dyke	i	g	DE-FM	Piper1977Kungnat	Igneous	Volcanic Dike	Diabase			1275		1273	1277	Ma	0	289.8	-13.6	154	6.2	5					Site-mean directions from Piper and Stearn (1977).

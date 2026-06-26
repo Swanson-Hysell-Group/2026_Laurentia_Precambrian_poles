@@ -1,0 +1,120 @@
+tab	sites
+location	site	citations	lat	lon	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	dir_tilt_correction	dir_polarity	vgp_lat	vgp_lon	geologic_classes	geologic_types	lithologies	result_type	result_quality	sequence
+North Shore Volcanic Group	ns050	Tauxe and Kodama, 2009	46.88286	268.08416	291.3	44.7	473.1	4.2	4	100	n	33.10995329113249	182.56595632726106	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns051	Tauxe and Kodama, 2009	46.88497	268.08801	293.3	42.0	222.6	5.1	5	100	n	33.105526802701945	179.270378604622	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns051	Tauxe and Kodama, 2009	46.88497	268.08801	291.4	40.9	262.3	7.6	3	100	n	31.26262829024834	179.91288603714548	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns053	Tauxe and Kodama, 2009	46.87654	268.06891	295.1	43.0	768.3	3.3	4	100	n	34.83691909931704	178.6449815414926	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns055	Tauxe and Kodama, 2009	46.87575	268.04751	283.6	36.7	391.3	3.9	5	100	n	23.922957714665895	182.93657285898425	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns057	Tauxe and Kodama, 2009	46.87453	268.06569	287.3	29.5	1734.9	3.0	3	100	n	23.22104696744672	176.6460744368144	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns057	Tauxe and Kodama, 2009	46.87453	268.06569	287.7	29.6	2203.3	1.6	5	100	n	23.53743633962242	176.39826937670307	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns059	Tauxe and Kodama, 2009	46.8835	268.08551	290.2	44.3	88.9	9.8	4	100	n	32.154514110653054	183.0448409837664	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns060	Tauxe and Kodama, 2009	46.86945	268.05315	293.7	45.7	83.8	10.1	4	100	n	35.26440859456158	181.61192050934847	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns061	Tauxe and Kodama, 2009	46.86879	268.05134	304.5	49.8	241.1	5.1	5	100	n	44.82067118799557	177.43610766348024	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns062	Tauxe and Kodama, 2009	46.86996	268.05477	294.3	52.6	316.0	5.2	4	100	n	39.41209965658477	187.20286866579872	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns063	Tauxe and Kodama, 2009	46.86909	268.05227	298.8	30.8	1019.9	4.5	3	100	n	31.607441025069775	168.47828845297954	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns063	Tauxe and Kodama, 2009	46.86909	268.05227	299.6	33.9	292.6	4.6	5	100	n	33.541379941240635	169.49904150107	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns064	Tauxe and Kodama, 2009	46.86785	268.04964	298.9	48.1	257.8	5.7	4	100	n	40.08060334212581	179.90109304571644	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns065	Tauxe and Kodama, 2009	46.86961	268.05363	291.6	47.9	95.9	9.4	4	100	n	34.99862915208426	184.77979278212868	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns066	Tauxe and Kodama, 2009	46.86674	268.0474	317.6	36.6	1055.8	2.8	4	100	n	46.66378057725055	155.13417233262794	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns067	Tauxe and Kodama, 2009	46.87085	268.05704	287.4	47.6	300.9	5.3	4	100	n	31.994085861666665	187.3474687318688	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns068	Tauxe and Kodama, 2009	46.86433	268.04385	314.5	33.4	128.1	8.1	4	100	n	43.127394256697734	156.1897444350318	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns071	Tauxe and Kodama, 2009	46.8673	268.04816	310.5	45.5	111.5	7.3	5	100	n	46.608644484604916	168.63345289938513	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns072	Tauxe and Kodama, 2009	46.85836	268.03466	291.5	54.2	235.8	5.7	5	100	n	38.439138090458115	190.55620362232787	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns072	Tauxe and Kodama, 2009	46.85836	268.03466	290.1	54.3	218.7	9.8	3	100	n	37.56413920170557	191.5112334057597	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns073	Tauxe and Kodama, 2009	46.86576	268.04598	308.4	34.5	82.5	10.2	4	100	n	39.701874505077335	162.4783100877961	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns073	Tauxe and Kodama, 2009	46.86576	268.04598	306.3	36.8	91.5	13.0	3	100	n	39.40330779542212	165.70778458483267	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns074	Tauxe and Kodama, 2009	46.85744	268.03275	292.3	61.4	49.6	17.9	4	100	n	43.18838884220797	198.7665606873029	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns074	Tauxe and Kodama, 2009	46.85744	268.03275	290.3	56.7	51.3	13.4	5	100	n	39.10247985317896	193.94389739003606	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns075	Tauxe and Kodama, 2009	46.86576	268.04598	307.6	51.3	175.6	5.8	5	100	n	47.75396240100346	176.70467955795436	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns077	Tauxe and Kodama, 2009	46.86121	268.03966	308.4	34.5	201.4	6.5	4	100	n	39.70309547803145	162.47562934377038	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns078	Tauxe and Kodama, 2009	46.85303	268.02196	277.7	34.8	238.2	5.0	5	100	n	19.02899204362504	186.05719828796498	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns079	Tauxe and Kodama, 2009	46.85781	268.03353	285.0	49.5	958.8	4.0	4	100	n	31.42429065422625	190.3824748948617	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns080	Tauxe and Kodama, 2009	46.8525	268.02071	286.0	38.8	142.0	6.4	5	100	n	26.553706060324135	182.41226695716944	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns081	Tauxe and Kodama, 2009	46.85641	268.0295	273.3	51.4	114.3	7.2	5	100	n	24.87660375627459	199.18341747477677	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns083	Tauxe and Kodama, 2009	46.85339	268.02273	286.3	58.4	143.5	7.7	4	100	n	37.52551273155094	198.11169359888873	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns085	Tauxe and Kodama, 2009	46.8528	268.02126	279.0	38.1	383.5	3.9	5	100	n	21.463308622628876	186.88224060179925	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns087	Tauxe and Kodama, 2009	46.85188	268.01965	280.7	38.9	221.6	5.2	5	100	n	22.9996524625985	186.15432964592043	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns040	Tauxe and Kodama, 2009	46.92496	268.17933	289.5	55.6	587.6	3.2	5	100	n	37.9438560452261	193.30986727563007	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns042	Tauxe and Kodama, 2009	46.91051	268.18249	288.7	40.4	306.7	7.1	3	100	n	29.17535160089004	181.59963408364177	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns042	Tauxe and Kodama, 2009	46.91051	268.18249	291.6	43.0	104.3	7.5	5	100	n	32.44764896197214	181.24116222908123	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns043	Tauxe and Kodama, 2009	46.90964	268.13537	274.0	32.2	196.4	5.5	5	100	n	15.353829050962895	187.48025840309094	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns044	Tauxe and Kodama, 2009	46.91107	268.13956	289.2	44.5	341.9	5.0	4	100	n	31.579946805305973	183.91317406933706	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns045	Tauxe and Kodama, 2009	46.90995	268.13652	273.0	30.7	1278.4	2.6	4	100	n	14.011309869072669	187.49572087508292	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns046	Tauxe and Kodama, 2009	46.89996	268.10844	304.4	42.8	170.3	7.1	4	100	n	41.07775660426038	171.46123433564617	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns047	Tauxe and Kodama, 2009	46.90163	268.11151	311.7	55.9	500.0	3.4	5	100	n	53.07266753039041	179.55704511649736	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns047	Tauxe and Kodama, 2009	46.90163	268.11151	313.0	55.8	1760.0	2.9	3	100	n	53.906397960754546	178.48013566404285	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns048	Tauxe and Kodama, 2009	46.89692	268.10385	305.8	56.3	142.0	7.7	4	100	n	49.2689302588411	184.10060404358651	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns049	Tauxe and Kodama, 2009	46.90292	268.11385	302.6	54.2	176.2	6.9	4	100	n	45.93441127330976	183.55573237480337	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns052	Tauxe and Kodama, 2009	46.89534	268.1015	295.8	54.2	180.8	6.9	4	100	n	41.32959952061706	187.92962684707965	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns054	Tauxe and Kodama, 2009	46.89499	268.10066	289.5	56.0	151.1	7.5	4	100	n	38.17225959333462	193.68043637976658	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns056	Tauxe and Kodama, 2009	46.89011	268.09337	298.4	41.3	1271.2	2.6	4	100	n	36.24216795570867	175.03259825900648	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns058	Tauxe and Kodama, 2009	46.89011	268.09337	306.1	52.5	158.6	7.8	4	100	n	47.38458261370278	179.16914999953565	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns038	Tauxe and Kodama, 2009	46.95412	268.22677	285.8	29.5	79.8	13.9	3	100	n	22.195318355707396	177.8760067837435	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns038	Tauxe and Kodama, 2009	46.95412	268.22677	286.0	29.2	104.6	7.5	5	100	n	22.202804044633673	177.5892508142747	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns039	Tauxe and Kodama, 2009	46.95296	268.22442	287.6	33.0	1438.9	2.0	5	100	n	24.96090704366408	178.26483686350184	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns034	Tauxe and Kodama, 2009	47.01668	268.33971	299.7	54.2	259.8	4.8	5	100	n	43.97986902410013	185.57034160203096	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns035	Tauxe and Kodama, 2009	47.01823	268.34011	293.8	55.9	2377.3	1.6	5	100	n	40.988878647875524	191.16310379996577	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns036	Tauxe and Kodama, 2009	47.01631	268.33969	297.0	54.6	193.5	7.0	4	100	n	42.38394649606912	187.74376042938357	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns037	Tauxe and Kodama, 2009	47.02017	268.34019	293.4	53.3	577.7	3.2	5	100	n	39.227555694108304	188.63883442607641	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB1	Swanson-Hysell et al., 2019	47.2	268.5	299.4	47.9	154.0	4.5	8	100	n	40.3	179.5	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB10	Swanson-Hysell et al., 2019	47.1	268.5	301.1	42.1	466.0	2.2	10	100	n	38.5	173.8	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB11	Swanson-Hysell et al., 2019	47.1	268.5	303.2	38.3	168.0	4.7	7	100	n	38.0	169.5	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB12	Swanson-Hysell et al., 2019	47.1	268.5	303.0	41.0	1112.0	1.8	7	100	n	39.2	171.5	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB13	Swanson-Hysell et al., 2019	47.1	268.5	295.1	42.3	742.0	2.0	8	100	n	34.5	178.4	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB14	Swanson-Hysell et al., 2019	47.1	268.5	298.3	42.4	249.0	3.8	7	100	n	36.7	176.1	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB15	Swanson-Hysell et al., 2019	47.1	268.5	302.5	45.0	835.0	2.1	7	100	n	40.9	174.9	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB16	Swanson-Hysell et al., 2019	47.1	268.5	295.0	41.6	382.0	2.8	8	100	n	34.1	178.0	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB17	Swanson-Hysell et al., 2019	47.1	268.5	300.8	46.3	464.0	3.1	6	100	n	40.4	177.2	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB18	Swanson-Hysell et al., 2019	47.1	268.5	306.7	41.9	239.0	4.3	6	100	n	42.1	169.1	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB19	Swanson-Hysell et al., 2019	47.1	268.5	299.5	44.7	1107.0	1.7	8	100	n	38.7	176.9	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB2	Swanson-Hysell et al., 2019	47.2	268.5	299.3	47.2	793.0	2.0	8	100	n	39.9	179.0	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB20	Swanson-Hysell et al., 2019	47.1	268.5	299.4	45.3	361.0	3.2	7	100	n	38.9	177.5	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB21	Swanson-Hysell et al., 2019	47.1	268.5	301.5	42.9	633.0	2.2	8	100	n	39.1	174.0	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB22	Swanson-Hysell et al., 2019	47.1	268.5	302.6	41.1	469.0	2.6	8	100	n	39.0	171.9	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB23	Swanson-Hysell et al., 2019	47.1	268.5	299.7	44.3	177.0	4.2	8	100	n	38.6	176.5	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB24	Swanson-Hysell et al., 2019	47.1	268.5	296.7	45.1	283.0	2.9	10	100	n	37.0	179.3	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB25	Swanson-Hysell et al., 2019	47.1	268.5	296.0	45.7	111.0	5.8	7	100	n	36.8	180.3	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB26	Swanson-Hysell et al., 2019	47.1	268.5	303.0	37.8	725.0	2.1	8	100	n	37.6	169.4	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB27	Swanson-Hysell et al., 2019	47.1	268.5	302.9	41.5	584.0	2.3	8	100	n	39.4	171.9	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB28	Swanson-Hysell et al., 2019	47.1	268.5	302.2	42.8	1163.0	2.0	6	100	n	39.6	173.4	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB29	Swanson-Hysell et al., 2019	47.1	268.5	299.0	39.3	297.0	3.5	7	100	n	35.7	173.5	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB3	Swanson-Hysell et al., 2019	47.2	268.5	302.8	43.0	720.0	2.1	8	100	n	40.1	173.0	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB30	Swanson-Hysell et al., 2019	47.1	268.5	325.5	39.0	64.0	7.6	7	100	n	52.6	148.4	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB31	Swanson-Hysell et al., 2019	47.1	268.5	286.1	36.9	1285.0	1.7	7	100	n	25.7	181.6	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB32	Swanson-Hysell et al., 2019	47.1	268.5	284.5	45.6	560.0	2.3	8	100	n	29.0	188.1	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB4	Swanson-Hysell et al., 2019	47.2	268.5	290.9	49.3	202.0	3.9	8	100	n	35.3	186.6	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB6	Swanson-Hysell et al., 2019	47.2	268.5	316.7	48.1	383.0	2.6	9	100	n	52.1	165.7	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB7	Swanson-Hysell et al., 2019	47.1	268.5	298.4	37.4	126.0	4.6	9	100	n	34.3	172.8	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB8	Swanson-Hysell et al., 2019	47.1	268.5	298.5	38.6	486.0	2.3	9	100	n	35.0	173.4	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	GB9	Swanson-Hysell et al., 2019	47.1	268.5	301.0	34.7	238.0	3.9	7	100	n	34.8	169.1	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper SW
+North Shore Volcanic Group	ns005	Tauxe and Kodama, 2009	47.72542	269.55701	299.8	37.6	298.6	5.3	4	100	n	35.30014595743047	172.41660321842073	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns002	Tauxe and Kodama, 2009	47.73415	269.57081	283.5	38.7	192.0	6.6	4	100	n	24.893430631517944	185.24766022838477	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns003	Tauxe and Kodama, 2009	47.7371	269.58863	286.6	48.2	232.9	8.1	3	100	n	31.93183526766764	189.338367163331	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns003	Tauxe and Kodama, 2009	47.7371	269.58863	286.9	47.9	412.9	3.8	5	100	n	31.963891171362796	188.90790324449594	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns004	Tauxe and Kodama, 2009	47.73275	269.56367	290.0	47.8	186.1	5.6	5	100	n	33.971337488793324	186.70787677016682	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns032	Tauxe and Kodama, 2009	47.73193	269.55709	286.0	39.7	284.8	4.5	5	100	n	27.06088376357265	184.03194198544378	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns032	Tauxe and Kodama, 2009	47.73193	269.55709	283.0	38.2	431.4	5.9	3	100	n	24.314248554039313	185.31076014960408	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns016	Tauxe and Kodama, 2009	47.74304	269.6176	277.0	56.1	72.7	9.3	5	100	n	30.502517302655505	202.0700145152286	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns019	Tauxe and Kodama, 2009	47.74169	269.60941	273.9	54.8	302.0	4.4	5	100	n	27.729888490057107	202.7462554869262	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns028	Tauxe and Kodama, 2009	47.76711	269.66823	288.6	32.7	501.3	3.4	5	100	n	25.49459532628362	178.4346553208543	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns031	Tauxe and Kodama, 2009	47.76888	269.66913	288.0	32.9	1287.4	2.1	5	100	n	25.18214135407731	178.98234445193975	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns018	Tauxe and Kodama, 2009	47.77667	269.7907	311.4	12.2	71.2	9.1	5	100	n	31.428388781424193	150.71593892878593	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns020	Tauxe and Kodama, 2009	47.77857	269.80928	302.3	12.7	161.5	6.0	5	100	n	26.087681616425566	159.0738198009327	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns021	Tauxe and Kodama, 2009	47.77705	269.7795	308.1	27.5	936.0	2.5	5	100	n	36.002636049908816	160.06282566675134	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns023	Tauxe and Kodama, 2009	47.77633	269.79895	303.1	19.6	997.3	2.4	5	100	n	29.41400688481027	161.02521140337296	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns022	Tauxe and Kodama, 2009	47.79647	269.87137	301.3	38.1	255.9	4.9	5	100	n	36.53378825310972	171.78010212505524	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns030	Tauxe and Kodama, 2009	47.79897	269.89441	289.2	33.9	394.3	3.9	5	100	n	26.445235892981398	178.80679601952693	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	ns030	Tauxe and Kodama, 2009	47.79897	269.89441	289.6	33.4	424.5	6.0	3	100	n	26.484397973427296	178.25050193710763	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS227	Books, 1972	47.79860756	269.89483978	296.1	43.6	64.1	5.2	5	100	n	35.82320388	179.5083491	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS229	Books, 1972	47.79577622	269.86670626	298.4	46.9	64.1	5.2	3	100	n	39.11629045	180.2976478	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS378	Books, 1972	47.80570607	269.90729559	290.6	47.9	64.1	5.2	5	100	n	34.43554321	186.6695934	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS269	Books, 1972	47.822107	269.9387137	264.5	38.2	64.1	5.2	3	100	n	12.2071707	198.5502682	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS226	Books, 1972	47.77600067	269.79852415	295.5	25.7	64.1	5.2	3	100	n	27.03514078	169.925398	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS375	Books, 1972	47.78890296	269.82676134999997	287.9	53.8	64.1	5.2	5	100	n	36.03797309	193.4908372	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS362	Books, 1972	47.76702215	269.73262049	292.9	43.5	64.1	5.2	5	100	n	33.62101046	181.6480653	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS365	Books, 1972	47.76532723	269.66539717	285.2	38.7	64.1	5.2	4	100	n	26.03472707	184.1171014	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS265	Books, 1972	47.73256813	269.56395807	286.0	47.2	64.1	5.2	3	100	n	30.97888647	188.9671733	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS367	Books, 1972	47.73453979	269.57498364	285.5	56.0	64.1	5.2	5	100	n	35.80920156	196.9105739	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS370	Books, 1972	47.60965688	269.22775497	285.0	54.2	64.1	5.2	5	100	n	34.34636562	195.1869061	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS371	Books, 1972	47.61006809	269.22755225000003	285.2	41.6	64.1	5.2	4	100	n	27.46621034	185.4744234	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE
+North Shore Volcanic Group	NS372	Books, 1972	47.61075345	269.22674137	288.8	43.3	64.1	5.2	4	100	n	30.75337973	184.0350317	Extrusive:Igneous	Lava Flow	Basalt	i	g	upper NE

@@ -1,0 +1,23 @@
+tab delimited	contribution
+id	version	timestamp	contributor	data_model_version	reference	lab_names
+20675	1	2026-05-12T13:17:37.734Z	@contributor	3.0	10.1139/E72-061	Not Determined (For Legacy Datasets Only)
+>>>>>>>>>>
+tab delimited	locations
+location	sites	location_type	result_name	method_codes	citations	geologic_classes	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_unit
+Mackenzie diabase	S62:S63:B63:S64:B64:L75:S76:S78:S86:D90:D29:B29:D175	Region	Mackenzie diabase ca. 1250 Ma pole	LP-DIR-AF:DE-FM	10.1139/e72-061:10.1016/S0040-1951(00)00032-9:10.1016/S0040-1951(00)00032-9	Igneous:Sedimentary:Metamorphic	Diabase:Sandstone:Conglomerate:Gneiss	62	67.2	240	263.5	1267	Ma
+>>>>>>>>>>
+tab delimited	sites
+site	location	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_n_samples
+S62	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Sill	Diabase	62.5	249.1	1267	2			Ma	0	250	17	4
+S63	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Sill	Diabase	62.5	249.1	1267	2			Ma	0	241	22	5
+B63	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Sedimentary	Baked Contact	Sandstone	62.5	249.1			1250	1845	Ma	0	227	34	4
+S64	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Sill	Diabase	62.3	249.2	1267	2			Ma	0	248	9	5
+B64	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Sedimentary	Baked Contact	Conglomerate	62.3	249.2			1250	1845	Ma	0	252	30	3
+L75	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Sill	Diabase	62.4	248.7	1267	2			Ma	0	237	28	4
+S76	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Sill	Diabase	62.5	248.9	1267	2			Ma	0	253	18	5
+S78	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Sill	Diabase	62.2	248.4	1267	2			Ma	0	247	15	5
+S86	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Sill	Diabase	62.3	248.4	1267	2			Ma	0	259	28	5
+D90	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Volcanic Dike	Diabase	62.3	248.4	1267	2			Ma	0	237	23	4
+D29	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Volcanic Dike	Diabase	64.1	262.9	1267	2			Ma	0	268	22	9
+B29	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Metamorphic	Baked Contact	Gneiss	64.1	262.9			1250	1845	Ma	0	268	24	8
+D175	Mackenzie diabase	LP-DIR-AF:DE-FM	10.1139/e72-061	Igneous	Volcanic Dike	Diabase	66.9	240.9	1267	2			Ma	0	253	27	3

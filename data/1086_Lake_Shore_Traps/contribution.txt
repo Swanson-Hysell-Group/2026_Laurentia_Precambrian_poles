@@ -1,0 +1,3 @@
+tab 	contribution
+contributor	data_model_version	description	id	lab_names	reference	timestamp	version
+@polarwander	3.0	Corrected the Fisher k values for sites SI1–SI10 (previously mis-entered as the LST1a–LST10a values) and added the Diehl & Haig (1994) flow means plus the location-level Lake Shore Traps mean pole.	20696	Earth Magnetism Laboratory (Michigan Tech, USA)	10.1139/CJES-2013-0003	2026-06-06T15:06:06.829Z	2

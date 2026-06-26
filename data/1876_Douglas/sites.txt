@@ -1,0 +1,8 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+51H	Douglas Peninsula Formation	i	g	DE-FM	Irving1979Douglas	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	194	30	17	19						Site-mean directions from Irving and McGlynn (1979).
+54H	Douglas Peninsula Formation	i	g	DE-FM	Irving1979Douglas	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	187	8	31	14						Site-mean directions from Irving and McGlynn (1979).
+55H	Douglas Peninsula Formation	i	g	DE-FM	Irving1979Douglas	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	160	3	9	22						Site-mean directions from Irving and McGlynn (1979).
+57H	Douglas Peninsula Formation	i	g	DE-FM	Irving1979Douglas	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	341	-24	4	29						Site-mean directions from Irving and McGlynn (1979).
+61H	Douglas Peninsula Formation	i	g	DE-FM	Irving1979Douglas	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	330	-12	29	10						Site-mean directions from Irving and McGlynn (1979).
+62H	Douglas Peninsula Formation	i	g	DE-FM	Irving1979Douglas	Sedimentary	Formation	Sandstone:Siltstone			1876		1866	1886	Ma	0	182	34	35	9						Site-mean directions from Irving and McGlynn (1979).

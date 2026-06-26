@@ -13,7 +13,7 @@ project:
     - paleomagnetic poles
   license:
     content: CC-BY-4.0
-  github: Swanson-Hysell/2026_Laurentia_Precambrian_poles
+  github: Swanson-Hysell-Group/2026_Laurentia_Precambrian_poles
   execute:
     enabled: false
 
@@ -29,10 +29,68 @@ project:
 
   toc:
     - file: index.md
+    - file: pole_map.ipynb
+    - file: compilation.md
+    - file: paleolatitude.md
+    - file: changes.md
     - title: Pole Assessments
       children:
+        - file: pole_notebooks/565_Sept_Iles.ipynb
+        - file: pole_notebooks/572_Catoctin_Basalts.ipynb
+        - file: pole_notebooks/575_Callander.ipynb
+        - file: pole_notebooks/583_Baie_des_Moutons.ipynb
+        - file: pole_notebooks/719_Franklin_LIP.ipynb
+        - file: pole_notebooks/755_Chuar_Group.ipynb
+        - file: pole_notebooks/759_Uinta_Mountain_Group.ipynb
         - file: pole_notebooks/780_Gunbarrel.ipynb
         - file: pole_notebooks/887_Adirondack.ipynb
+        - file: pole_notebooks/925_Torridon.ipynb
+        - file: pole_notebooks/990_Jacobsville.ipynb
+        - file: pole_notebooks/1045_Upper_Freda.ipynb
+        - file: pole_notebooks/1078_Nonesuch.ipynb
+        - file: pole_notebooks/1082_Cardenas.ipynb
+        - file: pole_notebooks/1084_Michipicoten_Island_Formation.ipynb
+        - file: pole_notebooks/1086_Lake_Shore_Traps.ipynb
+        - file: pole_notebooks/1098_Central_Arizona_intrusions.ipynb
+        - file: pole_notebooks/1090_Schroeder_Lutsen_Basalts.ipynb
+        - file: pole_notebooks/1092_Portage_Lake_Volcanics.ipynb
+        - file: pole_notebooks/1095_North_Shore_Volcanic_Group.ipynb
+        - file: pole_notebooks/1096_Chengwatana.ipynb
+        - file: pole_notebooks/1107_Coldwell.ipynb
+        - file: pole_notebooks/1108_Nipigon.ipynb
+        - file: pole_notebooks/1108_Osler_Volcanic_Group.ipynb
+        - file: pole_notebooks/1109_Mamainse_Point_Volcanics.ipynb
+        - file: pole_notebooks/1141_Abitibi.ipynb
+        - file: pole_notebooks/1144_Lamprophyre.ipynb
+        - file: pole_notebooks/1160_NE-SW.ipynb
+        - file: pole_notebooks/1163_Giant_Gabbro.ipynb
+        - file: pole_notebooks/1163_South_Qoroq.ipynb
+        - file: pole_notebooks/1184_Hviddal.ipynb
+        - file: pole_notebooks/1184_Narssaq.ipynb
+        - file: pole_notebooks/1199_Stoer.ipynb
+        - file: pole_notebooks/1235_Sudbury.ipynb
+        - file: pole_notebooks/1267_Mackenzie.ipynb
+        - file: pole_notebooks/1271_West_Gardar_dolerite.ipynb
+        - file: pole_notebooks/1271_West_Gardar_lamprophyre.ipynb
+        - file: pole_notebooks/1275_Kungnat.ipynb
+        - file: pole_notebooks/1275_North_Qoroq.ipynb
+        - file: pole_notebooks/1305_Nain.ipynb
+        - file: pole_notebooks/1382_Midsommersoe.ipynb
+        - file: pole_notebooks/1382_Victoria.ipynb
+        - file: pole_notebooks/1382_Zigzag.ipynb
+        - file: pole_notebooks/1385_Garnet_Range.ipynb
+        - file: pole_notebooks/1392_McNamara.ipynb
+        - file: pole_notebooks/1427_Purcell_Lava.ipynb
+        - file: pole_notebooks/1430_Rocky.ipynb
+        - file: pole_notebooks/1441_Mistastin.ipynb
+        - file: pole_notebooks/1449_Snowslip.ipynb
+        - file: pole_notebooks/1458_Spokane.ipynb
+        - file: pole_notebooks/1460_Michikamau.ipynb
+        - file: pole_notebooks/1466_Francois.ipynb
+        - file: pole_notebooks/1590_Western_Channel.ipynb
+        - file: pole_notebooks/1633_Melville.ipynb
+        - file: pole_notebooks/1740_Cleaver_Dikes.ipynb
+        - file: pole_notebooks/1779_East_Central_Minnesota_Batholith.ipynb
     - title: Resources
       children:
         - file: resources/magic_data_entry_guide.md

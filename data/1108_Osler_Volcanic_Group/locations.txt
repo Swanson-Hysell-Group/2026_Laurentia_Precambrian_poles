@@ -1,0 +1,6 @@
+tab	locations
+location	location_type	age	age_high	age_low	age_unit	citations	geologic_classes	lithologies	lat_n	lat_s	lon_e	lon_w	dir_tilt_correction	result_type	result_quality	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	result_name
+Osler reverse lower	Region	1108.0	1110.0	1105.15	Ma	10.1002/2013gc005180	Extrusive:Igneous	Basalt	48.8122	48.7791	272.3708	272.3366	100	a	g	40.9	218.6	4.8	31.5	30	Osler reverse lower pole
+Osler reverse middle	Region	1107.0	1110.0	1105.48	Ma	10.1002/2013gc005180	Extrusive:Igneous	Basalt	48.7721	48.7505	272.4049	272.3778	100	a	g	42.7	211.3	8.2	16.9	20	Osler reverse middle pole
+Osler reverse upper	Region	1105.15	1105.48	1104.82	Ma	10.1002/2013gc005180:10.1130/b31944.1:10.1139/e74-113	Extrusive:Igneous	Basalt	48.7499	48.590795	272.4047	-88.2	100	a	g	42.3	203.4	3.7	24.4	64	Osler reverse upper pole
+Osler normal	Region	1095.0	1100.0	1080.0	Ma	10.1130/b31944.1:10.1139/e74-113	Extrusive:Igneous	Basalt	48.7	48.626429	271.928039	-88.0	100	a	g	32.0	171.9	9.7	90.9	4	Osler normal pole

@@ -1,4 +1,4 @@
-.PHONY: help install build build-execute start clean api-docs
+.PHONY: help install figures build build-execute start clean api-docs
 
 BUILD_DIR = _build
 
@@ -12,10 +12,14 @@ install: ## Create mamba environment from environment.yml
 	@echo "Environment created. Activate with:"
 	@echo "  mamba activate laurentia-poles"
 
-build: ## Build the book (static HTML)
+figures: ## Regenerate the pole map, compilation table, and paleolatitude figure from the CSVs
+	python scripts/build_pole_map.py
+	python scripts/build_paleolatitude_figure.py
+
+build: figures ## Build the book (static HTML)
 	jupyter book build --html
 
-build-execute: ## Build the book with notebook execution
+build-execute: figures ## Build the book with notebook execution
 	jupyter book build --html --execute
 
 start: ## Start local dev server with live reload

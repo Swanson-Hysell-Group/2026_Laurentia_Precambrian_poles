@@ -1,0 +1,3 @@
+tab delimited	locations
+location	location_type	result_name	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_sigma	age_low	age_high	age_unit	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	description
+Kungnat Ring Dyke	i	Kungnat Ring Dyke site means	i	g	DE-FM	Piper1977Kungnat	Igneous	Volcanic Dike	Diabase					1275		1273	1277	Ma						Site-mean directions from Piper and Stearn (1977).
