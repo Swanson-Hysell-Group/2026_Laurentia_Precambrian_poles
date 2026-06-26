@@ -73,6 +73,20 @@ CATEGORIES = [
     ("Other Laurentia terrane", "#888888", "d"),
 ]
 
+# Scotland poles (Torridon, Stoer) have loose age control and are only shown in
+# the "with Scotland" variants; they are drawn as open (hollow) gold triangles
+# to set them apart from the age-vetted poles.
+SCOTLAND_LABEL = "Scotland poles"
+
+
+def marker_style(label, color):
+    """Per-category face/edge styling for the errorbar markers."""
+    if label == SCOTLAND_LABEL:
+        return dict(markerfacecolor="none", markeredgecolor=color,
+                    markeredgewidth=1.2)
+    return dict(markerfacecolor=color, markeredgecolor="black",
+                markeredgewidth=0.4)
+
 # Proterozoic eras and periods: (name, top_age, base_age) in Ma.
 TIMESCALE_ERAS = [
     ("Paleoproterozoic", 1600, 2500),
@@ -131,8 +145,14 @@ def rotate_to_laurentia(d):
     return d
 
 
-def load(path, age_min, age_max):
-    """Load a compilation CSV, restricted to Laurentia poles in the interval."""
+def load(path, age_min, age_max, include_scotland=False):
+    """Load a compilation CSV, restricted to Laurentia poles in the interval.
+
+    By default poles whose age is uncertain by more than ``MAX_AGE_UNCERTAINTY``
+    Myr are excluded. If ``include_scotland`` is True, Scotland poles (Torridon,
+    Stoer) are retained despite their loose age control so they can be shown as
+    lower-confidence additions.
+    """
     d = pd.read_csv(path)
     d["Grade"] = d["Grade"].astype(str).str.strip()
     for c in ["PLAT", "PLONG", "A95", "nominal age", "lomagage", "himagage"]:
@@ -151,20 +171,25 @@ def load(path, age_min, age_max):
     d["age_lo"] = (d["nominal age"] - d["lomagage"]).clip(lower=0).fillna(0)
     d["A95"] = d["A95"].fillna(0)
 
-    # Drop poles whose age is uncertain by more than MAX_AGE_UNCERTAINTY Myr.
-    d = d[(d["age_hi"] <= MAX_AGE_UNCERTAINTY)
-          & (d["age_lo"] <= MAX_AGE_UNCERTAINTY)].copy()
+    # Drop poles whose age is uncertain by more than MAX_AGE_UNCERTAINTY Myr,
+    # optionally exempting Scotland poles so they can be shown as lower-
+    # confidence additions.
+    within = ((d["age_hi"] <= MAX_AGE_UNCERTAINTY)
+              & (d["age_lo"] <= MAX_AGE_UNCERTAINTY))
+    if include_scotland:
+        within = within | d["Terrane"].astype(str).str.contains("Scotland")
+    d = d[within].copy()
 
     cats = [categorize(t, g) for t, g in zip(d["Terrane"], d["Grade"])]
     d["cat_label"] = [c[0] for c in cats]
     return d
 
 
-def load_updated(age_min, age_max):
+def load_updated(age_min, age_max, include_scotland=False):
     """Updated-panel poles: the recreated-from-site-level summaries, including
     the rebuilt Greenland poles (now in the combined summaries), each rotated
     into the Laurentia reference frame by :func:`load`."""
-    return load(UPDATED_CSV, age_min, age_max)
+    return load(UPDATED_CSV, age_min, age_max, include_scotland=include_scotland)
 
 
 def plot_panel(ax, d, panel_label, age_min, age_max, grenville_xy=(1010, -52)):
@@ -192,8 +217,8 @@ def plot_panel(ax, d, panel_label, age_min, age_max, grenville_xy=(1010, -52)):
             sub["nominal age"], sub["Duluth_plat"],
             yerr=sub["A95"], xerr=[sub["age_lo"], sub["age_hi"]],
             fmt=marker, color=color, markersize=6, elinewidth=1,
-            capsize=2, linestyle="none", markeredgecolor="black",
-            markeredgewidth=0.4, label=label)
+            capsize=2, linestyle="none", label=label,
+            **marker_style(label, color))
 
     ax.axhline(0, color="grey", lw=0.8, linestyle=":", zorder=0)
     if age_min < 1600 < age_max:  # Paleo|Meso boundary only
@@ -234,10 +259,10 @@ def draw_timescale(ax, age_min, age_max):
     ax.set_xlabel("Age (Ma)")
 
 
-def make_figure(age_min, age_max, out_path):
+def make_figure(age_min, age_max, out_path, include_scotland=False):
     """Build and save one two-panel comparison figure for an age interval."""
-    evans = load(EVANS_CSV, age_min, age_max)
-    updated = load_updated(age_min, age_max)
+    evans = load(EVANS_CSV, age_min, age_max, include_scotland=include_scotland)
+    updated = load_updated(age_min, age_max, include_scotland=include_scotland)
 
     fig, (ax0, ax1, axts) = plt.subplots(
         3, 1, figsize=(11, 9.3), sharex=True,
@@ -250,11 +275,23 @@ def make_figure(age_min, age_max, out_path):
     plot_panel(ax1, updated, "Updated compilation (2022 & 2026 workshops)",
                age_min, age_max, grenville_xy=(915, -44))
     ax0.tick_params(labelbottom=False)
-    ax1.tick_params(labelbottom=False)
+    # Drop the (unlabeled) bottom ticks on the lower data panel so the timescale
+    # strip can sit flush beneath it without a redundant tick row.
+    ax1.tick_params(labelbottom=False, bottom=False)
     draw_timescale(axts, age_min, age_max)
 
+    # Slide the timescale strip up so its top edge is flush with the bottom of
+    # the lower data panel (the gridspec hspace leaves a gap otherwise).
+    pos_lower = ax1.get_position()
+    pos_ts = axts.get_position()
+    axts.set_position([pos_ts.x0, pos_lower.y0 - pos_ts.height,
+                       pos_ts.width, pos_ts.height])
+
+    # Place the title just above the top panel rather than floating near the
+    # figure edge.
     fig.suptitle("Position of Duluth (lat = 46.79°N, lon = 92.10°W) implied by "
-                 "Laurentia poles", fontsize=13, y=0.92)
+                 "Laurentia poles", fontsize=13,
+                 y=ax0.get_position().y1 + 0.02)
 
     # single legend from the union of categories present in either panel
     handles = {}
@@ -274,11 +311,16 @@ def make_figure(age_min, age_max, out_path):
 def main():
     os.makedirs(os.path.dirname(OUT_BASE), exist_ok=True)
     for age_min, age_max in VERSIONS:
-        out = f"{OUT_BASE}_{age_max}_{age_min}"
-        n_evans, n_updated = make_figure(age_min, age_max, out)
-        print(f"Wrote {os.path.relpath(out, ROOT)}.png / .pdf "
-              f"({age_max}-{age_min} Ma: Evans {n_evans}, updated {n_updated} "
-              f"poles)")
+        # Each interval is produced twice: the default (age-vetted) version and
+        # a "_withScotland" version that also shows the loose-age Scotland poles.
+        for include_scotland in (False, True):
+            suffix = "_withScotland" if include_scotland else ""
+            out = f"{OUT_BASE}_{age_max}_{age_min}{suffix}"
+            n_evans, n_updated = make_figure(age_min, age_max, out,
+                                             include_scotland=include_scotland)
+            print(f"Wrote {os.path.relpath(out, ROOT)}.png / .pdf "
+                  f"({age_max}-{age_min} Ma: Evans {n_evans}, "
+                  f"updated {n_updated} poles)")
 
 
 if __name__ == "__main__":
