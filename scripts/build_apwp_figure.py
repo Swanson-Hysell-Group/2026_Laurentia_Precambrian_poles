@@ -28,6 +28,7 @@ import cartopy  # noqa: E402
 import cartopy.crs as ccrs  # noqa: E402
 import cmcrameri.cm  # noqa: E402,F401  registers the 'cmc.*' colormaps
 import matplotlib.pyplot as plt  # noqa: E402
+import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 import pmagpy.ipmag as ipmag  # noqa: E402
 import pmagpy.pmag as pmag  # noqa: E402
@@ -37,9 +38,24 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 COMBINED_CSV = os.path.join(ROOT, "data", "nordic_summaries",
                             "nordic_summaries_combined.csv")
+# Input to / output from the SphereUDE spherical-spline path fit
+# (scripts/sphereude/fit_apwp_spline.jl).
+FIT_INPUT_CSV = os.path.join(ROOT, "data", "nordic_summaries",
+                             "apwp_fit_input.csv")
+SPHEREUDE_PATH_CSV = os.path.join(ROOT, "data", "nordic_summaries",
+                                  "apwp_sphereude_path.csv")
 STATIC = os.path.join(ROOT, "_static")
 
-COLORMAP = "Spectral_r"
+COLORMAP = "cmc.managua"
+
+# The ca. 1382 Ma Greenland poles (Midsommersoe, Victoria Fjord, Zig-Zag Dal) are
+# still plotted but excluded from the path fit: they conflict with the rest of the
+# path.
+FIT_EXCLUDE_GREENLAND_AGE = 1382
+# Poles whose age is uncertain by more than this half-range (Myr) are excluded
+# from the fit so loosely-dated poles do not pull on the path. At 50 Myr this
+# drops the two Scotland poles (Torridon, Stoer) and nothing else.
+FIT_MAX_AGE_HALF_UNC = 50
 
 # Marker shape and size per terrane group (color still encodes age via the
 # colorbar). A separate shape legend distinguishes the cratonic blocks. The list
@@ -95,6 +111,58 @@ def load_path(age_min, age_max):
     return d.sort_values("nominal age").reset_index(drop=True)
 
 
+def export_fit_input(age_min, age_max, out_csv=FIT_INPUT_CSV):
+    """Write the rotated, filtered poles used as input to the SphereUDE path fit.
+
+    Starts from ``load_path`` (Greenland and Scotland already rotated into the
+    Laurentia frame, Svalbard dropped) and additionally drops the ca. 1382 Ma
+    Greenland poles, which conflict with the rest of the path. Returns the number
+    of poles written.
+    """
+    d = load_path(age_min, age_max)
+    # exclude the ca. 1382 Ma Greenland poles (conflict with the rest of the path)
+    drop = (d["Terrane"].astype(str).str.contains("Greenland") &
+            (d["nominal age"] == FIT_EXCLUDE_GREENLAND_AGE))
+    # exclude loosely-dated poles (age half-range > FIT_MAX_AGE_HALF_UNC Myr)
+    half_unc = (pd.to_numeric(d["himagage"], errors="coerce") -
+                pd.to_numeric(d["lomagage"], errors="coerce")) / 2
+    drop = drop | (half_unc > FIT_MAX_AGE_HALF_UNC)
+    d = d.loc[~drop]
+    d[["nominal age", "PLAT", "PLONG", "A95"]].rename(
+        columns={"nominal age": "age", "PLAT": "plat",
+                 "PLONG": "plon", "A95": "a95"}).to_csv(out_csv, index=False)
+    return len(d)
+
+
+def load_spline_path():
+    """Load the SphereUDE fitted path (age, lat, lon), or ``None`` if it has not
+    been computed yet (run scripts/sphereude/fit_apwp_spline.jl)."""
+    if not os.path.exists(SPHEREUDE_PATH_CSV):
+        return None
+    return pd.read_csv(SPHEREUDE_PATH_CSV)
+
+
+def plot_age_graded_path(ax, path, vmin, vmax, lw=3.5, zorder=3):
+    """Draw the fitted path as a thick line whose color progresses along the age
+    colormap. Segments are split where the longitude wraps so the line does not
+    streak across the map."""
+    from matplotlib.collections import LineCollection
+
+    lon = path["lon"].to_numpy()
+    lat = path["lat"].to_numpy()
+    age = path["age"].to_numpy()
+    pts = ax.projection.transform_points(ccrs.PlateCarree(), lon, lat)[:, :2]
+    segs = np.stack([pts[:-1], pts[1:]], axis=1)
+    # break segments where the projected step is implausibly large (wrap-around)
+    good = np.hypot(np.diff(pts[:, 0]), np.diff(pts[:, 1]))
+    keep = good < 5 * np.median(good)
+    lc = LineCollection(segs[keep], cmap=COLORMAP, zorder=zorder,
+                        linewidth=lw, capstyle="round")
+    lc.set_array(0.5 * (age[:-1] + age[1:])[keep])
+    lc.set_clim(vmin, vmax)
+    ax.add_collection(lc)
+
+
 def cluster_extent(proj, d, pad_deg=16):
     """Projected-coordinate bounds enclosing the poles, padded by ``pad_deg``
     (degrees, converted to metres) to leave room for the A95 ellipses and labels."""
@@ -137,6 +205,11 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
     ax.add_feature(cartopy.feature.LAND, zorder=0, facecolor="tan",
                    edgecolor="black", linewidth=0.3)
     ax.gridlines(color="gray", linewidth=0.4, linestyle=":")
+
+    # age-graded SphereUDE path (drawn under the markers), if it has been fitted
+    path = load_spline_path()
+    if path is not None:
+        plot_age_graded_path(ax, path, age_min, age_max)
 
     d["_label"] = [terrane_group(t)[0] for t in d["Terrane"]]
 
@@ -195,6 +268,15 @@ FIGURES = [
 
 def main():
     os.makedirs(STATIC, exist_ok=True)
+
+    # export the poles for the SphereUDE path fit (717-1779 Ma, the cluster range)
+    n_fit = export_fit_input(717, 1779)
+    print(f"Wrote {os.path.relpath(FIT_INPUT_CSV, ROOT)} ({n_fit} poles for fit)")
+    if load_spline_path() is None:
+        print(f"  (no fitted path yet; run "
+              f"julia --project=scripts/sphereude "
+              f"scripts/sphereude/fit_apwp_spline.jl)")
+
     for suffix, age_min, age_max, projection in FIGURES:
         out = os.path.join(STATIC, suffix)
         n = make_figure(out, age_min, age_max, projection)
