@@ -46,32 +46,48 @@ A rapid but *sustained* rotation has large `‖L‖` yet small `‖dL/dt‖`, so
 `ωmax` plus a moderate `λ1` can capture fast Keweenawan motion while staying
 schematic — the rate cap and the smoothness penalty are doing different jobs.
 
-## Current choice (provisional)
+## Current choice
 
-`λ1 = 3e5`, `ωmax = 2.5°/Myr`, `niter = 2000` (ADAM + L-BFGS). From a quick
-three-point scan at `ωmax = 2.5`:
+`λ1 = 2e5`, `ωmax = 2.5°/Myr`, `niter = 2000` (ADAM + L-BFGS) is the committed
+default and the path in `apwp_sphereude_path.csv` / the main Lambert figure. From
+the sweep (`compare_lambda.py`, `lambda_sweep/`):
 
-| λ1   | total arc | peak rate  | character                                  |
-|------|-----------|-----------|--------------------------------------------|
-| 3e4  | ~439°     | 1.75°/Myr | wiggly; chases poles, loops in Keweenawan   |
-| 3e5  | ~377°     | 1.27°/Myr | balanced; threads knot, bends to old end    |
-| 3e6  | ~287°     | 0.73°/Myr | very schematic; shortcuts old end, slow     |
+| λ1   | misfit | roughness | peak rate  | note                                  |
+|------|--------|-----------|-----------|----------------------------------------|
+| 3e4  | 297    | 2.41e-4   | 1.75°/Myr | wiggly; chases poles, loops             |
+| 5e4  | 340    | 1.85e-4   | 1.69°/Myr |                                         |
+| 7e4  | 378    | 1.53e-4   | 1.62°/Myr |                                         |
+| 1e5  | 427    | 1.28e-4   | 1.52°/Myr | **L-curve elbow** (most faithful balance)|
+| 2e5  | 526    | 1.06e-4   | 1.37°/Myr | **committed** (minimum roughness)        |
+| 3e5  | 582    | 1.18e-4   | 1.27°/Myr | roughness turns back up (over-smoothed)  |
 
-`3e5` keeps a peak rate above 1°/Myr (consistent with rapid Laurentia motion) and
-recovers the sparse old end, without the coiling of `3e4`.
+We chose `2e5` because it **minimizes path roughness** — the smoothest, most
+schematic path — which suits presenting the path as schematic rather than
+definitive, while still keeping a peak rate above 1°/Myr and reaching the sparse
+old end. `1e5` is the L-curve elbow and the more data-faithful alternative (it
+reaches the ca. 1140 Ma apex and cuts more directly to the ca. 990 Ma poles); it
+is the natural choice if we later want the more quantitative path.
+
+Note the committed CSV was produced at `niter = 1500` (from the sweep); rerunning
+the default (`niter = 2000`) gives a near-identical but not bit-identical path.
 
 ## Next steps / to revisit
 
-1. **Pick `λ1` by L-curve elbow.** Sweep `λ1` (e.g. 1e4, 3e4, 1e5, 2e5, 3e5, 5e5,
-   1e6, 3e6, 1e7) at `ωmax = 2.5`, and for each record the empirical misfit
-   `Σκ(1−cosθ)` against a roughness proxy `Σ‖d²x‖²`. Plot log–log and take the
-   elbow (Hansen, 2001; Gallo et al., 2022 elbow strategy). `analyze_lcurve.py`
-   in this folder computes the misfit, roughness, peak rate, and arc length for a
-   set of `lcurve_<λ1>.csv` fits and plots the L-curve; it expects the sweep
-   outputs from running `fit_apwp_spline.jl` with `SU_LAMBDA1`/`SU_OUT` set per λ1.
-2. **Likely range is [3e4, 3e5].** We may prefer something slightly looser than 3e5
-   to let the path honor more structure — to be chosen against the L-curve rather
-   than by eye.
+1. **Pick `λ1` by L-curve elbow.** A sweep at `ωmax = 2.5` over
+   {3e4, 5e4, 7e4, 1e5, 2e5, 3e5} is saved in `lambda_sweep/elbow_<λ1>.csv`.
+   `compare_lambda.py` reads those, prints misfit / roughness / peak rate / arc
+   length, and writes two figures to `_static/`:
+   `Laurentia_apwp_lambda_lcurve.png` (roughness vs. misfit) and
+   `Laurentia_apwp_lambda_comparison.png` (one map panel per λ1). The L-curve
+   **elbow sits at λ1 ≈ 1e5** (misfit 427, roughness 1.28e-4, peak 1.52°/Myr):
+   below it roughness rises steeply for little misfit gain; above it (2e5, 3e5)
+   misfit climbs with little further smoothing.
+   To regenerate the sweep (requires Julia), fit each λ1 with `SU_LAMBDA1`/`SU_OUT`
+   pointed at `lambda_sweep/` (see the header of `compare_lambda.py`).
+2. **Committed = 2e5 (min roughness); revisit 1e5 (elbow) if a more faithful path
+   is wanted.** 2e5 is the smoothest/most schematic; 1e5 is the L-curve elbow that
+   reaches the ca. 1140 Ma apex and cuts more directly to the ca. 990 Ma poles.
+   Swapping is a one-line default change plus a rerun (see `Current choice`).
 3. **Report the peak-rate-vs-age profile** of the chosen fit so the rapid intervals
    (Keweenawan) are quantified as a result, not assumed.
 4. **Sensitivity checks:** vary the random seed and `niter` to confirm the path is

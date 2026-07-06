@@ -32,11 +32,12 @@ const OUT_CSV = get(ENV, "SU_OUT",
 #   SU_LAMBDA0  magnitude penalty on |L|    (higher -> slower path)
 #   SU_OMEGADEG cap on angular velocity, deg/Myr
 #   SU_NITER    iterations for each of ADAM and LBFGS
-# λ1 = 3e5 is a provisional working value (see NOTES.md): smooth through the dense
-# Keweenawan run yet still bends toward the sparse old-end poles, with a peak rate
-# of ~1.3 deg/Myr (>1, consistent with rapid Laurentia motion) under the 2.5
-# deg/Myr cap. To be revisited via a formal L-curve elbow, likely in [3e4, 3e5].
-const LAMBDA1 = parse(Float64, get(ENV, "SU_LAMBDA1", "3.0e5"))
+# λ1 = 2e5 (see NOTES.md): the value that minimizes path roughness in the sweep,
+# giving the smoothest, most schematic path -- appropriate since the path is
+# presented as schematic rather than definitive. Peak rate ~1.4 deg/Myr (>1,
+# consistent with rapid Laurentia motion) under the 2.5 deg/Myr cap. The L-curve
+# elbow (more faithful balance) is nearer 1e5; compare_lambda.py shows the sweep.
+const LAMBDA1 = parse(Float64, get(ENV, "SU_LAMBDA1", "2.0e5"))
 const LAMBDA0 = parse(Float64, get(ENV, "SU_LAMBDA0", "1.0e0"))
 const OMEGADEG = parse(Float64, get(ENV, "SU_OMEGADEG", "2.5"))
 const NITER = parse(Int, get(ENV, "SU_NITER", "2000"))
