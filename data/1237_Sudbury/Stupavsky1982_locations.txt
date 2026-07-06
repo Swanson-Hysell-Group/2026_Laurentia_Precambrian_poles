@@ -1,0 +1,3 @@
+tab	locations
+location	location_type	result_name	result_type	method_codes	citations	geologic_classes	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_sigma	age_low	age_high	age_unit	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	description
+Sudbury Dikes	Region	Stupavsky & Symons (1982) Sudbury-like sites ca. 1235 Ma pole	a	LP-DIR-AF:LP-DIR-T:DE-FM:DE-VGP	10.1139/e82-059	Igneous	Diabase	46.88	47.08	279.64	279.82	1235.0		1232.0	1242.0	Ma	2.8	196.5	7.6	263	3	Three Sudbury-swarm-like sites from Stupavsky & Symons (1982) Table 1. Sites 15 and 16 are identified as olivine diabase; site 29 is highly altered Nipissing diabase likely baked by an adjacent known Sudbury dike. Kept as a study-specific contribution and combined with Palmer et al. (1977) only in the notebook.
