@@ -47,6 +47,7 @@ Run from this directory:
 
 import io
 import os
+import sys
 from datetime import date
 
 import pandas as pd
@@ -66,7 +67,7 @@ EXCLUDE_SITES = {'NWD1'}   # ca. 1096 Ma NW-trending Midcontinent Rift dike
 LOC_COLS = ['location', 'location_type', 'result_name', 'result_type',
             'result_quality', 'method_codes', 'citations', 'geologic_classes',
             'lithologies', 'lat_s', 'lat_n', 'lon_w', 'lon_e', 'age',
-            'age_sigma', 'age_unit', 'dir_tilt_correction', 'dir_dec',
+            'age_low', 'age_high', 'age_unit', 'dir_tilt_correction', 'dir_dec',
             'dir_inc', 'dir_alpha95', 'dir_k', 'dir_n_sites', 'dir_n_samples',
             'pole_lat', 'pole_lon', 'pole_alpha95', 'pole_k', 'pole_n_sites',
             'contact_test', 'sites', 'description']
@@ -138,8 +139,14 @@ def build_location_row(src_loc_df, pole, meandir, n_samples, site_list):
         'they do not.')
 
     row.update({
-        'age': '1779.1',              # refined to the dated pole age (95% CI below)
-        'age_sigma': '2.3',           # 95% CI half-width (see description)
+        # Age is a Monte Carlo 95% CI over a uniform emplacement window between the
+        # bracketing granites (Swanson-Hysell et al., 2021): mean 1779.1 Ma, 95% CI
+        # bounds 1776.8-1781.4 Ma (stated as 1779.1 +/- 2.3 Ma). The distribution is
+        # not Gaussian, so no 1-sigma age_sigma is reported; the CI is given as
+        # age_low/age_high per the MagIC data model (age_sigma is defined as 1 sigma).
+        'age': '1779.1',
+        'age_low': '1776.8',
+        'age_high': '1781.4',
         'age_unit': 'Ma',
         'citations': '10.1029/2021TC006751',
         'description': description,
@@ -166,9 +173,9 @@ def build_location_row(src_loc_df, pole, meandir, n_samples, site_list):
         'result_type': 'a',
         'sites': site_list,
     })
-    # drop bracketing-age columns if present; the pole carries a dated age
-    for col in ('age_low', 'age_high'):
-        row.pop(col, None)
+    # the source 20213 row carries age_sigma (=3); it is not part of the pole
+    # result and is not in LOC_COLS, so it is simply not written
+    row.pop('age_sigma', None)
     return row
 
 
@@ -220,6 +227,20 @@ def main():
     print(f'-I- wrote {out_upload}')
     print('-I- tables in upload: locations (with pole) + '
           'sites/samples/specimens/measurements verbatim from 20213')
+
+    # validate before submission. Only the locations table is authored here; the
+    # pass-through tables come verbatim from the already-published (and
+    # already-online-validated) contribution 20213, so they are not re-validated
+    # (that avoids false positives such as the standard='300' measurement values
+    # that PmagPy flags but the MagIC uploader accepts).
+    repo_root = os.path.dirname(os.path.dirname(ECMB_DIR))
+    sys.path.insert(0, os.path.join(repo_root, 'scripts'))
+    try:
+        from validate_magic_contribution import validate_upload_file
+        if not validate_upload_file(out_upload, tables=['locations']):
+            print('-W- validation reported problems above; review before upload')
+    except Exception as exc:  # pragma: no cover
+        print(f'-W- could not run validator ({exc}); validate on upload instead')
 
 
 if __name__ == '__main__':

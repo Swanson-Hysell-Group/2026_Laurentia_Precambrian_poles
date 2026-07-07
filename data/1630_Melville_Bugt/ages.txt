@@ -1,0 +1,6 @@
+tab delimited	ages
+location	site	age	age_sigma	age_unit	method_codes	citations	timescale_eon	timescale_era	timescale_period	description
+Melville Bugt	MB9	1635.0	1.35	Ma	GM-UPB	10.1007/978-3-642-12496-9_27	Proterozoic	Paleoproterozoic	Statherian	U-Pb baddeleyite 1635.0 ± 2.7 Ma (2σ; Halls et al., 2011)
+Melville Bugt	QT	1632.0	0.55	Ma	GM-UPB	10.1007/978-3-642-12496-9_27	Proterozoic	Paleoproterozoic	Statherian	U-Pb baddeleyite 1632.0 ± 1.1 Ma (2σ; Halls et al., 2011)
+Melville Bugt	MB2	1629.4	0.4	Ma	GM-UPB	10.1007/978-3-642-12496-9_27	Proterozoic	Paleoproterozoic	Statherian	U-Pb baddeleyite 1629.4 ± 0.8 Ma (2σ; Halls et al., 2011)
+Melville Bugt	OF	1622.1	1.6	Ma	GM-UPB	10.1007/978-3-642-12496-9_27	Proterozoic	Paleoproterozoic	Statherian	U-Pb baddeleyite 1622.1 ± 3.2 Ma (2σ; Halls et al., 2011)

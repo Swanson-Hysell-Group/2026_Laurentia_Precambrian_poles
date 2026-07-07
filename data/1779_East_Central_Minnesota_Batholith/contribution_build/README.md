@@ -56,10 +56,14 @@ test** (the ca. 1096 Ma NW-trending dike NWD1 bakes NE-trending dike NED17)
 records that the dike magnetization predates ca. 1096 Ma — encoded on the
 location result as MagIC method code `ST-C-I` (Inverse contact test).
 
-The pole age on the location row is refined to the dated pole age,
-1779.1 ± 2.3 Ma (95% CI), from U-Pb dates bracketing the dikes between the
-St. Cloud Granite (1781.44 ± 0.51 Ma) they intrude and the Richmond Granite
-(1776.76 ± 0.49 Ma) they do not.
+The pole age is 1779.1 ± 2.3 Ma (95% CI), from U-Pb dates bracketing the dikes
+between the St. Cloud Granite (1781.44 ± 0.51 Ma) they intrude and the Richmond
+Granite (1776.76 ± 0.49 Ma) they do not. This value is a Monte Carlo 95% CI over a
+*uniform* emplacement window between the two granites (Swanson-Hysell et al., 2021),
+not a Gaussian estimate — so it is encoded as `age` = 1779.1 with
+`age_low`/`age_high` = 1776.8/1781.4 (the published 95% CI bounds) and **no
+`age_sigma`**, since the MagIC data model defines `age_sigma` as a 1σ uncertainty
+that does not apply to this distribution.
 
 ## Rich pole metadata on the location row
 
