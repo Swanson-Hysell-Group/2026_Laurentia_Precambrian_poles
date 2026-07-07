@@ -1,0 +1,20 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+10	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	280	48	43	8	10					Narssarssuaq district
+17	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	276	43	304	4	5					Narssarssuaq district; trachyte dyke
+18	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	288	58	34	21	3					Narssarssuaq district; contact site
+19	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	302	69	435	3	6					Narssarssuaq district; trachyte dyke
+20	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	280	53	38	11	6					Narssarssuaq district
+21	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	282	38	196	6	5					Narssarssuaq district
+24	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	280	49	379	4	6					Narssarssuaq district
+26	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	283	61	603	4	4					Narssarssuaq district
+28	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	268	54	70	7	7					Narssarssuaq district
+30	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	277	51	290	4	7					Narssarssuaq district
+33	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	276	60	199	4	7					Narssarssuaq district
+35	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	260	64	331	4	6					Narssarssuaq district
+41	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	274	42	122	6	6					Narssarssuaq district
+43	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	282	44	68	15	3					Narssarssuaq district
+44	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	298	51	36	13	5					Narssarssuaq district
+49	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	309	48	48	14	4					Qagssiarssuk district
+51	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	279	43	111	7	5					Qagssiarssuk district
+53	NE-SW Trending Dyke Swarm	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte			1160		1155	1165	Ma	0	295	31	28	12	7					Qagssiarssuk district
