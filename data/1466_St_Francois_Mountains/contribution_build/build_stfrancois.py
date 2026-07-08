@@ -83,23 +83,56 @@ def _is_dike(site, comp):
     return (site == '3-SG' and comp == 'b') or (site == '4-GM' and comp in ('d', 'e'))
 
 
+# --- paper-audited geology (Meert & Stuckey, 2002, Table 1 footnote + text) ---
+# The SFM volcanic units are ash-flow tuffs / ignimbrites, NOT lava flows: the
+# Grassy Mountain unit is an ignimbrite emplaced by rheoignimbritic flow (Sides,
+# 1976), and the Lake Killarney (site 8) and Taum Sauk / Bell's Mountain units at
+# sites 16 and 18 are explicitly called "ash flow tuffs" (Meert & Stuckey, 2002,
+# section 4). The 'b' (site 3) and 'd' (site 4) component rows are the ca. 1330 Ma
+# mafic dikes, not their granite/ignimbrite host. 6-CT is the Cambrian boulder
+# conglomerate (clasts of "both granitic and volcanic material").
+GRANITE_UNITS = {'BH', 'KG', 'SG', 'SM'}         # plutonic granites
+IGNIMBRITE_UNITS = {'GM'}                          # Grassy Mountain ignimbrite
+RHYOLITE_UNITS = {'FR', 'RG', 'TS', 'BM', 'LM'}    # ash-flow tuff rhyolites
+
+
+def geology_for(site, comp):
+    """Return (geologic_classes, geologic_types, lithologies) audited to the paper."""
+    site, comp = str(site).strip(), str(comp).strip()
+    unit = site.split('-')[-1]
+    if (site == '3-SG' and comp == 'b') or (site == '4-GM' and comp == 'd'):
+        return ('Intrusive', 'Volcanic Dike', 'Diabase')   # ca. 1330 Ma mafic dike
+    if site == '6-CT':
+        return ('Sedimentary', 'Conglomerate', 'Conglomerate')
+    if unit in GRANITE_UNITS:
+        return ('Intrusive', 'Pluton', 'Granite')
+    if unit in IGNIMBRITE_UNITS:                            # incl. 4-GM 'c'/'e' (baked)
+        return ('Extrusive', 'Pyroclastic Flow', 'Ignimbrite')
+    if unit in RHYOLITE_UNITS:
+        return ('Extrusive', 'Pyroclastic Flow', 'Rhyolite')
+    raise ValueError(f'unmapped unit for site {site!r}')
+
+
+_geo = sites.apply(lambda r: pd.Series(
+    geology_for(r['site'], r['dir_comp_name']),
+    index=['geologic_classes', 'geologic_types', 'lithologies']), axis=1)
+sites[['geologic_classes', 'geologic_types', 'lithologies']] = _geo
+
+
 # --- 6-CT sample count (was blank; paper Table 1 reports 13/13) ---
 m6 = sites['site'].astype(str).str.strip() == '6-CT'
 sites.loc[m6 & sites['dir_n_samples'].isna(), 'dir_n_samples'] = 13
 
-# --- 6-CT geology: the conglomerate-test target is granitic (plutonic) clasts
-#     drilled from the Cambrian boulder conglomerate, so describe the clast rock
-#     (Igneous / Pluton / Granite), not the sedimentary deposit. The age stays
-#     500 +/- 50 Ma as the Cambrian depositional / conglomerate-test limiting age. ---
-sites.loc[m6, 'geologic_classes'] = 'Igneous'
-sites.loc[m6, 'geologic_types'] = 'Pluton'
-sites.loc[m6, 'lithologies'] = 'Granite'
+# --- 6-CT: geology set by geology_for() to the Cambrian boulder conglomerate
+#     (Sedimentary / Conglomerate); its clasts are "both granitic and volcanic
+#     material" (Meert & Stuckey, 2002). Age stays 500 +/- 50 Ma (Cambrian
+#     depositional / conglomerate-test limiting age). ---
 sites.loc[m6, 'description'] = (
-    'Conglomerate-test target: granitic (and volcanic) clasts drilled from the '
-    'overlying Cambrian boulder conglomerate (depositional age ~500 Ma). The '
-    'high-temperature clast directions are randomly distributed (k~1, a95~60 deg), '
-    'a positive conglomerate test constraining the SFM magnetization to be older '
-    'than Late Cambrian.')
+    'Conglomerate-test target: Cambrian boulder conglomerate whose clasts are '
+    'both granitic and volcanic material (Meert & Stuckey, 2002; depositional '
+    'age ~500 Ma). The high-temperature clast directions are randomly distributed '
+    '(k~1, a95~60 deg), a positive conglomerate test constraining the SFM '
+    'magnetization to be older than Late Cambrian.')
 
 # --- age model: adopt du Bray et al. (2021) 1.48-1.45 Ga SFM episode ---
 pos = sites.columns.get_loc('age_sigma') + 1
@@ -112,7 +145,10 @@ def _set_age(row):
         return pd.Series({'age': 500.0, 'age_sigma': 50.0, 'age_low': np.nan, 'age_high': np.nan})
     if _is_dike(site, row['dir_comp_name']):  # younger 1.33-1.28 Ga magmatic pulse
         return pd.Series({'age': np.nan, 'age_sigma': np.nan, 'age_low': 1280.0, 'age_high': 1330.0})
-    return pd.Series({'age': np.nan, 'age_sigma': np.nan, 'age_low': 1448.0, 'age_high': 1484.0})
+    # SFM host rocks: nominal 1466 Ma, bounds 1448-1484 (du Bray et al., 2021) --
+    # matches the notebook (nominal_age=1466, lomag/himag 1448/1484) and the Nordic
+    # summary export
+    return pd.Series({'age': 1466.0, 'age_sigma': np.nan, 'age_low': 1448.0, 'age_high': 1484.0})
 
 sites[['age', 'age_sigma', 'age_low', 'age_high']] = sites.apply(_set_age, axis=1)
 
@@ -149,13 +185,15 @@ locs['lon_e'] = round(float(sites['lon'].max()), 3)
 pos = locs.columns.get_loc('age_sigma') + 1
 locs.insert(pos, 'age_low', 1448.0)
 locs.insert(pos + 1, 'age_high', 1484.0)
-locs['age'] = np.nan
+locs['age'] = 1466.0          # nominal (matches notebook + Nordic export)
 locs['age_sigma'] = np.nan
 locs['result_name'] = 'St. Francois Mountains Igneous Province ca. 1466 Ma pole'
 locs['citations'] = f'{MEERT}:{DUBRAY}'
-# geologic classes / lithologies represented at the location (all sites now Igneous)
-locs['geologic_classes'] = ':'.join(sorted(sites['geologic_classes'].dropna().unique()))
-locs['lithologies'] = ':'.join(sorted(sites['lithologies'].dropna().unique()))
+# geologic classes / lithologies represented by the pole sites (the 18 good sites:
+# granite + Grassy Mountain ignimbrite + ash-flow-tuff rhyolites)
+_gd = sites[sites['result_quality'] == 'g']
+locs['geologic_classes'] = ':'.join(sorted(_gd['geologic_classes'].dropna().unique()))
+locs['lithologies'] = ':'.join(sorted(_gd['lithologies'].dropna().unique()))
 
 # --- location pole = Fisher mean of the 18 pole-site VGPs ---
 # This is the value the pole notebook computes (pt.compute_mean_pole, unify_polarity
@@ -175,11 +213,10 @@ locs['sites'] = ':'.join(pole_rows['site'].tolist())
 
 locs['description'] = (
     'Pole from Meert & Stuckey (2002), recreated at the site level. The location '
-    'pole (12.1 S, 219.1 E; A95 6.0, k 33.7, N=18) is the Fisher mean of the 18 '
-    'tilt-corrected site VGPs (the value computed in the pole notebook and written '
-    'to the Nordic summary). For comparison, Meert & Stuckey also report a Mean-TC '
-    'pole from the mean tilt-corrected direction (233.4/+36.9): 13.2 S, 219.0 E '
-    '(dp 4.7, dm 8.0). The 18 sites in the `sites` list are the stable-direction '
+    'pole is the Fisher mean of the tilt-corrected site VGPs. For comparison, '
+    'Meert & Stuckey also report a Mean-TC pole from the mean tilt-corrected '
+    'direction (233.4/+36.9): 13.2 S, 219.0 E (dp 4.7, dm 8.0). The 18 sites in '
+    'the `sites` list are the stable-direction '
     'pole sites; excluded from the mean (retained in the contribution as '
     'result_quality=b for the field tests) are the reversed, poorly grouped site '
     '15-TS, the Cambrian boulder-conglomerate clasts (6-CT; conglomerate test), '
@@ -192,11 +229,71 @@ locs['description'] = (
     'et al. (2021); originally dated 1476 +/- 16 Ma (Van Schmus et al., 1993).'
 )
 
-def write_magic(df, kind, path):
-    with open(path, 'w') as f:
-        f.write(f'tab\t{kind}\n')
-    df.to_csv(path, sep='\t', index=False, mode='a')
+# --- structured field-test CV columns (Meert & Stuckey 2002): positive
+#     conglomerate (G+, >500 Ma), positive inverse baked-contact (IC+, >1330 Ma),
+#     and positive fold test (F+). Recorded on the pole location the tests support. ---
+locs['conglomerate_test'] = 'G+'
+locs['contact_test'] = 'IC+'
+locs['fold_test'] = 'F+'
+# fold test passes above the 99% confidence level (McFadden 1990; McElhinny 1964
+# k2/k1 = 3.46 vs critical 1.78) -- Meert & Stuckey (2002)
+locs['fold_test_significance'] = 99
+# single-polarity pole (the one reversed site, 15-TS, is excluded from the mean)
+locs['pole_reversed_perc'] = 0
 
+# --- geographic / tectonic metadata (restored from the 2006 MagIC-team pole-only
+#     contribution 14744, which carried richer location descriptors than the 2026
+#     student contribution 20670; 'U.S.A.' corrected to the CV country name) ---
+locs['continent_ocean'] = 'North America'
+locs['country'] = 'United States of America'
+locs['state_province'] = 'Missouri'
+locs['terranes'] = 'Laurentia'
+locs['geological_province_sections'] = 'St. Francois Mountains Igneous Province'
+
+# --- location mean direction (tilt-corrected) underlying the pole ---
+dm = ipmag.fisher_mean(dec=pole_rows['dir_dec'].tolist(), inc=pole_rows['dir_inc'].tolist())
+locs['dir_dec'] = round(dm['dec'], 1)
+locs['dir_inc'] = round(dm['inc'], 1)
+locs['dir_alpha95'] = round(dm['alpha95'], 1)
+locs['dir_k'] = round(dm['k'], 1)
+locs['dir_n_sites'] = int(dm['n'])
+locs['dir_tilt_correction'] = 100
+
+
+# NOTE: no separate `ages` table for now. The location + site rows carry the
+# age bracket (age_low/age_high); building a proper ages table around the newer
+# du Bray et al. (2021) dates is deferred (a larger geochronology task).
+
+
+def write_magic(df, kind, path):
+    with open(path, 'w', encoding='utf-8') as f:
+        f.write(f'tab delimited\t{kind}\n')
+    df.to_csv(path, sep='\t', index=False, mode='a', encoding='utf-8')
+
+
+def write_combined(path):
+    with open(path, 'w', encoding='utf-8') as f:
+        for kind, df in [('locations', locs), ('sites', sites)]:
+            if kind != 'locations':
+                f.write('>>>>>>>>>>\n')
+            f.write(f'tab delimited\t{kind}\n')
+            df.to_csv(f, sep='\t', index=False)
+
+
+def validate(path):
+    import sys
+    root = os.path.dirname(os.path.dirname(OUT))
+    sys.path.insert(0, os.path.join(root, 'scripts'))
+    from validate_magic_contribution import validate_upload_file
+    return validate_upload_file(path, tables=['locations', 'sites'])
+
+
+from datetime import date
 write_magic(sites, 'sites', os.path.join(OUT, 'sites.txt'))
 write_magic(locs, 'locations', os.path.join(OUT, 'locations.txt'))
-print(f'-I- wrote sites.txt ({len(sites)} rows) and locations.txt ({len(locs)} pole)')
+stamp = date.today().strftime('%d.%b.%Y')
+combined = os.path.join(OUT, f'St.-Francois-Mountains_{stamp}.txt')
+write_combined(combined)
+print(f'-I- wrote sites.txt ({len(sites)} rows), locations.txt ({len(locs)} pole), '
+      f'and combined {os.path.basename(combined)}')
+validate(combined)
