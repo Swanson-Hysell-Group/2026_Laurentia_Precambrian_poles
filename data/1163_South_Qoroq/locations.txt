@@ -1,0 +1,3 @@
+tab delimited	locations
+location	location_type	result_name	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_sigma	age_low	age_high	age_unit	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	description
+South Qoroq Intrusion	i	South Qoroq Intrusion site means	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite					1163		1161	1165	Ma						Site-mean directions from Piper (1992), Table 5.
