@@ -1,0 +1,14 @@
+tab delimited	contribution
+id	version	timestamp	contributor	data_model_version	reference	description
+18165	3	2006-12-18T11:37:53.000Z	@magic	3.0	Fahrig & Jones (1976)	Removed default values introduced by the upgrade to MagIC Data Model 3.0.
+>>>>>>>>>>
+tab delimited	locations
+location	location_type	result_name	result_type	method_codes	citations	geologic_classes	lithologies	geological_province_sections	lat_s	lat_n	lon_w	lon_e	continent_ocean	country	region	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_alpha95	dir_k	dir_polarity	dir_n_sites	dir_n_samples	fold_test	conglomerate_test	contact_test	reversal_test	pole_lat	pole_lon	pole_dp	pole_dm	pole_reversed_perc	pole_antipodal_angle	description	rock_magnetic_test
+Mistastin Pluton	Outcrop	2271	i	 DE-VGP : LT-AF-Z:LP-DC2 	This study	Intrusive	adamellite	Mistastin Pluton	55.6	55.6	296.3	296.3	North America	Canada	Labrador	1287	1347	Ma	0	93.5	7	8.8	48.5		7	35	ND	ND	ND	Ro	-1	201.5	7.6	7.6	87	170.9	Extent 80 km. AF cleaning 20-25mT.	ND
+Mistastin Pluton	Outcrop	2271	i	 DE-VGP : LT-AF-Z:LP-DC2 	This study	Intrusive	adamellite	Mistastin Pluton	55.6	55.6	296.3	296.3	North America	Canada	Labrador	1287	1347	Ma	0	276.5	0.1	14.3	23	n	1		ND	ND	ND	Ro	-1	201.5	7.6	7.6	87	170.9	Extent 80 km. AF cleaning 20-25mT.	ND
+Mistastin Pluton	Outcrop	2271	i	 DE-VGP : LT-AF-Z:LP-DC2 	This study	Intrusive	adamellite	Mistastin Pluton	55.6	55.6	296.3	296.3	North America	Canada	Labrador	1287	1347	Ma	0	93	8.3	10.2	44.2	r	6		ND	ND	ND	Ro	-1	201.5	7.6	7.6	87	170.9	Extent 80 km. AF cleaning 20-25mT.	ND
+>>>>>>>>>>
+tab delimited	ages
+location	age_low	age_high	age_unit	timescale_eon	timescale_era	timescale_period	description	method_codes	timescale_citations	citations
+Mistastin Pluton	1287	1347	Ma	Proterozoic	Mesoproterozoic	Ectasian	Rb-Sr age 1317+/-30 Ma.	GM-RBSR	Gradstein et al. 2004	This study
+>>>>>>>>>>
