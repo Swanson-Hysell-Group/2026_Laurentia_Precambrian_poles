@@ -1,0 +1,3 @@
+tab delimited	locations
+location	location_type	result_name	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_sigma	age_low	age_high	age_unit	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	description
+NE-SW Trending Dyke Swarm	i	NE-SW Trending Dyke Swarm site means	i	g	DE-FM	Piper1992NESW	Igneous	Dike	Dolerite;Trachyte					1160		1155	1165	Ma						Site-mean directions from Piper (1992), Table 4. Sites 38 and 39 are excluded as in the source group mean.

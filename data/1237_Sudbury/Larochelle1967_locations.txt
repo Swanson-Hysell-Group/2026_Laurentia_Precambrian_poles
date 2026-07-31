@@ -1,0 +1,3 @@
+tab	locations
+location	location_type	result_name	result_type	method_codes	citations	geologic_classes	lithologies	lat_s	lat_n	lon_w	lon_e	age	age_sigma	age_low	age_high	age_unit	pole_lat	pole_lon	pole_alpha95	pole_k	pole_n_sites	description
+Sudbury Dikes	Region	Larochelle (1967) Sudbury Dike Swarm dyke-mean ca. 1235 Ma pole	a	LP-DIR-AF:DE-FM:DE-VGP	10.1139/e67-015	Igneous	Diabase	46.3	46.3	278.6	278.6	1235.0		1232.0	1242.0	Ma	-2.4	188.6	3.1	219	11	Eleven representative Sudbury diabase dyke means from Larochelle (1967) Table II after 150 Oe AF cleaning. The selected rows use one representative mean per stably magnetized dyke and sum to 43 cleaned cores. VGPs are copied from Table II because exact site coordinates are not tabulated.

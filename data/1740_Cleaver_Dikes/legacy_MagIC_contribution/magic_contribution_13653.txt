@@ -1,0 +1,11 @@
+tab delimited	contribution
+id	version	timestamp	contributor	data_model_version	reference	description
+13653	2	2006-12-22T02:47:09.000Z	@magic	3.0	10.1016/j.precamres.2003.10.002	Upgraded to MagIC Data Model 3.0 by the MagIC Database Team
+>>>>>>>>>>
+tab delimited	locations
+location	location_type	result_name	result_type	method_codes	citations	geologic_classes	lithologies	geological_province_sections	lat_s	lat_n	lon_w	lon_e	continent_ocean	country	region	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_alpha95	dir_k	dir_n_sites	dir_n_samples	fold_test_significance	fold_test	conglomerate_test	contact_test	reversal_test	pole_lat	pole_lon	pole_dp	pole_dm	pole_reversed_perc	description	rock_magnetic_test
+Cleaver Dykes	Outcrop	9139	i	 DE-VGP : LT-AF-Z : LT-T-Z:LP-DC4 	This study	Intrusive	diabase	Cleaver Dykes	67.5	67.5	241.97	241.97	North America	Canada	Northwest Territories	1736	1745	Ma	0	136.5	57.4	4.5	64	17	102	95	ND	ND	C+	ND	19.4	276.7	6.1	6.1	0	AF and thermal, characteristic component 500-600C. Passes Tauxe and Watson test at 77-132% unfolding.	ND
+>>>>>>>>>>
+tab delimited	ages
+location	age_low	age_high	age_unit	timescale_eon	timescale_era	timescale_period	description	method_codes	timescale_citations	citations
+Cleaver Dykes	1736	1745	Ma	Proterozoic	Paleoproterozoic	Statherian	U-Pb (b) age 1740+5/-4 Ma.	GM-UPB	Gradstein et al. 2004	This study

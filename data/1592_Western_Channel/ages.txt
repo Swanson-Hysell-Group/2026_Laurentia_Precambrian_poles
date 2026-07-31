@@ -1,0 +1,5 @@
+tab delimited	ages
+location	age	age_sigma	age_low	age_high	age_unit	method_codes	citations	timescale_eon	timescale_era	timescale_period	description
+Western Channel Diabase, Great Bear Lake-west side, NWT	1590.2	1.9			Ma	GM-UPB-CC	10.1016/j.precamres.2010.06.009	Proterozoic	Mesoproterozoic	Calymmian	WCD sheet FA66-42 (MacAlpine Channel), weighted-mean 207Pb/206Pb U-Pb single-grain baddeleyite 1590.2 +/- 3.8 Ma (95% conf.; Hamilton and Buchan, 2010)
+Western Channel Diabase, Great Bear Lake-west side, NWT	1591.9	1.45			Ma	GM-UPB-CC	10.1016/j.precamres.2010.06.009	Proterozoic	Mesoproterozoic	Calymmian	WCD sheet FA66-44 (Hornby Bay), weighted-mean 207Pb/206Pb U-Pb baddeleyite 1591.9 +/- 2.9 Ma (95% conf.; Hamilton and Buchan, 2010)
+Western Channel Diabase, Great Bear Lake-west side, NWT	1592.4	1.25			Ma	GM-UPB	10.1016/j.lithos.2018.06.002	Proterozoic	Mesoproterozoic	Calymmian	WCD sample FA66-045, U-Pb baddeleyite upper-intercept 1592.4 +/- 2.5 Ma (95% conf.; Rogers et al., 2018)

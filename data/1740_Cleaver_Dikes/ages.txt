@@ -1,0 +1,6 @@
+tab delimited	ages
+location	age	age_sigma	age_low	age_high	age_unit	method_codes	citations	timescale_eon	timescale_era	timescale_period	description
+Cleaver Dykes	1740		1736	1745	Ma	GM-UPB-CC-T0	10.1016/j.precamres.2003.10.002	Proterozoic	Paleoproterozoic	Statherian	U-Pb baddeleyite, modified York regression upper intercept 1740 +5/-4 Ma (Irving et al., 2004)
+Labine Group	1876.4	1.2			Ma	GM-UPB	10.1139/cjes-2015-0026	Proterozoic	Paleoproterozoic	Orosirian	Labine Group rhyolite tuff, weighted-mean 207Pb/206Pb U-Pb 1876.4 +/- 2.4 Ma (95% conf.; Ootes et al., 2015)
+Labine Group	1872.6	0.45			Ma	GM-UPB	10.1139/cjes-2015-0026	Proterozoic	Paleoproterozoic	Orosirian	Labine Group andesite, U-Pb 1872.6 +/- 0.9 Ma (95% conf.; Ootes et al., 2015)
+Hottah Gabbro	779.6	0.7			Ma	GM-UPB	10.1130/g19944.1	Proterozoic	Neoproterozoic	Tonian	Gunbarrel gabbro (Gunbarrel Inlet, SE Great Bear Lake), U-Pb baddeleyite 779.6 +/- 1.4 Ma (95% conf.; Harlan et al., 2003)

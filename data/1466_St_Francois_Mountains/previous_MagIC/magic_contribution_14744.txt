@@ -1,0 +1,12 @@
+tab delimited	contribution
+id	version	timestamp	contributor	data_model_version	reference	description
+14744	2	2006-12-22T02:22:14.000Z	@magic	3.0	10.1029/2000TC001265	Upgraded to MagIC Data Model 3.0 by the MagIC Database Team
+>>>>>>>>>>
+tab delimited	locations
+location	location_type	result_name	result_type	method_codes	citations	geologic_classes	lithologies	terranes	geological_province_sections	lat_s	lat_n	lon_w	lon_e	continent_ocean	country	region	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_alpha95	dir_k	dir_n_sites	dir_n_samples	fold_test_significance	fold_test	conglomerate_test	contact_test	reversal_test	pole_lat	pole_lon	pole_dp	pole_dm	pole_reversed_perc	description	rock_magnetic_test
+St.Francois Mountains Acidic Rocks	Outcrop	8932	i	 DE-DI : LT-AF-Z : LT-T-Z:LP-DC4 	This study	 Intrusive:Extrusive 	 Granite:rhyolites 	Laurentia	St.Francois Mountains Acidic Rocks	37.5	37.5	269.5	269.5	North America	U.S.A.	Missouri	1460	1492	Ma	100	233.4	36.9	6.8	27	18	103	99	F+	G+	IC+	ND	-13.2	219	4.7	8	0	Middle Proterozoic. Regional tilt 9-11 degrees SW (strike 150). Mainly thermal, characteristic component 400-685C. IRM, 3-axis Jrs-T, OP (MAGN, HEM). 1 site with opposite polarity was not included (high Ed95). Passes McElhinny (1964) , McFadden (1990) tests.	ND
+St.Francois Mountains Acidic Rocks	Outcrop	8932	i	 DE-DI : LT-AF-Z : LT-T-Z:LP-DC4 	This study	 Intrusive:Extrusive 	 Granite:rhyolites 	Laurentia	St.Francois Mountains Acidic Rocks	37.5	37.5	269.5	269.5	North America	U.S.A.	Missouri	1460	1492	Ma	0	232.8	48.5	13.2	7.8	18		99	F+	G+	IC+	ND	-13.2	219	4.7	8	0	Middle Proterozoic. Regional tilt 9-11 degrees SW (strike 150). Mainly thermal, characteristic component 400-685C. IRM, 3-axis Jrs-T, OP (MAGN, HEM). 1 site with opposite polarity was not included (high Ed95). Passes McElhinny (1964) , McFadden (1990) tests.	ND
+>>>>>>>>>>
+tab delimited	ages
+location	age_low	age_high	age_unit	timescale_eon	timescale_era	timescale_period	method_codes	timescale_citations	citations
+St.Francois Mountains Acidic Rocks	1460	1492	Ma	Proterozoic	Mesoproterozoic	Calymmian	GM-UPB	Gradstein et al. 2004	This study

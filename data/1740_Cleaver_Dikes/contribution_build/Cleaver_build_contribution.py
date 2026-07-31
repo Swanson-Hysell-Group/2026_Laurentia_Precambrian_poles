@@ -53,7 +53,9 @@ the reproducible result of computing the pole strictly from the published table.
 """
 
 import os
-import numpy as np
+import sys
+from datetime import date
+
 import pandas as pd
 import pmagpy.pmag as pmag
 import pmagpy.ipmag as ipmag
@@ -63,6 +65,7 @@ OUT_DIR = os.path.dirname(HERE)
 
 IRVING_DOI = '10.1016/j.precamres.2003.10.002'
 OOTES_DOI = '10.1139/cjes-2015-0026'  # Ootes et al. (2015) CJES 52, 1062-1092
+HARLAN_DOI = '10.1130/g19944.1'  # Harlan et al. (2003) Geology 31, 1053-1056
 
 # demagnetization / analysis method codes common to every site (AF + thermal
 # stepwise demagnetization, PCA best-fit lines, Fisher site means, geographic
@@ -98,14 +101,20 @@ def age_fields_for(row):
         return {'age': '', 'age_sigma': '', 'age_low': 1736, 'age_high': 1745,
                 'age_unit': 'Ma'}
     if row['location'] == 'Hottah Gabbro':
-        return {'age': 780, 'age_sigma': '', 'age_low': '', 'age_high': '',
+        # Gunbarrel gabbro (named for Gunbarrel Inlet, SE Great Bear Lake -- the
+        # 'Gunbarrel Gabbro' of Park et al. 1995 = this Hottah sheet): U-Pb
+        # baddeleyite 779.6 +/- 1.4 Ma (95% conf.; Harlan et al., 2003), so
+        # age_sigma = 0.7 Ma (1sigma). NOT the Calder gabbro (779.5 +/- 1.8), a
+        # different Gunbarrel-event sheet.
+        return {'age': 779.6, 'age_sigma': 0.7, 'age_low': '', 'age_high': '',
                 'age_unit': 'Ma'}
-    # Labine Group controls (Ootes et al., 2015 high-precision U-Pb)
+    # Labine Group controls (Ootes et al., 2015 U-Pb); the cited weighted-mean
+    # ages are 95% confidence, so age_sigma is the 1sigma (half of that)
     if 'tuff' in note:
-        return {'age': 1876.4, 'age_sigma': 2.4, 'age_low': '', 'age_high': '',
+        return {'age': 1876.4, 'age_sigma': 1.2, 'age_low': '', 'age_high': '',
                 'age_unit': 'Ma'}
     if 'andesite' in note and row['role'] != 'conglomerate':
-        return {'age': 1872.6, 'age_sigma': 0.9, 'age_low': '', 'age_high': '',
+        return {'age': 1872.6, 'age_sigma': 0.45, 'age_low': '', 'age_high': '',
                 'age_unit': 'Ma'}
     # volcanic breccia (conglomerate test) — broad Labine Group age
     return {'age': '', 'age_sigma': '', 'age_low': 1860, 'age_high': 1880,
@@ -117,6 +126,9 @@ def citations_for(row):
         return f'{IRVING_DOI}:{OOTES_DOI}'
     if row['role'] == 'conglomerate':
         return f'{IRVING_DOI}:{OOTES_DOI}'
+    if row['location'] == 'Hottah Gabbro':
+        # Irving et al. (2004) direction + Harlan et al. (2003) U-Pb age
+        return f'{IRVING_DOI}:{HARLAN_DOI}'
     return IRVING_DOI
 
 
@@ -162,10 +174,15 @@ def build_locations(df, sites_df):
                     (df['quality'] == 'g')]
     pole_site_rows = sites_df[sites_df['site'].isin(pole_sites['site'].astype(str))]
     pole = compute_pole(pole_site_rows)
+    meandir = ipmag.fisher_mean(dec=pole_site_rows['dir_dec'].astype(float).tolist(),
+                                inc=pole_site_rows['dir_inc'].astype(float).tolist())
     n_samples = int(pole_site_rows['dir_n_samples'].sum())
+    n_specimens = int(pole_site_rows['dir_n_specimens'].sum())
     print('Recreated Cleaver Dykes pole (Fisher mean of %d site VGPs):' % pole['n'])
     print('  plon %.1f  plat %.1f  K %.1f  A95 %.1f  N_samples %d'
           % (pole['dec'], pole['inc'], pole['k'], pole['alpha95'], n_samples))
+    print('  mean dir: dec %.1f inc %.1f a95 %.1f k %.1f'
+          % (meandir['dec'], meandir['inc'], meandir['alpha95'], meandir['k']))
     print('  published Irving et al. (2004): plon 276.7  plat 19.4  A95 6.1  B 17')
 
     def bbox(sites):
@@ -182,28 +199,40 @@ def build_locations(df, sites_df):
         'geologic_classes': 'Intrusive', 'lat_n': lat_n, 'lat_s': lat_s,
         'lithologies': 'Diabase', 'location': 'Cleaver Dykes',
         'location_type': 'Region', 'lon_e': lon_e, 'lon_w': lon_w,
+        'continent_ocean': 'North America', 'country': 'Canada',
         'description': (
             'Paleomagnetic pole for the ca. 1740 Ma Cleaver Dykes, a swarm of '
             'subvertical, post-orogenic diabase dykes of the Great Bear magmatic '
             'zone (Hottah terrane), Wopmay Orogen, northwest Canadian Shield '
             '(Irving et al., 2004). U-Pb baddeleyite age 1740 +5/-4 Ma. Pole is '
             'the Fisher mean of the VGPs of the 17 Cleaver dyke site means of the '
-            'published "Cleaver magnetization" (single, SE-and-down "normal" '
+            "published 'Cleaver magnetization' (single, SE-and-down 'normal' "
             'polarity carried by fine-grained magnetite, thermal unblocking '
             '500-600 C). The Echo Bay re-sampling (site 172, the resampling of '
             'site 144 of Irving et al. 1972a) is excluded from the mean. Directions '
             'are in geographic coordinates; the subvertical dykes require no tilt '
             'correction. Positive baked-contact test (dyke 34/22 bake adjacent '
             'Labine Group andesite/tuff) and positive inverse baked-contact test '
-            '(the younger ca. 1400 Ma Western Channel Diabase and ca. 780 Ma Hottah '
-            'Gabbro that cut the dykes carry different directions) show the '
-            'magnetization is primary and predates ca. 780 Ma.'),
+            '(the younger ca. 1590 Ma Western Channel Diabase and ca. 780 Ma Hottah '
+            'Gabbro that cut the dykes carry different directions) support that '
+            'the magnetization is primary.'),
         'dir_tilt_correction': 0,
         'method_codes': ('LP-DIR-AF:LP-DIR-T:DE-BFL:DE-FM:DE-VGP:DA-DIR-GEO:'
                          'GM-UPB-CC:ST-C:ST-C-I'),
+        # location-level mean direction (geographic; underlies the pole)
+        'dir_dec': round(meandir['dec'], 1), 'dir_inc': round(meandir['inc'], 1),
+        'dir_alpha95': round(meandir['alpha95'], 1), 'dir_k': round(meandir['k'], 1),
+        # stored as str so the count columns (absent on the container rows) are
+        # not upcast to float (99.0) when the location rows are combined
+        'dir_n_sites': str(int(meandir['n'])), 'dir_n_samples': str(n_samples),
+        'dir_n_specimens': str(n_specimens),
         'pole_alpha95': round(pole['alpha95'], 1), 'pole_k': round(pole['k'], 1),
         'pole_lat': round(pole['inc'], 1), 'pole_lon': round(pole['dec'], 1),
-        'pole_n_sites': int(pole['n']), 'pole_n_samples': n_samples,
+        'pole_n_sites': int(pole['n']),
+        # structured field-test result (controlled vocabulary): positive
+        # baked-contact test (clean at dyke 34). method_codes also carries the
+        # positive inverse contact test (ST-C-I).
+        'contact_test': 'C+',
         'result_name': 'Cleaver Dykes ca. 1740 Ma pole',
         'result_quality': 'g', 'result_type': 'a',
         'sites': ':'.join(cleaver_sites),
@@ -218,20 +247,26 @@ def build_locations(df, sites_df):
         'lithologies': 'Tuff:Andesite:Volcaniclastic Breccia',
         'location': 'Labine Group', 'location_type': 'Region',
         'lon_e': lon_e2, 'lon_w': lon_w2,
+        'continent_ocean': 'North America', 'country': 'Canada',
         'description': (
             'Labine Group (Great Bear magmatic zone, ca. 1875 Ma; Ootes et al., '
             '2015) host rocks used for the Cleaver Dykes field tests (Irving et '
-            'al., 2004). Baked tuff/andesite at the contacts of dykes 22 and 34 '
-            '(sites 32, 35) carry the Cleaver magnetization while equivalent rock '
-            'metres away (sites 33, 36) retains a distinct pre-Cleaver direction '
-            '(positive baked-contact test, ST-C). Andesite boulders in a Labine '
-            'Group volcanic breccia (site 24) show dispersed directions '
-            '(conglomerate test, ST-G), indicating the host has not been '
-            'regionally remagnetized.'),
+            'al., 2004). The clearest positive baked-contact test is at dyke 34: '
+            'baked andesite at the contact (site 35) carries the Cleaver '
+            'magnetization while andesite 50 m away (site 36) retains a distinct '
+            'pre-Cleaver direction (ST-C). A companion test is recorded at dyke 22 '
+            'against Labine tuff (contact site 32, distal site 33); note that the '
+            'Table 1 directions of Irving et al. (2004) for the dyke-22 tuff pair '
+            'are inconsistent with the accompanying text (which reports the '
+            'contact tuff in agreement with the dyke), so only the dyke-34 test is '
+            'treated as unambiguous here. Site directions are archived exactly as '
+            'published in Table 1. Andesite boulders in a Labine Group volcanic '
+            'breccia (site 24) show dispersed directions (conglomerate test, '
+            'ST-G), indicating the host has not been regionally remagnetized.'),
         'dir_tilt_correction': 0,
         'method_codes': 'LP-DIR-AF:LP-DIR-T:DE-BFL:DE-FM:ST-C:ST-G',
         'pole_alpha95': '', 'pole_k': '', 'pole_lat': '', 'pole_lon': '',
-        'pole_n_sites': '', 'pole_n_samples': '',
+        'pole_n_sites': '',
         'result_name': 'Labine Group baked-contact and conglomerate tests',
         'result_quality': 'g', 'result_type': 'a',
         'sites': ':'.join(labine_sites),
@@ -239,14 +274,17 @@ def build_locations(df, sites_df):
 
     lat_n3, lat_s3, lon_e3, lon_w3 = bbox(['45'])
     hottah = {
-        'age': 780, 'age_high': '', 'age_low': '', 'age_sigma': '',
-        'age_unit': 'Ma', 'citations': IRVING_DOI,
+        'age': 779.6, 'age_high': '', 'age_low': '', 'age_sigma': 0.7,
+        'age_unit': 'Ma', 'citations': f'{IRVING_DOI}:{HARLAN_DOI}',
         'geologic_classes': 'Intrusive', 'lat_n': lat_n3, 'lat_s': lat_s3,
         'lithologies': 'Gabbro', 'location': 'Hottah Gabbro',
         'location_type': 'Region', 'lon_e': lon_e3, 'lon_w': lon_w3,
+        'continent_ocean': 'North America', 'country': 'Canada',
         'description': (
-            'Hottah Gabbro sheet (the "Gunbarrel Gabbro" of Park et al., 1995), a '
-            'ca. 780 Ma intrusion (LeCheminant & Heaman, 1994) that post-dates and '
+            "Hottah Gabbro sheet (the 'Gunbarrel Gabbro' of Park et al., 1995), a "
+            'ca. 780 Ma intrusion dated at Gunbarrel Inlet (SE Great Bear Lake) '
+            'by U-Pb baddeleyite at 779.6 +/- 1.4 Ma (95% conf.; the Gunbarrel '
+            'gabbro of Harlan et al., 2003) that post-dates and '
             'cuts the Cleaver Dykes. Its magnetization direction differs from the '
             'Cleaver magnetization, contributing to the positive inverse '
             'baked-contact test (the dykes were not overprinted by this younger '
@@ -254,17 +292,70 @@ def build_locations(df, sites_df):
         'dir_tilt_correction': 0,
         'method_codes': 'LP-DIR-AF:LP-DIR-T:DE-BFL:DE-FM',
         'pole_alpha95': '', 'pole_k': '', 'pole_lat': '', 'pole_lon': '',
-        'pole_n_sites': '', 'pole_n_samples': '',
+        'pole_n_sites': '',
         'result_name': 'Hottah (Gunbarrel) Gabbro ca. 780 Ma',
         'result_quality': 'g', 'result_type': 'a',
         'sites': '45',
     }
-    return pd.DataFrame([cleaver, labine, hottah])
+    # the pole row carries dir_*/contact_test columns the container rows lack;
+    # union the columns and leave them empty for Labine/Hottah
+    return pd.DataFrame([cleaver, labine, hottah]).fillna('')
+
+
+AGE_COLS = ['location', 'age', 'age_sigma', 'age_low', 'age_high', 'age_unit',
+            'method_codes', 'citations', 'timescale_eon', 'timescale_era',
+            'timescale_period', 'description']
+
+
+def build_ages():
+    """The measured radiometric ages that anchor the three locations.
+
+    Only specific determinations go here (not inferred brackets): the Cleaver
+    dyke U-Pb date, the two Labine Group host-rock dates, and the Gunbarrel
+    (Hottah) gabbro date. Uncertainties from the sources are 95%-confidence
+    weighted means; age_sigma is the 1sigma (half of that), while the published
+    95%-conf value is stated in the description. The Cleaver date is an
+    asymmetric upper-intercept (+5/-4), which age_sigma cannot express, so it is
+    carried as age_low/age_high -- measurement uncertainty on a specific date,
+    not an inferred range.
+    """
+    rows = [
+        {'location': 'Cleaver Dykes', 'age': '1740', 'age_sigma': '',
+         'age_low': '1736', 'age_high': '1745', 'age_unit': 'Ma',
+         'method_codes': 'GM-UPB-CC-T0', 'citations': IRVING_DOI,
+         'timescale_eon': 'Proterozoic', 'timescale_era': 'Paleoproterozoic',
+         'timescale_period': 'Statherian',
+         'description': ('U-Pb baddeleyite, modified York regression upper '
+                         'intercept 1740 +5/-4 Ma (Irving et al., 2004)')},
+        {'location': 'Labine Group', 'age': '1876.4', 'age_sigma': '1.2',
+         'age_low': '', 'age_high': '', 'age_unit': 'Ma',
+         'method_codes': 'GM-UPB', 'citations': OOTES_DOI,
+         'timescale_eon': 'Proterozoic', 'timescale_era': 'Paleoproterozoic',
+         'timescale_period': 'Orosirian',
+         'description': ('Labine Group rhyolite tuff, weighted-mean 207Pb/206Pb '
+                         'U-Pb 1876.4 +/- 2.4 Ma (95% conf.; Ootes et al., 2015)')},
+        {'location': 'Labine Group', 'age': '1872.6', 'age_sigma': '0.45',
+         'age_low': '', 'age_high': '', 'age_unit': 'Ma',
+         'method_codes': 'GM-UPB', 'citations': OOTES_DOI,
+         'timescale_eon': 'Proterozoic', 'timescale_era': 'Paleoproterozoic',
+         'timescale_period': 'Orosirian',
+         'description': ('Labine Group andesite, U-Pb 1872.6 +/- 0.9 Ma '
+                         '(95% conf.; Ootes et al., 2015)')},
+        {'location': 'Hottah Gabbro', 'age': '779.6', 'age_sigma': '0.7',
+         'age_low': '', 'age_high': '', 'age_unit': 'Ma',
+         'method_codes': 'GM-UPB', 'citations': HARLAN_DOI,
+         'timescale_eon': 'Proterozoic', 'timescale_era': 'Neoproterozoic',
+         'timescale_period': 'Tonian',
+         'description': ('Gunbarrel gabbro (Gunbarrel Inlet, SE Great Bear '
+                         'Lake), U-Pb baddeleyite 779.6 +/- 1.4 Ma (95% conf.; '
+                         'Harlan et al., 2003)')},
+    ]
+    return pd.DataFrame(rows, columns=AGE_COLS)
 
 
 def write_table(df, path, table_name):
     with open(path, 'w') as f:
-        f.write(f'tab \t{table_name}\n')
+        f.write(f'tab delimited\t{table_name}\n')
     df.to_csv(path, sep='\t', index=False, mode='a')
     print(f'-I- wrote {path} ({len(df)} rows)')
 
@@ -280,14 +371,46 @@ def main():
     loc_df = build_locations(df, sites_df)
     write_table(loc_df, os.path.join(OUT_DIR, 'locations.txt'), 'locations')
 
-    # validate the combined contribution (writes a dated upload file); MagIC's
-    # online validation may fail offline, in which case the local tables are
-    # still written above.
+    ages_df = build_ages()
+    write_table(ages_df, os.path.join(OUT_DIR, 'ages.txt'), 'ages')
+
+    out_upload = write_combined_upload(loc_df, sites_df, ages_df)
+
+    # validate the combined upload file before submission: PmagPy data-model
+    # checks + the age-completeness rule MagIC enforces server-side. locations,
+    # sites, and ages are all authored here (built from the published tables).
+    _validate(out_upload, tables=['locations', 'sites', 'ages'])
+
+
+def _validate(upload_path, tables):
+    repo_root = os.path.dirname(os.path.dirname(OUT_DIR))
+    sys.path.insert(0, os.path.join(repo_root, 'scripts'))
     try:
-        ipmag.upload_magic(dir_path=OUT_DIR)
-        print('-I- upload_magic validation complete')
+        from validate_magic_contribution import validate_upload_file
     except Exception as exc:  # pragma: no cover
-        print(f'-W- upload_magic raised: {exc}')
+        print(f'-W- could not import validator ({exc}); skipping validation')
+        return
+    if not validate_upload_file(upload_path, tables=tables):
+        print('-W- validation reported problems above; review before uploading')
+
+
+def write_combined_upload(loc_df, sites_df, ages_df):
+    """Write the combined MagIC upload file (locations + sites + ages) for the
+    three Cleaver locations, using canonical ``tab delimited`` markers and the
+    ``>>>>>>>>>>`` table separator. Named ``<Location-names>_<DD.Mon.YYYY>.txt``.
+    """
+    names = '_'.join(loc.replace(' ', '-') for loc in sorted(loc_df['location']))
+    stamp = date.today().strftime('%d.%b.%Y')
+    out = os.path.join(OUT_DIR, f'{names}_{stamp}.txt')
+    with open(out, 'w') as f:
+        for table, df in [('locations', loc_df), ('sites', sites_df),
+                          ('ages', ages_df)]:
+            if table != 'locations':
+                f.write('>>>>>>>>>>\n')
+            f.write(f'tab delimited\t{table}\n')
+            df.to_csv(f, sep='\t', index=False)
+    print(f'-I- wrote {out} (locations + sites + ages, canonical markers)')
+    return out
 
 
 if __name__ == '__main__':

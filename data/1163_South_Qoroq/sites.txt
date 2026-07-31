@@ -1,0 +1,11 @@
+tab delimited	sites
+site	location	result_type	result_quality	method_codes	citations	geologic_classes	geologic_types	lithologies	lat	lon	age	age_sigma	age_low	age_high	age_unit	dir_tilt_correction	dir_dec	dir_inc	dir_k	dir_alpha95	dir_n_samples	vgp_lat	vgp_lon	vgp_dp	vgp_dm	description
+1	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	275	47	52	8	7					Site-mean directions from Piper (1992), Table 5.
+2	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	275	58	43	9	7					Site-mean directions from Piper (1992), Table 5.
+3	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	298	47	23	12	8					Site-mean directions from Piper (1992), Table 5.
+4	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	265	54	26	14	6					Site-mean directions from Piper (1992), Table 5.
+5	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	346	43	35	10	8					Site-mean directions from Piper (1992), Table 5.
+6	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	304	66	25	11	8					Site-mean directions from Piper (1992), Table 5.
+7	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	303	41	44	9	7					Site-mean directions from Piper (1992), Table 5.
+8	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	315	45	17	19	5					Site-mean directions from Piper (1992), Table 5.
+9	South Qoroq Intrusion	i	g	DE-FM	Piper1992SouthQoroq	Igneous	Plutonic	Syenite			1163		1161	1165	Ma	0	308	40	36	8	11					Contact site in Eriksfjord lavas
