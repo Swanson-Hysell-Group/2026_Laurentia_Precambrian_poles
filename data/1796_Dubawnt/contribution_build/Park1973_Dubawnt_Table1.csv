@@ -1,0 +1,41 @@
+# Site-level directions of the Dubawnt Group, transcribed from Table 1 of
+# Park, Irving & Donaldson (1973), "Paleomagnetism of the Precambrian Dubawnt
+# Group," Geological Society of America Bulletin 84, 859-870,
+# doi:10.1130/0016-7606(1973)84<859:POTPDG>2.0.CO;2.
+# Per-site alpha95/k and coordinates are NOT tabulated in the paper; all sites
+# share the mean sampling location 64.1 N / 94.7 W (= 265.3 E). Cleaned,
+# bedding-corrected declination/inclination; polarity N/R/M (M = mixed, computed
+# irrespective of sign). quality g = in the 30-site pole; b = excluded (site 23
+# lapilli tuff not carried into the mean; site 31 lava was randomly magnetized).
+site,formation,rock,gclass,gtype,lith,n,dec,inc,polarity,demag,quality
+28,Martell Syenite,syenite,Intrusive,Pluton,Syenite,4,338,-51,R,AF,g
+1,Christopher Island Formation,lava,Extrusive,Lava Flow,Trachyte,4,56,-40,R,AF,g
+27,Christopher Island Formation,red sandstone,Sedimentary,Sandstone,Sandstone,2,302,-59,R,thermal,g
+26,Christopher Island Formation,lava,Extrusive,Lava Flow,Trachyte,5,283,-46,R,AF,g
+10,Christopher Island Formation,lava,Extrusive,Lava Flow,Trachyte,5,355,-56,R,AF,g
+11,Christopher Island Formation,lava,Extrusive,Lava Flow,Trachyte,5,352,-60,R,AF,g
+32,Christopher Island Formation,red sandstone,Sedimentary,Sandstone,Sandstone,2,1,-78,R,thermal,g
+30,Christopher Island Formation,dike,Intrusive,Volcanic Dike,Basalt,6,198,48,N,AF,g
+2,Christopher Island Formation,dike and baked host,Intrusive,Volcanic Dike,Basalt,16,327,-55,R,AF,g
+9,Christopher Island Formation,dike and baked host,Intrusive,Volcanic Dike,Basalt,8,353,-69,M,AF,g
+6,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,3,322,-70,R,thermal,g
+7,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,1,357,-55,R,thermal,g
+8,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,3,179,50,N,thermal,g
+18,Kazan Formation,red mudstone breccia,Sedimentary,Breccia,Mudstone,3,152,38,N,thermal,g
+3,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,5,186,49,N,thermal,g
+5,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,4,169,41,N,thermal,g
+4,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,5,162,53,N,thermal,g
+15,Kazan Formation,red mudstone breccia,Sedimentary,Breccia,Mudstone,4,177,32,N,thermal,g
+16,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,2,353,-42,R,thermal,g
+17,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,3,2,-42,R,thermal,g
+33,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,3,337,-37,R,thermal,g
+12,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,3,150,52,N,thermal,g
+13,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,3,153,57,N,thermal,g
+14,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,3,132,60,N,thermal,g
+19,Kazan Formation,red mudstone,Sedimentary,Mudstone,Mudstone,4,1,-34,R,thermal,g
+20,Kazan Formation,red mudstone,Sedimentary,Mudstone,Mudstone,6,7,-32,R,thermal,g
+21,Kazan Formation,red mudstone,Sedimentary,Mudstone,Mudstone,6,356,-18,M,thermal,g
+22,Kazan Formation,red mudstone,Sedimentary,Mudstone,Mudstone,3,339,-40,R,thermal,g
+24,Kazan Formation,red sandstone,Sedimentary,Sandstone,Sandstone,3,339,-52,R,thermal,g
+25,Kazan Formation,red mudstone breccia,Sedimentary,Breccia,Mudstone,3,348,-34,R,thermal,g
+23,Christopher Island Formation,lapilli tuff,Extrusive,Tuff,Tuff,5,292,-8,,AF,b
