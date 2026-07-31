@@ -43,6 +43,13 @@ jobs:
           environment-file: environment.yml
           cache-environment: true
 
+      - name: Regenerate pole map, compilation table, and figures
+        env:
+          BASE_URL: /${{ github.event.repository.name }}
+        run: |
+          python scripts/build_pole_map.py
+          python scripts/build_paleolatitude_figure.py
+
       - name: Build the book
         env:
           BASE_URL: /${{ github.event.repository.name }}
