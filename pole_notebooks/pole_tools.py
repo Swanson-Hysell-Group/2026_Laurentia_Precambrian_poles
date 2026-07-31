@@ -31,7 +31,9 @@ TERRANE_EULER_POLES = {
     'Laurentia-Svalbard':       [-81.0, 125.0, 68.0],
 }
 
-def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia'):
+def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia',
+                        recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv',
+                        recent_age_max=1779):
     """Loads Laurentia poles and rotates them into a common reference frame.
 
     Poles from Scotland, Greenland, and Svalbard terranes are rotated into the
@@ -39,10 +41,18 @@ def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Lau
     and Trans-Hudson orogen are kept in their original coordinates. Unrecognized
     terranes receive NaN for rotated coordinates.
 
-    The default source is ``data/Laurentia_poles.csv`` (exported from the
-    ``Laurentia`` sheet of ``Kringdalen_w_Laurentia.xlsx``). A ``.csv`` path is
-    read with ``read_csv``; any other extension is read with ``read_excel``
-    using ``sheet_name``.
+    By default the path is a **hybrid**: poles with ``nominal age`` at or below
+    ``recent_age_max`` (1779 Ma) are taken from ``recent_file_name`` — the
+    project's own recompiled Nordic summaries (``nordic_summaries_combined.csv``,
+    the per-notebook poles recreated from MagIC site data) — while older poles
+    are taken from ``file_name`` (the legacy ``data/Laurentia_poles.csv``
+    compilation, exported from the ``Laurentia`` sheet of
+    ``Kringdalen_w_Laurentia.xlsx``). The two sources share the core pole columns
+    (Terrane, ROCKNAME, PLAT, PLONG, A95, nominal age, ...); any columns unique
+    to one source are NaN-filled on rows from the other. Set ``recent_file_name``
+    to ``None`` to use ``file_name`` alone for all ages (the legacy behavior). A
+    ``.csv`` path is read with ``read_csv``; any other extension is read with
+    ``read_excel`` using ``sheet_name``.
 
     The compilation mixes two conventions: some poles report ``A95`` and
     ``nominal age`` directly, while others (Kringdalen-native) report ``DP``/
@@ -50,32 +60,62 @@ def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Lau
     available downstream regardless of convention, the ``A95`` and
     ``nominal age`` columns are filled, **in memory only**, from the midpoints
     of ``DP``/``DM`` and ``lomagage``/``himagage`` wherever they are not given
-    explicitly; the source columns are left unchanged.
+    explicitly; the source columns are left unchanged. This fill happens before
+    the age split so that both sources are partitioned on a populated
+    ``nominal age``.
 
     Args:
-        file_name (str): Path to the pole-data file (CSV by default; an Excel
-            workbook is also accepted). Expected columns include PLAT, PLONG,
-            Terrane, ROCKNAME, and either nominal age / A95 or
-            lomagage / himagage / DP / DM.
-        sheet_name (str): Sheet to read when ``file_name`` is an Excel workbook.
+        file_name (str): Path to the legacy pole-data file used for poles older
+            than ``recent_age_max`` (CSV by default; an Excel workbook is also
+            accepted). Expected columns include PLAT, PLONG, Terrane, ROCKNAME,
+            and either nominal age / A95 or lomagage / himagage / DP / DM.
+        sheet_name (str): Sheet to read when a file is an Excel workbook.
+        recent_file_name (str or None): Path to the recompiled Nordic summaries
+            used for poles at or below ``recent_age_max``. ``None`` (or a missing
+            file) falls back to ``file_name`` for all ages.
+        recent_age_max (float): Age cutoff in Ma. Poles with ``nominal age`` <=
+            this value come from ``recent_file_name``; older poles come from
+            ``file_name``.
 
     Returns:
         pd.DataFrame: Pole data with ``A95`` / ``nominal age`` filled from the
         DP/DM and lomagage/himagage midpoints where absent, plus added
         PLAT_rotated and PLONG_rotated columns in the Laurentia reference frame.
     """
-    if str(file_name).lower().endswith('.csv'):
-        Laurentia_poles = pd.read_csv(file_name)
-    else:
-        Laurentia_poles = pd.read_excel(file_name, sheet_name=sheet_name)
+    def _load(path):
+        if str(path).lower().endswith('.csv'):
+            df = pd.read_csv(path)
+        else:
+            df = pd.read_excel(path, sheet_name=sheet_name)
+        cols = set(df.columns)
+        if 'nominal age' in cols and {'lomagage', 'himagage'} <= cols:
+            df['nominal age'] = df['nominal age'].fillna(
+                (df['lomagage'] + df['himagage']) / 2)
+        if 'A95' in cols and {'DP', 'DM'} <= cols:
+            df['A95'] = df['A95'].fillna((df['DP'] + df['DM']) / 2)
+        return df
 
-    cols = set(Laurentia_poles.columns)
-    if 'nominal age' in cols and {'lomagage', 'himagage'} <= cols:
-        Laurentia_poles['nominal age'] = Laurentia_poles['nominal age'].fillna(
-            (Laurentia_poles['lomagage'] + Laurentia_poles['himagage']) / 2)
-    if 'A95' in cols and {'DP', 'DM'} <= cols:
-        Laurentia_poles['A95'] = Laurentia_poles['A95'].fillna(
-            (Laurentia_poles['DP'] + Laurentia_poles['DM']) / 2)
+    Laurentia_poles = _load(file_name)
+
+    if recent_file_name is not None and os.path.exists(recent_file_name):
+        recent = _load(recent_file_name)
+        # Recompiled Nordic poles for ages <= cutoff; legacy compilation for
+        # older poles. A unit whose recompiled age is <= the cutoff but whose
+        # legacy age is just above it (e.g. the ECMB dykes, 1779 vs 1780 Ma)
+        # would otherwise appear twice, so legacy poles sharing a ROCKNAME with a
+        # recompiled pole are dropped — the recompiled version supersedes them.
+        recent = recent[recent['nominal age'] <= recent_age_max]
+        recent_names = set(recent['ROCKNAME'].dropna())
+        Laurentia_poles = Laurentia_poles[
+            (Laurentia_poles['nominal age'] > recent_age_max) &
+            (~Laurentia_poles['ROCKNAME'].isin(recent_names))]
+        Laurentia_poles = pd.concat([recent, Laurentia_poles], ignore_index=True)
+        Laurentia_poles = Laurentia_poles.sort_values(
+            'nominal age').reset_index(drop=True)
+    elif recent_file_name is not None:
+        warnings.warn(
+            f"recent pole file not found at {recent_file_name}; "
+            f"using {file_name} for all ages.")
 
     plat_rot = []
     plon_rot = []
@@ -98,22 +138,32 @@ def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Lau
 
     return Laurentia_poles
 
-def get_Laurentia_stricto_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia'):
+def get_Laurentia_stricto_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia',
+                                recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv',
+                                recent_age_max=1779):
     """Returns only poles from the Laurentia terrane (sensu stricto).
 
     Filters the full rotated pole dataset to include only entries where
     Terrane == 'Laurentia', excluding Scotland, Greenland, Svalbard, and
-    Trans-Hudson orogen poles.
+    Trans-Hudson orogen poles. The underlying path is the same hybrid
+    (recompiled Nordic poles <= ``recent_age_max``, legacy for older poles)
+    built by ``get_Laurentia_poles``.
 
     Args:
-        file_name (str): Path to the Excel file containing pole data.
-        sheet_name (str): Name of the sheet to read from the Excel file.
+        file_name (str): Legacy pole-data file for poles older than
+            ``recent_age_max``.
+        sheet_name (str): Name of the sheet to read from an Excel workbook.
+        recent_file_name (str or None): Recompiled Nordic summaries for poles
+            at or below ``recent_age_max``; ``None`` uses ``file_name`` alone.
+        recent_age_max (float): Age cutoff in Ma (see ``get_Laurentia_poles``).
 
     Returns:
         pd.DataFrame: Subset of poles with Terrane == 'Laurentia', including
         rotated coordinates from ``get_Laurentia_poles``.
     """
-    Laurentia_poles = get_Laurentia_poles(file_name=file_name, sheet_name=sheet_name)
+    Laurentia_poles = get_Laurentia_poles(file_name=file_name, sheet_name=sheet_name,
+                                          recent_file_name=recent_file_name,
+                                          recent_age_max=recent_age_max)
     Laurentia_stricto_poles = Laurentia_poles[(Laurentia_poles['Terrane']=='Laurentia')]
     return Laurentia_stricto_poles
 
@@ -498,8 +548,13 @@ def assess_R2(sites_tc, pole_mean, verbose=True):
       great circles (``DE-BFP``), inferred from ``method_codes``.
     - **(c) Adequate PSV sampling:** the Deenen et al. (2011) A95 envelope on
       the VGP distribution (``12*N^-0.40 <= A95 <= 82*N^-0.63``) together with
-      the statistical thresholds N >= 25 samples, 10 <= K <= 70, B >= 8 sites
-      with at least 3 samples per site.
+      the statistical thresholds N >= 25 samples, 10 <= K <= 70, and B >= 8
+      sites. The traditional >= 3-samples-per-site guideline is reported for
+      information only and is NOT applied as a pass/fail gate: Sapienza et al.
+      (2023, doi:10.1029/2023JB027211) show that paleopole accuracy is
+      dominated by the number of independent sites (B), with diminishing
+      returns from additional in-site samples, so a few sites with < 3 samples
+      do not compromise a well-sampled multi-site pole.
 
     Sub-criteria (a) and (b) are reported for information only and are *not*
     used to set the R2 score: MagIC ``method_codes`` are inconsistently applied
@@ -537,8 +592,10 @@ def assess_R2(sites_tc, pole_mean, verbose=True):
     c_n = N_samples >= 25
     c_k = 10 <= K <= 70
     c_b = B >= 8
-    c_minsamp = min_per_site >= 3
-    c = bool(deenen_pass and c_n and c_k and c_b and c_minsamp)
+    # The >= 3-samples-per-site guideline is reported for information only and
+    # is NOT a pass/fail gate (Sapienza et al., 2023): paleopole accuracy is
+    # dominated by the number of sites (B), not the number of samples per site.
+    c = bool(deenen_pass and c_n and c_k and c_b)
 
     a = b = None
     if 'method_codes' in sites_tc.columns:
@@ -565,8 +622,8 @@ def assess_R2(sites_tc, pole_mean, verbose=True):
               f'{"PASS" if c_n else "FAIL"}')
         print(f'        K = {K:.1f} (10-70): {"PASS" if c_k else "FAIL"}')
         print(f'        B = {B} sites (>= 8): {"PASS" if c_b else "FAIL"}')
-        print(f'        min {min_per_site} samples/site (>= 3): '
-              f'{"PASS" if c_minsamp else "FAIL"}')
+        print(f'        min {min_per_site} samples/site '
+              '[advisory only, not a gate; Sapienza et al., 2023]')
         print(f'        A95 = {A95:.1f} in Deenen envelope '
               f'[{deenen_min:.1f}, {deenen_max:.1f}]: '
               f'{"PASS" if deenen_pass else "FAIL"}')
@@ -1027,7 +1084,7 @@ def plot_vgps_and_pole(vgp_block, pole_mean, central_longitude=150,
     """
     ax = ipmag.make_orthographic_map(central_longitude=central_longitude,
                                      central_latitude=central_latitude,
-                                     figsize=figsize)
+                                     figsize=figsize, land_edge_color='none')
     ipmag.plot_vgp(ax, di_block=vgp_block, color='blue', markersize=30, alpha=0.5)
     ipmag.plot_pole(ax, pole_mean['dec'], pole_mean['inc'], pole_mean['alpha95'],
                     color='red', markersize=60, filled_pole=True,
@@ -1128,16 +1185,17 @@ def plot_site_map(sites, zoom_start=4, tiles='OpenStreetMap',
 # and a repeated ROCKNAME) — these are preserved so a summary CSV can be pasted
 # directly into the Nordic format.
 NORDIC_COLUMNS = [
-    'Terrane', 'ROCKNAME', 'RESULT#', 'COMPONENT', 'TESTS', 'TILT',
-    'SLAT', 'SLONG', 'B', 'N', 'DEC', 'INC', 'abs(I)', 'KD', 'ED95',
+    'Terrane', 'ROCKNAME', 'GPMDB RESULT#', 'MAGIC #', 'COMPONENT', 'TESTS',
+    'TILT', 'SLAT', 'SLONG', 'B', 'N', 'DEC', 'INC', 'KD', 'ED95',
     'PLAT', 'PLONG', 'DP', 'DM', 'A95',
-    'f', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
-    'f', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
-    '%REV', 'DEMAGCODE', '40', '24', '10', '16',
+    'f (1.0 vs 0.6)', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
+    'f (1.0/0.8/0.6)', 'INCf', 'PLATf', 'PLONf', 'DPf', 'DMf', 'A95f',
+    '%REV', 'DEMAGCODE', 'Q1', '24', '10', '16',
     'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q(7)',
-    'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'R', 'Grade',
-    'nominal age', 'lomagage', 'himagage', 'REF/method', 'ROCKNAME',
+    'R1', 'R2', 'R3', 'R4', 'R5', 'R6', 'R7', 'Rsum', 'Grade', 'Grade E+21',
+    'nominal age', 'age diff', 'lomagage', 'himagage', 'REF/method', 'ROCKNAME',
     'POLE AUTHORS', 'YEAR', 'JOURNAL', 'VOLUME', 'VPAGES', 'TITLE', 'Comment',
+    'Lithology',
 ]
 
 
@@ -1216,6 +1274,33 @@ def corrected_pole_note(method, plat, plon, *, f=None, f_range=None,
     return note
 
 
+def _magic_lithology(sites):
+    """Build the ``Lithology`` value from the MagIC site table.
+
+    Concatenates the unique ``lithologies`` terms recorded for the pole's sites,
+    splitting MagIC's ``':'`` compound delimiter (e.g. ``'Sandstone:Mudstone'`` ->
+    ``'Sandstone; Mudstone'``, ``'Basalt'`` -> ``'Basalt'``). Order of first
+    appearance is preserved. Returns ``''`` if the ``lithologies`` column is
+    absent or empty; pass ``lithology_note`` to ``make_nordic_summary`` to
+    override the value directly.
+
+    Args:
+        sites (pd.DataFrame): MagIC ``sites`` table for the pole.
+
+    Returns:
+        str: Semicolon-joined unique lithology terms.
+    """
+    if 'lithologies' not in getattr(sites, 'columns', []):
+        return ''
+    terms = []
+    for val in sites['lithologies'].dropna():
+        for part in str(val).split(':'):
+            part = part.strip()
+            if part and part not in terms:
+                terms.append(part)
+    return '; '.join(terms)
+
+
 def make_nordic_summary(terrane,
                         rockname,
                         sites,
@@ -1225,6 +1310,7 @@ def make_nordic_summary(terrane,
                         study_lat,
                         lithology='crystalline',
                         f_factor=None,
+                        f_factor_2=None,
                         pole_mean_unflattened=None,
                         component_comment='',
                         tests='',
@@ -1240,6 +1326,7 @@ def make_nordic_summary(terrane,
                         R6=None,
                         R7=None,
                         Grade=None,
+                        Grade_E21=None,
                         nominal_age=None,
                         lomagage=None,
                         himagage=None,
@@ -1250,7 +1337,8 @@ def make_nordic_summary(terrane,
                         VOLUME=None,
                         VPAGES='',
                         TITLE=None,
-                        COMMENT=''):
+                        COMMENT='',
+                        lithology_note=None):
     """Build a one-row Nordic-compilation summary for a pole.
 
     Returns a single-row ``pandas.DataFrame`` whose columns are exactly
@@ -1260,18 +1348,20 @@ def make_nordic_summary(terrane,
     are VGP-Fisher-mean poles with a circular confidence (a single A95), so the
     oval semi-axes **DP and DM are left blank** rather than set equal to A95.
 
-    Flattening (``f`` columns): a standardized blanket flattening factor is used —
-    **f = 0.6 for ``lithology='sedimentary'``, f = 1 for ``lithology='crystalline'``**
-    (igneous/metamorphic). The corrected inclination ``INCf = unsquish(INC, f)``
-    is written to both INCf columns, and the flattening-corrected pole
-    (PLATf/PLONf, A95f) is computed from the corrected mean direction at the
-    study locality and written to both f-blocks (identical). For crystalline
-    rocks (f = 1) the f-block equals the (circular) main block, so DPf/DMf are
-    likewise blank; a sedimentary flattening correction yields a genuine
-    confidence oval, so DPf/DMf are reported and A95f = sqrt(DPf*DMf). A study's
-    own inclination-shallowing determination (which may not be a single f and may
-    have a propagated ellipse, e.g. E/I in Jacobsville) is recorded in
-    ``COMMENT`` — build it with ``corrected_pole_note``.
+    Flattening: there are two f-blocks. The **first** (``f (1.0 vs 0.6)``) uses a
+    standardized blanket flattening factor — **f = 0.6 for ``lithology='sedimentary'``,
+    f = 1 for ``lithology='crystalline'``** (igneous/metamorphic). The **second**
+    (``f (1.0/0.8/0.6)``) is identical to the first unless a distinct ``f_factor_2``
+    is supplied, allowing an intermediate factor (e.g. f = 0.8 for a partly
+    compacted unit). In each block the corrected inclination ``INCf = unsquish(INC, f)``
+    is written, and the flattening-corrected pole (PLATf/PLONf, A95f) is computed
+    from the corrected mean direction at the study locality. For f = 1 the f-block
+    equals the (circular) main block, so DPf/DMf are blank; a flattening correction
+    (f < 1) yields a genuine confidence oval, so DPf/DMf are reported and
+    A95f = sqrt(DPf*DMf). A study's own inclination-shallowing determination (which
+    may not be a single f and may have a propagated ellipse, e.g. E/I in
+    Jacobsville) is recorded in ``COMMENT`` — build it with ``corrected_pole_note``;
+    pass it as ``pole_mean_unflattened`` to place it in the first f-block instead.
 
     ``R4`` holds the field-test letter code(s) from ``resources/field_test_codes.md``
     (e.g. ``'C'`` baked contact, ``'c'`` inverse baked contact, ``'g'``/``'G'``
@@ -1279,12 +1369,18 @@ def make_nordic_summary(terrane,
     populated R4 (a positive field test) contributes 1 to the ``R`` total; an
     empty R4 (or ``'0'``) contributes 0. R1–R3 and R5–R7 are 0/1 integers.
 
-    The Van der Voo Q-criteria columns (40, 24, 10, 16, Q2–Q7, Q(7)) are left
-    blank (this project scores the modern Meert et al. (2020) R-criteria instead).
-    Numbers round to the tenth, except SLAT/SLONG and f (hundredth) and the ages
-    (nominal age / lomagage / himagage, rounded to the nearest integer). RESULT# is
-    built from ``gpmdb_number`` and ``magic_id`` as ``"GPMDB:<n> MagIC:<id>"``.
-    ROCKNAME appears twice (a deliberate duplicate in the Nordic format).
+    The Van der Voo Q-criteria columns (Q1, 24, 10, 16, Q2–Q7, Q(7)) are left
+    blank (this project scores the modern Meert et al. (2020) R-criteria instead;
+    their sum is ``Rsum``). ``Grade`` is this project's reliability grade;
+    ``Grade_E21`` is the published Evans et al. (2021) grade (a letter, or ``'--'``
+    for units not graded there) and is required so it is populated per unit.
+    ``GPMDB RESULT#`` holds ``gpmdb_number`` (integer) and ``MAGIC #`` holds
+    ``magic_id`` in their own columns. ``age diff`` = himagage − lomagage. The
+    ``Lithology`` column is pulled from the MagIC ``sites`` table (``lithologies``)
+    via ``_magic_lithology``, or set directly with ``lithology_note``. Numbers round
+    to the tenth, except SLAT/SLONG and f (hundredth) and the ages (nominal age /
+    lomagage / himagage / age diff, rounded to the nearest integer). ROCKNAME
+    appears twice (a deliberate duplicate in the Nordic format).
     """
     if str(lithology).lower() not in ('crystalline', 'sedimentary'):
         raise ValueError("lithology must be 'crystalline' or 'sedimentary'")
@@ -1310,25 +1406,42 @@ def make_nordic_summary(terrane,
     # These are circular VGP-Fisher-mean poles: the confidence is a single A95,
     # so the oval semi-axes DP/DM are left blank rather than set equal to A95.
 
-    inc_f = ipmag.unsquish([INC], f)[0]
+    r = _round_or_blank
+
+    def _fblock(f_val):
+        """Seven Nordic f-columns [f, INCf, PLATf, PLONf, DPf, DMf, A95f] for f_val."""
+        inc_corr = ipmag.unsquish([INC], f_val)[0]
+        if f_val == 1.0:
+            # no shallowing correction: the f-block equals the (circular) main
+            # pole, so DPf/DMf are left blank
+            return [r(f_val, 2), r(inc_corr), r(PLAT), r(PLON), '', '', r(A95)]
+        # a flattening correction (f < 1) yields a genuine confidence oval: the
+        # corrected pole and its DPf/DMf come from the corrected mean direction
+        # at the locality, so DPf/DMf are reported
+        plon_c, plat_c, dpf, dmf = pmag.dia_vgp(DEC, inc_corr, DAL,
+                                                study_lat, study_lon)
+        return [r(f_val, 2), r(inc_corr), r(plat_c), r(plon_c),
+                r(dpf), r(dmf), r((dpf * dmf) ** 0.5)]
+
+    # First flattening block (f (1.0 vs 0.6)): blanket factor, or a study-specific
+    # inclination-corrected pole supplied via pole_mean_unflattened.
     if pole_mean_unflattened is not None:
-        platf = pole_mean_unflattened.get('inc', PLAT)
-        plonf = pole_mean_unflattened.get('dec', PLON)
-        a95f = pole_mean_unflattened.get('alpha95', A95)
-        dpf = dmf = ''            # circular corrected pole; DPf/DMf left blank
-    elif f == 1.0:
-        platf, plonf, a95f = PLAT, PLON, A95
-        dpf = dmf = ''            # f-block equals the (circular) main pole
+        inc_corr = ipmag.unsquish([INC], f)[0]
+        fblock1 = [r(f, 2), r(inc_corr),
+                   r(pole_mean_unflattened.get('inc', PLAT)),
+                   r(pole_mean_unflattened.get('dec', PLON)),
+                   '', '',                       # circular corrected pole; DPf/DMf blank
+                   r(pole_mean_unflattened.get('alpha95', A95))]
     else:
-        # A sedimentary flattening correction yields a genuine confidence oval:
-        # the corrected pole and its DPf/DMf come from the corrected mean
-        # direction at the locality, so DPf/DMf are reported in that case.
-        plonf, platf, dpf, dmf = pmag.dia_vgp(DEC, inc_f, DAL, study_lat, study_lon)
-        a95f = (dpf * dmf) ** 0.5
+        fblock1 = _fblock(f)
+
+    # Second flattening block (f (1.0/0.8/0.6)): identical to the first unless a
+    # distinct f_factor_2 is supplied (e.g. f = 0.8 for a partly compacted unit).
+    fblock2 = fblock1 if f_factor_2 is None else _fblock(float(f_factor_2))
 
     required = {'R1': R1, 'R2': R2, 'R3': R3, 'R5': R5, 'R6': R6, 'R7': R7,
-                'Grade': Grade, 'nominal_age': nominal_age, 'lomagage': lomagage,
-                'himagage': himagage, 'REF_method': REF_method,
+                'Grade': Grade, 'Grade_E21': Grade_E21, 'nominal_age': nominal_age,
+                'lomagage': lomagage, 'himagage': himagage, 'REF_method': REF_method,
                 'POLE_AUTHORS': POLE_AUTHORS, 'YEAR': YEAR, 'JOURNAL': JOURNAL,
                 'VOLUME': VOLUME, 'TITLE': TITLE}
     for name, val in required.items():
@@ -1341,32 +1454,34 @@ def make_nordic_summary(terrane,
     R_total = (int(R1) + int(R2) + int(R3) + r4_score
                + int(R5) + int(R6) + int(R7))
 
-    result_parts = []
-    if gpmdb_number not in ('', None):
-        result_parts.append(f'GPMDB:{gpmdb_number}')
-    if magic_id not in ('', None):
-        result_parts.append(f'MagIC:{magic_id}')
-    result_hash = ' '.join(result_parts)
+    # GPMDB RESULT# and MAGIC # occupy their own columns in the new format
+    gpmdb_col = _int_or_blank(gpmdb_number)
+    magic_col = '' if magic_id in ('', None) else magic_id
 
-    r = _round_or_blank
-    fblock = [r(f, 2), r(inc_f), r(platf), r(plonf), r(dpf), r(dmf), r(a95f)]
+    # age diff = himagage - lomagage (both required, so both are present)
+    age_diff = _int_or_blank(float(himagage) - float(lomagage))
+
+    # Lithology: pull from the MagIC sites table unless given explicitly
+    lithology_col = _magic_lithology(sites) if lithology_note is None else lithology_note
+
     values = [
-        terrane, rockname, result_hash, component_comment, tests,
+        terrane, rockname, gpmdb_col, magic_col, component_comment, tests,
         _int_or_blank(tilt), r(study_lat, 2), r(study_lon, 2),
         _int_or_blank(site_n), _int_or_blank(sample_n),
-        r(DEC), r(INC), r(abs(INC)), r(dir_mean['k']), r(DAL),
+        r(DEC), r(INC), r(dir_mean['k']), r(DAL),
         r(PLAT), r(PLON), '', '', r(A95),                 # DP/DM blank (circular A95)
-        *fblock,                                          # first flattening block
-        *fblock,                                          # second block (identical)
+        *fblock1,                                         # f (1.0 vs 0.6) block
+        *fblock2,                                         # f (1.0/0.8/0.6) block
         _int_or_blank(percent_reversed), demag_code,
-        '', '', '', '',                                   # 40, 24, 10, 16 (blank)
+        '', '', '', '',                                   # Q1, 24, 10, 16 (blank)
         '', '', '', '', '', '', '',                       # Q2..Q(7) (blank)
         _int_or_blank(R1), _int_or_blank(R2), _int_or_blank(R3),
         r4_str, _int_or_blank(R5), _int_or_blank(R6),
-        _int_or_blank(R7), R_total, Grade,
-        _int_or_blank(nominal_age), _int_or_blank(lomagage),
-        _int_or_blank(himagage), REF_method, rockname,
+        _int_or_blank(R7), R_total, Grade, Grade_E21,
+        _int_or_blank(nominal_age), age_diff,
+        _int_or_blank(lomagage), _int_or_blank(himagage), REF_method, rockname,
         POLE_AUTHORS, _int_or_blank(YEAR), JOURNAL, VOLUME, VPAGES, TITLE, COMMENT,
+        lithology_col,
     ]
     return pd.DataFrame([values], columns=NORDIC_COLUMNS)
 

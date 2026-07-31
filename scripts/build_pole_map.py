@@ -1,13 +1,22 @@
 """Build the interactive pole map and summary table for the book's main page.
 
-Reads ``data/Laurentia_poles.csv`` (the compiled Laurentia paleomagnetic poles)
-and writes two artifacts:
+Poles come from two sources, disjoint in age so their union introduces no
+duplicates. Poles at or below ``PUBLISH_AGE_MAX`` (1779 Ma) are read from
+``data/nordic_summaries/nordic_summaries_combined.csv``, the per-notebook
+summaries that ``data/nordic_summaries/combine_nordic_summaries.py`` assembles
+from the assessment notebooks in ``pole_notebooks/``; these are the poles
+recreated at the site level as part of this project, so the map and table track
+the current notebook values. Older poles are carried over from
+``data/Laurentia_poles.csv``, the compilation assembled at earlier Nordic
+Paleomagnetic Workshops, and are listed without a notebook link. From that
+combined set the script writes two artifacts:
 
 1. ``pole_map.ipynb`` -- a notebook holding the interactive Folium map. One
    marker per pole at the present-day sampling locality (SLAT/SLONG), colored by
    nominal age. Hovering shows the unit, age, and grade; the click popup adds the
-   site and pole positions, A95, the paleolatitude of Duluth implied by the pole,
-   the reference, and a link to that pole's assessment notebook. The map is
+   site and pole positions, A95, the paleolatitude of Duluth implied by the pole
+   (where the pole constrains it -- see :data:`DULUTH_PALEOLAT_TERRANES`), the
+   reference, and a link to that pole's assessment notebook. The map is
    committed as a code-cell output (input hidden) so it renders with notebook
    execution disabled. This page is the landing page's prominent "interactive
    pole map" link.
@@ -56,6 +65,7 @@ import re
 import folium
 import numpy as np
 import pandas as pd
+import pmagpy.pmag as pmag
 
 # --- paths -----------------------------------------------------------------
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -88,9 +98,44 @@ BASE_URL = os.environ.get("BASE_URL", "/2026_Laurentia_Precambrian_poles")
 # shown on the map and listed in the table, but without a notebook link.
 PUBLISH_AGE_MAX = 1779
 
+# Notebooks that exist but are deliberately not published yet, so the
+# compilation table and map list the pole without linking to a page that does
+# not exist in the book. Currently the Wharton Group notebook, which
+# transcribes site-level data from the unpublished Raub et al. (2026)
+# manuscript; the pole summary itself is public, the site table is not. Remove
+# the entry and add the notebook to myst.yml once that paper is out.
+WITHHELD_NOTEBOOKS = frozenset({"1756_Wharton_Group"})
+
 # Reference locality for the reported paleolatitude (Duluth, Minnesota).
 DULUTH_LAT = 46.7867
 DULUTH_LON = 267.8995  # 0-360 degrees east (-92.1005 deg)
+
+# Terranes that have rifted from Laurentia, rotated back into the Laurentia
+# reference frame before the Duluth paleolatitude is computed so that column is
+# comparable across the whole table. Mirrors pole_tools.TERRANE_EULER_POLES
+# (Greenland: Roest & Srivastava, 1989; Scotland: Torsvik & Cocks, 2017). The
+# tabulated Plat/Plon stay present-day; only the paleolatitude is rotated.
+TERRANE_EULER_POLES = {
+    "Laurentia-Greenland": [67.5, -118.5, -13.8],
+    "Laurentia-Greenland-Nain": [67.5, -118.5, -13.8],
+    "Laurentia-Scotland": [78.6, 161.9, -31.0],
+    "Laurentia-Svalbard": [-81.0, 125.0, 68.0],
+}
+
+# Duluth sits on the western Superior craton. Prior to the assembly of
+# Laurentia, a pole from a block that had not yet joined places that block, not
+# Duluth, so the Duluth paleolatitude is only reported for poles older than
+# PUBLISH_AGE_MAX whose terrane is the Superior craton itself or the
+# Trans-Hudson orogen, which welded to it. Poles from the Slave, Rae, Wyoming,
+# Nain, and eastern Superior blocks over that interval are left blank rather
+# than implying a Duluth position that the pole does not constrain. Mirrors the
+# terranes that pole_tools.get_Laurentia_poles treats as being in the Laurentia
+# reference frame.
+DULUTH_PALEOLAT_TERRANES = frozenset({
+    "Laurentia-Superior",
+    "Laurentia-Superior(West)",
+    "Laurentia-Trans-Hudson orogen",
+})
 
 # --- pole -> existing notebook stem ----------------------------------------
 # Poles whose assessment notebook already exists in pole_notebooks/. The stem
@@ -143,9 +188,9 @@ EXISTING_NOTEBOOKS = {
     "Victoria Fjord dolerite dykes": "1382_Victoria",
     "Zig-Zag Dal Basalts": "1382_Zigzag",
     "MEAN Rocky Mountain intrusions": "1430_Rocky",
-    "Michikamau Intrusion Combined": "1460_Michikamau",
+    "Michikamau Intrusion Combined": "1469_Michikamau",
     "St.Francois Mountains Acidic Rocks": "1466_Francois",
-    "Melville Bugt diabase dykes": "1633_Melville",
+    "Melville Bugt diabase dykes": "1630_Melville",
     "Elbow Creek dikes": "2480_Elbow_creek",  # not published (>1779), mapped so the stem resolves
 }
 
@@ -169,8 +214,8 @@ SUMMARY_STEM_TO_NOTEBOOK = {
     "1382_ZigZag_Dal_Basalt": "1382_Zigzag",
     "1430_Rocky_Mountain_intrusions": "1430_Rocky",
     "1466_St_Francois_Mountains": "1466_Francois",
-    "1590_WesternChannelDiabase": "1590_Western_Channel",
-    "1633_Melville_Bugt": "1633_Melville",
+    "1592_WesternChannelDiabase": "1592_Western_Channel",
+    "1630_Melville_Bugt": "1630_Melville",
 }
 
 
@@ -278,7 +323,9 @@ def stem_age(stem):
 
 
 def is_published(stem):
-    """True if the notebook stem is in the published set (prefix <= PUBLISH_AGE_MAX)."""
+    """True if the notebook stem is published (prefix <= PUBLISH_AGE_MAX, not withheld)."""
+    if stem in WITHHELD_NOTEBOOKS:
+        return False
     age = stem_age(stem)
     return age is not None and age <= PUBLISH_AGE_MAX
 
@@ -432,6 +479,10 @@ def _pole_marker(row, color, slug):
     notebook_line = (
         f"<a href='{href}' target='_blank' rel='noopener'>Open notebook &rarr;</a>"
         if row["_publish"] else "")
+    # blank for pre-assembly poles from blocks other than the Superior craton
+    paleolat_line = (
+        "" if pd.isna(row["_duluth_paleolat"])
+        else f"Duluth paleolat: {fmt(row['_duluth_paleolat'])}&deg;<br>")
     popup_html = (
         f'<div style="font-size:16px;line-height:1.5;">'
         f"<b>{row['ROCKNAME']}</b><br>"
@@ -440,7 +491,7 @@ def _pole_marker(row, color, slug):
         f"Site: {fmt(row['SLAT'])}&deg;N, {fmt(slon)}&deg;E<br>"
         f"Pole: {fmt(row['PLAT'])}&deg;N, {fmt(row['PLONG'])}&deg;E "
         f"(A95 {fmt(row['A95'])}&deg;)<br>"
-        f"Duluth paleolat: {fmt(row['_duluth_paleolat'])}&deg;<br>"
+        f"{paleolat_line}"
         f"{short_reference(row['POLE AUTHORS'], row['YEAR'])}"
         + (f"<br>{notebook_line}" if notebook_line else "")
         + "</div>")
@@ -542,7 +593,7 @@ def build_table(df):
         lines.append(
             f"| {row['Terrane']} | {link} | {int(row['nominal age'])} "
             f"| {grade_label(row['Grade'])} "
-            f"| {fmt(row['SLONG'])} | {fmt(row['SLAT'])} "
+            f"| {fmt(row['SLONG'] % 360.0)} | {fmt(row['SLAT'])} "
             f"| {fmt(row['PLONG'])} | {fmt(row['PLAT'])} | {fmt(row['A95'])} "
             f"| {fmt(row['_duluth_paleolat'])} "
             f"| {short_reference(row['POLE AUTHORS'], row['YEAR'])} |"
@@ -564,21 +615,33 @@ def _prep(df):
 
 
 def load_poles():
-    """Assemble the table/map rows: latest recreated poles + older legacy poles.
+    """Assemble the table/map rows: site-level recreated poles + older poles.
 
-    The published poles (notebook stem prefix <= ``PUBLISH_AGE_MAX``) are taken
-    from the per-notebook Nordic summaries (``COMBINED_CSV``) so the table and
-    map reflect the current notebook values, each linked to its notebook. The
-    older poles (> ``PUBLISH_AGE_MAX``) are carried from the legacy compilation
-    (``CSV``) so they are still shown and listed, but without a notebook link
-    (their stems are convention-derived). The two age ranges are disjoint at
-    ``PUBLISH_AGE_MAX``, so the union introduces no duplicates.
+    Poles at or below ``PUBLISH_AGE_MAX`` are taken from the per-notebook
+    Nordic summaries (``COMBINED_CSV``), recreated at the site level and each
+    linked to its assessment notebook. This is the set of poles the
+    accompanying manuscript tabulates, and the same source that
+    ``data/nordic_summaries/combine_nordic_summaries.py`` writes the manuscript
+    table from, so the two agree row for row over that interval.
+
+    Older poles (> ``PUBLISH_AGE_MAX``) are carried over from previous
+    compilations via ``CSV``. They have not been recreated at the site level
+    and are listed without a notebook link, but they are retained here because
+    the compilation covers Laurentia and its constituent blocks back to the
+    Archean even though the manuscript does not discuss them. The two age
+    ranges are disjoint at ``PUBLISH_AGE_MAX``, so the union introduces no
+    duplicates.
+
+    ``_duluth_paleolat`` is computed from the pole after rotating rifted
+    terranes into Laurentia coordinates via :data:`TERRANE_EULER_POLES`, and is
+    NaN for poles older than ``PUBLISH_AGE_MAX`` whose terrane is not in
+    :data:`DULUTH_PALEOLAT_TERRANES`.
 
     Returns:
         pd.DataFrame: rows with ``_stem`` (notebook stem), ``_publish`` (whether
         a notebook link is emitted) and ``_duluth_paleolat``.
     """
-    # latest recreated poles (<= PUBLISH_AGE_MAX) from the Nordic summaries
+    # site-level recreated poles (<= PUBLISH_AGE_MAX) from the Nordic summaries
     summ = _prep(pd.read_csv(COMBINED_CSV))
     stem_by_rock = summary_stem_by_rockname()
     summ["_stem"] = summ["ROCKNAME"].map(stem_by_rock)
@@ -588,17 +651,36 @@ def load_poles():
             convention_stem(rn, ag) for rn, ag in
             zip(summ.loc[unresolved, "ROCKNAME"], summ.loc[unresolved, "nominal age"])]
 
-    # older poles (> PUBLISH_AGE_MAX) carried from the legacy compilation
+    # older poles (> PUBLISH_AGE_MAX) carried over from previous compilations
     legacy = _prep(pd.read_csv(CSV))
     legacy = legacy[legacy["nominal age"] > PUBLISH_AGE_MAX].copy()
+    # a pole recreated at the site level supersedes its carried-over counterpart,
+    # which may sit just the other side of PUBLISH_AGE_MAX with a slightly
+    # different nominal age (e.g. the ECMB dykes, recreated at 1779 Ma and
+    # carried over at 1780 Ma) and would otherwise be listed twice
+    superseded = legacy["ROCKNAME"].isin(set(summ["ROCKNAME"]))
+    if superseded.any():
+        print("  Legacy rows superseded by a site-level recreation: "
+              + ", ".join(sorted(legacy.loc[superseded, "ROCKNAME"])))
+        legacy = legacy[~superseded].copy()
     legacy["_stem"] = legacy["ROCKNAME"].map(build_stem_map(legacy))
 
     df = pd.concat([summ[USE_COLS + ["_stem"]], legacy[USE_COLS + ["_stem"]]],
                    ignore_index=True)
     df["_publish"] = df["_stem"].map(is_published)
-    df["_duluth_paleolat"] = paleolatitude(
-        DULUTH_LAT, DULUTH_LON, df["PLAT"].astype(float),
-        df["PLONG"].astype(float))
+    # rotate rifted terranes into Laurentia coordinates for the paleolatitude
+    rot_lat, rot_lon = df["PLAT"].astype(float).copy(), df["PLONG"].astype(float).copy()
+    for idx in df.index:
+        euler = TERRANE_EULER_POLES.get(str(df.at[idx, "Terrane"]))
+        if euler is None or pd.isna(rot_lat[idx]) or pd.isna(rot_lon[idx]):
+            continue
+        rlat, rlon = pmag.pt_rot(euler, [rot_lat[idx]], [rot_lon[idx]])
+        rot_lat[idx], rot_lon[idx] = rlat[0], rlon[0]
+    df["_duluth_paleolat"] = paleolatitude(DULUTH_LAT, DULUTH_LON, rot_lat, rot_lon)
+    # before Laurentia assembled, only Superior/Trans-Hudson poles constrain Duluth
+    pre_assembly = ((df["nominal age"] > PUBLISH_AGE_MAX)
+                    & ~df["Terrane"].astype(str).isin(DULUTH_PALEOLAT_TERRANES))
+    df.loc[pre_assembly, "_duluth_paleolat"] = np.nan
     return df.sort_values("nominal age", kind="stable").reset_index(drop=True)
 
 
@@ -613,7 +695,15 @@ sampling locality of a pole, colored by nominal age and drawn as a circle \
 marker for the site and pole positions, A95, the paleolatitude it implies for \
 Duluth, Minnesota, the reference, and a link to that pole's assessment \
 notebook. Use the layer control (top right) to toggle the provinces and poles, \
-and zoom/pan freely. Built from `data/Laurentia_poles.csv`."""
+and zoom/pan freely.
+
+Poles at or below 1779 Ma are the site-level recreations compiled in \
+`data/nordic_summaries/`, each with an assessment notebook; older poles are \
+carried over from `data/Laurentia_poles.csv`, the compilation assembled at \
+earlier Nordic Paleomagnetic Workshops, and are shown without a link. Older \
+than 1780 Ma the Duluth paleolatitude is only given for poles from the \
+Superior craton and the Trans-Hudson orogen, since a pole from a block that \
+had not yet joined Laurentia does not constrain where Duluth was."""
 
 # Source for the map code cell. Input is removed in the rendered book; this is
 # what re-executing the cell against the current CSV renders inline.

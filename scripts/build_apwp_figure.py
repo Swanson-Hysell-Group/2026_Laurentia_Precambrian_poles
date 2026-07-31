@@ -173,6 +173,63 @@ def cluster_extent(proj, d, pad_deg=16):
     return [x.min() - pad, x.max() + pad, y.min() - pad, y.max() + pad]
 
 
+def add_named_path_annotations(ax, proj):
+    """Annotate named late Mesoproterozoic segments of the Laurentia APWP.
+
+    Places three labels -- the Logan Loop (ca. 1144-1108 Ma hairpin), the
+    Keweenawan Track (ca. 1108-1080 Ma descending limb), and the Grenville Loop
+    (ca. 1080-990 Ma broad loop) -- in open areas of the Lambert figure, each
+    connected to its path segment by a subtle leader line. Target and label
+    positions are given in longitude-latitude and transformed into the Lambert
+    projection. Returns the list of annotation artists so they can be passed to
+    ``adjust_text(objects=...)`` and thereby repel the numerical age labels.
+    """
+    annotations = [
+        {
+            "text": "Logan Loop",
+            "target": (229, 64),
+            "label": (229, 64),
+            "rotation": 0,
+        },
+        {
+            "text": "Grenville Loop",
+            "target": (195, 5),
+            "label": (162, -23),
+            "rotation": 0,
+        },
+    ]
+
+    artists = []
+    for item in annotations:
+        target_x, target_y = proj.transform_point(
+            item["target"][0], item["target"][1], ccrs.PlateCarree())
+        label_x, label_y = proj.transform_point(
+            item["label"][0], item["label"][1], ccrs.PlateCarree())
+        artist = ax.annotate(
+            item["text"],
+            xy=(target_x, target_y),
+            xytext=(label_x, label_y),
+            xycoords="data",
+            textcoords="data",
+            fontsize=10,
+            fontweight="semibold",
+            color="0.15",
+            ha="center",
+            va="center",
+            rotation=item["rotation"],
+            rotation_mode="anchor",
+            bbox=dict(
+                boxstyle="round,pad=0.2",
+                facecolor="white",
+                edgecolor="none",
+                alpha=0.85,
+            ),
+            zorder=8,
+        )
+        artists.append(artist)
+    return artists
+
+
 def make_figure(out_base, age_min, age_max, projection, central_lon=200):
     """Build and save one APWP figure; return the number of poles.
 
@@ -203,13 +260,31 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
     else:
         ax.set_global()
     ax.add_feature(cartopy.feature.LAND, zorder=0, facecolor="tan",
-                   edgecolor="black", linewidth=0.3)
-    ax.gridlines(color="gray", linewidth=0.4, linestyle=":")
+                   edgecolor="none")
+    if projection == "lambert":
+        # label longitude along the bottom and latitude along the left edge.
+        # Longitudes are shown in 0-360 degrees east (the convention poles are
+        # reported in); latitude gridlines are placed every 15 degrees.
+        from matplotlib.ticker import FuncFormatter, MultipleLocator
+        gl = ax.gridlines(color="gray", linewidth=0.4, linestyle=":",
+                          draw_labels={"bottom": "x", "left": "y"})
+        gl.ylocator = MultipleLocator(15)
+        gl.xformatter = FuncFormatter(lambda lon, _: f"{int(round(lon % 360))}°E")
+        gl.xlabel_style = {"size": 9, "color": "0.3"}
+        gl.ylabel_style = {"size": 9, "color": "0.3"}
+    else:
+        ax.gridlines(color="gray", linewidth=0.4, linestyle=":")
 
     # age-graded SphereUDE path (drawn under the markers), if it has been fitted
     path = load_spline_path()
     if path is not None:
         plot_age_graded_path(ax, path, age_min, age_max)
+
+    # named APWP segments (Lambert view only), created before the poles and age
+    # labels so adjustText can be told to route the age labels around them
+    named_annotations = []
+    if projection == "lambert":
+        named_annotations = add_named_path_annotations(ax, proj)
 
     d["_label"] = [terrane_group(t)[0] for t in d["Terrane"]]
 
@@ -230,16 +305,21 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
     # projected (transData) coordinate system -- not PlateCarree -- so adjustText
     # can move them in a flat plane; thin leader lines connect each displaced
     # label back to its pole.
-    xs, ys, texts = [], [], []
+    xs, ys = [], []
     for _, r in d.iterrows():
         x, y = proj.transform_point(r["PLONG"], r["PLAT"], ccrs.PlateCarree())
         xs.append(x)
         ys.append(y)
-        texts.append(ax.text(x, y, str(int(r["nominal age"])), fontsize=8,
-                             color="0.15", ha="center", va="center",
-                             bbox=dict(boxstyle="round,pad=0.1", facecolor="white",
-                                       edgecolor="none", alpha=0.7)))
+    # nudge each label slightly to the left of its pole so the default resting
+    # place clears the marker; adjustText still anchors leader lines to xs/ys.
+    dx = 0.015 * (max(xs) - min(xs))
+    texts = [ax.text(x - dx, y, str(int(r["nominal age"])), fontsize=8,
+                     color="0.15", ha="center", va="center", zorder=102,
+                     bbox=dict(boxstyle="round,pad=0.1", facecolor="white",
+                               edgecolor="none", alpha=0.85))
+             for (x, y), (_, r) in zip(zip(xs, ys), d.iterrows())]
     adjust_text(texts, x=xs, y=ys, ax=ax,
+                objects=named_annotations if named_annotations else None,
                 force_text=(0.3, 0.5), expand=(1.3, 1.5),
                 arrowprops=dict(arrowstyle="-", color="0.5", lw=0.4))
 
