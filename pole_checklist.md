@@ -9,7 +9,7 @@ Build-status tracker for each Laurentia pole. A ✓ marks a completed stage; a b
 - MagIC developed — a site-level MagIC contribution (`data/<pole>/sites.txt`) has been built locally.
 - MagIC contributed — the contribution has been uploaded to the MagIC database (earthref.org).
 
-Totals: 101 poles — geochronology verified 38, notebook developed 94, MagIC developed 52, MagIC contributed 3.
+Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 55, MagIC contributed 7.
 
 ## Laurentia
 
@@ -54,23 +54,23 @@ Totals: 101 poles — geochronology verified 38, notebook developed 94, MagIC de
 | Nain Anorthosite (RESULT# 2180; nominal age 1305 Ma) |  | ✓ | ✓ |  |
 | Pilcher, Garnet Range and Libby Formations (RESULT# 9030; nominal age 1385 Ma) |  |  |  |  |
 | McNamara Formation (RESULT# 9031; nominal age 1401 Ma) |  |  |  |  |
-| Mistastin Pluton (RESULT# 2271; nominal age 1425 Ma) |  | ✓ |  |  |
+| Mistastin Pluton (RESULT# 2271; nominal age 1441 Ma) |  | ✓ | ✓ | ✓ |
 | MEAN Rocky Mountain intrusions (RESULT# new; nominal age 1430 Ma) |  | ✓ | ✓ |  |
 | Purcell Lava (RESULT# 9037; nominal age 1443 Ma) |  |  |  |  |
 | Snowslip Formation (RESULT# 9038; nominal age 1450 Ma) |  |  |  |  |
 | Spokane Formation (RESULT# 9039; nominal age 1458 Ma) |  |  |  |  |
-| Michikamau Intrusion Combined (RESULT# 2274; nominal age 1460 Ma) |  | ✓ | ✓ |  |
-| St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1466 Ma) | ✓ | ✓ | ✓ |  |
-| Western Channel Diabase (RESULT# 2669; nominal age 1590 Ma) |  | ✓ |  |  |
+| Michikamau Intrusion Combined (RESULT# 2274; nominal age 1469 Ma) |  | ✓ | ✓ | ✓ |
+| St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1466 Ma) | ✓ | ✓ | ✓ | ✓ |
+| Western Channel Diabase (RESULT# 2669; nominal age 1592 Ma) | ✓ | ✓ | ✓ | ✓ |
 | Cleaver Dykes (RESULT# 9139; nominal age 1741 Ma) |  | ✓ | ✓ |  |
 | NE trending ECMB Diabase Dykes (RESULT# 9970; nominal age 1780 Ma) |  | ✓ | ✓ |  |
-| Dubawnt Group (RESULT# 2737; nominal age 1785 Ma) |  | ✓ |  |  |
+| Dubawnt Group (RESULT# 2737; nominal age 1796 Ma) |  | ✓ | ✓ |  |
 
 ## Laurentia-Greenland
 
 | Pole | geochronology verified | notebook developed | MagIC developed | MagIC contributed |
 |---|:---:|:---:|:---:|:---:|
-| Melville Bugt diabase (RESULT# 9495; nominal age 1633 Ma) |  | ✓ | ✓ |  |
+| Melville Bugt diabase (RESULT# 9495; nominal age 1630 Ma) |  | ✓ | ✓ |  |
 | Victoria Fjord Dolerite Dykes (RESULT# 489; nominal age 1382 Ma) | ✓ | ✓ | ✓ |  |
 | Midsommersoe Dolerite (RESULT# 99; nominal age 1382 Ma) | ✓ | ✓ | ✓ |  |
 | Zig-Zag Dal Basalts (RESULT# 98; nominal age 1382 Ma) |  | ✓ | ✓ |  |
