@@ -98,6 +98,31 @@ Coerce to an integer; blank for missing values.
 
 ---
 
+## `_magic_lithology`
+
+```python
+_magic_lithology(sites)
+```
+
+Build the ``Lithology`` value from the MagIC site table.
+
+Concatenates the unique ``lithologies`` terms recorded for the pole's sites,
+splitting MagIC's ``':'`` compound delimiter (e.g. ``'Sandstone:Mudstone'`` ->
+``'Sandstone; Mudstone'``, ``'Basalt'`` -> ``'Basalt'``). Order of first
+appearance is preserved. Returns ``''`` if the ``lithologies`` column is
+absent or empty; pass ``lithology_note`` to ``make_nordic_summary`` to
+override the value directly.
+
+**Parameters**
+
+- **sites** (`pd.DataFrame`) — MagIC ``sites`` table for the pole.
+
+**Returns**
+
+- Semicolon-joined unique lithology terms.
+
+---
+
 ## `_round_or_blank`
 
 ```python
@@ -126,8 +151,13 @@ Reports the three R2 sub-criteria of Meert et al. (2020) (see
   great circles (``DE-BFP``), inferred from ``method_codes``.
 - **(c) Adequate PSV sampling:** the Deenen et al. (2011) A95 envelope on
   the VGP distribution (``12*N^-0.40 <= A95 <= 82*N^-0.63``) together with
-  the statistical thresholds N >= 25 samples, 10 <= K <= 70, B >= 8 sites
-  with at least 3 samples per site.
+  the statistical thresholds N >= 25 samples, 10 <= K <= 70, and B >= 8
+  sites. The traditional >= 3-samples-per-site guideline is reported for
+  information only and is NOT applied as a pass/fail gate: Sapienza et al.
+  (2023, doi:10.1029/2023JB027211) show that paleopole accuracy is
+  dominated by the number of independent sites (B), with diminishing
+  returns from additional in-site samples, so a few sites with < 3 samples
+  do not compromise a well-sampled multi-site pole.
 
 Sub-criteria (a) and (b) are reported for information only and are *not*
 used to set the R2 score: MagIC ``method_codes`` are inconsistently applied
@@ -330,7 +360,7 @@ mode.
 ## `get_Laurentia_poles`
 
 ```python
-get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia')
+get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia', recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv', recent_age_max=1779)
 ```
 
 Loads Laurentia poles and rotates them into a common reference frame.
@@ -340,10 +370,18 @@ Laurentia reference frame using published Euler poles. Poles from Laurentia
 and Trans-Hudson orogen are kept in their original coordinates. Unrecognized
 terranes receive NaN for rotated coordinates.
 
-The default source is ``data/Laurentia_poles.csv`` (exported from the
-``Laurentia`` sheet of ``Kringdalen_w_Laurentia.xlsx``). A ``.csv`` path is
-read with ``read_csv``; any other extension is read with ``read_excel``
-using ``sheet_name``.
+By default the path is a **hybrid**: poles with ``nominal age`` at or below
+``recent_age_max`` (1779 Ma) are taken from ``recent_file_name`` — the
+project's own recompiled Nordic summaries (``nordic_summaries_combined.csv``,
+the per-notebook poles recreated from MagIC site data) — while older poles
+are taken from ``file_name`` (the legacy ``data/Laurentia_poles.csv``
+compilation, exported from the ``Laurentia`` sheet of
+``Kringdalen_w_Laurentia.xlsx``). The two sources share the core pole columns
+(Terrane, ROCKNAME, PLAT, PLONG, A95, nominal age, ...); any columns unique
+to one source are NaN-filled on rows from the other. Set ``recent_file_name``
+to ``None`` to use ``file_name`` alone for all ages (the legacy behavior). A
+``.csv`` path is read with ``read_csv``; any other extension is read with
+``read_excel`` using ``sheet_name``.
 
 The compilation mixes two conventions: some poles report ``A95`` and
 ``nominal age`` directly, while others (Kringdalen-native) report ``DP``/
@@ -351,12 +389,16 @@ The compilation mixes two conventions: some poles report ``A95`` and
 available downstream regardless of convention, the ``A95`` and
 ``nominal age`` columns are filled, **in memory only**, from the midpoints
 of ``DP``/``DM`` and ``lomagage``/``himagage`` wherever they are not given
-explicitly; the source columns are left unchanged.
+explicitly; the source columns are left unchanged. This fill happens before
+the age split so that both sources are partitioned on a populated
+``nominal age``.
 
 **Parameters**
 
-- **file_name** (`str`) — Path to the pole-data file (CSV by default; an Excel workbook is also accepted). Expected columns include PLAT, PLONG, Terrane, ROCKNAME, and either nominal age / A95 or lomagage / himagage / DP / DM.
-- **sheet_name** (`str`) — Sheet to read when ``file_name`` is an Excel workbook.
+- **file_name** (`str`) — Path to the legacy pole-data file used for poles older than ``recent_age_max`` (CSV by default; an Excel workbook is also accepted). Expected columns include PLAT, PLONG, Terrane, ROCKNAME, and either nominal age / A95 or lomagage / himagage / DP / DM.
+- **sheet_name** (`str`) — Sheet to read when a file is an Excel workbook.
+- **recent_file_name** (`str or None`) — Path to the recompiled Nordic summaries used for poles at or below ``recent_age_max``. ``None`` (or a missing file) falls back to ``file_name`` for all ages.
+- **recent_age_max** (`float`) — Age cutoff in Ma. Poles with ``nominal age`` <= this value come from ``recent_file_name``; older poles come from ``file_name``.
 
 **Returns**
 
@@ -367,19 +409,23 @@ explicitly; the source columns are left unchanged.
 ## `get_Laurentia_stricto_poles`
 
 ```python
-get_Laurentia_stricto_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia')
+get_Laurentia_stricto_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia', recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv', recent_age_max=1779)
 ```
 
 Returns only poles from the Laurentia terrane (sensu stricto).
 
 Filters the full rotated pole dataset to include only entries where
 Terrane == 'Laurentia', excluding Scotland, Greenland, Svalbard, and
-Trans-Hudson orogen poles.
+Trans-Hudson orogen poles. The underlying path is the same hybrid
+(recompiled Nordic poles <= ``recent_age_max``, legacy for older poles)
+built by ``get_Laurentia_poles``.
 
 **Parameters**
 
-- **file_name** (`str`) — Path to the Excel file containing pole data.
-- **sheet_name** (`str`) — Name of the sheet to read from the Excel file.
+- **file_name** (`str`) — Legacy pole-data file for poles older than ``recent_age_max``.
+- **sheet_name** (`str`) — Name of the sheet to read from an Excel workbook.
+- **recent_file_name** (`str or None`) — Recompiled Nordic summaries for poles at or below ``recent_age_max``; ``None`` uses ``file_name`` alone.
+- **recent_age_max** (`float`) — Age cutoff in Ma (see ``get_Laurentia_poles``).
 
 **Returns**
 
@@ -447,7 +493,7 @@ them (e.g. to inspect the full contribution).
 ## `make_nordic_summary`
 
 ```python
-make_nordic_summary(terrane, rockname, sites, dir_mean, pole_mean, study_lon, study_lat, lithology='crystalline', f_factor=None, pole_mean_unflattened=None, component_comment='', tests='', gpmdb_number='', magic_id='', percent_reversed='', demag_code='', R1=None, R2=None, R3=None, R4='', R5=None, R6=None, R7=None, Grade=None, nominal_age=None, lomagage=None, himagage=None, REF_method=None, POLE_AUTHORS=None, YEAR=None, JOURNAL=None, VOLUME=None, VPAGES='', TITLE=None, COMMENT='')
+make_nordic_summary(terrane, rockname, sites, dir_mean, pole_mean, study_lon, study_lat, lithology='crystalline', f_factor=None, f_factor_2=None, pole_mean_unflattened=None, component_comment='', tests='', gpmdb_number='', magic_id='', percent_reversed='', demag_code='', R1=None, R2=None, R3=None, R4='', R5=None, R6=None, R7=None, Grade=None, Grade_E21=None, nominal_age=None, lomagage=None, himagage=None, REF_method=None, POLE_AUTHORS=None, YEAR=None, JOURNAL=None, VOLUME=None, VPAGES='', TITLE=None, COMMENT='', lithology_note=None)
 ```
 
 Build a one-row Nordic-compilation summary for a pole.
@@ -459,18 +505,20 @@ Workshop spreadsheet. Pole position is PLAT = pole latitude
 are VGP-Fisher-mean poles with a circular confidence (a single A95), so the
 oval semi-axes **DP and DM are left blank** rather than set equal to A95.
 
-Flattening (``f`` columns): a standardized blanket flattening factor is used —
-**f = 0.6 for ``lithology='sedimentary'``, f = 1 for ``lithology='crystalline'``**
-(igneous/metamorphic). The corrected inclination ``INCf = unsquish(INC, f)``
-is written to both INCf columns, and the flattening-corrected pole
-(PLATf/PLONf, A95f) is computed from the corrected mean direction at the
-study locality and written to both f-blocks (identical). For crystalline
-rocks (f = 1) the f-block equals the (circular) main block, so DPf/DMf are
-likewise blank; a sedimentary flattening correction yields a genuine
-confidence oval, so DPf/DMf are reported and A95f = sqrt(DPf*DMf). A study's
-own inclination-shallowing determination (which may not be a single f and may
-have a propagated ellipse, e.g. E/I in Jacobsville) is recorded in
-``COMMENT`` — build it with ``corrected_pole_note``.
+Flattening: there are two f-blocks. The **first** (``f (1.0 vs 0.6)``) uses a
+standardized blanket flattening factor — **f = 0.6 for ``lithology='sedimentary'``,
+f = 1 for ``lithology='crystalline'``** (igneous/metamorphic). The **second**
+(``f (1.0/0.8/0.6)``) is identical to the first unless a distinct ``f_factor_2``
+is supplied, allowing an intermediate factor (e.g. f = 0.8 for a partly
+compacted unit). In each block the corrected inclination ``INCf = unsquish(INC, f)``
+is written, and the flattening-corrected pole (PLATf/PLONf, A95f) is computed
+from the corrected mean direction at the study locality. For f = 1 the f-block
+equals the (circular) main block, so DPf/DMf are blank; a flattening correction
+(f < 1) yields a genuine confidence oval, so DPf/DMf are reported and
+A95f = sqrt(DPf*DMf). A study's own inclination-shallowing determination (which
+may not be a single f and may have a propagated ellipse, e.g. E/I in
+Jacobsville) is recorded in ``COMMENT`` — build it with ``corrected_pole_note``;
+pass it as ``pole_mean_unflattened`` to place it in the first f-block instead.
 
 ``R4`` holds the field-test letter code(s) from ``resources/field_test_codes.md``
 (e.g. ``'C'`` baked contact, ``'c'`` inverse baked contact, ``'g'``/``'G'``
@@ -478,12 +526,18 @@ conglomerate, ``'f'``/``'F'`` fold, ``'U'`` unconformity), not a number. A
 populated R4 (a positive field test) contributes 1 to the ``R`` total; an
 empty R4 (or ``'0'``) contributes 0. R1–R3 and R5–R7 are 0/1 integers.
 
-The Van der Voo Q-criteria columns (40, 24, 10, 16, Q2–Q7, Q(7)) are left
-blank (this project scores the modern Meert et al. (2020) R-criteria instead).
-Numbers round to the tenth, except SLAT/SLONG and f (hundredth) and the ages
-(nominal age / lomagage / himagage, rounded to the nearest integer). RESULT# is
-built from ``gpmdb_number`` and ``magic_id`` as ``"GPMDB:<n> MagIC:<id>"``.
-ROCKNAME appears twice (a deliberate duplicate in the Nordic format).
+The Van der Voo Q-criteria columns (Q1, 24, 10, 16, Q2–Q7, Q(7)) are left
+blank (this project scores the modern Meert et al. (2020) R-criteria instead;
+their sum is ``Rsum``). ``Grade`` is this project's reliability grade;
+``Grade_E21`` is the published Evans et al. (2021) grade (a letter, or ``'--'``
+for units not graded there) and is required so it is populated per unit.
+``GPMDB RESULT#`` holds ``gpmdb_number`` (integer) and ``MAGIC #`` holds
+``magic_id`` in their own columns. ``age diff`` = himagage − lomagage. The
+``Lithology`` column is pulled from the MagIC ``sites`` table (``lithologies``)
+via ``_magic_lithology``, or set directly with ``lithology_note``. Numbers round
+to the tenth, except SLAT/SLONG and f (hundredth) and the ages (nominal age /
+lomagage / himagage / age diff, rounded to the nearest integer). ROCKNAME
+appears twice (a deliberate duplicate in the Nordic format).
 
 ---
 
