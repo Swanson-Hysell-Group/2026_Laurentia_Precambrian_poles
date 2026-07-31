@@ -44,16 +44,16 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Purcell Lava (RESULT# 9037; nominal age 1443 Ma)
 - [x] Snowslip Formation (RESULT# 9038; nominal age 1450 Ma)
 - [x] Spokane Formation (RESULT# 9039; nominal age 1458 Ma)
-- [x] Michikamau Intrusion Combined (RESULT# 2274; nominal age 1460 Ma)
+- [x] Michikamau Intrusion Combined (RESULT# 2274; nominal age 1469 Ma)
 - [x] St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1466 Ma)
-- [x] Western Channel Diabase (RESULT# 2669; nominal age 1590 Ma)
+- [x] Western Channel Diabase (RESULT# 2669; nominal age 1592 Ma)
 - [x] Cleaver Dykes (RESULT# 9139; nominal age 1741 Ma)
 - [x] NE trending ECMB Diabase Dykes (RESULT# 9970; nominal age 1779 Ma)
 - [x] Dubawnt Group (RESULT# 2737; nominal age 1796 Ma)
 
 ## Laurentia-Greenland
 
-- [x] Melville Bugt diabase (RESULT# 9495; nominal age 1633 Ma)
+- [x] Melville Bugt diabase (RESULT# 9495; nominal age 1630 Ma)
 - [x] Victoria Fjord Dolerite Dykes (RESULT# 489; nominal age 1382 Ma)
 - [x] Midsommersoe Dolerite (RESULT# 99; nominal age 1382 Ma)
 - [x] Zig-Zag Dal Basalts (RESULT# 98; nominal age 1382 Ma)
