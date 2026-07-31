@@ -32,21 +32,22 @@ project:
     - file: pole_map.ipynb
     - file: compilation.md
     - file: paleolatitude.md
-    - file: changes.md
     - title: Pole Assessments
       children:
         - file: pole_notebooks/565_Sept_Iles.ipynb
         - file: pole_notebooks/572_Catoctin_Basalts.ipynb
         - file: pole_notebooks/575_Callander.ipynb
         - file: pole_notebooks/583_Baie_des_Moutons.ipynb
+        - file: pole_notebooks/615_Long_Range.ipynb
         - file: pole_notebooks/719_Franklin_LIP.ipynb
         - file: pole_notebooks/755_Chuar_Group.ipynb
         - file: pole_notebooks/759_Uinta_Mountain_Group.ipynb
         - file: pole_notebooks/780_Gunbarrel.ipynb
         - file: pole_notebooks/887_Adirondack.ipynb
-        - file: pole_notebooks/925_Torridon.ipynb
+        - file: pole_notebooks/975_Torridon.ipynb
         - file: pole_notebooks/990_Jacobsville.ipynb
         - file: pole_notebooks/1045_Upper_Freda.ipynb
+        - file: pole_notebooks/1075_Lower_Freda.ipynb
         - file: pole_notebooks/1078_Nonesuch.ipynb
         - file: pole_notebooks/1082_Cardenas.ipynb
         - file: pole_notebooks/1084_Michipicoten_Island_Formation.ipynb
@@ -85,10 +86,10 @@ project:
         - file: pole_notebooks/1441_Mistastin.ipynb
         - file: pole_notebooks/1449_Snowslip.ipynb
         - file: pole_notebooks/1458_Spokane.ipynb
-        - file: pole_notebooks/1460_Michikamau.ipynb
         - file: pole_notebooks/1466_Francois.ipynb
-        - file: pole_notebooks/1590_Western_Channel.ipynb
-        - file: pole_notebooks/1633_Melville.ipynb
+        - file: pole_notebooks/1469_Michikamau.ipynb
+        - file: pole_notebooks/1592_Western_Channel.ipynb
+        - file: pole_notebooks/1630_Melville.ipynb
         - file: pole_notebooks/1740_Cleaver_Dikes.ipynb
         - file: pole_notebooks/1779_East_Central_Minnesota_Batholith.ipynb
     - title: Resources
