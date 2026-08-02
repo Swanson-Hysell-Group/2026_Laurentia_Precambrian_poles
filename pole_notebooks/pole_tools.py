@@ -1512,3 +1512,265 @@ def save_nordic_summary(summary, filename, output_dir='../data/nordic_summaries'
     # (°, ±, en/em-dashes, etc.) correctly instead of as mojibake.
     summary.to_csv(output_path, index=False, encoding='utf-8-sig')
     return output_path
+
+
+# --- Kent mean poles for sedimentary units ---------------------------------
+# The Nordic compilation records the pole as measured (the f = 1, uncorrected
+# position) with a circular A95. Detrital remanence in sediments is shallowed
+# during compaction, so for a sedimentary unit that position is a minimum
+# paleolatitude. The companion Kent table records, for every sedimentary pole,
+# an inclination-shallowing-corrected mean pole summarized as a Kent (1982)
+# distribution whose 95% confidence ellipse propagates the uncertainty in the
+# flattening factor f following Pierce et al. (2022). Two routes populate it:
+#
+#   quantified   the study determined f from the directional distribution itself
+#                (E/I, Tauxe & Kent, 2004; or SVEI, Tauxe et al., 2024) and
+#                propagated it with ``ipmag.find_ei_kent`` / ``find_svei_kent``.
+#   compilation  no f could be determined from the data, so f is resampled from
+#                the compiled distribution of measured flattening factors of
+#                Pierce et al. (2022) with ``ipmag.find_compilation_kent``.
+
+KENT_COLUMNS = [
+    'Terrane', 'ROCKNAME', 'Lithology', 'SLAT', 'SLONG',
+    'nominal age', 'lomagage', 'himagage', 'Grade',
+    'f method', 'f source', 'f', 'f low', 'f high',
+    'PLAT uncorrected', 'PLONG uncorrected', 'A95 uncorrected',
+    'PLAT', 'PLONG', 'Zdec', 'Zinc', 'Zeta', 'Edec', 'Einc', 'Eta', 'A95',
+    'n resampled', 'Comment',
+]
+
+# Values accepted for ``f_method``; the first two are study determinations of f
+# from the data, the third resamples the Pierce et al. (2022) compilation.
+KENT_METHODS = {
+    'E/I': 'E/I (Tauxe & Kent, 2004)',
+    'SVEI': 'SVEI (Tauxe et al., 2024)',
+    'compilation': 'compilation f (Pierce et al., 2022)',
+}
+
+
+def compilation_kent_pole(pole_mean, study_lon, study_lat, random_seed=1,
+                          map_central_longitude=None, map_central_latitude=None,
+                          **kwargs):
+    """Kent mean pole from the Pierce et al. (2022) compilation of f factors.
+
+    Thin wrapper around ``ipmag.find_compilation_kent`` for a sedimentary pole
+    whose flattening factor could not be determined from its own directional
+    distribution (too few directions for E/I or SVEI, or only a published mean
+    pole is available). Flattening factors are resampled from the compilation of
+    measured f values of Pierce et al. (2022); each resample unsquishes the mean
+    direction implied by the pole at the sampling locality, and the resulting
+    swarm of mean poles is summarized as a Kent distribution. The uncorrected
+    pole and the Kent ellipse are plotted on an orthographic map centered on the
+    pole unless a different center is given.
+
+    Args:
+        pole_mean (dict): Uncorrected mean pole, as returned by
+            ``compute_mean_pole`` — ``dec`` (pole longitude), ``inc`` (pole
+            latitude), and ``alpha95``.
+        study_lon (float): Sampling-locality longitude in degrees east.
+        study_lat (float): Sampling-locality latitude in degrees.
+        random_seed (int): Seed for the resampling, so a notebook rerun and the
+            committed Kent summary agree. Pass ``None`` for an unseeded run.
+        map_central_longitude (float or None): Map center; defaults to the
+            uncorrected pole longitude.
+        map_central_latitude (float or None): Map center; defaults to the
+            uncorrected pole latitude.
+        **kwargs: Passed through to ``ipmag.find_compilation_kent``.
+
+    Returns:
+        dict: The Kent statistics dictionary (``dec``, ``inc``, ``Zdec``,
+        ``Zinc``, ``Zeta``, ``Edec``, ``Einc``, ``Eta``, ``n``).
+
+    Note:
+        This needs a PmagPy carrying the fix to ``find_compilation_kent``: it
+        previously iterated over ``len(f_from_compilation)`` rather than ``n``,
+        so the f distribution was sampled 70 times regardless of ``n`` and the
+        Kent mean moved by up to a degree between seeds. With the fix the
+        default ``n = 10000`` gives the documented ``n * n_fish`` = 1,000,000
+        resampled mean poles (about a minute per pole), and repeat runs agree to
+        a few hundredths of a degree. ``random_seed`` is fixed regardless so the
+        committed table is exactly reproducible.
+    """
+    plon, plat = pole_mean['dec'], pole_mean['inc']
+    if map_central_longitude is None:
+        map_central_longitude = plon
+    if map_central_latitude is None:
+        map_central_latitude = plat
+    kent = ipmag.find_compilation_kent(
+        plon, plat, pole_mean['alpha95'], study_lon % 360, study_lat,
+        map_central_longitude=map_central_longitude,
+        map_central_latitude=map_central_latitude,
+        random_seed=random_seed, **kwargs)
+    _rasterize_dense_scatter(plt.gca())
+    return kent
+
+
+# A scatter larger than this is rasterized rather than left as vector art.
+_RASTERIZE_ABOVE = 10000
+
+
+def _rasterize_dense_scatter(ax, threshold=_RASTERIZE_ABOVE):
+    """Rasterize any very dense scatter on ``ax``, leaving the rest vector.
+
+    The resampled-mean-pole swarm drawn by ``find_compilation_kent`` is
+    ``n * n_fish`` points (1,000,000 at the defaults). Left as vector art that
+    is tens of megabytes per figure in a notebook saved with the SVG inline
+    backend, which the pole notebooks use. The swarm is a density cloud at
+    alpha = 0.002, so nothing is lost by rasterizing it; the map, the ellipse,
+    and the pole markers stay vector.
+    """
+    for collection in ax.collections:
+        try:
+            n_points = len(collection.get_offsets())
+        except (AttributeError, TypeError):
+            continue
+        if n_points > threshold:
+            collection.set_rasterized(True)
+
+
+def plot_kent_ellipse(map_axis, kent, **kwargs):
+    """Draw a Kent mean pole and its 95% confidence ellipse on the right hemisphere.
+
+    ``ipmag.plot_pole_ellipse`` passes ``lower`` through to
+    ``pmagplotlib.plot_ell``, whose default (``lower=True``) returns the
+    lower-hemisphere projection of the ellipse. For a pole at a **southern**
+    latitude that projection is the antipode, so the ellipse is drawn about
+    170 deg from the pole it belongs to — and silently, because the pole marker
+    is plotted separately and still lands in the right place. Selecting
+    ``lower`` from the sign of the pole latitude keeps the ellipse around its
+    own pole. Use this rather than calling ``plot_pole_ellipse`` directly when a
+    pole may be at a southern latitude; ``scripts/build_apwp_figure.py`` carries
+    the same wrapper for the compilation figures, and
+    ``ipmag.find_compilation_kent`` now applies the same selection to the
+    diagnostic map it draws.
+
+    Args:
+        map_axis: Cartopy map axis to draw on.
+        kent (dict): Kent statistics with ``dec``, ``inc``, ``Zdec``, ``Zinc``,
+            ``Zeta``, ``Edec``, ``Einc``, ``Eta``.
+        **kwargs: Passed through to ``ipmag.plot_pole_ellipse``.
+
+    Returns:
+        The map axis.
+    """
+    return ipmag.plot_pole_ellipse(map_axis, kent,
+                                   lower=kent['inc'] >= 0, **kwargs)
+
+
+def compilation_f_summary(f_from_compilation=None, percentiles=(2.5, 97.5)):
+    """Median and 95% range of the compiled flattening factors.
+
+    Summarizes the distribution of measured f values that
+    ``ipmag.find_compilation_kent`` resamples (Pierce et al., 2022, Table S1,
+    exposed as ``ipmag.PIERCE2022_F_COMPILATION``). For a pole whose own data
+    cannot constrain f, this is the f that is being assumed: the median is the
+    central value of the compiled population and the percentiles bound the
+    middle 95% of it. It is a property of the compilation, identical for every
+    such pole, and is **not** a determination for the unit — unlike the E/I or
+    SVEI values, which are.
+
+    Args:
+        f_from_compilation (list or None): Flattening factors to summarize;
+            defaults to the Pierce et al. (2022) compilation.
+        percentiles (tuple): Lower and upper percentiles (default 2.5, 97.5).
+
+    Returns:
+        tuple[float, tuple[float, float]]: ``(median, (low, high))``.
+    """
+    if f_from_compilation is None:
+        f_from_compilation = getattr(ipmag, 'PIERCE2022_F_COMPILATION', None)
+        if f_from_compilation is None:
+            raise AttributeError(
+                'this PmagPy does not expose ipmag.PIERCE2022_F_COMPILATION; '
+                'pass f_from_compilation explicitly or update PmagPy')
+    values = np.asarray(f_from_compilation, dtype=float)
+    low, high = np.percentile(values, percentiles)
+    return float(np.median(values)), (float(low), float(high))
+
+
+def make_kent_summary(nordic_summary, kent, f_method, f_source,
+                      f=None, f_range=None, comment=''):
+    """Build a one-row Kent-pole summary for a sedimentary pole.
+
+    Pairs the inclination-shallowing-corrected Kent mean pole with the
+    uncorrected pole recorded in the unit's Nordic summary, so the two are
+    always reported together and the size of the correction is explicit. The
+    terrane, unit name, lithology, locality, age, and grade are read from
+    ``nordic_summary`` rather than restated, so the two tables cannot drift.
+
+    ``A95`` is the equal-area circular approximation to the Kent ellipse
+    (``sqrt(Zeta * Eta)``, see ``kent_a95_approx``), carried so that consumers
+    that can only take a circular confidence — the paleolatitude figures and the
+    pole map — have a defensible radius to use; the full ellipse is in the
+    ``Zdec``/``Zinc``/``Zeta`` and ``Edec``/``Einc``/``Eta`` columns.
+
+    Args:
+        nordic_summary (pd.DataFrame): The unit's one-row Nordic summary from
+            ``make_nordic_summary``.
+        kent (dict): Kent statistics for the corrected pole, from
+            ``ipmag.find_ei_kent``, ``ipmag.find_svei_kent``, or
+            ``compilation_kent_pole``. A published Kent ellipse can be passed as
+            a dictionary with the same keys.
+        f_method (str): Key of ``KENT_METHODS`` — ``'E/I'``, ``'SVEI'``, or
+            ``'compilation'``.
+        f_source (str): Where the correction comes from, e.g.
+            ``'this study'`` or ``'Zhang et al. (2024)'``.
+        f (float or None): Flattening factor, where the study determined one.
+            For ``f_method='compilation'`` this defaults to the **median** of
+            the resampled compilation (see ``compilation_f_summary``) — the f
+            that is in effect being assumed, not one determined for this unit.
+        f_range (tuple or None): ``(low, high)`` 95% bounds on f; for
+            ``f_method='compilation'`` it defaults to the 2.5th/97.5th
+            percentiles of the compilation.
+        comment (str): Any further context.
+
+    Returns:
+        pd.DataFrame: One-row summary with columns ``KENT_COLUMNS``.
+    """
+    if f_method not in KENT_METHODS:
+        raise ValueError(f"f_method must be one of {sorted(KENT_METHODS)}")
+    if f_method == 'compilation' and f is None:
+        # report the compiled distribution that was resampled rather than
+        # leaving the f columns blank; it is the same for every such pole
+        f_default, f_range_default = compilation_f_summary()
+        f = f_default
+        if f_range is None:
+            f_range = f_range_default
+    row = nordic_summary.iloc[0]
+
+    def src(name):
+        """First column of ``name`` — NORDIC_COLUMNS repeats some labels."""
+        return row.iloc[NORDIC_COLUMNS.index(name)]
+
+    r = _round_or_blank
+    values = [
+        src('Terrane'), src('ROCKNAME'), src('Lithology'), src('SLAT'), src('SLONG'),
+        src('nominal age'), src('lomagage'), src('himagage'), src('Grade'),
+        KENT_METHODS[f_method], f_source,
+        r(f, 2), r(f_range[0], 2) if f_range else '', r(f_range[1], 2) if f_range else '',
+        r(src('PLAT')), r(src('PLONG')), r(src('A95')),
+        r(kent['inc']), r(kent['dec']),
+        r(kent['Zdec']), r(kent['Zinc']), r(kent['Zeta']),
+        r(kent['Edec']), r(kent['Einc']), r(kent['Eta']),
+        r(kent_a95_approx(kent['Zeta'], kent['Eta'])),
+        _int_or_blank(kent.get('n', '')), comment,
+    ]
+    return pd.DataFrame([values], columns=KENT_COLUMNS)
+
+
+def save_kent_summary(summary, filename, output_dir='../data/nordic_summaries/kent'):
+    """Save a Kent-pole summary (single-row DataFrame) to a CSV file.
+
+    Companion to ``save_nordic_summary``; ``build_kent_poles.py`` concatenates
+    these into ``data/nordic_summaries/kent_poles_combined.csv``.
+
+    Args:
+        summary (pd.DataFrame): One-row summary from ``make_kent_summary``.
+        filename (str): Output CSV filename, typically the notebook name
+            (e.g. '755_Chuar_Group' or '755_Chuar_Group.csv').
+        output_dir (str): Directory in which to write the CSV.
+
+    Returns:
+        str: The full path to the written CSV file.
+    """
+    return save_nordic_summary(summary, filename, output_dir=output_dir)
