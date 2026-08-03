@@ -1,2 +1,2 @@
 ﻿Terrane,ROCKNAME,Lithology,SLAT,SLONG,nominal age,lomagage,himagage,Grade,f method,f source,f,f low,f high,PLAT uncorrected,PLONG uncorrected,A95 uncorrected,PLAT,PLONG,Zdec,Zinc,Zeta,Edec,Einc,Eta,A95,n resampled,Comment
-Laurentia,Uinta Mountain Group,Sandstone; Mudstone,40.8,250.7,759,743,767,B,"compilation f (Pierce et al., 2022)",this study,,,,1.9,160.6,2.1,2.3,161.1,253.6,47.1,2.4,68.9,42.8,2.1,2.2,7000,74 site VGPs: too few directions for an E/I or SVEI determination of f
+Laurentia,Uinta Mountain Group,Sandstone; Mudstone,40.8,250.7,759,743,767,B,"compilation f (Pierce et al., 2022)",this study,0.62,0.43,0.91,1.9,160.6,2.1,2.4,161.1,253.2,40.7,2.3,68.4,49.2,2.1,2.2,1000000,74 site VGPs: too few directions for an E/I or SVEI determination of f

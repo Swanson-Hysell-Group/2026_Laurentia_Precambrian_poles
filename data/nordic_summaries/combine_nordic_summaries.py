@@ -20,19 +20,21 @@ always win; only blanks are filled.
 
 The combined table is then rendered to ``pole_table.tex``, the LaTeX
 ``longtable`` of the compilation used in the manuscript. Pole references are
-emitted as ``\\citet`` keys resolved against the manuscript BibTeX file (see
-``MANUSCRIPT_BIB``); when that file is unavailable the references fall back to
-plain-text ``Author et al. (year)`` strings and the script says so.
+emitted as ``\\citet`` keys in the manuscript's ``SurnameYYYYa`` convention.
+Each pole credits every study that contributed sites to it, taken from
+:data:`POLE_REFERENCES`; a pole not listed there is keyed from its own
+``POLE AUTHORS`` and ``YEAR`` by :func:`citekey`. The keys are written out
+rather than looked up, so the table renders identically wherever it is built;
+whether every key resolves is settled by the manuscript's BibTeX file at
+compile time.
 
 Usage:
     python combine_nordic_summaries.py
-    python combine_nordic_summaries.py --bib /path/to/allrefs.bib
     python combine_nordic_summaries.py --no-tex
 """
 
 import argparse
 import csv
-import difflib
 import glob
 import math
 import os
@@ -95,14 +97,6 @@ TERRANE_EULER_POLES = {
     'Laurentia-Scotland': [78.6, 161.9, -31.0],
     'Laurentia-Svalbard': [-81.0, 125.0, 68.0],
 }
-# The manuscript's BibTeX file lives outside this repository (the manuscript is
-# not open until submission), so this default is a local convenience path.
-# Override with ``--bib`` or the ``LAURENTIA_BIB`` environment variable; if no
-# bib file is found the reference column falls back to plain text.
-MANUSCRIPT_BIB = os.path.expanduser(
-    '~/Library/CloudStorage/Dropbox/Writing/2026_Laurentia_Pole_review/'
-    'Laurentia_2026_Nordic_Review/references/allrefs.bib')
-
 # Subtle ROCKNAME changes between the per-notebook summaries and the legacy
 # compilation (Laurentia_poles.csv): spelling, abbreviation, a "MEAN " prefix,
 # Dike/Dyke, or a reordered/expanded label. Each entry maps the summary ROCKNAME
@@ -124,6 +118,9 @@ ROCKNAME_ALIASES = {
     'Mistastin Batholith': 'Mistastin Pluton',
     'Narsaqq': 'Narssaq Gabbro',
     'Nipigon sills and lavas': 'MEAN Nipigon sills and lavas',
+    # This compilation uses the modern lithostratigraphic name; the legacy
+    # compilation and the GPMDB carry the unit as the "Nonesuch Shale".
+    'Nonesuch Formation': 'Nonesuch Shale',
     'North Qoroq Intrusion': 'North Qoroq Intr.',
     'South Qoroq Intrusion': 'South Qoroq Intr.',
     'Snowslip': 'Snowslip Formation',
@@ -141,32 +138,102 @@ ROCKNAME_ALIASES = {
 }
 
 # --- pole reference -> BibTeX key(s) ----------------------------------------
-# Most rows resolve automatically (exact title match, then first-author surname
-# + year with a title-similarity tie-break, then a fuzzy title match). The
-# entries below are the rows that cannot resolve automatically because the
-# summary's POLE AUTHORS/TITLE fields describe a combined or recompiled pole
-# rather than a single publication. Each key listed here was verified to exist
-# in the manuscript bib. A row mapped to an empty list is one whose reference
-# does not (yet) exist in the bib; it falls back to plain text and is reported.
-CITEKEY_OVERRIDES = {
-    # combined three-member Chuar pole: Weil et al. (2004) + Eyster et al. (2020)
+# The reference column credits every study that contributed sites to a pole,
+# not only the paper the pole is named for: these are recalculated poles, and
+# the site-level data behind them frequently come from several studies (the
+# Nipigon sills pole, for instance, pools sites from five). The lists below were
+# derived from the ``citations`` column of the MagIC site files each notebook
+# reads -- ``sites.txt`` for most poles, but the study-specific files for the
+# Sudbury, Mackenzie and Mistastin poles, which their notebooks combine -- and
+# restricted to the sites each notebook actually uses (its quality and
+# polarity-zone filters), then resolved to keys against the manuscript bib by
+# DOI. Five references cited by the site data were missing from the bib and were
+# added with it: Larochelle (1967), Murthy et al. (1968), Evans et al. (1975),
+# Stupavsky & Symons (1982) and Fahrig (1986).
+#
+# Keys follow the manuscript's SurnameYYYY[a-z] convention. A ROCKNAME absent
+# from this mapping falls back to citekey() on its own POLE AUTHORS/YEAR, which
+# gives the "a" suffix and so needs checking against the bib; the table build
+# reports any entry here that matches no row.
+POLE_REFERENCES = {
+    'Sept-Iles Layered Intrusion': ['Tanczyk1987a'],
+    'Catoctin Basalts': ['Meert1994a'],
+    'Callander Alkaline Complex': ['Symons1991a'],
+    'Baie des Moutons complex A': ['McCausland2011a'],
+    'Baie des Moutons complex B': ['McCausland2011a'],
+    'Long Range Dykes': ['Murthy1992a'],
+    'Franklin event grand mean': ['Denyszyn2009b'],
     'Chuar Group (combined)': ['Weil2004a', 'Eyster2020a'],
-    # Luleå Working Group grand means, carried through the Evans et al. (2021)
-    # compilation chapter rather than published as standalone papers
+    'Uinta Mountain Group': ['Weil2006b'],
+    'Gunbarrel LIP': ['Harlan1997a', 'Harlan2003a', 'Ding2025a'],
+    'Adirondack metamorphic anorthosite': ['Brown2012a'],
     'Torridon Group': ['Evans2021a'],
-    'Stoer Group': ['Evans2021a'],
-    'Nipigon sills and lavas': ['Evans2021a'],
-    # two-study poles whose TITLE field concatenates both papers
-    'Central Arizona diabases': ['Harlan1993a', 'Donadini2011b'],
-    'Mistastin Batholith': ['Fahrig1976a', 'Herve2015a'],
-    # Kulakov et al. (2013) is a follow-up to Diehl & Haig (1994) and the two
-    # site sets are merged in the recreated pole
+    'Jacobsville Formation': ['Zhang2024a'],
+    'Upper Freda Formation': ['Fuentes2025a'],
+    'Lower Freda Formation': ['Henry1977a'],
+    'Nonesuch Formation': ['Slotznick2024a'],
+    'Cardenas Basalts': ['Zhang2024b'],
+    'Michipicoten Island Formation': ['Palmer1987a', 'Fairchild2017a'],
     'Lake Shore Traps': ['Diehl1994a', 'Kulakov2013a'],
-    # recompiled here from the source studies' MagIC contributions; the
-    # Fahrig (1986) Korok-only rows are excluded from the pole, so that study
-    # is not cited here
-    'Mackenzie dykes recompiled': ['Fahrig1969a', 'Robertson1969a',
-                                   'Irving1972c', 'Park1974a'],
+    'Schroeder Lutsen Basalts': ['Tauxe2009a', 'Fairchild2017a'],
+    'Portage Lake Volcanics': [
+        'Books1972a', 'Hnat2006a', 'Foucher2018a', 'Swanson-Hysell2019a'
+    ],
+    'Uppermost Mamainse Point volcanics -N': ['Swanson-Hysell2014a'],
+    'North Shore Volcanic Group -N (combined)': [
+        'Books1972a', 'Tauxe2009a', 'Swanson-Hysell2019a'
+    ],
+    'Central Arizona diabases': ['Harlan1993a', 'Donadini2011b'],
+    'Mamainse Point volcanics -C (lower N, upper R)': ['Swanson-Hysell2014a'],
+    'Lower Mamainse Point volcanics -R2': ['Swanson-Hysell2014a'],
+    'Osler Volcanic Group reverse upper': [
+        'Halls1974a', 'Swanson-Hysell2014b', 'Swanson-Hysell2019a'
+    ],
+    'Coldwell Complex': ['Kulakov2014a'],
+    'Osler Volcanic Group reverse middle': ['Swanson-Hysell2014b'],
+    'Nipigon sills': [
+        'Dubois1962a', 'Robertson1971a', 'Pesonen1979a',
+        'Middleton2004a', 'Borradaile2006a'
+    ],
+    'Osler Volcanic Group reverse lower': ['Swanson-Hysell2014b'],
+    'Lowermost Mamainse Point volcanics -R1': ['Swanson-Hysell2014a'],
+    'Abitibi Dykes': ['Ernst1993a', 'Halls2005a'],
+    'NW Ontario Lamprophyre Dykes': ['Ernst1993a', 'Piispa2018a'],
+    'NE-SW Trending Dyke Swarm': ['Piper1992a'],
+    'Giant Gabbro Dikes': ['Piper1977a'],
+    'South Qoroq Intrusion': ['Piper1992a'],
+    'Hviddal': ['Piper1977a'],
+    'Narsaqq': ['Piper1977a'],
+    'Stoer Group': ['Evans2021a'],
+    'Sudbury Dike Swarm': [
+        'Larochelle1967a', 'Palmer1977a', 'Stupavsky1982b'
+    ],
+    'Mackenzie dykes recompiled': [
+        'Fahrig1969a', 'Robertson1969a', 'Irving1972c', 'Park1974a',
+        'Fahrig1986a'
+    ],
+    'West Gardar Dolerite Dykes': ['Piper1977b'],
+    'West Gardar Lamprophyre Dykes': ['Piper1977b'],
+    'Kungnat Ring Dyke': ['Piper1977b'],
+    'North Qoroq Intrusion': ['Piper1992a'],
+    'Nain Anorthosite': ['Murthy1978a'],
+    'Midsommersoe Dolerites': ['Marcussen1983a'],
+    'Victoria Fjord dolerite dykes': ['Abrahamsen1987a'],
+    'Zig-Zag Dal Basalts': ['Marcussen1983a'],
+    'Pilcher, Garnet Range, Libby': ['Elston2002a'],
+    'McNamara': ['Elston2002a'],
+    'Purcell Lava': ['Evans1975a', 'Elston2002a'],
+    'Mean Rocky Mountain intrusions': ['Harlan1994a', 'Harlan1998a'],
+    'Mistastin Batholith': ['Fahrig1976a', 'Herve2015a'],
+    'Snowslip': ['Elston2002a'],
+    'Spokane': ['Elston2002a'],
+    'St. Francois Mountains Acidic Rocks': ['Meert2002b', 'Bray2021a'],
+    'Michikamau Intrusion Combined': ['Murthy1968a', 'Emslie1976a'],
+    'Western Channel diabase': ['Irving1972b'],
+    'Melville Bugt diabase dykes': ['Halls2011a'],
+    'Cleaver Dykes': ['Harlan2003a', 'Irving2004a', 'Ootes2015a'],
+    'Wharton Group': ['Raub2026a'],
+    'NE trending ECMB Diabase Dykes': ['Swanson-Hysell2021b'],
 }
 
 # --- key-pole flag ----------------------------------------------------------
@@ -309,6 +376,13 @@ KEY_POLES = {
     'Osler Volcanic Group reverse middle': (
         True, 'x', 'regional consistency with the coeval Nipigon (Logan) sill '
                    'and lowermost Mamainse Point poles'),
+    'Nipigon sills': (
+        True, 'b', 'positive baked-contact test: baked Sibley Group and Rove '
+                   'Formation adjacent to the sills carry the sill direction '
+                   'while unbaked host rock does not (Pesonen, 1979, Table 4). '
+                   'This pole is also the coeval anchor for the '
+                   'regional-consistency calls on the Coldwell, middle and '
+                   'lower Osler, and lowermost Mamainse Point poles'),
     'Osler Volcanic Group reverse lower': (
         True, 'x', 'regional consistency with the coeval Nipigon (Logan) sill '
                    'pole'),
@@ -480,7 +554,7 @@ KEY_POLES = {
     # are substantial (f = 0.43 to 0.73), the poles move only 0.1 to 3.7 deg
     # between the tabulated and inclination-corrected positions. Shallowing is
     # both well quantified and minor in its effect on pole position.
-    'Nonesuch Shale': (
+    'Nonesuch Formation': (
         True, 'c', 'intraformational conglomerate test on fluvial intraclasts '
                    'in the conformably overlying lower Freda Formation '
                    '(Swanson-Hysell, Fairchild & Slotznick, 2019b), of the '
@@ -742,165 +816,56 @@ def latex_escape(text):
     return ''.join(_LATEX_SPECIALS.get(ch, ch) for ch in str(text))
 
 
-def _normalize(text):
-    """Fold a title or surname to a comparison key.
+def citekey(authors, year):
+    """Build the manuscript citation key for a pole reference.
 
-    Accents are stripped, LaTeX control sequences removed, brace protection
-    around capitals dropped, and
-    everything that is not alphanumeric collapsed to single spaces, so that
-    ``{Paleomagnetism of $\\sim$1.09 Ga ...}`` and ``Paleomagnetism of ~1.09
-    Ga ...`` compare equal.
-    """
-    text = unicodedata.normalize('NFKD', str(text))
-    text = ''.join(c for c in text if not unicodedata.combining(c))
-    text = re.sub(r'\\[a-zA-Z]+', ' ', text)
-    # BibTeX brace-protects capitals inside words ("{W}harton"); strip braces
-    # before collapsing punctuation, or the word is split into "w harton"
-    text = text.replace('{', '').replace('}', '')
-    return re.sub(r'[^a-z0-9]+', ' ', text.lower()).strip()
-
-
-def parse_bibtex(path):
-    """Parse a BibTeX file into ``(key, fields)`` pairs.
-
-    A deliberately small brace-balanced parser so the script keeps its
-    standard-library-only footprint. Only the fields needed to identify an
-    entry (``author``, ``title``, ``year``) are used downstream, but every
-    field is captured.
+    Keys follow the manuscript's ``SurnameYYYYa`` convention: the first
+    author's surname folded to ASCII, keeping the hyphens of compound surnames
+    (``Swanson-Hysell2019a``), the four-digit year, and the ``a``
+    disambiguation suffix. Rows whose reference is not a single publication --
+    combined,
+    recompiled, or working-group poles -- are keyed by hand in
+    :data:`POLE_REFERENCES` instead.
 
     Args:
-        path (str): Path to the ``.bib`` file.
-
-    Returns:
-        list[tuple[str, dict[str, str]]]: Citation key and its fields.
-    """
-    with open(path, encoding='utf-8', errors='replace') as fh:
-        text = fh.read()
-    entries = []
-    for match in re.finditer(r'@(\w+)\s*\{\s*([^,\s]+)\s*,', text):
-        i, depth = match.end(), 1
-        while i < len(text) and depth:
-            if text[i] == '{':
-                depth += 1
-            elif text[i] == '}':
-                depth -= 1
-            i += 1
-        body = text[match.end():i - 1]
-        fields, pos = {}, 0
-        while True:
-            name = re.compile(r'(\w+)\s*=\s*').search(body, pos)
-            if not name or name.end() >= len(body):
-                break
-            start = name.end()
-            if body[start] in '{"':
-                opener = body[start]
-                depth, p = 1, start + 1
-                while p < len(body) and depth:
-                    if opener == '{' and body[p] == '{':
-                        depth += 1
-                    elif body[p] == ('}' if opener == '{' else '"'):
-                        depth -= 1
-                    p += 1
-                value, pos = body[start + 1:p - 1], p
-            else:  # bare numeric/macro value, e.g. year = 1994,
-                p = body.find(',', start)
-                p = len(body) if p < 0 else p
-                value, pos = body[start:p].strip(), p + 1
-            fields[name.group(1).lower()] = value
-        entries.append((match.group(2), fields))
-    return entries
-
-
-def build_bib_index(entries):
-    """Index BibTeX entries for the three lookups used by the resolver.
-
-    Args:
-        entries (list): Output of :func:`parse_bibtex`.
-
-    Returns:
-        dict: ``by_title`` (normalized title -> keys), ``by_author_year``
-        ((normalized first-author surname, year) -> [(key, title)]), and
-        ``titles`` (normalized title -> key) for fuzzy matching.
-    """
-    by_title = defaultdict(list)
-    by_author_year = defaultdict(list)
-    for key, fields in entries:
-        title = fields.get('title', '')
-        norm_title = _normalize(title)
-        if norm_title:
-            by_title[norm_title].append(key)
-        first = fields.get('author', '').split(' and ')[0].strip()
-        if ',' in first:
-            surname = first.split(',')[0]
-        else:
-            surname = first.split()[-1] if first.split() else ''
-        year = re.search(r'(\d{4})', fields.get('year', '') or fields.get('date', ''))
-        # index by the bib year and, as a fallback, by the year embedded in the
-        # citation key itself (keys follow the Surname+Year+letter convention)
-        years = {year.group(1)} if year else set()
-        key_match = re.match(r'^([A-Za-z\-]+?)(\d{4})[a-z]*$', key)
-        if key_match:
-            years.add(key_match.group(2))
-            surname = surname or key_match.group(1)
-        for yr in years:
-            by_author_year[(_normalize(surname), yr)].append((key, title))
-    return {'by_title': dict(by_title), 'by_author_year': dict(by_author_year),
-            'titles': {t: keys[0] for t, keys in by_title.items()}}
-
-
-def resolve_citekeys(rockname, authors, year, title, index):
-    """Resolve a summary row's pole reference to BibTeX citation key(s).
-
-    Resolution order: an explicit :data:`CITEKEY_OVERRIDES` entry; an exact
-    (normalized) title match; the first-author surname and year, with a
-    title-similarity tie-break when several entries share them; and finally a
-    close fuzzy match on the title alone, which catches rows whose ``POLE
-    AUTHORS`` names the original data authors while the ``TITLE`` names the
-    compilation paper that recalculated the pole.
-
-    Args:
-        rockname (str): Summary ``ROCKNAME``.
         authors (str): Summary ``POLE AUTHORS``.
-        year (str): Summary ``YEAR`` (may list several years).
-        title (str): Summary ``TITLE`` (may concatenate several titles).
-        index (dict): Output of :func:`build_bib_index`.
+        year (str): Summary ``YEAR`` (may list several years, in which case
+            the first is used).
 
     Returns:
-        list[str]: Citation keys, empty when the reference cannot be resolved.
+        str | None: The citation key, or ``None`` when the row carries neither
+        an author nor a year to build one from.
     """
-    if rockname in CITEKEY_OVERRIDES:
-        return list(CITEKEY_OVERRIDES[rockname])
+    surname = str(authors).split(',')[0].split(';')[0].split(' and ')[0]
+    surname = unicodedata.normalize('NFKD', surname.strip())
+    surname = ''.join(c for c in surname if not unicodedata.combining(c))
+    surname = re.sub(r'[^A-Za-z-]', '', surname).strip('-')
+    years = re.findall(r'\d{4}', str(year))
+    if not surname or not years:
+        return None
+    return f'{surname}{years[0]}a'
 
-    norm_title = _normalize(title)
-    exact = index['by_title'].get(norm_title)
-    if exact:
-        return [exact[0]]
 
-    surname = _normalize(authors.split(',')[0].split(' and ')[0])
-    keys = []
-    for yr in re.findall(r'\d{4}', year):
-        candidates = index['by_author_year'].get((surname, yr), [])
-        if not candidates:
-            continue
-        if len(candidates) == 1:
-            keys.append(candidates[0][0])
-        else:
-            best = max(candidates, key=lambda c: difflib.SequenceMatcher(
-                None, norm_title, _normalize(c[1])).ratio())
-            keys.append(best[0])
+def pole_citation(rockname, authors, year):
+    """The ``\\citet`` command for a row's pole reference.
+
+    Args:
+        rockname (str): Summary ``ROCKNAME``, looked up in
+            :data:`POLE_REFERENCES` first, which is where poles built from more
+            than one study get their full credit list.
+        authors (str): Summary ``POLE AUTHORS``.
+        year (str): Summary ``YEAR``.
+
+    Returns:
+        tuple[str, bool]: The LaTeX citation and whether it came from
+        :data:`POLE_REFERENCES`. A row that yields no key at all is
+        rendered as a dash.
+    """
+    keys = POLE_REFERENCES.get(rockname)
     if keys:
-        return keys
-
-    close = difflib.get_close_matches(norm_title, index['titles'], n=1, cutoff=0.9)
-    return [index['titles'][close[0]]] if close else []
-
-
-def short_reference(authors, year):
-    """Plain-text ``Surname et al. (year)`` fallback when no bib key resolves."""
-    authors = str(authors).strip()
-    surname = authors.split(',')[0].strip() if authors else '---'
-    etal = ' et al.' if authors.count(',') > 1 else ''
-    return f'{latex_escape(surname)}{etal} ({latex_escape(str(year).strip())})'
+        return r'\citet{' + ','.join(keys) + '}', True
+    key = citekey(authors, year)
+    return (r'\citet{' + key + '}') if key else '--', False
 
 
 def rotate_pole(euler, pole_lat, pole_lon):
@@ -952,6 +917,59 @@ def paleolatitude(site_lat, site_lon, pole_lat, pole_lon):
     cos_p = (math.sin(slat) * math.sin(plat)
              + math.cos(slat) * math.cos(plat) * math.cos(plon - slon))
     return 90.0 - math.degrees(math.acos(max(-1.0, min(1.0, cos_p))))
+
+
+def bearing(lat1, lon1, lat2, lon2):
+    """Initial great-circle bearing from one point toward another.
+
+    Args:
+        lat1, lon1 (float): Start point (degrees, longitude degrees east).
+        lat2, lon2 (float): End point (degrees, longitude degrees east).
+
+    Returns:
+        float: Bearing in degrees east of north, 0-360.
+    """
+    phi1, phi2 = math.radians(lat1), math.radians(lat2)
+    dlon = math.radians(lon2 - lon1)
+    return math.degrees(math.atan2(
+        math.sin(dlon) * math.cos(phi2),
+        math.cos(phi1) * math.sin(phi2)
+        - math.sin(phi1) * math.cos(phi2) * math.cos(dlon))) % 360.0
+
+
+def ellipse_radius_toward(plat, plon, zeta, zdec, zinc, eta, site_lat,
+                          site_lon):
+    """Radius of a Kent 95% confidence ellipse in the direction of a site.
+
+    The paleolatitude a pole implies for a site is ``90`` minus their angular
+    distance, so what limits the paleolatitude is the extent of the confidence
+    region along the pole-to-site great circle. For an ellipse with semi-axes
+    ``zeta`` (major) and ``eta`` (minor) that extent is
+
+        r(theta) = ((cos(theta) / zeta)^2 + (sin(theta) / eta)^2)^(-1/2),
+
+    with ``theta`` the angle between the major axis and the bearing to the
+    site. This is the quantity the paleolatitude figures plot as the vertical
+    error bar for the Kent poles (``paleolat_uncertainty`` in
+    ``scripts/build_paleolatitude_figure.py``); the equal-area circular
+    approximation ``sqrt(zeta * eta)`` carried in the ``A95`` column would
+    understate it, because the flattening-factor uncertainty elongates the
+    ellipse along the site-to-pole direction.
+
+    Args:
+        plat, plon (float): Pole position (degrees, longitude degrees east).
+        zeta (float): Semi-angle of the major axis, in degrees.
+        zdec, zinc (float): Longitude and latitude of the major-axis
+            direction, in the same frame as the pole.
+        eta (float): Semi-angle of the minor axis, in degrees.
+        site_lat, site_lon (float): The site, in degrees.
+
+    Returns:
+        float: The ellipse radius toward the site, in degrees.
+    """
+    theta = math.radians(bearing(plat, plon, site_lat, site_lon)
+                         - bearing(plat, plon, zinc, zdec))
+    return 1.0 / math.hypot(math.cos(theta) / zeta, math.sin(theta) / eta)
 
 
 def key_pole_status(rockname):
@@ -1026,12 +1044,42 @@ def _east_longitude(value):
 
 
 def _age_cell(nominal, lomagage, himagage):
-    """Nominal age over its magnetization-age bounds, for a ``p{}`` column."""
+    """Nominal age with its magnetization-age bounds as scripts.
+
+    The upper bound is set as a superscript and the lower bound as a
+    subscript, so the whole age fits on one line at the reduced script size
+    (e.g. ``1109`` with ``1114`` above and ``1104`` below).
+    """
     age = _number(nominal, 0)
     lo, hi = _number(lomagage, 0), _number(himagage, 0)
     if '--' in (lo, hi):
         return age
-    return f'{age}\\newline{{\\scriptsize {lo}--{hi}}}'
+    return f'{age}$^{{{hi}}}_{{{lo}}}$'
+
+
+def _paleolat_cell(value, error):
+    """Paleolatitude with its 95% bounds as sub- and superscripts.
+
+    The bounds are the paleolatitude plus and minus the pole's 95% confidence
+    radius in the direction of the site (``A95`` for a circular confidence,
+    :func:`ellipse_radius_toward` for a Kent ellipse), clipped at the poles.
+    They are set inside one math group, so the minus signs of negative bounds
+    are true minus signs rather than hyphens.
+
+    Args:
+        value (float): The paleolatitude, in degrees.
+        error (float | None): Its 95% uncertainty in degrees; ``None`` leaves
+            the bounds off.
+
+    Returns:
+        str: The formatted cell.
+    """
+    text = _number(value, 1)
+    if text == '--' or error is None:
+        return text
+    hi = min(90.0, float(value) + float(error))
+    lo = max(-90.0, float(value) - float(error))
+    return f'{text}$^{{{hi:.1f}}}_{{{lo:.1f}}}$'
 
 
 TEX_PREAMBLE_NOTE = r"""% Auto-generated by data/nordic_summaries/combine_nordic_summaries.py
@@ -1047,7 +1095,8 @@ TEX_CAPTION = (
     r'and running through the remainder of the Proterozoic, listed from '
     r'youngest to oldest. Each pole is recalculated from '
     r"site-level data in the accompanying compilation. ``Age (Ma)'' gives the "
-    r'nominal age of magnetization with its lower and upper bounds beneath. '
+    r'nominal age of magnetization, with its upper bound as a superscript '
+    r'and its lower bound as a subscript. '
     r"``Rating'' is the Nordic reliability grade (A/B). ``Key pole'' "
     r'($\checkmark$) marks poles meeting the key-pole criteria of '
     r'\citet{Buchan2013a}: a precisely determined age (U--Pb, or occasionally '
@@ -1059,10 +1108,11 @@ TEX_CAPTION = (
     r'of the Nordic grade and of the R-criteria scores of \citet{Meert2020a}, '
     r'which are reported in the accompanying compilation; a blank marks a '
     r'pole assessed against these criteria and found not to meet them, and a '
-    r'dash marks one not yet assessed. Site and pole longitudes '
-    r"are in degrees east ($0$--$360^{\circ}$), and ``Duluth paleolat'' is "
+    r'dash marks one not yet assessed. Longitudes run $0$--$360^{\circ}$E. '
+    r"``Duluth paleolat'' is "
     r'the paleolatitude of Duluth, Minnesota ($46.8^{\circ}$N, '
-    r'$267.9^{\circ}$E) implied by the pole. Site and pole positions are '
+    r'$267.9^{\circ}$E) implied by the pole, with the bounds set by $A_{95}$ '
+    r'given as a superscript and a subscript. Site and pole positions are '
     r'present-day; the Greenland and Scotland poles are rotated back into '
     r'Laurentia coordinates before their Duluth paleolatitude is computed, so '
     r'that column is comparable across the whole table.')
@@ -1072,34 +1122,87 @@ TEX_CAPTION = (
 # to fill the measure. Rows are therefore ended with \tabularnewline rather
 # than \\, which \raggedright would otherwise clobber in the final column; this
 # keeps the table free of any package beyond longtable and booktabs.
-TEX_COLUMN_SPEC = r'p{1.8cm}p{3.1cm}p{1.5cm}cccrrrrrp{1.45cm}p{2.6cm}'
+# The Duluth column is 1.6cm because its widest cell -- a negative paleolatitude
+# with both bounds negative, e.g. $-$41.4$^{-28.5}_{-54.3}$ -- sets 41.3pt and
+# cannot be broken across lines.
+# 'Key pole' is a centred column with no width of its own, so its header used
+# to set it: the single line "Key pole" made it ~1.5cm wide to hold a
+# checkmark. Stacking the header on two lines (see TEX_HEADER_ROW) narrows it
+# to the width of "Key", and the space goes to the reference column, whose
+# multi-author \citet keys are what most need the room. The Duluth column
+# gains a little too, clearing the negative-with-both-bounds-negative cells
+# that were fractionally overfull at 1.6cm.
+# Column-unit labels. Stacking the unit under the column name with \shortstack
+# keeps the column no wider than the longer of the two lines (a `c`/`r` column
+# is sized by its header here), and lets both tables state their conventions in
+# the headers rather than in the caption.
+DEG = r'$^{\circ}$'
+DEG_E = DEG + 'E'
+DEG_N = DEG + 'N'
+
+
+def unit_header(label, unit):
+    """Bold column label with its unit stacked beneath it.
+
+    Args:
+        label (str): Column name, e.g. ``'Plon'``.
+        unit (str): Unit, e.g. :data:`DEG_E`; wrapped in parentheses.
+
+    Returns:
+        str: A ``\shortstack`` cell for the header row.
+    """
+    return r'\shortstack{\textbf{' + label + r'}\\\textbf{(' + unit + r')}}'
+
+
+TEX_COLUMN_SPEC = r'p{1.8cm}p{3.1cm}p{1.5cm}cccrrrrrp{1.7cm}p{3.2cm}'
 RAGGED = r'\raggedright '
 ROW_END = r' \tabularnewline'
 
-TEX_HEADER_ROW = (
-    r'\textbf{Terrane} & \textbf{Unit} & \textbf{Age (Ma)} & '
-    r'\textbf{Rating} & \textbf{R1--R7} & \textbf{Key pole} & '
-    r'\textbf{Site lon} & '
-    r'\textbf{Site lat} & \textbf{Plon} & \textbf{Plat} & \textbf{A95} & '
-    r'\textbf{Duluth}\newline\textbf{paleolat} & '
-    r'\textbf{Pole reference}' + ROW_END)
+TEX_HEADER_ROW = ' & '.join([
+    r'\textbf{Terrane}', r'\textbf{Unit}', r'\textbf{Age (Ma)}',
+    r'\textbf{Rating}', r'\textbf{R1--R7}',
+    r'\shortstack{\textbf{Key}\\\textbf{pole}}',
+    unit_header('Site lon', DEG_E), unit_header('Site lat', DEG_N),
+    unit_header('Plon', DEG_E), unit_header('Plat', DEG_N),
+    unit_header('A95', DEG),
+    r'\textbf{Duluth}\newline\textbf{paleolat}\newline\textbf{(' + DEG_N + r')}',
+    r'\textbf{Pole reference}',
+]) + ROW_END
 
 
-def build_pole_table_tex(header, rows, index=None):
+# A hairline between body rows. The table is 13 columns wide with many two-line
+# cells, so the eye has a long way to travel from unit name to reference; a rule
+# lighter than \midrule keeps rows tied together without the heavy banding a
+# full-weight rule would give across 64 rows. Set to None for plain booktabs
+# spacing (no rules between rows).
+ROW_RULE = r'\midrule[0.1pt]'
+
+
+def _interleave_rules(body):
+    """Body rows separated by ROW_RULE, or unchanged if ROW_RULE is None."""
+    if not ROW_RULE or not body:
+        return body
+    out = []
+    for row in body[:-1]:
+        out.extend([row, ROW_RULE])
+    out.append(body[-1])
+    return out
+
+
+def build_pole_table_tex(header, rows):
     """Render the combined summary rows as a LaTeX ``longtable``.
 
     Args:
         header (list[str]): The Nordic column header.
         rows (list[list[str]]): Summary rows, in the order they are tabulated.
-        index (dict | None): Output of :func:`build_bib_index`; when ``None``
-            the reference column falls back to plain-text references.
 
     Returns:
         tuple[str, dict]: The LaTeX source, and a report with the
         ``key_poles`` (list of ROCKNAMEs flagged),
-        ``unassessed`` (ROCKNAMEs with no entry in :data:`KEY_POLES`), and
-        ``unresolved_refs`` (ROCKNAMEs whose pole reference could not be
-        resolved to a citation key).
+        ``unassessed`` (ROCKNAMEs with no entry in :data:`KEY_POLES`),
+        ``unkeyed`` (ROCKNAMEs with no author/year to build a key from), and
+        ``unused_overrides`` (:data:`POLE_REFERENCES` entries matching no
+        row, which are stale and should be renamed or dropped).
     """
     col = {name: header.index(name) for name in
            ('Terrane', 'ROCKNAME', 'nominal age', 'lomagage', 'himagage',
@@ -1111,7 +1214,8 @@ def build_pole_table_tex(header, rows, index=None):
         i = col[name]
         return row[i].strip() if i < len(row) else ''
 
-    body, key_poles, unassessed, unresolved = [], [], [], []
+    body, key_poles, unassessed, unkeyed = [], [], [], []
+    overrides_used = set()
     basis_notes, caveats = [], []
     for row in rows:
         rockname = cell(row, 'ROCKNAME')
@@ -1124,22 +1228,24 @@ def build_pole_table_tex(header, rows, index=None):
         elif is_key is None:
             unassessed.append(rockname)
 
-        keys = resolve_citekeys(
-            rockname, cell(row, 'POLE AUTHORS'), cell(row, 'YEAR'),
-            cell(row, 'TITLE'), index) if index else []
-        if keys:
-            reference = r'\citet{' + ','.join(keys) + '}'
-        else:
-            unresolved.append(rockname)
-            reference = short_reference(cell(row, 'POLE AUTHORS'),
-                                        cell(row, 'YEAR'))
+        reference, from_override = pole_citation(
+            rockname, cell(row, 'POLE AUTHORS'), cell(row, 'YEAR'))
+        if from_override:
+            overrides_used.add(rockname)
+        elif reference == '--':
+            unkeyed.append(rockname)
 
         try:
             plat, plon = float(cell(row, 'PLAT')), float(cell(row, 'PLONG'))
             euler = TERRANE_EULER_POLES.get(cell(row, 'Terrane'))
             if euler is not None:   # rift back into Laurentia coordinates
                 plat, plon = rotate_pole(euler, plat, plon)
-            duluth = _number(paleolatitude(DULUTH_LAT, DULUTH_LON, plat, plon))
+            try:
+                a95 = float(cell(row, 'A95'))
+            except ValueError:  # a pole tabulated without a confidence radius
+                a95 = None
+            duluth = _paleolat_cell(
+                paleolatitude(DULUTH_LAT, DULUTH_LON, plat, plon), a95)
         except ValueError:  # a row without a pole position
             duluth = '--'
 
@@ -1182,6 +1288,10 @@ def build_pole_table_tex(header, rows, index=None):
         r'\begingroup',
         r'\footnotesize',
         r'\setlength{\tabcolsep}{3pt}',
+        # The age, paleolatitude and f cells carry sub- and superscripts that
+        # reach beyond the normal row box, so rows set at the default height
+        # read as crowded. Stretching them is local to this \begingroup.
+        r'\renewcommand{\arraystretch}{1.25}',
         r'\begin{longtable}{' + TEX_COLUMN_SPEC + '}',
         r'\caption{' + caption + r'}\label{tab:poles} \\',
         r'\toprule',
@@ -1197,78 +1307,54 @@ def build_pole_table_tex(header, rows, index=None):
         r'\endfoot',
         r'\bottomrule',
         r'\endlastfoot',
-        *body,
+        *_interleave_rules(body),
         r'\end{longtable}',
         r'\endgroup',
         '',
     ])
     return tex, {'key_poles': key_poles, 'unassessed': unassessed,
-                 'unresolved_refs': unresolved}
+                 'unkeyed': unkeyed,
+                 'unused_overrides': sorted(set(POLE_REFERENCES)
+                                            - overrides_used)}
 
 
-def find_bib(bib_path=None):
-    """Locate the BibTeX file used to resolve pole references.
-
-    Search order: an explicit path, the ``LAURENTIA_BIB`` environment
-    variable, then :data:`MANUSCRIPT_BIB`.
-
-    Args:
-        bib_path (str | None): Explicit path, e.g. from ``--bib``.
-
-    Returns:
-        str | None: The first path that exists, or ``None``.
-    """
-    for candidate in (bib_path, os.environ.get('LAURENTIA_BIB'), MANUSCRIPT_BIB):
-        if candidate and os.path.exists(os.path.expanduser(candidate)):
-            return os.path.expanduser(candidate)
-    return None
-
-
-def write_pole_table(header, rows, summary_dir=SUMMARY_DIR, bib_path=None):
+def write_pole_table(header, rows, summary_dir=SUMMARY_DIR):
     """Write ``pole_table.tex`` next to the combined CSV and report on it.
 
     Args:
         header (list[str]): The Nordic column header.
         rows (list[list[str]]): Combined summary rows, already sorted.
         summary_dir (str): Directory the table is written into.
-        bib_path (str | None): Explicit BibTeX path; see :func:`find_bib`.
 
     Returns:
         str: Path to the LaTeX table written to disk.
     """
-    bib = find_bib(bib_path)
-    if bib:
-        index = build_bib_index(parse_bibtex(bib))
-    else:
-        index = None
-        print('-W- no BibTeX file found (looked for --bib, $LAURENTIA_BIB, '
-              f'{MANUSCRIPT_BIB}); pole references written as plain text')
-
-    tex, report = build_pole_table_tex(header, rows, index)
+    tex, report = build_pole_table_tex(header, rows)
     tex_path = os.path.join(summary_dir, TEX_FILENAME)
     with open(tex_path, 'w', encoding='utf-8') as fh:
         fh.write(tex)
     print(f'Wrote {len(rows)}-row LaTeX pole table to {tex_path}')
-    print(f'  key poles: {len(report["key_poles"])} of {len(rows)}'
-          + (f' (bib: {os.path.basename(bib)})' if bib else ''))
+    print(f'  key poles: {len(report["key_poles"])} of {len(rows)}')
     if report['unassessed']:
         print(f'  -I- {len(report["unassessed"])} pole(s) not yet assessed '
               'against the Buchan (2013) criteria (shown as -- in the table); '
               'record a call for each in KEY_POLES:')
         for rockname in report['unassessed']:
             print(f'      {rockname}')
-    if report['unresolved_refs']:
-        print(f'  -W- {len(report["unresolved_refs"])} pole reference(s) did '
-              'not resolve to a citation key and were written as plain text: '
-              + ', '.join(report['unresolved_refs']))
+    if report['unkeyed']:
+        print(f'  -W- {len(report["unkeyed"])} pole(s) carry no author/year to '
+              'build a citation key from (shown as -- in the table): '
+              + ', '.join(report['unkeyed']))
+    if report['unused_overrides']:
+        print(f'  -W- {len(report["unused_overrides"])} POLE_REFERENCES '
+              'entry(ies) match no row and are stale: '
+              + ', '.join(report['unused_overrides']))
     return tex_path
 
 
 def main(argv=None):
     """Combine the summaries and render the manuscript pole table."""
     parser = argparse.ArgumentParser(description=__doc__.split('\n')[0])
-    parser.add_argument('--bib', help='BibTeX file used to resolve pole '
-                                      'references to \\citet keys')
     parser.add_argument('--no-tex', action='store_true',
                         help='only write the combined CSV')
     args = parser.parse_args(argv)
@@ -1278,7 +1364,7 @@ def main(argv=None):
         return combined_path
     with open(combined_path, encoding='utf-8-sig', newline='') as fh:
         records = list(csv.reader(fh))
-    write_pole_table(records[0], records[1:], bib_path=args.bib)
+    write_pole_table(records[0], records[1:])
     return combined_path
 
 

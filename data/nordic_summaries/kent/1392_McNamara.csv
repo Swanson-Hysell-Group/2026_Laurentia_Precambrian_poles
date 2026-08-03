@@ -1,2 +1,2 @@
 ﻿Terrane,ROCKNAME,Lithology,SLAT,SLONG,nominal age,lomagage,himagage,Grade,f method,f source,f,f low,f high,PLAT uncorrected,PLONG uncorrected,A95 uncorrected,PLAT,PLONG,Zdec,Zinc,Zeta,Edec,Einc,Eta,A95,n resampled,Comment
-Laurentia,McNamara,Muddy Sandstone; Redbed,47.1,-113.66,1392,1378,1407,B,"compilation f (Pierce et al., 2022)",this study,,,,-14.3,210.2,7.9,-4.8,214.7,294.3,64.9,15.8,126.9,24.6,7.9,11.2,7000,10 site-level mean directions: too few for an E/I or SVEI determination of f
+Laurentia,McNamara,Muddy Sandstone; Redbed,47.1,-113.66,1392,1378,1407,B,"compilation f (Pierce et al., 2022)",this study,0.62,0.43,0.91,-14.3,210.2,7.9,-4.2,215.0,295.8,65.0,15.3,126.9,24.5,8.0,11.0,1000000,10 site-level mean directions: too few for an E/I or SVEI determination of f
