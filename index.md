@@ -1,5 +1,12 @@
 # Precambrian Paleomagnetic Poles for Laurentia
 
+:::{figure} _static/Laurentia_apwp_lambert.png
+:alt: Apparent polar wander path for Laurentia from 1779 to 717 Ma, with poles colored by age
+:width: 100%
+
+The apparent polar wander path of Laurentia from 1779 to 717 Ma. Each pole is shown with its 95% confidence ellipse, labeled and colored by nominal age, with marker shape giving the terrane; Greenland and Scotland poles are rotated into the Laurentia reference frame.
+:::
+
 Laurentia — the Precambrian craton at the core of North America and Greenland — was a major continent following its assembly 1.8 billion years ago. Its position is central to reconstructions of the Paleoproterozoic to Mesoproterozoic supercontinent Nuna and the Mesoproterozoic to Neoproterozoic supercontinent Rodinia. It has a rich record of well-dated paleomagnetic poles.
 
 :::{tip} Interactive pole map
@@ -15,7 +22,5 @@ The most consequential changes in the new work are concentrated in the Mesoprote
 ## Structure
 
 **Pole Assessments** — Individual notebooks that compile paleomagnetic data, calculate poles, and evaluate reliability criteria for each entry in the compilation.
-
-**[Revisions and additions](changes.md)** — Documentation of the poles added to, and the changes made relative to, the Nordic compilation for Laurentia.
 
 **Resources** — Reference materials including the R-criteria scoring framework.
