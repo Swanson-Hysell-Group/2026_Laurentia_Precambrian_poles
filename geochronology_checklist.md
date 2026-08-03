@@ -18,7 +18,7 @@ This checklist mirrors the compilation order in the CSV and includes 99 pole ent
 - [x] Adirondack metamorphic anorthosite (nominal age 887 Ma)
 - [x] Jacobsville Formation (nominal age 990 Ma)
 - [x] Freda Sandstone (RESULT# 2051; nominal age 1075 Ma)
-- [x] Nonesuch Shale (RESULT# 2053; nominal age 1078 Ma)
+- [x] Nonesuch Formation (RESULT# 2053; nominal age 1078 Ma)
 - [x] Michipicoten Island Formation (RESULT# 9916; nominal age 1084 Ma)
 - [x] Lake Shore Traps (RESULT# 9506; nominal age 1085 Ma)
 - [x] Central Arizona diabases -N (RESULT# 10016; nominal age 1088 Ma)

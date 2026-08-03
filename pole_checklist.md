@@ -29,7 +29,7 @@ Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC de
 | Jacobsville Formation (nominal age 990 Ma) |  | ✓ | ✓ |  |
 | Upper Freda Formation (Fuentes et al., 2025; nominal age 1045 Ma) | ✓ | ✓ | ✓ |  |
 | Lower Freda Formation (RESULT# 2051; nominal age 1075 Ma) |  |  |  |  |
-| Nonesuch Shale (RESULT# 2053; nominal age 1078 Ma) | ✓ | ✓ | ✓ | ✓ |
+| Nonesuch Formation (RESULT# 2053; nominal age 1078 Ma) | ✓ | ✓ | ✓ | ✓ |
 | Michipicoten Island Formation (RESULT# 9916; nominal age 1084 Ma) |  | ✓ | ✓ |  |
 | Lake Shore Traps (RESULT# 9506; nominal age 1085 Ma) |  | ✓ | ✓ | ✓ |
 | Central Arizona diabases -N (RESULT# 10016; nominal age 1088 Ma) |  | ✓ |  |  |

@@ -1,4 +1,4 @@
-.PHONY: help install figures build build-execute start clean api-docs
+.PHONY: help install tables figures build build-execute start clean api-docs
 
 BUILD_DIR = _build
 
@@ -12,7 +12,11 @@ install: ## Create mamba environment from environment.yml
 	@echo "Environment created. Activate with:"
 	@echo "  mamba activate laurentia-poles"
 
-figures: ## Regenerate the pole map, compilation table, and paleolatitude figure from the CSVs
+tables: ## Rebuild the combined pole CSVs and the manuscript LaTeX tables
+	python data/nordic_summaries/combine_nordic_summaries.py
+	python data/nordic_summaries/build_kent_poles.py
+
+figures: tables ## Regenerate the pole map, compilation table, and paleolatitude figure from the CSVs
 	python scripts/build_pole_map.py
 	python scripts/build_paleolatitude_figure.py
 
