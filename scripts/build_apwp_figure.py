@@ -7,7 +7,18 @@ Greenland and Scotland poles into the Laurentia reference frame (Greenland: Roes
 its A95 confidence ellipse colored by nominal age -- the whole-path counterpart
 to ``pole_tools.plot_apwp_context`` (which shows a single pole in context). Each
 terrane is drawn with its own marker (Laurentia circle, Greenland square, Scotland
-triangle). Three figures are written to ``_static/``:
+triangle). The sedimentary units are plotted at their inclination-shallowing-
+corrected (Kent mean) positions from
+``data/nordic_summaries/kent_poles_combined.csv``, drawn with their true Kent
+95% ellipse rather than a circular A95.
+
+Two SphereUDE fit inputs are exported, differing only in how the sedimentary
+poles enter (see ``TRACKS``): ``apwp_fit_input_uncorrected.csv`` takes them as
+measured, and ``apwp_fit_input_corrected.csv`` takes the inclination-
+shallowing-corrected Kent means with the ellipse simplified to its equal-area
+circular A95, which is the scalar SphereUDE's Fisher weighting can consume. The
+figures overlay the ``corrected`` path, matching the poles they plot. Three
+figures are written to ``_static/``:
 
 - ``Laurentia_apwp_robinson``      : 540-1779 Ma on a Robinson projection.
 - ``Laurentia_apwp_orthographic``  : 717-1779 Ma on an orthographic projection
@@ -20,6 +31,7 @@ triangle). Three figures are written to ``_static/``:
 """
 
 import os
+import sys
 
 import matplotlib
 
@@ -35,16 +47,56 @@ import pmagpy.pmag as pmag  # noqa: E402
 from adjustText import adjust_text  # noqa: E402
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+from build_pole_map import (  # noqa: E402
+    KENT_ELLIPSE_COLUMNS, apply_kent_poles, kent_dict)
+
 ROOT = os.path.dirname(HERE)
 COMBINED_CSV = os.path.join(ROOT, "data", "nordic_summaries",
                             "nordic_summaries_combined.csv")
-# Input to / output from the SphereUDE spherical-spline path fit
-# (scripts/sphereude/fit_apwp_spline.jl).
-FIT_INPUT_CSV = os.path.join(ROOT, "data", "nordic_summaries",
-                             "apwp_fit_input.csv")
-SPHEREUDE_PATH_CSV = os.path.join(ROOT, "data", "nordic_summaries",
-                                  "apwp_sphereude_path.csv")
 STATIC = os.path.join(ROOT, "_static")
+
+# --- the two APWP tracks ----------------------------------------------------
+# The compilation supports two spline paths, differing only in how the
+# sedimentary poles enter:
+#
+#   "uncorrected" = the poles as measured, i.e. detrital inclinations still
+#                   shallowed by compaction.
+#   "corrected"   = the inclination-shallowing-corrected (Kent mean) positions.
+#
+# Named by whether the correction has been applied, rather than by
+# "flattened"/"unflattened", because the latter pair inverts easily in reading
+# (compaction flattens; unflattening is the correction, so "unflattened" means
+# the *corrected* pole). Note that ``pole_tools.make_nordic_summary``'s
+# ``pole_mean_unflattened`` argument and ``unflattened_pole`` in the Lower Freda
+# notebook still use that older vocabulary for the corrected pole.
+#
+# SphereUDE weights each pole by a single Fisher concentration
+# ``kappa ~ (140/A95)**2``, so it cannot consume a Kent ellipse's two
+# concentration parameters. The corrected input therefore carries the
+# equal-area circular simplification of the ellipse, ``A95 = sqrt(zeta95 *
+# eta95)``, which ``apply_kent_poles`` has already put in the ``A95`` column;
+# any directionality in the Kent confidence region is discarded by the fit.
+TRACKS = {
+    "uncorrected": dict(
+        kent=False,
+        fit_input="apwp_fit_input_uncorrected.csv",
+        path="apwp_sphereude_path_uncorrected.csv",
+        label="poles as measured (no inclination-shallowing correction)"),
+    "corrected": dict(
+        kent=True,
+        fit_input="apwp_fit_input_corrected.csv",
+        path="apwp_sphereude_path_corrected.csv",
+        label="inclination-shallowing-corrected (Kent mean) sedimentary poles"),
+}
+# The track the figures plot. The poles drawn on the maps are the Kent-corrected
+# ones, so the overlaid path is the one fit to them.
+FIGURE_TRACK = "corrected"
+
+
+def track_path(name, key):
+    """Absolute path of a track's ``fit_input`` or ``path`` CSV."""
+    return os.path.join(ROOT, "data", "nordic_summaries", TRACKS[name][key])
 
 COLORMAP = "cmc.managua"
 
@@ -90,12 +142,66 @@ TERRANE_EULER_POLES = {
 }
 
 
-def load_path(age_min, age_max):
+def plot_kent_ellipse(map_axis, kent, **kwargs):
+    """Draw a Kent mean pole and its 95% ellipse on the correct hemisphere.
+
+    ``ipmag.plot_pole_ellipse`` passes ``lower`` through to
+    ``pmagplotlib.plot_ell``, whose default (``lower=True``) returns the
+    lower-hemisphere projection of the ellipse. For a pole at a **southern**
+    latitude that projection is the antipode, so the ellipse is drawn ~170 deg
+    from the pole it belongs to -- and silently, since the pole marker is
+    plotted separately and still lands in the right place. Choosing ``lower``
+    from the sign of the pole latitude keeps the ellipse around its own pole.
+    ``pole_tools.compilation_kent_pole`` applies the same correction to the
+    diagnostic map it draws in the notebooks.
+
+    Args:
+        map_axis: Cartopy axis to draw on.
+        kent (dict): Kent statistics, e.g. from
+            :func:`build_pole_map.kent_dict`.
+        **kwargs: Passed to ``ipmag.plot_pole_ellipse``.
+
+    Returns:
+        The map axis.
+    """
+    return ipmag.plot_pole_ellipse(map_axis, kent,
+                                   lower=kent["inc"] >= 0, **kwargs)
+
+
+def _no_kent(d):
+    """Add the ``_kent``/ellipse columns as empty, leaving every pole as measured.
+
+    Keeps the ``uncorrected`` track's frame shape identical to the ``corrected``
+    one so the rotation and plotting code below is shared.
+    """
+    d = d.copy()
+    d["_kent"] = False
+    d["_kent_method"] = ""
+    for col in KENT_ELLIPSE_COLUMNS:
+        d["_" + col] = np.nan
+    return d
+
+
+def load_path(age_min, age_max, kent=True):
     """Load the combined summaries, rotate Greenland poles, restrict to the
-    age interval, sorted by age."""
+    age interval, sorted by age.
+
+    Args:
+        age_min, age_max (float): Age interval to keep, in Ma.
+        kent (bool): With ``True`` (the ``corrected`` track) the sedimentary
+            units are substituted with their inclination-shallowing-corrected
+            Kent mean poles, the ``A95`` column carrying the equal-area circular
+            simplification of the Kent ellipse. With ``False`` (the
+            ``uncorrected`` track) every pole is left as measured.
+
+    Returns:
+        pd.DataFrame: Poles sorted by nominal age, rotated into the Laurentia
+        frame.
+    """
     d = pd.read_csv(COMBINED_CSV)
     for c in ["PLAT", "PLONG", "A95", "nominal age"]:
         d[c] = pd.to_numeric(d[c], errors="coerce")
+    d = apply_kent_poles(d, verbose=kent) if kent else _no_kent(d)
     d = d.dropna(subset=["PLAT", "PLONG", "A95", "nominal age"]).copy()
     d = d[~d["Terrane"].astype(str).str.contains("Svalbard")]
     d = d[(d["nominal age"] >= age_min) & (d["nominal age"] <= age_max)].copy()
@@ -107,19 +213,44 @@ def load_path(age_min, age_max):
             continue
         rlat, rlon = pmag.pt_rot(euler, [d.at[idx, "PLAT"]], [d.at[idx, "PLONG"]])
         d.at[idx, "PLAT"], d.at[idx, "PLONG"] = rlat[0], rlon[0]
+        # the Kent ellipse axes are directions on the sphere, so they rotate
+        # with the pole; the semi-angles (Zeta, Eta) are unchanged by a rigid
+        # rotation
+        if not d.at[idx, "_kent"]:
+            continue
+        for dec_col, inc_col in (("_Zdec", "_Zinc"), ("_Edec", "_Einc")):
+            alat, alon = pmag.pt_rot(euler, [d.at[idx, inc_col]],
+                                     [d.at[idx, dec_col]])
+            d.at[idx, inc_col], d.at[idx, dec_col] = alat[0], alon[0]
 
     return d.sort_values("nominal age").reset_index(drop=True)
 
 
-def export_fit_input(age_min, age_max, out_csv=FIT_INPUT_CSV):
+def export_fit_input(age_min, age_max, track=FIGURE_TRACK, out_csv=None):
     """Write the rotated, filtered poles used as input to the SphereUDE path fit.
 
     Starts from ``load_path`` (Greenland and Scotland already rotated into the
     Laurentia frame, Svalbard dropped) and additionally drops the ca. 1382 Ma
-    Greenland poles, which conflict with the rest of the path. Returns the number
-    of poles written.
+    Greenland poles, which conflict with the rest of the path, and any pole whose
+    age half-range exceeds ``FIT_MAX_AGE_HALF_UNC``.
+
+    The four columns written (``age``, ``plat``, ``plon``, ``a95``) are the same
+    for both tracks; only the sedimentary rows differ. For the ``corrected``
+    track ``a95`` is the equal-area circular simplification of the Kent ellipse,
+    which is the scalar SphereUDE's Fisher weighting can consume.
+
+    Args:
+        age_min, age_max (float): Age interval to fit.
+        track (str): Key of :data:`TRACKS` -- ``'uncorrected'`` or
+            ``'corrected'``.
+        out_csv (str or None): Output path; defaults to the track's own file.
+
+    Returns:
+        int: Number of poles written.
     """
-    d = load_path(age_min, age_max)
+    if out_csv is None:
+        out_csv = track_path(track, "fit_input")
+    d = load_path(age_min, age_max, kent=TRACKS[track]["kent"])
     # exclude the ca. 1382 Ma Greenland poles (conflict with the rest of the path)
     drop = (d["Terrane"].astype(str).str.contains("Greenland") &
             (d["nominal age"] == FIT_EXCLUDE_GREENLAND_AGE))
@@ -134,12 +265,19 @@ def export_fit_input(age_min, age_max, out_csv=FIT_INPUT_CSV):
     return len(d)
 
 
-def load_spline_path():
-    """Load the SphereUDE fitted path (age, lat, lon), or ``None`` if it has not
-    been computed yet (run scripts/sphereude/fit_apwp_spline.jl)."""
-    if not os.path.exists(SPHEREUDE_PATH_CSV):
-        return None
-    return pd.read_csv(SPHEREUDE_PATH_CSV)
+def load_spline_path(track=FIGURE_TRACK):
+    """Load a SphereUDE fitted path (age, lat, lon), or ``None`` if absent.
+
+    Each track is read only from its own file. There is deliberately no fallback
+    to the pre-track name ``apwp_sphereude_path.csv``: that file is not
+    self-describing, so a fallback silently mislabels whichever pole set it
+    happens to hold. A missing path is not an error -- the figures are simply
+    drawn without the spline (see ``scripts/sphereude/README.md``).
+    """
+    candidate = track_path(track, "path")
+    if os.path.exists(candidate):
+        return pd.read_csv(candidate)
+    return None
 
 
 def plot_age_graded_path(ax, path, vmin, vmax, lw=3.5, zorder=3):
@@ -152,13 +290,21 @@ def plot_age_graded_path(ax, path, vmin, vmax, lw=3.5, zorder=3):
     lat = path["lat"].to_numpy()
     age = path["age"].to_numpy()
     pts = ax.projection.transform_points(ccrs.PlateCarree(), lon, lat)[:, :2]
-    segs = np.stack([pts[:-1], pts[1:]], axis=1)
     # break segments where the projected step is implausibly large (wrap-around)
-    good = np.hypot(np.diff(pts[:, 0]), np.diff(pts[:, 1]))
-    keep = good < 5 * np.median(good)
+    step = np.hypot(np.diff(pts[:, 0]), np.diff(pts[:, 1]))
+    ok = step < 5 * np.median(step)
+    # Overlapping three-point segments rather than abutting two-point ones. Each
+    # segment of a LineCollection is stroked separately, so where two merely abut
+    # their antialiased edges composite against the background instead of against
+    # each other and leave a hairline seam at every join. That is invisible in
+    # raster output at figure dpi but reads as a dashed line in the vector PDF.
+    # Overlapping by a full step means each segment paints over its predecessor's
+    # join, so the drawn path is continuous.
+    segs = np.stack([pts[:-2], pts[1:-1], pts[2:]], axis=1)
+    keep = ok[:-1] & ok[1:]          # drop segments touching a wrap-around step
     lc = LineCollection(segs[keep], cmap=COLORMAP, zorder=zorder,
-                        linewidth=lw, capstyle="round")
-    lc.set_array(0.5 * (age[:-1] + age[1:])[keep])
+                        linewidth=lw, capstyle="round", joinstyle="round")
+    lc.set_array(age[1:-1][keep])
     lc.set_clim(vmin, vmax)
     ax.add_collection(lc)
 
@@ -238,7 +384,7 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
     the interval; the lambert (equal-area) view is additionally cropped to the
     pole cluster so the A95 ellipses stay area-comparable with no wasted space.
     """
-    d = load_path(age_min, age_max)
+    d = load_path(age_min, age_max, kent=TRACKS[FIGURE_TRACK]["kent"])
 
     if projection in ("orthographic", "lambert"):
         mean = ipmag.fisher_mean(dec=d["PLONG"].tolist(), inc=d["PLAT"].tolist())
@@ -276,7 +422,7 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
         ax.gridlines(color="gray", linewidth=0.4, linestyle=":")
 
     # age-graded SphereUDE path (drawn under the markers), if it has been fitted
-    path = load_spline_path()
+    path = load_spline_path(FIGURE_TRACK)
     if path is not None:
         plot_age_graded_path(ax, path, age_min, age_max)
 
@@ -288,18 +434,32 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
 
     d["_label"] = [terrane_group(t)[0] for t in d["Terrane"]]
 
-    # plot each terrane group with its own marker/size; draw the colorbar once
+    # Plot each terrane group with its own marker/size; draw the colorbar once.
+    # The sedimentary units carry a Kent confidence ellipse rather than a
+    # circular A95, so they are drawn with ipmag.plot_pole_ellipse (which takes
+    # the ellipse's own axes) instead of the circular plot_poles_colorbar; the
+    # color still encodes age, taken from the same normalization.
+    age_color = plt.cm.ScalarMappable(
+        cmap=COLORMAP, norm=plt.Normalize(vmin=age_min, vmax=age_max))
     first = True
     for _, label, marker, size in TERRANE_MARKERS:
         g = d[d["_label"] == label]
         if g.empty:
             continue
-        ipmag.plot_poles_colorbar(
-            ax, g["PLONG"].tolist(), g["PLAT"].tolist(), g["A95"].tolist(),
-            g["nominal age"].tolist(), age_min, age_max, colormap=COLORMAP,
-            marker=marker, markersize=size, colorbar=first,
-            colorbar_label="pole age (Ma)")
-        first = False
+        circular = g[~g["_kent"]]
+        if not circular.empty:
+            ipmag.plot_poles_colorbar(
+                ax, circular["PLONG"].tolist(), circular["PLAT"].tolist(),
+                circular["A95"].tolist(), circular["nominal age"].tolist(),
+                age_min, age_max, colormap=COLORMAP,
+                marker=marker, markersize=size, colorbar=first,
+                colorbar_label="pole age (Ma)")
+            first = False
+        for _, r in g[g["_kent"]].iterrows():
+            plot_kent_ellipse(
+                ax, kent_dict(r),
+                color=age_color.to_rgba(float(r["nominal age"])),
+                edgecolor="k", marker=marker, markersize=size)
 
     # age labels, de-overlapped with adjustText. Labels are placed in the axes'
     # projected (transData) coordinate system -- not PlateCarree -- so adjustText
@@ -349,13 +509,19 @@ FIGURES = [
 def main():
     os.makedirs(STATIC, exist_ok=True)
 
-    # export the poles for the SphereUDE path fit (717-1779 Ma, the cluster range)
-    n_fit = export_fit_input(717, 1779)
-    print(f"Wrote {os.path.relpath(FIT_INPUT_CSV, ROOT)} ({n_fit} poles for fit)")
-    if load_spline_path() is None:
-        print(f"  (no fitted path yet; run "
-              f"julia --project=scripts/sphereude "
-              f"scripts/sphereude/fit_apwp_spline.jl)")
+    # Export the poles for the SphereUDE path fit (717-1779 Ma, the cluster
+    # range), once per track. The two inputs differ only in the sedimentary
+    # rows; everything else -- rotation, exclusions, age vetting -- is shared.
+    for name, spec in TRACKS.items():
+        n_fit = export_fit_input(717, 1779, track=name)
+        print(f"Wrote {os.path.relpath(track_path(name, 'fit_input'), ROOT)} "
+              f"({n_fit} poles, {name}: {spec['label']})")
+        if load_spline_path(name) is None:
+            print(f"  (no fitted path for this track yet; fit it to "
+                  f"{spec['fit_input']} and write "
+                  f"{spec['path']})")
+    print(f"Figures overlay the '{FIGURE_TRACK}' path, matching the poles they "
+          f"plot")
 
     for suffix, age_min, age_max, projection in FIGURES:
         out = os.path.join(STATIC, suffix)

@@ -5,15 +5,34 @@
 # regularized to be slow and smooth (order k = 1, power p = 2), following the
 # paper's real-data (Gondwana) recipe.
 #
-# Input  : data/nordic_summaries/apwp_fit_input.csv  (age, plat, plon, a95;
-#          rotated into Laurentia coordinates and filtered by build_apwp_figure.py
-#          -- Svalbard and the ca. 1382 Ma Greenland poles are already excluded).
-# Output : data/nordic_summaries/apwp_sphereude_path.csv  (age, lat, lon; the
-#          dense fitted path, 1000 samples from min to max age).
+# Inputs are written by build_apwp_figure.py (age, plat, plon, a95; rotated into
+# Laurentia coordinates and filtered -- Svalbard and the ca. 1382 Ma Greenland
+# poles are already excluded). Run it first to (re)generate them.
 #
-#   julia --project=scripts/sphereude scripts/sphereude/fit_apwp_spline.jl
+# Two pole sets are fit and kept separately, differing only in how the
+# sedimentary poles enter. SphereUDE weights each pole by a single Fisher
+# concentration kappa ~ (140/A95)^2, so a Kent ellipse cannot be consumed
+# directly; it enters the corrected track only through its equal-area-equivalent
+# scalar A95 = sqrt(zeta95 * eta95), discarding any directionality.
 #
-# Run build_apwp_figure.py first to (re)generate the input CSV.
+#   apwp_fit_input_corrected.csv   -> apwp_sphereude_path_corrected.csv
+#       sedimentary poles at their inclination-shallowing-corrected (Kent mean)
+#       positions. This is the default here, and the track the figures overlay.
+#   apwp_fit_input_uncorrected.csv -> apwp_sphereude_path_uncorrected.csv
+#       the same poles as measured, without the correction.
+#
+# Defaults fit the corrected track:
+#
+#   julia +lts --project=scripts/sphereude scripts/sphereude/fit_apwp_spline.jl
+#
+# The uncorrected track, via SU_IN / SU_OUT:
+#
+#   SU_IN=data/nordic_summaries/apwp_fit_input_uncorrected.csv \
+#   SU_OUT=data/nordic_summaries/apwp_sphereude_path_uncorrected.csv \
+#     julia +lts --project=scripts/sphereude scripts/sphereude/fit_apwp_spline.jl
+#
+# Use the 1.10 LTS: the SciML/Zygote stack segfaults during gradient JIT on Julia
+# 1.12, and Manifest.toml is resolved for 1.10 (see README.md).
 
 using SphereUDE
 using SciMLSensitivity
@@ -23,9 +42,10 @@ using LinearAlgebra, Random
 
 const HERE = @__DIR__
 const ROOT = dirname(dirname(HERE))
-const IN_CSV = joinpath(ROOT, "data", "nordic_summaries", "apwp_fit_input.csv")
+const IN_CSV = get(ENV, "SU_IN",
+    joinpath(ROOT, "data", "nordic_summaries", "apwp_fit_input_corrected.csv"))
 const OUT_CSV = get(ENV, "SU_OUT",
-    joinpath(ROOT, "data", "nordic_summaries", "apwp_sphereude_path.csv"))
+    joinpath(ROOT, "data", "nordic_summaries", "apwp_sphereude_path_corrected.csv"))
 
 # Hyperparameters (overridable via environment for tuning sweeps):
 #   SU_LAMBDA1  smoothness penalty on dL/dt (higher -> more schematic)

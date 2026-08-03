@@ -1,8 +1,90 @@
 # Notes: fitting the Laurentia APWP spline with SphereUDE
 
-Working notes on how the path in `data/nordic_summaries/apwp_sphereude_path.csv`
-was produced, the modeling choices behind it, and what to revisit. See
+Working notes on how the paths in
+`data/nordic_summaries/apwp_sphereude_path_{corrected,uncorrected}.csv` were
+produced, the modeling choices behind it, and what to revisit. See
 `README.md` for how to run things; this file is the *why* and the *to-do*.
+
+## Two tracks: corrected and uncorrected poles
+
+`build_apwp_figure.py` applies `apply_kent_poles` inside `load_path`, so the
+sedimentary units are substituted with their inclination-shallowing-corrected
+(Kent mean) poles. Two pole sets are therefore fit and kept separately:
+
+| track | input | output | sedimentary poles |
+|-------|-------|--------|-------------------|
+| `corrected` | `apwp_fit_input_corrected.csv` | `apwp_sphereude_path_corrected.csv` | Kent-corrected |
+| `uncorrected` | `apwp_fit_input_uncorrected.csv` | `apwp_sphereude_path_uncorrected.csv` | as measured |
+
+The corrected set is the pipeline default (`FIGURE_TRACK = "corrected"` in
+`build_apwp_figure.py`), and is what the map figures and
+`build_reconstruction_figure.py` use, so the overlaid path and the plotted poles
+come from the same pole positions. Both inputs are regenerated on every
+`build_apwp_figure.py` run; neither is a hand-kept snapshot.
+
+`load_spline_path` reads each track only from its own file, with no fallback to
+the pre-track names `apwp_fit_input.csv` / `apwp_sphereude_path.csv`. Those names
+are not self-describing, and a fallback silently mislabels whichever pole set the
+file happens to hold -- which is exactly what happened on 2026-07-31, when a
+corrected fit written to the legacy name was served as the uncorrected track.
+The two legacy files are superseded and referenced by nothing.
+
+A note on the naming: the tracks are named by whether the correction has been
+applied, rather than "flattened"/"unflattened". Compaction shallows (flattens)
+sedimentary inclinations and unflattening *is* the correction, so "unflattened"
+denotes the *corrected* set — a pair that inverts easily in reading. Note that
+`pole_tools.make_nordic_summary`'s `pole_mean_unflattened` argument and
+`unflattened_pole` in the Lower Freda notebook still use that older vocabulary
+for the corrected pole.
+
+Pass `SU_IN` / `SU_OUT` to fit either track; see the header of
+`fit_apwp_spline.jl` for the exact invocation.
+
+**Why the correction cannot be carried in full.** SphereUDE weights each pole by
+a single Fisher concentration `κ ≈ (140°/A95)²`, so it has no way to represent a
+Kent ellipse's two concentration parameters. The ellipse enters only through the
+equal-area-equivalent circular radius `A95 = sqrt(ζ95 · η95)` that
+`apply_kent_poles` computes — an isotropic simplification of an anisotropic
+uncertainty. Any directionality in the Kent confidence regions is discarded by
+the fit, which is worth stating whenever the corrected path is shown.
+
+The correction is not cosmetic: it moves 11 of the 54 poles, the largest being
+Torridon at 13.8°, and inflates their A95 (mean 4.4° → 6.1° over the moved
+poles), so those poles also pull less on the corrected fit.
+
+### Both tracks fit 2026-08-01
+
+Both at the committed defaults (λ1 = 2e5, λ0 = 1, ωmax = 2.5°/Myr,
+`niter = 2000`), against inputs that include the revised ca. 1108 Ma Nipigon pole
+and the final Kent means, so the two are directly comparable.
+
+| | uncorrected | corrected |
+|---|---|---|
+| final loss | 32.88 | 30.85 |
+| empirical term | 23.86 | 22.39 |
+| order-1 reg | 8.90 | 8.36 |
+| peak rate | 1.40°/Myr at 1098 Ma | 1.32°/Myr at 1096 Ma |
+| arc length | 401.9° | 367.3° |
+| mean angular misfit to own poles | 5.58° | 5.97° |
+| max misfit | 14.1° at 1109 Ma | 15.0° at 1109 Ma |
+
+The two paths separate by 2.7° on average (median 1.6°), with a maximum of 13.9°
+at ca. 1380 Ma — near the Belt Supergroup sedimentary poles (McNamara,
+Pilcher/Garnet Range) and the ca. 975 Ma Torridon pole, which the correction
+moves most.
+
+Two points worth care when reporting these:
+
+1. **The corrected fit's lower loss is not evidence of a better fit.** Its
+   *angular* misfit to its own poles is slightly worse (5.97° vs 5.58°); the loss
+   falls because the Kent A95s are larger, so `κ` is smaller and each pole is
+   down-weighted. Loss is comparable across λ1 at fixed data, not across data
+   sets with different uncertainties.
+2. **The peak rate is essentially unchanged** (1.32 vs 1.40°/Myr, both at ca.
+   1096–1098 Ma). The Keweenawan rapid-motion interval is carried by igneous
+   poles, which the correction does not touch, so this is the expected result and
+   is a useful check that the correction did not leak into that part of the path.
+   The corrected path is ~35° shorter overall, i.e. less sinuous.
 
 ## Method
 
@@ -21,11 +103,24 @@ exclusions; both excluded groups are still *plotted*, just not fit:
 1. **ca. 1382 Ma Greenland poles** (Midsommersø, Victoria Fjord, Zig-Zag Dal) —
    conflict with the rest of the path.
 2. **Poles with age half-range > 50 Myr** — loosely-dated poles should not pull on
-   a path that is parametrized by age. At 50 Myr this drops exactly the two
-   Scotland poles (Torridon ±145 Myr, Stoer ±70 Myr) and nothing else (next
-   loosest is Adirondack at ±23 Myr).
+   a path that is parametrized by age. Stoer (±70 Myr) is now the *only* pole in
+   the compilation this drops. The next loosest admitted is Torridon at exactly
+   ±50.0 Myr (see below), and after that Adirondack at ±23 Myr — nothing in the
+   file falls between 23 and 70, so the threshold separates no natural
+   population; it passes straight through the single pole sitting at its value.
 
-Net: 53 poles enter the fit.
+Net: 54 poles enter the fit (as of the 2026-07-31 rerun).
+
+**Torridon now enters the fit.** The Torridon age update narrowed its range to
+950–1050 Ma, i.e. a half-range of exactly 50.0 Myr. The filter is strictly
+`> FIT_MAX_AGE_HALF_UNC`, so Torridon passes by a knife-edge and is now fit as a
+ca. 975 Ma pole (rotated: −21.8°N / 188.9°E, A95 7.1 uncorrected; −33.0°N /
+179.8°E, A95 10.7 corrected — the single largest pole shift the Kent correction
+makes). It is the oldest-end
+Scotland constraint on the ca. 990 Ma part of the path, and it is worth being
+aware that a 1 Myr widening of its age range would silently drop it again.
+Chengwatana (ca. 1096 Ma) left the fit because it was removed upstream from
+`nordic_summaries_combined.csv`, not by any filter here.
 
 ## The two regularization knobs
 
@@ -49,7 +144,7 @@ schematic — the rate cap and the smoothness penalty are doing different jobs.
 ## Current choice
 
 `λ1 = 2e5`, `ωmax = 2.5°/Myr`, `niter = 2000` (ADAM + L-BFGS) is the committed
-default and the path in `apwp_sphereude_path.csv` / the main Lambert figure. From
+default for both tracks and the path in the main Lambert figure. From
 the sweep (`compare_lambda.py`, `lambda_sweep/`):
 
 | λ1   | misfit | roughness | peak rate  | note                                  |
@@ -68,8 +163,18 @@ old end. `1e5` is the L-curve elbow and the more data-faithful alternative (it
 reaches the ca. 1140 Ma apex and cuts more directly to the ca. 990 Ma poles); it
 is the natural choice if we later want the more quantitative path.
 
-Note the committed CSV was produced at `niter = 1500` (from the sweep); rerunning
-the default (`niter = 2000`) gives a near-identical but not bit-identical path.
+**Refit 2026-07-31, uncorrected track** (`apwp_sphereude_path_uncorrected.csv`)
+against the updated pole set (54 poles, 719–1779 Ma) at the committed defaults
+and `niter = 2000` (2000 ADAM + 2000 L-BFGS). Final loss 32.39
+(empirical 23.87, order-0 reg 0.114, order-1 reg 8.41). The path is stable against
+the constraint changes: mean displacement from the previous committed path is
+1.8°, median 1.0°, max 8.0° near 1201 Ma. Peak rate is 1.37°/Myr at ca. 1097 Ma —
+unchanged from the λ1 = 2e5 sweep entry below — and arc length is 401°.
+
+The sweep table below was computed on the *previous* pole set and its misfit /
+roughness columns are therefore stale as absolute numbers; it is retained because
+the *ordering* and the location of the elbow are what the choice rests on. Rerun
+`compare_lambda.py` over a fresh sweep before quoting those values.
 
 ## Next steps / to revisit
 

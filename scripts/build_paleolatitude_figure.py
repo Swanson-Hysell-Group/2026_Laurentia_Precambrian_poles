@@ -10,11 +10,21 @@ paleogeography of Laurentia) as two stacked panels:
   (``data/nordic_summaries/nordic_summaries_combined.csv``).
 
 Each marker is the paleolatitude of Duluth, Minnesota (lat 46.79N, lon 92.10W)
-implied by a pole, with vertical error bars from A95 and horizontal error bars
-from the magmin/magmax age bounds, colored/marked by terrane and reliability
-grade. Poles whose age is uncertain by more than 50 Myr on either bound are
+implied by a pole, with vertical error bars from the pole's confidence region
+and horizontal error bars from the magmin/magmax age bounds, colored/marked by
+terrane and reliability grade. Poles whose age half-range reaches 50 Myr are
 excluded, as is Svalbard (no longer considered Laurentia sensu stricto). A
 geologic-timescale strip (eras over periods) anchors the base.
+
+In the updated panel the sedimentary units are plotted at their
+inclination-shallowing-corrected (Kent mean) positions from
+``data/nordic_summaries/kent_poles_combined.csv``, and their error bar is the
+Kent ellipse projected onto the pole-to-Duluth great circle (see
+:func:`paleolat_uncertainty`) rather than its equal-area circular
+approximation, since the flattening-factor uncertainty elongates the ellipse
+along that direction; the 2017 panel is left as Evans et al. (2021) published
+it, so the two panels also show what correcting for compaction shallowing does
+to the record.
 
 Two versions are written to ``_static/``: a full 1800-700 Ma view and a
 1180-700 Ma view (the Keweenawan-Grenville interval)::
@@ -29,14 +39,24 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
+import numpy as np  # noqa: E402
 import pandas as pd  # noqa: E402
 import pmagpy.pmag as pmag  # noqa: E402
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from build_pole_map import (  # noqa: E402
-    DULUTH_LAT, DULUTH_LON, ROOT, paleolatitude)
+    DULUTH_LAT, DULUTH_LON, KENT_ELLIPSE_COLUMNS, ROOT, apply_kent_poles,
+    paleolatitude)
 
-MAX_AGE_UNCERTAINTY = 50  # Myr; poles with a larger +/- age bound are excluded
+# Myr; poles whose age *half-range* ((himagage - lomagage) / 2) reaches this are
+# excluded. The test is strict (half-range < MAX_AGE_UNCERTAINTY) and is on the
+# half-range rather than the one-sided distances from the nominal age, which
+# matters for asymmetric ranges: Torridon (975 Ma, 950-1050) is +75/-25 with a
+# half-range of exactly 50, so it fails the vetting and enters these figures only
+# through include_scotland. Note that build_apwp_figure.py vets the SphereUDE
+# path fit with a non-strict test (half_unc > FIT_MAX_AGE_HALF_UNC drops), so
+# Torridon is retained in the path fit while being excluded here.
+MAX_AGE_UNCERTAINTY = 50
 EVANS_CSV = os.path.join(ROOT, "data", "Evans_et_al_2021_compilation.csv")
 # Updated compilation = the recreated-from-site-level poles emitted by the
 # notebooks and merged by combine_nordic_summaries.py (grows as notebooks are
@@ -73,15 +93,21 @@ CATEGORIES = [
     ("Other Laurentia terrane", "#888888", "d"),
 ]
 
-# Scotland poles (Torridon, Stoer) have loose age control and are only shown in
-# the "with Scotland" variants; they are drawn as open (hollow) gold triangles
-# to set them apart from the age-vetted poles.
+# Poles that fail the age vetting are drawn as open (hollow) markers to set them
+# apart from the age-vetted poles. In practice these are the two Scotland poles,
+# Stoer (+/-70 Myr) and Torridon (half-range exactly 50 Myr), retained via
+# include_scotland in the "with Scotland" variants only.
+# Terrane is still encoded by marker shape and color, independent of vetting.
 SCOTLAND_LABEL = "Scotland poles"
 
 
-def marker_style(label, color):
-    """Per-category face/edge styling for the errorbar markers."""
-    if label == SCOTLAND_LABEL:
+def marker_style(vetted, color):
+    """Per-pole face/edge styling for the errorbar markers.
+
+    Poles that passed the age vetting are filled; those retained despite failing
+    it (via ``include_scotland``) are hollow.
+    """
+    if not vetted:
         return dict(markerfacecolor="none", markeredgecolor=color,
                     markeredgewidth=1.2)
     return dict(markerfacecolor=color, markeredgecolor="black",
@@ -132,7 +158,14 @@ def rotate_to_laurentia(d):
     reference frame in place, so the Duluth paleolatitude is computed in
     Laurentia coordinates. Poles of any terrane without an entry in
     ``TERRANE_EULER_POLES`` are left unchanged.
+
+    Where a Kent ellipse is carried alongside the pole (the ``_Zdec``/``_Zinc``
+    and ``_Edec``/``_Einc`` axis directions added by ``apply_kent_poles``) its
+    axes are rotated by the same Euler rotation. A rigid rotation carries the
+    ellipse with the pole, so the axis directions have to move with it for
+    :func:`paleolat_uncertainty` to project the ellipse correctly.
     """
+    axis_pairs = [("_Zinc", "_Zdec"), ("_Einc", "_Edec")]
     for idx in d.index:
         euler = TERRANE_EULER_POLES.get(str(d.at[idx, "Terrane"]))
         if euler is None:
@@ -142,21 +175,95 @@ def rotate_to_laurentia(d):
             continue
         rlat, rlon = pmag.pt_rot(euler, [plat], [plon])
         d.at[idx, "PLAT"], d.at[idx, "PLONG"] = rlat[0], rlon[0]
+        for lat_col, lon_col in axis_pairs:
+            if lat_col not in d.columns or pd.isna(d.at[idx, lat_col]):
+                continue
+            alat, alon = pmag.pt_rot(euler, [d.at[idx, lat_col]],
+                                     [d.at[idx, lon_col]])
+            d.at[idx, lat_col], d.at[idx, lon_col] = alat[0], alon[0]
     return d
 
 
-def load(path, age_min, age_max, include_scotland=False):
+def bearing(lat1, lon1, lat2, lon2):
+    """Initial great-circle bearing from point 1 to point 2, degrees E of N."""
+    phi1, phi2 = np.radians([float(lat1), float(lat2)])
+    dlon = np.radians(float(lon2) - float(lon1))
+    return np.degrees(np.arctan2(
+        np.sin(dlon) * np.cos(phi2),
+        np.cos(phi1) * np.sin(phi2)
+        - np.sin(phi1) * np.cos(phi2) * np.cos(dlon))) % 360.0
+
+
+def paleolat_uncertainty(d, site_lat=DULUTH_LAT, site_lon=DULUTH_LON):
+    """Uncertainty in the paleolatitude each pole implies for the site, in degrees.
+
+    The paleolatitude is 90 minus the angular distance from the site to the
+    pole, so an uncertainty in pole position maps one-to-one onto paleolatitude
+    along the site-to-pole great circle. For a pole with a circular A95 that is
+    just A95, whatever the pole's orientation. For the inclination-shallowing-
+    corrected (Kent) poles of the sedimentary units the confidence region is an
+    ellipse elongated along the direction the shallowing correction displaces
+    the pole, which is close to the site-to-pole great circle, so the relevant
+    radius is the ellipse evaluated in that direction,
+
+        r(theta) = ((cos(theta) / zeta95)^2 + (sin(theta) / eta95)^2)^(-1/2),
+
+    with ``theta`` the angle between the ellipse's major axis and the bearing
+    from the pole to the site. Using the equal-area circular radius
+    ``sqrt(zeta95 * eta95)`` that ``A95`` carries for these rows instead would
+    understate the paleolatitude uncertainty, because zeta95 is the semi-axis
+    that is nearly aligned with the site.
+
+    Args:
+        d (pd.DataFrame): Poles with ``PLAT``/``PLONG``/``A95``, optionally
+            carrying the Kent ellipse columns added by ``apply_kent_poles``
+            and already rotated into the Laurentia frame.
+        site_lat (float): Site latitude (degrees N).
+        site_lon (float): Site longitude (degrees E).
+
+    Returns:
+        pd.Series: The paleolatitude uncertainty for each row, falling back to
+        ``A95`` wherever no ellipse is carried.
+    """
+    err = pd.to_numeric(d["A95"], errors="coerce")
+    if not all("_" + c in d.columns for c in KENT_ELLIPSE_COLUMNS):
+        return err
+    for idx in d.index:
+        zeta, eta = d.at[idx, "_Zeta"], d.at[idx, "_Eta"]
+        if pd.isna(zeta) or pd.isna(eta) or zeta <= 0 or eta <= 0:
+            continue
+        to_site = bearing(d.at[idx, "PLAT"], d.at[idx, "PLONG"],
+                          site_lat, site_lon)
+        to_major = bearing(d.at[idx, "PLAT"], d.at[idx, "PLONG"],
+                           d.at[idx, "_Zinc"], d.at[idx, "_Zdec"])
+        theta = np.radians(to_site - to_major)
+        err.at[idx] = 1.0 / np.hypot(np.cos(theta) / zeta,
+                                     np.sin(theta) / eta)
+    return err
+
+
+def load(path, age_min, age_max, include_scotland=False, kent=False):
     """Load a compilation CSV, restricted to Laurentia poles in the interval.
 
-    By default poles whose age is uncertain by more than ``MAX_AGE_UNCERTAINTY``
-    Myr are excluded. If ``include_scotland`` is True, Scotland poles (Torridon,
-    Stoer) are retained despite their loose age control so they can be shown as
-    lower-confidence additions.
+    By default poles whose age half-range reaches ``MAX_AGE_UNCERTAINTY`` Myr are
+    excluded, which drops both Scotland poles: Stoer (+/-70 Myr) and Torridon
+    (half-range exactly 50 Myr). If ``include_scotland`` is True, Scotland poles
+    are retained regardless of age control, which adds the two of them back as
+    lower-confidence points.
+
+    With ``kent=True`` the sedimentary units are replaced by their
+    inclination-shallowing-corrected (Kent mean) poles via
+    :func:`build_pole_map.apply_kent_poles`, so the paleolatitude plotted for
+    them is the corrected one rather than the compaction-shallowed minimum.
+    This is applied to the updated compilation only; the 2017 panel is drawn
+    from the poles as Evans et al. (2021) published them.
     """
     d = pd.read_csv(path)
     d["Grade"] = d["Grade"].astype(str).str.strip()
     for c in ["PLAT", "PLONG", "A95", "nominal age", "lomagage", "himagage"]:
         d[c] = pd.to_numeric(d[c], errors="coerce")
+    if kent:
+        d = apply_kent_poles(d)
     d = d[d["Terrane"].astype(str).str.startswith("Laurentia")]
     # Svalbard is no longer considered Laurentia sensu stricto.
     d = d[~d["Terrane"].astype(str).str.contains("Svalbard")]
@@ -170,15 +277,24 @@ def load(path, age_min, age_max, include_scotland=False):
     d["age_hi"] = (d["himagage"] - d["nominal age"]).clip(lower=0).fillna(0)
     d["age_lo"] = (d["nominal age"] - d["lomagage"]).clip(lower=0).fillna(0)
     d["A95"] = d["A95"].fillna(0)
+    # Vertical error bar: A95 for the circular poles, and for the Kent poles the
+    # ellipse projected onto the pole-to-Duluth great circle rather than its
+    # equal-area circular approximation.
+    d["plat_err"] = paleolat_uncertainty(d).fillna(0)
 
-    # Drop poles whose age is uncertain by more than MAX_AGE_UNCERTAINTY Myr,
-    # optionally exempting Scotland poles so they can be shown as lower-
-    # confidence additions.
-    within = ((d["age_hi"] <= MAX_AGE_UNCERTAINTY)
-              & (d["age_lo"] <= MAX_AGE_UNCERTAINTY))
+    # Drop poles whose age half-range reaches MAX_AGE_UNCERTAINTY Myr, optionally
+    # exempting Scotland poles so they can be shown as lower-confidence additions.
+    # Poles with a missing lomagage/himagage fall through as 0 and are retained,
+    # as before.
+    half_unc = ((d["himagage"] - d["lomagage"]) / 2).clip(lower=0).fillna(0)
+    vetted = half_unc < MAX_AGE_UNCERTAINTY
+    within = vetted
     if include_scotland:
         within = within | d["Terrane"].astype(str).str.contains("Scotland")
     d = d[within].copy()
+    # Records which retained poles actually passed the age vetting; those that
+    # did not (kept only via include_scotland) are drawn hollow by marker_style.
+    d["age_vetted"] = vetted.loc[d.index]
 
     cats = [categorize(t, g) for t, g in zip(d["Terrane"], d["Grade"])]
     d["cat_label"] = [c[0] for c in cats]
@@ -188,8 +304,14 @@ def load(path, age_min, age_max, include_scotland=False):
 def load_updated(age_min, age_max, include_scotland=False):
     """Updated-panel poles: the recreated-from-site-level summaries, including
     the rebuilt Greenland poles (now in the combined summaries), each rotated
-    into the Laurentia reference frame by :func:`load`."""
-    return load(UPDATED_CSV, age_min, age_max, include_scotland=include_scotland)
+    into the Laurentia reference frame by :func:`load`.
+
+    The sedimentary units are taken at their inclination-shallowing-corrected
+    (Kent mean) position, so the paleolatitudes plotted for them are corrected
+    rather than the compaction-shallowed minima. The 2017 panel is left as
+    Evans et al. (2021) published it."""
+    return load(UPDATED_CSV, age_min, age_max,
+                include_scotland=include_scotland, kent=True)
 
 
 def plot_panel(ax, d, panel_label, age_min, age_max, grenville_xy=(1010, -52)):
@@ -213,12 +335,22 @@ def plot_panel(ax, d, panel_label, age_min, age_max, grenville_xy=(1010, -52)):
         sub = d[d["cat_label"] == label]
         if sub.empty:
             continue
-        ax.errorbar(
-            sub["nominal age"], sub["Duluth_plat"],
-            yerr=sub["A95"], xerr=[sub["age_lo"], sub["age_hi"]],
-            fmt=marker, color=color, markersize=6, elinewidth=1,
-            capsize=2, linestyle="none", label=label,
-            **marker_style(label, color))
+        # Split the category so vetted poles draw filled and unvetted ones
+        # hollow; only the first non-empty part carries the legend entry so the
+        # category still appears exactly once.
+        labeled = False
+        for vetted in (True, False):
+            part = sub[sub["age_vetted"] == vetted]
+            if part.empty:
+                continue
+            ax.errorbar(
+                part["nominal age"], part["Duluth_plat"],
+                yerr=part["plat_err"], xerr=[part["age_lo"], part["age_hi"]],
+                fmt=marker, color=color, markersize=6, elinewidth=1,
+                capsize=2, linestyle="none",
+                label=None if labeled else label,
+                **marker_style(vetted, color))
+            labeled = True
 
     ax.axhline(0, color="grey", lw=0.8, linestyle=":", zorder=0)
     if age_min < 1600 < age_max:  # Paleo|Meso boundary only

@@ -162,21 +162,31 @@ def plot_panel(ax, include_scotland=False):
         sub = updated[updated["cat_label"] == label]
         if sub.empty:
             continue
-        older = sub[sub["nominal age"] >= EDIACARAN_BASE]
-        ediac = sub[sub["nominal age"] < EDIACARAN_BASE]
-        style = marker_style(label, color)
-        ax.errorbar(
-            older["nominal age"], older["Duluth_plat"],
-            yerr=older["A95"], xerr=[older["age_lo"], older["age_hi"]],
-            fmt=marker, color=color, markersize=6, elinewidth=1,
-            capsize=2, linestyle="none", label=label, **style)
-        if not ediac.empty:
+        # Vetted poles draw filled, unvetted ones hollow; only the first
+        # non-empty group carries the legend entry so each category appears once.
+        labeled = False
+        for vetted in (True, False):
+            part = sub[sub["age_vetted"] == vetted]
+            if part.empty:
+                continue
+            older = part[part["nominal age"] >= EDIACARAN_BASE]
+            ediac = part[part["nominal age"] < EDIACARAN_BASE]
+            style = marker_style(vetted, color)
             ax.errorbar(
-                ediac["nominal age"], ediac["Duluth_plat"],
-                yerr=ediac["A95"], xerr=[ediac["age_lo"], ediac["age_hi"]],
+                older["nominal age"], older["Duluth_plat"],
+                yerr=older["plat_err"], xerr=[older["age_lo"], older["age_hi"]],
                 fmt=marker, color=color, markersize=6, elinewidth=1,
-                capsize=2, linestyle="none", alpha=EDIACARAN_ALPHA,
-                label="_nolegend_", **style)
+                capsize=2, linestyle="none",
+                label="_nolegend_" if labeled else label, **style)
+            labeled = True
+            if not ediac.empty:
+                ax.errorbar(
+                    ediac["nominal age"], ediac["Duluth_plat"],
+                    yerr=ediac["plat_err"],
+                    xerr=[ediac["age_lo"], ediac["age_hi"]],
+                    fmt=marker, color=color, markersize=6, elinewidth=1,
+                    capsize=2, linestyle="none", alpha=EDIACARAN_ALPHA,
+                    label="_nolegend_", **style)
 
     # Phanerozoic Torsvik poles.
     ax.errorbar(
@@ -259,8 +269,11 @@ def make_figure(out_path, include_scotland=False):
 
 def main():
     os.makedirs(os.path.dirname(OUT_BASE), exist_ok=True)
-    # Produced twice: the default (age-vetted) version and a "_withScotland"
+    # Produced twice: the default (age-vetted) version, and a "_withScotland"
     # version that also shows the loose-age Scotland poles as open triangles.
+    # The age vetting is strict (half-range < 50 Myr), so both Stoer (+/-70) and
+    # Torridon (half-range exactly 50) fail it and appear only in the
+    # "_withScotland" variant, drawn hollow by marker_style.
     for include_scotland in (False, True):
         suffix = "_withScotland" if include_scotland else ""
         out = f"{OUT_BASE}_{AGE_MAX}_{AGE_MIN}{suffix}"

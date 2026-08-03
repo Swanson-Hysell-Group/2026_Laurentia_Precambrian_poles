@@ -123,6 +123,23 @@ override the value directly.
 
 ---
 
+## `_rasterize_dense_scatter`
+
+```python
+_rasterize_dense_scatter(ax, threshold=_RASTERIZE_ABOVE)
+```
+
+Rasterize any very dense scatter on ``ax``, leaving the rest vector.
+
+The resampled-mean-pole swarm drawn by ``find_compilation_kent`` is
+``n * n_fish`` points (1,000,000 at the defaults). Left as vector art that
+is tens of megabytes per figure in a notebook saved with the SVG inline
+backend, which the pole notebooks use. The swarm is a density cloud at
+alpha = 0.002, so nothing is lost by rasterizing it; the map, the ellipse,
+and the pole markers stay vector.
+
+---
+
 ## `_round_or_blank`
 
 ```python
@@ -176,6 +193,68 @@ which is the substantive, reproducible part of R2.
 **Returns**
 
 - ``{'a': bool|None, 'b': bool|None, 'c': bool, 'R2': int, 'B': int, 'N_samples': int, 'K': float, 'A95': float, 'min_samples_per_site': int, 'deenen_pass': bool}``. ``R2`` equals the score of sub-criterion (c); ``a``/``b`` are advisory (None if ``method_codes`` is absent).
+
+---
+
+## `compilation_f_summary`
+
+```python
+compilation_f_summary(f_from_compilation=None, percentiles=(2.5, 97.5))
+```
+
+Median and 95% range of the compiled flattening factors.
+
+Summarizes the distribution of measured f values that
+``ipmag.find_compilation_kent`` resamples (Pierce et al., 2022, Table S1,
+exposed as ``ipmag.PIERCE2022_F_COMPILATION``). For a pole whose own data
+cannot constrain f, this is the f that is being assumed: the median is the
+central value of the compiled population and the percentiles bound the
+middle 95% of it. It is a property of the compilation, identical for every
+such pole, and is **not** a determination for the unit — unlike the E/I or
+SVEI values, which are.
+
+**Parameters**
+
+- **f_from_compilation** (`list or None`) — Flattening factors to summarize; defaults to the Pierce et al. (2022) compilation.
+- **percentiles** (`tuple`) — Lower and upper percentiles (default 2.5, 97.5).
+
+**Returns**
+
+- tuple[float, tuple[float, float]]: ``(median, (low, high))``.
+
+---
+
+## `compilation_kent_pole`
+
+```python
+compilation_kent_pole(pole_mean, study_lon, study_lat, random_seed=1, map_central_longitude=None, map_central_latitude=None, kwargs={})
+```
+
+Kent mean pole from the Pierce et al. (2022) compilation of f factors.
+
+Thin wrapper around ``ipmag.find_compilation_kent`` for a sedimentary pole
+whose flattening factor could not be determined from its own directional
+distribution (too few directions for E/I or SVEI, or only a published mean
+pole is available). Flattening factors are resampled from the compilation of
+measured f values of Pierce et al. (2022); each resample unsquishes the mean
+direction implied by the pole at the sampling locality, and the resulting
+swarm of mean poles is summarized as a Kent distribution. The uncorrected
+pole and the Kent ellipse are plotted on an orthographic map centered on the
+pole unless a different center is given.
+
+**Parameters**
+
+- **pole_mean** (`dict`) — Uncorrected mean pole, as returned by ``compute_mean_pole`` — ``dec`` (pole longitude), ``inc`` (pole latitude), and ``alpha95``.
+- **study_lon** (`float`) — Sampling-locality longitude in degrees east.
+- **study_lat** (`float`) — Sampling-locality latitude in degrees.
+- **random_seed** (`int`) — Seed for the resampling, so a notebook rerun and the committed Kent summary agree. Pass ``None`` for an unseeded run.
+- **map_central_longitude** (`float or None`) — Map center; defaults to the uncorrected pole longitude.
+- **map_central_latitude** (`float or None`) — Map center; defaults to the uncorrected pole latitude.
+- ****kwargs** — Passed through to ``ipmag.find_compilation_kent``.
+
+**Returns**
+
+- The Kent statistics dictionary (``dec``, ``inc``, ``Zdec``, ``Zinc``, ``Zeta``, ``Edec``, ``Einc``, ``Eta``, ``n``).
 
 ---
 
@@ -490,6 +569,42 @@ them (e.g. to inspect the full contribution).
 
 ---
 
+## `make_kent_summary`
+
+```python
+make_kent_summary(nordic_summary, kent, f_method, f_source, f=None, f_range=None, comment='')
+```
+
+Build a one-row Kent-pole summary for a sedimentary pole.
+
+Pairs the inclination-shallowing-corrected Kent mean pole with the
+uncorrected pole recorded in the unit's Nordic summary, so the two are
+always reported together and the size of the correction is explicit. The
+terrane, unit name, lithology, locality, age, and grade are read from
+``nordic_summary`` rather than restated, so the two tables cannot drift.
+
+``A95`` is the equal-area circular approximation to the Kent ellipse
+(``sqrt(Zeta * Eta)``, see ``kent_a95_approx``), carried so that consumers
+that can only take a circular confidence — the paleolatitude figures and the
+pole map — have a defensible radius to use; the full ellipse is in the
+``Zdec``/``Zinc``/``Zeta`` and ``Edec``/``Einc``/``Eta`` columns.
+
+**Parameters**
+
+- **nordic_summary** (`pd.DataFrame`) — The unit's one-row Nordic summary from ``make_nordic_summary``.
+- **kent** (`dict`) — Kent statistics for the corrected pole, from ``ipmag.find_ei_kent``, ``ipmag.find_svei_kent``, or ``compilation_kent_pole``. A published Kent ellipse can be passed as a dictionary with the same keys.
+- **f_method** (`str`) — Key of ``KENT_METHODS`` — ``'E/I'``, ``'SVEI'``, or ``'compilation'``.
+- **f_source** (`str`) — Where the correction comes from, e.g. ``'this study'`` or ``'Zhang et al. (2024)'``.
+- **f** (`float or None`) — Flattening factor, where the study determined one. For ``f_method='compilation'`` this defaults to the **median** of the resampled compilation (see ``compilation_f_summary``) — the f that is in effect being assumed, not one determined for this unit.
+- **f_range** (`tuple or None`) — ``(low, high)`` 95% bounds on f; for ``f_method='compilation'`` it defaults to the 2.5th/97.5th percentiles of the compilation.
+- **comment** (`str`) — Any further context.
+
+**Returns**
+
+- pd.DataFrame: One-row summary with columns ``KENT_COLUMNS``.
+
+---
+
 ## `make_nordic_summary`
 
 ```python
@@ -596,6 +711,39 @@ throughout.
 **Returns**
 
 - matplotlib.axes.Axes: The map axis.
+
+---
+
+## `plot_kent_ellipse`
+
+```python
+plot_kent_ellipse(map_axis, kent, kwargs={})
+```
+
+Draw a Kent mean pole and its 95% confidence ellipse on the right hemisphere.
+
+``ipmag.plot_pole_ellipse`` passes ``lower`` through to
+``pmagplotlib.plot_ell``, whose default (``lower=True``) returns the
+lower-hemisphere projection of the ellipse. For a pole at a **southern**
+latitude that projection is the antipode, so the ellipse is drawn about
+170 deg from the pole it belongs to — and silently, because the pole marker
+is plotted separately and still lands in the right place. Selecting
+``lower`` from the sign of the pole latitude keeps the ellipse around its
+own pole. Use this rather than calling ``plot_pole_ellipse`` directly when a
+pole may be at a southern latitude; ``scripts/build_apwp_figure.py`` carries
+the same wrapper for the compilation figures, and
+``ipmag.find_compilation_kent`` now applies the same selection to the
+diagnostic map it draws.
+
+**Parameters**
+
+- **map_axis** — Cartopy map axis to draw on.
+- **kent** (`dict`) — Kent statistics with ``dec``, ``inc``, ``Zdec``, ``Zinc``, ``Zeta``, ``Edec``, ``Einc``, ``Eta``.
+- ****kwargs** — Passed through to ``ipmag.plot_pole_ellipse``.
+
+**Returns**
+
+- The map axis.
 
 ---
 
@@ -750,6 +898,29 @@ only if their bootstrapped confidence bounds overlap in x, y, and z.
 **Returns**
 
 - The McFadden & McElhinny (1990) result from ``ipmag.reversal_test_MM1990``, ``(classification, angle, critical_angle, label)``.
+
+---
+
+## `save_kent_summary`
+
+```python
+save_kent_summary(summary, filename, output_dir='../data/nordic_summaries/kent')
+```
+
+Save a Kent-pole summary (single-row DataFrame) to a CSV file.
+
+Companion to ``save_nordic_summary``; ``build_kent_poles.py`` concatenates
+these into ``data/nordic_summaries/kent_poles_combined.csv``.
+
+**Parameters**
+
+- **summary** (`pd.DataFrame`) — One-row summary from ``make_kent_summary``.
+- **filename** (`str`) — Output CSV filename, typically the notebook name (e.g. '755_Chuar_Group' or '755_Chuar_Group.csv').
+- **output_dir** (`str`) — Directory in which to write the CSV.
+
+**Returns**
+
+- The full path to the written CSV file.
 
 ---
 

@@ -11,11 +11,18 @@ vector `L(t)` is learned by a neural network and regularized to be slow and smoo
 
 ## Two ways to reproduce
 
-**1. Without Julia (figures only).** The fitted path is committed to
-`data/nordic_summaries/apwp_sphereude_path.csv`. `scripts/build_apwp_figure.py`
-reads that CSV directly and overlays the path, so the figures reproduce from the
+**1. Without Julia (figures only).** The fitted paths are committed to
+`data/nordic_summaries/apwp_sphereude_path_corrected.csv` and
+`..._uncorrected.csv`. `scripts/build_apwp_figure.py` reads them directly and
+overlays the `corrected` one (`FIGURE_TRACK`), so the figures reproduce from the
 Python environment alone — no Julia required. If the CSV is absent the figures
 are simply drawn without the path.
+
+**Two tracks.** The paths differ only in how the sedimentary poles enter:
+`corrected` uses the inclination-shallowing-corrected (Kent mean) positions,
+`uncorrected` takes them as measured. The figures plot Kent-corrected poles, so
+they overlay the `corrected` path. See `NOTES.md` for the comparison and for why
+the Kent ellipse can only enter as its equal-area circular `A95`.
 
 **2. Re-running the fit (requires Julia).** The Julia dependencies are pinned
 **locally to this directory** in `Project.toml` / `Manifest.toml`; they are kept
@@ -25,9 +32,17 @@ out of the project's Python environment on purpose.
 # one-time: instantiate the pinned environment
 julia +lts --project=scripts/sphereude -e 'using Pkg; Pkg.instantiate()'
 
-# export the fit input (rotated, filtered poles), then fit, then re-plot
-python scripts/build_apwp_figure.py            # writes data/.../apwp_fit_input.csv
+# export both fit inputs (rotated, filtered poles), then fit, then re-plot
+python scripts/build_apwp_figure.py     # writes apwp_fit_input_{corrected,uncorrected}.csv
+
+# corrected track (the default, and what the figures overlay)
 julia +lts --project=scripts/sphereude scripts/sphereude/fit_apwp_spline.jl
+
+# uncorrected track
+SU_IN=data/nordic_summaries/apwp_fit_input_uncorrected.csv \
+SU_OUT=data/nordic_summaries/apwp_sphereude_path_uncorrected.csv \
+  julia +lts --project=scripts/sphereude scripts/sphereude/fit_apwp_spline.jl
+
 python scripts/build_apwp_figure.py            # overlays the refit path
 ```
 
@@ -44,11 +59,12 @@ tuning sweeps:
 
 | env var       | default | meaning                                             |
 |---------------|---------|-----------------------------------------------------|
-| `SU_LAMBDA1`  | `1e6`   | penalty on `‖dL/dt‖²` — higher → smoother path       |
+| `SU_LAMBDA1`  | `2e5`   | penalty on `‖dL/dt‖²` — higher → smoother path       |
 | `SU_LAMBDA0`  | `1e0`   | penalty on `‖L‖²` — higher → slower path             |
 | `SU_OMEGADEG` | `2.5`   | cap on angular velocity, deg/Myr (soft rate bound)  |
 | `SU_NITER`    | `2000`  | ADAM and L-BFGS iterations each                     |
-| `SU_OUT`      | path CSV| output CSV location                                 |
+| `SU_IN`       | corrected| input CSV location                                 |
+| `SU_OUT`      | corrected| output CSV location                                |
 
 `ωmax` is set as a *loose physical* bound (2.5 deg/Myr): it permits the rapid
 (>1 deg/Myr) Keweenawan motion recorded by the poles while preventing runaway

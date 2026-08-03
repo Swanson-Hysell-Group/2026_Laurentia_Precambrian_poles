@@ -77,6 +77,10 @@ CSV = os.path.join(ROOT, "data", "Laurentia_poles.csv")
 # poles are carried from the legacy compilation CSV above.
 SUMMARY_DIR = os.path.join(ROOT, "data", "nordic_summaries")
 COMBINED_CSV = os.path.join(SUMMARY_DIR, "nordic_summaries_combined.csv")
+# Inclination-shallowing-corrected (Kent) mean poles for the sedimentary units,
+# assembled by data/nordic_summaries/build_kent_poles.py. These positions
+# replace the uncorrected ones for those units wherever a pole is plotted.
+KENT_CSV = os.path.join(SUMMARY_DIR, "kent_poles_combined.csv")
 MAP_HTML = os.path.join(ROOT, "_static", "Laurentia_pole_map.html")
 COMPILATION_MD = os.path.join(ROOT, "compilation.md")
 POLE_MAP_IPYNB = os.path.join(ROOT, "pole_map.ipynb")
@@ -85,6 +89,8 @@ PROVINCE_GEOJSON = os.path.join(ROOT, "data", "geologic_provinces",
 
 TABLE_START = "<!-- POLE_TABLE_START -->"
 TABLE_END = "<!-- POLE_TABLE_END -->"
+KENT_TABLE_START = "<!-- KENT_TABLE_START -->"
+KENT_TABLE_END = "<!-- KENT_TABLE_END -->"
 
 # Deployed site base path. The map is raw HTML (it cannot use MyST's link
 # resolver), so notebook links inside it are root-absolute and must carry the
@@ -152,7 +158,7 @@ EXISTING_NOTEBOOKS = {
     "Adirondack metamorphic anorthosite": "887_Adirondack",
     "Jacobsville Formation": "990_Jacobsville",
     "Freda Sandstone": "1075_Lower_Freda",  # legacy compilation pole = Henry et al. (1977) lower Freda
-    "Nonesuch Shale": "1078_Nonesuch",
+    "Nonesuch Formation": "1078_Nonesuch",
     "Cardenas Basalts and Intrusions": "1082_Cardenas",
     "Michipicoten Island Formation": "1084_Michipicoten_Island_Formation",
     "Lake Shore Traps": "1086_Lake_Shore_Traps",
@@ -372,6 +378,109 @@ def paleolatitude(site_lat, site_lon, pole_lat, pole_lon):
     return 90.0 - np.degrees(np.arccos(np.clip(cos_p, -1.0, 1.0)))
 
 
+# Kent 95% ellipse parameters carried through ``apply_kent_poles`` (prefixed
+# with "_" on the DataFrame) so a map can draw the true ellipse rather than the
+# equal-area circle. Zdec/Zinc is the major-axis direction and Zeta its
+# semi-angle; Edec/Einc and Eta are the minor axis.
+KENT_ELLIPSE_COLUMNS = ("Zdec", "Zinc", "Zeta", "Edec", "Einc", "Eta")
+
+
+def kent_dict(row):
+    """Repackage a row's Kent columns into an ``ipmag.plot_pole_ellipse`` dict.
+
+    Args:
+        row (pd.Series): A row carrying ``PLAT``/``PLONG`` and the ``_Zdec``…
+            ``_Eta`` columns added by :func:`apply_kent_poles`.
+
+    Returns:
+        dict: ``{'dec', 'inc', 'Zdec', 'Zinc', 'Zeta', 'Edec', 'Einc', 'Eta'}``.
+    """
+    d = {"dec": float(row["PLONG"]), "inc": float(row["PLAT"])}
+    d.update({c: float(row["_" + c]) for c in KENT_ELLIPSE_COLUMNS})
+    return d
+
+
+def load_kent_poles():
+    """The Kent mean poles of the sedimentary units, keyed by ROCKNAME.
+
+    Reads ``KENT_CSV``. Returns an empty mapping (with a warning) if that file
+    has not been built yet, so the map and figures still render from the
+    uncorrected positions alone.
+    """
+    if not os.path.exists(KENT_CSV):
+        print(f"-W- {os.path.basename(KENT_CSV)} not found; sedimentary poles "
+              "are plotted uncorrected. Run "
+              "data/nordic_summaries/build_kent_poles.py")
+        return {}
+    kent = pd.read_csv(KENT_CSV)
+    return {str(row["ROCKNAME"]).strip(): row for _, row in kent.iterrows()}
+
+
+def apply_kent_poles(df, verbose=True):
+    """Substitute the inclination-shallowing-corrected pole for sedimentary units.
+
+    Detrital remanence is shallowed during compaction, so the as-measured pole
+    of a sedimentary unit implies a paleolatitude that is a minimum. For every
+    unit in the Kent table (see
+    ``data/nordic_summaries/build_kent_poles.py``) the ``PLAT``/``PLONG``
+    columns are replaced by the Kent mean pole and ``A95`` by the equal-area
+    circular approximation to its 95% confidence ellipse,
+    ``sqrt(zeta95 * eta95)`` — the radius consumers that can only draw a
+    circular confidence should use. The uncorrected values are preserved in
+    ``_plat_uncorrected`` / ``_plong_uncorrected`` / ``_a95_uncorrected`` so a
+    popup or caption can still report them, and ``_kent`` flags the substituted
+    rows.
+
+    The full ellipse is carried alongside in :data:`KENT_ELLIPSE_COLUMNS`
+    (``_Zdec``, ``_Zinc``, ``_Zeta``, ``_Edec``, ``_Einc``, ``_Eta``) so a map
+    can draw the real Kent ellipse with ``ipmag.plot_pole_ellipse`` instead of
+    the circular approximation; :func:`kent_dict` packages a row's values back
+    into the dictionary that function expects.
+
+    Args:
+        df (pd.DataFrame): Poles with ``ROCKNAME``, ``PLAT``, ``PLONG``,
+            ``A95``.
+        verbose (bool): Print which units were substituted.
+
+    Returns:
+        pd.DataFrame: A copy with the corrected positions and the added
+        ``_kent``, ``_kent_method``, ``_*_uncorrected``, and ellipse columns.
+    """
+    df = df.copy()
+    df["_kent"] = False
+    df["_kent_method"] = ""
+    for col, src in (("_plat_uncorrected", "PLAT"),
+                     ("_plong_uncorrected", "PLONG"),
+                     ("_a95_uncorrected", "A95")):
+        df[col] = pd.to_numeric(df[src], errors="coerce")
+    for col in KENT_ELLIPSE_COLUMNS:
+        df["_" + col] = np.nan
+
+    kent = load_kent_poles()
+    substituted = []
+    for idx in df.index:
+        row = kent.get(str(df.at[idx, "ROCKNAME"]).strip())
+        if row is None:
+            continue
+        df.at[idx, "PLAT"] = float(row["PLAT"])
+        df.at[idx, "PLONG"] = float(row["PLONG"])
+        df.at[idx, "A95"] = float(row["A95"])
+        df.at[idx, "_kent"] = True
+        df.at[idx, "_kent_method"] = str(row["f method"])
+        for col in KENT_ELLIPSE_COLUMNS:
+            df.at[idx, "_" + col] = float(row[col])
+        substituted.append(str(df.at[idx, "ROCKNAME"]))
+    if verbose and substituted:
+        print(f"  Kent (inclination-corrected) poles used for "
+              f"{len(substituted)} sedimentary unit(s): "
+              + ", ".join(sorted(substituted)))
+    unused = sorted(set(kent) - set(substituted))
+    if verbose and unused:
+        print("  -W- Kent poles with no matching row here: "
+              + ", ".join(unused))
+    return df
+
+
 def short_reference(authors, year):
     """Compact 'first-author et al. (year)' reference string.
 
@@ -483,14 +592,27 @@ def _pole_marker(row, color, slug):
     paleolat_line = (
         "" if pd.isna(row["_duluth_paleolat"])
         else f"Duluth paleolat: {fmt(row['_duluth_paleolat'])}&deg;<br>")
+    # sedimentary units are shown at their inclination-shallowing-corrected
+    # (Kent) position; give the as-measured pole beneath it
+    if row.get("_kent", False):
+        pole_lines = (
+            f"Pole (incl.-corrected): {fmt(row['PLAT'])}&deg;N, "
+            f"{fmt(row['PLONG'])}&deg;E (A95 {fmt(row['A95'])}&deg;)<br>"
+            f'<span style="color:#666;">as measured: '
+            f"{fmt(row['_plat_uncorrected'])}&deg;N, "
+            f"{fmt(row['_plong_uncorrected'])}&deg;E "
+            f"(A95 {fmt(row['_a95_uncorrected'])}&deg;)</span><br>")
+    else:
+        pole_lines = (f"Pole: {fmt(row['PLAT'])}&deg;N, "
+                      f"{fmt(row['PLONG'])}&deg;E "
+                      f"(A95 {fmt(row['A95'])}&deg;)<br>")
     popup_html = (
         f'<div style="font-size:16px;line-height:1.5;">'
         f"<b>{row['ROCKNAME']}</b><br>"
         f"<i>{row['Terrane']}</i><br>"
         f"~{int(row['nominal age'])} Ma &middot; Grade {grade}<br>"
         f"Site: {fmt(row['SLAT'])}&deg;N, {fmt(slon)}&deg;E<br>"
-        f"Pole: {fmt(row['PLAT'])}&deg;N, {fmt(row['PLONG'])}&deg;E "
-        f"(A95 {fmt(row['A95'])}&deg;)<br>"
+        f"{pole_lines}"
         f"{paleolat_line}"
         f"{short_reference(row['POLE AUTHORS'], row['YEAR'])}"
         + (f"<br>{notebook_line}" if notebook_line else "")
@@ -590,13 +712,59 @@ def build_table(df):
         # are still listed as plain text.
         link = (f"[{row['ROCKNAME']}](pole_notebooks/{row['_stem']}.ipynb)"
                 if row["_publish"] else str(row["ROCKNAME"]))
+        # Every pole is listed as measured. A dagger marks the sedimentary units
+        # whose inclination-shallowing correction is tabulated separately below.
+        if row.get("_kent", False):
+            link += "&dagger;"
         lines.append(
             f"| {row['Terrane']} | {link} | {int(row['nominal age'])} "
             f"| {grade_label(row['Grade'])} "
             f"| {fmt(row['SLONG'] % 360.0)} | {fmt(row['SLAT'])} "
-            f"| {fmt(row['PLONG'])} | {fmt(row['PLAT'])} | {fmt(row['A95'])} "
-            f"| {fmt(row['_duluth_paleolat'])} "
+            f"| {fmt(row['_plong_uncorrected'])} "
+            f"| {fmt(row['_plat_uncorrected'])} "
+            f"| {fmt(row['_a95_uncorrected'])} "
+            f"| {fmt(row['_duluth_paleolat_uncorrected'])} "
             f"| {short_reference(row['POLE AUTHORS'], row['YEAR'])} |"
+        )
+    return "\n".join(lines)
+
+
+def build_kent_table(df):
+    """Build the Markdown inclination-shallowing table for the landing page.
+
+    A simplified companion to ``data/nordic_summaries/kent_pole_table.tex``:
+    the flattening factor, the corrected (Kent) mean pole and the semi-angles of
+    its 95% confidence ellipse, and the Duluth paleolatitude before and after
+    correction. The ellipse axis *directions* carried in the LaTeX table are
+    dropped here, since the axes are not independently useful without them being
+    plotted -- ``kent_poles_combined.csv`` has the full parameterization.
+
+    Args:
+        df (pd.DataFrame): Output of :func:`load_poles`.
+
+    Returns:
+        str: A GitHub-flavored Markdown table, sedimentary units only.
+    """
+    kent = load_kent_poles()
+    header = ("| Unit | Age (Ma) | *f* source | *f* | Plon | Plat "
+              "| &zeta;95 | &eta;95 | Duluth paleolat as measured "
+              "| Duluth paleolat corrected |")
+    sep = "|" + "|".join(["---"] * 10) + "|"
+    lines = [header, sep]
+    for _, row in df[df["_kent"]].iterrows():
+        src = kent.get(str(row["ROCKNAME"]).strip(), {})
+        f_val, f_lo, f_hi = (src.get("f"), src.get("f low"), src.get("f high"))
+        f_txt = (f"{float(f_val):.2f} ({float(f_lo):.2f}&ndash;{float(f_hi):.2f})"
+                 if f_val not in (None, "") else "")
+        link = (f"[{row['ROCKNAME']}](pole_notebooks/{row['_stem']}.ipynb)"
+                if row["_publish"] else str(row["ROCKNAME"]))
+        lines.append(
+            f"| {link} | {int(row['nominal age'])} "
+            f"| {row['_kent_method']} | {f_txt} "
+            f"| {fmt(row['PLONG'])} | {fmt(row['PLAT'])} "
+            f"| {fmt(row['_Zeta'])} | {fmt(row['_Eta'])} "
+            f"| {fmt(row['_duluth_paleolat_uncorrected'])} "
+            f"| {fmt(row['_duluth_paleolat'])} |"
         )
     return "\n".join(lines)
 
@@ -667,20 +835,32 @@ def load_poles():
 
     df = pd.concat([summ[USE_COLS + ["_stem"]], legacy[USE_COLS + ["_stem"]]],
                    ignore_index=True)
+    # The map plots sedimentary units at their inclination-shallowing-corrected
+    # (Kent) position; ``apply_kent_poles`` keeps the as-measured values in the
+    # ``_*_uncorrected`` columns so the compilation table can list those instead.
+    df = apply_kent_poles(df)
     df["_publish"] = df["_stem"].map(is_published)
-    # rotate rifted terranes into Laurentia coordinates for the paleolatitude
-    rot_lat, rot_lon = df["PLAT"].astype(float).copy(), df["PLONG"].astype(float).copy()
-    for idx in df.index:
-        euler = TERRANE_EULER_POLES.get(str(df.at[idx, "Terrane"]))
-        if euler is None or pd.isna(rot_lat[idx]) or pd.isna(rot_lon[idx]):
-            continue
-        rlat, rlon = pmag.pt_rot(euler, [rot_lat[idx]], [rot_lon[idx]])
-        rot_lat[idx], rot_lon[idx] = rlat[0], rlon[0]
-    df["_duluth_paleolat"] = paleolatitude(DULUTH_LAT, DULUTH_LON, rot_lat, rot_lon)
+
+    def _duluth(lat_col, lon_col):
+        """Duluth paleolatitude from a pole, rotating rifted terranes first."""
+        rot_lat = df[lat_col].astype(float).copy()
+        rot_lon = df[lon_col].astype(float).copy()
+        for idx in df.index:
+            euler = TERRANE_EULER_POLES.get(str(df.at[idx, "Terrane"]))
+            if euler is None or pd.isna(rot_lat[idx]) or pd.isna(rot_lon[idx]):
+                continue
+            rlat, rlon = pmag.pt_rot(euler, [rot_lat[idx]], [rot_lon[idx]])
+            rot_lat[idx], rot_lon[idx] = rlat[0], rlon[0]
+        return paleolatitude(DULUTH_LAT, DULUTH_LON, rot_lat, rot_lon)
+
+    df["_duluth_paleolat"] = _duluth("PLAT", "PLONG")
+    df["_duluth_paleolat_uncorrected"] = _duluth("_plat_uncorrected",
+                                                 "_plong_uncorrected")
     # before Laurentia assembled, only Superior/Trans-Hudson poles constrain Duluth
     pre_assembly = ((df["nominal age"] > PUBLISH_AGE_MAX)
                     & ~df["Terrane"].astype(str).isin(DULUTH_PALEOLAT_TERRANES))
     df.loc[pre_assembly, "_duluth_paleolat"] = np.nan
+    df.loc[pre_assembly, "_duluth_paleolat_uncorrected"] = np.nan
     return df.sort_values("nominal age", kind="stable").reset_index(drop=True)
 
 
@@ -703,7 +883,13 @@ carried over from `data/Laurentia_poles.csv`, the compilation assembled at \
 earlier Nordic Paleomagnetic Workshops, and are shown without a link. Older \
 than 1780 Ma the Duluth paleolatitude is only given for poles from the \
 Superior craton and the Trans-Hudson orogen, since a pole from a block that \
-had not yet joined Laurentia does not constrain where Duluth was."""
+had not yet joined Laurentia does not constrain where Duluth was.
+
+Detrital remanence is shallowed during compaction, so the sedimentary units \
+are shown at their inclination-shallowing-corrected (Kent mean) position \
+rather than as measured; their popups give the as-measured pole beneath it. \
+The corrections are tabulated in \
+`data/nordic_summaries/kent_poles_combined.csv`."""
 
 # Source for the map code cell. Input is removed in the rendered book; this is
 # what re-executing the cell against the current CSV renders inline.
@@ -742,17 +928,28 @@ def write_pole_map_notebook(df):
         nbf.write(nb, fh)
 
 
-def write_table_into_compilation(table_md):
-    """Replace the table block in compilation.md between the sentinel comments."""
+def write_table_into_compilation(table_md, kent_table_md=None):
+    """Replace the table blocks in compilation.md between the sentinel comments.
+
+    Args:
+        table_md (str): The main pole table, written between
+            :data:`TABLE_START` / :data:`TABLE_END`.
+        kent_table_md (str | None): The inclination-shallowing table, written
+            between :data:`KENT_TABLE_START` / :data:`KENT_TABLE_END`. Skipped
+            when None.
+    """
     with open(COMPILATION_MD, encoding="utf-8") as fh:
         text = fh.read()
-    block = f"{TABLE_START}\n{table_md}\n{TABLE_END}"
-    if TABLE_START not in text or TABLE_END not in text:
-        raise SystemExit(
-            f"Sentinels {TABLE_START}/{TABLE_END} not found in compilation.md; "
-            "add them where the table should go.")
-    text = re.sub(re.escape(TABLE_START) + r".*?" + re.escape(TABLE_END),
-                  block, text, flags=re.DOTALL)
+    blocks = [(TABLE_START, TABLE_END, table_md)]
+    if kent_table_md is not None:
+        blocks.append((KENT_TABLE_START, KENT_TABLE_END, kent_table_md))
+    for start, end, md in blocks:
+        if start not in text or end not in text:
+            raise SystemExit(
+                f"Sentinels {start}/{end} not found in compilation.md; "
+                "add them where the table should go.")
+        text = re.sub(re.escape(start) + r".*?" + re.escape(end),
+                      f"{start}\n{md}\n{end}", text, flags=re.DOTALL)
     with open(COMPILATION_MD, "w", encoding="utf-8") as fh:
         fh.write(text)
 
@@ -794,7 +991,7 @@ def main():
     os.makedirs(os.path.dirname(MAP_HTML), exist_ok=True)
     build_map(df).save(MAP_HTML)          # standalone copy for direct preview
     write_pole_map_notebook(df)
-    write_table_into_compilation(build_table(df))
+    write_table_into_compilation(build_table(df), build_kent_table(df))
 
     print(f"Wrote {os.path.relpath(MAP_HTML, ROOT)} (preview, {len(df)} poles)")
     print(f"Wrote {os.path.relpath(POLE_MAP_IPYNB, ROOT)} (interactive map)")

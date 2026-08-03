@@ -1,7 +1,7 @@
 """Paleomagnetic reconstructions of Laurentia through time on a paleolatitude ladder.
 
 Each reconstruction is a *pure paleomagnetic* reconstruction driven by the
-SphereUDE spline APWP (``data/nordic_summaries/apwp_sphereude_path.csv``, fit by
+SphereUDE spline APWP (``data/nordic_summaries/apwp_sphereude_path_corrected.csv``, fit by
 ``scripts/sphereude/fit_apwp_spline.jl``): for a given reconstruction age the
 spline pole (plat, plon) is sampled and Laurentia is rotated so that pole sits at
 the spin axis. Paleolatitude and azimuthal orientation are therefore constrained
@@ -53,7 +53,7 @@ from build_province_geojson import CATEGORY_COLOR  # noqa: E402
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 SPHEREUDE_PATH_CSV = os.path.join(ROOT, "data", "nordic_summaries",
-                                  "apwp_sphereude_path.csv")
+                                  "apwp_sphereude_path_corrected.csv")
 # Age-resolved provinces (one feature per unit with an ``appearance_age``), built
 # by build_province_aged_geojson.py so the continent grows by accretion.
 PROVINCES_GEOJSON = os.path.join(ROOT, "data", "geologic_provinces",
