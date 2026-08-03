@@ -9,7 +9,7 @@ finished `../sites.txt` / `../locations.txt`; everything here is provenance.
 Symons, D. T. A., & Chiasson, A. D. (1991). Paleomagnetism of the Callander
 Complex and the Cambrian apparent polar wander path for North America.
 *Canadian Journal of Earth Sciences*, 28(3), 355–363.
-doi:[10.1139/e91-033](https://doi.org/10.1139/e91-033).
+doi:[10.1139/e91-032](https://doi.org/10.1139/e91-032).
 
 There is **no measurement-level MagIC contribution** for this study, so the
 contribution is built from the published **Table 1** site means, digitized into
