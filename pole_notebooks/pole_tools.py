@@ -31,7 +31,7 @@ TERRANE_EULER_POLES = {
     'Laurentia-Svalbard':       [-81.0, 125.0, 68.0],
 }
 
-def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia',
+def get_Laurentia_poles(file_name='../data/older_Laurentia_poles.csv', sheet_name='Laurentia',
                         recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv',
                         recent_age_max=1779):
     """Loads Laurentia poles and rotates them into a common reference frame.
@@ -45,9 +45,10 @@ def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Lau
     ``recent_age_max`` (1779 Ma) are taken from ``recent_file_name`` — the
     project's own recompiled Nordic summaries (``nordic_summaries_combined.csv``,
     the per-notebook poles recreated from MagIC site data) — while older poles
-    are taken from ``file_name`` (the legacy ``data/Laurentia_poles.csv``
-    compilation, exported from the ``Laurentia`` sheet of
-    ``Kringdalen_w_Laurentia.xlsx``). The two sources share the core pole columns
+    are taken from ``file_name`` (``data/older_Laurentia_poles.csv``, carried
+    from the Nordic workshop compilation in the same 71-column layout as the
+    summaries by ``scripts/extract_older_poles.py``). The two sources share the
+    core pole columns
     (Terrane, ROCKNAME, PLAT, PLONG, A95, nominal age, ...); any columns unique
     to one source are NaN-filled on rows from the other. Set ``recent_file_name``
     to ``None`` to use ``file_name`` alone for all ages (the legacy behavior). A
@@ -55,7 +56,7 @@ def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Lau
     ``read_excel`` using ``sheet_name``.
 
     The compilation mixes two conventions: some poles report ``A95`` and
-    ``nominal age`` directly, while others (Kringdalen-native) report ``DP``/
+    ``nominal age`` directly, while others report ``DP``/
     ``DM`` and ``lomagage``/``himagage`` instead. So that the whole path is
     available downstream regardless of convention, the ``A95`` and
     ``nominal age`` columns are filled, **in memory only**, from the midpoints
@@ -138,7 +139,7 @@ def get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Lau
 
     return Laurentia_poles
 
-def get_Laurentia_stricto_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia',
+def get_Laurentia_stricto_poles(file_name='../data/older_Laurentia_poles.csv', sheet_name='Laurentia',
                                 recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv',
                                 recent_age_max=1779):
     """Returns only poles from the Laurentia terrane (sensu stricto).
@@ -1448,9 +1449,13 @@ def make_nordic_summary(terrane,
         if val is None:
             raise ValueError(f"Required parameter '{name}' was not provided.")
 
-    # R4 = field-test letter code(s); a populated R4 contributes 1 to the R total
-    r4_str = '' if R4 in (None, '', '0', 0) else str(R4)
-    r4_score = 1 if r4_str else 0
+    # R4 = field-test letter code(s); a populated R4 contributes 1 to the R total.
+    # An explicit '0' and a blank are scored the same (no qualifying field test)
+    # but are written differently, following the Nordic workbook: '0' records
+    # that the pole was assessed and no such test is available, whereas a blank
+    # records that R4 has not been assessed. Passing None or '' gives the blank.
+    r4_score = 0 if R4 in (None, '', '0', 0) else 1
+    r4_str = '' if R4 in (None, '') else str(R4)
     R_total = (int(R1) + int(R2) + int(R3) + r4_score
                + int(R5) + int(R6) + int(R7))
 
@@ -1458,8 +1463,16 @@ def make_nordic_summary(terrane,
     gpmdb_col = _int_or_blank(gpmdb_number)
     magic_col = '' if magic_id in ('', None) else magic_id
 
-    # age diff = himagage - lomagage (both required, so both are present)
-    age_diff = _int_or_blank(float(himagage) - float(lomagage))
+    # age diff = himagage - lomagage, differenced *after* both bounds are rounded
+    # to the integers actually written. Rounding the unrounded difference instead
+    # lets the three columns disagree by 1 -- e.g. bounds of 1031.6 and 1063.4 are
+    # written as 1032 and 1063 (a span of 31) while their raw difference, 31.8,
+    # rounds to 32. The Nordic workbook derives this column by subtracting the
+    # tabulated bounds, so it has to be self-consistent with them.
+    lomagage_col = _int_or_blank(lomagage)
+    himagage_col = _int_or_blank(himagage)
+    age_diff = ('' if '' in (lomagage_col, himagage_col)
+                else himagage_col - lomagage_col)
 
     # Lithology: pull from the MagIC sites table unless given explicitly
     lithology_col = _magic_lithology(sites) if lithology_note is None else lithology_note
@@ -1479,7 +1492,7 @@ def make_nordic_summary(terrane,
         r4_str, _int_or_blank(R5), _int_or_blank(R6),
         _int_or_blank(R7), R_total, Grade, Grade_E21,
         _int_or_blank(nominal_age), age_diff,
-        _int_or_blank(lomagage), _int_or_blank(himagage), REF_method, rockname,
+        lomagage_col, himagage_col, REF_method, rockname,
         POLE_AUTHORS, _int_or_blank(YEAR), JOURNAL, VOLUME, VPAGES, TITLE, COMMENT,
         lithology_col,
     ]

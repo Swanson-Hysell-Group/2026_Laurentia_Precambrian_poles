@@ -7,7 +7,7 @@ summaries that ``data/nordic_summaries/combine_nordic_summaries.py`` assembles
 from the assessment notebooks in ``pole_notebooks/``; these are the poles
 recreated at the site level as part of this project, so the map and table track
 the current notebook values. Older poles are carried over from
-``data/Laurentia_poles.csv``, the compilation assembled at earlier Nordic
+``data/older_Laurentia_poles.csv``, the compilation assembled at earlier Nordic
 Paleomagnetic Workshops, and are listed without a notebook link. From that
 combined set the script writes two artifacts:
 
@@ -70,7 +70,14 @@ import pmagpy.pmag as pmag
 # --- paths -----------------------------------------------------------------
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
-CSV = os.path.join(ROOT, "data", "Laurentia_poles.csv")
+# Poles older than PUBLISH_AGE_MAX, carried from the Nordic workshop
+# compilation in the same 71-column layout as the site-level summaries by
+# ``extract_older_poles.py``. Together with COMBINED_CSV below this is the whole
+# compilation. (The older ``data/Laurentia_poles.csv`` is a 68-column layout
+# still used for the legacy Q-criteria back-fill in
+# ``combine_nordic_summaries.py`` and by ``pole_tools.get_Laurentia_poles``; it
+# is not the source of the older poles listed here.)
+CSV = os.path.join(ROOT, "data", "older_Laurentia_poles.csv")
 # Per-notebook Nordic summaries (the latest recreated poles) and their combined
 # table. The map and compilation table are built from these for the published
 # (<= PUBLISH_AGE_MAX) poles, so they reflect the current notebook values; older
@@ -674,10 +681,19 @@ def build_map(df):
         prov_group.add_to(m)
 
     pole_group = folium.FeatureGroup(name="Paleomagnetic poles", show=True)
+    unplaced = []
     for _, row in df.iterrows():
+        # Markers are placed at the sampling locality, so a pole without one
+        # cannot be drawn. It stays in the compilation table.
+        if pd.isna(row["SLAT"]) or pd.isna(row["SLONG"]):
+            unplaced.append(str(row["ROCKNAME"]))
+            continue
         _pole_marker(row, cmap(float(row["nominal age"])),
                      myst_slug(row["_stem"])).add_to(pole_group)
     pole_group.add_to(m)
+    if unplaced:
+        print("  Tabulated but not mapped (no sampling locality): "
+              + ", ".join(sorted(unplaced)))
 
     cmap.add_to(m)
     if provinces is not None:
@@ -777,7 +793,11 @@ def _prep(df):
     """Coerce ``nominal age`` to int and drop rows lacking a plottable position."""
     df = df.copy()
     df["nominal age"] = pd.to_numeric(df["nominal age"], errors="coerce")
-    df = df.dropna(subset=["SLAT", "SLONG", "PLAT", "PLONG", "nominal age"])
+    # A pole needs its own position and an age to be listed or to have a Duluth
+    # paleolatitude computed; the sampling locality is only needed to place a
+    # map marker, so a pole lacking it is still tabulated and is skipped by the
+    # map instead (see ``_pole_markers``).
+    df = df.dropna(subset=["PLAT", "PLONG", "nominal age"])
     df["nominal age"] = df["nominal age"].astype(int)
     return df
 
@@ -879,8 +899,8 @@ and zoom/pan freely.
 
 Poles at or below 1779 Ma are the site-level recreations compiled in \
 `data/nordic_summaries/`, each with an assessment notebook; older poles are \
-carried over from `data/Laurentia_poles.csv`, the compilation assembled at \
-earlier Nordic Paleomagnetic Workshops, and are shown without a link. Older \
+carried over from `data/older_Laurentia_poles.csv`, the compilation assembled \
+at earlier Nordic Paleomagnetic Workshops, and are shown without a link. Older \
 than 1780 Ma the Duluth paleolatitude is only given for poles from the \
 Superior craton and the Trans-Hudson orogen, since a pole from a block that \
 had not yet joined Laurentia does not constrain where Duluth was.
@@ -909,7 +929,7 @@ def write_pole_map_notebook(df):
     The map code cell carries a committed HTML output (the Folium map's
     ``_repr_html_``) so the page renders the interactive map with notebook
     execution disabled; re-running the cell (or this script) rebuilds it from
-    the current ``data/Laurentia_poles.csv``.
+    the current compilation.
     """
     import nbformat as nbf
 

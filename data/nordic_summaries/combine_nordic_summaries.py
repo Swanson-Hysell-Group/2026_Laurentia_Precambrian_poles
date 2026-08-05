@@ -774,6 +774,25 @@ def combine_summaries(summary_dir=SUMMARY_DIR, combined_filename=COMBINED_FILENA
     # back-fill blank cells from the compilation (e.g. the legacy Q criteria)
     filled, unmatched = backfill_from_compilation(header, rows)
 
+    # Site longitude to 0-360 deg E. Notebooks record the sampling locality in
+    # whichever convention their source used, so the summaries arrive with a mix
+    # of signed and 0-360 values. The Nordic layout is 0-360 deg E, and the
+    # manuscript table normalises on the way out, so without this the same pole
+    # reads -88.2 in the compilation CSV and 271.8 in the table.
+    slong_idx = header.index('SLONG')
+    wrapped = 0
+    for row in rows:
+        raw = row[slong_idx].strip()
+        if not raw:
+            continue
+        try:
+            lon = float(raw)
+        except ValueError:
+            continue
+        if lon < 0 or lon >= 360:
+            row[slong_idx] = f'{lon % 360.0:.2f}'.rstrip('0').rstrip('.')
+            wrapped += 1
+
     with open(combined_path, 'w', encoding='utf-8-sig', newline='') as fh:
         writer = csv.writer(fh)
         writer.writerow(header)
@@ -786,6 +805,8 @@ def combine_summaries(summary_dir=SUMMARY_DIR, combined_filename=COMBINED_FILENA
     if filled:
         print(f'Back-filled {filled} blank cell(s) from '
               f'{os.path.basename(COMPILATION_PATH)}')
+    if wrapped:
+        print(f'Wrapped {wrapped} site longitude(s) into 0-360 deg E')
     if unmatched:
         print(f'-W- {len(unmatched)} row(s) had no ROCKNAME match in '
               f'{os.path.basename(COMPILATION_PATH)}: '

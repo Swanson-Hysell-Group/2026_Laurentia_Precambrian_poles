@@ -87,42 +87,43 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia | [Cleaver Dykes](pole_notebooks/1740_Cleaver_Dikes.ipynb) | 1740 | A | 242.0 | 65.7 | 274.9 | 20.4 | 7.0 | 63.0 | Irving et al. (2004) |
 | Laurentia | Wharton Group | 1756 | A | 261.5 | 63.6 | 277.0 | 9.2 | 11.4 | 51.6 | Raub et al. (2026) |
 | Laurentia | [NE trending ECMB Diabase Dykes](pole_notebooks/1779_East_Central_Minnesota_Batholith.ipynb) | 1779 | A | 265.8 | 45.5 | 265.8 | 20.5 | 4.5 | 63.7 | Swanson-Hysell et al. (2021) |
-| Laurentia | Dubawnt Group | 1785 | B | 265.6 | 64.1 | 277.0 | 7.0 | 8.0 | – | Park et al. (1973) |
-| Laurentia-Rae | Martin Formation | 1818 | A | 251.4 | 59.6 | 288.0 | -9.0 | 8.5 | – | Evans et al. (1973) |
+| Laurentia | Dubawnt Group | 1796 | B | 265.6 | 64.1 | 277.0 | 7.0 | 8.0 | – | Park et al. (1973) |
+| Laurentia-Rae | Martin Group | 1818 | B | 251.4 | 59.6 | 288.0 | -9.0 | 8.5 | – | Evans et al. (1973) |
 | Laurentia-Rae | Sparrow Dykes | 1827 | B | 250.2 | 61.6 | 291.0 | 12.0 | 7.9 | – | McGlynn et al. (1974) |
 | Laurentia-Trans-Hudson orogen | Boot-Phantom Pluton | 1838 | B | 258.1 | 54.7 | 279.4 | 62.4 | 7.9 | 73.1 | Symons et al. (1999) |
 | Laurentia-Slave | MEAN Pearson A/Peninsular sill/Kilohigok basin sill | 1870 | A | 250.0 | 65.0 | 269.0 | -22.0 | 6.0 | – | Mitchell et al. (2010) |
 | Laurentia-Superior | MEAN Haig/Flaherty/Sutton | 1870 | B | 279.0 | 56.0 | 245.8 | 1.0 | 3.9 | 40.3 | Luleå Working Group Mean (2009) |
-| Laurentia-Slave | Douglas Peninsula Formation, Pethei Group | 1876 | B | 249.7 | 62.8 | 258.0 | -18.0 | 14.2 | – | Irving et al. (1979) |
 | Laurentia-Slave | Takiyuak Formation | 1876 | B | 246.9 | 66.1 | 249.0 | -13.0 | 8.0 | – | Irving et al. (1979) |
-| Laurentia-Slave | MEAN Kahochella, Peacock Hills | 1878 | B | 250.0 | 65.0 | 285.0 | -12.0 | 7.0 | – | Mitchell et al. (2010) |
-| Laurentia-Superior(West) | MOLSON B+C2 | 1879 | A | 262.0 | 55.0 | 218.0 | 28.9 | 3.8 | 47.6 | Evans et al. (2010) |
-| Laurentia-Slave | Ghost Dike Swarm | 1887 | A | 244.6 | 62.6 | 254.0 | 2.0 | 6.0 | – | Buchan et al. (2016) |
+| Laurentia-Slave | Douglas Peninsula Formation, Pethei Group | 1876 | B | 249.7 | 62.8 | 258.0 | -18.0 | 14.2 | – | Irving et al. (1979) |
+| Laurentia-Slave | MEAN Kahochella, Peacock Hills | 1882 | B | 250.0 | 65.0 | 285.0 | -12.0 | 7.0 | – | Mitchell et al. (2010) |
+| Laurentia-Superior(West) | Molson B+C2 dykes | 1885 | A | 262.0 | 55.0 | 218.0 | 28.9 | 3.8 | 47.6 | Evans et al. (2010) |
+| Laurentia-Slave | Ghost dykes | 1887 | A | 244.6 | 62.6 | 254.0 | 2.0 | 6.0 | – | Buchan et al. (2016) |
 | Laurentia-Slave | MEAN Seton/Akaitcho/Mara | 1889 | B | 250.0 | 65.0 | 260.0 | -6.0 | 4.0 | – | Mitchell et al. (2010) |
 | Laurentia-Wyoming | Sourdough mafic dike swarm | 1899 | A | 251.7 | 44.7 | 292.0 | 49.2 | 8.1 | – | Kilian et al. (2016) |
 | Laurentia-Rae | Clearwater Anorthosite | 1917 | B | 251.6 | 57.1 | 311.8 | 6.5 | 2.9 | – | Halls et al. (1999) |
 | Laurentia-Slave | Rifle (Western River) Formation | 1963 | B | 252.9 | 65.9 | 341.0 | 14.0 | 7.7 | – | Evans et al. (1981) |
-| Laurentia-Superior(East) | MINTO | 1998 | A | 285.0 | 57.0 | 171.5 | 38.7 | 13.1 | – | Evans et al. (2010) |
-| Laurentia-Slave | Lac de Gras dykes | 2026 | A | 249.6 | 64.4 | 267.9 | 11.8 | 7.1 | – | Buchan et al. (2009) |
+| Laurentia-Superior(East) | Minto dykes | 1998 | B | 285.0 | 57.0 | 171.5 | 38.7 | 13.1 | – | Evans et al. (2010) |
+| Laurentia-Slave | Lac de Gras dykes | 2027 | A | 249.6 | 64.4 | 267.9 | 11.8 | 7.1 | – | Buchan et al. (2009) |
 | Laurentia-Greenland-Nain | Kangamiut Dykes | 2041 | B | 307.0 | 66.0 | 273.8 | 17.1 | 2.7 | – | Fahrig et al. (1976) |
-| Laurentia-Superior(East) | LAC ESPRIT | 2069 | A | 282.0 | 53.0 | 170.5 | 62.0 | 6.4 | – | Evans et al. (2010) |
-| Laurentia-Superior(West) | FORT FRANCES | 2077 | A | 266.0 | 48.0 | 184.6 | 42.8 | 6.1 | 33.6 | Evans et al. (2010) |
-| Laurentia-Superior(West) | CAUCHON LAKE | 2091 | A | 263.0 | 56.0 | 180.9 | 53.8 | 7.7 | 37.5 | Evans et al. (2010) |
-| Laurentia-Superior(West) | MARATHON R | 2104 | A | 275.0 | 49.0 | 182.2 | 55.1 | 7.5 | 38.8 | Halls et al. (2008) |
-| Laurentia-Superior(West) | MARATHON N | 2124 | A | 275.0 | 49.0 | 198.2 | 45.4 | 7.7 | 43.3 | Halls et al. (2008) |
+| Laurentia-Superior(East) | Lac Esprit dykes | 2069 | A | 282.0 | 53.0 | 170.5 | 62.0 | 6.4 | – | Evans et al. (2010) |
+| Laurentia-Superior(West) | Fort Frances dykes | 2077 | A | 266.0 | 48.0 | 184.6 | 42.8 | 6.1 | 33.6 | Evans et al. (2010) |
+| Laurentia-Superior(West) | Cauchon Lake dykes | 2091 | A | 263.0 | 56.0 | 180.9 | 53.8 | 7.7 | 37.5 | Evans et al. (2010) |
+| Laurentia-Superior(West) | Marathan R dykes | 2106 | A | 275.0 | 49.0 | 182.2 | 55.1 | 7.5 | 38.8 | Halls et al. (2008) |
 | Laurentia-Slave | Indin dykes | 2126 | A | 245.6 | 62.5 | 76.0 | 36.0 | 7.0 | – | Buchan et al. (2016) |
+| Laurentia-Superior(West) | Marathon N dykes | 2126 | A | 275.0 | 49.0 | 198.2 | 45.4 | 7.7 | 43.3 | Halls et al. (2008) |
 | Laurentia-Wyoming | Rabbit Creek, Powder River and South Path Dykes | 2160 | A | 252.8 | 43.9 | 339.2 | 65.5 | 7.6 | – | Kilian et al. (2015) |
-| Laurentia-Superior(East) | BISCOTASING | 2170 | A | 280.0 | 48.0 | 223.9 | 26.0 | 7.0 | – | Evans et al. (2010) |
+| Laurentia-Superior(East) | Biscotasing dykes | 2170 | A | 280.0 | 48.0 | 223.9 | 26.0 | 7.0 | – | Evans et al. (2010) |
 | Laurentia-Slave | Dogrib dykes | 2193 | A | 245.5 | 62.5 | 315.0 | -31.0 | 7.0 | – | Mitchell et al. (2014) |
-| Laurentia-Superior(East) | NIPISSING N1 | 2217 | A | 279.0 | 47.0 | 272.0 | -17.0 | 10.0 | – | Buchan et al. (2000) |
-| Laurentia-Superior(East) | SENNETERRE | 2218 | A | 283.0 | 49.0 | 284.3 | -15.3 | 6.0 | – | Buchan et al. (1993) |
+| Laurentia-Superior(East) | Senneterre dykes | 2216 | A | 283.0 | 49.0 | 284.3 | -15.3 | 6.0 | – | Buchan et al. (1993) |
+| Laurentia-Superior(East) | Nipissing N1 mean | 2217 | A | 279.0 | 47.0 | 272.0 | -17.0 | 10.0 | – | Buchan et al. (2000) |
 | Laurentia-Slave | Malley dykes | 2231 | A | 249.8 | 64.2 | 310.0 | -50.8 | 6.7 | – | Buchan et al. (2012) |
-| Laurentia-Superior(East) | MATACHEWAN N | 2446 | A | 278.0 | 48.0 | 239.5 | -52.3 | 2.4 | – | Evans et al. (2010) |
-| Laurentia-Superior(East) | MATACHEWAN R | 2466 | A | 278.0 | 48.0 | 238.3 | -44.1 | 1.6 | – | Evans et al. (2010) |
-| Laurentia-Superior(East) | PTARMIGAN MEAN | 2505 | B | 287.0 | 54.0 | 213.0 | -45.3 | 13.8 | – | Evans et al. (2010) |
-| Laurentia-Slave | Defeat Suite | 2625 | B | 245.5 | 62.5 | 64.0 | -1.0 | 15.0 | – | Mitchell et al. (2014) |
-| Laurentia-Superior(East) | Otto Stock Dykes and Aureole | 2676 | B | 279.9 | 48.0 | 227.0 | 69.0 | 4.8 | – | Pullaiah et al. (1975) |
-| Laurentia-Wyoming | Stillwater Complex - C2 | 2705 | A | 249.2 | 45.2 | 335.8 | -83.6 | 4.1 | – | Selkin et al. (2008) |
+| Laurentia-Superior(East) | Matachewan N dykes | 2446 | A | 278.0 | 48.0 | 239.5 | -52.3 | 2.4 | – | Evans et al. (2010) |
+| Laurentia-Superior(East) | Matachewan R dykes | 2460 | A | 278.0 | 48.0 | 238.3 | -44.1 | 1.6 | – | Evans et al. (2010) |
+| Laurentia-Wyoming | Elbow Creek dikes | 2480 | A | 250.0 | 45.4 | 275.3 | 2.0 | 10.2 | – | Ding et al. (2024) |
+| Laurentia-Superior(East) | Ptarmigan dykes | 2505 | B | 287.0 | 54.0 | 213.0 | -45.3 | 13.8 | – | Evans et al. (2010) |
+| Laurentia-Slave | Defeat Suite granitoids | 2625 | B | 245.5 | 62.5 | 64.0 | -1.0 | 15.0 | – | Mitchell et al. (2014) |
+| Laurentia-Superior(East) | Otto Stock Dykes and Aureole | 2680 | B | 279.9 | 48.0 | 227.0 | 69.0 | 4.8 | – | Pullaiah et al. (1975) |
+| Laurentia-Wyoming | Stillwater Complex - C2 | 2709 | A | 249.2 | 45.2 | 335.8 | -83.6 | 4.1 | – | Selkin et al. (2008) |
 <!-- POLE_TABLE_END -->
 
 (inclination-shallowing-corrections)=
@@ -158,7 +159,8 @@ Both tables above are generated by `scripts/build_pole_map.py` and should not be
 Two sources feed it:
 
 - Poles at or below 1779 Ma come from `data/nordic_summaries/nordic_summaries_combined.csv`, which `data/nordic_summaries/combine_nordic_summaries.py` assembles from the single-row summary that each pole notebook writes. That script also drops poles graded C and any pole it lists as out of scope, so those are documented in their notebooks but do not appear in this table.
-- Older poles come from `data/Laurentia_poles.csv`, the compilation carried over from earlier Nordic workshops. That file is also used to back-fill fields the notebook summaries leave blank, such as the legacy Van der Voo Q criteria.
+- Older poles come from `data/older_Laurentia_poles.csv`, carried over from the Nordic workshop compilation in the same column layout as the summaries by `scripts/extract_older_poles.py`. Those two files are the whole compilation: poles at or below 1779 Ma from the first, older poles from the second, with no overlap between them. A pole whose sampling locality is not recorded is listed here but cannot be placed on the map.
+- `data/Laurentia_poles.csv` is an earlier compilation in a different column layout. It is no longer the source of the older poles, and is retained only to back-fill fields the notebook summaries leave blank, such as the legacy Van der Voo Q criteria.
 - The sedimentary units marked † are substituted with the inclination-shallowing-corrected poles in `data/nordic_summaries/kent_poles_combined.csv`, which `data/nordic_summaries/build_kent_poles.py` assembles from the single-row Kent summary that each sedimentary pole notebook writes into `data/nordic_summaries/kent/`. For units whose data permit it, *f* is determined from the directional distribution itself by E/I (Tauxe & Kent, 2004) or SVEI (Tauxe et al., 2024); otherwise *f* is resampled from the compilation of measured flattening factors of Pierce et al. (2022) via `ipmag.find_compilation_kent`. The manuscript reports these in their own table (`kent_pole_table.tex`); the main pole table (`pole_table.tex`) keeps the uncorrected positions.
 
 Site and pole longitudes are given in degrees east (0–360°). The Duluth paleolatitude is 90° minus the angular distance from the pole to Duluth (46.79°N, 267.90°E), computed from the pole as listed — as measured for the crystalline units, and inclination-corrected for the sedimentary units marked †. Poles from terranes that have rifted from Laurentia (Greenland, Scotland) are rotated into Laurentia coordinates before that angular distance is calculated; the tabulated Plat and Plon remain present-day. For poles older than 1780 Ma, the Duluth paleolatitude is reported only for poles assigned to Laurentia-Superior, Laurentia-Superior(West), and the Laurentia-Trans-Hudson orogen. Over that interval Laurentia had not assembled, so a pole from a block that had not yet joined (Slave, Rae, Wyoming, Nain, or the eastern Superior craton) constrains the paleolatitude of that block rather than of Duluth, and the column is left blank.

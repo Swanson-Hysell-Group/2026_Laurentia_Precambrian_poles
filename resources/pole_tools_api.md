@@ -439,7 +439,7 @@ mode.
 ## `get_Laurentia_poles`
 
 ```python
-get_Laurentia_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia', recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv', recent_age_max=1779)
+get_Laurentia_poles(file_name='../data/older_Laurentia_poles.csv', sheet_name='Laurentia', recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv', recent_age_max=1779)
 ```
 
 Loads Laurentia poles and rotates them into a common reference frame.
@@ -453,9 +453,10 @@ By default the path is a **hybrid**: poles with ``nominal age`` at or below
 ``recent_age_max`` (1779 Ma) are taken from ``recent_file_name`` — the
 project's own recompiled Nordic summaries (``nordic_summaries_combined.csv``,
 the per-notebook poles recreated from MagIC site data) — while older poles
-are taken from ``file_name`` (the legacy ``data/Laurentia_poles.csv``
-compilation, exported from the ``Laurentia`` sheet of
-``Kringdalen_w_Laurentia.xlsx``). The two sources share the core pole columns
+are taken from ``file_name`` (``data/older_Laurentia_poles.csv``, carried
+from the Nordic workshop compilation in the same 71-column layout as the
+summaries by ``scripts/extract_older_poles.py``). The two sources share the
+core pole columns
 (Terrane, ROCKNAME, PLAT, PLONG, A95, nominal age, ...); any columns unique
 to one source are NaN-filled on rows from the other. Set ``recent_file_name``
 to ``None`` to use ``file_name`` alone for all ages (the legacy behavior). A
@@ -463,7 +464,7 @@ to ``None`` to use ``file_name`` alone for all ages (the legacy behavior). A
 ``read_excel`` using ``sheet_name``.
 
 The compilation mixes two conventions: some poles report ``A95`` and
-``nominal age`` directly, while others (Kringdalen-native) report ``DP``/
+``nominal age`` directly, while others report ``DP``/
 ``DM`` and ``lomagage``/``himagage`` instead. So that the whole path is
 available downstream regardless of convention, the ``A95`` and
 ``nominal age`` columns are filled, **in memory only**, from the midpoints
@@ -488,7 +489,7 @@ the age split so that both sources are partitioned on a populated
 ## `get_Laurentia_stricto_poles`
 
 ```python
-get_Laurentia_stricto_poles(file_name='../data/Laurentia_poles.csv', sheet_name='Laurentia', recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv', recent_age_max=1779)
+get_Laurentia_stricto_poles(file_name='../data/older_Laurentia_poles.csv', sheet_name='Laurentia', recent_file_name='../data/nordic_summaries/nordic_summaries_combined.csv', recent_age_max=1779)
 ```
 
 Returns only poles from the Laurentia terrane (sensu stricto).
