@@ -109,7 +109,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia-Superior(West) | Fort Frances dykes | 2077 | A | 266.0 | 48.0 | 184.6 | 42.8 | 6.1 | 33.6 | Evans et al. (2010) |
 | Laurentia-Superior(West) | Cauchon Lake dykes | 2091 | A | 263.0 | 56.0 | 180.9 | 53.8 | 7.7 | 37.5 | Evans et al. (2010) |
 | Laurentia-Superior(West) | Marathan R dykes | 2106 | A | 275.0 | 49.0 | 182.2 | 55.1 | 7.5 | 38.8 | Halls et al. (2008) |
-| Laurentia-Slave | Indin dykes | 2126 | A | 245.6 | 62.5 | 76.0 | 36.0 | 7.0 | – | Buchan et al. (2016) |
+| Laurentia-Slave | Indin dykes | 2126 | A | 245.5 | 62.5 | 284.7 | 40.3 | 8.0 | – | Liu et al. (2024) |
 | Laurentia-Superior(West) | Marathon N dykes | 2126 | A | 275.0 | 49.0 | 198.2 | 45.4 | 7.7 | 43.3 | Halls et al. (2008) |
 | Laurentia-Wyoming | Rabbit Creek, Powder River and South Path Dykes | 2160 | A | 252.8 | 43.9 | 339.2 | 65.5 | 7.6 | – | Kilian et al. (2015) |
 | Laurentia-Superior(East) | Biscotasing dykes | 2170 | A | 280.0 | 48.0 | 223.9 | 26.0 | 7.0 | – | Evans et al. (2010) |
