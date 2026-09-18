@@ -1128,8 +1128,8 @@ TEX_CAPTION = (
     r'than a subsequent geologic event. This flag is assessed independently '
     r'of the Nordic grade and of the R-criteria scores of \citet{Meert2020a}, '
     r'which are reported in the accompanying compilation; a blank marks a '
-    r'pole assessed against these criteria and found not to meet them, and a '
-    r'dash marks one not yet assessed. Longitudes run $0$--$360^{\circ}$E. '
+    r'pole assessed against these key pole criteria and found not to meet them.'
+    r' Longitudes run $0$--$360^{\circ}$E. '
     r"``Duluth paleolat'' is "
     r'the paleolatitude of Duluth, Minnesota ($46.8^{\circ}$N, '
     r'$267.9^{\circ}$E) implied by the pole, with the bounds set by $A_{95}$ '
