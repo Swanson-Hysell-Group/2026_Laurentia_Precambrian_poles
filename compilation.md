@@ -102,7 +102,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia-Wyoming | Sourdough mafic dike swarm | 1899 | A | 251.7 | 44.7 | 292.0 | 49.2 | 8.1 | – | Kilian et al. (2016) |
 | Laurentia-Rae | Clearwater Anorthosite | 1917 | B | 251.6 | 57.1 | 311.8 | 6.5 | 2.9 | – | Halls et al. (1999) |
 | Laurentia-Slave | Rifle (Western River) Formation | 1963 | B | 252.9 | 65.9 | 341.0 | 14.0 | 7.7 | – | Evans et al. (1981) |
-| Laurentia-Superior(East) | Minto dykes | 1998 | B | 285.0 | 57.0 | 171.5 | 38.7 | 13.1 | – | Evans et al. (2010) |
+| Laurentia-Superior(East) | Minto dykes | 1998 | B | 284.4 | 56.0 | 171.2 | 31.4 | 12.4 | – | Hamilton et al. (2016) |
 | Laurentia-Slave | Lac de Gras dykes | 2027 | A | 249.6 | 64.4 | 267.9 | 11.8 | 7.1 | – | Buchan et al. (2009) |
 | Laurentia-Greenland-Nain | Kangamiut Dykes | 2041 | B | 307.0 | 66.0 | 273.8 | 17.1 | 2.7 | – | Fahrig et al. (1976) |
 | Laurentia-Superior(East) | Lac Esprit dykes | 2069 | A | 282.0 | 53.0 | 170.5 | 62.0 | 6.4 | – | Evans et al. (2010) |
