@@ -71,7 +71,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia-Greenland | [North Qoroq Intrusion](pole_notebooks/1275_North_Qoroq.ipynb) | 1275 | B | 314.6 | 61.2 | 202.5 | 13.5 | 10.6 | 21.2 | Piper (1992) |
 | Laurentia | [Nain Anorthosite](pole_notebooks/1305_Nain.ipynb) | 1305 | B | 298.2 | 56.5 | 206.8 | 11.8 | 2.5 | 28.2 | Murthy (1978) |
 | Laurentia-Greenland | [Midsommersoe Dolerites](pole_notebooks/1382_Midsommersoe.ipynb) | 1382 | B | 333.4 | 81.6 | 242.0 | 10.0 | 3.5 | 41.7 | Marcussen et al. (1983) |
-| Laurentia-Greenland | [Victoria Fjord dolerite dykes](pole_notebooks/1382_Victoria.ipynb) | 1382 | B | 315.3 | 81.5 | 231.3 | 12.7 | 5.1 | 38.4 | Abrahamsen et al. (1987) |
+| Laurentia-Greenland | [Victoria Fjord dolerite dykes](pole_notebooks/1382_Victoria.ipynb) | 1382 | B | 315.3 | 81.5 | 232.2 | 12.5 | 4.6 | 38.7 | Abrahamsen et al. (1987) |
 | Laurentia-Greenland | [Zig-Zag Dal Basalts](pole_notebooks/1382_Zigzag.ipynb) | 1382 | B | 334.8 | 81.2 | 242.8 | 12.2 | 3.9 | 44.0 | Marcussen et al. (1983) |
 | Laurentia | [Pilcher, Garnet Range, Libby](pole_notebooks/1385_Garnet_Range.ipynb)&dagger; | 1385 | B | 246.3 | 46.7 | 217.6 | -20.6 | 7.9 | 8.8 | Elston et al. (2002) |
 | Laurentia | [McNamara](pole_notebooks/1392_McNamara.ipynb)&dagger; | 1392 | B | 246.3 | 47.1 | 210.2 | -14.3 | 7.9 | 10.1 | Elston et al. (2002) |
@@ -131,7 +131,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 
 Compaction shallows the detrital remanence of sedimentary rocks, so the pole such a unit yields as measured sits too far from the sampling site and the paleolatitude it implies is a minimum. The units marked † in the table above are corrected for this following Pierce et al. (2022): the corrected mean is that of a Kent distribution whose 95% confidence ellipse propagates the uncertainty in the flattening factor *f* alongside the uncertainty in the pole itself. The ellipse is elongate along the site-to-pole direction, which is the direction the correction moves the pole, so its major semi-angle ζ95 is the one that matters for paleolatitude and is generally larger than the A95 of the uncorrected pole.
 
-Where the directional distribution of a unit permits it, *f* is determined from the data themselves by E/I (Tauxe & Kent, 2004) or SVEI (Tauxe et al., 2024); otherwise it is resampled from the compilation of measured flattening factors of Pierce et al. (2022), which gives the wider bounds seen for those units. The last two columns give the paleolatitude of Duluth implied by each pole before and after correction, which is the most tangible measure of what the correction does.
+Where the directional distribution of a unit permits it, *f* is determined from the data themselves by E/I (Tauxe & Kent, 2004) or SVEI (Tauxe et al., 2024); otherwise it is resampled from the compilation of measured flattening factors of Pierce et al. (2022), which gives the wider bounds seen for those units. The [inclination-shallowing corrections](inclination_shallowing.ipynb) page works through an example of each approach with PmagPy. The last two columns give the paleolatitude of Duluth implied by each pole before and after correction, which is the most tangible measure of what the correction does.
 
 <!-- KENT_TABLE_START -->
 | Unit | Age (Ma) | *f* source | *f* | Plon | Plat | &zeta;95 | &eta;95 | Duluth paleolat as measured | Duluth paleolat corrected |
