@@ -12,3 +12,6 @@ __pycache__/
 .DS_Store
 issues.md
 plan.md
+pole_notebooks/1756_Wharton_Group.ipynb
+data/1756_Wharton_Group/sites.txt
+magic_contribution_handoff.md

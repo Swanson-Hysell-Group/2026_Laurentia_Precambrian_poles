@@ -32,6 +32,7 @@ project:
     - file: pole_map.ipynb
     - file: compilation.md
     - file: paleolatitude.md
+    - file: inclination_shallowing.ipynb
     - title: Pole Assessments
       children:
         - file: pole_notebooks/565_Sept_Iles.ipynb
