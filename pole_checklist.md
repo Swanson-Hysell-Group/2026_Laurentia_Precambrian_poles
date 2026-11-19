@@ -9,7 +9,7 @@ Build-status tracker for each Laurentia pole. A ✓ marks a completed stage; a b
 - MagIC developed — a site-level MagIC contribution (`data/<pole>/sites.txt`) has been built locally.
 - MagIC contributed — the contribution has been uploaded to the MagIC database (earthref.org).
 
-Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 55, MagIC contributed 7.
+Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 14.
 
 ## Laurentia
 
@@ -43,7 +43,7 @@ Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC de
 | Upper third Osler volcanics -R (RESULT# 9514; nominal age 1105 Ma) |  | ✓ | ✓ |  |
 | Lower Mamainse Point volcanics -R2 (RESULT# 9511; nominal age 1105 Ma) |  | ✓ | ✓ |  |
 | Middle third Osler volcanics -R (RESULT# 10017; nominal age 1107 Ma) |  | ✓ | ✓ |  |
-| Colwell Complex (RESULT# 9838; nominal age 1107 Ma) |  | ✓ |  |  |
+| Coldwell Complex (RESULT# 9838; nominal age 1107 Ma) |  | ✓ | ✓ | ✓ |
 | Lower third Osler volcanics -R (RESULT# 9515; nominal age 1108 Ma) |  | ✓ | ✓ |  |
 | Lowermost Mamainse Point volcanics -R1 (RESULT# 9510; nominal age 1109 Ma) |  | ✓ | ✓ |  |
 | MEAN Nipigon sills and lavas (RESULT# new; nominal age 1111 Ma) |  | ✓ |  |  |
@@ -62,18 +62,18 @@ Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC de
 | Michikamau Intrusion Combined (RESULT# 2274; nominal age 1469 Ma) |  | ✓ | ✓ | ✓ |
 | St.Francois Mountains Acidic Rocks (RESULT# 8932; nominal age 1466 Ma) | ✓ | ✓ | ✓ | ✓ |
 | Western Channel Diabase (RESULT# 2669; nominal age 1592 Ma) | ✓ | ✓ | ✓ | ✓ |
-| Cleaver Dykes (RESULT# 9139; nominal age 1741 Ma) |  | ✓ | ✓ |  |
-| NE trending ECMB Diabase Dykes (RESULT# 9970; nominal age 1780 Ma) |  | ✓ | ✓ |  |
+| Cleaver Dykes (RESULT# 9139; nominal age 1741 Ma) |  | ✓ | ✓ | ✓ |
+| NE trending ECMB Diabase Dykes (RESULT# 9970; nominal age 1780 Ma) |  | ✓ | ✓ | ✓ |
 | Dubawnt Group (RESULT# 2737; nominal age 1796 Ma) |  | ✓ | ✓ |  |
 
 ## Laurentia-Greenland
 
 | Pole | geochronology verified | notebook developed | MagIC developed | MagIC contributed |
 |---|:---:|:---:|:---:|:---:|
-| Melville Bugt diabase (RESULT# 9495; nominal age 1630 Ma) |  | ✓ | ✓ |  |
-| Victoria Fjord Dolerite Dykes (RESULT# 489; nominal age 1382 Ma) | ✓ | ✓ | ✓ |  |
-| Midsommersoe Dolerite (RESULT# 99; nominal age 1382 Ma) | ✓ | ✓ | ✓ |  |
-| Zig-Zag Dal Basalts (RESULT# 98; nominal age 1382 Ma) |  | ✓ | ✓ |  |
+| Melville Bugt diabase (RESULT# 9495; nominal age 1630 Ma) |  | ✓ | ✓ | ✓ |
+| Victoria Fjord Dolerite Dykes (RESULT# 489; nominal age 1382 Ma) | ✓ | ✓ | ✓ | ✓ |
+| Midsommersoe Dolerite (RESULT# 99; nominal age 1382 Ma) | ✓ | ✓ | ✓ | ✓ |
+| Zig-Zag Dal Basalts (RESULT# 98; nominal age 1382 Ma) |  | ✓ | ✓ | ✓ |
 | Kungnat Ring Dyke (RESULT# 2107; nominal age 1275 Ma) |  | ✓ | ✓ |  |
 | North Qoroq Intr. (RESULT# 6607; nominal age 1275 Ma) |  | ✓ |  |  |
 | West Gardar Dolerite Dykes (RESULT# 2106; nominal age 1271 Ma) |  | ✓ | ✓ |  |

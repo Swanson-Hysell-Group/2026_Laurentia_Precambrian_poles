@@ -19,7 +19,16 @@ uploaded to MagIC). This runs two layers of checks:
      ``age_low``/``age_high``) plus ``age_unit``; they never require an
      uncertainty, so a bare ``age`` slips past PmagPy but is rejected on upload.
 
-The two validators disagree in *both* directions, so neither is a perfect proxy
+3. **MagIC's live validation** (``POST https://api.earthref.org/v1/MagIC/validate``
+   with the upload file as a ``text/plain`` body), the same check the online
+   uploader runs. It catches what neither offline layer does: integer columns
+   written as ``14.0``, vocabulary terms the server does not yet accept, and
+   rows the server considers to be missing an age. Errors on the
+   ``contribution`` table's ``reference`` and ``lab_names`` are ignored: those
+   are set on the website at upload. This layer is authoritative; pass
+   ``server=False`` to skip it when offline.
+
+The two offline validators disagree in *both* directions, so neither is a perfect proxy
 for the MagIC online uploader (which is authoritative): the online uploader is
 stricter on the age rule above, but more lenient elsewhere — e.g. it accepts the
 ``standard='300'`` measurement values in the published ECMB contribution that
@@ -87,7 +96,38 @@ def _bare_age_rows(df):
     return bad
 
 
-def validate_upload_file(path, tables=None, verbose=False):
+SERVER_URL = 'https://api.earthref.org/v1/MagIC/validate'
+
+
+def server_validation(path, timeout=600):
+    """MagIC's live validation of a combined upload file.
+
+    Args:
+        path: combined upload file.
+        timeout: seconds to wait for the server.
+
+    Returns:
+        tuple: (errors, note). ``errors`` is a list of (table, column, message)
+        without the contribution-table ``reference``/``lab_names`` fields that
+        are set on the website; ``note`` is non-empty if the check could not be
+        run.
+    """
+    import requests
+    try:
+        with open(path, 'rb') as f:
+            r = requests.post(SERVER_URL, data=f.read(),
+                              headers={'Content-Type': 'text/plain'},
+                              timeout=timeout)
+        r.raise_for_status()
+        errors = r.json()['validation']['errors']
+    except Exception as e:  # report, do not hide
+        return [], f'MagIC server validation not run ({e})'
+    return [(e['table'], e['column'], e['message']) for e in errors
+            if not (e['table'] == 'contribution'
+                    and e['column'] in ('reference', 'lab_names'))], ''
+
+
+def validate_upload_file(path, tables=None, verbose=False, server=True):
     """Validate a combined MagIC upload file. Return True if it passes.
 
     Args:
@@ -97,9 +137,12 @@ def validate_upload_file(path, tables=None, verbose=False):
             tables a build authors and skip pass-through tables copied verbatim
             from an already-published contribution. ``None`` validates all.
         verbose: pass through to ``validate_upload3`` for per-row detail.
+        server: also run MagIC's live validation (all tables); its errors
+            fail the check.
 
     Returns:
-        True if the age-completeness check passes on every checked table. The
+        True if the age-completeness check passes on every checked table and
+        (with ``server``) MagIC's live validation reports no errors. The
         PmagPy data-model result is reported but advisory (it both misses and
         over-flags relative to the MagIC online uploader), so it does not by
         itself flip the return value.
@@ -134,6 +177,18 @@ def validate_upload_file(path, tables=None, verbose=False):
 
     print('-I- age-completeness check PASSED' if ok
           else '-E- age-completeness check FAILED')
+    if server:
+        errors, note = server_validation(path)
+        if note:
+            ok = False
+            print(f'-E- {note}')
+        elif errors:
+            ok = False
+            print(f'-E- MagIC live validation: {len(errors)} error(s)')
+            for table, column, message in errors:
+                print(f'      {table}.{column}: {message}')
+        else:
+            print('-I- MagIC live validation PASSED')
     return ok
 
 

@@ -35,7 +35,8 @@ def audit(path):
                 problems.append(f'{tname}.{col}: NOT IN DATA MODEL'); continue
             vals = tcols[col].get('validations', []) or []
             cvref = [re.search(r'cv\("([^"]+)"\)', v).group(1) for v in vals if v.startswith('cv(')]
-            is_list = tcols[col].get('type') == 'List'
+            is_list = tcols[col].get('type') in ('List', 'Dictionary')
+            is_dict = tcols[col].get('type') == 'Dictionary'  # NAME[id]:NAME[id]
             if col == 'method_codes': allowed = mcodes
             elif cvref: allowed = cvitems(cvref[0])
             else: continue
@@ -43,7 +44,8 @@ def audit(path):
             for cell in df[col]:
                 if cell == '': continue
                 for t in (cell.split(':') if is_list else [cell]):
-                    if t.strip() not in allowed: bad.add(t.strip())
+                    t = re.sub(r'\[[^\]]*\]$', '', t.strip()) if is_dict else t.strip()
+                    if t not in allowed: bad.add(t)
             if bad: problems.append(f'{tname}.{col} [{cvref[0] if cvref else "methodcodes"}]: INVALID {sorted(bad)}')
         # required cols
         req = [c for c, d in tcols.items() if 'required()' in (d.get('validations') or [])]
