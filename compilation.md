@@ -70,7 +70,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia-Greenland | [Kungnat Ring Dyke](pole_notebooks/1275_Kungnat.ipynb) | 1275 | B | 311.7 | 61.2 | 198.6 | 3.4 | 3.3 | 11.0 | Piper et al. (1977) |
 | Laurentia-Greenland | [North Qoroq Intrusion](pole_notebooks/1275_North_Qoroq.ipynb) | 1275 | B | 314.6 | 61.2 | 202.5 | 13.5 | 10.6 | 21.2 | Piper (1992) |
 | Laurentia | [Nain Anorthosite](pole_notebooks/1305_Nain.ipynb) | 1305 | B | 298.2 | 56.5 | 206.8 | 11.8 | 2.5 | 28.2 | Murthy (1978) |
-| Laurentia-Greenland | [Midsommersoe Dolerites](pole_notebooks/1382_Midsommersoe.ipynb) | 1382 | B | 333.4 | 81.6 | 242.0 | 10.0 | 3.5 | 41.7 | Marcussen et al. (1983) |
+| Laurentia-Greenland | [Midsommersoe Dolerites](pole_notebooks/1382_Midsommersoe.ipynb) | 1382 | B | 333.4 | 81.6 | 242.1 | 6.9 | 5.2 | 39.0 | Marcussen et al. (1983) |
 | Laurentia-Greenland | [Victoria Fjord dolerite dykes](pole_notebooks/1382_Victoria.ipynb) | 1382 | B | 315.3 | 81.5 | 232.2 | 12.5 | 4.6 | 38.7 | Abrahamsen et al. (1987) |
 | Laurentia-Greenland | [Zig-Zag Dal Basalts](pole_notebooks/1382_Zigzag.ipynb) | 1382 | B | 334.8 | 81.2 | 242.8 | 12.2 | 3.9 | 44.0 | Marcussen et al. (1983) |
 | Laurentia | [Pilcher, Garnet Range, Libby](pole_notebooks/1385_Garnet_Range.ipynb)&dagger; | 1385 | B | 246.3 | 46.7 | 217.6 | -20.6 | 7.9 | 8.8 | Elston et al. (2002) |
