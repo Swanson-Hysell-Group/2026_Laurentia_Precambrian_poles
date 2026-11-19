@@ -198,7 +198,7 @@ POLE_REFERENCES = {
     'Osler Volcanic Group reverse lower': ['Swanson-Hysell2014b'],
     'Lowermost Mamainse Point volcanics -R1': ['Swanson-Hysell2014a'],
     'Abitibi Dykes': ['Ernst1993a', 'Halls2005a'],
-    'NW Ontario Lamprophyre Dykes': ['Ernst1993a', 'Piispa2018a'],
+    'NW Ontario Lamprophyre Dykes': ['Piispa2018a'],
     'NE-SW Trending Dyke Swarm': ['Piper1992a'],
     'Giant Gabbro Dikes': ['Piper1977a'],
     'South Qoroq Intrusion': ['Piper1992a'],

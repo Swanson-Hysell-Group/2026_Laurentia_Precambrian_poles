@@ -56,7 +56,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia | [Osler Volcanic Group reverse lower](pole_notebooks/1108_Osler_Volcanic_Group.ipynb) | 1108 | A | 272.3 | 48.8 | 218.6 | 40.9 | 4.8 | 54.6 | Swanson-Hysell et al. (2014) |
 | Laurentia | [Lowermost Mamainse Point volcanics -R1](pole_notebooks/1109_Mamainse_Point_Volcanics.ipynb) | 1109 | A | 275.3 | 47.1 | 227.0 | 49.5 | 5.3 | 62.9 | Swanson-Hysell et al. (2014) |
 | Laurentia | [Abitibi Dykes](pole_notebooks/1141_Abitibi.ipynb) | 1141 | A | 279.0 | 48.0 | 213.4 | 50.4 | 12.6 | 54.6 | Ernst et al. (1993) |
-| Laurentia | [NW Ontario Lamprophyre Dykes](pole_notebooks/1144_Lamprophyre.ipynb) | 1144 | A | 273.6 | 48.4 | 223.3 | 57.9 | 9.2 | 61.2 | Piispa et al. (2018) |
+| Laurentia | [NW Ontario Lamprophyre Dykes](pole_notebooks/1144_Lamprophyre.ipynb) | 1144 | A | 273.6 | 48.4 | 223.3 | 58.0 | 9.2 | 61.2 | Piispa et al. (2018) |
 | Laurentia-Greenland | [NE-SW Trending Dyke Swarm](pole_notebooks/1160_NE-SW.ipynb) | 1160 | B | 314.6 | 61.2 | 231.3 | 34.1 | 5.8 | 54.2 | Piper (1992) |
 | Laurentia-Greenland | [Giant Gabbro Dikes](pole_notebooks/1163_Giant_Gabbro.ipynb) | 1163 | B | 313.6 | 60.9 | 227.6 | 42.3 | 9.2 | 56.4 | Piper (1977) |
 | Laurentia-Greenland | [South Qoroq Intrusion](pole_notebooks/1163_South_Qoroq.ipynb) | 1163 | A | 314.6 | 61.2 | 217.0 | 42.2 | 14.9 | 49.6 | Piper (1992) |

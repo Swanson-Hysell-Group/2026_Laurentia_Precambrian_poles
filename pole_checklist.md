@@ -9,7 +9,7 @@ Build-status tracker for each Laurentia pole. A ✓ marks a completed stage; a b
 - MagIC developed — a site-level MagIC contribution (`data/<pole>/sites.txt`) has been built locally.
 - MagIC contributed — the contribution has been uploaded to the MagIC database (earthref.org).
 
-Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 14.
+Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 16.
 
 ## Laurentia
 
@@ -47,8 +47,8 @@ Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC de
 | Lower third Osler volcanics -R (RESULT# 9515; nominal age 1108 Ma) |  | ✓ | ✓ |  |
 | Lowermost Mamainse Point volcanics -R1 (RESULT# 9510; nominal age 1109 Ma) |  | ✓ | ✓ |  |
 | MEAN Nipigon sills and lavas (RESULT# new; nominal age 1111 Ma) |  | ✓ |  |  |
-| Abitibi Dykes (RESULT# 7193; nominal age 1141 Ma) |  | ✓ | ✓ |  |
-| NW Ontario Lamprophyre Dykes and Abitibi Dykes (RESULT# 9887; nominal age 1145 Ma) |  | ✓ | ✓ |  |
+| Abitibi Dykes (RESULT# 7193; nominal age 1141 Ma) |  | ✓ | ✓ | ✓ |
+| NW Ontario Lamprophyre Dykes (RESULT# 9886; nominal age 1144 Ma) |  | ✓ | ✓ | ✓ |
 | Sudbury Dykes Combined (RESULT# 2175; nominal age 1238 Ma) |  | ✓ | ✓ |  |
 | Mackenzie dykes grand mean (RESULT# B+00; nominal age 1267 Ma) |  | ✓ | ✓ |  |
 | Nain Anorthosite (RESULT# 2180; nominal age 1305 Ma) |  | ✓ | ✓ |  |
