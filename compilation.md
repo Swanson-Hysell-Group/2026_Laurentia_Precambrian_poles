@@ -24,7 +24,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Terrane | Unit | Age (Ma) | Rating | Site lon | Site lat | Plon | Plat | A95 | Duluth paleolat | Pole reference |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Laurentia | [Sept-Iles Layered Intrusion](pole_notebooks/565_Sept_Iles.ipynb) | 565 | B | 293.5 | 50.2 | 321.3 | -19.7 | 6.5 | 8.0 | Tanczyk et al. (1987) |
-| Laurentia | [Catoctin Basalts](pole_notebooks/572_Catoctin_Basalts.ipynb) | 568 | B | 281.8 | 38.5 | 306.9 | 42.4 | 16.5 | 62.2 | Meert et al. (1994) |
+| Laurentia | [Catoctin Basalts](pole_notebooks/572_Catoctin_Basalts.ipynb) | 568 | B | 281.8 | 38.5 | 297.2 | 42.8 | 16.7 | 69.0 | Meert et al. (1994) |
 | Laurentia | [Callander Alkaline Complex](pole_notebooks/575_Callander.ipynb) | 575 | B | 280.6 | 46.2 | 300.8 | 46.5 | 5.8 | 67.6 | Symons et al. (1991) |
 | Laurentia | [Baie des Moutons complex A](pole_notebooks/583_Baie_des_Moutons.ipynb) | 583 | B | 301.0 | 50.8 | 331.9 | 42.9 | 11.5 | 45.7 | McCausland et al. (2011) |
 | Laurentia | [Baie des Moutons complex B](pole_notebooks/583_Baie_des_Moutons.ipynb) | 583 | B | 301.0 | 50.8 | 321.9 | -33.9 | 15.7 | -4.2 | McCausland et al. (2011) |

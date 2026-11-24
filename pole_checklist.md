@@ -9,14 +9,14 @@ Build-status tracker for each Laurentia pole. A ✓ marks a completed stage; a b
 - MagIC developed — a site-level MagIC contribution (`data/<pole>/sites.txt`) has been built locally.
 - MagIC contributed — the contribution has been uploaded to the MagIC database (earthref.org).
 
-Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 17.
+Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 18.
 
 ## Laurentia
 
 | Pole | geochronology verified | notebook developed | MagIC developed | MagIC contributed |
 |---|:---:|:---:|:---:|:---:|
 | Sept-Iles Layered Intrusion (RESULT# 1752; nominal age 565 Ma) | ✓ | ✓ | ✓ | ✓ |
-| Catoctin Basalts (RESULT# 7474; nominal age 568 Ma) | ✓ | ✓ | ✓ |  |
+| Catoctin Basalts (RESULT# 7474; nominal age 568 Ma) | ✓ | ✓ | ✓ | ✓ |
 | Callander Alkaline Complex (RESULT# 6458; nominal age 575 Ma) | ✓ | ✓ | ✓ |  |
 | Baie des Moutons A (RESULT# 9364; nominal age 583 Ma) | ✓ | ✓ | ✓ |  |
 | Baie des Moutons B (RESULT# 9365; nominal age 583 Ma) | ✓ | ✓ | ✓ |  |
