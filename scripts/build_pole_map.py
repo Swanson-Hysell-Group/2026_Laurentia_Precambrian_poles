@@ -498,9 +498,27 @@ def short_reference(authors, year):
     authors = "" if pd.isna(authors) else str(authors).strip()
     if "LULE" in authors.upper() and "WORKING GROUP" in authors.upper():
         return f"Luleå Working Group Mean ({fmt_year(year)})"
-    surname = authors.split(",")[0].strip() if authors else "—"
-    etal = " et al." if authors.count(",") > 1 else ""
-    return f"{surname}{etal} ({fmt_year(year)})"
+    if not authors:
+        return f"— ({fmt_year(year)})"
+    # Count authors rather than commas: two authors give 'First and Second',
+    # three or more 'First et al.'. Only the first entry counts when entries
+    # are joined with ';' (several studies, or one author per entry).
+    segments = authors.split(";")
+    first = segments[0]
+    surname = first.split(",")[0].strip()
+    if "et al" in first:
+        return f"{re.sub(r'\s*et al\.?.*$', '', surname)} et al. ({fmt_year(year)})"
+    if re.match(r"[^,]+,\s*[A-Z][a-z]", first) and " and " in first:
+        # BibTeX style with given names: 'Surname, Given and Surname, Given'
+        names = [s.split(",")[0].strip() for s in re.split(r"\s+and\s+", first)]
+    else:
+        # 'Surname, A. B., & Surname, C.' or 'Surname,A.B., Surname,C.'
+        names = re.findall(r"([A-Z][^,;&]*?),\s*(?:[A-Z]\.\s*-?)+", first)
+        names = [re.sub(r"^(?:and|&)\s+", "", n.strip()) for n in names] or [surname]
+    if len(names) == 2:
+        return f"{names[0]} and {names[1]} ({fmt_year(year)})"
+    etal = " et al." if len(names) > 2 or len(segments) > 1 else ""
+    return f"{names[0]}{etal} ({fmt_year(year)})"
 
 
 def fmt_year(year):
