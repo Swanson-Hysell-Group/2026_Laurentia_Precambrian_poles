@@ -1159,7 +1159,7 @@ TEX_CAPTION = (
     r'given as a superscript and a subscript. Site and pole positions are '
     r'present-day; the Greenland and Scotland poles are rotated back into '
     r'Laurentia coordinates before their Duluth paleolatitude is computed, so '
-    r'that column is comparable across the whole table. ``MagIC'' gives the '
+    r"that column is comparable across the whole table. ``MagIC'' gives the "
     r'identifier of the MagIC contribution holding the site-level data and the '
     r'pole, linked to it at earthref.org/MagIC.')
 
