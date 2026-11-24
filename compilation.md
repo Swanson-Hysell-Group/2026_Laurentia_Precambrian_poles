@@ -28,7 +28,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia | [Callander Alkaline Complex](pole_notebooks/575_Callander.ipynb) | 575 | B | 280.6 | 46.2 | 300.8 | 46.5 | 5.8 | 67.6 | Symons and Chiasson (1991) |
 | Laurentia | [Baie des Moutons complex A](pole_notebooks/583_Baie_des_Moutons.ipynb) | 583 | B | 301.0 | 50.8 | 331.9 | 42.9 | 11.5 | 45.7 | McCausland et al. (2011) |
 | Laurentia | [Baie des Moutons complex B](pole_notebooks/583_Baie_des_Moutons.ipynb) | 583 | B | 301.0 | 50.8 | 321.9 | -33.9 | 15.7 | -4.2 | McCausland et al. (2011) |
-| Laurentia | [Long Range Dykes](pole_notebooks/615_Long_Range.ipynb) | 615 | B | 303.3 | 53.7 | 165.4 | -12.4 | 20.8 | -17.5 | Murthy et al. (1992) |
+| Laurentia | [Long Range Dykes](pole_notebooks/615_Long_Range.ipynb) | 615 | B | 303.3 | 53.7 | 165.4 | -12.3 | 20.0 | -17.5 | Murthy et al. (1992) |
 | Laurentia | [Franklin event grand mean](pole_notebooks/719_Franklin_LIP.ipynb) | 719 | A | 275.4 | 73.0 | 162.1 | 6.7 | 3.0 | -5.7 | Denyszyn et al. (2009) |
 | Laurentia | [Chuar Group (combined)](pole_notebooks/755_Chuar_Group.ipynb)&dagger; | 755 | A | 248.1 | 36.2 | 163.6 | 7.5 | 4.2 | -4.2 | Weil et al. (2020) |
 | Laurentia | [Uinta Mountain Group](pole_notebooks/759_Uinta_Mountain_Group.ipynb)&dagger; | 759 | B | 250.7 | 40.8 | 160.6 | 1.9 | 2.1 | -10.3 | Weil et al. (2006) |

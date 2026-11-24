@@ -15,3 +15,6 @@ plan.md
 pole_notebooks/1756_Wharton_Group.ipynb
 data/1756_Wharton_Group/sites.txt
 magic_contribution_handoff.md
+
+# Site-coordinate check image that reproduces a published figure (see the script docstring)
+data/615_Long_Range/contribution_build/Long_Range_site_coordinates_on_Fig2.png

@@ -9,7 +9,7 @@ Build-status tracker for each Laurentia pole. A ✓ marks a completed stage; a b
 - MagIC developed — a site-level MagIC contribution (`data/<pole>/sites.txt`) has been built locally.
 - MagIC contributed — the contribution has been uploaded to the MagIC database (earthref.org).
 
-Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 21.
+Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 22.
 
 ## Laurentia
 
@@ -20,7 +20,7 @@ Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC de
 | Callander Alkaline Complex (RESULT# 6458; nominal age 575 Ma) | ✓ | ✓ | ✓ | ✓ |
 | Baie des Moutons A (RESULT# 9364; nominal age 583 Ma) | ✓ | ✓ | ✓ | ✓ |
 | Baie des Moutons B (RESULT# 9365; nominal age 583 Ma) | ✓ | ✓ | ✓ | ✓ |
-| Long Range Dykes (RESULT# 6934-6936; nominal age 615 Ma) | ✓ | ✓ | ✓ |  |
+| Long Range Dykes (RESULT# 6934; nominal age 615 Ma) | ✓ | ✓ | ✓ | ✓ |
 | Franklin event grand mean (RESULT# new; nominal age 719 Ma) |  | ✓ | ✓ |  |
 | Kwagunt Formation (RESULT# 9981; nominal age 751 Ma) |  | ✓ | ✓ |  |
 | Uinta Mountain Group (RESULT# 9290; nominal age 750 Ma) | ✓ | ✓ | ✓ |  |

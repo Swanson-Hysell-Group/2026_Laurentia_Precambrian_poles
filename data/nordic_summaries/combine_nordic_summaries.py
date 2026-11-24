@@ -303,7 +303,7 @@ KEY_POLES = {
                    'his call, but this is the weakest key pole in the '
                    'compilation and warrants discussion in the text -- his '
                    'pole rests on 5 dykes with A95 18 deg, and the pole '
-                   'recreated here has A95 20.8 deg, so secular variation is '
+                   'recreated here has A95 20.0 deg, so secular variation is '
                    'unlikely to be averaged. It also sets the effective floor '
                    'on how permissive his quality criterion is'),
     'Franklin event grand mean': (True, 'x', 'Buchan (2013) Table 1'),
