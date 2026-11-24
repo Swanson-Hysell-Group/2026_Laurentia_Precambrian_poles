@@ -177,6 +177,20 @@ WORKBOOK_CORRECTIONS = {
 #   sampling behind R2 without moving any criterion across a threshold. The
 #   GPMDB result number is kept, as that result's data are included in the new
 #   mean, and the Comment column records the supersession.
+#
+#   Minto dykes -- Hamilton, Goutier and Buchan (2016, Acta Geologica Sinica
+#   (English Edition) 90 supp. 1:69-70, doi:10.1111/1755-6724.12892) correlate
+#   the Lac Shpogan dykes of the James Bay area (Buchan et al., 2007) with the
+#   Minto dykes (Buchan et al., 1998), reporting a 1999 +/- 2 Ma U-Pb baddeleyite
+#   age for the Lac Shpogan swarm, and give a combined nine-dyke pole of 31.4 N,
+#   171.2 E, A95 12. The pole adopted here is the mean of those nine dyke VGPs
+#   recalculated from the published site data (31.4 N, 171.2 E, A95 12.4 at the
+#   dykes' mean locality, 56.0 N, 284.4 E), replacing the six-dyke Minto pole
+#   of the workbook (38.7 N, 171.5 E, A95 13.1; Evans and Halls, 2010). The
+#   dykes come from two areas, so the combined result has no single mean
+#   direction; the direction, its statistics and the sample count are left
+#   blank rather than carried over from the six-dyke mean. Age, grade and the
+#   GPMDB result number are unchanged.
 SUPERSEDING_RESULTS = {
     "Indin dykes": {
         "SLONG": (245.6, 245.5),
@@ -224,6 +238,46 @@ SUPERSEDING_RESULTS = {
                     "precisely dated dyke (site I05, 2126 +/- 2 Ma) carries an "
                     "upward remanence, so the dated polarity group is one that "
                     "an SED-only mean would exclude."),
+    },
+    "Minto dykes": {
+        "SLAT": (57, 56.0),
+        "SLONG": (285, 284.4),
+        "B": (6, 9),
+        "N": (44, None),
+        "DEC": (130, None),
+        "INC": (-37.2, None),
+        "INCf": (-37.2, None),
+        "KD": (1000, None),
+        "ED95": (0.1, None),
+        "PLAT": (38.7, 31.4),
+        "PLONG": (171.5, 171.2),
+        "PLATf": (38.7, 31.4),
+        "PLONf": (171.5, 171.2),
+        "DP": (13.1, 12.4),
+        "DM": (13.1, 12.4),
+        "A95": (13.1, 12.4),
+        "DPf": (13.1, 12.4),
+        "DMf": (13.1, 12.4),
+        "A95f": (13.1, 12.4),
+        "POLE AUTHORS": ("Evans,D.A.D., Halls,H.C.",
+                         "Hamilton, M. A., Goutier, J., & Buchan, K. L."),
+        "YEAR": (2010, 2016),
+        "JOURNAL": ("Precambrian Res.", "Acta Geologica Sinica (English Edition)"),
+        "VOLUME": (183, "90 (supp. 1)"),
+        "VPAGES": ("474-489", "69-70"),
+        "TITLE": ("Restoring Proterozoic deformation within the Superior craton",
+                  "Minto Large Igneous Province: A 2.00 Ga Mafic Magmatic Event in "
+                  "the Eastern Superior Craton Based on U-Pb Baddeleyite "
+                  "Geochronology and Paleomagnetism"),
+        "Comment": ("Overlaps with Keweenawan Track",
+                    "Mean of the VGPs of nine dykes of the Minto and Lac Shpogan "
+                    "swarms (Buchan et al., 1998, Table 2; Buchan et al., 2007, "
+                    "Table 1), combined following Hamilton et al. (2016), who "
+                    "report a 1999 +/- 2 Ma U-Pb baddeleyite age for the Lac "
+                    "Shpogan swarm and the same pole (31.4 N, 171.2 E, A95 12). "
+                    "The dykes come from two areas, so no mean direction is "
+                    "given; the site position is their mean locality. Overlaps "
+                    "with the Keweenawan track."),
     },
 }
 
