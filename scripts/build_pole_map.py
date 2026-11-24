@@ -507,7 +507,8 @@ def short_reference(authors, year):
     first = segments[0]
     surname = first.split(",")[0].strip()
     if "et al" in first:
-        return f"{re.sub(r'\s*et al\.?.*$', '', surname)} et al. ({fmt_year(year)})"
+        lead = re.sub(r"\s*et al\.?.*$", "", surname)
+        return f"{lead} et al. ({fmt_year(year)})"
     if re.match(r"[^,]+,\s*[A-Z][a-z]", first) and " and " in first:
         # BibTeX style with given names: 'Surname, Given and Surname, Given'
         names = [s.split(",")[0].strip() for s in re.split(r"\s+and\s+", first)]
