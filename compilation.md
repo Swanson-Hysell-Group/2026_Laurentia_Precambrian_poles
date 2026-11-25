@@ -35,7 +35,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia | [Gunbarrel LIP](pole_notebooks/780_Gunbarrel.ipynb) | 780 | A | 250.1 | 45.0 | 151.5 | 3.2 | 8.0 | -15.3 | Ding et al. (2025) |
 | Laurentia | [Adirondack metamorphic anorthosite](pole_notebooks/887_Adirondack.ipynb) | 887 | B | 286.1 | 44.2 | 143.5 | -27.5 | 12.5 | -42.8 | Brown and McEnroe (2012) |
 | Laurentia-Scotland | [Torridon Group](pole_notebooks/975_Torridon.ipynb)&dagger; | 975 | B | 354.3 | 57.9 | 220.9 | -17.7 | 7.1 | -8.6 | Luleå Working Group Mean (2009) |
-| Laurentia | [Jacobsville Formation](pole_notebooks/990_Jacobsville.ipynb)&dagger; | 990 | A | 271.8 | 47.3 | 186.2 | -14.2 | 2.7 | -4.8 | Zhang et al. (2024) |
+| Laurentia | [Jacobsville Formation](pole_notebooks/990_Jacobsville.ipynb)&dagger; | 990 | A | 271.5 | 47.1 | 185.5 | -14.0 | 2.7 | -5.1 | Zhang et al. (2024) |
 | Laurentia | [Upper Freda Formation](pole_notebooks/1045_Upper_Freda.ipynb)&dagger; | 1045 | B | 271.0 | 47.0 | 169.8 | 4.7 | 2.1 | -2.1 | Fuentes et al. (2025) |
 | Laurentia | [Lower Freda Formation](pole_notebooks/1075_Lower_Freda.ipynb)&dagger; | 1075 | B | 270.4 | 46.8 | 179.7 | 1.2 | 2.4 | 2.1 | Henry et al. (1977) |
 | Laurentia | [Nonesuch Formation](pole_notebooks/1078_Nonesuch.ipynb)&dagger; | 1077 | A | 269.5 | 46.5 | 180.4 | 3.9 | 1.7 | 4.6 | Slotznick et al. (2024) |
@@ -139,7 +139,7 @@ Where the directional distribution of a unit permits it, *f* is determined from 
 | [Chuar Group (combined)](pole_notebooks/755_Chuar_Group.ipynb) | 755 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 167.6 | 10.8 | 7.9 | 4.2 | -4.3 | 0.9 |
 | [Uinta Mountain Group](pole_notebooks/759_Uinta_Mountain_Group.ipynb) | 759 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 160.1 | 1.3 | 2.2 | 2.2 | -11.3 | -11.1 |
 | [Torridon Group](pole_notebooks/975_Torridon.ipynb) | 975 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 213.3 | -29.6 | 16.0 | 7.2 | -8.6 | -22.2 |
-| [Jacobsville Formation](pole_notebooks/990_Jacobsville.ipynb) | 990 | E/I (Tauxe & Kent, 2004) | 0.64 (0.51&ndash;0.83) | 183.4 | -16.9 | 4.1 | 3.1 | -4.8 | -8.6 |
+| [Jacobsville Formation](pole_notebooks/990_Jacobsville.ipynb) | 990 | E/I (Tauxe & Kent, 2004) | 0.64 (0.51&ndash;0.83) | 183.4 | -16.9 | 4.1 | 3.1 | -5.1 | -8.6 |
 | [Upper Freda Formation](pole_notebooks/1045_Upper_Freda.ipynb) | 1045 | SVEI (Tauxe et al., 2024) | 0.73 (0.59&ndash;0.87) | 168.8 | 3.6 | 2.8 | 2.4 | -2.1 | -3.6 |
 | [Lower Freda Formation](pole_notebooks/1075_Lower_Freda.ipynb) | 1075 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 179.8 | 1.4 | 2.4 | 2.4 | 2.1 | 2.3 |
 | [Nonesuch Formation](pole_notebooks/1078_Nonesuch.ipynb) | 1077 | E/I (Tauxe & Kent, 2004) | 0.43 (0.38&ndash;0.62) | 182.9 | 6.6 | 2.8 | 2.0 | 4.6 | 8.2 |

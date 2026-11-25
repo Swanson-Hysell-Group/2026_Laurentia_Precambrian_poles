@@ -1,0 +1,5 @@
+tab delimited	ages
+location	age	age_sigma	age_unit	method_codes	citations	timescale_eon	timescale_era	timescale_period	description
+Jacobsville Formation	1003.21	1.115	Ma	GM-UPB	10.1130/G49439.1	Proterozoic	Mesoproterozoic	Stenian	Maximum depositional age: youngest CA-ID-TIMS detrital zircon date of sample AF1-29.3, Agate Falls section (46.48046N, 89.09026W), 1003.21 +/- 2.23 Ma (2 sigma; Hodgin et al., 2022).
+Jacobsville Formation	992.51	0.32	Ma	GM-UPB	10.1130/G49439.1	Proterozoic	Neoproterozoic	Tonian	Maximum depositional age: youngest CA-ID-TIMS detrital zircon date of sample SC18-1, Sandstone Creek (46.69132N, 89.16658W), 992.51 +/- 0.64 Ma (2 sigma; Hodgin et al., 2022).
+Jacobsville Formation	985.5	17.9	Ma	GM-UPB	10.1130/G49439.1	Proterozoic	Neoproterozoic	Tonian	Minimum age constraint: LA-ICP-MS U-Pb lower-intercept date of late-kinematic vein calcite in the brecciated Keweenaw fault (sample LLB2, 47.38929N, 87.97621W), 985.5 +/- 35.8 Ma (2 sigma; Hodgin et al., 2022); the Jacobsville Formation is folded in the footwall of the fault.

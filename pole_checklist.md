@@ -9,7 +9,7 @@ Build-status tracker for each Laurentia pole. A ✓ marks a completed stage; a b
 - MagIC developed — a site-level MagIC contribution (`data/<pole>/sites.txt`) has been built locally.
 - MagIC contributed — the contribution has been uploaded to the MagIC database (earthref.org).
 
-Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 27.
+Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC developed 56, MagIC contributed 28.
 
 ## Laurentia
 
@@ -26,7 +26,7 @@ Totals: 101 poles — geochronology verified 39, notebook developed 94, MagIC de
 | Uinta Mountain Group (RESULT# 9290; nominal age 759 Ma) | ✓ | ✓ | ✓ | ✓ |
 | Gunbarrel LIP (nominal age 780 Ma) |  | ✓ | ✓ | ✓ |
 | Adirondack metamorphic anorthosite (nominal age 887 Ma) |  | ✓ | ✓ | ✓ |
-| Jacobsville Formation (nominal age 990 Ma) |  | ✓ | ✓ |  |
+| Jacobsville Formation (nominal age 990 Ma) |  | ✓ | ✓ | ✓ |
 | Upper Freda Formation (Fuentes et al., 2025; nominal age 1045 Ma) | ✓ | ✓ | ✓ |  |
 | Lower Freda Formation (RESULT# 2051; nominal age 1075 Ma) |  |  |  |  |
 | Nonesuch Formation (RESULT# 2053; nominal age 1078 Ma) | ✓ | ✓ | ✓ | ✓ |
