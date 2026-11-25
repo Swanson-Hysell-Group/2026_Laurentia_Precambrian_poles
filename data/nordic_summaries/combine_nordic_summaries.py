@@ -1069,15 +1069,15 @@ def _east_longitude(value):
 def _age_cell(nominal, lomagage, himagage):
     """Nominal age with its magnetization-age bounds as scripts.
 
-    The upper bound is set as a superscript and the lower bound as a
-    subscript, so the whole age fits on one line at the reduced script size
-    (e.g. ``1109`` with ``1114`` above and ``1104`` below).
+    The minimum (younger) age is set as a superscript and the maximum (older)
+    age as a subscript, so the whole age fits on one line at the reduced
+    script size (e.g. ``1109`` with ``1104`` above and ``1114`` below).
     """
     age = _number(nominal, 0)
     lo, hi = _number(lomagage, 0), _number(himagage, 0)
     if '--' in (lo, hi):
         return age
-    return f'{age}$^{{{hi}}}_{{{lo}}}$'
+    return f'{age}$^{{{lo}}}_{{{hi}}}$'
 
 
 MAGIC_URL = 'https://earthref.org/MagIC/{}'
@@ -1141,8 +1141,8 @@ TEX_CAPTION = (
     r'and running through the remainder of the Proterozoic, listed from '
     r'youngest to oldest. Each pole is recalculated from '
     r"site-level data in the accompanying compilation. ``Age (Ma)'' gives the "
-    r'nominal age of magnetization, with its upper bound as a superscript '
-    r'and its lower bound as a subscript. '
+    r'nominal age of magnetization, with its minimum age as a superscript '
+    r'and its maximum age as a subscript. '
     r"``Rating'' is the Nordic reliability grade (A/B). ``Key pole'' "
     r'($\checkmark$) marks poles meeting the key-pole criteria of '
     r'\citet{Buchan2013a}: a precisely determined age (U--Pb, or occasionally '

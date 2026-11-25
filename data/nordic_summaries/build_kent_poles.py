@@ -251,11 +251,11 @@ METHOD_LABELS = {
 
 
 def _f_cell(f, f_low, f_high):
-    """Flattening factor with its 95% bounds as scripts, matching the age cell.
+    """Flattening factor with its 95% bounds as scripts.
 
     The upper bound is set as a superscript and the lower bound as a subscript
     so the whole entry fits on one line (e.g. ``0.62`` with ``0.91`` above and
-    ``0.43`` below), as ``combine_nordic_summaries._age_cell`` does for ages.
+    ``0.43`` below), as for the Duluth paleolatitude bounds.
     Returns a dash when no flattening factor is recorded.
     """
     if not str(f).strip():
