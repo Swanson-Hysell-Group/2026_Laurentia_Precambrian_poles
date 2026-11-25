@@ -1,0 +1,3 @@
+tab delimited	ages
+location	age	age_sigma	age_unit	method_codes	citations	timescale_eon	timescale_era	timescale_period	description
+Lake Road LRa	1051.58	0.555	Ma	GM-UPB	10.1029/2024TC008415	Proterozoic	Mesoproterozoic	Stenian	Maximum depositional age of the upper Freda Formation: youngest CA-ID-TIMS detrital zircon 206Pb/238U date from samples LRa-67.01 and LRa-38.39 of the LRa section, 1051.58 +/- 1.11 Ma (2 sigma; Hodgin et al., 2024).
