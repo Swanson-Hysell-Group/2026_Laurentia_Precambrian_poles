@@ -584,9 +584,10 @@ KEY_POLES = {
 
     # -- Grenville-age and Paleoproterozoic remainder.
     'Adirondack metamorphic anorthosite': (
-        False, '', 'a cooling (exhumation) pole with no field test, and the '
-                   'age of magnetization is set by a thermochronologic model '
-                   'rather than dated directly (+/-23 Myr)'),
+        False, '', 'a cooling (exhumation) pole with a positive inverse '
+                   'baked-contact test (Zhang et al., 2026) whose age of '
+                   'magnetization is set by a thermochronologic model rather '
+                   'than dated directly (+/-23 Myr)'),
     'Nain Anorthosite': (
         False, '', 'no field test, and the age is uncertain to +/-23 Myr'),
     'Wharton Group': (

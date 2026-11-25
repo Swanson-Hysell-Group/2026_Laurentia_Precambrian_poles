@@ -33,7 +33,7 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia | [Chuar Group (combined)](pole_notebooks/755_Chuar_Group.ipynb)&dagger; | 755 | A | 248.1 | 36.2 | 163.1 | 7.7 | 4.1 | -4.3 | Eyster et al. (2020) |
 | Laurentia | [Uinta Mountain Group](pole_notebooks/759_Uinta_Mountain_Group.ipynb)&dagger; | 759 | B | 250.7 | 40.8 | 159.9 | 1.2 | 2.2 | -11.3 | Weil et al. (2006) |
 | Laurentia | [Gunbarrel LIP](pole_notebooks/780_Gunbarrel.ipynb) | 780 | A | 250.1 | 45.0 | 151.5 | 3.2 | 8.0 | -15.3 | Ding et al. (2025) |
-| Laurentia | [Adirondack metamorphic anorthosite](pole_notebooks/887_Adirondack.ipynb) | 887 | B | 286.1 | 44.2 | 143.4 | -25.2 | 12.9 | -41.4 | Brown et al. (2012) |
+| Laurentia | [Adirondack metamorphic anorthosite](pole_notebooks/887_Adirondack.ipynb) | 887 | B | 286.1 | 44.2 | 143.5 | -27.5 | 12.5 | -42.8 | Brown and McEnroe (2012) |
 | Laurentia-Scotland | [Torridon Group](pole_notebooks/975_Torridon.ipynb)&dagger; | 975 | B | 354.3 | 57.9 | 220.9 | -17.7 | 7.1 | -8.6 | Luleå Working Group Mean (2009) |
 | Laurentia | [Jacobsville Formation](pole_notebooks/990_Jacobsville.ipynb)&dagger; | 990 | A | 271.8 | 47.3 | 186.2 | -14.2 | 2.7 | -4.8 | Zhang et al. (2024) |
 | Laurentia | [Upper Freda Formation](pole_notebooks/1045_Upper_Freda.ipynb)&dagger; | 1045 | B | 271.0 | 47.0 | 169.8 | 4.7 | 2.1 | -2.1 | Fuentes et al. (2025) |
