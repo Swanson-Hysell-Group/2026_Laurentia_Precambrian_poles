@@ -506,7 +506,8 @@ KEY_POLES = {
     # counts and confidence circles of this order do not disqualify.
     'Uinta Mountain Group': (
         False, '', 'no field test; the age rests on a 766.3 Ma detrital-zircon '
-                   'maximum against a correlation-based minimum of ca. 730 Ma'),
+                   'maximum against a minimum of ca. 751 Ma (Re-Os, basal Awatubi '
+                   'Member of the Chuar Group, via the Red Pine-Kwagunt correlation)'),
     'Baie des Moutons complex A': (
         False, '', 'baked-contact tests inconclusive (no stable remanence in '
                    'the host syenite); Buchan section 4.1 holds that an '

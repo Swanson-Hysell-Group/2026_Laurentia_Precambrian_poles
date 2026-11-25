@@ -1,0 +1,196 @@
+# Weil, Geissman & Ashby (2006) Precambrian Research 147, 234-259, doi:10.1016/j.precamres.2006.01.017
+# Table 1 (T1, east/west-directed ChRM) and Table 2 (T2, north-directed component), transcribed 2026-09-28 from the
+# born-digital text layer (pdftotext -layout) and checked row by row against page images (pp. 242-246).
+# Values exactly as printed (including paper errors; see build_uinta_contribution.py). flag: a = rejected, direction >2
+# angular standard deviations from the mean; b = rejected, alpha95 > 15; c = no interpretable results. dash = not given.
+# Dip of IC-AW-02 is printed as slash-6 in the paper (a typesetting error; stored as -). Minus signs normalized to ASCII.
+table	locality	site	flag	strike	dip	N_N0	dec_geo	inc_geo	alpha95	k	dec_tc	inc_tc
+T1	Sheep Creek Canyon	SC 2	a	325	81	5/11	104.5	36.0	11.5	45.0	97.9	-25.3
+T1	Sheep Creek Canyon	SC 5	a	324	80	4/12	102.6	58.7	12.7	53.0	77.4	-11
+T1	Sheep Creek Canyon	SC 6	a	325	78	7/12	114.0	31.3	12.6	23.8	105.7	-18.8
+T1	Sheep Creek Canyon	SC 9	b	293	43	3/20	97.5	-8.2	17.1	52.9	107.2	-16.5
+T1	Sheep Creek Canyon	SC 10	a	301	55	3/3	81.2	33.3	11.9	108.4	71.3	-7.1
+T1	Sheep Creek Canyon	SC 11		296	39	12/12	98.1	-12.5	4.1	115.0	110	-20.9
+T1	Sheep Creek Canyon	SC 12		297	36	12/14	95.3	6.5	5.3	69.2	95.5	-7.1
+T1	Sheep Creek Canyon	SC 13		286	38	2/7	88.7	15.6	6.5	1502.0	83	2
+T1	Sheep Creek Canyon	SC 13	a	286	38	3/7	82.3	32.9	12.5	98.1	68	12.7
+T1	Sheep Creek Canyon	SC 14		301	39	4/15	105.3	6.4	3.4	718.1	104.7	-4.7
+T1	Sheep Creek Canyon	SC 15		298	30	4/4	108.0	6.4	11.6	63.8	106.2	0.6
+T1	Sheep Creek Canyon	SC 16		315	41	5/5	105.9	6.0	9.5	65.6	108.5	-13.8
+T1	Sheep Creek Canyon	SC 17		308	41	9/9	90.5	10.2	7.5	48.1	91.9	-15
+T1	Sheep Creek Canyon	SC 19		303	40	5/14	96.2	11.7	9.6	64.6	94.8	-7.4
+T1	Sheep Creek Canyon	SC 20		304	35	11/11	97.4	6.0	5.7	64.6	98.5	-9.8
+T1	Sheep Creek Canyon	SC 21	b	305	52	3/13	273.1	62.9	20.7	36.5	0	47.5
+T1	Sheep Creek Canyon	SC 22		287	30	14/17	90.8	22.3	6.4	39.3	82.1	11.5
+T1	Sheep Creek Canyon	SC 23		287	30	8/12	98.3	0.5	7.5	56.0	99.2	-3.9
+T1	Sheep Creek Canyon	SC 24		267	20	4/5	95.1	-1.2	3.6	665.2	95	1.6
+T1	Sheep Creek Canyon	SC 26		257	22	8/8	89.8	-0.4	5.9	55.9	89	4.4
+T1	Sheep Creek Canyon	SC 71		294	33	5/8	99.5	-1.8	11.3	47.2	102.7	-9.4
+T1	Sheep Creek Canyon	SC 72	b	318	25	5/8	96.4	18.4	15.9	24.0	93.2	1.1
+T1	Sheep Creek Canyon	SC 75		294	39	7/11	89.6	0.1	13.2	22.0	94.5	-15
+T1	Sheep Creek Canyon	SC 77		284	32	8/8	90.6	11.1	7.5	66.3	86.8	2.5
+T1	Sheep Creek Canyon	SC 80		296	27	7/7	86.6	20.7	10.2	36.0	81	6.1
+T1	Sheep Creek Canyon	SC 83		284	30	8/8	103.3	-11.1	2.5	502.2	109	-9.9
+T1	Sheep Creek Canyon	SC 84		278	95	7/7	90.9	-0.9	7.3	70.1	99.5	-7
+T1	Sheep Creek Canyon	SC 85	a	280	30	8/8	77.2	17.9	8.2	46.4	71.7	4.7
+T1	Sheep Creek Canyon	SC 86		267	23	7/7	88.5	9.9	8.3	53.5	84.5	9.7
+T1	Sheep Creek Canyon	SC 87		279	35	7/7	89.6	-11.8	7.3	69.4	98.2	-15
+T1	Sheep Creek Canyon	SC 88	a	292	27	5/6	74.3	10.7	11.6	44.3	73.4	-6.2
+T1	Sheep Creek Canyon	SC 89		247	15	9/12	99.3	-19.5	11.0	23.0	102.7	-11.1
+T1	Sheep Creek Canyon	SC 90		247	15	6/6	91.1	-21.8	9.6	50.1	95.6	-15.1
+T1	Browne Lake	BL 54	c	278	5	-	-	-	-	-	-	-
+T1	Browne Lake	BL 55	a	278	5	5/5	41.7	57.9	6.4	114.9	37.8	53.7
+T1	Browne Lake	BL 56		277	11	5/10	82.9	-5.8	13.1	35.1	84.3	-8.3
+T1	Carter Creek	CC 57		285	12	8/11	263.2	-13.4	5.8	-	261	-8.7
+T1	Carter Creek	CC 58		232	10	10/12	266.4	-6.7	4.4	-	265	-12.3
+T1	Carter Creek	CC 59		277	9	5/8	270.4	-11.8	12.9	-	268.6	-10.6
+T1	Carter Creek	CC 60		300	5	4/8	272.0	-5.0	3.4	-	271.7	-2.6
+T1	Carter Creek	CC 61		281	1	9/11	263.9	-5.9	11.7	-	263.8	-5.6
+T1	Dowd Springs non-fold test rocks	DS 29	b	-	0	7/10	98.7	-20.1	30.7	4.8	98.7	-20.1
+T1	Dowd Springs non-fold test rocks	DS 29	a	-	0	5/10	281.1	-42.2	14.3	30.3	281.1	-42.2
+T1	Dowd Springs non-fold test rocks	DS 30	a	107	4	6/10	290.9	-72.2	8.1	69.2	302.9	-71.5
+T1	Dowd Springs non-fold test rocks	DS 31	b	217	3	8/11	107.1	3.3	20.6	8.2	107	6.1
+T1	Dowd Springs non-fold test rocks	DS 32	b	-	0	5/10	282.0	-36.1	24.0	11.1	282	-36.1
+T1	Dowd Springs non-fold test rocks	DS 33	b	132	7	3/10	97.0	-14.7	19.9	39.5	95.7	-10.6
+T1	Dowd Springs non-fold test rocks	DS 34		132	7	9/10	101.9	-5.0	10.8	23.7	101.6	-1.5
+T1	Dowd Springs non-fold test rocks	DS 35		99	4	10/11	103.8	-7.2	8.8	31.1	103.3	-7.5
+T1	Dowd Springs non-fold test rocks	DS 36		102	6	9/11	108.7	-23.0	9.3	31.4	106.1	-23.6
+T1	Dowd Springs non-fold test rocks	DS 37		120	10	9/10	107.6	6.6	12.4	18.3	108.9	8.6
+T1	Dowd Springs non-fold test rocks	DS 38		102	12	15/15	91.7	-12.7	10.7	13.7	89.3	-10.3
+T1	Dowd Springs fold test rocks	DS 39		63	19	4/5	261.7	-0.2	11.5	48.33	260.8	11.5
+T1	Dowd Springs fold test rocks	DS 40		63	19	4/5	257.8	-38.7	12.7	64.10	270.5	12.7
+T1	Dowd Springs fold test rocks	DS 41		63	19	3/5	261.2	-19.4	8.5	139.59	266.3	8.5
+T1	Dowd Springs fold test rocks	DS 42		221	14	3/4	271.2	-0.6	14.8	46.69	270.3	14.8
+T1	Dowd Springs fold test rocks	DS 43		221	14	3/5	276.4	8.2	12.2	32.10	276.7	12.2
+T1	Dowd Springs fold test rocks	DS 44		221	14	5/5	271.4	-6.8	7.9	103.90	269.4	7.9
+T1	Flaming Gorge Section	FG-AW-01		236	18	5/6	270.8	-9.3	16.5	57.0	267	-19
+T1	Flaming Gorge Section	FG-AW-02		236	18	6/6	264.4	-10.5	9.4	51.4	260	-18
+T1	Flaming Gorge Section	FG-AW-03		236	18	4/5	274.0	-7.6	11.8	110.2	271	-19
+T1	Flaming Gorge Section	FG-AW-04		236	18	6/6	255.6	4.6	11.4	35.4	257	-1
+T1	Flaming Gorge Section	FG-GA-01		232	15	5/5	264.9	-5.3	6.6	135.2	261	-18
+T1	Flaming Gorge Section	FG-GA-02		220	20	6/6	268.4	-1.0	20.1	15.5	266	-16
+T1	Flaming Gorge Section	FG-GA-03		229	17	5/6	266.5	-3.4	13.3	34.0	265	-13
+T1	Flaming Gorge Section	FG-GA-04		205	17	5/6	262.2	7.8	10.4	54.7	262	-6
+T1	Flaming Gorge Section	FG-GA-05	c	236	16	-	-	-	-	-	-	-
+T1	Flaming Gorge Section	FG-GA-06		238	18	5/6	275.1	0.9	9.1	72.0	274	-10
+T1	Flaming Gorge Section	FG-GA-07		237	18	6/6	271.1	-3.1	8.3	65.7	269	-13
+T1	Flaming Gorge Section	FG-GA-08		237	18	6/6	259.1	-3.0	6.7	101.8	257	-10
+T1	Flaming Gorge Section	FG 48		250	18	4/11	275.2	-8.2	4.4	-	271.7	-15.4
+T1	Flaming Gorge Section	FG 49		273	18	6/10	267.7	-5.7	8.1	-	266.2	-3.8
+T1	Flaming Gorge Section	FG 50	a	254	20	7/11	295.3	-10.3	8.9	-	290.6	-23
+T1	Flaming Gorge Section	FG 51		268	16	5/7	275.1	-3.1	3.2	-	274	-4.9
+T1	Flaming Gorge Section	FG 52		268	18	5/13	279.2	-12.1	8.3	-	274.9	-15
+T1	Flaming Gorge Section	FG 53		296	15	4/5	275.5	2.5	7.5	-	276.8	7.6
+T1	Bull Canyon	BC 01		29	13	8/8	270.6	5.9	6.0	101.1	267.9	8.8
+T1	Bull Canyon	BC 02	b	55	16	8/8	280.2	6.2	16.6	13.9	277.2	7.3
+T1	Bull Canyon	BC 03		16	19	6/10	267.3	-5.9	14.4	23.4	267	12.1
+T1	Bull Canyon	BC 04	b	51	20	9/9	276.4	-2.2	20.5	8.0	271.8	1.2
+T1	Bull Canyon	BC 05		51	20	7/9	274.2	10.0	14.2	22.5	272.3	8.7
+T1	Bull Canyon	BC 06		51	20	10/10	269.0	5.1	5.8	71.9	264.9	12.1
+T1	Bull Canyon	BC 07		49	12	9/9	279.4	2.5	8.4	44.4	277.9	5.8
+T1	Bull Canyon	BC 08		89	17	9/14	282.9	2.3	9.2	37.7	281.8	6.2
+T1	Bull Canyon	BC 09	a	19	12	10/10	2.1	56.7	4.4	121.3	20.1	58.2
+T1	Bull Canyon	BC 10	b	99	2	7/13	267.1	8.2	17.9	14.5	269	10.5
+T1	Home Montain Canyon	UMG-GA-01		112	82	7/8	289.5	21.2	15.9	24.1	271	0
+T1	Home Montain Canyon	UMG-GA-02		116	52	7/8	284.3	34.7	14.1	19.2	261	12
+T1	Home Montain Canyon	UMG-GA-03		113	66	5/6	287.9	31.7	18.4	18.2	262	8
+T1	Sparks-Talamantes Creek	SP 01		306	58	9/9	105.2	22.1	6.5	63.5	96.3	-4.6
+T1	Sparks-Talamantes Creek	SP 02	a	295	62	5/7	67.8	59.2	14.3	29.7	45.4	4.1
+T1	Sparks-Talamantes Creek	SP 03		313	70	5/6	92.1	30.5	11.9	42.3	87.2	-20.9
+T1	Sparks-Talamantes Creek	SP 04		299	61	7/7	95.9	35.6	9.2	43.9	77.4	0.2
+T1	Sparks-Talamantes Creek	SP 05		315	63	8/8	88.8	34.6	11.6	23.7	81.3	-15.8
+T1	Sparks-Talamantes Creek	SP 06		324	66	7/7	99.9	26.0	8.6	50.7	98.6	-23.1
+T1	Sparks-Talamantes Creek	SP 07		299	61	4/8	104.2	31.6	14.0	43.9	84.6	3.7
+T1	Sparks-Talamantes Creek	SP 08		312	65	7/8	95.7	20.0	9.2	43.8	96.3	-21.1
+T1	Sparks-Talamantes Creek	SP 09	b	314	71	3/7	94.9	28.4	28.42	20.2	91.3	-21.7
+T1	Sparks-Talamantes Creek	SP 10		313	56	6/8	103.1	36.3	10.2	44.5	87.3	-0.1
+T1	Sparks-Talamantes Creek	SP 11	b	301	59	6/8	101.7	21.3	15.1	20.7	92.9	-4.4
+T1	Sparks-Talamantes Creek	SP 12		313	59	8/8	95.6	35.9	7.0	63.8	83.4	-6.9
+T2	Sheep Creek Canyon	SC 1		321	80	10/11	33.4	69.6	3.0	259.7	44.9	-9.5
+T2	Sheep Creek Canyon	SC 2		325	81	6/11	9.7	65.5	4.2	262.2	37.7	-8.4
+T2	Sheep Creek Canyon	SC 3		322	82	11/12	24.6	69.0	3.6	161.4	42.3	-10.7
+T2	Sheep Creek Canyon	SC 4		323	81	11/11	37.6	68.9	2.8	262.0	47.4	-11.4
+T2	Sheep Creek Canyon	SC 5		324	80	8/12	37.5	68.3	3.5	255.4	47.9	-10.8
+T2	Sheep Creek Canyon	SC 6		325	78	4/12	26.6	69.9	5.4	296.3	45.5	-5.8
+T2	Sheep Creek Canyon	SC 7		325	81	12/12	25.1	65.8	3.6	146.0	42.9	-12
+T2	Sheep Creek Canyon	SC 8		321	85	10/11	45.5	65.0	6.2	61.4	48.5	-19.9
+T2	Sheep Creek Canyon	SC 9		293	43	17/20	38.7	60.7	5.4	45.2	31	18.5
+T2	Sheep Creek Canyon	SC 14		301	39	10/15	61.8	56.3	6.7	53.3	48.6	20.3
+T2	Sheep Creek Canyon	SC 19		303	40	9/14	73.5	36.3	8.0	42.7	64.6	3.4
+T2	Sheep Creek Canyon	SC 21		299	43	10/13	68.0	40.0	7.1	47.1	57.9	3.7
+T2	Sheep Creek Canyon	SC 46		352	102	6/6	4.1	70.2	2.5	718.8	61.9	-15.4
+T2	Sheep Creek Canyon	SC 47		354	102	6/6	18.2	71.4	4.5	221.5	66.1	-19
+T2	Sheep Creek Canyon	SC 70		302	44	9/9	45.4	58.4	7.0	55.6	39.2	15
+T2	Sheep Creek Canyon	SC 74		294	39	5/8	39.7	66.4	9.5	65.8	31	28
+T2	Sheep Creek Canyon	SC 78		302	20	8/8	15.8	63.0	2.0	739.8	21.9	43.5
+T2	Sheep Creek Canyon	SC 79		262	23	8/8	11.5	63.7	3.8	218.5	3.4	41.5
+T2	Sheep Creek Canyon	SC 81		282	34	6/7	59.7	53.9	9.1	55.1	41.2	26.6
+T2	Sheep Creek Canyon	SC 82		291	41	8/8	41.8	58.3	8.0	49.1	32.4	18.7
+T2	Irish Canyon Section	IC-AW-01		342	26	4/6	354.8	58.6	6.1	414.6	25	46
+T2	Irish Canyon Section	IC-AW-02		330	-	6/6	357.6	61.6	7.6	79.0	25	44
+T2	Irish Canyon Section	IC-AW-03		340	28	5/6	357.1	53.7	9.4	67.1	24	39
+T2	Irish Canyon Section	IC-AW-04		340	28	6/6	356.8	59.0	2.5	741.5	28	44
+T2	Irish Canyon Section	IC-AW-05		330	29	6/6	358.1	62.0	3.7	420.1	26	43
+T2	Irish Canyon Section	IC-AW-06		332	29	6/6	359.1	60.8	1.9	1287.0	25	42
+T2	Irish Canyon Section	IC-AW-07	c	332	29	-	-	-	-	-	-	-
+T2	Irish Canyon Section	IC-AW-08		332	29	6/6	1.8	60.4	3.4	399.7	28	39
+T2	Irish Canyon Section	IC-AW-09		332	29	5/6	357.8	56.6	2.4	1047.9	24	39
+T2	Irish Canyon Section	IC-AW-10		328	26	6/6	0.4	58.8	5.0	231.1	22	41
+T2	Irish Canyon Section	IC-AW-11		328	26	5/6	0.8	59.7	2.5	1302.2	23	40
+T2	Irish Canyon Section	IC-AW-12		325	38	4/6	5.5	53.9	12.3	101.6	26	33
+T2	Irish Canyon Section	IC-AW-13	c	322	26	-	-	-	-	-	-	-
+T2	Irish Canyon Section	IC-AW-14	c	322	26	-	-	-	-	-	-	-
+T2	Irish Canyon Section	IC 01		6	19	8/9	8.5	59.3	5.1	119.2	36.5	53.7
+T2	Irish Canyon Section	IC 02		6	19	7/8	13.0	68.3	2.6	553.6	49.2	59.8
+T2	Irish Canyon Section	IC 03		6	19	9/10	12.1	67.4	9.3	31.4	47.6	59.3
+T2	Irish Canyon Section	IC 05		347	26	8/9	9.9	62.7	2.8	294.1	39.5	46.1
+T2	Irish Canyon Section	IC 06		334	19	8/8	16.2	60.8	1.3	1702.2	32.7	45.9
+T2	Irish Canyon Section	IC 07		309	23	7/8	19.4	62.6	3.0	415.3	27.3	40.4
+T2	Irish Canyon Section	IC 08		317	28	8/8	19.1	64.2	2.9	527.6	32	37.9
+T2	Irish Canyon Section	IC 10		341	21	8/9	17.9	57.9	2.1	722.6	35.8	42.6
+T2	Irish Canyon Section	IC 11		329	33	9/9	14.7	58.8	3.4	232.1	34	31
+T2	Irish Canyon Section	IC 12		349	27	8/8	4.7	53.9	4.6	231.0	30.9	40.4
+T2	Irish Canyon Section	IC 14		340	25	7/8	14.0	63.0	1.8	1103.5	38.2	44.4
+T2	Cross Mountain	CR 1		30	15	7/8	350.1	60.7	8.6	43.1	18.3	67.5
+T2	Cross Mountain	CR 2		30	15	10/12	350.4	57.9	3.1	226.4	15.2	64.9
+T2	Cross Mountain	CR 3		30	15	12/12	349.0	61.6	6.5	42.5	18.4	68.5
+T2	Cross Mountain	CR 4		32	8	9/10	25.3	62.2	12.2	16.7	40.5	62.1
+T2	Cross Mountain	CR 5		115	18	11/11	339.4	60.6	7.6	33.8	304.3	69.2
+T2	Cross Mountain	CR 6		115	18	12/13	349.6	66.6	9.2	21.2	301	76.6
+T2	Cross Mountain	CR 7		114	18	9/11	335.3	64.7	8.4	34.6	292	71.3
+T2	Cross Mountain	CR 8		157	33	10/12	348.0	63.3	7.1	42.8	293.8	52.7
+T2	Cross Mountain	CR 9		54	19	10/10	138.4	45.8	46.6	1.8	139.6	26.9
+T2	Cross Mountain	CR 10	b	54	19	10/12	19.2	71.6	16.1	9.0	82.1	72.9
+T2	Cross Mountain	CR 11		54	19	9/9	349.3	58.9	3.8	163.1	17.6	74.1
+T2	Cross Mountain	CR 12		57	14	11/11	350.2	59.6	4.3	103.1	6.4	71.7
+T2	Cross Mountain	CR 13		57	14	5/10	352.8	43.3	5.3	170.0	1	55.5
+T2	Cross Mountain	CR 14		199	11	12/12	349.9	60.2	3.9	112.6	336.1	53.7
+T2	Cross Mountain	CR 15		24	10	8/8	353.6	61.0	2.0	646.4	11.9	64.7
+T2	Cross Mountain	CR 16		24	10	7/10	351.9	60.7	2.7	446.6	9.8	64.7
+T2	Cross Mountain	CR 17		319	15	6/9	13.1	64.3	9.4	43.5	25.1	51.2
+T2	Cross Mountain	CR 18		92	8	10/10	336.2	59.8	5.5	70.3	328.3	66.8
+T2	Cross Mountain	CR 20		37	13	8/8	353.6	54.9	4.0	171.6	11.3	62.4
+T2	Cross Mountain	CR 21		22	12	8/12	3.6	54.9	5.3	97.1	21.2	56.9
+T2	Cross Mountain	CR 22	b	37	14	5/10	339.3	44.9	17.1	16.7	349.7	56.1
+T2	Cross Mountain	CR 22	b	37	14	5/10	104.9	-51.2	18.9	13.9	94.8	-63.7
+T2	Lone Mountain	LN 1		317	27	7/10	353.4	57.8	6.0	86.8	14.2	37.6
+T2	Lone Mountain	LN 2	b	317	27	10/10	19.0	46.7	19.3	6.5	26.7	21.9
+T2	Lone Mountain	LN 4		317	27	10/10	15.6	58.9	13.4	12.6	28	34.2
+T2	Lone Mountain	LN 8		310	16	11/11	355.8	61.9	3.6	145.9	10	49
+T2	Lone Mountain	LN 9		340	30	10/10	10.6	57.3	5.6	67.2	34.8	36.2
+T2	Lone Mountain	LN 10		287	31	9/9	346.9	60.0	3.5	197.7	359.9	31.3
+T2	Lone Mountain	LN 11		287	31	9/9	349.1	59.9	4.1	139.3	1.1	30.9
+T2	Lone Mountain	LN 12		287	31	8/9	357.1	61.7	10.3	26.2	6.1	31.7
+T2	Lone Mountain	LN 13		274	30	10/10	352.5	59.8	2.5	327.8	357.3	30.1
+T2	Lone Mountain	LN 14		283	45	8/11	357.5	58.4	4.1	164.5	4.7	14.2
+T2	Lone Mountain	LN 15		285	22	6/8	354.3	63.9	6.4	92.9	2.8	42.7
+T2	Lone Mountain	LN 17		304	30	6/12	10.4	63.6	7.8	62.5	21.5	34.9
+T2	Lone Mountain	LN 17	a	304	30	6/12	195.8	67.0	4.6	178.4	75.3	79.3
+T2	Lone Mountain	LN 20		316	24	8/8	355.6	61.8	5.4	92.9	16.1	43
+T2	Juniper Mountain	JP 1	b	134	9	10/10	0.8	64.7	22.3	4.9	343.6	70.3
+T2	Juniper Mountain	JP 2		134	9	8/9	10.1	54.5	6.5	64.5	1.1	61.6
+T2	Juniper Mountain	JP 3		139	12	8/9	10.2	56.5	4.7	108.1	354.6	64.8
+T2	Juniper Mountain	JP 4		139	12	9/9	7.2	54.7	9.9	24.8	352.2	62.6
+T2	Juniper Mountain	JP 5		139	12	10/10	3.8	59.3	6.2	54.9	344.5	66.3
+T2	Juniper Mountain	JP 6		142	11	9/9	6.5	27.5	14.5	12.1	1.5	34.9
+T2	Juniper Mountain	JP 7	a	142	11	5/8	272.0	48.9	10.5	43.0	265.5	40.1

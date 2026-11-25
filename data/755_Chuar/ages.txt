@@ -1,0 +1,6 @@
+tab delimited	ages
+location	age	age_sigma	age_unit	method_codes	citations	timescale_eon	timescale_era	timescale_period	description
+Chuar Group	757	3.4	Ma	GM-REOS-I	10.1130/B31768.1	Proterozoic	Neoproterozoic	Tonian	Re-Os isochron (model 1) age of organic-rich carbonates of the Carbon Canyon Member, Galeros Formation (sample A1407, Carbon Canyon), 757.0 +/- 6.8 Ma (2 sigma, n = 8, MSWD 0.47; Rooney et al., 2018).
+Chuar Group	751	3.8	Ma	GM-REOS-I	10.1130/B31768.1	Proterozoic	Neoproterozoic	Tonian	Re-Os isochron (model 1) age of marcasite nodules in the basal Awatubi Member, Kwagunt Formation, Nankoweap Butte, 751.0 +/- 7.6 Ma (2 sigma, n = 5, MSWD 0.37; Rooney et al., 2018); interpreted to date nodule growth during deposition.
+Chuar Group	729	0.45	Ma	GM-UPB	10.1130/B31768.1	Proterozoic	Neoproterozoic	Tonian	U-Pb CA-ID-TIMS weighted mean 206Pb/238U zircon age of a tuff in the uppermost Walcott Member, Kwagunt Formation, 729.0 +/- 0.9 Ma (2 sigma, MSWD 0.86; Rooney et al., 2018).
+Chuar Group	770.1	0.25	Ma	GM-UPB	10.1016/j.precamres.2023.107156	Proterozoic	Neoproterozoic	Tonian	U-Pb CA-ID-TIMS age of the youngest detrital zircon in the basal Nankoweap Formation (sample CDGC5), 770.1 +/- 0.5 Ma (2 sigma); a maximum depositional age for the Chuar Group (Dehler et al., 2023).

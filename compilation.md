@@ -30,8 +30,8 @@ Poles that are excluded are judged not to be reliable for reconstruction. There 
 | Laurentia | [Baie des Moutons complex B](pole_notebooks/583_Baie_des_Moutons.ipynb) | 583 | B | 301.0 | 50.8 | 321.9 | -33.9 | 15.7 | -4.2 | McCausland et al. (2011) |
 | Laurentia | [Long Range Dykes](pole_notebooks/615_Long_Range.ipynb) | 615 | B | 303.3 | 53.7 | 165.4 | -12.3 | 20.0 | -17.5 | Murthy et al. (1992) |
 | Laurentia | [Franklin event grand mean](pole_notebooks/719_Franklin_LIP.ipynb) | 719 | A | 275.4 | 73.0 | 162.1 | 6.6 | 3.0 | -5.8 | Denyszyn et al. (2009) |
-| Laurentia | [Chuar Group (combined)](pole_notebooks/755_Chuar_Group.ipynb)&dagger; | 755 | A | 248.1 | 36.2 | 163.6 | 7.5 | 4.2 | -4.2 | Weil et al. (2020) |
-| Laurentia | [Uinta Mountain Group](pole_notebooks/759_Uinta_Mountain_Group.ipynb)&dagger; | 759 | B | 250.7 | 40.8 | 160.6 | 1.9 | 2.1 | -10.3 | Weil et al. (2006) |
+| Laurentia | [Chuar Group (combined)](pole_notebooks/755_Chuar_Group.ipynb)&dagger; | 755 | A | 248.1 | 36.2 | 163.1 | 7.7 | 4.1 | -4.3 | Eyster et al. (2020) |
+| Laurentia | [Uinta Mountain Group](pole_notebooks/759_Uinta_Mountain_Group.ipynb)&dagger; | 759 | B | 250.7 | 40.8 | 159.9 | 1.2 | 2.2 | -11.3 | Weil et al. (2006) |
 | Laurentia | [Gunbarrel LIP](pole_notebooks/780_Gunbarrel.ipynb) | 780 | A | 250.1 | 45.0 | 151.5 | 3.2 | 8.0 | -15.3 | Ding et al. (2025) |
 | Laurentia | [Adirondack metamorphic anorthosite](pole_notebooks/887_Adirondack.ipynb) | 887 | B | 286.1 | 44.2 | 143.4 | -25.2 | 12.9 | -41.4 | Brown et al. (2012) |
 | Laurentia-Scotland | [Torridon Group](pole_notebooks/975_Torridon.ipynb)&dagger; | 975 | B | 354.3 | 57.9 | 220.9 | -17.7 | 7.1 | -8.6 | Luleå Working Group Mean (2009) |
@@ -136,8 +136,8 @@ Where the directional distribution of a unit permits it, *f* is determined from 
 <!-- KENT_TABLE_START -->
 | Unit | Age (Ma) | *f* source | *f* | Plon | Plat | &zeta;95 | &eta;95 | Duluth paleolat as measured | Duluth paleolat corrected |
 |---|---|---|---|---|---|---|---|---|---|
-| [Chuar Group (combined)](pole_notebooks/755_Chuar_Group.ipynb) | 755 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 168.2 | 10.8 | 8.2 | 4.2 | -4.2 | 1.3 |
-| [Uinta Mountain Group](pole_notebooks/759_Uinta_Mountain_Group.ipynb) | 759 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 161.1 | 2.4 | 2.3 | 2.1 | -10.3 | -9.6 |
+| [Chuar Group (combined)](pole_notebooks/755_Chuar_Group.ipynb) | 755 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 167.6 | 10.8 | 7.9 | 4.2 | -4.3 | 0.9 |
+| [Uinta Mountain Group](pole_notebooks/759_Uinta_Mountain_Group.ipynb) | 759 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 160.1 | 1.3 | 2.2 | 2.2 | -11.3 | -11.1 |
 | [Torridon Group](pole_notebooks/975_Torridon.ipynb) | 975 | compilation f (Pierce et al., 2022) | 0.62 (0.43&ndash;0.91) | 213.3 | -29.6 | 16.0 | 7.2 | -8.6 | -22.2 |
 | [Jacobsville Formation](pole_notebooks/990_Jacobsville.ipynb) | 990 | E/I (Tauxe & Kent, 2004) | 0.64 (0.51&ndash;0.83) | 183.4 | -16.9 | 4.1 | 3.1 | -4.8 | -8.6 |
 | [Upper Freda Formation](pole_notebooks/1045_Upper_Freda.ipynb) | 1045 | SVEI (Tauxe et al., 2024) | 0.73 (0.59&ndash;0.87) | 168.8 | 3.6 | 2.8 | 2.4 | -2.1 | -3.6 |
