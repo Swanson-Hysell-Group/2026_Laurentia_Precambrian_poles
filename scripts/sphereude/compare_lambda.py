@@ -114,7 +114,7 @@ def main():
 
     # --- path comparison grid ---
     d = b.load_path(AGE_MIN, AGE_MAX)
-    d["_label"] = [b.terrane_group(x)[0] for x in d["Terrane"]]
+    d["_label"] = [b.pole_group(x, g)[0] for x, g in zip(d["Terrane"], d["Grade"])]
     mean = ipmag.fisher_mean(dec=d["PLONG"].tolist(), inc=d["PLAT"].tolist())
     proj = ccrs.LambertAzimuthalEqualArea(mean["dec"], mean["inc"])
 
@@ -127,7 +127,7 @@ def main():
         ax.gridlines(color="gray", linewidth=0.4, linestyle=":")
         b.plot_age_graded_path(ax, paths[tag], AGE_MIN, AGE_MAX, lw=3.0)
         first = True
-        for _, lab, mk, sz in b.TERRANE_MARKERS:
+        for lab, mk, sz in b.POLE_MARKERS:
             g = d[d["_label"] == lab]
             if g.empty:
                 continue

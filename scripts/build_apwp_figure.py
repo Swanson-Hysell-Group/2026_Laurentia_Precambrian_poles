@@ -6,8 +6,9 @@ Greenland and Scotland poles into the Laurentia reference frame (Greenland: Roes
 & Srivastava, 1989; Scotland: Torsvik & Cocks, 2017), and plots every pole with
 its A95 confidence ellipse colored by nominal age -- the whole-path counterpart
 to ``pole_tools.plot_apwp_context`` (which shows a single pole in context). Each
-terrane is drawn with its own marker (Laurentia circle, Greenland square, Scotland
-triangle). The sedimentary units are plotted at their inclination-shallowing-
+pole group is drawn with its own marker, as in ``build_paleolatitude_figure.py``
+(Laurentia A poles diamond, Laurentia B poles square, Greenland pentagon,
+Scotland triangle). The sedimentary units are plotted at their inclination-shallowing-
 corrected (Kent mean) positions from
 ``data/nordic_summaries/kent_poles_combined.csv``, drawn with their true Kent
 95% ellipse rather than a circular A95.
@@ -109,27 +110,41 @@ FIT_EXCLUDE_GREENLAND_AGE = 1382
 # drops the two Scotland poles (Torridon, Stoer) and nothing else.
 FIT_MAX_AGE_HALF_UNC = 50
 
-# Marker shape and size per terrane group (color still encodes age via the
-# colorbar). A separate shape legend distinguishes the cratonic blocks. The list
-# is ordered most-specific-first because terrane_group() matches by substring;
-# the legend is displayed in LEGEND_ORDER instead. The Greenland square is given
-# a smaller size because filled squares read perceptually larger than circles and
-# triangles of equal point size.
-TERRANE_MARKERS = [
-    ("Scotland", "Scotland", "^", 30),    # rotated into Laurentia frame
-    ("Greenland", "Greenland", "s", 22),  # rotated into Laurentia frame
-    ("Laurentia", "Laurentia", "o", 30),  # catch-all; must be tested last
+# Marker shape and size per pole group (color still encodes age via the
+# colorbar). A separate shape legend distinguishes the groups. The shapes follow
+# build_paleolatitude_figure.py: Laurentia poles split by reliability grade
+# (A diamond, B square) and Greenland poles as pentagons. Sizes are scatter
+# areas, set so the filled shapes read at a similar size: a filled square reads
+# larger than a diamond or pentagon of equal area. Listed in legend order.
+POLE_MARKERS = [
+    ("Laurentia A poles", "D", 28),
+    ("Laurentia B poles", "s", 24),
+    ("Greenland poles", "p", 40),   # rotated into Laurentia frame
+    ("Scotland poles", "^", 30),    # rotated into Laurentia frame
 ]
-LEGEND_ORDER = ["Laurentia", "Greenland", "Scotland"]
 
 
-def terrane_group(terrane):
-    """Map a Terrane string to (label, marker, size), tested most-specific first."""
+def pole_group(terrane, grade):
+    """Map a pole's Terrane and Grade to (label, marker, size).
+
+    Args:
+        terrane (str): Terrane of the pole (e.g. 'Laurentia', 'Laurentia-Greenland').
+        grade (str): Reliability grade of the pole ('A' or 'B').
+
+    Returns:
+        tuple: (legend label, matplotlib marker, scatter size).
+    """
     t = str(terrane)
-    for key, label, marker, size in TERRANE_MARKERS:
-        if key in t:
-            return label, marker, size
-    return "Laurentia", "o", 30
+    if "Scotland" in t:
+        label = "Scotland poles"
+    elif "Greenland" in t:
+        label = "Greenland poles"
+    elif str(grade).strip() == "A":
+        label = "Laurentia A poles"
+    else:
+        label = "Laurentia B poles"
+    style = {lab: (mk, sz) for lab, mk, sz in POLE_MARKERS}
+    return (label, *style[label])
 
 # Euler poles [pole_lat, pole_lon, angle] used to rotate separated-terrane poles
 # into the Laurentia reference frame, mirroring pole_tools.TERRANE_EULER_POLES
@@ -432,9 +447,9 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
     if projection == "lambert":
         named_annotations = add_named_path_annotations(ax, proj)
 
-    d["_label"] = [terrane_group(t)[0] for t in d["Terrane"]]
+    d["_label"] = [pole_group(t, g)[0] for t, g in zip(d["Terrane"], d["Grade"])]
 
-    # Plot each terrane group with its own marker/size; draw the colorbar once.
+    # Plot each pole group with its own marker/size; draw the colorbar once.
     # The sedimentary units carry a Kent confidence ellipse rather than a
     # circular A95, so they are drawn with ipmag.plot_pole_ellipse (which takes
     # the ellipse's own axes) instead of the circular plot_poles_colorbar; the
@@ -442,7 +457,7 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
     age_color = plt.cm.ScalarMappable(
         cmap=COLORMAP, norm=plt.Normalize(vmin=age_min, vmax=age_max))
     first = True
-    for _, label, marker, size in TERRANE_MARKERS:
+    for label, marker, size in POLE_MARKERS:
         g = d[d["_label"] == label]
         if g.empty:
             continue
@@ -484,12 +499,11 @@ def make_figure(out_base, age_min, age_max, projection, central_lon=200):
                 arrowprops=dict(arrowstyle="-", color="0.5", lw=0.4))
 
     # shape legend (neutral color; pole color encodes age). Legend marker sizes
-    # are scaled from the plotted sizes so the square stays proportionally smaller.
-    style_for = {lab: (mk, sz) for _, lab, mk, sz in TERRANE_MARKERS}
-    handles = [plt.Line2D([], [], linestyle="none", marker=style_for[lab][0],
+    # are scaled from the plotted areas so the shapes keep their relative sizes.
+    handles = [plt.Line2D([], [], linestyle="none", marker=mk,
                           color="0.4", markeredgecolor="k",
-                          markersize=style_for[lab][1] * 8 / 30, label=lab)
-               for lab in LEGEND_ORDER if (d["_label"] == lab).any()]
+                          markersize=8 * (sz / 30) ** 0.5, label=lab)
+               for lab, mk, sz in POLE_MARKERS if (d["_label"] == lab).any()]
     ax.legend(handles=handles, loc="lower right", frameon=True, fontsize=12)
 
     fig.savefig(out_base + ".png", dpi=200, bbox_inches="tight")
