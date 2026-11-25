@@ -1,0 +1,5 @@
+tab delimited	ages
+location	site	age	age_sigma	age_unit	method_codes	citations	timescale_eon	timescale_era	timescale_period	description
+Gunbarrel LIP	BT-8	779.5	1.5	Ma	GM-UPB	10.1130/G19944.1	Proterozoic	Neoproterozoic	Tonian	U-Pb ID-TIMS baddeleyite weighted-mean 207Pb/206Pb date, Christmas Lake dike, Beartooth Mountains; 779.5 +/- 3.0 Ma (95% confidence; Harlan et al., 2003).
+Gunbarrel LIP	Gun	779.6	0.7	Ma	GM-UPB	10.1130/G19944.1	Proterozoic	Neoproterozoic	Tonian	U-Pb ID-TIMS baddeleyite weighted-mean 207Pb/206Pb date, Gunbarrel gabbro sheet, Slave craton (mean of two analyses); 779.6 +/- 1.4 Ma (95% confidence; Harlan et al., 2003).
+Gunbarrel LIP	Cal	779.5	0.9	Ma	GM-UPB	10.1130/G19944.1	Proterozoic	Neoproterozoic	Tonian	U-Pb ID-TIMS baddeleyite weighted-mean 207Pb/206Pb date, Calder gabbro sheet, Slave craton (mean of three fractions); 779.5 +/- 1.8 Ma (95% confidence; Harlan et al., 2003).

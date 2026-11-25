@@ -52,7 +52,7 @@ A MagIC `sites.txt` file starts with a header row identifying the table type, fo
 ```
 tab delimited	sites
 site	location	result_type	result_quality	method_codes	...
-BT50	Gunbarrel LIP	i	g	LP-DIR-T:DE-BFL:DE-FM	...
+BT50	Gunbarrel LIP	i	g	SO-SUN:SO-MAG:LP-DIR-T:DE-BFL:DE-FM	...
 ```
 
 ### Key Columns
@@ -65,17 +65,17 @@ The columns used in the Gunbarrel example, with their MagIC data model definitio
 | `location` | required | Location name (must match `locations.txt`) | `Gunbarrel LIP` |
 | `result_type` | | `i` = individual site result | `i` |
 | `result_quality` | recommended | `g` = good, `b` = bad | `g` |
-| `method_codes` | required | Colon-delimited list of method codes | `LP-DIR-T:DE-BFL:DE-FM` |
+| `method_codes` | required | Colon-delimited list of method codes | `SO-SUN:SO-MAG:LP-DIR-T:DE-BFL:DE-FM` |
 | `citations` | required | Colon-delimited DOIs | `10.1029/2025JB031762` |
-| `geologic_classes` | required | Controlled vocabulary | `Igneous` |
+| `geologic_classes` | required | Controlled vocabulary | `Intrusive` |
 | `geologic_types` | required | Controlled vocabulary | `Volcanic Dike` |
 | `lithologies` | required | Controlled vocabulary | `Diabase` |
 | `lat` | required | Site latitude (°N, -90 to 90) | `45.028` |
 | `lon` | required | Site longitude (°E, 0 to 360) | `250.116` |
-| `age` | conditional | Radiometric age (required unless `age_low`/`age_high` given) | `779.5` |
-| `age_sigma` | | Age uncertainty, 1σ | `1.5` |
-| `age_low` | conditional | Lower age bound (required unless `age` given) | `775` |
-| `age_high` | conditional | Upper age bound (required unless `age` given) | `780` |
+| `age` | conditional | Age of the rock (required unless `age_low`/`age_high` given) | `779.5` |
+| `age_sigma` | conditional | Age uncertainty, 1σ (or give `age_low`/`age_high`) | |
+| `age_low` | conditional | Lower age bound (required unless `age` and `age_sigma` given) | `776.5` |
+| `age_high` | conditional | Upper age bound (required unless `age` and `age_sigma` given) | `782.5` |
 | `age_unit` | required | Unit for age values | `Ma` |
 | `dir_tilt_correction` | | `0` = geographic, `100` = tilt-corrected | `100` |
 | `dir_dec` | | Declination (°) | `267.4` |
@@ -83,12 +83,13 @@ The columns used in the Gunbarrel example, with their MagIC data model definitio
 | `dir_k` | | Fisher precision parameter *κ* | `38.1` |
 | `dir_alpha95` | | 95% confidence cone (°) | `9.9` |
 | `dir_n_samples` | | Number of samples in the mean | `8` |
+| `dir_n_total_samples` | | Number of samples measured | `8` |
 | `vgp_lat` | | VGP latitude (°N) | `-7.3` |
 | `vgp_lon` | | VGP longitude (°E) | `156.5` |
 | `vgp_dp` | | VGP semi-axis parallel to site meridian (°) | `5.2` |
 | `vgp_dm` | | VGP semi-axis perpendicular to site meridian (°) | `10.2` |
-| `bed_dip_direction` | | Dip direction of bedding (°, 0–360) | `135` |
-| `bed_dip` | | Dip of bedding measured in the dip direction (°) | `20` |
+| `bed_dip_direction` | | Dip direction of bedding (°, 0–360) | `198` |
+| `bed_dip` | | Dip of bedding measured in the dip direction (°) | `10` |
 | `description` | | Free-text notes | |
 
 :::{tip}
@@ -106,7 +107,7 @@ Each row in `sites.txt` contains one result — a single mean declination and in
 This convention allows both coordinate systems to be preserved in a single table.
 
 :::{admonition} When no tilt correction is applied
-For intrusions with no bedding tilt correction (e.g., the Slave craton sills Gun, Mar, and Cal_mean in Gunbarrel LIP example dataset), there is no distinction between geographic and tilt-corrected coordinates. In this case, a single row per site with `dir_tilt_correction` = `0` is sufficient. The Gunbarrel example includes duplicate rows for these sites so that the tilt-corrected query returns all sites uniformly, but this is a convenience choice rather than a requirement.
+For intrusions with no bedding tilt correction (e.g., the Slave craton sheets Gun, Mar, Cal, R10HL8, R10HL9 and the Calder mean Cal_mean in the Gunbarrel LIP example dataset), there is no distinction between geographic and tilt-corrected coordinates. In this case, a single row per site with `dir_tilt_correction` = `0` is sufficient. The Gunbarrel example includes duplicate rows for these sites so that the tilt-corrected query returns all sites uniformly, but this is a convenience choice rather than a requirement.
 :::
 
 ### Common Conventions and Pitfalls
@@ -125,11 +126,13 @@ For intrusions with no bedding tilt correction (e.g., the Slave craton sills Gun
 The full list of method codes is available at [https://www2.earthref.org/MagIC/method-codes](https://www2.earthref.org/MagIC/method-codes).
 
 **Controlled vocabularies:** The `geologic_classes`, `geologic_types`, and `lithologies` columns use controlled vocabularies from the MagIC data model. Use exact matches from the [EarthRef controlled vocabularies](https://www2.earthref.org/vocabularies). Common values include:
-- `geologic_classes`: `Igneous`, `Sedimentary`, `Metamorphic`
-- `geologic_types`: `Volcanic Dike`, `Sill`, `Lava Flow`, `Sedimentary Layer`
+- `geologic_classes`: `Intrusive`, `Extrusive`, `Sedimentary`, `Metamorphic` (prefer these specific classes to the generic `Igneous`)
+- `geologic_types`: `Volcanic Dike`, `Sill`, `Lava Flow`, `Sediment Layer`
 - `lithologies`: `Diabase`, `Basalt`, `Granite`, `Sandstone`, `Limestone`
 
-**Age handling:** If a site has a radiometric age, populate `age` and `age_sigma` and leave `age_low`/`age_high` empty. If only bracketing constraints are available, populate `age_low` and `age_high` instead. The `age_unit` column is always required.
+**Age handling:** Every site row needs an age: either `age` with `age_sigma` (1σ; published U-Pb uncertainties are usually 2σ and need halving), or `age_low` and `age_high`, optionally with a nominal `age`. The `age_unit` column is always required. The age is the age of the rock, also on rows for overprints or secondary components; an interpreted age of a magnetization belongs in the description. In the Gunbarrel example every intrusion carries the age of the Gunbarrel event, 779.5 Ma (776.5–782.5 Ma), and the host rocks of the baked-contact tests carry rock-age brackets. Individual dates go in an `ages` table (see below).
+
+**Sites that are in no pole:** Results that are not averaged into the pole — alternating-field results of sister samples, the constituent sites of a mean, the baked and unbaked host rocks of a contact test, overprints — still belong in the sites table, with a description that says why they are not in the pole. Use `result_quality` = `b` only for results the authors rejected on quality.
 
 ## The `locations.txt` Table
 
@@ -137,11 +140,14 @@ See the Gunbarrel example: {download}`locations.txt <../data/780_Gunbarrel/locat
 
 The `locations.txt` table holds the **mean paleomagnetic pole** calculated from the site-level VGPs. This is the result that gets used in apparent polar wander path construction.
 
+Every site belongs to a location. When some sites are in no pole, the location gets a first row without a pole that lists every site (with the full bounding box and the age range of all sampled units) and describes which sites are in no pole and why; the pole row follows under the same location name and lists only its own sites. The Gunbarrel example has these two rows.
+
 ### File Structure
 
 ```
 tab delimited	locations
 location	location_type	result_name	result_type	...
+Gunbarrel LIP	Region			...
 Gunbarrel LIP	Region	Gunbarrel LIP ca. 780 Ma pole	a	...
 ```
 
@@ -154,14 +160,14 @@ Gunbarrel LIP	Region	Gunbarrel LIP ca. 780 Ma pole	a	...
 | `result_name` | | Descriptive name for the pole result | `Gunbarrel LIP ca. 780 Ma pole` |
 | `result_type` | | `a` = averaged result | `a` |
 | `result_quality` | recommended | `g` = good | `g` |
-| `method_codes` | required | All methods used, plus `DE-VGP` | `DE-BFL:DE-FM:LP-DIR-T:DE-VGP` |
+| `method_codes` | required | All methods used, plus `DE-VGP` (and field-test codes such as `ST-C`) | `SO-SUN:SO-MAG:LP-DIR-T:DE-BFL:DE-FM:LP-DIR-AF:DE-VGP:ST-C` |
 | `citations` | required | All DOIs contributing to the pole | |
-| `geologic_classes` | required | Shared geologic class | `Igneous` |
-| `lithologies` | required | All lithologies represented | `Diabase` |
-| `lat_s` / `lat_n` | required | Geographic bounding box, south/north | `43.818` / `65.667` |
-| `lon_w` / `lon_e` | required | Geographic bounding box, west/east | `241.537` / `250.612` |
-| `age` | conditional | Nominal pole age (required unless `age_low`/`age_high` given) | `780.0` |
-| `age_low` / `age_high` | conditional | Age range for the pole (required unless `age` given) | `778.0` / `782.0` |
+| `geologic_classes` | required | Geologic classes represented | `Intrusive` |
+| `lithologies` | required | All lithologies represented | `Diabase:Gabbro` |
+| `lat_s` / `lat_n` | required | Geographic bounding box of the listed sites, south/north | `43.818` / `65.667` |
+| `lon_w` / `lon_e` | required | Geographic bounding box of the listed sites, west/east | `241.537` / `250.612` |
+| `age` | conditional | Nominal pole age | `779.5` |
+| `age_low` / `age_high` | conditional | Age range for the pole | `776.5` / `782.5` |
 | `age_unit` | required | Age unit | `Ma` |
 | `dir_tilt_correction` | | Tilt correction applied to site data | `100` |
 | `pole_lat` | | Mean pole latitude (°N) | `3.2` |
@@ -169,6 +175,8 @@ Gunbarrel LIP	Region	Gunbarrel LIP ca. 780 Ma pole	a	...
 | `pole_alpha95` | | Pole A95 (°) | `8.0` |
 | `pole_k` | | Pole Fisher *κ* | `25.8` |
 | `pole_n_sites` | | Number of sites in the pole | `14` |
+| `contact_test` | | Field test result (controlled vocabulary; also `fold_test`, `reversal_test`) | `C+` |
+| `continent_ocean` / `terranes` | | Geographic and tectonic descriptors (controlled vocabulary) | `North America` / `Laurentia` |
 | `sites` | | Colon-delimited list of site names | `BT50:BT51:BT54:...` |
 | `description` | | Free-text description | |
 
@@ -192,16 +200,17 @@ The MagIC database provides a [template spreadsheet](https://www2.earthref.org/M
 
 ### Option 2: Programmatic Conversion with Python
 
-When working with data already in a structured format (CSV, Excel), a Python script can automate the conversion and reduce transcription errors. The Gunbarrel example uses this approach in {download}`Ding2025_csv_to_magic.py <../data/780_Gunbarrel/Ding2025_csv_to_magic.py>`.
+A Python script can automate the conversion, check it, and document the choices made. The Gunbarrel example uses this approach in {download}`build_gunbarrel_contribution.py <../data/780_Gunbarrel/contribution_build/build_gunbarrel_contribution.py>`.
 
 The script:
 
-1. **Reads the source CSV** containing published site data (declination, inclination, VGP coordinates, ages, etc.).
+1. **Holds the published site table** (Ding et al., 2025, Table 1), transcribed and checked against the page image, in the script itself.
 2. **Applies unit conversions** — e.g., converting longitude from degrees West to MagIC's 0–360°E convention.
-3. **Maps metadata** — assigns geologic types, lithologies, and method codes to each site based on a lookup dictionary.
+3. **Maps metadata** — assigns geologic types, lithologies, method codes, ages and descriptions to each site.
 4. **Generates two rows per site** — one for geographic coordinates (`dir_tilt_correction` = 0) and one for tilt-corrected coordinates (`dir_tilt_correction` = 100).
-5. **Writes `sites.txt`** with the MagIC header and tab-delimited data.
-6. **Computes the mean pole** from the site VGPs using `ipmag.fisher_mean()` and writes `locations.txt`.
+5. **Checks the data** — e.g., that the stored bedding restores each in-situ direction to the tabulated tilt-corrected one, and that the site VGPs reproduce the published pole.
+6. **Computes the mean pole** from the site VGPs with a Fisher mean and writes `locations.txt`, `sites.txt` and an `ages` table, and the combined upload file.
+7. **Validates the upload file** against the data model.
 
 Key elements of the programmatic approach:
 
@@ -230,7 +239,7 @@ The advantage of the scripted approach is reproducibility — the conversion can
 
 ## Validation and Upload
 
-A MagIC contribution is a single `.txt` file containing all of the individual table files concatenated together, separated by `>>>>>>>>>>` on its own line (see the Gunbarrel example: {download}`Gunbarrel-LIP_30.Mar.2026.txt <../data/780_Gunbarrel/Gunbarrel-LIP_30.Mar.2026.txt>`):
+A MagIC contribution is a single `.txt` file containing all of the individual table files concatenated together, separated by `>>>>>>>>>>` on its own line (see the Gunbarrel example: {download}`Ding2025_Gunbarrel_LIP_25.Nov.2026.txt <../data/780_Gunbarrel/Ding2025_Gunbarrel_LIP_25.Nov.2026.txt>`, which also holds an `ages` table of the U-Pb dates):
 
 ```
 tab delimited	locations
@@ -260,12 +269,12 @@ When converting published site data to MagIC format, verify:
 - [ ] Longitudes are in 0–360°E (not degrees West)
 - [ ] Two rows per site if both geographic and tilt-corrected data are available
 - [ ] VGP coordinates populated only on the tilt-corrected row
-- [ ] Ages use either `age`/`age_sigma` or `age_low`/`age_high` (not both)
+- [ ] Every row has an age of the rock: `age` with `age_sigma`, or `age_low` and `age_high`
 - [ ] `age_unit` is filled for every row
 - [ ] Method codes, geologic types, and lithologies match MagIC controlled vocabularies
 - [ ] Citations are DOIs, colon-delimited for multiple sources
 - [ ] The `location` value in `sites.txt` matches the `location` value in `locations.txt`
-- [ ] The `sites` column in `locations.txt` lists all contributing site names
+- [ ] The `sites` column of each pole row lists its contributing sites, and a location row without a pole lists every site when some are in no pole
 - [ ] `result_type` is `i` in `sites.txt` and `a` in `locations.txt`
 
 ## MagIC resources 
