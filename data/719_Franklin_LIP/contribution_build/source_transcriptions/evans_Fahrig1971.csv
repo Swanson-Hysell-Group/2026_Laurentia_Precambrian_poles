@@ -1,0 +1,25 @@
+subgroup,site,dec,inc,a95,weight,n,k,lat,lon,vgp_lat_specified,vgp_lon_specified,csv_polarity
+Coronation+Bathurst sheets and dikes,1  200 Oe,260.0,-1.0,5.0,1.0,4.0,189.0,,,-3.0,161.0,r
+Coronation+Bathurst sheets and dikes,2  100 Oe,259.0,10.0,5.0,1.0,4.0,217.0,,,1.0,170.0,r
+Coronation+Bathurst sheets and dikes,3  200 Oe,262.0,33.0,2.0,1.0,5.0,569.0,,,13.0,166.0,n
+Coronation+Bathurst sheets and dikes,4  150 Oe,264.0,43.0,6.0,1.0,5.0,124.0,,,21.0,177.0,n
+Coronation+Bathurst sheets and dikes,5  250 Oe,264.0,14.0,13.0,,3.0,28.0,,,4.0,166.0,
+Coronation+Bathurst sheets and dikes,6  250 Oe,266.0,23.0,4.0,1.0,4.0,319.0,,,10.0,167.0,n
+Coronation+Bathurst sheets and dikes,7  250 Oe,272.0,43.0,2.0,1.0,4.0,1018.0,,,24.0,168.0,n
+Coronation+Bathurst sheets and dikes,8  250 Oe,270.0,20.0,3.0,1.0,4.0,664.0,,,10.0,165.0,n
+Coronation+Bathurst sheets and dikes,9  250 Oe,280.0,48.0,6.0,,3.0,138.0,,,30.0,165.0,
+Baffin dikes,10  300 Oe,273.0,-5.0,8.0,1.0,6.0,68.0,70.85,284.5,-1.0,191.0,n
+Baffin dikes,11  500 Oe,277.0,-21.0,25.0,,6.0,8.0,71.1,283.7,-8.0,184.0,
+Baffin dikes,13  200 Oe,307.0,-24.0,5.0,1.0,7.0,133.0,70.8,284.2,-1.0,155.0,n
+Baffin dikes,18  300 Oe,296.0,-26.0,12.0,1.0,5.0,64.0,71.4,282.4,-5.0,164.0,n
+Baffin dikes,19  500 Oe,298.0,-26.0,5.0,1.0,5.0,200.0,71.3,282.5,-4.0,162.0,n
+Baffin dikes,20  200 Oe,301.0,-7.0,8.0,1.0,6.0,78.0,71.2,281.6,6.0,161.0,n
+Baffin dikes,21  400 Oe,303.0,-22.0,14.0,1.0,6.0,24.0,69.85,289.7,-1.0,165.0,n
+Baffin dikes,23  400 Oe,288.0,-5.0,15.0,1.0,5.0,41.0,69.75,288.8,4.0,181.0,n
+Baffin dikes,24  400 Oe,302.0,-13.0,26.0,,5.0,9.0,69.8,289.1,4.0,167.0,
+Baffin dikes,25  300 Oe,313.0,29.0,3.0,1.0,5.0,704.0,69.45,289.4,29.0,162.0,n
+Boothia and other dikes,26  250 Oe (Boothia),295.0,13.0,4.0,1.0,5.0,271.0,,,15.0,157.0,r
+Boothia and other dikes,27  250 Oe (Boothia),292.0,12.0,11.0,1.0,5.0,31.0,,,13.0,157.0,r
+Boothia and other dikes,28  250 Oe (Ungava),300.0,12.0,3.0,1.0,6.0,333.0,,,19.0,171.0,r
+Boothia and other dikes,"29  250 Oe (??Hardisty Lake, south of Great Bear??)",278.0,20.0,8.0,1.0,4.0,80.0,,,13.0,153.0,n
+Boothia and other dikes,"30  200 Oe (??Hardisty Lake, south of Great Bear??)",263.0,-3.0,16.0,,3.0,26.0,,,-4.0,163.0,
